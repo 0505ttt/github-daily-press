@@ -8,6 +8,12 @@ from pathlib import Path
 
 
 def main(argv=None) -> int:
+    # 命令结果也会由脚本、Actions 和启动器读取，统一为 UTF-8，避免 Windows
+    # 重定向输出时沿用 cp1252 等本地编码而无法输出中文。
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if callable(reconfigure):
+            reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="GitHub 每日项目推送 · 本地应用与采编")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent, help="公开版项目目录")
     sub = parser.add_subparsers(dest="command", required=True)

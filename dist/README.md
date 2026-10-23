@@ -126,7 +126,7 @@ python -m gh_daily serve --schedule
 | [验收记录](docs/验收记录.md) | 已完成的检查及平台验证范围 |
 | [发布文件清单](docs/发布文件清单.json) | 公开发布文件与校验信息 |
 
-截至 **2026-10-23**，Mac 上已验证 PWA 实际安装与停止服务后的离线冷启动；63 项 Python 回归检查通过，并完成 JavaScript、缓存和隐私规则检查。Windows 实机、真实模型服务与 Actions 云端运行仍待验证，详细结果以验收记录为准。
+截至 **2026-10-23**，Mac 上已验证 PWA 实际安装与停止服务后的离线冷启动；65 项 Python 回归检查通过，并完成 JavaScript、缓存和隐私规则检查。Windows 实机、真实模型服务与每日采编的 Actions 云端运行仍待验证，详细结果以验收记录为准。
 
 <details>
 <summary>开发与维护常用命令</summary>
