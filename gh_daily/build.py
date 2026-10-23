@@ -12,6 +12,7 @@ from pathlib import Path
 
 DATA_DIRS = ("GitHub项目分析", "AI前沿资讯")
 DATA_SUFFIXES = {".html", ".md", ".pdf"}
+INTRO_IMAGE_SUFFIXES = {".svg", ".png", ".jpg", ".jpeg"}
 
 
 def load_builder(root: Path):
@@ -46,6 +47,27 @@ def public_data_files(root: Path):
                 yield file
 
 
+def public_intro_files(root: Path):
+    """仅发布介绍页及其公开配图，不复制整份文档目录。"""
+    docs = root / "docs"
+    intro = docs / "项目介绍.html"
+    images = docs / "images"
+    for path in (docs, intro, images):
+        if path.is_symlink():
+            raise ValueError("项目介绍资源不能使用符号链接。")
+    if intro.is_file():
+        yield intro
+    if images.is_dir():
+        for file in sorted(images.rglob("*")):
+            if file.is_symlink():
+                raise ValueError("项目介绍资源不能使用符号链接。")
+            relative = file.relative_to(images)
+            if any(part.startswith(".") for part in relative.parts):
+                continue
+            if file.is_file() and file.suffix in INTRO_IMAGE_SUFFIXES:
+                yield file
+
+
 def build_site(root: Path, *, hosted: bool = False, base_path: str = "/", allow_empty: bool = False) -> dict:
     if not re.fullmatch(r"/(?:[A-Za-z0-9_-][A-Za-z0-9_.-]*/)*", base_path):
         raise ValueError("网站路径必须以 / 开始和结束，且不能含跳转或查询参数。")
@@ -64,6 +86,10 @@ def build_site(root: Path, *, hosted: bool = False, base_path: str = "/", allow_
         stage = Path(tempfile.mkdtemp(prefix="site-", dir=root / ".runtime"))
     try:
         for file in public_data_files(root):
+            target = stage / file.relative_to(root)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(file, target)
+        for file in public_intro_files(root):
             target = stage / file.relative_to(root)
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(file, target)

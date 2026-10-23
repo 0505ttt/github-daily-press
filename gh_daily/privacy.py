@@ -7,6 +7,8 @@ import os
 import re
 from pathlib import Path
 
+from .public_content import contains_editorial_trace
+
 SKIP = {".git", ".venv", ".runtime", ".codegraph", ".codegraph-tools", "__pycache__", "test-results", "build", ".mypy_cache", ".ruff_cache", ".pytest_cache"}
 PATTERNS = {
     "本机用户路径": re.compile(r"/(?:Users|home)/[^\s<>\"']+|[A-Za-z]:\\Users\\[^\s<>\"']+"),
@@ -68,6 +70,11 @@ def scan_paths(root: Path, *, public_release: bool = False, site_release: bool =
             candidate = re.sub(r"https?://[^\s<>\"')]+", "", text) if name == "本机用户路径" else text
             if pattern.search(candidate):
                 findings.append({"path": rel.as_posix(), "rule": name})
+        content_parts = rel.parts[1:] if rel.parts[0] == "dist" else rel.parts
+        narrative = bool(content_parts and content_parts[0] in {"GitHub项目分析", "AI前沿资讯", "补档说明.md"})
+        narrative |= rel.as_posix() in {"tools/_杂志数据.json", "dist/data.json"}
+        if narrative and contains_editorial_trace(text, html=file.suffix == ".html"):
+            findings.append({"path": rel.as_posix(), "rule": "私人采编注记"})
         if any(marker in text for marker in markers):
             findings.append({"path": rel.as_posix(), "rule": "自定义私人标识"})
     return findings
@@ -82,7 +89,7 @@ def check_changes(root: Path, paths: list[str]) -> list[str]:
         allowed = value == "content-manifest.json" or value == "tools/_杂志数据.json"
         allowed |= bool(path.parts and path.parts[0] == "GitHub项目分析" and path.suffix in {".html", ".md"})
         allowed |= value.startswith("AI前沿资讯/日报/") and path.suffix == ".md"
-        allowed |= value.startswith("dist/") and path.suffix in TEXT_SUFFIXES | {".png", ".pdf", ".ico"}
+        allowed |= value.startswith("dist/") and path.suffix in TEXT_SUFFIXES | {".png", ".jpg", ".jpeg", ".pdf", ".ico"}
         if not safe or not allowed or (root / path).is_symlink():
             bad.append(value)
     return bad

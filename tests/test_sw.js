@@ -8,6 +8,7 @@ const {webcrypto, createHash} = require("node:crypto");
 const origin = "https://reader.example";
 const source = fs.readFileSync(path.join(__dirname, "../web/sw.js"), "utf8");
 const stores = new Map();
+let failDeleting = null;
 const key = (input) => new URL(typeof input === "string" ? input : input.url || input.href, origin).href;
 const caches = {
   async open(name) {
@@ -27,7 +28,10 @@ const caches = {
   },
   async keys() { return [...stores.keys()]; },
   async has(name) { return stores.has(name); },
-  async delete(name) { return stores.delete(name); }
+  async delete(name) {
+    if (name === failDeleting) throw new Error("缓存删除暂不可用");
+    return stores.delete(name);
+  }
 };
 function application(basePath) {
   const handlers = new Map(), requests = [], ownMessages = [], otherMessages = [];
@@ -111,8 +115,22 @@ function application(basePath) {
   root.setFail(false); await root.run("performCache()");
   assert.equal(await root.read("/index.html"), "页面-b");
   assert.equal(await root.read("/pwa.js"), "脚本-b");
+  assert.equal(stores.has("gh-daily-content-v2-%2F-a"), false, "完整更新后应移除旧正文缓存");
+  assert.equal(stores.has("gh-daily-content-v2-%2F-b"), true, "保留已校验的新版本");
+  const stale = await caches.open("gh-daily-content-v2-%2F-old-private");
+  await stale.put(origin + "/index.html", new Response("旧缓存正文"));
+  await root.run("performCache()");
+  assert.equal(stores.has("gh-daily-content-v2-%2F-old-private"), false, "旧 Worker 已缓存相同新版时也应清除遗留版本");
   assert.equal(await root.read("/api/config"), null);
   assert.equal(await root.read("/settings.html"), null);
+  const cleanupFailure = application("/cleanup/");
+  cleanupFailure.version("before"); await cleanupFailure.run("performCache()");
+  cleanupFailure.version("after"); failDeleting = "gh-daily-content-v2-%2Fcleanup%2F-before";
+  await assert.rejects(cleanupFailure.run("performCache()"), /缓存删除/);
+  assert.equal(await cleanupFailure.read("/cleanup/index.html"), "页面-after", "提交后清理失败不得删除有效的新缓存");
+  failDeleting = null;
+  await cleanupFailure.run("performCache()");
+  assert.equal(stores.has("gh-daily-content-v2-%2Fcleanup%2F-before"), false, "下次检查应重试清理旧缓存");
 
   const hosted = application("/github-daily-press/");
   hosted.version("b", "独立站"); await hosted.run("performCache()");

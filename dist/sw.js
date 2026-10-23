@@ -39,6 +39,10 @@ async function cacheStatus() {
     await announce({type: "CACHE_READY", revision: state.revision, generated_at: state.generated_at || ""});
   }
 }
+async function removeOldVersions(current) {
+  const obsolete = (await caches.keys()).filter((key) => key.startsWith(PREFIX) && key !== current);
+  await Promise.all(obsolete.map((key) => caches.delete(key)));
+}
 async function readResource(url, readBody) {
   // 超时覆盖响应头和完整响应体；单个连接卡住时不能无限阻塞整套缓存。
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -81,8 +85,13 @@ async function performCache() {
   const entries = manifest.files.filter((entry) => !excluded("/" + entry.path));
   const name = PREFIX + manifest.revision;
   const previous = await currentState();
-  if (previous?.cache === name && await caches.has(name)) { await cacheStatus(); return; }
+  if (previous?.cache === name && await caches.has(name)) {
+    await removeOldVersions(name);
+    await cacheStatus();
+    return;
+  }
   const cache = await caches.open(name);
+  let committed = false;
   try {
     let completed = 0;
     for (let start = 0; start < entries.length; start += 6) {
@@ -100,11 +109,12 @@ async function performCache() {
     const generatedAt = typeof manifest.generated_at === "string" ? manifest.generated_at.slice(0, 64) : "";
     const state = await caches.open(STATE_CACHE);
     await state.put(STATE_URL, new Response(JSON.stringify({cache: name, revision: manifest.revision, generated_at: generatedAt})));
+    committed = true;
+    // 新版已完整校验并提交后删除本应用旧版，避免已清理的历史正文继续留在缓存。
+    await removeOldVersions(name);
     await announce({type: "CACHE_READY", revision: manifest.revision, generated_at: generatedAt});
-    const obsolete = (await caches.keys()).filter((key) => key.startsWith(PREFIX) && key !== name && key !== previous?.cache);
-    await Promise.all(obsolete.map((key) => caches.delete(key)));
   } catch (error) {
-    if (name !== previous?.cache) await caches.delete(name);
+    if (!committed && name !== previous?.cache) await caches.delete(name);
     throw error;
   }
 }

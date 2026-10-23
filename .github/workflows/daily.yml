@@ -3,6 +3,13 @@ on:
   schedule:
     - cron: '30 0 * * *'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: '验证只写临时分支并删除；生产会更新默认分支'
+        type: choice
+        required: true
+        default: validate
+        options: [validate, production]
 
 permissions:
   contents: read
@@ -12,8 +19,54 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'validate'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      TZ: Asia/Shanghai
+      GH_DAILY_PROVIDER: cloud
+      GH_DAILY_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+      GH_DAILY_MODEL: ${{ secrets.LLM_MODEL }}
+      GH_DAILY_API_KEY: ${{ secrets.LLM_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 安装依赖
+        run: python -m pip install -e .
+      - name: 运行采编与界面回归
+        run: |
+          python -m unittest discover -s tests -q
+          node tests/test_sw.js
+          node tests/test_pwa.js
+          node tests/test_settings.js
+      - name: 空白工作区真实采编与重复运行验收
+        timeout-minutes: 23
+        run: python -m gh_daily.cloud_verify generate --source . --output "$RUNNER_TEMP/cloud-verification"
+      - name: 验证隔离分支回写和远端读回
+        timeout-minutes: 5
+        run: python -m gh_daily.cloud_verify writeback --output "$RUNNER_TEMP/cloud-verification" --state "$RUNNER_TEMP/cloud-verification-writeback.json"
+      - name: 确认仅清理本次创建的验证分支
+        if: always()
+        run: python -m gh_daily.cloud_verify cleanup --state "$RUNNER_TEMP/cloud-verification-writeback.json"
+      - name: 保存经过检查的页面与简明验收结果
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloud-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/cloud-verification
+          if-no-files-found: ignore
+          retention-days: 3
+
   generate:
-    if: vars.ENABLE_DAILY == 'true'
+    if: vars.ENABLE_DAILY == 'true' && (github.event_name == 'schedule' || inputs.mode == 'production')
     runs-on: ubuntu-latest
     timeout-minutes: 25
     permissions:
@@ -21,8 +74,8 @@ jobs:
     env:
       TZ: Asia/Shanghai
       GH_DAILY_PROVIDER: cloud
-      GH_DAILY_BASE_URL: ${{ vars.LLM_BASE_URL }}
-      GH_DAILY_MODEL: ${{ vars.LLM_MODEL }}
+      GH_DAILY_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+      GH_DAILY_MODEL: ${{ secrets.LLM_MODEL }}
       GH_DAILY_API_KEY: ${{ secrets.LLM_API_KEY }}
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -35,6 +88,12 @@ jobs:
           python-version: '3.11'
       - name: 安装依赖
         run: python -m pip install -e .
+      - name: 运行采编与界面回归
+        run: |
+          python -m unittest discover -s tests -q
+          node tests/test_sw.js
+          node tests/test_pwa.js
+          node tests/test_settings.js
       - name: 执行采编（保留独立成功的子任务）
         id: editorial
         continue-on-error: true
@@ -53,6 +112,7 @@ jobs:
           git add -- GitHub项目分析 AI前沿资讯/日报 dist tools/_杂志数据.json content-manifest.json
           if ! git diff --cached --quiet; then
             git commit -m '更新每日公开情报'
+            trap 'rm -f "$RUNNER_TEMP/daily-git-credentials"' EXIT
             printf '%s\n' "https://x-access-token:${GH_TOKEN}@github.com" > "$RUNNER_TEMP/daily-git-credentials"
             chmod 600 "$RUNNER_TEMP/daily-git-credentials"
             git -c credential.helper="store --file=$RUNNER_TEMP/daily-git-credentials" push "https://github.com/${REPOSITORY}.git" "HEAD:${BRANCH}"

@@ -4,28 +4,48 @@
   const base = new URL(".", document.currentScript.src);
   const url = (path) => new URL(path, base).href;
   const loopback = ["127.0.0.1", "localhost", "[::1]"].includes(location.hostname);
+  async function readLocalJSON(path, timeout = 3000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const response = await fetch(url(path), {cache: "no-store", credentials: "same-origin", signal: controller.signal});
+      if (!response.ok || !response.headers.get("Content-Type")?.includes("application/json")) throw new Error();
+      return await response.json();
+    } finally { clearTimeout(timer); }
+  }
   async function start() {
     if (document.querySelector(".gh-app-bar")) return;
     let local = loopback;
     try {
-      const response = await fetch(url("site-config.json"), {cache: "no-store", credentials: "omit"});
-      if (response.ok) local = loopback && (await response.json()).mode === "local";
+      local = loopback && (await readLocalJSON("site-config.json")).mode === "local";
     } catch {}
     const bar = document.createElement("aside");
     bar.className = "gh-app-bar";
     bar.setAttribute("aria-label", "应用操作");
     bar.dataset.mode = local ? "local" : "hosted";
-    bar.innerHTML = '<span class="gh-app-state" role="status" aria-live="polite">正在检查离线缓存……</span><button type="button" data-action="install">安装应用</button><button type="button" data-action="fullscreen">全屏阅读</button>' + (local
-      ? '<button type="button" data-action="sync">立即同步</button><a data-action="settings">设置</a>'
-      : '<button type="button" data-action="refresh">检查更新</button>');
-    if (local) bar.querySelector('[data-action="settings"]').href = url("settings.html");
+    bar.innerHTML = '<button class="gh-tools-toggle" type="button" data-action="tools" aria-expanded="false" aria-controls="gh-tools-panel"><span aria-hidden="true">⋯</span> 工具</button><div class="gh-app-panel" id="gh-tools-panel" role="region" aria-label="阅读工具" hidden><span class="gh-app-state" role="status" aria-live="polite">正在检查离线缓存……</span><div class="gh-app-actions"><button type="button" data-action="install">安装应用</button><button type="button" data-action="fullscreen">全屏阅读</button>' + (local
+      ? '<button type="button" data-action="sync">立即同步</button><button type="button" data-action="settings">设置</button>'
+      : '<button type="button" data-action="refresh">检查更新</button>') + '</div><p class="gh-app-guidance" role="status" hidden></p></div>';
     document.body.append(bar);
     document.body.classList.add("gh-pwa");
-    const reserveSpace = () => document.documentElement.style.setProperty("--gh-app-reserved", Math.ceil(bar.getBoundingClientRect().height + 32) + "px");
-    if ("ResizeObserver" in window) new ResizeObserver(reserveSpace).observe(bar);
-    else window.addEventListener("resize", reserveSpace);
-    reserveSpace();
+    const toggle = bar.querySelector('[data-action="tools"]');
+    const panel = bar.querySelector(".gh-app-panel");
     const state = bar.querySelector(".gh-app-state");
+    const guidance = bar.querySelector(".gh-app-guidance");
+    function expand(open, returnFocus = false) {
+      panel.hidden = !open;
+      toggle.setAttribute("aria-expanded", String(open));
+      if (returnFocus) toggle.focus();
+    }
+    function explain(message) {
+      guidance.textContent = message;
+      guidance.hidden = false;
+      expand(true);
+    }
+    document.addEventListener("click", (event) => { if (!bar.contains(event.target)) expand(false); });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !panel.hidden) { event.preventDefault(); expand(false, true); }
+    });
     let prompt = null;
     let worker = null;
     let ready = false;
@@ -55,8 +75,9 @@
       dialog.innerHTML = '<h2>安装为应用</h2><p></p><p>' + (local ? "本地服务停止后，可继续阅读已缓存内容。更新和设置需重新启动本地服务。" : "在线阅读无需 API Key。联网时检查最新内容，断网后可继续阅读已缓存的这一版。") + '</p><button type="button">知道了</button>';
       dialog.querySelector("p").textContent = message;
       dialog.querySelector("button").addEventListener("click", () => dialog.close());
-      dialog.addEventListener("close", () => dialog.remove());
+      dialog.addEventListener("close", () => { dialog.remove(); toggle.focus(); });
       document.body.append(dialog);
+      expand(false);
       dialog.showModal();
     }
     window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); prompt = event; });
@@ -64,9 +85,8 @@
     async function serviceStatus() {
       if (!local) return null;
       try {
-        const response = await fetch(url("api/status"), {cache: "no-store"});
-        if (!response.ok) throw new Error();
-        const status = await response.json();
+        const status = await readLocalJSON("api/status");
+        if (status?.online !== true || typeof status.job?.running !== "boolean") throw new Error();
         if (status.job.running) { text("正在执行" + (status.job.kind === "sync" ? "同步" : "采编") + "，可以继续阅读。"); return status; }
         if (ready) text(offlineStatus());
         return status;
@@ -77,8 +97,20 @@
     }
     bar.addEventListener("click", async (event) => {
       const button = event.target.closest("button[data-action]");
-      if (!button) return;
-      if (button.dataset.action === "install") {
+      if (!button || !bar.contains(button)) return;
+      if (button.dataset.action === "tools") {
+        expand(panel.hidden);
+      } else if (local && button.dataset.action === "settings" && !button.disabled) {
+        button.disabled = true;
+        guidance.hidden = true;
+        try {
+          const status = await readLocalJSON("api/status");
+          if (status?.online !== true || typeof status.job?.running !== "boolean") throw new Error();
+          window.location.assign(url("settings.html"));
+        } catch {
+          explain("本地服务尚未连接，当前页面可以继续阅读。请重新打开桌面应用，或运行项目中的 Mac／Windows 启动脚本，再点“设置”。PWA 图标只打开阅读窗口，不会启动服务。");
+        } finally { button.disabled = false; }
+      } else if (button.dataset.action === "install") {
         if (prompt) { const pending = prompt; prompt = null; await pending.prompt(); await pending.userChoice; }
         else installGuide();
       } else if (button.dataset.action === "fullscreen") {

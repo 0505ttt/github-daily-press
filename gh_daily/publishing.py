@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 from .build import atomic_text, build_site, load_builder
 from .config import REPOSITORY
 from .privacy import PATTERNS, check_changes, scan_paths
+from .public_content import EditorialContentError, sanitize_editorial_content
 from .sync import _SyncLock
 
 REPORT_NAME = re.compile(r"GitHub热点(?:日报_\d{4}-\d{2}-\d{2}|周报_(?:\d{4}-W\d{2}|\d{4}-\d{2}-\d{2})|月报_\d{4}-\d{2})\.html\Z")
@@ -56,6 +57,10 @@ def _public_text(text: str, *, html: bool) -> str:
             text = "".join(part if re.match(r"https?://", part) else PATTERNS[name].sub(replacement, part) for part in parts)
         else:
             text = PATTERNS[name].sub(replacement, text)
+    try:
+        text = sanitize_editorial_content(text, html=html)
+    except EditorialContentError as error:
+        raise PublishError(str(error)) from None
     if not html:
         return text
     soup = BeautifulSoup(text, "html.parser")
@@ -104,9 +109,12 @@ def import_content(root: Path, source: Path) -> dict:
             if count > 2000 or len(blob) > MAX_FILE or total > MAX_TOTAL:
                 raise PublishError("导入内容超过文件数或大小上限。")
             try:
-                text = _public_text(blob.decode("utf-8-sig"), html=file.suffix == ".html")
-            except (UnicodeError, ValueError):
+                original = blob.decode("utf-8-sig")
+            except UnicodeError:
                 raise PublishError("导入文件不是有效的 UTF-8 公开资料。") from None
+            if any(PATTERNS[name].search(original) for name in ("疑似访问凭据", "私钥正文")):
+                raise PublishError("导入资料含疑似凭据，未更改公开版。")
+            text = _public_text(original, html=file.suffix == ".html")
             target = stage / relative
             atomic_text(target, text)
             if file.suffix == ".html" and builder.parse_report(target)[0] is None:

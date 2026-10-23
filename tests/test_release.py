@@ -63,6 +63,54 @@ class ReleaseTests(unittest.TestCase):
             with self.subTest(base=base), self.assertRaises(ValueError):
                 build_site(Path('.'), hosted=True, base_path=base)
 
+    def test_build_publishes_intro_and_only_approved_images(self):
+        from gh_daily.build import build_site
+        for hosted in (False, True):
+            with self.subTest(hosted=hosted), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory).resolve()
+                builder = self.build_fixture(root)
+                approved = {
+                    "docs/项目介绍.html": '<img src="images/截图.jpg" alt="应用截图">',
+                    "docs/images/截图.jpg": "公开截图",
+                    "docs/images/封面.png": "公开封面",
+                    "docs/images/详情.jpeg": "公开详情",
+                    "docs/images/图示/流程.svg": "<svg></svg>",
+                }
+                excluded = {
+                    "docs/private.html", "docs/内部笔记.md", "docs/images/.隐藏.jpg",
+                    "docs/images/.private/截图.png", "docs/images/notes.txt",
+                    "docs/images/配置.json", "docs/images/backup.zip",
+                }
+                for name, content in approved.items():
+                    path = root / name
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_text(content, encoding="utf-8")
+                for name in excluded:
+                    path = root / name
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_text("不公开的额外资料", encoding="utf-8")
+                with patch("gh_daily.build.load_builder", return_value=builder):
+                    build_site(root, hosted=hosted)
+                    manifest = json.loads((root / "dist/content-manifest.json").read_text(encoding="utf-8"))
+                    manifest_paths = {entry["path"] for entry in manifest["files"]}
+                    for name, content in approved.items():
+                        self.assertEqual((root / "dist" / name).read_text(encoding="utf-8"), content)
+                        self.assertIn(name, manifest_paths)
+                    for name in excluded:
+                        self.assertFalse((root / "dist" / name).exists())
+                        self.assertNotIn(name, manifest_paths)
+                    self.assertEqual(scan_paths(root / "dist", site_release=True), [])
+                    previous = (root / "dist/content-manifest.json").read_bytes()
+                    link = root / "docs/images/链接.jpg"
+                    try:
+                        link.symlink_to(root / "docs/images/截图.jpg")
+                    except OSError:
+                        pass  # 未启用符号链接的系统仍执行以上白名单回归。
+                    else:
+                        with self.assertRaisesRegex(ValueError, "符号链接"):
+                            build_site(root, hosted=hosted)
+                        self.assertEqual((root / "dist/content-manifest.json").read_bytes(), previous)
+
     def test_failed_publication_rolls_back_source_files_and_site(self):
         from gh_daily.build import build_site, atomic_text
         with tempfile.TemporaryDirectory() as directory:

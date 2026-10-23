@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="760" viewBox="0 0 780 760" role="img" aria-labelledby="title desc">
+<title id="title">GitHub 每日项目推送：把开源世界，读成一本杂志</title><desc id="desc">适合窄屏的黑绿杂志封面，可安装应用、离线阅读、自选模型。</desc>
+<rect width="780" height="760" fill="#0b0b0b"/>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
+<text x="48" y="69" fill="#f4f2e8" font-size="29" font-weight="700">GitHub 每日项目推送</text><path d="M48 100H732" stroke="#4a4a45"/>
+<text x="48" y="212" fill="#f4f2e8" font-size="66" font-weight="800">把开源世界，</text><text x="48" y="304" fill="#00c46a" font-size="66" font-weight="800">读成一本杂志。</text>
+<text x="51" y="375" fill="#c0c1b7" font-size="29">发现热点，回看历史。</text><text x="51" y="422" fill="#c0c1b7" font-size="29">找到值得跟进的项目。</text>
+<path d="M48 471H732" stroke="#4a4a45"/>
+<g fill="#f4f2e8" font-size="27"><text x="51" y="544">可安装应用</text><text x="51" y="603">离线阅读</text><text x="51" y="662">自选模型</text></g><g fill="#00c46a"><circle cx="265" cy="534" r="5"/><circle cx="265" cy="593" r="5"/><circle cx="265" cy="652" r="5"/></g>
+<rect x="523" y="503" width="185" height="168" fill="#00b963"/><rect x="491" y="530" width="185" height="168" fill="#242924" stroke="#767d74"/><rect x="459" y="557" width="185" height="168" fill="#f4f2e8"/><text x="478" y="597" fill="#0b0b0b" font-size="20" font-weight="750">GH WEEKLY</text><path d="M478 614H625" stroke="#0b0b0b" stroke-width="2"/><text x="478" y="657" fill="#008e4a" font-size="26" font-weight="750">开源热点</text><text x="478" y="695" fill="#0b0b0b" font-size="26" font-weight="750">与 AI 前沿</text>
+</g></svg>
