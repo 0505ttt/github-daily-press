@@ -5126,8 +5126,8 @@
     },
     {
       "path": "docs/验收记录.md",
-      "size": 6613,
-      "sha256": "79ecf7d346f9109c83a907b94f7373d2a9be0a33fa0f196c1a27b8afa71fc4db"
+      "size": 7038,
+      "sha256": "1cef23acbaa221959ec5be5bae46ac9e53f417472a83dad014d7826085e644d9"
     },
     {
       "path": "gh_daily/__init__.py",
@@ -5186,8 +5186,8 @@
     },
     {
       "path": "gh_daily/public_content.py",
-      "size": 7651,
-      "sha256": "80c8872a88aa81e205f970c7959ef5c69d0f6645f29001c5b088e2bd10a92682"
+      "size": 7690,
+      "sha256": "4ce5c0262438aba762fb1d5f95db870b3d499c465be12f347d397af572fd4875"
     },
     {
       "path": "gh_daily/publishing.py",
@@ -5266,8 +5266,8 @@
     },
     {
       "path": "tests/test_public_content.py",
-      "size": 11217,
-      "sha256": "ecda77c19a3fd1e26e1ec9a1bdf48862fd9065f83873fda16a254c94263773d1"
+      "size": 11190,
+      "sha256": "e959247d41a59fa621d4e244ba21d2c9f36f94f1dc0d07a9694ab6b5fecad9cd"
     },
     {
       "path": "tests/test_publishing.py",

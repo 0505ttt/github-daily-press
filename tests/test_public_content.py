@@ -22,7 +22,7 @@ class PublicContentTests(unittest.TestCase):
         self.assertEqual(public, _public_text(public, html=True))
 
     def test_snapshot_keeps_date_and_url_without_running_history(self):
-        original = '<p>本报告据 2025-02-02 01:46 UTC 快照整理，与当日 05:45 采编任务的榜单一致。</p><footer>补档说明：2025-02-02 的原日报因任务未启动未生成，本文件由 2025-02-02 01:46 UTC 的快照重建（https://web.archive.org/web/20250202014600/https://github.com/trending）。</footer>'
+        original = '<p>本报告据 2025-02-02 01:46 UTC 快照整理，与当日 05:45 自动任务的榜单相近。</p><footer>补档说明：2025-02-02 的原日报因任务未启动未生成，本文件由 2025-02-02 01:46 UTC 的快照重建（https://web.archive.org/web/20250202014600/https://github.com/trending）。</footer>'
         public = _public_text(original, html=True)
         self.assertNotIn('05:45', public)
         self.assertNotIn('任务未启动', public)
