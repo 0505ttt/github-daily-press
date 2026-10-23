@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "github-daily-press"
+version = "1.0.0"
+description = "可安装、可离线阅读的中文 GitHub 热点与 AI 资讯杂志"
+requires-python = ">=3.11"
+dependencies = ["beautifulsoup4>=4.12,<5", "requests>=2.32,<3", "pypdf>=6,<7", "tzdata>=2025.1", "certifi>=2024.2.2"]
+license = {text = "MIT"}
+
+[project.scripts]
+gh-daily = "gh_daily.cli:main"
+
+[tool.setuptools]
+packages = ["gh_daily"]

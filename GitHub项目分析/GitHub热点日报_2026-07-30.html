@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-30</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            background-color: #f6f8fa;
+            color: #24292e;
+            line-height: 1.7;
+        }
+
+        /* 固定导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #24292e;
+            color: #fff;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-title {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .navbar-date {
+            font-size: 14px;
+            color: #8b949e;
+        }
+
+        /* 封面区域 */
+        .hero {
+            background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+            color: #fff;
+            padding: 100px 24px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .hero .date {
+            font-size: 1.4em;
+            color: #d0e7d0;
+            margin-bottom: 8px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            color: #b8d8b8;
+        }
+
+        /* 主体内容 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 开头概览 */
+        .overview {
+            background: #fff;
+            border-left: 5px solid #2da44e;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            font-size: 15px;
+        }
+
+        .overview p {
+            margin-bottom: 8px;
+        }
+
+        /* 项目卡片 */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #2da44e;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            padding: 20px 24px 12px;
+        }
+
+        .card-rank {
+            display: inline-block;
+            background: #24292e;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .card-title {
+            display: inline;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .card-title a {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        .card-title a:hover {
+            text-decoration: underline;
+        }
+
+        .card-tagline {
+            font-size: 1.05em;
+            color: #57606a;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .badge-lang {
+            background: #ddf4ff;
+            color: #0969da;
+        }
+
+        .badge-star-today {
+            background: #dafbe1;
+            color: #1a7f37;
+        }
+
+        .badge-star-total {
+            background: #fff8c5;
+            color: #9a6700;
+        }
+
+        .badge-fork {
+            background: #f6f8fa;
+            color: #57606a;
+            border: 1px solid #d0d7de;
+        }
+
+        .card-body {
+            padding: 0 24px 20px;
+        }
+
+        .card-section {
+            margin-bottom: 14px;
+        }
+
+        .card-section-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2da44e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .card-section-text {
+            font-size: 14.5px;
+            color: #3b4252;
+        }
+
+        .card-classify {
+            display: inline-block;
+            background: #f0fdf4;
+            border: 1px solid #2da44e;
+            color: #1a7f37;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* 速览表 */
+        .summary-section {
+            margin-top: 50px;
+        }
+
+        .summary-title {
+            font-size: 1.8em;
+            color: #24292e;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #2da44e;
+            padding-bottom: 10px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            font-size: 14px;
+        }
+
+        .summary-table th {
+            background: #24292e;
+            color: #fff;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .summary-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #d0d7de;
+        }
+
+        .summary-table tr:nth-child(even) td {
+            background: #f6f8fa;
+        }
+
+        .summary-table tr:hover td {
+            background: #ddf4ff;
+        }
+
+        .summary-table a {
+            color: #0969da;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .summary-table a:hover {
+            text-decoration: underline;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #8b949e;
+            font-size: 13px;
+            border-top: 1px solid #d0d7de;
+            margin-top: 40px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            .hero {
+                padding: 80px 16px 40px;
+            }
+            .card-title {
+                font-size: 1.2em;
+            }
+            .summary-table {
+                font-size: 12px;
+            }
+            .summary-table th, .summary-table td {
+                padding: 8px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="navbar-title">📊 GitHub 热点日报</div>
+<div class="navbar-date">2026-07-30</div>
+</nav>
+
+<header class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 30 日</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</header>
+
+<main class="container">
+
+<section class="overview">
+<p>📌 <strong>今日风向</strong>：AI/开发者工具依然占据半壁江山，<strong>Agent 框架与 AI 编程技能</strong>是绝对的主旋律——ECC（23.5 万星）、obra/superpowers（26.3 万星）两大超级仓库同日上榜，Claude Code 生态工具占据多个席位。</p>
+<p>🔥 <strong>黑马亮点</strong>：<strong>virgiliojr94/book-to-skill</strong> 今日暴增 +1,428 星登顶增速榜首，把技术书籍 PDF 转成 Claude Code 技能的思路极受开发者欢迎；<strong>maderix/ANE</strong> 通过逆向工程私有 API 让 Apple Neural Engine 做训练，是难得一见的硬件级研究项目。</p>
+<p>🌐 <strong>国际面孔</strong>：月之暗面（MoonshotAI/FlashKDA）开源 Kimi Delta Attention 高性能 CUDA 算子，微软（VibeVoice）和 Hugging Face（speech-to-speech）同日上榜语音 AI 领域。</p>
+</section>
+
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#1</span>
+<span class="card-title"><a href="https://github.com/opengeos/GeoLibre" target="_blank">opengeos/GeoLibre</a></span>
+<div class="card-tagline">轻量级、云原生的开源 GIS 平台——浏览器、桌面、移动端、Jupyter 全平台运行</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">TypeScript</span>
+<span class="badge badge-star-total">⭐ 总计 3,992</span>
+<span class="badge badge-star-today">🔥 今日 +667</span>
+<span class="badge badge-fork">🍴 Fork 430</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">GeoLibre 是一款免费开源的轻量级 GIS（地理信息系统）平台，致力于在 Web 浏览器、桌面应用、移动端和 Jupyter Notebook 中统一运行，同时保持数据本地化与隐私。技术栈采用 Tauri v2 + React + TypeScript + MapLibre GL JS + DuckDB-WASM Spatial + deck.gl 构建，同一套代码可编译为原生桌面应用和 Android 应用。支持 3D Tiles 渲染、行星底图（地球、月球、火星等）、SQL 工作空间、700+ 免费 GIS 工具。与 QGIS 等桌面 GIS 相比，GeoLibre 强调零安装、跨平台和云端协作。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">地理数据分析师、GIS 研究人员、城市规划者、环境科学家；需要在浏览器中快速可视化和分析地理空间数据的团队；Jupyter Notebook 用户的地理数据工作流。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">C-前端/Web › GIS平台 › 云原生地理可视化</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#2</span>
+<span class="card-title"><a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai/airi</a></span>
+<div class="card-tagline">自托管的 AI 虚拟伴侣——重现 Neuro-sama 的开源实现</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">TypeScript</span>
+<span class="badge badge-star-total">⭐ 总计 45,348</span>
+<span class="badge badge-star-today">🔥 今日 +676</span>
+<span class="badge badge-fork">🍴 Fork 4,483</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">Project AIRI 旨在重现虚拟主播 Neuro-sama 的能力，打造一个可以自托管的 AI 虚拟伴侣。支持实时语音对话、VRM/Live2D 模型驱动、以及自主玩 Minecraft、Factorio、Kerbal Space Program 等游戏。技术栈大量使用 Web 技术（WebGPU、WebAudio、WebAssembly、WebSocket），桌面版可利用 NVIDIA CUDA 和 Apple Metal 进行原生加速。支持 30+ 种 LLM 提供商（OpenAI、Claude、DeepSeek、Qwen 等），跨 Web/macOS/Windows 平台运行。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">虚拟主播爱好者、AI 伴侣开发者、VTuber 技术研究者；需要自托管 AI 角色交互方案的个人；对 WebGPU/浏览器端 AI 推理感兴趣的前端开发者。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">A-AI/机器学习 › AI虚拟伴侣 › 开源VTuber</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#3</span>
+<span class="card-title"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></span>
+<div class="card-tagline">Agent Harness 性能优化系统——261 个工作流技能 + 64 个专用子代理</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">JavaScript</span>
+<span class="badge badge-star-total">⭐ 总计 235,513</span>
+<span class="badge badge-star-today">🔥 今日 +860</span>
+<span class="badge badge-fork">🍴 Fork 35,863</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">ECC（Everything Claude Code）是一个开源的 Agent Harness 性能优化系统，为 Claude Code、Codex、Cursor、OpenCode、Gemini、Zed、GitHub Copilot、Antigravity 等 AI 编程工具提供统一的技能、记忆、安全和研发流程框架。包含 261 个工作流技能、64 个专用子代理、覆盖 12+ 语言生态系统，横跨编码、研究、安全、媒体等场景。2.0 版本定位为「跨 Harness 操作系统」，可在不同 AI 编程助手间共享配置。该项目是 GitHub 上星标最高的 Agent 工具仓库之一。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者；希望系统化管理和优化 Agent 工作流的团队；追求 AI 辅助编程效率最大化的个人和团队。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">B-开发者工具 › Agent优化框架 › 跨工具技能系统</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#4</span>
+<span class="card-title"><a href="https://github.com/huggingface/speech-to-speech" target="_blank">huggingface/speech-to-speech</a></span>
+<div class="card-tagline">Hugging Face 出品——用开源模型在本地构建语音对话 Agent</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Python</span>
+<span class="badge badge-star-total">⭐ 总计 7,819</span>
+<span class="badge badge-star-today">🔥 今日 +837</span>
+<span class="badge badge-fork">🍴 Fork 999</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">huggingface/speech-to-speech 是 Hugging Face 官方推出的本地语音 Agent 框架，支持用完全开源的模型构建端到端语音对话系统。集成语音识别（STT）、LLM 对话推理、语音合成（TTS）三大模块，用户可自由组合不同开源模型（如 Whisper、VAD、XTTS 等）构建低延迟的实时语音 Agent。支持本地服务器和云端提供商两种后端模式，无需依赖商业 API。与商业语音方案相比，它强调完全本地化、数据隐私和模型可替换性。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">语音助手开发者、需要构建本地化语音交互系统的团队、对开源语音模型感兴趣的研究者、隐私敏感场景下的语音应用开发。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">A-AI/机器学习 › 语音技术 › 语音对话Agent</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#5</span>
+<span class="card-title"><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang/jcode</a></span>
+<div class="card-tagline">自称「最 RAM 高效的 harness」——用 Rust 打造高性能编程智能体</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Rust</span>
+<span class="badge badge-star-total">⭐ 总计 13,409</span>
+<span class="badge badge-star-today">🔥 今日 +652</span>
+<span class="badge badge-fork">🍴 Fork 1,475</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">jcode 是一个用 Rust 编写的 AI 编程 Agent 框架（agent harness），定位为内存占用最低的代码助手。利用 Rust 的性能优势提供快速、可靠的编程 Agent 运行环境，可读取和编辑代码、执行命令、搜索文件。作为 CLI 工具运行，强调速度和低资源消耗，旨在成为 Claude Code 等工具的高性能替代方案。在内存受限的部署环境中优势尤为突出。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">偏好 Rust 生态的开发者、追求高性能 AI 编程 Agent 的用户、在内存受限环境中运行 AI 编程助手的场景。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">B-开发者工具 › AI编程工具 › CLI Agent 框架</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#6</span>
+<span class="card-title"><a href="https://github.com/grokability/snipe-it" target="_blank">grokability/snipe-it</a></span>
+<div class="card-tagline">免费开源的 IT 资产/许可证管理系统——企业级资产追踪的 FOSS 方案</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">PHP</span>
+<span class="badge badge-star-total">⭐ 总计 14,415</span>
+<span class="badge badge-star-today">🔥 今日 +197</span>
+<span class="badge badge-fork">🍴 Fork 3,902</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">Snipe-IT 是一款 FOSS（Free and Open Source Software）IT 资产管理系统，专为 IT 运维团队设计，解决"谁拿了哪台笔记本""什么时候采购的""软件许可证还剩多少"等资产追踪难题。基于 Laravel 12 框架构建，支持 Mac OSX、Linux、Windows 全平台部署，提供官方 Docker 镜像。功能涵盖硬件资产全生命周期管理（采购、折旧、分配、归还）、软件许可证追踪、配件管理。拥有 331 位贡献者、多语言翻译。与商业 ITAM 工具相比，Snipe-IT 完全免费且可自托管，数据完全自主可控。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">IT 运维团队、企业资产管理部门、需要追踪硬件/软件资产的中型组织、需要合规审计的团队；预算有限但需要专业资产管理的非营利组织和教育机构。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">E-基础设施/DevOps › IT资产管理 › 开源资产追踪系统</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#7</span>
+<span class="card-title"><a href="https://github.com/deepfakes/faceswap" target="_blank">deepfakes/faceswap</a></span>
+<div class="card-tagline">面向所有人的深度伪造换脸工具——深度学习驱动的面部替换开源项目</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Python</span>
+<span class="badge badge-star-total">⭐ 总计 56,215</span>
+<span class="badge badge-star-today">🔥 今日 +135</span>
+<span class="badge badge-fork">🍴 Fork 13,427</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">FaceSwap 是深度学习领域最具知名度的换脸开源项目，利用深度学习技术识别和替换图片/视频中的面孔。工作流程分为 Extract（提取）→ Train（训练）→ Convert（转换）→ GUI（可视化）四个核心阶段，每个环节都有独立工具支持。支持多种模型架构（如 Phaze-A、Villain 等），可在 CPU 或 GPU 上训练。项目强调伦理使用，内置使用规范和免责声明。拥有活跃的 Discord 社区、论坛（faceswap.dev）和详尽的文档。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">深度学习研究者、计算机视觉工程师、影视特效制作者、AI 伦理研究者；需要在本地完全控制数据隐私的换脸应用场景。（注意：须遵守当地法律法规，仅用于合法合规用途。）</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">A-AI/机器学习 › 深度伪造 › 面部替换</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#8</span>
+<span class="card-title"><a href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft/VibeVoice</a></span>
+<div class="card-tagline">微软开源的前沿语音 AI——统一的语音合成（TTS）+ 语音识别（ASR）平台</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Python</span>
+<span class="badge badge-star-total">⭐ 总计 51,226</span>
+<span class="badge badge-star-today">🔥 今日 +332</span>
+<span class="badge badge-fork">🍴 Fork 5,707</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">VibeVoice 是微软开源的前沿语音 AI 项目，集成语音合成（TTS）和语音识别（ASR）两大核心能力。ASR 模块支持单次处理 60 分钟长音频，生成包含说话人、时间戳、内容的结构化转录，原生支持 50+ 种语言，已集成进 Hugging Face Transformers。最新的 VibeVoice-ASR-BitNet 通过异构量化将模型从 4.62GB 压缩到 1.58GB，在 3+ CPU 线程上实现实时推理（RTF &lt; 1），无需 GPU。项目已集成到 Azure AI Foundry Labs。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">语音交互应用开发者、需要长音频转录的媒体/法务团队、多语言语音识别场景、边缘设备上的语音 AI 部署；微软 Azure 生态用户可直接在 Foundry Labs 中体验。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">A-AI/机器学习 › 语音技术 › 前沿语音AI（TTS+ASR）</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#9</span>
+<span class="card-title"><a href="https://github.com/different-ai/openwork" target="_blank">different-ai/openwork</a></span>
+<div class="card-tagline">开源的 Claude Cowork 替代品——本地优先的 AI 工作流共享桌面应用</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">TypeScript</span>
+<span class="badge badge-star-total">⭐ 总计 17,842</span>
+<span class="badge badge-star-today">🔥 今日 +58</span>
+<span class="badge badge-fork">🍴 Fork 1,851</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">OpenWork 是一个免费开源的桌面应用，专为共享 AI 工作流而设计，是 Claude Cowork 和 Codex 的开源替代方案。核心理念：只需添加一个 OpenWork MCP 到 Codex、Claude Code、Cursor 或其他兼容 Agent，就能在不同工具、团队成员、机器之间复用同一套技能、MCP 连接和服务。提供 search_capabilities 和 execute_capability 两个核心工具。团队版 OpenWork Den 提供推理资源管理、权限控制、技能市场发布等企业级功能。基于 opencode 构建，支持 50+ LLM 和自带 Key 模式。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者和团队；需要在团队内共享 AI 工作流配置的组织；希望降低 Claude Cowork 订阅成本的团队。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">B-开发者工具 › AI协作平台 › 开源Claude Cowork替代</div>
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-header">
+<span class="card-rank">#10</span>
+<span class="card-title"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></span>
+<div class="card-tagline">为编码 Agent 打造的完整软件开发方法论——可组合技能 + 自动化研发流程</div>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Shell</span>
+<span class="badge badge-star-total">⭐ 总计 263,235</span>
+<span class="badge badge-star-today">🔥 今日 +686</span>
+<span class="badge badge-fork">🍴 Fork 23,507</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<div class="card-section-label">📝 详细介绍</div>
+<div class="card-section-text">Superpowers 是一套完整的面向编码 Agent 的软件开发方法论，构建在一组可组合技能和初始指令之上，让 AI 编码助手自动遵循专业开发流程。核心流程：Agent 先与用户对齐需求，拆解出可消化的小块规格说明；设计确认后自动生成实现计划；用户说"go"后启动子代理驱动开发（subagent-driven-development），让多个 Agent 分别处理工程任务并互相审查。强调真正的红/绿 TDD、YAGNI 和 DRY 原则。Agent 可自主工作数小时而不偏离计划。支持 Claude Code、Codex、Cursor、Gemini CLI 等 11+ 平台。与 ECC 相比，Superpowers 更侧重方法论和流程自动化。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">重度使用 AI 编程工具的开发者和团队；希望让 AI Agent 遵循专业 TDD 流程的工程团队；追求 AI 自主开发效率最大化的个人开发者；需要跨多个 AI 编程平台共享开发方法论的组织。</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷️ 知识归类</div>
+<div class="card-classify">B-开发者工具 › Agent技能框架 › 软件开发方法论</div>
+</div>
+</div>
+</article>
+
+<section class="summary-section">
+<h2 class="summary-title">📋 今日速览表</h2>
+<table class="summary-table">
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td><a href="https://github.com/opengeos/GeoLibre" target="_blank">opengeos/GeoLibre</a></td>
+<td>TypeScript</td>
+<td>+667</td>
+<td>C-前端/Web › GIS平台</td>
+</tr>
+<tr>
+<td>#2</td>
+<td><a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai/airi</a></td>
+<td>TypeScript</td>
+<td>+676</td>
+<td>A-AI/机器学习 › AI虚拟伴侣</td>
+</tr>
+<tr>
+<td>#3</td>
+<td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td>
+<td>JavaScript</td>
+<td>+860</td>
+<td>B-开发者工具 › Agent优化框架</td>
+</tr>
+<tr>
+<td>#4</td>
+<td><a href="https://github.com/huggingface/speech-to-speech" target="_blank">huggingface/speech-to-speech</a></td>
+<td>Python</td>
+<td>+837</td>
+<td>A-AI/机器学习 › 语音技术</td>
+</tr>
+<tr>
+<td>#5</td>
+<td><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang/jcode</a></td>
+<td>Rust</td>
+<td>+652</td>
+<td>B-开发者工具 › AI编程工具</td>
+</tr>
+<tr>
+<td>#6</td>
+<td><a href="https://github.com/grokability/snipe-it" target="_blank">grokability/snipe-it</a></td>
+<td>PHP</td>
+<td>+197</td>
+<td>E-基础设施/DevOps › IT资产管理</td>
+</tr>
+<tr>
+<td>#7</td>
+<td><a href="https://github.com/deepfakes/faceswap" target="_blank">deepfakes/faceswap</a></td>
+<td>Python</td>
+<td>+135</td>
+<td>A-AI/机器学习 › 深度伪造</td>
+</tr>
+<tr>
+<td>#8</td>
+<td><a href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft/VibeVoice</a></td>
+<td>Python</td>
+<td>+332</td>
+<td>A-AI/机器学习 › 语音技术</td>
+</tr>
+<tr>
+<td>#9</td>
+<td><a href="https://github.com/different-ai/openwork" target="_blank">different-ai/openwork</a></td>
+<td>TypeScript</td>
+<td>+58</td>
+<td>B-开发者工具 › AI协作平台</td>
+</tr>
+<tr>
+<td>#10</td>
+<td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td>
+<td>Shell</td>
+<td>+686</td>
+<td>B-开发者工具 › Agent技能框架</td>
+</tr>
+</tbody>
+</table>
+</section>
+</main>
+
+<footer class="footer">📰 GitHub 热点日报 · 2026-07-30 · 数据来源： GitHub Trending 依据公开资料整理 · 每日追踪开源世界脉搏 · <a href="https://github.com/trending?since=daily">来源</a></footer>
+</body>
+</html>

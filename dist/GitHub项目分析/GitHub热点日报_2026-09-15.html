@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-09-15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  .navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: #24292e; color: #fff;
+    padding: 12px 24px; display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .navbar .logo { font-size: 18px; font-weight: 700; }
+  .navbar .logo .octicon { color: #2da44e; }
+  .navbar .date { font-size: 13px; color: #8b949e; }
+  .container { max-width: 960px; margin: 0 auto; padding: 28px 20px 60px; }
+
+  .cover {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    border-radius: 16px; color: #fff; padding: 46px 40px; margin-bottom: 26px;
+    box-shadow: 0 6px 20px rgba(36,41,46,.28);
+  }
+  .cover h1 { font-size: 34px; letter-spacing: 1px; margin-bottom: 10px; }
+  .cover .subtitle { font-size: 16px; color: #cff5da; margin-bottom: 18px; }
+  .cover .meta { font-size: 14px; color: #b6d7c2; }
+
+  .overview {
+    background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 30px;
+    border: 1px solid #d0d7de; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  .overview h2 { font-size: 19px; margin-bottom: 10px; color: #24292e; border-left: 5px solid #2da44e; padding-left: 10px; }
+  .overview p { font-size: 14.5px; color: #3b434b; }
+
+  .card {
+    background: #fff; border-radius: 12px; margin-bottom: 24px;
+    border: 1px solid #d0d7de; border-left: 6px solid #2da44e;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06); overflow: hidden;
+  }
+  .card-header { padding: 18px 24px 12px; border-bottom: 1px solid #eaeef2; }
+  .rank-badge {
+    display: inline-block; background: #24292e; color: #ffd700;
+    font-weight: 700; font-size: 13px; border-radius: 6px; padding: 2px 10px; margin-bottom: 8px;
+  }
+  .card-header h3 { font-size: 20px; margin-bottom: 4px; }
+  .card-header h3 a { color: #0969da; text-decoration: none; }
+  .card-header h3 a:hover { text-decoration: underline; }
+  .tagline { font-size: 14px; color: #57606a; }
+  .card-body { padding: 16px 24px 20px; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .stat {
+    background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 8px;
+    padding: 6px 12px; font-size: 13px; color: #24292e;
+  }
+  .stat b { color: #1a7f37; }
+  .stat .lang-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+  .section-title { font-size: 14px; font-weight: 700; color: #24292e; margin: 12px 0 4px; }
+  .section-title.intro { color: #1a7f37; }
+  .card-body p { font-size: 14px; color: #3b434b; margin-bottom: 6px; }
+  .classify {
+    display: inline-block; background: #dafbe1; color: #116329;
+    border-radius: 999px; padding: 4px 14px; font-size: 13px; font-weight: 600; margin-top: 8px;
+  }
+
+  .summary { background: #fff; border-radius: 12px; border: 1px solid #d0d7de; padding: 22px 26px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .summary h2 { font-size: 19px; margin-bottom: 14px; border-left: 5px solid #2da44e; padding-left: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { background: #24292e; color: #fff; padding: 9px 10px; text-align: left; }
+  th:first-child { border-top-left-radius: 8px; } th:last-child { border-top-right-radius: 8px; }
+  td { padding: 8px 10px; border: 1px solid #d8dee4; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .star-today { color: #1a7f37; font-weight: 700; }
+  .footer { text-align: center; font-size: 12.5px; color: #57606a; margin-top: 26px; }
+
+  @media (max-width: 640px) {
+    .cover { padding: 30px 22px; } .cover h1 { font-size: 24px; }
+    .card-header, .card-body { padding-left: 16px; padding-right: 16px; }
+    table { font-size: 12px; } td, th { padding: 6px 6px; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<span class="logo">⭐ GitHub 热点日报</span>
+<span class="date">2026-09-15 · 每日追踪开源世界脉搏</span>
+</nav>
+<div class="container">
+<div class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="meta">2026年9月15日 星期二 · 数据来源：GitHub Trending（daily）· 数据以当日采集为准</div>
+</div>
+<div class="overview">
+<h2>今日风向速览</h2>
+<p>今天榜单最响的主题是<b>「把大厂能力搬回自己机器上」</b>：10 个项目里 7 个与 AI 相关，其中 colibri（消费机跑 744B MoE 模型）、VoiceStudio（本地 ElevenLabs 平替）、MiroFish（群体智能预测沙盘）三个「本地化/平民化」项目包揽了增速前三。最大黑马是榜首 colibri——纯 C 写的极简推理引擎，单日 +2,233 星；VoiceStudio 单日 +2,774 星为全场最高。另外阿里 open-code-review 时隔半月重回榜眼（#2），老牌自托管项目 vaultwarden、localsend 也稳定露脸，榜单整体呈「AI 工具 + 自托管基建」双主线。</p>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#1</span>
+<h3><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></h3>
+<div class="tagline">纯 C 编写的极简 MoE 推理引擎：把 744B~2.8T 参数的前沿大模型搬进你自己的消费级硬件</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>31,951</b></span>
+<span class="stat">🔥 今日 <b>+2,233</b></span>
+<span class="stat"><span class="lang-dot" style="background:#555555"></span>C</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>Colibrì（蜂鸟）解决的问题是：前沿 MoE 大模型动辄几百上千亿参数，通常只有数据中心跑得动。它用纯 C 写成（每个模型一个 C 文件），零引擎依赖，核心思路是把 VRAM、内存和硬盘当成一整层"推理内存层级"——稠密部分（注意力、共享专家、嵌入，约 17B 参数）常驻内存，19,456 个路由专家按需从 SSD 流式读取，靠 LRU 缓存和 OS 页缓存加速。目前已支持九个模型家族：GLM-5.2/5.3（744B）、Kimi K3（2.8T）、DeepSeek V4 Flash、Qwen3.8-Flash-Next 等，25GB 内存的消费机就能跑 744B 模型。技术亮点包括 MLA 权重吸收、原生 MTP 多 token 投机解码、int4/int8 整数点积内核，且所有优化都以 token 级精确对齐官方实现为前提。与 llama.cpp 等通用推理框架不同，它是专门针对 MoE 专家流式加载做的激进系统研究平台，还带 Web 仪表盘可视化每个专家的路由热度。</p>
+<div class="section-title">适用领域</div>
+<p>想在个人电脑/工作站上本地跑前沿开源大模型的开发者；推理优化与系统方向的研究者；不想付 API 费用、不想被云厂商绑定的"大模型平民化"拥护者。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">A-AI/机器学习 › LLM推理框架 › 端侧MoE推理</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#2</span>
+<h3><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></h3>
+<div class="tagline">阿里巴巴开源的混合架构 AI 代码评审工具：确定性流水线 + LLM Agent，精确到行级</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>25,540</b></span>
+<span class="stat">🔥 今日 <b>+1,796</b></span>
+<span class="stat"><span class="lang-dot" style="background:#00ADD8"></span>Go</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>Open Code Review 起源于阿里巴巴集团内部的官方 AI 代码评审助手，两年里服务了数万名开发者、识别出数百万个代码缺陷，经过超大规模实战检验后开源。它读取 Git diff，把变更文件交给带工具调用能力的 LLM Agent，生成行级精度的结构化评审意见；Agent 能读完整文件、搜索代码库、参考其他变更文件，做深度评审而非表面 diff 反馈。除 diff 评审外，ocr scan 可以整文件扫描，用于审计陌生代码库。内置多语言规则集（NPE、线程安全、XSS、SQL 注入），兼容 OpenAI 与 Anthropic 接口。基准测试显示，同样的底层模型下它的精确率和 F1 值显著高于 Claude Code 等通用 Agent，且 token 消耗仅约 1/9——这正是"确定性流水线 + LLM"混合架构相对纯 LLM 评审的优势。</p>
+<div class="section-title">适用领域</div>
+<p>中大型研发团队的代码质量把关、安全审计；CI/CD 流水线里接入 AI 评审；希望引入 AI 代码评审但要求高准确率、可控成本的工程团队。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">B-开发者工具 › 代码审查 › 混合架构 AI 代码评审</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#3</span>
+<h3><a href="https://github.com/multimodal-art-projection/YuE">multimodal-art-projection/YuE</a></h3>
+<div class="tagline">YuE2：统一符号与音频音乐生成的前沿开源模型，符号先规划、音频后渲染</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>8,291</b></span>
+<span class="stat">🔥 今日 <b>+578</b></span>
+<span class="stat"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>港科大等机构的开源音乐生成项目：初代 YuE 是首个开源"歌词成歌"基础模型，论文发表于 ICLR 2026。本次上榜的 YuE2 统一了符号音乐生成与音频生成：给它歌词和风格提示，它先写出旋律与和弦的"符号规划"，再把这份乐谱渲染成带人声和伴奏的完整歌曲。质量上对标 Suno v5/v6（WildSongBench 基准 best-of-8 达 6.9632 SongBench Avg，为所有已评测设定中的最高均值）。白盒生成是最大卖点——乐谱可读、可播放、可编辑，人或 Agent 都能在渲染前修改旋律与和弦；还支持零-shot 翻唱（把转写来的歌换风格重唱）和对话式 Agent 编辑，全部用同一个生成 checkpoint。附带来 MERT2 音乐理解模型与 SheetSage2 符号转谱模型，旧版代码保留在 YuE-v1 分支。</p>
+<div class="section-title">适用领域</div>
+<p>AI 音乐工具开发者（可本地部署的开源底座，替代封闭 API）；音乐 AI 研究者（论文+代码+基准齐全）；内容创作者做配乐小样、翻唱实验。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">A-AI/机器学习 › 音乐生成 › 符号规划音乐生成</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#4</span>
+<h3><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></h3>
+<div class="tagline">开源全本地 ElevenLabs 替代品：语音克隆、配音、听写、有声书，646 种语言一台电脑全搞定</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>29,048</b></span>
+<span class="stat">🔥 今日 <b>+2,774</b>（全场最高）</span>
+<span class="stat"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>VoiceStudio（前身 OmniVoice-Studio）把商业语音平台的整套工作流搬到本地：语音克隆、声音设计、视频配音、听写、转写、长文有声书制作一应俱全，无需账号、API key、订阅或用量计费。技术底子是"引擎聚合"路线——内置 16 个 TTS 引擎和 11 个 ASR 引擎可随时切换，覆盖 646 种 TTS 语言，支持 CUDA、Apple Silicon MPS/MLX、ROCm 和纯 CPU，还能挂远程 worker 分摊算力。接口上有桌面应用、本地 REST/SSE/WebSocket API，以及 OpenAI 兼容接口。与单一引擎项目不同，它的价值在于把各家引擎统一到一个可切换的界面里并全部本地化，堪称"语音界的 Ollama"。目前正处于 Electron 重写期（README 明确提示桌面端 issue 暂不受理），活跃 beta 阶段。</p>
+<div class="section-title">适用领域</div>
+<p>不想为 ElevenLabs 按字符付费的播客/有声书/视频创作者；需要本地处理敏感音频、不能上云的企业用户；多语言配音与听写需求者。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">A-AI/机器学习 › 语音技术 › 本地语音工作台</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#5</span>
+<h3><a href="https://github.com/666ghj/MiroFish">666ghj/MiroFish</a></h3>
+<div class="tagline">群体智能预测引擎：构建平行数字世界，上千智能体社会演化，"排演未来"</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>73,093</b></span>
+<span class="stat">🔥 今日 <b>+524</b></span>
+<span class="stat"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>MiroFish 是基于多智能体技术的 AI 预测引擎：从现实世界提取种子信息（突发新闻、政策草案、金融信号），自动构建高保真平行数字世界，让成千上万个拥有独立人格、长期记忆和行为逻辑的智能体在其中自由交互、社会演化；用户可以以上帝视角动态注入变量，反复推演未来走向，最终得到预测报告和一个可深度交互的数字世界。使用门槛极低——上传种子材料、用自然语言描述预测需求即可。宏观定位是"决策者的零风险预演实验室"（政策、公关先在沙盘里试），微观定位是"创意沙盒"（推演小说结局、脑洞场景），官方演示包括武汉大学舆情模拟和《红楼梦》后四十回结局推演。与传统数值预测模型不同，它靠个体交互涌现出的集体行为逼近复杂系统的真实演化路径。AGPL-3.0 协议，Docker 一键部署。</p>
+<div class="section-title">适用领域</div>
+<p>政府/企业的政策预演与舆情推演；金融从业者的市场情绪模拟；自媒体/写作者的剧情推演；多智能体系统与社会计算研究者。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">A-AI/机器学习 › Agent应用 › 群体智能模拟</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#6</span>
+<h3><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></h3>
+<div class="tagline">给 AI Agent 装上"互联网之眼"：一个 CLI 解锁 Twitter/Reddit/YouTube/B站/小红书，零 API 费</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>81,172</b></span>
+<span class="stat">🔥 今日 <b>+640</b></span>
+<span class="stat"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>Agent Reach 解决 AI Agent 的"上网抓瞎"问题——Agent 能写代码改文档，却读不了 YouTube 字幕、搜不了 Twitter、打不开小红书。这个项目把各平台接入门槛（付费 API、IP 封锁、登录验证、数据清洗）全部封装好，用户只需对 Agent 说一句话即可自动安装。支持网页阅读、YouTube 字幕提取、RSS 订阅、Twitter/X 搜索与时间线、Reddit 搜索、B站视频详情、小红书内容、GitHub 仓库读取等。每个平台采用"首选+备选"多后端路由策略，某接入方式失效会自动切换（如 B站 yt-dlp 被封后已无缝切到 bili-cli）。兼容所有能跑命令行的 Agent（Claude Code、OpenClaw、Cursor、Windsurf），完全免费开源。自 8 月初首次上榜以来已从 64.6K 涨到 81.1K 星。</p>
+<div class="section-title">适用领域</div>
+<p>使用 AI Agent 的开发者做舆情分析、竞品调研、内容创作；让 Agent 自动搜推特口碑、总结 YouTube 教程、查 Reddit 讨论的工作流。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">A-AI/机器学习 › Agent工具 › 互联网接入</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#7</span>
+<h3><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></h3>
+<div class="tagline">各大 AI 聊天机器人系统提示词的"逐字泄露"档案库，随模型发版持续更新</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>66,719</b></span>
+<span class="stat">🔥 今日 <b>+770</b></span>
+<span class="stat"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>逐字收录 ChatGPT、Claude、Gemini、Grok 等主流 AI 在用户发出第一条消息之前收到的隐藏系统指令，随各家模型发版持续更新——最新条目包括 9 月 13 日刚更新的 ChatGPT Work Codex（local）与 Gemini 3.8 Flash，此前还覆盖 Claude Fable 5.1、Claude Code headless、Codex GPT-6-Astra、Grok 4.6 等。对研究提示词工程、AI 安全和模型行为边界的人来说是第一手资料：能直接看到大厂如何约束模型的人格、拒答边界和工具调用规则。《华盛顿邮报》曾用该仓库的提示词做交互式数据新闻，CEPS 智库 AI World 也基于它搭建了可视化看板。连续第二天上榜，星数稳步爬升。</p>
+<div class="section-title">适用领域</div>
+<p>提示词工程师学习大厂 system prompt 写法；AI 安全与对齐研究者；想了解模型"出厂设定"的产品经理和普通用户。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">L-学习资源/其他 › 提示词资料 › 系统提示词档案</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#8</span>
+<h3><a href="https://github.com/rlaope/oh-my-hermes">rlaope/oh-my-hermes</a></h3>
+<div class="tagline">Hermes Agent 的"全能增强插件"：一套安装补上规划、研究、编码交接、运维和项目记忆</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>2,002</b></span>
+<span class="stat">🔥 今日 <b>+52</b></span>
+<span class="stat"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>oh-my-hermes（OMH）是给 Hermes Agent 加装的"专业运营层"：一次安装，不替换 Hermes，在其原生技能之上框定问题、挑选工作流和证据门槛，再把原生技能作为能力放进受治理的执行路径里跑。核心卖点是把一个普通的自然语言请求变成"清晰的能力 + 有用的下一步 + 诚实的过程记录"——规划、研究、创作、编码交接、运维、项目记忆全覆盖，且带显式证据边界，不夸大 Agent 实际做了什么。技术形态上提供 116 个可安装技能、9 条 ULW 工作流、7 个能力家族，支持 Homebrew/Bun/npm/curl 安装，能路由 Claude Code、Codex、pi 等多个编码执行器（谁装了用谁，不绑定默认厂商），模型池直接用你已付费的 Claude/GPT/Gemini/DeepSeek/Qwen/Kimi。与直接换用重型 Agent 框架不同，它强调"永不修改 Hermes 本体、执行器中立、本地契约"。</p>
+<div class="section-title">适用领域</div>
+<p>Hermes Agent 用户强化日常开发工作流；需要长期项目记忆和"诚实汇报"的独立开发者；管理多编码 Agent、多模型订阅想统一调度的重度用户。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">B-开发者工具 › Agent技能框架 › Agent操作系统层</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#9</span>
+<h3><a href="https://github.com/localsend/localsend">localsend/localsend</a></h3>
+<div class="tagline">开源跨平台 AirDrop 替代品：局域网内免流量安全传文件，手机电脑全平台互通</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>91,270</b></span>
+<span class="stat">🔥 今日 <b>+311</b></span>
+<span class="stat"><span class="lang-dot" style="background:#00B4AB"></span>Dart</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>LocalSend 解决跨设备传文件的老大难：iPhone 的 AirDrop 只认苹果设备，微信传文件压画质还要走服务器。它是免费开源应用，让附近设备通过本地网络安全共享文件和消息——不需要互联网连接，也不依赖任何第三方服务器。技术上基于 REST API + HTTPS 加密，每台设备的 TLS/SSL 证书即时生成；协议完全开源文档化。覆盖 Windows/macOS/Linux/Android/iOS/Fire OS 全平台，各主流包管理器（winget、Homebrew、Flathub、F-Droid 等）都能装。与 Snapdrop 类网页工具相比，它是原生应用、断网可用、无浏览器限制；与商业网盘相比，文件不经过任何服务器、速度取决于局域网带宽。Flutter + Rust 构建，今日上榜时总星已达 91.2K，是同类工具中的星数之王。</p>
+<div class="section-title">适用领域</div>
+<p>多设备用户日常互传文件（苹果↔安卓↔Windows 混合环境）；注重隐私、不想把文件上传任何服务器的用户；无外网的办公/家庭局域网。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">I-系统/底层 › 下载工具 › 局域网传输</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#10</span>
+<h3><a href="https://github.com/dani-garcia/vaultwarden">dani-garcia/vaultwarden</a></h3>
+<div class="tagline">用 Rust 写的轻量 Bitwarden 兼容服务器：一个 Docker 容器自托管全部密码管理功能</div>
+</div>
+<div class="card-body">
+<div class="stat-row">
+<span class="stat">⭐ 总计 <b>67,514</b></span>
+<span class="stat">🔥 今日 <b>+110</b></span>
+<span class="stat"><span class="lang-dot" style="background:#dea584"></span>Rust</span>
+</div>
+<div class="section-title intro">详细介绍</div>
+<p>Vaultwarden（前名 bitwarden_rs）是 Bitwarden 客户端 API 的非官方替代服务器实现，专为自托管场景而生：官方 Bitwarden 服务器基于 .NET + MSSQL，资源占用重，小机器跑不动；Vaultwarden 用 Rust 重写后极其轻量，单个 Docker 容器即可运行，配 SQLite/MySQL/PostgreSQL 均可，完美兼容全部官方客户端（手机、桌面、浏览器插件）。功能覆盖接近完整：个人保险库、Send 加密分享、附件、组织/集合/密码共享/成员角色/策略、两步验证（FIDO2 WebAuthn、YubiKey、Duo、邮件）、紧急访问、管理后台等。注意点是 web-vault 必须启用 HTTPS（Web Crypto API 的安全上下文要求），官方建议配反向代理。与官方自托管方案相比，核心优势就是"资源占用低 + 部署简单"；bug 应反馈给 Vaultwarden 而非官方 Bitwarden 渠道。</p>
+<div class="section-title">适用领域</div>
+<p>想自托管密码管理器但只有 VPS/NAS/树莓派等小机器的个人和团队；密码数据必须留在自己服务器上的隐私敏感用户；家庭/小组织共享密码。</p>
+<div class="section-title">知识归类</div>
+<span class="classify">G-安全 › 身份认证 › 自托管密码管理</span>
+</div>
+</div>
+
+<div class="summary">
+<h2>📊 今日速览表</h2>
+<table>
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></td><td>C</td><td class="star-today">+2,233</td><td>A-AI/机器学习 › LLM推理框架</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></td><td>Go</td><td class="star-today">+1,796</td><td>B-开发者工具 › 代码审查</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/multimodal-art-projection/YuE">multimodal-art-projection/YuE</a></td><td>Python</td><td class="star-today">+578</td><td>A-AI/机器学习 › 音乐生成</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>Python</td><td class="star-today">+2,774</td><td>A-AI/机器学习 › 语音技术</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/666ghj/MiroFish">666ghj/MiroFish</a></td><td>Python</td><td class="star-today">+524</td><td>A-AI/机器学习 › Agent应用</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></td><td>Python</td><td class="star-today">+640</td><td>A-AI/机器学习 › Agent工具</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></td><td>JavaScript</td><td class="star-today">+770</td><td>L-学习资源/其他 › 提示词资料</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/rlaope/oh-my-hermes">rlaope/oh-my-hermes</a></td><td>Python</td><td class="star-today">+52</td><td>B-开发者工具 › Agent技能框架</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/localsend/localsend">localsend/localsend</a></td><td>Dart</td><td class="star-today">+311</td><td>I-系统/底层 › 下载工具</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/dani-garcia/vaultwarden">dani-garcia/vaultwarden</a></td><td>Rust</td><td class="star-today">+110</td><td>G-安全 › 身份认证</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer">数据抓取自 GitHub Trending（daily）· 2026-09-15 · 依据公开资料整理 项目详细介绍基于各仓库 README 与顶部描述整理 · 分类库同步归档至「项目分类库/」</div>
+</div>
+</body>
+</html>

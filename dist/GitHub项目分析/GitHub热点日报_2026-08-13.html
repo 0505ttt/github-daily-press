@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-13</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+}
+
+/* 顶部固定导航栏 */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    background: #24292e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.navbar .logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.navbar .date {
+    margin-left: auto;
+    font-size: 14px;
+    color: #8b949e;
+}
+
+/* 封面区域 */
+.cover {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+    color: #fff;
+    text-align: center;
+    padding: 100px 24px 64px;
+    margin-top: 56px;
+}
+.cover h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+.cover .date-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.cover .subtitle {
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+/* 概述区域 */
+.overview {
+    max-width: 960px;
+    margin: -32px auto 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 10;
+}
+.overview h2 {
+    font-size: 20px;
+    color: #24292e;
+    border-left: 4px solid #2da44e;
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+.overview p {
+    font-size: 15px;
+    color: #57606a;
+}
+
+/* 项目卡片 */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border-left: 5px solid #2da44e;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px 12px;
+    flex-wrap: wrap;
+}
+.rank-badge {
+    background: #24292e;
+    color: #fff;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.card-title a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0969da;
+    text-decoration: none;
+}
+.card-title a:hover {
+    text-decoration: underline;
+}
+.card-meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 13px;
+    color: #57606a;
+    flex-wrap: wrap;
+}
+.star-today {
+    background: #dcfce7;
+    color: #166534;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+}
+.star-total {
+    color: #57606a;
+    font-weight: 600;
+}
+.lang-dot {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.card-body {
+    padding: 0 28px 24px;
+}
+.one-liner {
+    font-size: 16px;
+    font-weight: 600;
+    color: #24292e;
+    padding: 12px 0;
+    border-top: 1px solid #eaeef2;
+    margin-top: 4px;
+}
+.detail-section {
+    margin-top: 12px;
+}
+.detail-section .label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2da44e;
+    margin-bottom: 4px;
+    display: block;
+}
+.detail-section p {
+    font-size: 14px;
+    color: #424a53;
+    margin-bottom: 10px;
+}
+.tag-line {
+    background: #f6f8fa;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #57606a;
+}
+.tag-line .tag-arrow {
+    color: #2da44e;
+    font-weight: 700;
+}
+
+/* 速览表 */
+.summary-section {
+    max-width: 960px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+.summary-section h2 {
+    font-size: 24px;
+    color: #24292e;
+    margin-bottom: 20px;
+    border-left: 4px solid #2da44e;
+    padding-left: 12px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+thead {
+    background: #24292e;
+    color: #fff;
+}
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid #d0d7de;
+}
+th {
+    font-weight: 700;
+    font-size: 13px;
+}
+tbody tr:nth-child(odd) {
+    background: #f6f8fa;
+}
+tbody tr:nth-child(even) {
+    background: #fff;
+}
+tbody tr:hover {
+    background: #dcfce7;
+}
+td a {
+    color: #0969da;
+    text-decoration: none;
+}
+td a:hover { text-decoration: underline; }
+
+footer {
+    text-align: center;
+    padding: 32px;
+    color: #8b949e;
+    font-size: 13px;
+    background: #24292e;
+    color: #8b949e;
+}
+
+@media (max-width: 768px) {
+    .cover h1 { font-size: 28px; }
+    .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .card-meta { font-size: 12px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<span class="logo">📰 GitHub 热点日报</span>
+<span class="date">2026-08-13</span>
+</div>
+
+<div class="cover">
+<h1>GitHub 今日热点 Top 10</h1>
+<div class="date-badge">📅 2026-08-13</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+
+<div class="overview">
+<h2>📊 今日榜单风向</h2>
+<p>今日榜单 AI/Agent 主题占据半壁江山，从 Agent 角色库到知识图谱基础设施、Agent 编排平台、RAG 引擎，AI 工具链全面爆发。最大黑马是 <strong>cathrynlavery/diagram-design</strong>——Claude Code 的编辑级图表生成技能，今日狂揽 2,951 stars 登顶。<strong>NVIDIA-NeMo/Switchyard</strong> 以 LLM 流量代理入选，NVIDIA 持续加码 Agent 基础设施。<strong>cactus-compute/needle</strong> 仅 14MB 的端侧基础模型也值得关注。整体风向：Agent 工具链从\"单点工具\"走向\"完整平台\"。</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">1</div>
+<div class="card-title"><a href="https://github.com/cathrynlavery/diagram-design" target="_blank">cathrynlavery/diagram-design</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +2,951</span>
+<span class="star-total">⭐ 总计 10,059</span>
+<span>🍴 Fork 659</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">📝 Claude Code 的编辑级图表技能——29 种图表类型，自包含 HTML+SVG，告别 Mermaid 模板</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Diagram Design 是一个专为 Claude Code、Codex 和 Pi 设计的 Agent 技能，提供 27+ 种编辑级图表类型（架构图、流程图、时序图、状态机、ER 图、时间线、泳道图、四象限等）。每种图表都提供极简浅色、极简深色、完整编辑三种变体，输出为自包含的 HTML+SVG 文件——无 JS 依赖、无外部图片，浏览器直接打开。核心亮点：60 秒读取你的网站品牌色和字体并应用到所有图表，还能导入 draw.io 或 Mermaid 源文件重绘。作者定位明确："没有 Figma，没有通用圆角框，没有 30 分钟调色"。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>内容创作者、技术博主、使用 Claude Code / Codex 的开发者——需要高质量技术图表又不想跟 Figma 较劲的场景。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> C-前端/Web › SVG图表 › AI生成技能</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">2</div>
+<div class="card-title"><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +1,969</span>
+<span class="star-total">⭐ 总计 144,522</span>
+<span>🍴 Fork 23,414</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">🤖 完整的 AI 代理人格库——从前端大法师到 Reddit 社区忍者，每个角色都是专业专家</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>一个开源的 AI Agent 角色合集，每个 Agent 都是一个拥有独特人格、工作流程和交付物的专业角色。覆盖前端开发、社区运营、创意注入、现实校验等多个领域，旨在将 IDE 编程助手变成多角色 AI 代理团队。支持一键安装到 Claude Code、Cursor、Codex、Gemini、Osaurus 等主流工具，并提供原生桌面应用（macOS/Linux/Windows）浏览和安装。已有 14 万+ stars，Reddit 上引发大量讨论。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>使用 AI 编程工具的开发者、希望让 AI Agent 扮演不同专业角色的团队、探索多角色协作的 AI 工作流。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> B-开发者工具 › AI Agent 角色 › 人格库</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">3</div>
+<div class="card-title"><a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +1,215</span>
+<span class="star-total">⭐ 总计 43,788</span>
+<span>🍴 Fork 3,053</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">🐙 并行 AI 编码 Agent 的编排 IDE——用一个界面同时管理你的整个 Agent 舰队</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Orca 是一个 ADE（Agent Development Environment），专为并行运行多个 AI 编码 Agent 而设计。它让你可以同时运行 Claude Code、Codex、OpenCode、Cursor 等任何 CLI 编码 Agent——每个 Agent 在独立的 git worktree 中工作，结果集中在一个界面中追踪和对比。核心功能包括：并行 worktree 编排（一个 prompt 分发给 5 个 Agent 各自跑，比较结果后合并赢家）、移动端伴侣 App（手机监控和操控 Agent）、Ghostty 级 WebGL 终端分屏、Design Mode（点击 Chromium 窗口中任意 UI 元素直接送入 Agent prompt）、GitHub 和 Linear 原生集成、SSH 远程 worktree。你用自己的订阅（Claude/Codex 等），无需额外 API 费用。MIT 开源，桌面版支持 macOS/Windows/Linux。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>同时使用多个 AI 编码 Agent 的资深开发者、追求"100x 开发效率"的团队、需要并行对比多个 Agent 代码产出质量的工程团队。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> B-开发者工具 › AI编程工具 › Agent编排IDE</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">4</div>
+<div class="card-title"><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi/semantica</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +834</span>
+<span class="star-total">⭐ 总计 5,658</span>
+<span>🍴 Fork 619</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">🕸️ 图原生的 AI 上下文基础设施——开源版 Palantir，为 Agent 提供可审计的知识图谱</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Semantica 是一个开源的图原生（Graph-Native）基础设施层，解决 AI Agent 缺乏结构化上下文和决策可审计性的问题。它通过知识图谱摄入企业数据，自动提取实体、关系和语义信息，构建可查询的上下文图谱（Context Graph）。核心能力包括：为 LLM/Agent 提供可追溯的推理路径（provenance）、支持因果推理和语义搜索、内置本体（ontology）引擎让数据具有语义层。与向量数据库 RAG 的区别：用图谱关系而非向量相似度做检索，决策过程可解释、可审计。定位为"开源版 Palantir for AI Agents"，支持自托管，无需供应商锁定。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>需要可解释 AI 决策的企业团队、构建 Agent 的开发者（需要给 Agent 提供结构化知识上下文）、需要决策溯源与合规审计的金融/法律/医疗场景。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> A-AI/机器学习 › 知识图谱 › Agent上下文基础设施</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">5</div>
+<div class="card-title"><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +573</span>
+<span class="star-total">⭐ 总计 77,681</span>
+<span>🍴 Fork 14,296</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">📎 "零人公司"的开源 Agent 编排平台——像管理员工一样管理 AI Agent 团队</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Paperclip 是一个开源的 AI Agent 编排平台（Node.js 服务端 + React UI），核心理念是把 AI Agent 当作"公司员工"来管理。它让你接入自己的 Agent（支持 OpenAI Codex、Claude、OpenClaw 等），为它们分配角色和目标，并像组织架构图一样编排协作。提供组织结构（org chart）、预算管控、治理规则（governance）和目标追踪——全部在一个部署内完成。支持自托管，官方定位为"零人公司"（zero-human company）的基础设施。7.7 万 stars 的体量使其成为 Agent 编排赛道最热门项目之一。与 AutoGPT 等自主 Agent 框架的区别：Paperclip 更强调组织化管理而非单个 Agent 的自主性。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>探索"零人公司/AI 员工"模式的创业者、需要多 Agent 协作完成业务流程的团队、AI 自动化运营爱好者。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> A-AI/机器学习 › Agent编排 › 零人公司平台</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">6</div>
+<div class="card-title"><a href="https://github.com/hugohe3/ppt-master" target="_blank">hugohe3/ppt-master</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +364</span>
+<span class="star-total">⭐ 总计 45,523</span>
+<span>🍴 Fork 3,713</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">📊 AI 生成原生 PowerPoint——真正的母版、形状、动画、图表，而非填模板</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>PPT Master 是一个 AI 驱动的原生 PowerPoint 生成工具（by Hugo He），能将文档或主题转化为真正可编辑的 PPTX 文件。核心区别于其他 PPT AI 工具：它生成的不是填好的模板，而是真正的原生 PowerPoint——包含幻灯片母版、原生形状（native shapes）、数据驱动的图表和表格、转场动画、从演讲备注生成的音频旁白，支持自定义 .pptx 模板。已打包为 Agent（PPT Master），无需本地部署即可使用。支持 Kimi K3（3T 参数、百万 token 上下文）作为底层模型，能理解 PDF/DOCX/网页等源材料并结构化叙事。已有 4.5 万+ stars。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>需要快速生成专业 PPT 的职场人士、咨询/分析师、教育工作者——从文档到精美演示文稿的一站式方案。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> A-AI/机器学习 › AI编程设计 › 文档生成PPT</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">7</div>
+<div class="card-title"><a href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank">NVIDIA-NeMo/Switchyard</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +370</span>
+<span class="star-total">⭐ 总计 783</span>
+<span>🍴 Fork 81</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">🔀 NVIDIA 出品的 LLM 流量代理——让 Claude Code / Codex 无缝对接开源模型</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Switchyard 是 NVIDIA NeMo 团队推出的 Rust 代理和库，专为 LLM 流量路由设计。核心能力是协议翻译：在 OpenAI Chat、Anthropic Messages 和 OpenAI Responses 三种 API 格式之间自动转换，让 Claude Code 或 Codex 等编程 Agent 继续说它们的"母语 API"，而后端实际由 vLLM、NVIDIA NIM、Ollama 或任何 OpenAI 兼容端点提供服务。支持多后端路由（随机路由、LLM 分类器路由、信号驱动的阶段路由器、自定义算法）、Prometheus 运维指标（请求、错误、延迟、token 用量、路由开销全覆盖）。一条命令即可启动：switchyard launch claude --model switchyard。目前处于 pre-alpha 阶段。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>使用 Claude Code / Codex 但想接入开源模型的开发者、需要 LLM 流量路由和 A/B 基准测试的工程团队、NVIDIA NIM / vLLM 用户。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> B-开发者工具 › AI网关 › LLM流量代理</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">8</div>
+<div class="card-title"><a href="https://github.com/macro-inc/macro" target="_blank">macro-inc/macro</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +325</span>
+<span class="star-total">⭐ 总计 1,692</span>
+<span>🍴 Fork 218</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">💼 团队统一工作空间——邮件+聊天+文档+任务+Agent+电话+CRM，全部 @ 关联共享 AI 记忆</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Macro 是一个统一的团队工作空间，将邮件、聊天、文档、任务、Agent、电话和 CRM 整合到一个快速界面中，所有内容通过 @ 链接互联并共享团队级 AI 记忆。核心理念：一切可搜索，团队和 Agent 永远不用切换工具。基于 SolidJS + Rust 构建，由约 15 人团队在 NYC 和 Toronto 设计，已内部使用两年。功能模块（Block）包括：多账户统一邮箱（受 Superhuman 启发）、频道消息（技术讨论导向）、Linear 风格任务、基于 CRDT 的实时协作文档、2D Canvas 画板、统一团队级记忆的 Agent、可录制转录的电话、自动从邮件/频道导入的文件存储、Pull Request 关联、CRM。最大区别：所有模块共享同一后端，跨引用（文档↔任务、消息↔邮件）原生存储为双向图。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>需要"一站式操作平台"的小型创业团队、想用 AI Agent 增强协作的远程团队、不想在 Slack+Notion+Linear+HubSpot 之间反复切换的公司。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> D-后端/服务端 › 协作平台 › AI统一工作空间</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">9</div>
+<div class="card-title"><a href="https://github.com/infiniflow/ragflow" target="_blank">infiniflow/ragflow</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +182</span>
+<span class="star-total">⭐ 总计 87,515</span>
+<span>🍴 Fork 10,307</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">🔍 开源 RAG 引擎领跑者——融合检索增强生成与 Agent 能力，为 LLM 打造优质上下文层</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>RAGFlow 是一个领先的开源 RAG（检索增强生成）引擎，将前沿 RAG 技术与 Agent 能力融合，为 LLM 创建卓越的上下文层。核心功能包括：深度文档解析（支持 PDF、DOCX、PPTX 等复杂版式，精准识别表格、图片和布局）、基于模板的文本切片、混合检索（关键词+向量+知识图谱）、多路召回重排序、引用溯源。支持接入主流大模型（OpenAI、Claude、通义千问等），内置可视化 Agent 编排（工作流拖拽），可自托管。由 InfiniFlow 团队开发，已获近 8.8 万 stars，是开源 RAG 赛道的标杆项目。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>构建企业知识库问答系统的开发者、需要文档智能解析的团队、RAG 应用开发的工程师、希望自托管 RAG 服务的企业。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> A-AI/机器学习 › RAG框架 › 企业级检索增强生成</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="rank-badge">10</div>
+<div class="card-title"><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></div>
+</div>
+<div class="card-meta">
+<span class="star-today">🔥 今日 +277</span>
+<span class="star-total">⭐ 总计 36,927</span>
+<span>🍴 Fork 6,149</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">📈 金融市场 K 线数据的开源基础模型——首个金融蜡烛图 Foundation Model，已被 AAAI 2026 接收</div>
+<div class="detail-section">
+<span class="label">详细介绍</span>
+<p>Kronos 是首个专门为金融市场 K 线（蜡烛图）序列数据预训练的开源 Foundation Model，在 45+ 全球交易所的数据上训练。采用两阶段框架：先通过专用 Tokenizer 将连续的 OHLCV 多维数据量化为分层离散 Token，再用大型自回归 Transformer 在这些 Token 上预训练。提供 mini（4.1M）/ small（24.7M）/ base（102.3M）三个开源模型版本，支持预测、分类、异常检测等多种量化任务，已被 AAAI 2026 接收。提供完整的 Qlib 微调和回测管线，支持多 GPU 训练和概率性预测。来自清华大学相关团队。</p>
+</div>
+<div class="detail-section">
+<span class="label">适用领域</span>
+<p>量化交易研究员、金融数据科学家、需要时间序列预测的金融科技团队、AI for Finance 学术研究者。</p>
+</div>
+<div class="tag-line"><span class="tag-arrow">知识归类 ▸</span> A-AI/机器学习 › 金融基础模型 › 量化交易</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td><a href="https://github.com/cathrynlavery/diagram-design" target="_blank">cathrynlavery/diagram-design</a></td>
+<td>HTML/SVG</td>
+<td>+2,951</td>
+<td>C-前端/Web › SVG图表</td>
+</tr>
+<tr>
+<td>#2</td>
+<td><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></td>
+<td>Shell</td>
+<td>+1,969</td>
+<td>B-开发者工具 › AI Agent 角色</td>
+</tr>
+<tr>
+<td>#3</td>
+<td><a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a></td>
+<td>TypeScript</td>
+<td>+1,215</td>
+<td>B-开发者工具 › AI编程工具</td>
+</tr>
+<tr>
+<td>#4</td>
+<td><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi/semantica</a></td>
+<td>Python</td>
+<td>+834</td>
+<td>A-AI/机器学习 › 知识图谱</td>
+</tr>
+<tr>
+<td>#5</td>
+<td><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></td>
+<td>TypeScript</td>
+<td>+573</td>
+<td>A-AI/机器学习 › Agent编排</td>
+</tr>
+<tr>
+<td>#6</td>
+<td><a href="https://github.com/hugohe3/ppt-master" target="_blank">hugohe3/ppt-master</a></td>
+<td>Python</td>
+<td>+364</td>
+<td>A-AI/机器学习 › AI编程设计</td>
+</tr>
+<tr>
+<td>#7</td>
+<td><a href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank">NVIDIA-NeMo/Switchyard</a></td>
+<td>Rust/Python</td>
+<td>+370</td>
+<td>B-开发者工具 › AI网关</td>
+</tr>
+<tr>
+<td>#8</td>
+<td><a href="https://github.com/macro-inc/macro" target="_blank">macro-inc/macro</a></td>
+<td>Rust/TS</td>
+<td>+325</td>
+<td>D-后端/服务端 › 协作平台</td>
+</tr>
+<tr>
+<td>#9</td>
+<td><a href="https://github.com/infiniflow/ragflow" target="_blank">infiniflow/ragflow</a></td>
+<td>Python</td>
+<td>+182</td>
+<td>A-AI/机器学习 › RAG框架</td>
+</tr>
+<tr>
+<td>#10</td>
+<td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td>
+<td>Python</td>
+<td>+277</td>
+<td>A-AI/机器学习 › 金融基础模型</td>
+</tr>
+</tbody>
+</table>
+</div>
+<footer>
+<p>📰 GitHub 热点日报 · 数据来源：GitHub Trending (since=daily)</p>
+<p>生成时间：2026-08-13 · Hermes Agent 自动生成</p>
+</footer>
+</body>
+</html>

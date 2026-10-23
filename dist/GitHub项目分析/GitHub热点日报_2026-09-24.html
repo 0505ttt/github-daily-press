@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-09-24</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  .navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: #24292e; color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 24px; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-size: 17px; font-weight: 700; }
+  .navbar .brand .octicon { color: #2da44e; margin-right: 6px; }
+  .navbar .date { font-size: 14px; color: #8b949e; }
+  .hero {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+    color: #fff; text-align: center; padding: 56px 20px 48px;
+  }
+  .hero h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: 1px; }
+  .hero .sub { font-size: 16px; opacity: .92; }
+  .hero .badge {
+    display: inline-block; margin-top: 18px; padding: 5px 16px;
+    border: 1px solid rgba(255,255,255,.5); border-radius: 20px; font-size: 13px;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 28px 18px 60px; }
+  .overview {
+    background: #fff; border-radius: 10px; padding: 22px 26px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 30px;
+    border-left: 5px solid #2da44e;
+  }
+  .overview h2 { font-size: 19px; margin-bottom: 10px; color: #24292e; }
+  .overview p { font-size: 15px; color: #444; }
+  .card {
+    background: #fff; border-radius: 10px; margin-bottom: 26px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.09); overflow: hidden;
+    border-left: 6px solid #2da44e;
+  }
+  .card-header {
+    padding: 16px 24px 12px; border-bottom: 1px solid #eaeef2;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .rank {
+    background: #24292e; color: #fff; border-radius: 8px;
+    min-width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; flex-shrink: 0;
+  }
+  .rank.top3 { background: #2da44e; }
+  .card-title { flex: 1; min-width: 220px; }
+  .card-title a.repo {
+    font-size: 19px; font-weight: 700; color: #0969da; text-decoration: none;
+  }
+  .card-title a.repo:hover { text-decoration: underline; }
+  .oneliner { font-size: 14px; color: #57606a; margin-top: 3px; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 24px; border-bottom: 1px solid #eaeef2; }
+  .chip {
+    font-size: 12.5px; padding: 3px 12px; border-radius: 14px;
+    background: #f6f8fa; border: 1px solid #d0d7de; color: #444;
+  }
+  .chip.lang { border-left: 3px solid #2da44e; }
+  .chip.star { background: #dafbe1; border-color: #2da44e; color: #116329; font-weight: 600; }
+  .chip.today { background: #fff8c5; border-color: #d4a72c; color: #7d4e00; font-weight: 600; }
+  .chip.repeat { background: #ddf4ff; border-color: #0969da; color: #0969da; }
+  .card-body { padding: 18px 24px 20px; }
+  .card-body h3 { font-size: 15px; color: #24292e; margin: 14px 0 6px; }
+  .card-body h3:first-child { margin-top: 0; }
+  .card-body p { font-size: 14.5px; color: #3c434b; margin-bottom: 8px; }
+  .tag-line {
+    margin-top: 14px; padding: 9px 14px; background: #f6f8fa; border-radius: 8px;
+    font-size: 13.5px; color: #24292e;
+  }
+  .tag-line b { color: #2da44e; }
+  table.summary {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.09);
+    font-size: 14px;
+  }
+  table.summary th {
+    background: #24292e; color: #fff; padding: 11px 12px; text-align: left; font-weight: 600;
+  }
+  table.summary td { padding: 10px 12px; border: 1px solid #eaeef2; }
+  table.summary tr:nth-child(even) td { background: #f6f8fa; }
+  table.summary a { color: #0969da; text-decoration: none; font-weight: 600; }
+  table.summary a:hover { text-decoration: underline; }
+  .footer { text-align: center; color: #8b949e; font-size: 13px; padding: 26px 0 40px; }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 25px; }
+    .card-header { flex-direction: column; }
+    .rank { width: 46px; }
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand"><span class="octicon">★</span>GitHub 热点日报</div>
+<div class="date">2026-09-24</div>
+</div>
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="badge">数据来源：github.com/trending（daily）· 北京时间 2026-09-24 抓取</div>
+</div>
+<div class="container">
+<div class="overview">
+<h2>🔭 今日风向</h2>
+<p>今天是名副其实的「Agent 基建大日」：Top 10 中 8 个项目与 AI Agent 直接相关，且从编排运行时（google/ax）、执行底座（Agent Substrate）到开发 SDK（Strands、agent-native）成体系霸榜——Google 的 ax + Agent Substrate 组合连续第二日携手上榜，ax 单日 +1,542 stars 依然是全场增速第一。黑马方面，dream-num/univer 打出「The Office Harness for AI Agents」新定位后单日暴涨 +1,140；AWS 出品的 Strands Agents SDK 和 BuilderIO 的 agent-native 框架均为首次上榜，Agent 军备竞赛正从「写 Agent」转向「规模化运行 Agent」。</p>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank top3">#1</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/anthropics/financial-services">anthropics/financial-services</a>
+<div class="oneliner">Anthropic 官方开源的金融服务 Agent 参考实现：投行、股票研究、私募、财富管理四大条线一站打包</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Python</span>
+<span class="chip star">⭐ 总计 36,903</span>
+<span class="chip today">今日 +665</span>
+<span class="chip repeat">连续 2 天上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>覆盖投行（Pitch、并购模型）、股票研究（财报评审、DCF/LBO 建模）、私募（尽调清单、IC 备忘录）到基金行政（GL 对账、月末关账）四大条线的 11 个命名 Agent。每个 Agent 以「一个自包含插件」形式交付，同一套 system prompt 和技能既可作为 Claude Cowork 插件安装，也可通过 Managed Agents API 无头部署，全部基于 Markdown+JSON 无构建步骤。内置 11 个 MCP 数据连接器对接 LSEG、S&amp;P Global 等终端数据。与市面金融 AI 产品的核心区别：定位是「起草分析师工作成果，一切输出留待人工签字」，明确不执行交易、不做投资建议，合规边界写在 README 第一屏。</p>
+<h3>适用领域</h3>
+<p>投行/券商/资管的金融工程师与合规团队，用来搭建 AI 辅助的分析师工作流；也适合研究「行业垂直 Agent 如何设计」的开发者作为范本。</p>
+<div class="tag-line"><b>知识归类：</b>A-AI/机器学习 › 行业智能体 › 金融垂直Agent</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank top3">#2</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/google/ax">google/ax</a>
+<div class="oneliner">Google 开源的声明式 Agent 编排运行时——「Agent 界的 Kubernetes」，单日 +1,542 stars 全场增速第一</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Go</span>
+<span class="chip star">⭐ 总计 8,972</span>
+<span class="chip today">今日 +1,542 🚀</span>
+<span class="chip repeat">连续 2 天上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>口号是「声明一个 Agent 任务，AX 负责沙箱化、装工作区、锁网络、扩到集群规模」，官方直接类比：用过 Kubernetes 的话 ax 会很熟悉。四个原语覆盖 Agent 运维全链路：Task（沙箱内跑不可信代码，CPU/内存限额）、Workspace（预装 Git 仓库/MCP Server/技能包，Agent 冷启动即热）、Gateway（出站流量锁到显式白名单——Agent 乱花钱的主要防线）、Model（平台自身用哪个 LLM，凭据走 K8s Secret）。体验上 ax apply/watch/ssh/suspend/resume 全套 kubectl 风格命令，可随时 ssh 进沙箱「看 Agent 在干嘛」。跑在 Agent Substrate（今日第 8 名）之上，两者构成 Google 的 Agentic Infrastructure 组合拳。</p>
+<h3>适用领域</h3>
+<p>需要大规模跑自主 Agent 的平台/基础设施工程师；解决「Agent 是一种既非无服务也非批处理的新负载」的调度、隔离、断点续跑与成本失控问题。</p>
+<div class="tag-line"><b>知识归类：</b>E-基础设施/DevOps › Agent基础设施 › 声明式Agent编排</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank top3">#3</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/davila7/claude-code-templates">davila7/claude-code-templates</a>
+<div class="oneliner">Claude Code 的「配置超市」：1000+ Agent 模板、slash 命令、MCP 集成一条命令装好</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Python</span>
+<span class="chip star">⭐ 总计 31,466</span>
+<span class="chip today">今日 +393</span>
+<span class="chip repeat">累计第 4 次上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>由 Daniel Avila（davila7）开发的 CLI 工具，为 Anthropic Claude Code 提供海量预构建配置。涵盖 AI Agent 模板、自定义 slash 命令、MCP 集成、Hooks 和 Settings，总数超 1000+。用户通过一条命令即可安装所需配置，大幅降低 Claude Code 的使用门槛。项目 2025 年 7 月创建，一年出头冲上 31k+ stars，社区增长速度惊人。配套网站 aitmpl.com 提供可视化浏览和搜索。</p>
+<h3>适用领域</h3>
+<p>Claude Code 用户快速获取社区沉淀的 Agent 组件与最佳实践配置；也适合 MCP/Agent 组件作者发布和分发作品。</p>
+<div class="tag-line"><b>知识归类：</b>B-开发者工具 › AI编程工具 › Claude Code 配置生态</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#4</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/BuilderIO/agent-native">BuilderIO/agent-native</a>
+<div class="oneliner">让 Agent 和 UI 共享同一套 action、状态与上下文的 TypeScript 框架，首次上榜</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">TypeScript</span>
+<span class="chip star">⭐ 总计 6,506</span>
+<span class="chip today">今日 +135</span>
+<span class="chip repeat">🆕 首次上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>BuilderIO 开源的 TypeScript 框架，用来构建「自主工作的 Agent + 专属 UI」配对的应用。核心设计是共享 action 层：每个能力用 defineAction 定义一次，Agent 把它当工具调用，UI 从代码里调用，两条路径共享同一套验证、权限和实现——Agent 不是去「点击 UI」，而是和 UI 走同一层。还有共享数据（Agent 做的工作出现在 UI 里，UI 里的操作对 Agent 可见）和共享应用状态（Agent 能感知当前页面、选中记录等上下文）。框架内置认证与权限、技能与记忆、自动化、多 Agent 协作，生产用 PostgreSQL、本地用 PGlite，自带你自己的 LLM，所有构建产物归你。与通用 Agent 框架的区别在于它把「给知识工作一个可检查、可审批的环境」作为一等公民。</p>
+<h3>适用领域</h3>
+<p>构建带界面 AI 应用（内部工具、客服台、运营面板）的全栈/前端团队；解决「Agent 做完事用户看不见、用户改了 Agent 不知道」的双向割裂问题。</p>
+<div class="tag-line"><b>知识归类：</b>A-AI/机器学习 › Agent框架 › Agent应用框架</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#5</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/obra/superpowers">obra/superpowers</a>
+<div class="oneliner">给编码 Agent 装上一整套软件开发方法论：先对齐需求、再出计划、然后子 Agent 驱动开发</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Shell</span>
+<span class="chip star">⭐ 总计 290,651</span>
+<span class="chip today">今日 +485</span>
+<span class="chip repeat">累计第 4 次上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>一套完整的面向编码 Agent 的软件开发方法论，构建在一组可组合技能和初始指令之上，让 AI 编码助手自动遵循专业开发流程。核心流程：Agent 不急于写代码，先与用户对齐需求，拆解出可消化的小块规格说明；设计确认后，自动生成一份清晰到「连初级工程师都能照做」的实现计划；用户说 "go" 后，启动子代理驱动开发（subagent-driven-development），多个 Agent 分别处理工程任务并互相审查，可自主工作数小时不偏离计划。强调真正的红/绿 TDD、YAGNI 和 DRY 原则。支持 Claude Code、Codex、Cursor、Gemini CLI、Copilot CLI、Kimi Code、OpenCode 等 11+ 平台（安装目录里甚至有 Hermes Agent）。与技能堆砌型仓库相比，它更侧重方法论和流程自动化。</p>
+<h3>适用领域</h3>
+<p>想让 AI 编码助手从「补全工具」升级为「按工程流程干活的队友」的开发者；适合中大型任务的规范化自动开发。</p>
+<div class="tag-line"><b>知识归类：</b>B-开发者工具 › Agent技能框架 › 编码Agent方法论</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#6</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/dream-num/univer">dream-num/univer</a>
+<div class="oneliner">自述「AI Agents 的 Office Harness」：表格、文档、幻灯片、多维表格做进同一运行时，单日 +1,140</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">TypeScript</span>
+<span class="chip star">⭐ 总计 16,280</span>
+<span class="chip today">今日 +1,140 🚀</span>
+<span class="chip repeat">连续 2 天上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>开源 Office SDK，把电子表格、文档、演示文稿、多维表格（Bases）、白板（Boards）做进同一个运行时，定位「人和 Agent 在同一份文件里协作」。技术上用 Canvas 渲染 + 自研公式引擎保证大型工作簿流畅，插件化架构可拆可组，浏览器与 Node.js 共享同一套 Facade API，意味着可跑无头（headless）模式给服务端 Agent 用。周边已长出生态：Univer CLI（本地命令行工作区）、DeepSeek 等的 Office 插件版。与 Luckysheet（同团队前作）和 AG Grid 的区别：不是单一表格控件，而是整套生产力套件框架，且明确把「AI 可操作」作为一等公民设计。</p>
+<h3>适用领域</h3>
+<p>需要在自家产品里嵌表格/文档编辑能力的企业级应用团队；以及要让 Agent 读写 Office 文件的 AI 应用开发者。</p>
+<div class="tag-line"><b>知识归类：</b>C-前端/Web › 办公文档组件 › 开源Office SDK</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#7</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/Open-Dev-Society/OpenStock">Open-Dev-Society/OpenStock</a>
+<div class="oneliner">开源股票行情平台：实时价格、个性化提醒、公司洞察，做收费行情终端的免费替代品，首次上榜</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">TypeScript</span>
+<span class="chip star">⭐ 总计 18,780</span>
+<span class="chip today">今日 +379</span>
+<span class="chip repeat">🆕 首次上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Open Dev Society 社区出品的开源股票行情应用，主打实时价格追踪、个性化提醒和公司详情洞察，宣言是「为所有人构建、永远免费」。技术栈为现代全栈组合：Next.js 15（App Router）+ React 19 + Tailwind CSS v4 + shadcn/ui，认证用 Better Auth，MongoDB 持久化，行情数据来自 Finnhub，图表和市场视图用 TradingView 组件，支持 Docker 一键部署。与收费行情平台的区别在于完全开放源码（AGPL-3.0）、无订阅无 Pro 墙，项目特别鸣谢了 Adrian Hajdin（JavaScript Mastery）的行情应用教程作为起点。注意它不是券商，行情可能有延迟，也不构成投资建议。</p>
+<h3>适用领域</h3>
+<p>个人投资者和想自托管行情面板的散户/小团队；也适合前端学习者研究一个完整的现代 Next.js 全栈实战项目。</p>
+<div class="tag-line"><b>知识归类：</b>C-前端/Web › 金融行情应用 › 开源行情终端</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#8</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/agent-substrate/substrate">agent-substrate/substrate</a>
+<div class="oneliner">安全默认的 Agent 执行运行时：8 个 Pod 装 250 个 Agent，挂起/唤醒快于 500ms</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Go</span>
+<span class="chip star">⭐ 总计 3,460</span>
+<span class="chip today">今日 +560</span>
+<span class="chip repeat">连续 2 天上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>目标是以比标准容器高 10 倍的密度运行数百万沙箱：利用「Agent 大部分时间在闲着」的特性，把大量 actor（智能体实例）复用到少量常驻 worker 上，实测 8 个物理 Pod 承载约 250 个有状态 actor，超卖 30 倍以上。核心指标：suspend/resume 恢复操作低于 500ms、每秒超 500 次挂起/唤醒，唤醒时 RAM 与文件系统状态通过全量快照完整保留。基于 Kubernetes 做 Pod 级供给，内核层用 gVisor/microVM 做零信任隔离，框架无关——ADK、LangChain、Claude Code、MCP Server 都能跑。与 Firecracker 类方案的差异点在「为 Agent 而生」：不是 SDK，是规模化运行 Agent 的系统层。它是 google/ax（今日第 2 名）的执行底座。</p>
+<h3>适用领域</h3>
+<p>Agent 平台的基础设施团队：需要在有限资源里高密度跑海量 Agent、随时挂起唤醒并保证安全隔离的场景。</p>
+<div class="tag-line"><b>知识归类：</b>E-基础设施/DevOps › Agent基础设施 › Agent沙箱运行时</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#9</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/strands-agents/harness-sdk">strands-agents/harness-sdk</a>
+<div class="oneliner">AWS 开源的 Agent SDK（Python + TypeScript）：几行代码构建生产级 Agent，无需托管控制面，首次上榜</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Python</span>
+<span class="chip star">⭐ 总计 7,818</span>
+<span class="chip today">今日 +96</span>
+<span class="chip repeat">🆕 首次上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Strands Agents 是 AWS 开源（Apache 协议）的 Agent SDK，采取 model-driven 路线：你描述目标，模型驱动整个循环，几行代码建 Agent，且直接跑在你自己的进程里、没有托管控制面。它把「手写 agent loop 长大后必然要补的东西」一次性打包：生命周期控制（轮次上限、token 预算、取消）、工具与结构化输出、MCP 支持、多 Agent 协作、记忆与会话、模型可移植（Bedrock/Anthropic/OpenAI/Gemini/Ollama 一键切换）、流式、护栏、tracing 和 evals。本仓库新增 harness 层：createHarness() 一个导入得到预组装、经基准调优的完整 harness，也可用底层 SDK 从零自建。官网强调「默认可观测」：agent loop 每步决策自动留痕，hooks 可拦截任意步骤。</p>
+<h3>适用领域</h3>
+<p>要在生产环境跑 AI Agent 的后端/平台工程师（尤其 AWS 生态用户）；解决自研 agent loop 反复造轮子、缺观测缺护栏的问题。</p>
+<div class="tag-line"><b>知识归类：</b>A-AI/机器学习 › Agent框架 › Agent SDK</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="rank">#10</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>
+<div class="oneliner">「明天的用户是 Agent」：把 GIMP、Blender、LibreOffice 等桌面软件封装成 Agent 可调用的 CLI</div>
+</div>
+</div>
+<div class="meta">
+<span class="chip lang">Python</span>
+<span class="chip star">⭐ 总计 49,887</span>
+<span class="chip today">今日 +41</span>
+<span class="chip repeat">累计第 2 次上榜</span>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>口号是「今天的软件为人而生，明天的用户是 Agent」：它把 GIMP、Blender、LibreOffice、Sketch 乃至 ArcGIS Pro 等桌面软件封装成结构化 CLI，让 Claude Code、Codex、Cursor 等 Agent 框架一行命令即可调用。选 CLI 而非 MCP 的理由很硬核：文本命令天然匹配 LLM 输出格式、--help 即自描述、JSON 输出无需解析、确定可靠可预测，项目还发布过「MCP vs CLI 浏览器自动化对比，CLI 快 25 倍」的基准测试。配套 CLI-Hub 注册表（pip install cli-anything-hub）让社区构建的 CLI 即时上架，近期合并了 Joplin、Calibre、Rekordbox 等数十个 CLI，每个都带单元测试和安全加固。背靠港大数据智能实验室（HKUDS，LightRAG 出品方），学术与工程双轮驱动。</p>
+<h3>适用领域</h3>
+<p>需要让 AI Agent 直接操作专业桌面软件（图像、3D、办公、GIS）的自动化开发者；也是研究「Agent 与存量软件如何接轨」的典型样本。</p>
+<div class="tag-line"><b>知识归类：</b>A-AI/机器学习 › Agent基础设施 › 软件Agent化封装</div>
+</div>
+</div>
+
+<h2 style="font-size:20px; margin: 34px 0 14px;">📋 今日速览</h2>
+<table class="summary">
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+<tr><td>#1</td><td><a href="https://github.com/anthropics/financial-services">anthropics/financial-services</a></td><td>Python</td><td>+665</td><td>A-AI/机器学习 › 行业智能体 › 金融垂直Agent</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/google/ax">google/ax</a></td><td>Go</td><td>+1,542</td><td>E-基础设施/DevOps › Agent基础设施 › 声明式Agent编排</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/davila7/claude-code-templates">davila7/claude-code-templates</a></td><td>Python</td><td>+393</td><td>B-开发者工具 › AI编程工具 › Claude Code 配置生态</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/BuilderIO/agent-native">BuilderIO/agent-native</a></td><td>TypeScript</td><td>+135</td><td>A-AI/机器学习 › Agent框架 › Agent应用框架</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Shell</td><td>+485</td><td>B-开发者工具 › Agent技能框架 › 编码Agent方法论</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/dream-num/univer">dream-num/univer</a></td><td>TypeScript</td><td>+1,140</td><td>C-前端/Web › 办公文档组件 › 开源Office SDK</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/Open-Dev-Society/OpenStock">Open-Dev-Society/OpenStock</a></td><td>TypeScript</td><td>+379</td><td>C-前端/Web › 金融行情应用 › 开源行情终端</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/agent-substrate/substrate">agent-substrate/substrate</a></td><td>Go</td><td>+560</td><td>E-基础设施/DevOps › Agent基础设施 › Agent沙箱运行时</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/strands-agents/harness-sdk">strands-agents/harness-sdk</a></td><td>Python</td><td>+96</td><td>A-AI/机器学习 › Agent框架 › Agent SDK</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a></td><td>Python</td><td>+41</td><td>A-AI/机器学习 › Agent基础设施 › 软件Agent化封装</td></tr>
+</table>
+<div class="footer">GitHub 热点日报 · 2026-09-24 · 数据实时抓取自 GitHub Trending（daily）· 依据公开资料整理</div>
+</div>
+</body>
+</html>

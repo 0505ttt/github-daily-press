@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-02</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa; color: #24292e; line-height: 1.7;
+}
+nav.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #24292e; color: #fff; padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+nav.topbar .brand { font-size: 18px; font-weight: 700; }
+nav.topbar .date { font-size: 14px; color: #8b949e; }
+header.hero {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff; text-align: center; padding: 70px 20px 60px;
+}
+header.hero h1 { font-size: 42px; margin-bottom: 14px; letter-spacing: 1px; }
+header.hero .date { font-size: 20px; color: #d0e8d4; margin-bottom: 12px; }
+header.hero .subtitle { font-size: 16px; color: #c9d1d9; opacity: .9; }
+main { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+section.overview {
+  background: #fff; border-radius: 12px; padding: 28px 32px;
+  margin-bottom: 40px; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  border-left: 5px solid #2da44e;
+}
+section.overview h2 { font-size: 22px; margin-bottom: 14px; color: #24292e; }
+section.overview p { font-size: 15px; color: #57606a; }
+.project-card {
+  background: #fff; border-radius: 12px; margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07); overflow: hidden;
+  border-left: 6px solid #24292e; position: relative;
+}
+.project-card .card-header {
+  padding: 22px 28px 14px; border-bottom: 1px solid #eaecef;
+}
+.project-card .rank {
+  position: absolute; top: 16px; right: 22px;
+  background: #24292e; color: #fff; width: 38px; height: 38px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700;
+}
+.project-card .repo-title {
+  font-size: 20px; font-weight: 700; color: #0969da; margin-bottom: 6px;
+}
+.project-card .repo-title a { color: #0969da; text-decoration: none; }
+.project-card .repo-title a:hover { text-decoration: underline; }
+.project-card .oneliner { font-size: 15px; color: #57606a; font-style: italic; }
+.project-card .card-body { padding: 20px 28px 26px; }
+.project-card .meta-row {
+  display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 16px;
+  font-size: 14px;
+}
+.project-card .meta-item { display: flex; align-items: center; gap: 6px; }
+.project-card .badge {
+  display: inline-block; padding: 2px 10px; border-radius: 20px;
+  font-size: 13px; font-weight: 600;
+}
+.project-card .badge.lang { background: #ddf4ff; color: #0969da; }
+.project-card .badge.star-today { background: #dcfce7; color: #1a7f37; }
+.project-card .badge.star-total { background: #fff8c5; color: #7d4e00; }
+.project-card h3 {
+  font-size: 14px; text-transform: uppercase; letter-spacing: .5px;
+  color: #8250df; margin: 18px 0 8px; font-weight: 700;
+}
+.project-card p.detail { font-size: 14.5px; color: #424a53; margin-bottom: 6px; }
+.project-card .tag-line {
+  margin-top: 12px; font-size: 13px; color: #6e7681;
+}
+.project-card .tag-line .cat {
+  background: #f0f6ff; color: #0969da; padding: 3px 10px;
+  border-radius: 6px; font-weight: 600;
+}
+section.summary { margin-top: 48px; }
+section.summary h2 {
+  font-size: 24px; text-align: center; margin-bottom: 24px; color: #24292e;
+}
+table {
+  width: 100%; border-collapse: collapse; background: #fff;
+  border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  font-size: 14px;
+}
+table thead { background: #24292e; color: #fff; }
+table th, table td { padding: 12px 14px; text-align: left; border: 1px solid #d0d7de; }
+table th { font-weight: 700; }
+table tbody tr:nth-child(even) { background: #f6f8fa; }
+table tbody tr:hover { background: #ddf4ff; }
+table td a { color: #0969da; text-decoration: none; }
+table td a:hover { text-decoration: underline; }
+table td.star-cell { color: #1a7f37; font-weight: 700; }
+table td.rank-cell { text-align: center; font-weight: 700; font-size: 16px; }
+footer {
+  text-align: center; padding: 40px 20px; color: #8b949e; font-size: 13px;
+}
+footer a { color: #0969da; text-decoration: none; }
+@media (max-width: 640px) {
+  header.hero h1 { font-size: 28px; }
+  .project-card .card-header, .project-card .card-body { padding: 16px 18px; }
+  table { font-size: 12px; }
+  table th, table td { padding: 8px 6px; }
+}
+</style>
+</head>
+<body>
+<nav class="topbar">
+<span class="brand">🐙 GitHub 热点日报</span>
+<span class="date">2026-08-02</span>
+</nav>
+<header class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">📅 2026 年 8 月 2 日（周日）</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</header>
+<main>
+<section class="overview">
+<h2>🗺️ 今日榜单风向</h2>
+<p>
+    今日榜单<strong>AI 与学习资源</strong>占据半壁江山：microsoft 的两个 Beginners 系列课程同时上榜，huggingface/speech-to-speech 与 abus-aikorea/voice-pro 让<strong>语音技术</strong>双星闪耀。
+    <strong>黑马项目</strong>当属 <strong>zhaoxuya520/reverse-skill</strong>——一个面向逆向工程与渗透测试的 AI 技能路由包，今日以 <strong>+1,360 ⭐</strong> 高居新增榜首。
+    另一大亮点是 <strong>TencentCloud/TencentDB-Agent-Memory</strong>（腾讯云出品）和 <strong>bytedance/deer-flow</strong>（字节跳动出品），两家中国大厂同时在 Agent 记忆与长程 Agent 框架领域发力，预示着"Agent 基础设施"正成为新的开源热点赛道。
+  </p>
+</section>
+
+<div class="project-card">
+<div class="rank">#1</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft / AI-For-Beginners</a></div>
+<div class="oneliner">12 Weeks, 24 Lessons, AI for All! —— 微软出品的 12 周 AI 入门课程</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Jupyter Notebook</span>
+<span class="badge star-total">⭐ 总计 57,056</span>
+<span class="badge star-today">🔥 今日 +869</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">这是微软面向公众的免费 AI 通识课程，用 12 周 24 节课，从神经网络基础讲到深度学习、计算机视觉、自然语言处理，覆盖了 Transformer、GAN、强化学习等前沿主题。课程配套大量 Jupyter Notebook 实战，可直接在浏览器或本地运行，微软还提供了配套的 Azure 服务实验环境。与同类教程相比，它的最大优势是<strong>成体系的课程设计 + 大厂级资源支撑</strong>，不是碎片化的知识点堆砌。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">适合零基础到进阶的 AI 学习者、想系统了解深度学习全貌的开发者、高校教学参考。场景：个人自学路线图、课堂教学素材、面试前知识复盘。</p>
+<div class="tag-line"><span class="cat">L-学习资源/其他 › AI教程</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#2</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/paperswithbacktest/awesome-systematic-trading" target="_blank">paperswithbacktest / awesome-systematic-trading</a></div>
+<div class="oneliner">系统化交易资源大全：库、策略、书籍、博客、教程的精选清单</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Python</span>
+<span class="badge star-total">⭐ 总计 12,214</span>
+<span class="badge star-today">🔥 今日 +529</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">一个精心策划的 systematic trading（系统化交易）资源合集，收录了学术论文、开源回测框架（如 backtrader、vectorbt）、交易策略、经典书籍、优质博客与教程。它不只是简单罗列链接，而是<strong>按主题分级整理</strong>——从统计套利、高频交易到机器学习选股，每个方向都有标注和简评。这个仓库本身就是 paperswithbacktest 平台的延伸，强调"每个策略都有论文可追溯"。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">量化交易从业者、金融工程研究者、想入门量化的程序员、对冲基金策略团队。场景：策略研究文献检索、回测工具选型、建立交易知识体系。</p>
+<div class="tag-line"><span class="cat">L-学习资源/其他 › 金融资源合集</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#3</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/usekaneo/kaneo" target="_blank">usekaneo / kaneo</a></div>
+<div class="oneliner">🎯 你需要的全在这里，多余的都没有——开源项目管理工具</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">TypeScript</span>
+<span class="badge star-total">⭐ 总计 5,645</span>
+<span class="badge star-today">🔥 今日 +778</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">Kaneo 是一个强调"刚刚好"理念的开源项目管理工具，定位类似精简版 Jira/Linear。核心功能包括看板、任务追踪、团队协作，但<strong>刻意剥离了重型 SaaS 产品的臃肿</strong>——没有复杂的权限矩阵和流程引擎，专注让小团队快速上手。基于 TypeScript 全栈开发，支持自部署。它的卖点是与同类商业工具相比完全免费、数据自主可控，且界面设计现代清爽。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">小型开发团队、创业公司、独立开发者、重视数据主权的组织。场景：敏捷看板管理、项目进度追踪、替代 Jira/Trello 的自托管方案。</p>
+<div class="tag-line"><span class="cat">D-后端/服务端 › 项目管理</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#4</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520 / reverse-skill</a></div>
+<div class="oneliner">逆向工程 / 授权渗透测试 / 安全研究的 AI 技能路由包</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Markdown</span>
+<span class="badge star-total">⭐ 总计 11,822</span>
+<span class="badge star-today">🔥 今日 +1,360 🏆（今日新增第一）</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">今日真正的流量黑马。这是一个为 AI 编程客户端（Claude Code、Kiro、Cursor、Cline 等）设计的<strong>安全技能路由包</strong>，核心能力是"AI 自动路由 + 按需自举工具链 + 自动进化经验库"。它把逆向分析、Burp 渗透、Kali 工具链、OLLVM 反混淆等专业安全技能，封装成 AI 可调用的 Skill，内置 CTF-Sandbox-Orchestrator 沙箱和 burp-mcp-full 模块。与通用 AI 编程助手相比，它<strong>深度垂直于安全研究领域</strong>，让 AI 能真正理解二进制分析、漏洞挖掘的上下文。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">安全研究员、渗透测试工程师、CTF 选手、红队成员、安全方向的 AI 应用开发者。场景：授权渗透测试、恶意样本逆向、漏洞复现研究、安全自动化工作流。</p>
+<div class="tag-line"><span class="cat">G-安全 › 逆向工程 › 安全AI技能</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#5</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">microsoft / generative-ai-for-beginners</a></div>
+<div class="oneliner">21 节课，带你从零开始构建生成式 AI 应用</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Jupyter Notebook</span>
+<span class="badge star-total">⭐ 总计 114,165</span>
+<span class="badge star-today">🔥 今日 +104</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">微软出品、Star 总数超 11 万的重量级课程，已迭代到 Version 3。21 节课覆盖生成式 AI 全栈：从 LLM 原理、Prompt Engineering、RAG 与向量数据库，到 AI Agents、微调、SLM，再到 Mistral 和 Meta 系列模型实战。每节课配有<strong>视频讲解 + Python/TypeScript 双语言代码 + Azure OpenAI / OpenAI / Foundry Local 三种运行环境</strong>。还提供 50+ 种语言的自动翻译版本。这是目前体系最完整的 GenAI 实战课程之一。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">想入门生成式 AI 应用开发的全栈工程师、产品经理需要理解技术边界者、高校教学、企业内训。场景：构建 RAG 系统、聊天应用、图像生成应用，学习 LLMOps 全流程。</p>
+<div class="tag-line"><span class="cat">L-学习资源/其他 › AI教程 › 生成式AI</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#6</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/github/copilot-sdk" target="_blank">github / copilot-sdk</a></div>
+<div class="oneliner">多平台 SDK，将 GitHub Copilot Agent 集成到你的应用和服务中</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">TypeScript</span>
+<span class="badge star-total">⭐ 总计 10,268</span>
+<span class="badge star-today">🔥 今日 +145</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">GitHub 官方推出的 Copilot Agent SDK，让开发者能在自己的应用、IDE 插件、CLI 工具甚至 Web 服务里嵌入 Copilot 的代码智能体能力。SDK 封装了 Agent 的会话管理、代码补全、工具调用、上下文推理等核心接口。最大意义在于<strong>把 Copilot 从 GitHub 自有产品"解放"成可编程组件</strong>——第三方可以基于它构建定制化的 AI 编程工作流。由 stephentoub、SteveSandersonMS 等 .NET/GitHub 核心团队维护。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">IDE/编辑器开发者、DevOps 平台团队、企业内部 AI 工具构建者、SaaS 产品集成 AI 编程能力。场景：自建 AI 代码助手、将 Copilot 嵌入 CI/CD、开发垂直领域编程 Agent。</p>
+<div class="tag-line"><span class="cat">B-开发者工具 › AI编程工具 › Agent SDK</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#7</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/github/gh-stack" target="_blank">github / gh-stack</a></div>
+<div class="oneliner">GitHub 官方堆叠式 PR（Stacked PRs）管理工具</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Go</span>
+<span class="badge star-total">⭐ 总计 798</span>
+<span class="badge star-today">🔥 今日 +90</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">GitHub 官方新推出的 <code>gh</code> CLI 扩展，用于管理 Stacked PRs（堆叠式 Pull Request）。堆叠 PR 是一种把大型改动拆成<strong>一串小而可审查的 PR 链</strong>的实践——每个分支构建在前一个之上，reviewer 每次只看一层的 diff。<code>gh stack</code> 自动化了创建分支、级联 rebase、设置正确的 PR base、层间导航等繁琐操作，还内置了 <code>git rerere</code> 自动记录冲突解决方案。虽然目前还在<strong>私有预览</strong>阶段（需加入 waitlist），但已被社区高度关注。还提供 AI Agent 集成技能（<code>gh skill install</code>）。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">大型工程团队、追求细粒度 Code Review 的开源项目维护者、有 Stacked PR 习惯的高级开发者。场景：拆分巨型 feature、级联管理多层依赖改动、提升 PR 审查质量。</p>
+<div class="tag-line"><span class="cat">B-开发者工具 › 代码协作 › Stacked PR</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#8</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/huggingface/speech-to-speech" target="_blank">huggingface / speech-to-speech</a></div>
+<div class="oneliner">用开源模型构建本地语音 Agent</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Python</span>
+<span class="badge star-total">⭐ 总计 10,181</span>
+<span class="badge star-today">🔥 今日 +393</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">Hugging Face 官方的语音对话 Agent 框架，目标是<strong>让你用完全开源的模型在本地搭建端到端语音助手</strong>。它打通了 ASR（语音识别）→ LLM（推理）→ TTS（语音合成）的完整链路，支持 VAD 语音活动检测、流式打断、低延迟对话。与商业方案相比，数据不出本地、模型可自由替换、无 API 费用。由 andimarafioti、ylacombe 等 HF 语音团队核心成员维护，配合 HF 生态的 Whisper、SmolVLM、CosyVoice 等模型使用效果最佳。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">语音交互应用开发者、嵌入式/IoT 设备开发者、隐私敏感场景、AI Agent 研究者。场景：本地语音助手、客服机器人、会议实时翻译、无障碍辅助工具。</p>
+<div class="tag-line"><span class="cat">A-AI/机器学习 › 语音技术 › 语音Agent</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#9</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/abus-aikorea/voice-pro" target="_blank">abus-aikorea / voice-pro</a></div>
+<div class="oneliner">面向创作者和开发者的 Gradio WebUI：TTS、零样本语音克隆、Whisper 处理一站式</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Python</span>
+<span class="badge star-total">⭐ 总计 11,714</span>
+<span class="badge star-today">🔥 今日 +53</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">一个功能极为丰富的语音处理 WebUI，集成了多种主流 TTS 引擎（Edge-TTS、kokoro）、零样本语音克隆（E2/F5-TTS、CosyVoice）、Whisper 音频转写、YouTube 下载、Demucs 人声分离、多语言翻译等功能。基于 Gradio 构建，<strong>开箱即用</strong>——本地启动就有完整图形界面。特别适合不想写代码、但需要批量处理音频的创作者。由 abus-aikorea（韩国）开发，社区活跃度高。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">内容创作者（播客、视频配音）、有声书制作者、语言学习者、需要音频转录的媒体工作者。场景：语音克隆配音、会议录音转文字、YouTube 视频下载 + 字幕生成、人声/伴奏分离。</p>
+<div class="tag-line"><span class="cat">A-AI/机器学习 › 语音技术 › 语音处理WebUI</span></div>
+</div>
+</div>
+
+<div class="project-card">
+<div class="rank">#10</div>
+<div class="card-header">
+<div class="repo-title"><a href="https://github.com/iv-org/invidious" target="_blank">iv-org / invidious</a></div>
+<div class="oneliner">YouTube 的隐私友好型替代前端</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="badge lang">Crystal</span>
+<span class="badge star-total">⭐ 总计 21,591</span>
+<span class="badge star-today">🔥 今日 +361</span>
+</div>
+<h3>📖 详细介绍</h3>
+<p class="detail">Invidious 是一个开源的 YouTube 替代前端，核心承诺是<strong>无广告、无追踪、无 JavaScript 依赖</strong>。它不使用 YouTube 官方 API，而是自行解析内容，因此<strong>订阅、观看历史完全独立于 Google 账号</strong>。支持浅色/暗色主题、纯音频模式（移动端后台播放）、Reddit 评论集成、数据导入导出（兼容 NewPipe/FreeTube）。可自部署也可使用公共实例。使用 Crystal 语言编写，性能优秀。</p>
+<h3>🎯 适用领域</h3>
+<p class="detail">重视隐私的用户、广告厌恶者、开发者/运维想自建媒体前端、开源社区运维者。场景：无广告观看 YouTube、隐私保护浏览、数据自主的订阅管理。</p>
+<div class="tag-line"><span class="cat">C-前端/Web › 隐私前端 › YouTube替代</span></div>
+</div>
+</div>
+
+<section class="summary">
+<h2>📊 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="rank-cell">1</td><td><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft/AI-For-Beginners</a></td><td>Jupyter Notebook</td><td class="star-cell">+869</td><td>L-学习资源 › AI教程</td></tr>
+<tr><td class="rank-cell">2</td><td><a href="https://github.com/paperswithbacktest/awesome-systematic-trading" target="_blank">paperswithbacktest/awesome-systematic-trading</a></td><td>Python</td><td class="star-cell">+529</td><td>L-学习资源 › 金融资源合集</td></tr>
+<tr><td class="rank-cell">3</td><td><a href="https://github.com/usekaneo/kaneo" target="_blank">usekaneo/kaneo</a></td><td>TypeScript</td><td class="star-cell">+778</td><td>D-后端/服务端 › 项目管理</td></tr>
+<tr><td class="rank-cell">4</td><td><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520/reverse-skill</a></td><td>Markdown</td><td class="star-cell">+1,360 🏆</td><td>G-安全 › 逆向工程</td></tr>
+<tr><td class="rank-cell">5</td><td><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">microsoft/generative-ai-for-beginners</a></td><td>Jupyter Notebook</td><td class="star-cell">+104</td><td>L-学习资源 › AI教程</td></tr>
+<tr><td class="rank-cell">6</td><td><a href="https://github.com/github/copilot-sdk" target="_blank">github/copilot-sdk</a></td><td>TypeScript</td><td class="star-cell">+145</td><td>B-开发者工具 › AI编程工具</td></tr>
+<tr><td class="rank-cell">7</td><td><a href="https://github.com/github/gh-stack" target="_blank">github/gh-stack</a></td><td>Go</td><td class="star-cell">+90</td><td>B-开发者工具 › 代码协作</td></tr>
+<tr><td class="rank-cell">8</td><td><a href="https://github.com/huggingface/speech-to-speech" target="_blank">huggingface/speech-to-speech</a></td><td>Python</td><td class="star-cell">+393</td><td>A-AI/机器学习 › 语音技术</td></tr>
+<tr><td class="rank-cell">9</td><td><a href="https://github.com/abus-aikorea/voice-pro" target="_blank">abus-aikorea/voice-pro</a></td><td>Python</td><td class="star-cell">+53</td><td>A-AI/机器学习 › 语音技术</td></tr>
+<tr><td class="rank-cell">10</td><td><a href="https://github.com/iv-org/invidious" target="_blank">iv-org/invidious</a></td><td>Crystal</td><td class="star-cell">+361</td><td>C-前端/Web › 隐私前端</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="overview" style="margin-top: 40px; border-left-color: #8250df;">
+<h2>🔭 榜单外亮点（排名 11-15）</h2>
+<p><strong>ansible/ansible</strong>（+26）DevOps 经典持续上榜；<strong>microsoft/TRELLIS.2</strong>（+121）微软 3D 生成新框架；<strong>TencentCloud/TencentDB-Agent-Memory</strong>（+342）腾讯云 Agent 记忆中枢；<strong>NomaDamas/k-skill</strong>（+103）韩国本地化 Agent 技能合集；<strong>bytedance/deer-flow</strong>（78,690⭐）字节跳动长程 SuperAgent 框架。这 5 个项目也已归档至分类库。</p>
+</section>
+</main>
+<footer>📡 数据来源： GitHub Trending (daily) · 抓取时间：2026-08-02 依据公开资料整理 · 每日追踪开源世界脉搏 · <a href="https://github.com/trending?since=daily">来源</a></footer>
+</body>
+</html>

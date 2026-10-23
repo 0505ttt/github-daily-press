@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-29</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  /* 固定导航栏 */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: #24292e; color: #fff;
+    padding: 10px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    font-size: 14px;
+  }
+  .navbar-brand { font-weight: 700; font-size: 16px; }
+  .navbar-brand span { color: #2da44e; }
+  .navbar-date { color: #8b949e; }
+
+  /* 封面 */
+  .hero {
+    margin-top: 50px;
+    padding: 60px 24px 48px;
+    text-align: center;
+    background: linear-gradient(135deg, #24292e 0%, #1a1e22 40%, #0d1117 70%, #1a3a2a 100%);
+    color: #fff;
+  }
+  .hero h1 { font-size: 2.4em; margin-bottom: 8px; letter-spacing: 1px; }
+  .hero .date { font-size: 1.2em; color: #2da44e; font-weight: 600; }
+  .hero .subtitle { font-size: 1em; color: #8b949e; margin-top: 12px; }
+
+  /* 开头风向 */
+  .intro {
+    max-width: 900px; margin: 32px auto; padding: 0 24px;
+    background: #fff; border-radius: 12px; padding: 24px 28px;
+    border-left: 5px solid #2da44e;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-size: 15px;
+  }
+  .intro h2 { font-size: 1.2em; margin-bottom: 10px; color: #24292e; }
+  .intro p { color: #57606a; }
+
+  /* 卡片容器 */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+
+  /* 项目卡片 */
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border-left: 6px solid #2da44e;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+  .card-header {
+    padding: 18px 24px 12px;
+    border-bottom: 1px solid #e1e4e8;
+  }
+  .card-rank {
+    display: inline-block;
+    background: #24292e; color: #fff;
+    font-size: 0.8em; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+    margin-right: 8px;
+  }
+  .card-repo {
+    font-size: 1.25em; font-weight: 700;
+    color: #0969da; text-decoration: none;
+  }
+  .card-repo:hover { text-decoration: underline; }
+  .card-tagline {
+    font-size: 0.9em; color: #57606a; margin-top: 6px;
+    font-style: italic;
+  }
+  .card-body { padding: 16px 24px 20px; }
+  .card-meta {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px;
+    font-size: 0.88em;
+  }
+  .meta-item {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #f6f8fa; padding: 4px 10px; border-radius: 6px;
+    color: #57606a;
+  }
+  .meta-star { color: #d68910; font-weight: 600; }
+  .meta-lang { color: #0969da; }
+  .meta-lang .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 3px; }
+
+  .card-detail-title {
+    font-weight: 700; color: #24292e; font-size: 0.9em;
+    margin-bottom: 4px; margin-top: 10px;
+  }
+  .card-detail-text {
+    font-size: 0.92em; color: #424a53; margin-bottom: 10px;
+    line-height: 1.8;
+  }
+  .card-field-row {
+    display: flex; gap: 8px; align-items: baseline; margin-bottom: 6px;
+    font-size: 0.88em;
+  }
+  .field-label {
+    flex-shrink: 0; min-width: 80px;
+    color: #57606a; font-weight: 600;
+  }
+  .field-value { color: #24292e; }
+  .card-classify {
+    margin-top: 10px;
+    background: #ddf4ff; border: 1px solid #b6e3ff;
+    border-radius: 6px; padding: 6px 12px;
+    font-size: 0.85em; color: #0969da;
+    display: inline-block;
+  }
+
+  /* 速览表 */
+  .summary-section {
+    max-width: 900px; margin: 0 auto 60px; padding: 0 24px;
+  }
+  .summary-section h2 {
+    font-size: 1.4em; color: #24292e; margin-bottom: 16px;
+    text-align: center;
+  }
+  table {
+    width: 100%; border-collapse: collapse;
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-size: 0.9em;
+  }
+  thead { background: #24292e; color: #fff; }
+  th { padding: 12px 14px; text-align: left; font-weight: 600; }
+  td { padding: 10px 14px; border-top: 1px solid #e1e4e8; }
+  tbody tr:nth-child(even) { background: #f6f8fa; }
+  tbody tr:hover { background: #ddf4ff; }
+  .rank-cell { font-weight: 700; color: #2da44e; text-align: center; }
+  .star-cell { color: #d68910; font-weight: 600; }
+
+  /* 页脚 */
+  .footer {
+    text-align: center; padding: 24px; color: #8b949e; font-size: 0.85em;
+    border-top: 1px solid #e1e4e8; margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="navbar-brand">📰 GitHub <span>热点日报</span></div>
+<div class="navbar-date">2026-07-29（周三）</div>
+</div>
+
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 29 日（周三）</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+
+<div class="intro">
+<h2>📊 今日榜单风向</h2>
+<p>今日 GitHub Trending 最显著的特征是「<strong>AI Agent 生态全面爆发</strong>」——榜单 12 个项目中超过半数与 AI Agent、AI 编程工具、语音 Agent 直接相关。其中 <strong>affaan-m/ECC</strong>（234K+ star）以跨工具 Agent 技能框架继续领跑，<strong>bradautomates/claude-video</strong>（+989 星）是今日增长最快的黑马，赋予 Claude 看视频的能力。<strong>开发者工具</strong>仍是大类（5 个），AI 机器学习紧随其后（4 个）。微软的 Agent 治理工具包上榜，标志着大厂开始重视 AI Agent 安全合规赛道。</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#1</span>
+<a class="card-repo" href="https://github.com/pascalorg/editor">pascalorg/editor</a>
+<div class="card-tagline">基于 React Three Fiber 和 WebGPU 构建的浏览器端 3D 建筑编辑器</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 18,620（+415 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3178c6;"></span>TypeScript</span>
+<span class="meta-item">🍴 2,523 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">Pascal Editor 是一个完全在浏览器中运行的 3D 建筑设计工具，使用 React Three Fiber + WebGPU 实现 GPU 级渲染速度，即使五年前的笔记本也能流畅运行。采用 Turborepo monorepo 架构，分离为 core（场景状态）、viewer（3D 渲染运行时）、editor（编辑工具）、nodes（内置节点定义）四个包，职责清晰。支持楼层平面图绘制、门窗放置、区域标注等完整建筑设计流程，并通过 IndexedDB 持久化场景数据、Zundo 实现撤销/重做。与专业 3D 建模软件相比，它零安装、即开即用，数据完全本地化。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">建筑师、室内设计师、3D 建模爱好者；需要在浏览器中快速创建和分享建筑方案的用户；对 WebGPU/React Three Fiber 感兴趣的前端开发者。</span>
+</div>
+<div class="card-classify">C-前端/Web › 3D建筑编辑器 › WebGPU渲染</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#2</span>
+<a class="card-repo" href="https://github.com/jenkinsci/jenkins">jenkinsci/jenkins</a>
+<div class="card-tagline">Jenkins 自动化服务器</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 26,056（+180 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#b07219;"></span>Java</span>
+<span class="meta-item">🍴 9,686 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">Jenkins 是 CI/CD 领域最经典的开源自动化服务器，历史悠久、生态庞大。通过丰富的插件体系支持几乎所有构建、部署、自动化流水线场景。今日上榜反映其在 DevOps 基础设施中的常青地位——尽管新一代 CI 工具（GitHub Actions 等）兴起，Jenkins 凭借自托管、极强的可扩展性仍被大量企业使用。Java 实现，可独立部署。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">企业 DevOps 团队、需要自托管 CI/CD 流水线的组织、传统软件交付流程。</span>
+</div>
+<div class="card-classify">E-基础设施/DevOps › CI/CD › 自动化服务器</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#3</span>
+<a class="card-repo" href="https://github.com/moeru-ai/airi">moeru-ai/airi</a>
+<div class="card-tagline">自托管的 AI 虚拟伴侣——重现 Neuro-sama 的开源实现</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 44,716（+796 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3178c6;"></span>TypeScript</span>
+<span class="meta-item">🍴 4,446 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">Project AIRI 旨在重现虚拟主播 Neuro-sama 的能力，打造一个可以自托管的 AI 虚拟伴侣。它支持实时语音对话、VRM/Live2D 模型驱动、以及自主玩 Minecraft、Factorio、Kerbal Space Program 等游戏。技术栈大量使用 Web 技术（WebGPU、WebAudio、WebAssembly、WebSocket），桌面版可利用 NVIDIA CUDA 和 Apple Metal 进行原生加速。支持 30+ 种 LLM 提供商（OpenAI、Claude、DeepSeek、Qwen 等），跨 Web/macOS/Windows 平台运行。项目还衍生出 unspeech、xsai、MCP Launcher 等多个子项目。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">虚拟主播爱好者、AI 伴侣开发者、VTuber 技术研究者；需要自托管 AI 角色交互方案的个人；对 WebGPU/浏览器端 AI 推理感兴趣的前端开发者。</span>
+</div>
+<div class="card-classify">A-AI/机器学习 › AI虚拟伴侣 › 开源VTuber</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#4</span>
+<a class="card-repo" href="https://github.com/andrewyng/aisuite">andrewyng/aisuite</a>
+<div class="card-tagline">多家生成式 AI 供应商的统一接口</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 15,662（+92 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3572A5;"></span>Python</span>
+<span class="meta-item">🍴 1,655 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">aisuite 由吴恩达（Andrew Ng）发起，提供一套简单统一的接口来调用多家生成式 AI 供应商（OpenAI、Anthropic、Google 等）。核心价值是消除不同 LLM API 之间的差异，让开发者用一致的代码切换/对比模型，降低供应商锁定风险。定位轻量、易上手，适合做原型、多模型评测和教学演示。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">需要同时对接多家大模型的开发者、做模型对比评测的研究者、AI 教学场景。</span>
+</div>
+<div class="card-classify">A-AI/机器学习 › 模型调用层 › 多供应商统一接口</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#5</span>
+<a class="card-repo" href="https://github.com/affaan-m/ECC">affaan-m/ECC</a>
+<div class="card-tagline">Agent Harness 性能优化系统——261 个工作流技能 + 64 个专用子代理</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 234,742（+692 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#f1e05a;"></span>JavaScript</span>
+<span class="meta-item">🍴 35,770 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">ECC（Everything Claude Code）是一个开源的 Agent Harness 性能优化系统，为 Claude Code、Codex、Cursor、OpenCode、Gemini、Zed、GitHub Copilot、Antigravity 等 AI 编程工具提供统一的技能、记忆、安全和研发流程框架。包含 261 个工作流技能、64 个专用子代理、覆盖 12+ 语言生态系统，横跨编码、研究、安全、媒体等场景。2.0 版本定位为「跨 Harness 操作系统」，可在不同 AI 编程助手间共享配置。该项目是 GitHub 上星标最高的 Agent 工具仓库之一。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者；希望系统化管理和优化 Agent 工作流的团队；追求 AI 辅助编程效率最大化的个人和团队。</span>
+</div>
+<div class="card-classify">B-开发者工具 › Agent优化框架 › 跨工具技能系统</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#6</span>
+<a class="card-repo" href="https://github.com/huggingface/speech-to-speech">huggingface/speech-to-speech</a>
+<div class="card-tagline">Hugging Face 出品——用开源模型在本地构建语音对话 Agent</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 7,178（+177 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3572A5;"></span>Python</span>
+<span class="meta-item">🍴 949 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">huggingface/speech-to-speech 是 Hugging Face 官方推出的本地语音 Agent 框架，支持用完全开源的模型构建端到端语音对话系统。集成语音识别（STT）、LLM 对话推理、语音合成（TTS）三大模块，用户可以自由组合不同开源模型（如 Whisper、VAD、XTTS 等）构建低延迟的实时语音 Agent。支持本地服务器和云端提供商两种后端模式，无需依赖商业 API。需要 Python 3.10+。与商业语音方案相比，它强调完全本地化、数据隐私和模型可替换性。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">语音助手开发者、需要构建本地化语音交互系统的团队、对开源语音模型感兴趣的研究者、隐私敏感场景下的语音应用开发。</span>
+</div>
+<div class="card-classify">A-AI/机器学习 › 语音技术 › 语音对话Agent</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#7</span>
+<a class="card-repo" href="https://github.com/virgiliojr94/book-to-skill">virgiliojr94/book-to-skill</a>
+<div class="card-tagline">把任何技术书籍 PDF 变成 Claude Code 可用的技能——边工作边参考</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 11,250（+366 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3572A5;"></span>Python</span>
+<span class="meta-item">🍴 1,329 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">book-to-skill 是一个 Claude Code 技能，能将任何技术书籍或文档（PDF、EPUB、DOCX、HTML、Markdown）转换为结构化的 AI 参考技能。转换后的技能可在 Claude Code / GitHub Copilot CLI 会话中直接调用，让 AI 在编程时随时参考书籍内容——相当于给 AI 编程助手装了一个「专业书架」。安装只需一行命令，提取过程完全本地化。与直接粘贴文本相比，它能智能结构化书籍内容，按章节组织，支持精确检索。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">使用 Claude Code 或 Copilot CLI 的开发者、需要将大量技术文档系统化的团队、希望让 AI 编程助手掌握特定技术栈知识库的用户。</span>
+</div>
+<div class="card-classify">B-开发者工具 › AI编程工具 › Claude Code技能</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#8</span>
+<a class="card-repo" href="https://github.com/opengeos/GeoLibre">opengeos/GeoLibre</a>
+<div class="card-tagline">轻量级、云原生的开源 GIS 平台——浏览器、桌面、移动端、Jupyter 全平台运行</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 3,347（+743 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3178c6;"></span>TypeScript</span>
+<span class="meta-item">🍴 389 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">GeoLibre 是一款免费开源的轻量级 GIS（地理信息系统）平台，致力于在 Web 浏览器、桌面应用、移动端和 Jupyter Notebook 中统一运行，同时保持数据本地化与隐私。技术栈采用 Tauri v2 + React + TypeScript + MapLibre GL JS + DuckDB-WASM Spatial + deck.gl 构建，同一套代码可编译为原生桌面应用、Android 应用，并自适应响应式移动端界面。支持 3D Tiles 渲染、行星底图（地球、月球、火星、水星、金星、冥王星等）、SQL 工作空间、700+ 免费 GIS 工具、时间滑块动画、Zarr 数据存储等高级功能。与 QGIS 等桌面 GIS 相比，GeoLibre 强调零安装、跨平台和云端协作。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">地理数据分析师、GIS 研究人员、城市规划者、环境科学家；需要在浏览器中快速可视化和分析地理空间数据的团队；Jupyter Notebook 用户的地理数据工作流。</span>
+</div>
+<div class="card-classify">C-前端/Web › GIS平台 › 云原生地理可视化</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#9</span>
+<a class="card-repo" href="https://github.com/paperswithbacktest/awesome-systematic-trading">paperswithbacktest/awesome-systematic-trading</a>
+<div class="card-tagline">系统化交易（量化交易）资源合集——论文、策略、软件、书籍一站式整理</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 9,523（+402 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3572A5;"></span>Python</span>
+<span class="meta-item">🍴 1,289 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">由 paperswithbacktest 团队维护的系统化交易精选资源列表，汇集了量化交易领域的论文、开源软件、策略、书籍、博客和教程。背靠 paperswithbacktest.com 平台（提供 5000+ 学术策略，每个都附带可运行的 Python 代码和干净数据），这个 awesome 列表是其社区资源的入口。涵盖回测框架、数据源、机器学习策略、高频交易等子领域，适合从入门到进阶的量化交易研究者。与 awesome-quant 等同类列表相比，它更注重与实际可回测策略的关联。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">量化交易研究者、金融工程师、对算法交易感兴趣的开发者、金融数据科学从业者。</span>
+</div>
+<div class="card-classify">L-学习资源/其他 › 金融资源合集 › 量化交易</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#10</span>
+<a class="card-repo" href="https://github.com/microsoft/agent-governance-toolkit">microsoft/agent-governance-toolkit</a>
+<div class="card-tagline">微软出品——AI Agent 治理工具包，覆盖 OWASP Agentic Top 10 全部风险</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item meta-star">⭐ 5,163（+17 今日）</span>
+<span class="meta-item meta-lang"><span class="dot" style="background:#3572A5;"></span>Python</span>
+<span class="meta-item">🍴 833 Forks</span>
+</div>
+<div class="card-detail-title">📖 详细介绍</div>
+<div class="card-detail-text">微软开源的 AI Agent 治理框架（AGT），为自主 AI Agent 提供策略执行、零信任身份认证、执行沙箱和可靠性工程。它是业界首个覆盖 OWASP Agentic AI Top 10 全部 10 项风险的开源工具包，通过确定性的亚毫秒级策略引擎在每次 Agent 行动前进行拦截和验证。支持 .NET 集成，可在 MCP 工具调用层面进行治理。MIT 许可证，定位为企业级 AI Agent 安全基础设施，被社区称为「AI Agent 的操作系统级安全层」。</div>
+<div class="card-field-row">
+<span class="field-label">🎯 适用领域</span>
+<span class="field-value">部署自主 AI Agent 的企业安全团队、需要合规治理 AI Agent 行为的架构师、关注 AI 安全的研究者和工程师。</span>
+</div>
+<div class="card-classify">G-安全 › AI Agent安全 › 治理工具</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th style="width: 50px;">排名</th>
+<th>项目</th>
+<th style="width: 90px;">主语言</th>
+<th style="width: 100px;">今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank-cell">#1</td>
+<td><a href="https://github.com/pascalorg/editor" style="color:#0969da;text-decoration:none;">pascalorg/editor</a></td>
+<td>TypeScript</td>
+<td class="star-cell">+415</td>
+<td>C-前端/Web › 3D建筑编辑器</td>
+</tr>
+<tr>
+<td class="rank-cell">#2</td>
+<td><a href="https://github.com/jenkinsci/jenkins" style="color:#0969da;text-decoration:none;">jenkinsci/jenkins</a></td>
+<td>Java</td>
+<td class="star-cell">+180</td>
+<td>E-基础设施/DevOps › CI/CD</td>
+</tr>
+<tr>
+<td class="rank-cell">#3</td>
+<td><a href="https://github.com/moeru-ai/airi" style="color:#0969da;text-decoration:none;">moeru-ai/airi</a></td>
+<td>TypeScript</td>
+<td class="star-cell">+796</td>
+<td>A-AI/机器学习 › AI虚拟伴侣</td>
+</tr>
+<tr>
+<td class="rank-cell">#4</td>
+<td><a href="https://github.com/andrewyng/aisuite" style="color:#0969da;text-decoration:none;">andrewyng/aisuite</a></td>
+<td>Python</td>
+<td class="star-cell">+92</td>
+<td>A-AI/机器学习 › 模型调用层</td>
+</tr>
+<tr>
+<td class="rank-cell">#5</td>
+<td><a href="https://github.com/affaan-m/ECC" style="color:#0969da;text-decoration:none;">affaan-m/ECC</a></td>
+<td>JavaScript</td>
+<td class="star-cell">+692</td>
+<td>B-开发者工具 › Agent优化框架</td>
+</tr>
+<tr>
+<td class="rank-cell">#6</td>
+<td><a href="https://github.com/huggingface/speech-to-speech" style="color:#0969da;text-decoration:none;">huggingface/speech-to-speech</a></td>
+<td>Python</td>
+<td class="star-cell">+177</td>
+<td>A-AI/机器学习 › 语音技术</td>
+</tr>
+<tr>
+<td class="rank-cell">#7</td>
+<td><a href="https://github.com/virgiliojr94/book-to-skill" style="color:#0969da;text-decoration:none;">virgiliojr94/book-to-skill</a></td>
+<td>Python</td>
+<td class="star-cell">+366</td>
+<td>B-开发者工具 › AI编程工具</td>
+</tr>
+<tr>
+<td class="rank-cell">#8</td>
+<td><a href="https://github.com/opengeos/GeoLibre" style="color:#0969da;text-decoration:none;">opengeos/GeoLibre</a></td>
+<td>TypeScript</td>
+<td class="star-cell">+743</td>
+<td>C-前端/Web › GIS平台</td>
+</tr>
+<tr>
+<td class="rank-cell">#9</td>
+<td><a href="https://github.com/paperswithbacktest/awesome-systematic-trading" style="color:#0969da;text-decoration:none;">paperswithbacktest/awesome-systematic-trading</a></td>
+<td>Python</td>
+<td class="star-cell">+402</td>
+<td>L-学习资源/其他 › 金融资源合集</td>
+</tr>
+<tr>
+<td class="rank-cell">#10</td>
+<td><a href="https://github.com/microsoft/agent-governance-toolkit" style="color:#0969da;text-decoration:none;">microsoft/agent-governance-toolkit</a></td>
+<td>Python</td>
+<td class="star-cell">+17</td>
+<td>G-安全 › AI Agent安全</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer">数据来源：GitHub Trending（since=daily）· 抓取时间：2026-07-29 依据公开资料整理 · 每日追踪开源世界脉搏</div>
+</body>
+</html>

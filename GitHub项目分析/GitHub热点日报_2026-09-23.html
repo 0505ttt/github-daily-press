@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-09-23</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background:#f6f8fa; color:#24292e; line-height:1.75; font-size:15px;
+  }
+  .navbar {
+    position:sticky; top:0; z-index:100; background:#24292e; color:#fff;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 28px; box-shadow:0 2px 12px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-weight:700; font-size:16px; letter-spacing:1px; }
+  .navbar .brand .mark { color:#2da44e; margin-right:8px; }
+  .navbar .date { color:#8b949e; font-size:13px; }
+  .container { max-width:960px; margin:0 auto; padding:28px 20px 60px; }
+  .hero {
+    background:linear-gradient(135deg,#24292e 0%,#323d47 55%,#1a4d2a 100%);
+    border-radius:16px; color:#fff; padding:44px 36px; margin-bottom:14px;
+    box-shadow:0 8px 28px rgba(36,41,46,.35);
+  }
+  .hero h1 { font-size:30px; margin-bottom:10px; letter-spacing:1px; }
+  .hero h1 .accent { color:#3fb950; }
+  .hero .sub { color:#adbac7; font-size:15px; margin-bottom:18px; }
+  .hero .meta-line { display:flex; gap:14px; flex-wrap:wrap; }
+  .hero .chip { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:3px 14px; font-size:13px; }
+  .brief {
+    background:#fff; border-radius:12px; padding:22px 26px; margin:18px 0 30px;
+    border:1px solid #d0d7de; border-left:5px solid #2da44e;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+  }
+  .brief h2 { font-size:17px; margin-bottom:8px; color:#24292e; }
+  .brief p { color:#4b5563; }
+  .note { font-size:12.5px; color:#6a737d; background:#fff8c5; border:1px solid #d4a72c66; border-radius:8px; padding:10px 14px; margin-bottom:30px; }
+  .card {
+    background:#fff; border-radius:14px; margin-bottom:26px; overflow:hidden;
+    border:1px solid #d0d7de; border-left:6px solid #2da44e;
+    box-shadow:0 3px 14px rgba(31,35,40,.07); display:flex;
+  }
+  .rank {
+    min-width:64px; display:flex; align-items:flex-start; justify-content:center;
+    color:#fff; font-weight:800; font-size:20px; padding-top:22px;
+  }
+  .card-body { padding:22px 26px; flex:1; }
+  .card-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:6px; }
+  .repo-name { font-size:19px; font-weight:700; color:#0969da; text-decoration:none; }
+  .repo-name:hover { text-decoration:underline; }
+  .lang { font-size:13px; color:#57606a; background:#f6f8fa; border:1px solid #d0d7de; padding:2px 10px; border-radius:999px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:1px; background:#3178c6; }
+  .tagline { font-size:15px; color:#24292e; font-weight:600; margin:6px 0 12px; }
+  .meta { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+  .pill { font-size:12.5px; border-radius:999px; padding:3px 12px; font-weight:600; }
+  .pill-star { background:#fff8c5; color:#9a6700; border:1px solid #d4a72c55; }
+  .pill-today { background:#dafbe1; color:#116329; border:1px solid #2da44e55; }
+  .pill-fork { background:#f1f8ff; color:#0969da; border:1px solid #0969da44; }
+  .section { margin:12px 0; }
+  .sec-title {
+    display:inline-block; font-size:12.5px; font-weight:700; color:#57606a;
+    border-bottom:2px solid #2da44e; margin-bottom:4px; padding-bottom:1px; letter-spacing:.5px;
+  }
+  .section p { color:#3b4350; font-size:14.5px; }
+  .crumbs { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .crumb { color:#fff; font-size:12.5px; font-weight:600; border-radius:6px; padding:2px 10px; }
+  .crumb-sub { color:#57606a; font-size:13px; }
+  h2.table-title {
+    font-size:21px; margin:38px 0 14px; padding-left:12px;
+    border-left:5px solid #2da44e;
+  }
+  table { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+  th { background:#24292e; color:#fff; padding:10px 12px; font-size:13.5px; text-align:left; letter-spacing:.5px; }
+  td { padding:9px 12px; border:1px solid #d8dee4; font-size:13.5px; }
+  tr:nth-child(even) td { background:#f6f8fa; }
+  td a { color:#0969da; text-decoration:none; font-weight:600; }
+  td a:hover { text-decoration:underline; }
+  td.c { text-align:center; }
+  .footer { text-align:center; color:#6a737d; font-size:12.5px; margin-top:34px; }
+  @media (max-width:640px) {
+    .card { flex-direction:column; }
+    .rank { min-width:0; padding:10px 0 0 18px; }
+    .hero { padding:30px 22px; }
+    .hero h1 { font-size:23px; }
+    .container { padding:16px 12px 40px; }
+    .card-body { padding:16px; }
+    th, td { padding:7px 8px; font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand"><span class="mark">⬢</span>GitHub 热点日报</div>
+<div class="date">2026-09-23 星期三 · 每日追踪开源世界脉搏</div>
+</nav>
+<div class="container">
+<div class="hero">
+<h1>📰 GitHub 今日热点 <span class="accent">Top 10</span></h1>
+<div class="sub">每日追踪开源世界脉搏 · 数据源：github.com/trending（daily）</div>
+<div class="meta-line">
+<span class="chip">📅 2026-09-23 星期三</span>
+<span class="chip">📦 收录项目 10 个</span>
+<span class="chip">🏷️ 分类覆盖 7 大类</span>
+</div>
+</div>
+<div class="brief">
+<h2>🔭 今日风向</h2>
+<p>今天最醒目的主线是「AI Agent 的系统层」：榜单前五里有三个（Substrate、AX、Univer）都在解决同一件事——当智能体开始规模化运行，谁来管沙箱、网络、编排和文件。Google 一天放出组合拳：Agent Substrate 管沙箱复用，AX 管 YAML 声明式编排，AX 今日 +2,305 stars 是全场第一增速，堪称今日最大黑马。另一条暗线是「Agent 的手和嘴」：treg 给 Agent 接了 3000+ 付费 API，video-use 教 Claude Code 剪视频，Anthropic 则直接把金融行业工作流打包成官方 Agent。此外国际特赦组织的 MVT（+441）和智谱新开源的 ZCode、国产聊天副驾 Jev 也各自圈了一波真实热度。</p>
+</div>
+<div class="note">⚠️ 数据口径说明：今日 GitHub Trending 对本机出口 IP 的分区缓存仅返回 8 条（已用 GitHub API 逐一核验 star 数，全部吻合，为最新真实快照），为凑足 Top 10 另从 GitHub Search API「近 7 日新建仓库 star 增速榜」补入 2 条（ZCode、Jev 聊天助手，经 trendshift.io 交叉佐证在榜），其今日 star 为估算口径，已在卡片中标注。</div>
+<div class="card">
+<div class="rank" style="background:#7c3aed">#1</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/anthropics/financial-services" target="_blank">anthropics/financial-services</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Python</span>
+</div>
+<p class="tagline">Anthropic 官方出手：把投行、行研、私募、财富管理的整条金融工作流做成 Claude 智能体</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 36,651</span>
+<span class="pill pill-today">今日 +438</span>
+<span class="pill pill-fork">⑂ Fork 3,884</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>Anthropic 官方开源的金融服务参考实现，覆盖投行（Pitch、并购模型）、股票研究（财报评审、DCF/LBO 建模）、私募（尽调清单、IC 备忘录）到基金行政（GL 对账、月末关账）四大条线的 11 个命名 Agent。每个 Agent 以「一个自包含插件」形式交付，同一套 system prompt 和技能既可作为 Claude Cowork 插件安装，也可通过 Managed Agents API 无头部署，全部基于 Markdown+JSON 无构建步骤。内置 11 个 MCP 数据连接器对接 LSEG、S&amp;P Global 等终端数据。与市面金融 AI 产品的核心区别：定位是「起草分析师工作成果，一切输出留待人工签字」，明确不执行交易、不做投资建议，合规边界写在 README 第一屏。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>金融机构分析师与工程师：投行/券商搭建 AI 辅助建模与研报流水线；金融科技公司参考其 Agent 插件化架构；也适合研究 Claude 官方如何做垂直行业落地的开发者</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#7c3aed">A-AI/机器学习</span>
+<span class="crumb-sub">行业智能体 › 金融领域Agent</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#2f9e44">#2</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/agent-substrate/substrate" target="_blank">agent-substrate/substrate</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Go</span>
+</div>
+<p class="tagline">Google 出品的 Agent 执行底座：一台机器上「塞」下百万级沙箱，闲置即休眠</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 3,197</span>
+<span class="pill pill-today">今日 +245</span>
+<span class="pill pill-fork">⑂ Fork 126</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>安全默认的 Agent 执行运行时，目标是以比标准容器高 10 倍的密度运行数百万沙箱：利用「Agent 大部分时间在闲着」的特性，把大量 actor（智能体实例）复用到少量常驻 worker 上，实测 8 个物理 Pod 承载约 250 个有状态 actor，超卖 30 倍以上。核心指标：suspend/resume 恢复操作低于 500ms、每秒超 500 次挂起/唤醒，唤醒时 RAM 与文件系统状态通过全量快照完整保留。基于 Kubernetes 做 Pod 级供给，内核层用 gVisor/microVM 做零信任隔离，框架无关——ADK、LangChain、Claude Code、MCP Server 都能跑。与 Firecracker 类方案的差异点在「为 Agent 而生」：不是 SDK，是规模化运行 Agent 的系统层。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>平台工程师与 Agent 基础设施团队：大规模托管编码/自主智能体时的沙箱调度层；云厂商与私有化部署场景降本（闲置即冻结）；K8s 运维背景想切入 AI Infra 的工程师</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#2f9e44">E-基础设施/DevOps</span>
+<span class="crumb-sub">Agent基础设施 › 沙箱运行时</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#e8590c">#3</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/dream-num/univer" target="_blank">dream-num/univer</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>TypeScript</span>
+</div>
+<p class="tagline">给 AI Agent 用的「Office 三件套」SDK：表格、文档、幻灯片一个内核全包</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 15,992</span>
+<span class="pill pill-today">今日 +255</span>
+<span class="pill pill-fork">⑂ Fork 1,728</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>开源 Office SDK，把电子表格、文档、演示文稿、多维表格（Bases）、白板（Boards）做进同一个运行时，自述定位是「The Office Harness for AI Agents」——人和 Agent 在同一份文件里协作。技术上用 Canvas 渲染 + 自研公式引擎保证大型工作簿流畅，插件化架构可拆可组，浏览器与 Node.js 共享同一套 Facade API，意味着可跑无头（headless）模式给服务端 Agent 用。周边已长出生态：Univer CLI（本地命令行工作区）、DeepSeek/OpenClaw/WorkBuddy 的 Office 插件版。与 Luckysheet（同团队前作）和 AG Grid 的区别：不是单一表格控件，而是整套生产力套件框架，且明确把「AI 可操作」作为一等公民设计。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>SaaS 产品与内部工具团队：在自家产品里嵌入可编辑表格/文档；AI 应用开发者给 Agent 提供读写 Office 文件的能力；BI/自动化平台做服务端表格计算</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#e8590c">C-前端/Web</span>
+<span class="crumb-sub">办公文档组件 › Agent文档处理</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#0366d6">#4</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/davila7/claude-code-templates" target="_blank">davila7/claude-code-templates</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Python</span>
+</div>
+<p class="tagline">Claude Code 生态最大「配置超市」：1000+ Agent/命令/MCP 模板一条命令装好</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 31,284</span>
+<span class="pill pill-today">今日 +64</span>
+<span class="pill pill-fork">⑂ Fork 3,197</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>老朋友回归：由 Daniel Avila 维护的 Claude Code 配置模板库，收录 1000+ 开箱即用的 AI Agent 模板、自定义 slash 命令、Settings、Hooks、MCP 集成与项目模板，通过 npx 一条命令安装，或到配套网站 aitmpl.com 可视化浏览。本次冲榜与新版收录 Bright Data 网络数据技能（web-data/search、scrape 等）有关——把网页搜索、抓取、结构化数据源直接接进 Claude Code。项目由 Z.AI、Claude for OSS、Neon、Vercel OSS 等多个开源计划赞助，是 Claude Code 生态最活跃的第三方配置库。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>Claude Code 用户快速搭建开发工作流（代码审查、测试生成、数据库集成一条命令搞定）；AI 编程工具开发者研究配置分发模式；团队统一推送 Agent 配置规范</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#0366d6">B-开发者工具</span>
+<span class="crumb-sub">AI编程工具 › Claude Code 生态</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#2f9e44">#5</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/google/ax" target="_blank">google/ax</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Go</span>
+</div>
+<p class="tagline">今日最大黑马：Google 的 Agent 版 Kubernetes，一个 YAML 把智能体编排到亿级</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 8,195</span>
+<span class="pill pill-today">今日 +2,305</span>
+<span class="pill pill-fork">⑂ Fork 342</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>Google 开源的声明式 Agent 编排运行时，今日 +2,305 stars 是榜单第一增速。口号是「声明一个 Agent 任务，AX 负责沙箱化、装工作区、锁网络、扩到集群规模」，官方直接类比：用过 Kubernetes 的话 ax 会很熟悉。四个原语覆盖 Agent 运维全链路：Task（沙箱内跑不可信代码，CPU/内存限额）、Workspace（预装 Git 仓库/MCP Server/技能包，Agent 冷启动即热）、Gateway（出站流量锁到显式白名单——Agent 乱花钱的主要防线）、Model（平台自身用哪个 LLM，凭据走 K8s Secret）。体验上 ax apply/watch/ssh/suspend/resume 全套 kubectl 风格命令，可随时 ssh 进沙箱「看 Agent 在干嘛」。跑在 Agent Substrate（榜单第 2 名）之上，两者构成 Google 的 Agentic Infrastructure 组合拳。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>AI 平台团队大规模运行自主编码/工作流 Agent；企业安全团队需要给 Agent 上网络围栏与审计；熟悉 K8s 想转 AI Infra 的后端工程师的上手首选</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#2f9e44">E-基础设施/DevOps</span>
+<span class="crumb-sub">Agent基础设施 › 智能体编排</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#e03131">#6</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/mvt-project/mvt" target="_blank">mvt-project/mvt</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Python</span>
+</div>
+<p class="tagline">国际特赦组织出品：查你手机有没有被 Pegasus 间谍软件盯上的取证工具</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 14,297</span>
+<span class="pill pill-today">今日 +441</span>
+<span class="pill pill-fork">⑂ Fork 1,368</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>Mobile Verification Toolkit，由国际特赦组织安全实验室 2021 年随「Pegasus 项目」调查发布并持续维护，用于自动化采集 Android/iOS 设备的取证痕迹、识别潜在间谍软件入侵。支持加载公开 IoC（失陷指标）扫描已知监控软件campaign 痕迹，也可自定义指标。近期冲榜与 v3 分支合并有关——带来破坏性变更（老脚本可能失效）。README 特别强调定位：这是给技术人员和调查员的取证研究工具，不是普通用户自检 App；且公开 IoC 不足以证明设备「干净」，民用方可通过 Access Now 数字安全热线获得支持。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>安全研究人员与数字取证分析师；记者、NGO 工作者、人权活动者排查设备是否被盯梢；移动安全课程的教学参考实现</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#e03131">G-安全</span>
+<span class="crumb-sub">移动安全 › 设备取证</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#7c3aed">#7</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/superdesigndev/treg" target="_blank">superdesigndev/treg</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Python</span>
+</div>
+<p class="tagline">「工具界的 OpenRouter」：一个 token 调 3000+ API，按次计费从一美分起</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 2,431</span>
+<span class="pill pill-today">今日 +230</span>
+<span class="pill pill-fork">⑂ Fork 228</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>treg 自述为「OpenRouter，但面向 Agent 工具而非模型」：一个 base URL + 一个 token，即可调用 60+ 供应商的 3000+ API 端点——SEO 与外链、社媒与趋势、企业/人脉信息 enrichment、广告、抓取、图像视频生成——按次计费低至一美分，无需逐家注册。核心设计是「按任务找工具而非按厂商」：treg catalog search "find a work email" 直接按用途检索。凭据阶梯设计很讲究：团队自持 key 的调用永不计量；无 key 时走 treg 的 key 按余额计费；代理层「只转发、不建模」上游请求，凭据服务端注入，调用方永远摸不到密钥。余额耗尽返回结构化 HTTP 402（含余额/预估费用/充值链接），Agent 无需解析自然语言即可自行处理。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>Agent 开发者免去逐家申请 API 的账号管理负担；营销/增长团队按需调用 SEO、社媒、enrichment 数据；小团队用「自己的 key 优先」策略零成本共享内部工具给全组的 Agent</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#7c3aed">A-AI/机器学习</span>
+<span class="crumb-sub">Agent基础设施 › 工具调用市场</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#7c3aed">#8</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/browser-use/video-use" target="_blank">browser-use/video-use</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Python</span>
+</div>
+<p class="tagline">把一堆原始素材丢进文件夹，对 Claude Code 说句话，直接拿 final.mp4</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 26,188</span>
+<span class="pill pill-today">今日 +191</span>
+<span class="pill pill-fork">⑂ Fork 3,143</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>browser-use 团队开源的「用编码 Agent 剪视频」技能包：原始素材丢进文件夹，在 Claude Code/Codex/Hermes 等任意有 shell 的 Agent 里说一句 edit these into a launch video，即得 edit/final.mp4。能力清单：自动剪掉口癖与废条、逐段自动调色、每个切点 30ms 音频淡入淡出防爆音、按风格烧字幕、经 HyperFrames/Remotion/Manim/PIL 生成动画叠层（并行子 Agent 各管一段）、渲染前在每个切点自检画面。会话记忆持久化在 project.md，下周继续剪能接上上周进度。安装是「一句话 setup prompt」——把安装指令贴给 Agent，它自己完成 clone、依赖、技能注册并向用户要 ElevenLabs API key。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>内容创作者与自媒体团队用对话式工作流剪口播、vlog、教程；Agent 开发者学习「技能包 + 自检 + 会话记忆」的工程范式；产品营销快速出片</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#7c3aed">A-AI/机器学习</span>
+<span class="crumb-sub">Agent技能 › 视频编辑技能</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#0366d6">#9</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/zai-org/ZCode" target="_blank">zai-org/ZCode</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>TypeScript</span>
+</div>
+<p class="tagline">智谱开源 AI 编程工作台：桌面端 + 浏览器端 + 终端 Agent CLI 三位一体</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 6,458</span>
+<span class="pill pill-today">今日 ≈+1,300（近3日）</span>
+<span class="pill pill-fork">⑂ Fork 1,906</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>Z.ai（智谱）2026-09-20 开源的 AI 编程工作台，三天冲上 6.4k stars（forks 已达 1.9k，热度真实）。一个仓库三入口：Electron 桌面应用、浏览器 Web 工作台、终端 Agent CLI（CLI 同时也是前两者的 Agent 运行时）。工程化程度高：pnpm monorepo 管理，支持远程工作区——SSH/WSL 连远程项目时资源「本地下载后上传」，开发态走本地 mock-cdn 不碰真 CDN。README 直接提供飞书社群与 Discord 入口，面向中文开发者社区运营。与 Cursor/Claude Code 的差异点：开源 + 三端统一 + 远程工作区原生支持，对国内网络环境友好。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>AI 编程工具用户想要开源可自托管的 Cursor 替代品；分布式团队通过 SSH/WSL 远程开发；国内开发者（飞书社区支持、对网络环境友好）</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#0366d6">B-开发者工具</span>
+<span class="crumb-sub">AI编程工具 › AI编程工作台</span></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="rank" style="background:#f08c00">#9</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/jev-chat/jev-chat-jarvis" target="_blank">jev-chat/jev-chat-jarvis</a>
+<span class="lang"><span class="dot" style="background:#3178c6"></span>Kotlin</span>
+</div>
+<p class="tagline">手机上的「聊天副驾」：微信里读懂对方意图，3 条候选回复一键填入，发不发你说了算</p>
+<div class="meta">
+<span class="pill pill-star">⭐ 总计 4,882</span>
+<span class="pill pill-today">今日 ≈+1,200（近2日）</span>
+<span class="pill pill-fork">⑂ Fork 967</span>
+</div>
+<div class="section"><span class="sec-title">详细介绍</span>
+<p>国产开源 Android App（macOS/Windows 版另有仓库），思路是「先判断、再写字」：先用判断模型给出对方真实意图、危险等级、该不该马上回，再据此起草回复，悬浮窗给出排好序的 3 条候选。技术路线上最讲究的是「不动聊天软件」：不 hook、不改包、不走平台接口、不读数据库，只用系统无障碍服务读屏幕上正在显示的对话——微信 8.0.52+ 混淆节点经伪装后 8.0.78 实测可读；飞书自绘正文不在无障碍树里，就用 ML Kit 离线 OCR 兜底。隐私设计：密钥存 App 私有空间，聊天内容只在分析瞬间发往用户自配接口，不落盘不进日志；发送权永远在用户手里，不碰转账红包。判断/回复/视觉三路接口分别可配，自带本地知识库与联系人档案。</p>
+</div>
+<div class="section"><span class="sec-title">适用领域</span>
+<p>重度聊天用户（销售、商务、社恐人士）要聊天建议但不想交出账号；隐私敏感用户（key 自持、内容不落盘）；Android 开发者研究无障碍服务 + OCR 的合规采集范式</p>
+</div>
+<div class="section"><span class="sec-title">知识归类</span>
+<div class="crumbs"><span class="crumb" style="background:#f08c00">H-移动开发</span>
+<span class="crumb-sub">AI辅助应用 › 聊天副驾</span></div>
+</div>
+</div>
+</div>
+<h2 class="table-title">📋 今日速览</h2>
+<table>
+<thead><tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr></thead>
+<tbody>
+<tr><td class="c">#1</td><td><a href="https://github.com/anthropics/financial-services" target="_blank">anthropics/financial-services</a></td><td>Python</td><td class="c">+438</td><td>A-AI/机器学习</td></tr>
+<tr><td class="c">#2</td><td><a href="https://github.com/agent-substrate/substrate" target="_blank">agent-substrate/substrate</a></td><td>Go</td><td class="c">+245</td><td>E-基础设施/DevOps</td></tr>
+<tr><td class="c">#3</td><td><a href="https://github.com/dream-num/univer" target="_blank">dream-num/univer</a></td><td>TypeScript</td><td class="c">+255</td><td>C-前端/Web</td></tr>
+<tr><td class="c">#4</td><td><a href="https://github.com/davila7/claude-code-templates" target="_blank">davila7/claude-code-templates</a></td><td>Python</td><td class="c">+64</td><td>B-开发者工具</td></tr>
+<tr><td class="c">#5</td><td><a href="https://github.com/google/ax" target="_blank">google/ax</a></td><td>Go</td><td class="c">+2,305</td><td>E-基础设施/DevOps</td></tr>
+<tr><td class="c">#6</td><td><a href="https://github.com/mvt-project/mvt" target="_blank">mvt-project/mvt</a></td><td>Python</td><td class="c">+441</td><td>G-安全</td></tr>
+<tr><td class="c">#7</td><td><a href="https://github.com/superdesigndev/treg" target="_blank">superdesigndev/treg</a></td><td>Python</td><td class="c">+230</td><td>A-AI/机器学习</td></tr>
+<tr><td class="c">#8</td><td><a href="https://github.com/browser-use/video-use" target="_blank">browser-use/video-use</a></td><td>Python</td><td class="c">+191</td><td>A-AI/机器学习</td></tr>
+<tr><td class="c">#9</td><td><a href="https://github.com/zai-org/ZCode" target="_blank">zai-org/ZCode</a></td><td>TypeScript</td><td class="c">≈+1,300（近3日）</td><td>B-开发者工具</td></tr>
+<tr><td class="c">#9</td><td><a href="https://github.com/jev-chat/jev-chat-jarvis" target="_blank">jev-chat/jev-chat-jarvis</a></td><td>Kotlin</td><td class="c">≈+1,200（近2日）</td><td>H-移动开发</td></tr>
+</tbody>
+</table>
+<div class="footer">GitHub 热点日报 · 2026-09-23 · 依据公开资料整理 · 数据以抓取时刻为准 仓库链接均为 owner/repo 真实格式，点击直达 GitHub</div>
+</div>
+</body>
+</html>

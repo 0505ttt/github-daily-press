@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-08-16</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #24292e; color: #fff; padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+  .navbar .brand .octicon { color: #2da44e; margin-right: 6px; }
+  .navbar .date { font-size: 13px; color: #8b949e; }
+  .hero {
+    margin-top: 46px;
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+    color: #fff; text-align: center; padding: 56px 20px 48px;
+  }
+  .hero h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: 2px; }
+  .hero .sub { font-size: 15px; opacity: .92; }
+  .hero .date-badge {
+    display: inline-block; margin-top: 14px; padding: 5px 18px;
+    border: 1px solid rgba(255,255,255,.5); border-radius: 20px; font-size: 14px;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 28px 18px 60px; }
+  .overview {
+    background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 30px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08); border-left: 5px solid #2da44e;
+  }
+  .overview h2 { font-size: 18px; margin-bottom: 10px; color: #24292e; }
+  .overview p { font-size: 14.5px; color: #57606a; }
+  .card {
+    background: #fff; border-radius: 10px; margin-bottom: 26px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+    border-left: 6px solid #2da44e;
+  }
+  .card.other { border-left-color: #8b949e; }
+  .card-head {
+    padding: 18px 24px 14px; border-bottom: 1px solid #d8dee4;
+    display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;
+  }
+  .rank {
+    font-size: 26px; font-weight: 800; color: #fff; background: #24292e;
+    width: 46px; height: 46px; border-radius: 8px; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .rank.top1 { background: #2da44e; }
+  .card-title { flex: 1; min-width: 240px; padding: 0 12px; }
+  .card-title a.repo {
+    font-size: 19px; font-weight: 700; color: #0969da; text-decoration: none;
+  }
+  .card-title a.repo:hover { text-decoration: underline; }
+  .card-title .tagline { font-size: 14px; color: #57606a; margin-top: 2px; }
+  .meta { text-align: right; flex-shrink: 0; }
+  .meta .stars-today {
+    font-size: 21px; font-weight: 800; color: #2da44e; white-space: nowrap;
+  }
+  .meta .stars-total { font-size: 13px; color: #57606a; white-space: nowrap; }
+  .card-body { padding: 16px 24px 20px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .badge {
+    display: inline-block; font-size: 12px; padding: 3px 10px; border-radius: 12px;
+    background: #f0f6ff; color: #0969da; border: 1px solid #c8e1ff;
+  }
+  .badge.lang { background: #f6f8fa; color: #24292e; border-color: #d8dee4; }
+  .badge.cat { background: #dafbe1; color: #116329; border-color: #a4e8b4; }
+  .section-t { font-size: 14px; font-weight: 700; color: #24292e; margin: 12px 0 4px; }
+  .section-t::before { content: "▸ "; color: #2da44e; }
+  .card-body p { font-size: 14px; color: #424a53; }
+  table.summary {
+    width: 100%; border-collapse: collapse; background: #fff; font-size: 13.5px;
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  }
+  table.summary th {
+    background: #24292e; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600;
+  }
+  table.summary td { padding: 9px 12px; border: 1px solid #d8dee4; }
+  table.summary tr:nth-child(even) { background: #f6f8fa; }
+  table.summary a { color: #0969da; text-decoration: none; font-weight: 600; }
+  table.summary a:hover { text-decoration: underline; }
+  .today-star { color: #2da44e; font-weight: 700; }
+  .summary-wrap h2 { font-size: 20px; margin: 34px 0 16px; }
+  .footer { text-align: center; color: #8b949e; font-size: 12.5px; padding: 24px 0 40px; }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 24px; }
+    .card-head { flex-direction: column; }
+    .meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand"><span class="octicon">★</span>GitHub 热点日报</div>
+<div class="date">2026-08-16 · 每日追踪开源世界脉搏</div>
+</div>
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="date-badge">2026 年 8 月 16 日 · 星期日</div>
+</div>
+<div class="container">
+<div class="overview">
+<h2>今日榜单风向</h2>
+<p>今日 Trending 全榜 13 席中 AI 相关项目占据 6 席，且前 10 里一半与「本地/小规模跑 AI」相关——needle（14MB 边缘模型）、Soup（4GB 显卡微调 8B）、unsloth（本地训练 GUI）连成一条「消费级硬件 AI」主线。两匹黑马值得注意：榜首 cordis 是 TypeScript 框架 Koishi 的底层，靠 8 月 13 日发布的「时空可组合性」论文翻红冲顶；而 460K star 的传世仓库 public-apis 今日 +2,476 stars 为全榜第一，老牌资源合集的号召力依旧。此外 OSINT 工具 holehe 连续第三天上榜，热度持续。</p>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank top1">1</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/cordiverse/cordis">cordiverse/cordis</a>
+<div class="tagline">时空可组合性元框架——TypeScript 依赖注入框架的范式升级</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +616 ⭐</div>
+<div class="stars-total">总计 4,027 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">TypeScript</span>
+<span class="badge cat">B-开发者工具 › 应用框架 › TypeScript 元框架</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Cordis 自称「时空可组合性（Spatiotemporal Composability）元框架」，是一个 TypeScript 核心库，提供带效应追踪（effect tracking）与协效应解析（coeffect resolution）的编程范式。它其实是 Koishi 聊天机器人生态的底层框架，经过多年打磨后于 2026 年 8 月发布配套论文《A Programming Paradigm for Spatiotemporal Composability》，将插件间的依赖注入、生命周期管理上升到「时间与空间维度可组合」的理论层面。仓库标注为活跃开发中、API 尚不稳定。与一般 DI 框架（如 InversifyJS）的区别在于它同时管理组件的「空间组合」（依赖图）和「时间组合」（动态加载/卸载的生命周期）。主力作者 shigma（Koishi 框架作者）拥有 537 次提交，8 月 13 日论文仓库发布后随即冲上榜首，属于典型的「论文驱动翻红」。</p>
+<div class="section-t">适用领域</div>
+<p>TypeScript/Node.js 后端与机器人开发者（尤其 Koishi 生态用户）、研究插件化架构与依赖注入的工程师、对效应系统和可组合性理论感兴趣的编程语言爱好者。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">2</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+<div class="tagline">Claude Code 的编辑级图表技能——29 种图表，自包含 HTML+SVG</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +1,619 ⭐</div>
+<div class="stars-total">总计 18,546 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">HTML/SVG</span>
+<span class="badge cat">C-前端/Web › SVG图表 › AI生成技能</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Diagram Design 是一个专为 Claude Code、Codex 和 Pi 设计的 Agent 技能，提供 29 种编辑级（editorial）图表类型：架构图、流程图、时序图、状态机、ER 图、时间线、泳道图、四象限等。每种图表都提供极简浅色、极简深色、完整编辑三种变体，输出为自包含的 HTML+SVG 文件——无 JS 依赖、无外部图片，浏览器直接打开。核心亮点：60 秒读取你的网站品牌色和字体并应用到所有图表，还能导入 draw.io 或 Mermaid 源文件重绘。作者口号鲜明："No shadows, no Mermaid-slop"（不要阴影，不要 Mermaid 垃圾风）。该项目已连续 4 天上榜、此前连续 3 天占据榜首，今天被 cordis 挤到第二，但 4 天累计涨星近万，是本周最强势的新项目之一。</p>
+<div class="section-t">适用领域</div>
+<p>内容创作者、技术博主、使用 Claude Code / Codex 的开发者——需要高质量技术图表又不想跟 Figma 较劲的场景。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">3</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/cursor/plugins">cursor/plugins</a>
+<div class="tagline">Cursor 官方插件仓库——插件规范 + 官方/第三方插件市场</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +152 ⭐</div>
+<div class="stars-total">总计 2,941 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">TypeScript</span>
+<span class="badge cat">B-开发者工具 › AI编程工具 › 编辑器插件生态</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>这是 Cursor 官方的插件仓库，定义了 Cursor 插件规范（plugin specification）并提供官方插件。每个插件是仓库根目录下的独立目录，带自己的 `.cursor-plugin/plugin.json` 清单，根目录的 `marketplace.json` 汇总所有插件构成多插件市场。插件结构融合三层能力：Agent 技能（SKILL.md）、Cursor 规则（.mdc）、MCP 服务器定义。官方插件覆盖开发者工具场景：Continual Learning（AGENTS.md 增量记忆更新）、Thermos（深度安全/正确性审计）、Orchestrate（并行云 Agent 任务分发）、PR Review Canvas（PR diff 可视化画布）、Docs Canvas（文档导航画布）等；第三方集成插件通过官方远程 MCP 服务器接入 Gmail、Google Drive、Salesforce、HubSpot、Gong、X 等 10+ SaaS 产品。连续第二天上榜，排名从 #11 跃升至 #3。</p>
+<div class="section-t">适用领域</div>
+<p>Cursor 用户（想扩展 Agent 能力的开发者）、想为 Cursor 开发插件的第三方作者、需要在 Cursor 内直接操作 SaaS 工具的团队、研究 Agent 插件规范设计的工程师。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">4</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/cactus-compute/needle">cactus-compute/needle</a>
+<div class="tagline">14MB 超微基础模型——为手机、穿戴设备和机器人打造的工具调用引擎</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +551 ⭐</div>
+<div class="stars-total">总计 6,038 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge cat">A-AI/机器学习 › 边缘AI › 超小模型</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Needle 2 是一个开源的 4500 万参数模型，专为工具调用（tool calling）、设备使用和结构化提取设计。整个模型打包成单个 14MB 二进制文件，完整会话仅需约 28MB 内存。它基于 Cactus Compute 的 Simple Attention Network 研究成果（论文 arXiv:2607.18363），采用 CQ2-bit 量化压缩并内置推理引擎，与 FunctionGemma 270M、LFM2.5 230M、Apple FM 等模型互有胜负，但体积小 5-70 倍。核心特色：权重烧入引擎（推理无需联网）、置信度门控（每个响应携带校准置信分数，低于阈值可上报）、工具检索（声明大型工具目录后自动检索 Top 5）、256 token 滑动窗口 + KV sinks 保证内存恒定。`pip install cactus-needle` 即可使用，支持装饰器声明工具和 Pydantic 结构化提取。连续第三天上榜，热度稳定。</p>
+<div class="section-t">适用领域</div>
+<p>嵌入式 AI 开发者、物联网/可穿戴设备工程师、需要在边缘设备上运行工具调用的团队、机器人开发者、对超小型模型推理感兴趣的研究人员。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">5</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/unslothai/unsloth">unslothai/unsloth</a>
+<div class="tagline">本地运行和训练大模型的桌面应用——Qwen3.8、Kimi K3、DeepSeek-V4、FLUX 一网打尽</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +435 ⭐</div>
+<div class="stars-total">总计 72,010 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge cat">A-AI/机器学习 › 模型训练 › 本地训练框架</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Unsloth 是首个提供桌面 GUI 来运行和训练大模型的工具，让用户无需命令行即可在本地机器上跑起 LLM 和扩散模型。支持的主流模型包括 Qwen3.8、Kimi K3、MiniMax-H3、Gemma 4、DeepSeek-V4、FLUX 等最新模型。核心能力涵盖模型推理运行、LoRA/QLoRA 微调、强化学习训练、TTS 语音合成、图像生成等，提供 Windows / macOS / Linux 原生桌面安装包。它是开源社区中训练效率优化的标杆——号称训练速度提升 2 倍以上、显存占用减少 60%，72K star 位居本地训练工具赛道第一。连续第三天上榜，与今日 #7 的 Soup 形成有趣对照：一个走「全能 GUI」路线，一个走「一条 YAML 极简 CLI」路线。</p>
+<div class="section-t">适用领域</div>
+<p>需要在本地微调大模型的开发者和研究者、想用桌面 GUI 而非代码训练模型的 AI 应用开发者、对模型微调有需求的创业团队、自托管 AI 方案的工程师。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">6</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/public-apis/public-apis">public-apis/public-apis</a>
+<div class="tagline">免费 API 大全——GitHub 全站 star 数前五的传世合集</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +2,476 ⭐</div>
+<div class="stars-total">总计 460,095 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Python（Markdown 合集）</span>
+<span class="badge cat">L-学习资源/其他 › 资源合集 › API 目录</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Public APIs 是一个由社区人工维护的免费/公共 API 合集，收录 1400+ 个 API，覆盖 50+ 个类目（天气、金融、地图、音乐、游戏、机器学习、政府数据等），每个条目标注认证方式、HTTPS 支持和 CORS 支持情况。仓库创建于 2016 年 3 月，是 GitHub 全站 star 数最高的仓库之一，由社区贡献者与 APILayer 团队共同维护。README 顶部如今是 APILayer 统一套件的商业化推广（该仓库 2022 年被 APILayer 收编维护），但清单本体依然完全免费开放。它是开发者做 side project、黑客松、原型验证时寻找数据源的第一站。今日 +2,476 stars 是全榜最高单日增量——近十年的积累让它每逢「被发现」就迎来一波涨星潮。</p>
+<div class="section-t">适用领域</div>
+<p>全栈/前端开发者（做练习项目需要真实数据源）、黑客松参赛者、创业原型验证团队、教编程的老师、想做集成类副业产品的独立开发者。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">7</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/MakazhanAlpamys/Soup">MakazhanAlpamys/Soup</a>
+<div class="tagline">一条 YAML 微调大模型——层流式训练让 8B 模型跑进 4GB 笔记本 GPU</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +303 ⭐</div>
+<div class="stars-total">总计 1,625 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge cat">A-AI/机器学习 › 模型训练 › 本地微调工具</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Soup 是一个把 LLM 微调简化到「一个 YAML + 一条命令」的开源 CLI：`pip install "soup-cli[train]"`，`soup init --template chat` 生成配置，`soup train` 开跑。招牌能力是 Layer Streaming（层流式训练）——把冻结的基座模型挡在 VRAM 之外，逐个 decoder 层喂给 GPU，从而在 4GB 的 RTX 3050 笔记本上微调 Llama-3.1-8B（NF4 + LoRA，实测 119.6 tok/s、峰值显存 3.32GB，与常驻训练逐位一致，H100 上独立复现验证）。工具还内建自动批量大小、GPU 检测、量化选择，以及 `soup ship` 发布门禁——含过度拒答检测（benign-prompt 轴）和 --noise-floor 噪声地板显著性判定，覆盖「训练→评估→发布」闭环。与 unsloth 定位相近，但 Soup 更强调极简配置和消费级硬件可用性，并有 Zenodo DOI 论文和免费 Colab 复现笔记本支撑。</p>
+<div class="section-t">适用领域</div>
+<p>只有游戏本/入门显卡的学生和独立开发者、不想配 SSH 和集群的中小团队（本地 QLoRA 微调）、需要快速验证微调收益的应用团队、关注显存优化技术的研究者。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">8</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/github/spec-kit">github/spec-kit</a>
+<div class="tagline">GitHub 官方的规格驱动开发工具包——先写规格，再让 AI 生成实现</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +901 ⭐</div>
+<div class="stars-total">总计 129,149 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge cat">B-开发者工具 › 开发流程工具 › 规格驱动开发</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Spec Kit 由 GitHub 官方开发，是一个推行 Spec-Driven Development（规格驱动开发）的开源工具包。核心理念是翻转传统开发流程：先写规格（what &amp; why），再由 AI Agent 生成实现。提供 Specify CLI 工具和 7 个斜杠命令：/speckit.constitution（项目原则）→ /speckit.specify（需求规格）→ /speckit.plan（技术方案）→ /speckit.tasks（任务分解）→ /speckit.implement（执行实现）。支持 30+ AI 编程助手集成（Claude Code、Copilot、Codex、Cursor 等），并提供 Extensions（扩展新能力）、Presets（定制工作流）、Bundles（角色化配置包）三层定制体系。129K star 使它成为 GitHub 官方仓库中的明星项目，连续第二天上榜。</p>
+<div class="section-t">适用领域</div>
+<p>使用 AI 编程助手的开发团队和技术负责人、希望规范 AI 辅助开发流程的组织、需要从需求到实现全流程结构化的产品工程团队。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">9</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/megadose/holehe">megadose/holehe</a>
+<div class="tagline">邮箱注册检测工具——查邮箱在 Twitter、Instagram 等 120+ 网站的注册情况</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +389 ⭐</div>
+<div class="stars-total">总计 13,096 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge cat">G-安全 › OSINT › 邮箱侦察</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>Holehe 是一个经典的 OSINT（开源情报）工具，通过网站的「忘记密码」功能检查一个邮箱地址是否在 Twitter、Instagram、Imgur 等 120+ 网站上注册了账号。核心原理是利用密码重置流程的信息差异来判断邮箱是否关联了账号——整个过程不会向目标邮箱发送任何邮件，不会惊动被调查者。支持命令行（`holehe test@gmail.com`）和 Python 库两种使用方式，也可通过 Docker 部署；已有商业化在线版本 osint.industries。项目自 2020 年开源，使用 Trio 异步框架并行检测。连续第三天上榜，是本周 OSINT 赛道（配合 spiderfoot）回暖的代表。</p>
+<div class="section-t">适用领域</div>
+<p>OSINT 调查人员、安全研究人员、渗透测试工程师、私家调查员、需要做邮箱归属分析的安全团队。</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">10</div>
+<div class="card-title">
+<a class="repo" href="https://github.com/altic-dev/FluidVoice">altic-dev/FluidVoice</a>
+<div class="tagline">macOS 最快的本地 AI 听写应用——全程在设备上运行的 Wispr Flow 替代品</div>
+</div>
+<div class="meta">
+<div class="stars-today">今日 +165 ⭐</div>
+<div class="stars-total">总计 10,303 ⭐</div>
+</div>
+</div>
+<div class="card-body">
+<div class="badge-row">
+<span class="badge lang">Swift</span>
+<span class="badge cat">A-AI/机器学习 › 语音识别 › 本地听写</span>
+</div>
+<div class="section-t">详细介绍</div>
+<p>FluidVoice 是一款开源的 macOS 语音转文字听写应用，核心特色是所有 AI 处理完全在设备本地完成——无需云端、无需 API 密钥、数据不离开你的 Mac。1.6.0 版本引入了 "Fluid Intelligence"：一个完全本地运行的 AI 运行时，负责智能格式化、上下文感知大小写、后处理优化等。支持 NVIDIA Nemotron Speech 3.5、Parakeet Flash / v3 / v2、Cohere、Apple Speech、Whisper 等多种语音模型，作者将其定位为 Wispr Flow 的本地替代方案。通过 Homebrew 一键安装：`brew install --cask fluidvoice`，iOS 和 Windows 版本已开放候补名单。时隔一天重回榜单，star 突破 10K 里程碑。</p>
+<div class="section-t">适用领域</div>
+<p>macOS 用户（写作、编程、邮件场景）、注重隐私不想语音数据上传云端的用户、Wispr Flow 替代需求者、对本地 AI 语音技术感兴趣的开发者。</p>
+</div>
+</div>
+<div class="summary-wrap">
+<h2>📋 今日速览表</h2>
+<table class="summary">
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/cordiverse/cordis">cordiverse/cordis</a></td><td>TypeScript</td><td class="today-star">+616</td><td>B-开发者工具 › 应用框架 › TypeScript 元框架</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>HTML/SVG</td><td class="today-star">+1,619</td><td>C-前端/Web › SVG图表 › AI生成技能</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/cursor/plugins">cursor/plugins</a></td><td>TypeScript</td><td class="today-star">+152</td><td>B-开发者工具 › AI编程工具 › 编辑器插件生态</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/cactus-compute/needle">cactus-compute/needle</a></td><td>Python</td><td class="today-star">+551</td><td>A-AI/机器学习 › 边缘AI › 超小模型</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/unslothai/unsloth">unslothai/unsloth</a></td><td>Python</td><td class="today-star">+435</td><td>A-AI/机器学习 › 模型训练 › 本地训练框架</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/public-apis/public-apis">public-apis/public-apis</a></td><td>Python</td><td class="today-star">+2,476</td><td>L-学习资源/其他 › 资源合集 › API 目录</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/MakazhanAlpamys/Soup">MakazhanAlpamys/Soup</a></td><td>Python</td><td class="today-star">+303</td><td>A-AI/机器学习 › 模型训练 › 本地微调工具</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/github/spec-kit">github/spec-kit</a></td><td>Python</td><td class="today-star">+901</td><td>B-开发者工具 › 开发流程工具 › 规格驱动开发</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/megadose/holehe">megadose/holehe</a></td><td>Python</td><td class="today-star">+389</td><td>G-安全 › OSINT › 邮箱侦察</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/altic-dev/FluidVoice">altic-dev/FluidVoice</a></td><td>Swift</td><td class="today-star">+165</td><td>A-AI/机器学习 › 语音识别 › 本地听写</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer">数据来源：GitHub Trending（daily）· 抓取时间：2026-08-16 · 依据公开资料整理 榜单外备注：今日 Trending 共 13 席，#11 ToolJet/ToolJet（+553）、#12 HKUDS/CLI-Anything（+100）、#13 citrolabs/ego-lite（+546）未入 Top 10，其中 ToolJet 与 ego-lite 已收录于分类库</div>
+</div>
+</body>
+</html>

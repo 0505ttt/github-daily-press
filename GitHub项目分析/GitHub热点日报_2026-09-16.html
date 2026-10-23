@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 热点日报 — 2026-09-16</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #24292e; color: #fff; padding: 12px 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-weight: 700; font-size: 17px; letter-spacing: 1px; }
+  .navbar .brand .logo { color: #2da44e; }
+  .navbar .date { font-size: 14px; color: #c9d1d9; }
+  .cover {
+    margin-top: 54px;
+    background: linear-gradient(135deg, #24292e 0%, #1f3d2b 55%, #2da44e 130%);
+    color: #fff; text-align: center; padding: 70px 24px 60px;
+  }
+  .cover h1 { font-size: 40px; font-weight: 800; letter-spacing: 2px; }
+  .cover .sub { font-size: 16px; color: #bbf0cb; margin-top: 12px; letter-spacing: 6px; }
+  .cover .date-big { display: inline-block; margin-top: 22px; padding: 6px 22px;
+    border: 1px solid rgba(255,255,255,.4); border-radius: 999px; font-size: 15px; color: #e6ffec; }
+  .summary {
+    max-width: 960px; margin: 32px auto 8px; padding: 22px 26px;
+    background: #fff; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.07);
+    border-left: 5px solid #2da44e;
+  }
+  .summary h2 { font-size: 18px; margin-bottom: 10px; color: #24292e; }
+  .summary p { font-size: 14.5px; color: #57606a; }
+  .container { max-width: 960px; margin: 20px auto 60px; padding: 0 20px; }
+  .card {
+    background: #fff; border-radius: 12px; padding: 26px 28px 22px;
+    margin-bottom: 22px; box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    border-left: 6px solid #2da44e; position: relative; overflow: hidden;
+  }
+  .card .rank {
+    position: absolute; top: 0; right: 0; background: #24292e; color: #fff;
+    font-size: 13px; font-weight: 700; padding: 5px 16px; border-radius: 0 0 0 12px;
+  }
+  .card .rank.top { background: #2da44e; }
+  .card h3 { font-size: 20px; margin-bottom: 4px; }
+  .card h3 a { color: #0969da; text-decoration: none; }
+  .card h3 a:hover { text-decoration: underline; }
+  .card .tagline { font-size: 15px; color: #24292e; font-weight: 600; margin: 6px 0 12px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .badge {
+    display: inline-block; font-size: 12.5px; padding: 3px 12px; border-radius: 999px;
+    background: #f0f6ff; color: #0969da; border: 1px solid #d0e1ff; font-weight: 600;
+  }
+  .badge.star { background: #fff8c5; color: #9a6700; border-color: #f0dd90; }
+  .badge.today { background: #dafbe1; color: #116329; border-color: #b6e2a7; }
+  .badge.lang { background: #f6f8fa; color: #57606a; border-color: #d0d7de; }
+  .section-title { font-size: 13px; font-weight: 700; color: #2da44e; margin: 12px 0 4px; letter-spacing: 1px; }
+  .card p.body { font-size: 14.5px; color: #3b434b; margin-bottom: 8px; }
+  .know {
+    margin-top: 10px; font-size: 13px; color: #57606a;
+    background: #f6f8fa; border-radius: 8px; padding: 8px 14px; border: 1px dashed #d0d7de;
+  }
+  .know b { color: #24292e; }
+  h2.table-title {
+    max-width: 960px; margin: 34px auto 14px; padding: 0 20px; font-size: 20px;
+  }
+  .table-wrap { max-width: 960px; margin: 0 auto 40px; padding: 0 20px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,.07); font-size: 14px; }
+  th { background: #24292e; color: #fff; padding: 11px 14px; text-align: left; font-weight: 600; }
+  td { padding: 10px 14px; border: 1px solid #eaeef2; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .foot { text-align: center; color: #8b949e; font-size: 12.5px; padding: 0 20px 50px; }
+  @media (max-width: 640px) {
+    .cover h1 { font-size: 26px; }
+    .card { padding: 20px 18px 16px; }
+    .navbar { padding: 10px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand"><span class="logo">⭐</span> GitHub 热点日报</div>
+<div class="date">2026-09-16 · 星期三</div>
+</div>
+<div class="cover">
+<h1>📰 GitHub 今日热点</h1>
+<div class="sub">每 日 追 踪 开 源 世 界 脉 搏</div>
+<div class="date-big">2026-09-16 · 共 14 个项目</div>
+</div>
+<div class="summary">
+<h2>🔭 今日风向</h2>
+<p>今天 14 席中 AI / Agent 生态占了 9 席，其中最显眼的信号是「给编码 Agent 造工具」成了一条明确赛道：atlas（Agent 版本控制）、OpenResearch（科研 Agent 工作台）、pi（极简 Agent 内核）、agent-skills（工程技能包）扎堆上榜。<b>alibaba/open-code-review 以 +2,751 登顶榜首</b>，这是它第 5 次上榜；昨天冠军 colibri 退居 #2 但仍有 +2,035。</p>
+<p>黑马是首次上榜的 <b>alphaXiv/OpenResearch</b>——背后公司刚拿 700 万美元种子轮，把 Claude Code/Codex 变成能跑实验、写论文的科研 Agent。另有两尊老将回归：NSA 的逆向神器 ghidra 和自托管聊天平台 LibreChat，而且逆向工程今天罕见的双雄同榜（ghidra + Android 反编译新秀 ASC）。</p>
+</div>
+<div class="container">
+<div class="card">
+<div class="rank top">#1</div>
+<h3><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></h3>
+<div class="tagline">阿里巴巴开源的混合架构 AI 代码评审工具</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 28,434</span>
+<span class="badge today">今日 +2,751 🔥</span>
+<span class="badge lang">Go</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">采用「确定性流水线 + LLM Agent」混合架构，能精确到行级别给出评审意见，在阿里巴巴内部大规模实战检验过（battle-tested at Alibaba's scale）。内置经过微调的规则集，覆盖 NPE、线程安全、XSS、SQL 注入等高频缺陷类型，同时兼容 OpenAI 与 Anthropic 接口，方便接入自己的模型。与纯 LLM 评审工具的区别在于：确定性的准确率和 LLM 的灵活性兼顾，误报更可控。今日 +2,751 为全场最高增速，冲上榜首，这也是它连续第 5 次上榜（7 月底首登）。</p>
+<div class="section-title">适用领域</div>
+<p class="body">中大型研发团队的代码质量把关与安全审计；想引入 AI 代码评审但要求高准确率的工程团队；需要私有化部署评审系统的企业。</p>
+<div class="know">📚 知识归类：<b>B-开发者工具 › 代码审查 › 混合架构 AI 代码评审</b></div>
+</div>
+<div class="card">
+<div class="rank top">#2</div>
+<h3><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></h3>
+<div class="tagline">纯 C 零依赖的端侧 MoE 推理引擎：消费级硬件跑 744B~2.8T 前沿模型</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 33,770</span>
+<span class="badge today">今日 +2,035</span>
+<span class="badge lang">C</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">解决「前沿 MoE 大模型只有数据中心跑得动」的问题：每个模型就是一个 C 文件，零引擎依赖。核心思路是把 VRAM、内存、硬盘当成一整层推理内存层级——稠密部分（注意力、共享专家、嵌入，约 17B 参数）常驻内存，19,456 个路由专家按需从 SSD 流式读取，靠 LRU 缓存和 OS 页缓存加速，25GB 内存的机器就能跑 744B 模型。已支持 GLM-5.2/5.3、Kimi K3（2.8T）、DeepSeek V4 Flash、Qwen3.8-Flash-Next 等九个模型家族。技术亮点包括 MLA 权重吸收、原生 MTP 多 token 投机解码、int4/int8 整数点积内核。与 llama.cpp 等通用框架不同，它是专门针对 MoE 专家流式加载的激进研究平台，昨天 #1 今天 #2，连续第二天上榜。</p>
+<div class="section-title">适用领域</div>
+<p class="body">想在个人电脑/工作站本地跑前沿开源大模型的开发者；推理优化与系统方向的研究者；不想付 API 费用、不想被云厂商绑定的「大模型平民化」用户。</p>
+<div class="know">📚 知识归类：<b>A-AI/机器学习 › LLM推理框架 › 端侧MoE推理</b></div>
+</div>
+<div class="card">
+<div class="rank">#3</div>
+<h3><a href="https://github.com/ever-co/ever-gauzy">ever-co/ever-gauzy</a></h3>
+<div class="tagline">开源一体化业务管理平台：ERP / CRM / HRM / 招聘 / 项目管理全都有</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 6,600</span>
+<span class="badge today">今日 +632</span>
+<span class="badge lang">TypeScript</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">Ever® Gauzy™ 把企业资源计划（ERP）、客户关系管理（CRM）、人力资源管理（HRM）、招聘跟踪（ATS）、项目与工时管理（PM）装进同一个平台，还覆盖销售管道、提案、开票计费、库存与供应链、多组织管理等场景。提供 Headless API（api.gauzy.co/docs），前端界面与 API 解耦，方便二次开发。采用 AGPL v3 协议，由 ever-co 公司持续维护，同团队还开源了 Ever Teams 协作平台和刚发布的 Ever Works 自主 Agent 运行时。与 Odoo 等重型 ERP 相比，它走的是「现代 TypeScript 技术栈 + Headless API」路线，部署和二次开发门槛更低。</p>
+<div class="section-title">适用领域</div>
+<p class="body">想用开源替代 SAP/Odoo/HubSpot 组合的中小企业；要求业务数据自托管的团队；需要一体化后台系统做二次开发起步的创业团队。</p>
+<div class="know">📚 知识归类：<b>D-后端/服务端 › 企业管理平台 › 开源ERP</b></div>
+</div>
+<div class="card">
+<div class="rank top">#4</div>
+<h3><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></h3>
+<div class="tagline">全本地开源 ElevenLabs 替代品：语音克隆、配音、听写、有声书一台电脑全搞定</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 30,883</span>
+<span class="badge today">今日 +2,081</span>
+<span class="badge lang">Python</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">把商业语音平台的整套工作流搬到本地：语音克隆、声音设计、视频配音、听写、转写、长文有声书制作一应俱全，无需账号、API key 或订阅。技术路线是「引擎聚合」——内置 16 个 TTS 引擎和 11 个 ASR 引擎可随时切换，覆盖 646 种 TTS 语言，支持 CUDA、Apple Silicon MPS/MLX、ROCm 和纯 CPU，还能挂远程 worker 分摊算力。接口有桌面应用、本地 REST/SSE/WebSocket API 以及 OpenAI 兼容接口。与 Coqui、Piper 等单一引擎项目的区别在于把各家引擎统一到一个可切换的界面里并全部本地化，堪称「语音界的 Ollama」。连续第二天上榜（昨日 #4），目前处于 Electron 重写期的活跃 beta 阶段。</p>
+<div class="section-title">适用领域</div>
+<p class="body">不想按字符付费的播客/有声书/视频配音创作者；需要本地处理敏感音频的企业用户；多语言配音与听写需求者。</p>
+<div class="know">📚 知识归类：<b>A-AI/机器学习 › 语音技术 › 本地语音工作台</b></div>
+</div>
+<div class="card">
+<div class="rank">#5</div>
+<h3><a href="https://github.com/Homebrew/BrewUI">Homebrew/BrewUI</a></h3>
+<div class="tagline">Homebrew 官方 macOS 图形界面：不碰终端也能管好软件包</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 1,316</span>
+<span class="badge today">今日 +356</span>
+<span class="badge lang">Swift</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">Homebrew 官方组织出品的原生 macOS GUI，目标很明确：让不喜欢终端的用户也能安全地发现、安装、更新和管理 brew 包，同时坚持「完全透明」——绝不隐藏 Homebrew 底层在做什么，每个操作都看得见。技术栈是 Swift 6.0（严格并发）+ SwiftUI + Swift Package Manager，要求 macOS Tahoe 26+，数据来自 brew CLI 和 Homebrew JSON API。一个值得学习的工程细节：它始终通过干净的 zsh 环境启动 brew（禁用用户 shell 配置文件），Homebrew 的环境变量统一放在 brew.env 文件里管理，避免用户 shell 别名和自定义 PATH 污染安装过程。安装只需 brew install --cask homebrew-app。</p>
+<div class="section-title">适用领域</div>
+<p class="body">习惯图形界面的 macOS 用户；给非技术亲友远程维护 Mac 的场景；想要可视化查看包依赖与更新状态的开发者。</p>
+<div class="know">📚 知识归类：<b>B-开发者工具 › 包管理工具 › Homebrew图形界面</b></div>
+</div>
+<div class="card">
+<div class="rank">#6</div>
+<h3><a href="https://github.com/melgarafael/DeskcommCRM">melgarafael/DeskcommCRM</a></h3>
+<div class="tagline">开源 AI 销售 CRM：AI 代理在 WhatsApp 上自动接待、筛选线索、促成交易</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 2,801</span>
+<span class="badge today">今日 +205</span>
+<span class="badge lang">TypeScript</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">巴西团队的出品，定位「带 AI 的销售操作系统」：AI 代理直接在 WhatsApp 上接待客户、资格审核、跟进并成交，全程跑在你自己的服务器上，客户数据和对话记录不出门。技术栈为 Next.js 16 + TypeScript strict + Supabase（Postgres/Auth/Storage），一条命令即可部署到 VPS，另可通过 WAHA 对接 WhatsApp。对标 Kommo、Octadesk、Intercom 等商业产品，主打无月费、无功能锁定，并与 HostGator 达成官方合作提供生产部署套件。本周第二次上榜（9-13 首登 #2，今日 #6），星数从 1,772 涨到 2,801。</p>
+<div class="section-title">适用领域</div>
+<p class="body">以 WhatsApp 为主要获客渠道的外贸、跨境销售团队；想把客户数据和 AI 对话留在自己服务器上的中小企业；寻找开源 CRM 二次开发起点的团队。</p>
+<div class="know">📚 知识归类：<b>A-AI/机器学习 › Agent应用 › AI销售CRM</b></div>
+</div>
+<div class="card">
+<div class="rank">#7</div>
+<h3><a href="https://github.com/alphaXiv/OpenResearch">alphaXiv/OpenResearch</a> 🆕</h3>
+<div class="tagline">把编码 Agent 变成科研 Agent：本地优先的自动科研工作台</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 3,301</span>
+<span class="badge today">今日 +593</span>
+<span class="badge lang">Rust</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">把 Claude Code、Codex、OpenCode 或 Cursor 接进来，让它们做科研：文献综述、提出假设、跑实验、产出论文级 artifact，一条 orx up 命令打开本地仪表盘（Rust + MIT 协议）。核心设计是「每个研究方向一个独立 agent 会话 + 隔离 git worktree」，实验用 git 原生树管理，每次运行都归档其代码 commit 的不可变快照，证据（日志、diff、结果）与产生它的过程绑定在一起。同一份快照可以跑在本地、SSH、Slurm、Kubernetes、Modal 甚至 Tinker 上，无需公开代码仓库；数据全部存本地 SQLite。背后是 alphaXiv 公司（arXiv 论文讨论平台方），2026 年 8 月 24 日正式发布，公司已完成 700 万美元种子轮融资，并与 Thinking Machines Lab 合作用 Tinker 做论文复现实验。</p>
+<div class="section-title">适用领域</div>
+<p class="body">想用 AI Agent 做可复现实验、自动化论文复现的科研人员；需要并行探索多个研究方向的实验室；关注 autoresearch（自动科研循环）方向的研究者。</p>
+<div class="know">📚 知识归类：<b>B-开发者工具 › Agent工作空间 › 科研Agent工作台</b></div>
+</div>
+<div class="card">
+<div class="rank">#8</div>
+<h3><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a></h3>
+<div class="tagline">NSA 出品的开源软件逆向工程（SRE）框架，安全圈常青树</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 76,669</span>
+<span class="badge today">今日 +755</span>
+<span class="badge lang">Java</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">美国国家安全局（NSA）研究理事会开发并维护的逆向工程框架，2019 年开源后成为 CTF 与安全研究的行业标配。能力覆盖反汇编、汇编、反编译、控制流图谱、脚本扩展等全套高阶分析，支持大量处理器指令集与可执行格式，既可以交互式使用也可以全自动化批量运行，还能用 Java 或 Python（PyGhidra）编写自己的扩展组件和脚本。NSA 建造它是为了解决复杂逆向工程中的规模化与团队协作问题，内部长期用于恶意代码分析与漏洞研究。运行需要 JDK 25，官方多平台 zip 解压即用。</p>
+<div class="section-title">适用领域</div>
+<p class="body">安全研究员做恶意代码分析与漏洞挖掘；CTF 选手逆向赛题；企业安全团队审计闭源组件；学习软件逆向的入门者（配套教程生态极丰富）。</p>
+<div class="know">📚 知识归类：<b>G-安全 › 逆向工程 › NSA开源SRE框架</b></div>
+</div>
+<div class="card">
+<div class="rank">#9</div>
+<h3><a href="https://github.com/danny-avila/LibreChat">danny-avila/LibreChat</a></h3>
+<div class="tagline">自托管多模型 AI 聊天平台：一个界面聚合所有主流大模型</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 43,800</span>
+<span class="badge today">今日 +261</span>
+<span class="badge lang">TypeScript</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">增强版 ChatGPT 克隆，把 Anthropic、OpenAI、Azure、Google、Vertex、AWS Bedrock、Mistral 以及本地 Ollama/MLX 等主流模型聚合到一个可私有部署的界面里。功能早已超出「聊天」：AI Agents（无代码构建专属助手 + Agent 市场）、MCP 支持、Skills、Artifacts、代码解释器、对话搜索、多用户权限（OAuth2/LDAP/邮箱登录），v0.8.8 新增 Agent 管理 API、子代理与附加工作区。MIT 协议，从单机到 Redis 水平扩展都能跑，还提供 Railway/Zeabur/Sealos 一键部署。项目 2023 年 2 月由个人开发者 Danny Avila 创建，如今 43.8K star、8.9K fork，曾登 Runa Capital ROSS 指数 2024Q1 全球增长最快开源项目榜。</p>
+<div class="section-title">适用领域</div>
+<p class="body">想私有化部署统一 AI 入口的团队；需要多用户、多模型、带权限管理 AI 网关的企业；不想为每个成员买各家订阅的中小团队。</p>
+<div class="know">📚 知识归类：<b>A-AI/机器学习 › AI聊天界面 › 自托管多模型平台</b></div>
+</div>
+<div class="card">
+<div class="rank">#10</div>
+<h3><a href="https://github.com/pacifio/atlas">pacifio/atlas</a></h3>
+<div class="tagline">给编码 Agent 用的版本控制系统：每个 commit 都能追溯到「哪个 Agent 为什么改的」</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 4,592</span>
+<span class="badge today">今日 +102</span>
+<span class="badge lang">Rust</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">定位是「Agent 时代的 source control」：每次 Agent 运行都产生 checkpoint，commit 被关联回产生它的会话——提示词、工具调用、推理过程、文件变更全部绑在一起，几个月后仍然可以查询「哪个 Agent 在哪个 prompt 下改了这行代码」。Claude Code、Codex、Atlas 内置 Agent 以及 ACP 注册表里的任意 Agent 可以并排跑同一个代码库，共享一份记忆：Claude Code 做过的决定会自动出现在 Codex 的下一个 prompt 里，中途换 Agent 不用从头再来。你的 Markdown 笔记（.atlas/knowledge/、CLAUDE.md、AGENTS.md）会作为上下文喂给所有 Agent。本地优先（代码、笔记、会话留在本机），Tauri 构建，目前官方支持 macOS。</p>
+<div class="section-title">适用领域</div>
+<p class="body">同时使用多个编码 Agent 的开发者；需要审计 Agent 改动历史的工程管理者；Agent 编排与协作方向的探索者。</p>
+<div class="know">📚 知识归类：<b>B-开发者工具 › Agent工作空间 › Agent版本控制</b></div>
+</div>
+<div class="card">
+<div class="rank">#11</div>
+<h3><a href="https://github.com/MG1937/ASC">MG1937/ASC</a></h3>
+<div class="tagline">超快 Android 反编译器前端：352MB APK 全局交叉引用搜索只要 1.79 秒</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 1,140</span>
+<span class="badge today">今日 +122</span>
+<span class="badge lang">Python</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">BlackHat Europe Arsenal 议题项目，核心思想是反传统而行：传统反编译器要吃掉数 GB 内存、花几十分钟构建全局索引，而 ASC 直接把编译产物当成只读数据库按需查询——在 Deflate 比特流内部直接探测、构建密集 Huffman 查找表提取元数据，不碰无关数据块；再利用 R8 编译器确定性常量重排与指令去重留下的高密度物理布局，做跨 DEX 闪电搜索；配合 O(1) 指令定位原语实现常数时间方法解析，无需构建重映射表。命中目标后只抽取该类的字节码及其依赖，在内存中动态重建一个最小自洽 DEX 立即反编译。实测 352MB 商业 APK：全局交叉引用 1.79 秒、反编译目标类 177 毫秒、仅占 141MB 内存。pip install droidasc 即可用。</p>
+<div class="section-title">适用领域</div>
+<p class="body">Android 安全研究与大规模 APK 审计；移动逆向工程师快速定位目标类；为 Agent/自动化分析提供毫秒级反编译原语。</p>
+<div class="know">📚 知识归类：<b>G-安全 › 逆向工程 › Android按需反编译</b></div>
+</div>
+<div class="card">
+<div class="rank">#12</div>
+<h3><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h3>
+<div class="tagline">Google 工程师出品的 AI 编码 Agent 生产级工程技能包（DEFINE→SHIP 全流程）</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 94,749</span>
+<span class="badge today">今日 +386</span>
+<span class="badge lang">JavaScript</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">Google Chrome 团队工程负责人 Addy Osmani 出品的技能集合，把资深工程师的工作流、质量门禁与最佳实践打包成 Agent 可一致遵循的能力。8 个斜杠命令对应开发生命周期：/spec（先规格后代码）、/plan（原子化任务）、/build（一次一个切片，auto 模式批准计划后自动实现）、/test（测试即证据）、/review、/webperf、/code-simplify、/ship。技能会根据当前工作自动激活——设计 API 触发接口设计技能，写 UI 触发前端工程技能。通过开放 skills CLI 一键装入 70+ Agent 平台。第 6 次上榜，从 8 月初的 81.9K 涨到今天 94.7K star。</p>
+<div class="section-title">适用领域</div>
+<p class="body">想让 AI 编码助手遵循专业开发流程的开发者和团队；Claude Code/Cursor/Codex/Copilot 用户；追求 AI 自动化开发质量的组织。</p>
+<div class="know">📚 知识归类：<b>B-开发者工具 › Agent技能框架 › 工程技能包</b></div>
+</div>
+<div class="card">
+<div class="rank">#13</div>
+<h3><a href="https://github.com/tonhowtf/omniget">tonhowtf/omniget</a></h3>
+<div class="tagline">免费开源桌面下载与媒体工具箱：1,800+ 站点下载 + 转写 + 阅读 + 学习一站搞定</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 12,867</span>
+<span class="badge today">今日 +318</span>
+<span class="badge lang">Rust</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">一个桌面应用解决「下载→加工→学习」全链路：可下载 Udemy/Hotmart 课程、YouTube、Instagram、X、Pinterest、TikTok、B 站等 1,800+ 站点的内容，然后内置工具接着干后续——Whisper 本地转写、PDF 修复与转 Markdown、EPUB 阅读器、Anki 间隔重复卡片、音乐播放、视频转 GIF 等，工具区共 158 个工具分 25 大类。GPL-3.0 开源，Tauri + Rust + Svelte 技术栈，无账号、无广告、下载行为无遥测，支持便携模式，还有浏览器扩展配合抓取。与 yt-dlp 等命令行工具相比，它的价值是零终端门槛 + 下载后的加工链路完整。</p>
+<div class="section-title">适用领域</div>
+<p class="body">在线课程学习者离线备份资料；内容创作者素材收集与管理；离线学习、笔记与间隔重复记忆需求者。</p>
+<div class="know">📚 知识归类：<b>I-系统/底层 › 下载工具 › 全能媒体工具箱</b></div>
+</div>
+<div class="card">
+<div class="rank">#14</div>
+<h3><a href="https://github.com/earendil-works/pi">earendil-works/pi</a></h3>
+<div class="tagline">极简自扩展编码 Agent 套件：统一 LLM API + Agent 循环 + TUI + CLI，105K star</div>
+<div class="meta">
+<span class="badge star">⭐ 总计 105,666</span>
+<span class="badge today">今日 +437</span>
+<span class="badge lang">TypeScript</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="body">由 libGDX 游戏框架作者 Mario Zechner（badlogic）2025 年 8 月创建，2026 年 4 月并入 Flask 作者 Armin Ronacher 创办的 Earendil 公司。设计哲学是「极简内核 + 自扩展」：内置工具只有 read/write/edit/bash 四个，其余能力全部通过 TypeScript 扩展、Agent Skills 和 prompt 模板注入；会话用 JSONL 分支树存储，/tree /fork /clone 可以原地分叉历史；pi-ai 统一 35+ 家模型提供商（含任意 OpenAI 兼容端点、Ollama、vLLM、LM Studio）。它刻意不做子代理、计划模式、权限弹窗和 MCP——作者认为这些「隐藏注入」损害可控性。生态位已相当稳固：OpenClaw、MiniMax Code 等知名产品都以它为底座，总星数突破 105K。</p>
+<div class="section-title">适用领域</div>
+<p class="body">想要可控、可审计、极简编码 Agent 的资深开发者；想基于 pi-ai / pi-agent-core 自建 Agent 产品的团队；研究 Agent 架构设计的工程师。</p>
+<div class="know">📚 知识归类：<b>B-开发者工具 › AI编程工具 › 极简编码Agent内核</b></div>
+</div>
+</div>
+<h2 class="table-title">📊 今日速览</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr></thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></td><td>Go</td><td>+2,751</td><td>B-开发者工具 › 代码审查</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></td><td>C</td><td>+2,035</td><td>A-AI/机器学习 › LLM推理框架</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/ever-co/ever-gauzy">ever-co/ever-gauzy</a></td><td>TypeScript</td><td>+632</td><td>D-后端/服务端 › 企业管理平台</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>Python</td><td>+2,081</td><td>A-AI/机器学习 › 语音技术</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/Homebrew/BrewUI">Homebrew/BrewUI</a></td><td>Swift</td><td>+356</td><td>B-开发者工具 › 包管理工具</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/melgarafael/DeskcommCRM">melgarafael/DeskcommCRM</a></td><td>TypeScript</td><td>+205</td><td>A-AI/机器学习 › Agent应用</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/alphaXiv/OpenResearch">alphaXiv/OpenResearch</a> 🆕</td><td>Rust</td><td>+593</td><td>B-开发者工具 › Agent工作空间</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a> 🆕</td><td>Java</td><td>+755</td><td>G-安全 › 逆向工程</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/danny-avila/LibreChat">danny-avila/LibreChat</a> 🆕</td><td>TypeScript</td><td>+261</td><td>A-AI/机器学习 › AI聊天界面</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/pacifio/atlas">pacifio/atlas</a> 🆕</td><td>Rust</td><td>+102</td><td>B-开发者工具 › Agent工作空间</td></tr>
+<tr><td>#11</td><td><a href="https://github.com/MG1937/ASC">MG1937/ASC</a> 🆕</td><td>Python</td><td>+122</td><td>G-安全 › 逆向工程</td></tr>
+<tr><td>#12</td><td><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></td><td>JavaScript</td><td>+386</td><td>B-开发者工具 › Agent技能框架</td></tr>
+<tr><td>#13</td><td><a href="https://github.com/tonhowtf/omniget">tonhowtf/omniget</a> 🆕</td><td>Rust</td><td>+318</td><td>I-系统/底层 › 下载工具</td></tr>
+<tr><td>#14</td><td><a href="https://github.com/earendil-works/pi">earendil-works/pi</a> 🆕</td><td>TypeScript</td><td>+437</td><td>B-开发者工具 › AI编程工具</td></tr>
+</tbody>
+</table>
+</div>
+<div class="foot">数据来源：GitHub Trending（daily）· 抓取时间 2026-09-16 · 依据公开资料整理 · 🆕 为首次上榜项目（8 个）</div>
+</body>
+</html>

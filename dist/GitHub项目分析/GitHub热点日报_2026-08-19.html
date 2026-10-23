@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-08-19</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  /* 顶部固定导航 */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #24292e; color: #fff; padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  nav .brand { font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+  nav .brand .dot { color: #2da44e; }
+  nav .date { font-size: 13px; color: #8b949e; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 72px 20px 48px; }
+  /* 封面 */
+  header.cover {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    border-radius: 16px; padding: 48px 40px; color: #fff; text-align: center;
+    box-shadow: 0 8px 24px rgba(36,41,46,.35); margin-bottom: 28px;
+  }
+  header.cover h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: 2px; }
+  header.cover .sub { font-size: 15px; opacity: .85; margin-bottom: 18px; }
+  header.cover .date-badge {
+    display: inline-block; background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.35); border-radius: 999px;
+    padding: 6px 22px; font-size: 15px; font-weight: 600;
+  }
+  /* 风向概括 */
+  .brief {
+    background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(140,149,159,.18); border-left: 5px solid #2da44e;
+  }
+  .brief h2 { font-size: 18px; margin-bottom: 10px; color: #24292e; }
+  .brief p { font-size: 14.5px; color: #57606a; }
+  /* 卡片 */
+  .card {
+    background: #fff; border-radius: 14px; margin-bottom: 26px;
+    box-shadow: 0 3px 12px rgba(140,149,159,.18);
+    border-left: 6px solid #2da44e; overflow: hidden;
+  }
+  .card-head { padding: 20px 26px 14px; border-bottom: 1px solid #d8dee4; }
+  .rank {
+    display: inline-block; background: #24292e; color: #fff; border-radius: 8px;
+    font-size: 14px; font-weight: 700; padding: 2px 12px; margin-right: 10px;
+  }
+  .card-head .repo-name { font-size: 20px; font-weight: 700; }
+  .card-head .repo-name a { color: #0969da; text-decoration: none; }
+  .card-head .repo-name a:hover { text-decoration: underline; }
+  .tagline { margin-top: 8px; font-size: 15px; color: #24292e; font-weight: 600; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .pill {
+    display: inline-block; font-size: 12.5px; padding: 3px 12px; border-radius: 999px;
+    background: #dafbe1; color: #116329; font-weight: 600;
+  }
+  .pill.lang { background: #ddf4ff; color: #0969da; }
+  .pill.star-today { background: #fff8c5; color: #7d4e00; }
+  .card-body { padding: 18px 26px 22px; }
+  .card-body h3 {
+    font-size: 14px; color: #2da44e; margin: 14px 0 6px; letter-spacing: .5px;
+  }
+  .card-body h3:first-child { margin-top: 0; }
+  .card-body p, .card-body li { font-size: 14.5px; color: #3b434b; }
+  .card-body ul { padding-left: 20px; }
+  .classify {
+    margin-top: 14px; background: #f6f8fa; border: 1px dashed #d0d7de;
+    border-radius: 8px; padding: 8px 14px; font-size: 13.5px; color: #57606a;
+  }
+  .classify b { color: #24292e; }
+  /* 速览表 */
+  table {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    background: #fff; font-size: 13.5px; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(140,149,159,.18);
+  }
+  th {
+    background: #24292e; color: #fff; padding: 10px 12px; text-align: left;
+    font-weight: 600; border: 1px solid #24292e;
+  }
+  td { padding: 9px 12px; border: 1px solid #d8dee4; color: #3b434b; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  td.center, th.center { text-align: center; }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  footer {
+    text-align: center; color: #8b949e; font-size: 12.5px; margin-top: 36px;
+  }
+  @media (max-width: 640px) {
+    header.cover { padding: 32px 18px; }
+    header.cover h1 { font-size: 24px; }
+    .wrap { padding: 64px 12px 40px; }
+    .card-head, .card-body { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+</head>
+<body>
+<nav>
+<div class="brand">GitHub 热点日报<span class="dot"> ●</span></div>
+<div class="date">2026-08-19 · 星期三</div>
+</nav>
+<div class="wrap">
+<header class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="date-badge">2026 年 8 月 19 日 · Asia/Shanghai</div>
+</header>
+<section class="brief">
+<h2>🧭 今日风向</h2>
+<p>今日榜单被「AI Agent 基础设施」强势占领：Agent 长期记忆（ai-memory、OpenViking）、多 Agent 协作（munder-difflin）、安全技能库（Anthropic-Cybersecurity-Skills）合计 4 席，且横跨中美女工程师社区，说明"给 Agent 装记忆和技能"已成最热赛道。系统/底层类同样表现亮眼，占 3 席——DHH 的 Omarchy 发行版、经典下载器 Motrix、以及一匹硬核黑马 PLFM_RADAR（开源相控阵雷达，号称比 25 万美元商用方案便宜 95%）。最大黑马当属 munder-difflin：总星仅约 2 千就冲到 #2，涨速惊人。</p>
+</section>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#1</span>
+<span class="repo-name"><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></span>
+<div class="tagline">一站式 AI 短视频生成工具——输入主题或关键词，成片直接交付</div>
+<div class="meta-row">
+<span class="pill lang">Python</span>
+<span class="pill">总 ⭐ 108,465</span>
+<span class="pill star-today">今日 +2,306</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>只需提供一个视频主题或关键词，MoneyPrinterTurbo 就能自动完成全流程：调用 LLM 撰写视频脚本、按文案智能匹配素材、生成字幕与背景音乐，最终合成高清短视频。提供 WebUI 和 API 两种使用方式，支持多平台比例适配，底层依赖 FFmpeg 完成渲染合成。技术亮点在于把"文案→素材检索→合成"整条流水线自动化，可接入 Kimi、火山引擎豆包等多种国内外大模型驱动文案与画面匹配。与剪映等剪辑工具的区别是零人工参与，与同类 AI 视频项目的区别是中文生态支持完善、部署简单（Docker 一键启动）。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>自媒体运营者：批量生产短视频内容，覆盖抖音/TikTok/视频号等平台</li>
+<li>营销团队：快速生成产品宣传物料</li>
+<li>开发者：通过 API 集成到自己的内容生产系统</li>
+</ul>
+<div class="classify"><b>知识归类：</b>A-AI/机器学习 › AI视频生成 › 一键成片工具</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#2</span>
+<span class="repo-name"><a href="https://github.com/chaitanyagiri/munder-difflin">chaitanyagiri/munder-difflin</a></span>
+<div class="tagline">本地多 Agent 编程"克隆办公室"——把你已订阅的终端编程 CLI 变成一群替你干活的克隆体</div>
+<div class="meta-row">
+<span class="pill lang">TypeScript</span>
+<span class="pill">总 ⭐ 1,993</span>
+<span class="pill star-today">今日 +256</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>Munder Difflin（名字戏仿《办公室》的"Munt"）是一个免费开源的本地多 Agent harness：它把 Claude Code、Antigravity（Gemini）、OpenAI Codex、xAI Grok、Kimi Code、Qwen 等你已在付费订阅的终端编程 CLI 包装成一个个"克隆员工"，在你不在时继续干活，并在你自己的机器上协调成一间办公室。Agent 之间可互发消息、路由任务、共享记忆，由代表你的"主管克隆"（Michael）统一调度，再用 Pixi.js 把每个 Agent 渲染成在共享办公楼层上班的虚拟形象，进度一目了然。技术栈为 Electron + React + TypeScript + xterm.js + node-pty，纯本地运行、自带 Key 即用、支持本地 LLM。与 LangChain 类编排框架的区别：不写代码定义 Agent，直接复用现成订阅的编程 CLI 按小时额度编排，上手门槛接近零。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>订阅了多个 AI 编程 CLI 的开发者：让 Agent 并行干活、夜间无人值守续跑</li>
+<li>想直观观察多 Agent 协作过程的研究者与团队</li>
+</ul>
+<div class="classify"><b>知识归类：</b>B-开发者工具 › Agent协作平台 › 多Agent编排</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#3</span>
+<span class="repo-name"><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a></span>
+<div class="tagline">给 AI 编程 Agent 装上长期记忆——Claude Code 干到一半换 Codex 接着干</div>
+<div class="meta-row">
+<span class="pill lang">Rust</span>
+<span class="pill">总 ⭐ 2,687</span>
+<span class="pill star-today">今日 +730</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>ai-memory 解决的是 AI 编程 CLI 最痛的断档问题：在 Claude Code 里干到一半退出，打开 OpenAI Codex 进入同一目录，无需重新解释架构、失败尝试和待办问题即可无缝继续。它以 Rust 编写，通过 MCP 配置 + 生命周期钩子接入各家 Agent，自动捕获会话上下文并生成可交接的 handoff 摘要。支持矩阵覆盖极广：Linux/macOS/Windows（含 WSL2）三大平台均有原生二进制与 Docker 镜像，Claude Code、Codex、Command Code、Devin CLI 等主流 CLI 均已适配，Arch/AUR 包还内置 systemd 服务单元。与通用记忆层的区别在于专注"编码会话交接"这一窄场景，捕获排除规则与 per-session 隔离做得非常细。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>频繁在多个 AI 编程工具间切换的开发者：任务不丢、上下文不重讲</li>
+<li>长周期重构/ debugging：跨天跨工具延续工作记忆</li>
+</ul>
+<div class="classify"><b>知识归类：</b>B-开发者工具 › Agent记忆 › 会话交接</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#4</span>
+<span class="repo-name"><a href="https://github.com/volcengine/OpenViking">volcengine/OpenViking</a></span>
+<div class="tagline">AI Agent 的自进化上下文数据库——把记忆、知识 RAG、技能统一成一个可浏览的虚拟文件系统</div>
+<div class="meta-row">
+<span class="pill lang">Python</span>
+<span class="pill">总 ⭐ 29,332</span>
+<span class="pill star-today">今日 +298</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>OpenViking 是字节跳动火山引擎开源的 Agent 上下文数据库：把 Agent 的记忆（memories）、资源（resources）、技能（skills）统一挂载到 <code>viking://</code> 协议的虚拟文件系统下，Agent 用 <code>ls</code>、<code>tree</code>、<code>find</code> 就能浏览自己的上下文，而非查询黑盒向量库。内容写入时处理成 L0 摘要 / L1 概览 / L2 细节三层，按任务深度逐层加载，显著削减 token 开销；检索采用"目录递归"策略——向量搜索先定位最高分目录再逐层下钻，结果自带语境。每次检索保留可回看的浏览轨迹，出错时能精确看到是哪条路径导致的；会话提交后异步抽取用户偏好与 Agent 经验沉淀为长期记忆，实现"自进化"。与 Mem0、letta 的区别：不只存记忆，而是把记忆、RAG 知识、技能做成同一套文件系统语义，并提供 OpenViking Studio 浏览器试玩环境。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>构建带长期记忆 Agent 的工程团队：客服机器人、编程助手、私人助理、企业知识问答</li>
+<li>想降低 token 消耗、需要可解释检索的 RAG 工程师</li>
+</ul>
+<div class="classify"><b>知识归类：</b>A-AI/机器学习 › Agent记忆 › 上下文数据库</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#5</span>
+<span class="repo-name"><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">mukul975/Anthropic-Cybersecurity-Skills</a></span>
+<div class="tagline">817 个结构化网络安全技能库——让 AI Agent 拥有资深安全分析师的知识</div>
+<div class="meta-row">
+<span class="pill lang">Python</span>
+<span class="pill">总 ⭐ 29,151</span>
+<span class="pill star-today">今日 +726</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>社区项目（与 Anthropic 公司无隶属关系），号称最大的开源网络安全 Agent 技能库：817 个生产级技能覆盖 29 个安全域，遵循 agentskills.io 开放标准，兼容 Claude Code 等 26+ AI 平台。核心价值是框架映射——每个技能按主题挂到 MITRE ATT&amp;CK（805 个）、NIST CSF 2.0（804 个）、D3FEND、AI RMF、F3、ATLAS 六大行业框架上，例如取证技能带 ATT&amp;CK + CSF 标注，AI 安全技能再加 ATLAS 与 AI RMF。克隆仓库、把 Agent 指向它，下一次安全调查就能获得"哪个 Volatility3 插件查内存镜像、哪些 Sigma 规则抓 Kerberoasting"级别的专家指引。包含红队 C2、钓鱼仿真等双用途技术，仅限授权渗透测试与防御研究使用。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>红队/蓝队工程师：给 Claude Code 等 Agent 挂载专家级安全技能</li>
+<li>SOC 团队：事件响应、取证分析、云安全排查的知识底座</li>
+</ul>
+<div class="classify"><b>知识归类：</b>G-安全 › AI安全技能库 › 框架映射</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#6</span>
+<span class="repo-name"><a href="https://github.com/public-apis/public-apis">public-apis/public-apis</a></span>
+<div class="tagline">免费 API 大全——GitHub 全站 star 第四多的传世合集，1400+ 公共 API 按类目整理</div>
+<div class="meta-row">
+<span class="pill lang">Python</span>
+<span class="pill">总 ⭐ 464,481</span>
+<span class="pill star-today">今日 +1,139</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>开源世界的常青树：一个集体维护的免费/公共 API 清单，按编程、动物、动漫、反欺诈、音乐、政府等数十个类目组织，每个 API 标注认证方式（apiKey/OAuth/无）、HTTPS 支持与 CORS 情况，累计收录 1400+ 条目。自 2016 年建立以来一直是开发者找 API 的第一入口，46 万 star 位居 GitHub 全站最前列，如今由 APILayer 团队持续维护并关联其商业 API 套件。它的价值在于"目录即服务"——省去一个个搜索引擎筛选的时间，表格化元数据让选型一眼可判。与 awesome 系列清单的区别是条目有统一 schema、社区审核严格（PR 排队极长），质量而非数量优先。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>全栈开发者：为新项目快速寻找数据源或第三方能力</li>
+<li>黑客松/原型开发：低成本拼装 MVP</li>
+<li>教学场景：学习 REST API 设计与调用</li>
+</ul>
+<div class="classify"><b>知识归类：</b>L-学习资源/其他 › 资源合集 › API目录</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#7</span>
+<span class="repo-name"><a href="https://github.com/basecamp/omarchy">basecamp/omarchy</a></span>
+<div class="tagline">DHH 出品的"开箱即用"美学 Linux 发行版——基于 Arch + Hyprland，装完即是成品</div>
+<div class="meta-row">
+<span class="pill lang">Shell</span>
+<span class="pill">总 ⭐ 26,398</span>
+<span class="pill star-today">今日 +411</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>Omarchy 是 Basecamp 创始人 DHH 打造的 Linux 发行版，定位"beautiful, modern &amp; opinionated"：基于 Arch Linux + Hyprland 平铺合成器，把字体、终端、状态栏、应用选型等桌面细节全部预先调校好，装完即得一套接近 macOS 质感的默认桌面，省去传统 Arch 装机后数天的配置折腾。作为 opinionated 发行版它不堆开关，而是替用户做掉绝大多数决定——默认应用、按键绑定、主题风格均由 DHH 团队拍板，换来高一致性与低维护成本。已迭代到 v4.0.0，100+ 贡献者参与，2025 年 9 月获 Cloudflare 赞助。与 NixOS/Ubuntu 等通用发行版的区别：明确面向"想要 Mac 般顺滑 Linux 桌面"的开发者，牺牲自由度换精致默认值。MIT 协议。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>想要省心高颜值 Linux 桌面的程序员，尤其从 macOS 迁移的用户</li>
+<li>把 Hyprland 窗口管理器最佳实践当作参考实现的窗口管理爱好者</li>
+</ul>
+<div class="classify"><b>知识归类：</b>I-系统/底层 › Linux发行版 › 桌面环境整合</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#8</span>
+<span class="repo-name"><a href="https://github.com/agalwood/Motrix">agalwood/Motrix</a></span>
+<div class="tagline">界面清爽的全功能下载管理器——HTTP/BT/磁力链全支持，v2「Turbo」重写进行中</div>
+<div class="meta-row">
+<span class="pill lang">TypeScript</span>
+<span class="pill">总 ⭐ 53,635</span>
+<span class="pill star-today">今日 +607</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>Motrix 是基于 Electron + aria2 的全功能下载管理器，单个界面统一支持 HTTP、FTP、BitTorrent、磁力链等协议，界面干净易用，跨 Windows/macOS/Linux 三平台。底层引擎 aria2 提供多线程分段下载与 BT/DHT 能力，Motrix 在其上补足了现代 UI、torrent 文件关联、磁力链捕获、多任务管理等体验层功能，Windows 端有 Chocolatey/scoop 安装渠道，Mac 端支持 Homebrew。项目自 2018 年发布以来长期是开源下载器的颜值代表，目前 v2「Turbo」重写版本正在开发中，意在解决 Electron 包体与性能瓶颈。与 IDM 等商业下载器的区别是开源免费跨平台，与 qBittorrent 的区别是协议覆盖更全、界面更现代。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>需要替代 IDM/迅雷的跨平台用户：日常 HTTP 下载 + 偶尔 BT/磁力</li>
+<li>追求统一简洁界面的效率工具爱好者</li>
+</ul>
+<div class="classify"><b>知识归类：</b>I-系统/底层 › 下载工具 › 跨平台下载器</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#9</span>
+<span class="repo-name"><a href="https://github.com/NawfalMotii79/PLFM_RADAR">NawfalMotii79/PLFM_RADAR</a></span>
+<div class="tagline">开源低成本 10.5 GHz 相控阵雷达——两种量程版本，比商用方案便宜 95%</div>
+<div class="meta-row">
+<span class="pill lang">PLSQL*</span>
+<span class="pill">总 ⭐ 24,280</span>
+<span class="pill star-today">今日 +204</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>PLFM_RADAR（AERIS-10）是完全开源的 10.5 GHz 脉冲线性调频相控阵雷达：分 3km 量程的 AERIS-10N（8×16 贴片阵列）与 20km 量程的 AERIS-10E（32×16 介质填充缝隙波导阵列）两个版本，HN 报道称其成本比 25 万美元的同规格商用方案便宜约 95%。目标是让雷达技术平民化——原理图、PCB、固件、上位机全部开源，电源/频综/射频分板模块化。核心能力包括方位俯仰 ±45° 全电子波束扫描、板载 FPGA 完成脉冲压缩/多普勒 FFT/MTI/CFAR 信号处理、带地图集成的 Python GUI、GPS/IMU 实时姿态修正。固件已迭代到 v2.0.x（fft2048 等标签），是开源硬件圈少见的高复杂度射频项目。注：语言标签 PLSQL 为 GitHub 统计口径，实际主体为硬件描述与工程脚本。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>高校雷达/射频实验室：相控阵、波束形成教学与原型验证</li>
+<li>无人机与低空防御创业团队：低成本感知方案底座</li>
+<li>高级 SDR/射频爱好者：脉冲压缩、CFAR、目标跟踪实践</li>
+</ul>
+<div class="classify"><b>知识归类：</b>I-系统/底层 › 开源硬件 › 相控阵雷达</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#10</span>
+<span class="repo-name"><a href="https://github.com/jundot/omlx">jundot/omlx</a></span>
+<div class="tagline">Mac 菜单栏里的 LLM 推理服务器——Apple Silicon 专属，KV 缓存热内存 + 冷 SSD 分层</div>
+<div class="meta-row">
+<span class="pill lang">Python</span>
+<span class="pill">总 ⭐ 19,376</span>
+<span class="pill star-today">今日 +366</span>
+</div>
+</div>
+<div class="card-body">
+<h3>📋 详细介绍</h3>
+<p>oMLX 是专为 Apple Silicon 优化的本地 LLM 推理服务器，基于 MLX 框架，最大特色是"菜单栏管理"——从 macOS 状态栏直接启停服务、加载模型、查看负载，把本地推理做成日常桌面工具。性能上主打持续批处理（continuous batching）与分层 KV 缓存：热缓存放统一内存、冷缓存落到 SSD，让长上下文会话在有限内存下也能跑得动，缓解 Mac 高并发多会话时的容量压力。对外暴露 OpenAI 兼容 API，任何支持 OpenAI 格式的客户端（包括各类编程 CLI）都能直接指向它，提供中/英/日/韩多语文档与 CLI 配置。与 llama.cpp/Ollama 的区别：深度绑定 Apple 统一内存架构做 KV 分层，是 MLX 生态里工程化最完善的推理服务端之一。</p>
+<h3>🎯 适用领域</h3>
+<ul>
+<li>Mac 用户：给 Claude Code 等编程工具提供本地/离线模型后端</li>
+<li>隐私敏感场景：数据不出机的本地推理服务</li>
+</ul>
+<div class="classify"><b>知识归类：</b>A-AI/机器学习 › LLM推理框架 › Apple Silicon推理</div>
+</div>
+</div>
+<section>
+<h2 style="font-size:20px;margin-bottom:4px;">📊 今日速览</h2>
+<p style="font-size:13px;color:#57606a;margin-bottom:8px;">按 Trending 排名顺序 · 数据采集于 2026-08-19（GitHub Trending daily）</p>
+<table>
+<thead>
+<tr>
+<th class="center">排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th class="center">今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="center">#1</td><td><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></td><td>Python</td><td class="center">+2,306</td><td>A-AI/机器学习 › AI视频生成</td></tr>
+<tr><td class="center">#2</td><td><a href="https://github.com/chaitanyagiri/munder-difflin">chaitanyagiri/munder-difflin</a></td><td>TypeScript</td><td class="center">+256</td><td>B-开发者工具 › Agent协作平台</td></tr>
+<tr><td class="center">#3</td><td><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a></td><td>Rust</td><td class="center">+730</td><td>B-开发者工具 › Agent记忆</td></tr>
+<tr><td class="center">#4</td><td><a href="https://github.com/volcengine/OpenViking">volcengine/OpenViking</a></td><td>Python</td><td class="center">+298</td><td>A-AI/机器学习 › Agent记忆</td></tr>
+<tr><td class="center">#5</td><td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">mukul975/Anthropic-Cybersecurity-Skills</a></td><td>Python</td><td class="center">+726</td><td>G-安全 › AI安全技能库</td></tr>
+<tr><td class="center">#6</td><td><a href="https://github.com/public-apis/public-apis">public-apis/public-apis</a></td><td>Python</td><td class="center">+1,139</td><td>L-学习资源/其他 › 资源合集</td></tr>
+<tr><td class="center">#7</td><td><a href="https://github.com/basecamp/omarchy">basecamp/omarchy</a></td><td>Shell</td><td class="center">+411</td><td>I-系统/底层 › Linux发行版</td></tr>
+<tr><td class="center">#8</td><td><a href="https://github.com/agalwood/Motrix">agalwood/Motrix</a></td><td>TypeScript</td><td class="center">+607</td><td>I-系统/底层 › 下载工具</td></tr>
+<tr><td class="center">#9</td><td><a href="https://github.com/NawfalMotii79/PLFM_RADAR">NawfalMotii79/PLFM_RADAR</a></td><td>PLSQL*</td><td class="center">+204</td><td>I-系统/底层 › 开源硬件</td></tr>
+<tr><td class="center">#10</td><td><a href="https://github.com/jundot/omlx">jundot/omlx</a></td><td>Python</td><td class="center">+366</td><td>A-AI/机器学习 › LLM推理框架</td></tr>
+</tbody>
+</table>
+</section>
+<footer>数据来源：GitHub Trending (daily) · 依据公开资料整理 · 仅供学习参考</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>GitHub 热点日报 2026-07-15</title>
+<style>
+  @page {
+    size: A4;
+    margin: 25mm 18mm 28mm 18mm;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Helvetica Neue",Arial,sans-serif;
+    color: #24292e;
+    font-size: 13px;
+    line-height: 1.75;
+    background: #fff;
+  }
+
+  /* ── 封面页 ── */
+  .cover {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 230mm;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #24292e 0%, #1a1e22 100%);
+    color: #fff;
+    margin: -25mm -18mm 0 -18mm;
+    padding-top: 25mm;
+    padding-bottom: 25mm;
+    padding-left: 18mm;
+    padding-right: 18mm;
+  }
+  .cover-icon { font-size: 72px; margin-bottom: 24px; }
+  .cover h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+  .cover .date {
+    font-size: 28px;
+    color: #2da44e;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .cover .subtitle {
+    font-size: 18px;
+    color: #8b949e;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+  .cover .stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  .cover .stat-item {
+    text-align: center;
+  }
+  .cover .stat-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2da44e;
+  }
+  .cover .stat-label {
+    font-size: 14px;
+    color: #8b949e;
+    margin-top: 4px;
+  }
+  .cover-divider {
+    width: 120px;
+    height: 3px;
+    background: #2da44e;
+    margin: 20px auto;
+    border-radius: 2px;
+  }
+
+  /* ── 概览 ── */
+  .overview {
+    page-break-after: always;
+    padding: 10px 0;
+  }
+  .overview h2 {
+    font-size: 24px;
+    color: #24292e;
+    border-bottom: 3px solid #2da44e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .overview p {
+    font-size: 14px;
+    line-height: 2;
+    color: #3c434d;
+    margin-bottom: 12px;
+  }
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #ddf4ff;
+    color: #0969da;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .tag.green { background: #dafbe1; color: #1a7f37; }
+  .tag.purple { background: #fbefff; color: #8250df; }
+  .tag.orange { background: #fff1e5; color: #bc4c00; }
+
+  /* ── 项目卡片 ── */
+  .card {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .card-header {
+    background: #f6f8fa;
+    padding: 14px 20px;
+    border-bottom: 1px solid #d0d7de;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-rank {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2da44e;
+    margin-right: 12px;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #24292e;
+  }
+  .card-title a {
+    color: #0969da;
+    text-decoration: none;
+  }
+  .card-body {
+    padding: 16px 20px;
+  }
+  .card-one-liner {
+    font-size: 14px;
+    color: #1a7f37;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 6px 0;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #57606a;
+  }
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .meta-label { color: #8b949e; }
+  .meta-value { font-weight: 600; color: #24292e; }
+  .lang-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .star-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #fff8c5;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #7d4e00;
+    font-size: 12px;
+  }
+  .card-section {
+    margin-bottom: 10px;
+  }
+  .card-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6e7781;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .card-section-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #3c434d;
+  }
+  .classification {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f6f8fa;
+    border-left: 3px solid #2da44e;
+    font-size: 12px;
+    color: #24292e;
+    font-weight: 500;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── 速览表 ── */
+  .summary-section {
+    page-break-before: always;
+  }
+  .summary-section h2 {
+    font-size: 24px;
+    color: #24292e;
+    border-bottom: 3px solid #2da44e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    background: #24292e;
+    color: #fff;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid #24292e;
+  }
+  tbody td {
+    padding: 9px 8px;
+    border: 1px solid #d0d7de;
+    vertical-align: middle;
+  }
+  tbody tr:nth-child(even) {
+    background: #f6f8fa;
+  }
+  tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+  .rank-cell {
+    text-align: center;
+    font-weight: 800;
+    color: #2da44e;
+    font-size: 15px;
+  }
+  .star-cell {
+    text-align: right;
+    font-weight: 700;
+    color: #7d4e00;
+  }
+  .footer-note {
+    margin-top: 30px;
+    padding: 16px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #57606a;
+    line-height: 1.8;
+  }
+
+  /* ── 页眉页脚 ── */
+  .page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<div class="cover-icon">📰</div>
+<h1>GitHub 今日热点 Top 10</h1>
+<div class="cover-divider"></div>
+<div class="date">2026-07-15</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="stats">
+<div class="stat-item">
+<div class="stat-num">10</div>
+<div class="stat-label">热点项目</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">8</div>
+<div class="stat-label">总Star（万）</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">6,756</div>
+<div class="stat-label">今日新增Star</div>
+</div>
+</div>
+</div>
+
+<div class="overview">
+<h2>📊 今日榜单风向</h2>
+<p>今天的 GitHub Trending 榜单延续昨日的<strong>「AI 工具链」</strong>主导格局——10 个项目中有 <strong>7 个与 AI/Agent 直接相关</strong>，AI 编程助手技能（Skills）赛道尤为火热，hallmark、graphify、spec-kit、marketingskills 四个项目分列第 5、7、9、10 位，形成一条完整的「AI Agent 工作流工具链」。</p>
+<p>排名榜首的 <strong>OpenCut</strong>（开源版 CapCut）以 66K+ Star、日增 1,229 稳坐第一，延续其作为隐私友好视频编辑替代方案的强劲势头。<strong>Vibe-Trading</strong>（港大量科实验室的 AI 量化交易 Agent）日增 1,153 紧随其后，是 AI+金融交叉领域的标杆项目。</p>
+<p>值得注意的是，今天的榜单与昨天<strong>完全一致</strong>——10 个项目均为连续上榜，说明这些项目并非昙花一现，而是各自领域里具备持续影响力的成熟开源项目。</p>
+<div class="tag-cloud">
+<span class="tag green">AI/Agent 7个</span>
+<span class="tag">开发者工具 4个</span>
+<span class="tag purple">AI编程技能 4个</span>
+<span class="tag orange">前端/视频 1个</span>
+<span class="tag">系统优化 1个</span>
+<span class="tag purple">结构化数据 1个</span>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#1</span>
+<span class="card-title"><a href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a></span>
+</div>
+<span class="star-badge">⭐ +1,229 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">开源版 CapCut——免费、跨平台的视频编辑器</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#3178c6;"></span><span class="meta-value">TypeScript</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">66,276 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+1,229</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">OpenCut 是一个完全开源免费的视频编辑器，定位为 CapCut 的开源替代方案，支持 Web、桌面端和移动端三端运行。项目正在从底层重写，新版将引入 Editor API、插件优先架构、Rust 内核、MCP Server（供 AI Agent 使用）、无头模式（自动化/批量渲染）以及编辑器内直接脚本编程等能力。当前线上版本仍为经典版，新版将上线 new.opencut.app。项目采用 MIT 许可证，由 fal.ai 赞助支持。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">内容创作者、YouTuber、短视频制作者；需要隐私可控、免费且跨平台的视频编辑工具的个人和小团队；希望基于视频编辑器做二次开发或插件开发的开发者。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">C-前端/Web › 视频编辑器 › 开源创作工具</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#2</span>
+<span class="card-title"><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a></span>
+</div>
+<span class="star-badge">⭐ +1,153 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">一条命令让 AI Agent 拥有全面交易能力——个人量化交易 Agent</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#3572A5;"></span><span class="meta-value">Python</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">21,725 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+1,153</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Vibe-Trading 由香港大学数据科学实验室（HKUDS）开发，是一个开源的 AI 量化交易研究工作区。它将自然语言提示连接到市场数据加载、回测引擎、多 Agent 群体分析和交易日志等能力，支持 FastAPI 后端 + React 19 前端。核心功能包括：461 个学术因子库（Alpha Zoo）、5 种组合优化器、AST 加固的回测沙箱、策略开发生命周期管理（注册→监控→衰减→禁用）、MCP 协议集成、以及 Alpaca 等券商对接。项目刚于 7 月 13 日完成全部 10 项外部安全审计修复。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">量化交易研究员、金融数据分析师、AI Agent 开发者；需要将 LLM 能力引入交易策略研究流程的团队；学术研究中需要可复现的因子回测环境的研究者。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">A-AI/机器学习 › Agent框架 › 量化交易Agent</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#3</span>
+<span class="card-title"><a href="https://github.com/moeru-ai/airi">moeru-ai/airi</a></span>
+</div>
+<span class="star-badge">⭐ +78 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">自托管的 AI 虚拟伴侣——重现 Neuro-sama 的开源实现</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#3178c6;"></span><span class="meta-value">TypeScript</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">41,861 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+78</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Project AIRI 旨在重现虚拟主播 Neuro-sama 的能力，打造一个可以自托管的 AI 虚拟伴侣。它支持实时语音对话、VRM/Live2D 模型驱动、以及自主玩 Minecraft、Factorio、Kerbal Space Program 等游戏。技术栈大量使用 Web 技术（WebGPU、WebAudio、WebAssembly、WebSocket），桌面版可利用 NVIDIA CUDA 和 Apple Metal 进行原生加速。支持 30+ 种 LLM 提供商（OpenAI、Claude、DeepSeek、Qwen 等），跨 Web/macOS/Windows 平台运行。项目还衍生出 unspeech、xsai、MCP Launcher 等多个子项目。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">虚拟主播爱好者、AI 伴侣开发者、VTuber 技术研究者；需要自托管 AI 角色交互方案的个人；对 WebGPU/浏览器端 AI 推理感兴趣的前端开发者。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">A-AI/机器学习 › AI虚拟伴侣 › 开源VTuber</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#4</span>
+<span class="card-title"><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></span>
+</div>
+<span class="star-badge">⭐ +996 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">100+ 可直接运行的 AI Agent 与 RAG 应用模板库</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#3572A5;"></span><span class="meta-value">Python</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">119,580 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+996</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Awesome LLM Apps 是一个包含 100+ 个即用型 AI Agent 和 RAG 应用的模板库，覆盖 14 个类别：入门 Agent、高级 Agent、多 Agent 协作、语音 AI、生成式 UI、游戏 Agent、MCP Agent、RAG 教程、Agent Skills、带记忆的 LLM 应用、Chat with X、LLM 优化工具、微调教程、Agent 框架速成课。每个模板都是独立完整源码，3 条命令即可运行，支持 Claude/Gemini/GPT/Llama/Qwen 等多家模型切换。项目由 Shubham Saboo 维护，配有 Unwind AI 上的免费分步教程，采用 Apache-2.0 许可证。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">LLM 应用开发者、AI 创业者、学习 Agent 架构的工程师；需要快速搭建 AI 应用的团队；寻找 RAG/Agent 最佳实践参考的开发者。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">L-学习资源/其他 › AI应用模板 › LLM应用集合</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#5</span>
+<span class="card-title"><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></span>
+</div>
+<span class="star-badge">⭐ +794 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">反 AI 糙设计技能——让 Claude Code / Cursor / Codex 生成的 UI 不再有 AI 味</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#563d7c;"></span><span class="meta-value">CSS</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">5,129 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+794</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Hallmark 由 Together AI 团队开发，是一个面向 AI 编程助手的设计技能（Design Skill）。它将反 AI-slop 的设计共识——排版、配色、布局、动效、微交互、结构多样性——编码为一套有主见的规则集。核心特色：22 种主题、4 种动词模式（构建/审计/重设计/学习）、21 种命名宏结构、65 道 slop-test 检测门、预发射自我批评、以及独有的 study 功能（从截图或 URL 提取设计 DNA）。项目记忆系统会记录每次运行的结构和主题，确保连续输出不重复。支持 Claude Code、Cursor、Codex 一键安装。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">使用 AI 编程助手的全栈开发者、前端开发者；希望 AI 生成的 UI 摆脱"千篇一律"模板感的团队；需要快速产出高质量设计原型的产品团队。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">B-开发者工具 › AI编程工具 › 设计技能</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#6</span>
+<span class="card-title"><a href="https://github.com/Raphire/Win11Debloat">Raphire/Win11Debloat</a></span>
+</div>
+<span class="star-badge">⭐ +118 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">轻量级 Windows 10/11 系统精简脚本——一键去除预装应用、关闭遥测、定制系统</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#012456;"></span><span class="meta-value">PowerShell</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">50,855 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+118</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Win11Debloat 是一个轻量级 PowerShell 脚本，可快速精简和定制 Windows 体验。功能覆盖：移除预装臃肿应用、关闭遥测/诊断数据/活动历史/定向广告、禁用 Copilot 和 Windows Recall 等 AI 功能、恢复 Win10 风格右键菜单、自定义任务栏/开始菜单/文件管理器、关闭 Bing 搜索集成等。支持命令行参数自定义、Windows Audit 模式、以及对其他用户应用更改。所有操作均可轻松还原，移除的应用可通过 Microsoft Store 重新安装。一行 PowerShell 命令即可运行。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">Windows 系统管理员、追求系统纯净度的用户、IT 运维人员；批量部署 Windows 时需要标准化配置的场景；对新系统预装应用和遥测感到不满的普通用户。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">I-系统/底层 › 系统优化 › Windows精简</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#7</span>
+<span class="card-title"><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></span>
+</div>
+<span class="star-badge">⭐ +1,095 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">将任意代码/文档/图片/视频转化为可查询知识图谱的 AI 编程技能</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#3572A5;"></span><span class="meta-value">Python</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">84,684 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+1,095</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Graphify 是一个 AI 编程助手技能（Skill），支持 Claude Code、Codex、OpenCode、Cursor、Gemini CLI 等多种工具。它将任意文件夹中的代码、SQL Schema、R 脚本、Shell 脚本、文档、论文、图片或视频转化为可查询的知识图谱，将应用代码 + 数据库 Schema + 基础设施统一到一个图中。核心能力包括：自动代码解析与实体提取、社区检测算法、置信度评分、以及基于图结构的智能查询。项目还推出了商业产品 Penpax——一个始终在线的个人知识层，持续索引会议、浏览器历史、邮件和文件。支持 Docker MCP Toolkit + SQLite 集成。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">使用 AI 编程助手的开发者、大型代码库维护者；需要快速理解陌生代码库的工程师；希望将分散的文档和代码统一为知识图谱的团队。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">B-开发者工具 › AI编程工具 › 代码知识图谱</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#8</span>
+<span class="card-title"><a href="https://github.com/hasaneyldrm/exercises-dataset">hasaneyldrm/exercises-dataset</a></span>
+</div>
+<span class="star-badge">⭐ +451 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">1,324 个健身动作的结构化多语言数据集——健身应用的底层数据层</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#e34c26;"></span><span class="meta-value">HTML</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">12,604 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+451</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">这是一个包含 1,324 个健身动作的结构化数据集，提供肌肉群、器械、目标肌群分类数据，以及 6 种语言（英语、西班牙语、意大利语、土耳其语、俄语、中文）的分步指导。数据源自 ExerciseDB v1，本仓库在此基础上添加了多语言翻译和交互式浏览器。附带 setup.html 开发者向导，可一键生成 SQL Server/PostgreSQL/MySQL/SQLite 的建表语句和 INSERT 语句，并提供 JS/Python/C#/Java/PHP/Go/cURL 的 API 调用示例。还支持将结构化 Prompt 粘贴到 LLM 生成完整 REST API。注意：动作的图片和 GIF 动画因版权争议不包含在仓库中。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">健身/运动 App 开发者、健康领域产品经理；需要运动数据的 ML 研究者；健身教育平台的内容团队；需要快速搭建健身应用后端的独立开发者。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">F-数据/数据库 › 结构化数据集 › 健身运动数据</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#9</span>
+<span class="card-title"><a href="https://github.com/github/spec-kit">github/spec-kit</a></span>
+</div>
+<span class="star-badge">⭐ +543 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">GitHub 官方的规格驱动开发工具包——让规格变为可执行的实现</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#3572A5;"></span><span class="meta-value">Python</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">120,579 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+543</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Spec Kit 由 GitHub 官方开发，是一个推行 Spec-Driven Development（规格驱动开发）的开源工具包。核心理念是翻转传统开发流程：先写规格（what &amp; why），再由 AI Agent 生成实现。提供 Specify CLI 工具和 7 个斜杠命令：/speckit.constitution（项目原则）→ /speckit.specify（需求规格）→ /speckit.plan（技术方案）→ /speckit.tasks（任务分解）→ /speckit.implement（执行实现）。支持 30+ AI 编程助手集成（Claude Code、Copilot、Codex、Cursor 等），并提供 Extensions（扩展新能力）、Presets（定制工作流）、Bundles（角色化配置包）三层定制体系。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">使用 AI 编程助手的开发团队、技术负责人；希望规范 AI 辅助开发流程的组织；需要从需求到实现全流程结构化的产品工程团队。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">B-开发者工具 › 开发流程工具 › 规格驱动开发</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;">
+<span class="card-rank">#10</span>
+<span class="card-title"><a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a></span>
+</div>
+<span class="star-badge">⭐ +299 today</span>
+</div>
+<div class="card-body">
+<div class="card-one-liner">面向 AI Agent 的营销技能集合——CRO、文案、SEO、分析、增长工程一体化</div>
+<div class="meta-row">
+<div class="meta-item"><span class="meta-label">语言</span><span class="lang-dot" style="background:#f1e05a;"></span><span class="meta-value">JavaScript</span></div>
+<div class="meta-item"><span class="meta-label">Star</span><span class="meta-value">38,542 总计</span></div>
+<div class="meta-item"><span class="meta-label">今日新增</span><span class="meta-value">+299</span></div>
+</div>
+<div class="card-section">
+<div class="card-section-title">详细介绍</div>
+<div class="card-section-text">Marketing Skills 是一套面向 AI 编程助手的营销技能（Skills）集合，由 SaaS 营销专家 Corey Haines 开发。包含 40+ 个技能模块，覆盖转化优化（CRO）、文案撰写、SEO 审计、AI 搜索优化（AEO/GEO）、广告投放、A/B 测试、邮件序列、定价策略、竞品分析、获客漏斗等营销全链路。技能之间互相引用：product-marketing 是基础技能，其他技能先读取它理解产品定位再执行任务。支持 Claude Code、Codex、Cursor、Windsurf 等所有兼容 Agent Skills 规范的工具，一键安装。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">适用领域</div>
+<div class="card-section-text">技术型营销人员、SaaS 创始人、增长工程师；使用 AI 编程助手并希望扩展营销能力的团队；需要系统化营销框架指导的独立开发者和小团队。</div>
+</div>
+<div class="card-section">
+<div class="card-section-title">知识归类</div>
+<div class="classification">B-开发者工具 › AI编程工具 › 营销技能</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th style="width:6%;text-align:center;">排名</th>
+<th style="width:28%;">项目</th>
+<th style="width:14%;">主语言</th>
+<th style="width:12%;text-align:right;">今日 ⭐</th>
+<th style="width:40%;">知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank-cell">#1</td>
+<td>OpenCut-app/OpenCut</td>
+<td>TypeScript</td>
+<td class="star-cell">+1,229</td>
+<td>C-前端/Web › 视频编辑器</td>
+</tr>
+<tr>
+<td class="rank-cell">#2</td>
+<td>HKUDS/Vibe-Trading</td>
+<td>Python</td>
+<td class="star-cell">+1,153</td>
+<td>A-AI/机器学习 › 量化交易Agent</td>
+</tr>
+<tr>
+<td class="rank-cell">#3</td>
+<td>moeru-ai/airi</td>
+<td>TypeScript</td>
+<td class="star-cell">+78</td>
+<td>A-AI/机器学习 › AI虚拟伴侣</td>
+</tr>
+<tr>
+<td class="rank-cell">#4</td>
+<td>Shubhamsaboo/awesome-llm-apps</td>
+<td>Python</td>
+<td class="star-cell">+996</td>
+<td>L-学习资源 › AI应用模板</td>
+</tr>
+<tr>
+<td class="rank-cell">#5</td>
+<td>Nutlope/hallmark</td>
+<td>CSS</td>
+<td class="star-cell">+794</td>
+<td>B-开发者工具 › AI编程工具</td>
+</tr>
+<tr>
+<td class="rank-cell">#6</td>
+<td>Raphire/Win11Debloat</td>
+<td>PowerShell</td>
+<td class="star-cell">+118</td>
+<td>I-系统/底层 › 系统优化</td>
+</tr>
+<tr>
+<td class="rank-cell">#7</td>
+<td>Graphify-Labs/graphify</td>
+<td>Python</td>
+<td class="star-cell">+1,095</td>
+<td>B-开发者工具 › AI编程工具</td>
+</tr>
+<tr>
+<td class="rank-cell">#8</td>
+<td>hasaneyldrm/exercises-dataset</td>
+<td>HTML</td>
+<td class="star-cell">+451</td>
+<td>F-数据/数据库 › 结构化数据集</td>
+</tr>
+<tr>
+<td class="rank-cell">#9</td>
+<td>github/spec-kit</td>
+<td>Python</td>
+<td class="star-cell">+543</td>
+<td>B-开发者工具 › 开发流程工具</td>
+</tr>
+<tr>
+<td class="rank-cell">#10</td>
+<td>coreyhaines31/marketingskills</td>
+<td>JavaScript</td>
+<td class="star-cell">+299</td>
+<td>B-开发者工具 › AI编程工具</td>
+</tr>
+</tbody>
+</table>
+<div class="footer-note">
+    📅 数据来源：GitHub Trending (https://github.com/trending?since=daily) · 抓取时间：2026-07-15<br/>
+    🔗 所有仓库链接均为 owner/repo 格式，可在 GitHub 直接访问<br/>
+    📊 今日 10 个项目合计新增 Star：<strong>6,756</strong>，榜单与昨日完全一致，全部为连续上榜项目
+  </div>
+</div>
+</body>
+</html>

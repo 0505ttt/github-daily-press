@@ -1,0 +1,17 @@
+{
+  "id": "/",
+  "name": "GitHub 每日项目推送",
+  "short_name": "开源热点",
+  "description": "每日开源热点、AI 前沿与项目分类库，支持离线阅读。",
+  "lang": "zh-CN",
+  "start_url": "/GitHub项目分析/GitHub热点杂志.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#101713",
+  "theme_color": "#193d29",
+  "icons": [
+    {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}

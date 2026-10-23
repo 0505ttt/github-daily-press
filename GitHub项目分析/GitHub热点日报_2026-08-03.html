@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-03</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  /* 固定导航栏 */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: #24292e; color: #fff;
+    padding: 12px 30px; display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .navbar .brand { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+  .navbar .brand span { color: #2da44e; }
+  .navbar .date { font-size: 14px; color: #adbac7; }
+
+  /* 封面区域 */
+  .hero {
+    margin-top: 50px;
+    padding: 70px 30px 50px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1e22 0%, #24292e 40%, #1a3a2a 70%, #2da44e 130%);
+    color: #fff;
+  }
+  .hero h1 { font-size: 2.6em; margin-bottom: 10px; letter-spacing: 2px; }
+  .hero .date-big { font-size: 1.3em; color: #7ee787; font-weight: 600; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1.05em; color: #adbac7; }
+
+  /* 开头概览 */
+  .overview {
+    max-width: 920px; margin: -30px auto 20px;
+    background: #fff; border-radius: 12px; padding: 28px 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative; z-index: 10;
+  }
+  .overview h2 { font-size: 1.3em; margin-bottom: 12px; border-left: 4px solid #2da44e; padding-left: 12px; }
+  .overview p { color: #445463; font-size: 0.95em; }
+
+  /* 主体内容 */
+  .container { max-width: 920px; margin: 0 auto; padding: 20px 20px 60px; }
+
+  /* 项目卡片 */
+  .card {
+    background: #fff; border-radius: 12px; margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden; border-left: 5px solid #24292e;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .card-header { padding: 20px 26px 14px; }
+  .rank-badge {
+    display: inline-block; background: #24292e; color: #7ee787;
+    font-size: 0.8em; font-weight: 700; padding: 2px 12px; border-radius: 20px; margin-bottom: 8px;
+  }
+  .card-header h3 { font-size: 1.35em; margin-bottom: 6px; }
+  .card-header h3 a { color: #0969da; text-decoration: none; }
+  .card-header h3 a:hover { text-decoration: underline; }
+  .card-header .tagline { font-size: 0.92em; color: #57606a; font-style: italic; }
+
+  .card-meta {
+    display: flex; flex-wrap: wrap; gap: 12px 24px;
+    padding: 0 26px 14px; font-size: 0.85em;
+  }
+  .card-meta .meta-item { display: flex; align-items: center; gap: 6px; }
+  .meta-item .label { color: #6e7781; }
+  .meta-item .value { font-weight: 600; }
+  .star-today { color: #2da44e; font-weight: 700; }
+  .star-total { color: #24292e; }
+  .lang-badge {
+    display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 0.8em; font-weight: 600;
+    background: #ddf4ff; color: #0969da;
+  }
+
+  .card-body { padding: 0 26px 16px; }
+  .card-body h4 { font-size: 0.82em; text-transform: uppercase; color: #6e7781; letter-spacing: 1px; margin: 14px 0 6px; }
+  .card-body p { font-size: 0.9em; color: #3b3f45; }
+  .card-body .domain { font-size: 0.88em; color: #57606a; background: #f6f8fa; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #2da44e; }
+
+  .card-footer { padding: 0 26px 18px; }
+  .classify {
+    display: inline-block; font-size: 0.8em; color: #8250df;
+    background: #faf0ff; padding: 3px 12px; border-radius: 6px; border: 1px solid #e6d5f5;
+  }
+
+  /* 速览表 */
+  .table-section { max-width: 920px; margin: 40px auto 0; padding: 0 20px; }
+  .table-section h2 { font-size: 1.4em; margin-bottom: 16px; border-left: 4px solid #2da44e; padding-left: 12px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  th { background: #24292e; color: #fff; padding: 12px 14px; text-align: left; font-size: 0.85em; }
+  td { padding: 10px 14px; border-bottom: 1px solid #eaeef2; font-size: 0.85em; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  tr:hover td { background: #eaf5ec; }
+  td.rank { text-align: center; font-weight: 700; color: #2da44e; }
+  td.stars { color: #2da44e; font-weight: 700; }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  .footer-note { max-width: 920px; margin: 30px auto; text-align: center; color: #6e7781; font-size: 0.82em; }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="brand">📰 GitHub <span>热点日报</span></div>
+<div class="date">2026-08-03</div>
+</div>
+
+<div class="hero">
+<div class="date-big">2026 年 8 月 3 日</div>
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<p class="subtitle">每日追踪开源世界脉搏</p>
+</div>
+
+<div class="overview">
+<h2>🔍 今日风向</h2>
+<p>今日榜单<strong>AI/学习资源类项目继续霸榜</strong>，微软系课程（AI-For-Beginners、generative-ai-for-beginners）连续多日占据前列，AI-For-Beginners 更以 +2,617 星蝉联榜首。安全赛道黑马 <strong>reverse-skill</strong>（+1,145）连续三天上榜，AI Agent 生态项目（Agent-Reach、TencentDB-Agent-Memory）表现强劲。新面孔 <strong>airllm</strong>（让 70B 模型跑在 4GB 显卡上）以 +963 星杀入前三，<strong>build-your-own-x</strong>（53 万星"造轮子"教程合集）和 <strong>Agent-Reach</strong>（让 Agent 一键联网）均为今日新上榜项目。</p>
+</div>
+
+<div class="container">
+
+<div class="card" style="border-left-color:#2da44e;">
+<div class="card-header">
+<span class="rank-badge">🥇 #1</span>
+<h3><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft / AI-For-Beginners</a></h3>
+<p class="tagline">微软出品——12 周 24 节课的 AI 入门课程，从神经网络到大语言模型全覆盖</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+2,617</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">58,926</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">Jupyter Notebook</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>AI-For-Beginners 是微软官方推出的 AI 学习课程，用 12 周时间、24 节课系统讲解人工智能核心知识。课程涵盖神经网络基础（感知机、多层网络、反向传播）、计算机视觉（CNN、迁移学习）、自然语言处理（嵌入、RNN、Transformer）以及大语言模型（GPT、提示工程）等前沿主题。每节课配有可运行的 Jupyter Notebook 实验和测验，支持 Azure ML 云端实验室和本地运行。已翻译为 10+ 种语言（含中文），是 GitHub 上 star 数最高的 AI 学习资源之一。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">AI 初学者、想系统学习深度学习的开发者、高校学生、培训机构讲师、需要补充 AI 知识体系的技术从业者。</div>
+</div>
+<div class="card-footer">
+<span class="classify">L-学习资源/其他 › AI教程 › 入门课程</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">🥈 #2</span>
+<h3><a href="https://github.com/usekaneo/kaneo" target="_blank">usekaneo / kaneo</a></h3>
+<p class="tagline">极简主义开源项目管理平台——Jira/Linear/Monday 的自托管替代</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+491</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">6,103</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">TypeScript</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>Kaneo 是一个开源、可自托管的项目管理工具，核心理念是"你需要的全都有，你不需要的一个不塞"。以看板（Kanban）界面为核心，聚焦于任务管理和 Issue 追踪，刻意摒弃了过度复杂的工作流和多余的按钮。技术栈采用 React + Hono（TypeScript 全栈），单容器 Docker 部署即可启动，也提供 Helm Chart 支持 Kubernetes 部署。内置一键部署工具 drim，可自动配置 HTTPS、数据库和全部服务。与 Jira 相比，Kaneo 的核心卖点是极致简洁——MIT 许可证完全开源。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">觉得 Jira/Linear 过于复杂的小型开发团队、追求自托管的项目管理方案的技术团队、需要轻量看板工具的初创公司。</div>
+</div>
+<div class="card-footer">
+<span class="classify">D-后端/服务端 › 项目管理 › 开源Jira替代</span>
+</div>
+</div>
+
+<div class="card" style="border-left-color:#2da44e;">
+<div class="card-header">
+<span class="rank-badge">🥉 #3 🆕 首次上榜</span>
+<h3><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin / airllm</a></h3>
+<p class="tagline">让 70B 大模型跑在单张 4GB 显卡上——极致显存优化的 LLM 推理引擎</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+963</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">25,595</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">Python</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>AirLLM 通过层流式推理（layerwise streaming）技术，大幅降低大模型推理的显存占用，让 70B 参数模型在单张 4GB 显卡上运行——无需量化、蒸馏或剪枝。更夸张的是，405B 的 Llama 3.1 只需 8GB，DeepSeek-V3（671B）约 12GB，而 Kimi K3（2.8T）仅需不到 4GB，因为稀疏 MoE 模型每次只流式加载一个专家而非整层。核心原理是将模型层存储在磁盘/SSD 上，推理时逐层加载、逐层释放，以时间换空间，使超大模型在消费级硬件上成为可能。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">本地部署超大模型的开发者、GPU 显存有限但想跑大模型的个人研究者、需要离线推理超大模型的场景、教育/演示用途。适合 4-8GB 显存的笔记本/台式机跑 70B+ 级模型。</div>
+</div>
+<div class="card-footer">
+<span class="classify">A-AI/机器学习 › LLM推理优化 › 极致显存优化</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#4</span>
+<h3><a href="https://github.com/iv-org/invidious" target="_blank">iv-org / invidious</a></h3>
+<p class="tagline">YouTube 的隐私友好型替代前端——无广告、无追踪、无 JavaScript 依赖</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+307</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">21,957</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">Crystal</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>Invidious 是一个开源的 YouTube 替代前端，核心承诺是无广告、无追踪、无 JavaScript 依赖。它不使用 YouTube 官方 API，而是自行解析内容，因此订阅、观看历史完全独立于 Google 账号。支持浅色/暗色主题、纯音频模式（移动端后台播放）、Reddit 评论集成、数据导入导出（兼容 NewPipe/FreeTube）。可自部署也可使用公共实例。使用 Crystal 语言编写，性能优秀。开发者还推荐搭配 Privacy Redirect 浏览器扩展使用。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">重视隐私的用户、广告厌恶者、开发者/运维想自建媒体前端、开源社区运维者。场景：无广告观看 YouTube、隐私保护浏览、数据自主的订阅管理。</div>
+</div>
+<div class="card-footer">
+<span class="classify">C-前端/Web › 隐私前端 › YouTube替代</span>
+</div>
+</div>
+
+<div class="card" style="border-left-color:#2da44e;">
+<div class="card-header">
+<span class="rank-badge">#5 🆕 首次上榜</span>
+<h3><a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank">codecrafters-io / build-your-own-x</a></h3>
+<p class="tagline">"造轮子"学编程——GitHub 上 star 最高的编程实战教程合集（53 万星）</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+710</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">534,781</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">Markdown</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>这个仓库汇集了大量精心编写的"从零构建"教程，指导开发者亲手重造 Git、数据库、Docker、操作系统、区块链、3D 渲染器、搜索引擎、编程语言、网络协议栈、BitTorrent 客户端等经典技术。核心理念来自费曼的名言："我不能创造的，我就不理解。"每个教程都标注了编程语言和难度，覆盖 C/C++、Python、Rust、Go、Java 等主流语言。仓库已有 53 万+ star，是 GitHub 上 star 数最高的学习资源之一。与一般的 awesome 列表不同，这里收录的不是"工具推荐"，而是"从零实现的完整教程"，强调深度理解和动手实践。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">想深入理解底层技术原理的开发者、计算机科学学生、准备系统设计面试的工程师、希望跳出框架黑盒的资深程序员。适合：周末项目、系统学习、面试准备。</div>
+</div>
+<div class="card-footer">
+<span class="classify">L-学习资源/其他 › 编程学习 › 造轮子教程</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#6</span>
+<h3><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520 / reverse-skill</a></h3>
+<p class="tagline">给 AI 编程助手装上"安全专家大脑"——逆向/渗透/安全研究的技能路由包</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+1,145</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">13,247</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">PowerShell</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>当 AI Agent（Claude Code、Codex CLI、Cursor 等）遇到 APK、二进制文件、前端 JS 加密、CTF 题目或渗透测试目标时，这个包会自动将其路由到正确的方法论，检查可用工具并执行可重复的工作流。核心设计是"AI 自动路由 + 按需自举工具链 + 自动进化经验库"，涵盖 APK 逆向、iOS 移动分析、二进制逆向（IDA/radare2/Ghidra）、JS 逆向、恶意软件分析、渗透测试、CTF 编排（40+ 子技能）等 15+ 个场景。内置完整的路由矩阵（MASTER-ROUTING），能根据目标类型自动选择 jadx、apktool、Frida、IDA 或 BurpSuite 等工具。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">逆向工程师、安全研究员、渗透测试人员、CTF 选手、使用 Claude Code / Kiro / Cursor / Cline 等 AI 编程客户端的安全从业者。</div>
+</div>
+<div class="card-footer">
+<span class="classify">G-安全 › 逆向工程 › AI安全技能路由</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#7</span>
+<h3><a href="https://github.com/different-ai/openwork" target="_blank">different-ai / openwork</a></h3>
+<p class="tagline">开源的 Claude Cowork 替代品——本地优先的 AI 工作流共享桌面应用</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+319</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">20,277</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">TypeScript</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>OpenWork 是一个免费开源的桌面应用，专为共享 AI 工作流而设计，是 Claude Cowork 和 Codex 的开源替代方案，支持 macOS、Windows、Linux 三大平台。只需添加一个 OpenWork MCP 到 Codex、Claude Code、Cursor 或其他兼容 Agent，就能在不同工具、团队成员、机器之间复用同一套技能、MCP 连接和服务。团队版 OpenWork Den 提供推理资源管理、权限控制、技能市场发布等企业级功能。基于 opencode 构建，支持 50+ LLM 和自带 Key 模式。与 Claude Cowork 相比，完全本地优先、数据自主可控。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者和团队；需要在团队内共享 AI 工作流配置的组织；追求数据本地化的隐私敏感场景。</div>
+</div>
+<div class="card-footer">
+<span class="classify">B-开发者工具 › AI协作平台 › 开源Claude Cowork替代</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#8</span>
+<h3><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">microsoft / generative-ai-for-beginners</a></h3>
+<p class="tagline">21 节课，从零开始构建生成式 AI 应用——微软出品的 GenAI 实战课程（V3）</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+588</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">114,728</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">Jupyter Notebook</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>微软出品、Star 总数超 11 万的重量级课程，已迭代到 Version 3。21 节课覆盖生成式 AI 全栈：从 LLM 原理、Prompt Engineering、RAG 与向量数据库，到 AI Agents、微调、SLM，再到 Mistral 和 Meta 系列模型实战。每节课配有视频讲解 + Python/TypeScript 双语言代码 + Azure OpenAI / OpenAI / Foundry Local 三种运行环境。还提供 50+ 种语言的自动翻译版本。这是目前体系最完整的 GenAI 实战课程之一。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">想入门生成式 AI 应用开发的全栈工程师、产品经理需要理解技术边界者、高校教学、企业内训。场景：构建 RAG 系统、聊天应用、图像生成应用，学习 LLMOps 全流程。</div>
+</div>
+<div class="card-footer">
+<span class="classify">L-学习资源/其他 › AI教程 › 生成式AI</span>
+</div>
+</div>
+
+<div class="card" style="border-left-color:#2da44e;">
+<div class="card-header">
+<span class="rank-badge">#9 🆕 首次上榜</span>
+<h3><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong / Agent-Reach</a></h3>
+<p class="tagline">给 AI Agent 装上"互联网之眼"——一键解锁 Twitter/Reddit/YouTube/B站/小红书等全平台数据访问</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+645</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">64,634</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">Python</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>Agent Reach 解决了 AI Agent 的"上网抓瞎"问题——Agent 能写代码改文档，却读不了 YouTube 字幕、搜不了 Twitter、打不开小红书。这个项目把各平台的接入门槛（付费 API、IP 封锁、登录验证、数据清洗）全部封装好，用户只需对 Agent 说一句话即可自动安装。支持网页阅读、YouTube 字幕提取、RSS 订阅、Twitter/X 搜索与时间线、Reddit 搜索、B站视频详情、小红书内容、GitHub 仓库读取等。每个平台采用"首选+备选"多后端路由策略，某个接入方式失效会自动切换。兼容所有能跑命令行的 Agent（Claude Code、OpenClaw、Cursor、Windsurf），完全免费开源。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">使用 Claude Code / Cursor / Windsurf 等 AI Agent 的开发者、需要 Agent 自动获取互联网信息的工作流、舆情分析/竞品调研/内容创作者。场景：让 Agent 自动搜推特口碑、看 YouTube 教程总结、查 Reddit 技术讨论。</div>
+</div>
+<div class="card-footer">
+<span class="classify">A-AI/机器学习 › Agent工具 › 互联网接入</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#10</span>
+<h3><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud / TencentDB-Agent-Memory</a></h3>
+<p class="tagline">AI Agent 的团队级记忆中枢——把对话、文档、代码变成可治理、可共享的记忆资产</p>
+</div>
+<div class="card-meta">
+<div class="meta-item"><span class="label">⭐ 今日新增</span><span class="value star-today">+604</span></div>
+<div class="meta-item"><span class="label">总 Star</span><span class="value star-total">10,923</span></div>
+<div class="meta-item"><span class="label">语言</span><span class="value lang-badge">TypeScript</span></div>
+</div>
+<div class="card-body">
+<h4>📖 详细介绍</h4>
+<p>腾讯云出品的 Agent 记忆系统，核心架构基于两大支柱：记忆分层（Memory Layering）和符号化记忆（Symbolic Memory）。短期记忆用 Mermaid 符号图压缩冗长的工具日志，减少 Token 消耗最高达 61.38%；长期记忆构建语义金字塔：L0 对话 → L1 原子事实 → L2 场景块 → L3 人物画像。与把数据堆进向量数据库的传统方案不同，它强调"渐进式披露"——Agent 只关注顶层结构，需要细节时通过 node_id 下钻。已适配 OpenClaw 和 Hermes Agent 两大框架，本地零配置即用（SQLite + sqlite-vec 后端）。在 OpenClaw WideSearch 基准上，pass rate 提升 51.52%。</p>
+<h4>🎯 适用领域</h4>
+<div class="domain">AI Agent 开发者、需要给 Agent 加上持久记忆的团队、Agent 基础设施建设者、Hermes/OpenClaw 用户。场景：多会话记忆保留、用户画像建模、长程任务上下文压缩、跨 Agent 记忆共享。</div>
+</div>
+<div class="card-footer">
+<span class="classify">A-AI/机器学习 › Agent记忆 › 团队记忆中枢</span>
+</div>
+</div>
+</div>
+
+<div class="table-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th style="width:60px;">排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="rank">#1</td><td><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft/AI-For-Beginners</a></td><td>Jupyter Notebook</td><td class="stars">+2,617</td><td>L-学习资源 › AI教程</td></tr>
+<tr><td class="rank">#2</td><td><a href="https://github.com/usekaneo/kaneo" target="_blank">usekaneo/kaneo</a></td><td>TypeScript</td><td class="stars">+491</td><td>D-后端 › 项目管理</td></tr>
+<tr><td class="rank">#3</td><td><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm 🆕</a></td><td>Python</td><td class="stars">+963</td><td>A-AI › LLM推理优化</td></tr>
+<tr><td class="rank">#4</td><td><a href="https://github.com/iv-org/invidious" target="_blank">iv-org/invidious</a></td><td>Crystal</td><td class="stars">+307</td><td>C-前端 › 隐私前端</td></tr>
+<tr><td class="rank">#5</td><td><a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank">codecrafters-io/build-your-own-x 🆕</a></td><td>Markdown</td><td class="stars">+710</td><td>L-学习资源 › 编程学习</td></tr>
+<tr><td class="rank">#6</td><td><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520/reverse-skill</a></td><td>PowerShell</td><td class="stars">+1,145</td><td>G-安全 › 逆向工程</td></tr>
+<tr><td class="rank">#7</td><td><a href="https://github.com/different-ai/openwork" target="_blank">different-ai/openwork</a></td><td>TypeScript</td><td class="stars">+319</td><td>B-开发者工具 › AI协作平台</td></tr>
+<tr><td class="rank">#8</td><td><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">microsoft/generative-ai-for-beginners</a></td><td>Jupyter Notebook</td><td class="stars">+588</td><td>L-学习资源 › AI教程</td></tr>
+<tr><td class="rank">#9</td><td><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach 🆕</a></td><td>Python</td><td class="stars">+645</td><td>A-AI › Agent工具</td></tr>
+<tr><td class="rank">#10</td><td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a></td><td>TypeScript</td><td class="stars">+604</td><td>A-AI › Agent记忆</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer-note">
+  数据来源：GitHub Trending (since=daily) | 生成时间：2026-08-03 | 所有项目信息基于真实抓取
+</div>
+</body>
+</html>

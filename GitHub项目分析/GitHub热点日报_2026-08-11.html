@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-11</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+  line-height: 1.7;
+  font-size: 15px;
+}
+/* 固定导航栏 */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  background: #24292e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.navbar-brand { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+.navbar-date { font-size: 14px; color: #8b949e; }
+/* 封面 */
+.hero {
+  margin-top: 56px;
+  padding: 70px 28px 55px;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff;
+  text-align: center;
+}
+.hero h1 { font-size: 36px; margin-bottom: 12px; letter-spacing: 1px; }
+.hero .subtitle { font-size: 18px; opacity: 0.9; }
+.hero .date-badge {
+  display: inline-block;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.18);
+  padding: 6px 24px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+/* 概述 */
+.overview {
+  max-width: 960px;
+  margin: 36px auto 28px;
+  padding: 0 24px;
+}
+.overview p {
+  background: #fff;
+  border-left: 4px solid #2da44e;
+  padding: 18px 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  font-size: 15px;
+  line-height: 1.9;
+}
+/* 主体卡片容器 */
+.container {
+  max-width: 960px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+/* 卡片 */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border-left: 5px solid #2da44e;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.card-header {
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid #e1e4e8;
+}
+.rank-badge {
+  display: inline-block;
+  background: #24292e;
+  color: #fff;
+  width: 36px; height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+.repo-name {
+  font-size: 21px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.repo-name a { color: #0969da; text-decoration: none; }
+.repo-name a:hover { text-decoration: underline; }
+.tags-inline { display: inline-block; margin-left: 10px; }
+.tag-mini {
+  display: inline-block;
+  background: #ddf4ff;
+  color: #0969da;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #57606a;
+}
+.meta-item { display: inline-flex; align-items: center; }
+.meta-item strong { color: #24292e; }
+.star-today {
+  background: #dcfce7;
+  color: #166534;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.lang-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.card-body { padding: 20px 28px 24px; }
+.positioning {
+  font-size: 16px;
+  color: #1a7f37;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  background: #f0fdf4;
+  border-radius: 6px;
+  border-left: 3px solid #2da44e;
+}
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #57606a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.detail-text { font-size: 15px; line-height: 1.85; color: #24292e; }
+.scope-text { font-size: 14px; color: #424a53; line-height: 1.8; }
+.classify-path {
+  font-size: 13px;
+  color: #57606a;
+  background: #f6f8fa;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+.classify-path strong { color: #24292e; }
+/* 速览表 */
+.summary-section {
+  max-width: 960px;
+  margin: 20px auto 60px;
+  padding: 0 24px;
+}
+.summary-section h2 {
+  font-size: 24px;
+  color: #24292e;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #2da44e;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 14px;
+}
+th {
+  background: #24292e;
+  color: #fff;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+td { padding: 12px 16px; border-bottom: 1px solid #e1e4e8; }
+tr:nth-child(even) td { background: #f6f8fa; }
+tr:hover td { background: #ddf4ff; }
+td a { color: #0969da; text-decoration: none; }
+td a:hover { text-decoration: underline; }
+.today-star { color: #166534; font-weight: 700; }
+/* footer */
+.footer {
+  text-align: center;
+  padding: 30px 24px;
+  color: #8b949e;
+  font-size: 13px;
+  background: #24292e;
+  color: #8b949e;
+}
+/* 颜色点 */
+.c-typescript { background: #3178c6; }
+.c-python { background: #3572A5; }
+.c-javascript { background: #f1e05a; }
+.c-go { background: #00ADD8; }
+.c-shell { background: #89e051; }
+.c-cpp { background: #f34b7d; }
+.c-c { background: #555555; }
+.c-rust { background: #dea584; }
+.c-other { background: #8b949e; }
+@media (max-width: 700px) {
+  .hero h1 { font-size: 26px; }
+  .repo-name { font-size: 17px; }
+  .card-header { padding: 18px 20px 14px; }
+  .card-body { padding: 16px 20px 20px; }
+  table { font-size: 12px; }
+  th, td { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="navbar-brand">📊 GitHub 热点日报</div>
+<div class="navbar-date">2026-08-11 · 每日追踪开源世界脉搏</div>
+</div>
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="date-badge">📅 2026 年 8 月 11 日（周二）</div>
+</div>
+<div class="overview">
+<p>
+    🔥 今日榜单 AI Agent 生态继续横扫全场，Top 10 中有 7 个项目直接与 AI Agent 编排、上下文基础设施、自动化工作流相关。最大黑马是 <strong>semantica-agi/semantica</strong>（图原生上下文基础设施，今日 +967⭐）冲上榜首，紧随其后的是 <strong>PrimeIntellect-ai/prime-agent</strong>（自改进 RLM Agent，今日暴涨 +2,655⭐）和 <strong>msitarzewski/agency-agents</strong>（14 万⭐ AI 角色库，今日 +1,352⭐）。榜单另两股力量值得关注：<strong>firecrawl</strong>（16.5 万⭐ Web 数据 API）和 <strong>paperclip</strong>（"零人公司"AI Agent 编排）代表了 Agent 基础设施的成熟化趋势；而 <strong>Ladybird</strong>（从零构建的独立浏览器）则是非 AI 项目中的技术理想主义代表。
+  </p>
+</div>
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">1</span>
+<span class="repo-name"><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi / semantica</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +967⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>4,032</strong></span>
+<span class="meta-item star-today">今日新增 +967</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">图原生的 AI 上下文基础设施——为 AI 系统提供结构化上下文、因果推理和完整决策溯源</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Semantica 是一个开源的图原生（Graph-Native）基础设施层，解决 AI Agent 缺乏结构化上下文和决策可审计性的问题。它通过知识图谱摄入企业数据，自动提取实体、关系和语义信息，构建可查询的<strong>上下文图谱</strong>（Context Graph）。核心能力包括：为 LLM/Agent 提供可追溯的推理路径（provenance）、支持因果推理和语义搜索、内置本体（ontology）引擎让数据具有语义层。与传统向量数据库 RAG 的区别在于：Semantica 用图谱关系而非向量相似度做检索，决策过程可解释、可审计。MIT 协议，已发布 v0.6.0，支持 pip install semantica。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">需要可解释 AI 决策的企业团队、构建 Agent 的开发者（需要给 Agent 提供结构化知识上下文）、知识图谱/语义搜索方向的工程师、需要决策溯源与合规审计的金融/法律/医疗场景。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › 知识图谱 › Agent上下文基础设施</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">2</span>
+<span class="repo-name"><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski / agency-agents</a></span>
+<span class="tags-inline"><span class="tag-mini">Shell</span><span class="tag-mini">今日 +1,352⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-shell"></span>主语言：<strong>Shell</strong></span>
+<span class="meta-item">⭐ 总计：<strong>141,755</strong></span>
+<span class="meta-item star-today">今日新增 +1,352</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">触手可及的完整 AI Agency——从前端大法师到 Reddit 社区忍者，每个角色都是有专业人格的 Agent</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">一个开源的 AI Agent 角色合集库，每个 Agent 都是一个拥有独特人格、工作流程和交付物的专业角色。覆盖前端开发、社区运营、创意注入、现实校验等多个领域，旨在将 IDE 编程助手变成多角色 AI 代理团队。支持一键安装到 Claude Code、Cursor、Codex、Gemini、Osaurus 等主流工具，并提供原生桌面应用（macOS/Linux/Windows）浏览和安装。14 万 stars 说明它在 Agent 角色化/拟人化方向是绝对头部。与通用 Agent 框架的区别在于：它不提供框架，而是提供"人设+流程+交付物"的完整 Agent 定义。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">想快速组建"AI 虚拟团队"的创业者与独立开发者、AI Agent 自动化工作流爱好者、需要角色化 Agent 提示词/技能模板的内容创作者和运营人员。</p>
+<div class="classify-path"><strong>知识归类：</strong>B-开发者工具 › AI-Agent角色 › 人格库</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">3</span>
+<span class="repo-name"><a href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder / MediaCrawler</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +215⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>60,964</strong></span>
+<span class="meta-item star-today">今日新增 +215</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">多平台自媒体数据采集工具——小红书/抖音/快手/B站/微博/贴吧/知乎全覆盖</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">MediaCrawler 是一个功能强大的多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、百度贴吧、知乎七大主流平台的公开信息抓取，涵盖笔记/视频/帖子内容及其评论（含二级评论）。核心技术基于 Playwright 浏览器自动化框架登录并保存登录态，利用浏览器上下文通过 JS 表达式获取签名参数，无需逆向复杂加密算法即可绕过平台反爬。支持关键词搜索、指定帖子ID爬取、指定创作者主页、IP代理池、登录态缓存、生成评论词云图等功能，提供 WebUI 可视化界面和 PostgreSQL 持久化存储。最大优势是大幅降低了技术门槛——无需逆向即可采集数据。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">社交媒体数据分析师、舆情监控团队、市场研究人员、NLP/推荐系统数据准备者；需要多平台公开内容批量采集的场景（仅限学习研究用途）。</p>
+<div class="classify-path"><strong>知识归类：</strong>F-数据/数据库 › 数据采集 › 多平台爬虫框架</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">4</span>
+<span class="repo-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani / agent-skills</a></span>
+<span class="tags-inline"><span class="tag-mini">JavaScript</span><span class="tag-mini">今日 +659⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-javascript"></span>主语言：<strong>JavaScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>85,711</strong></span>
+<span class="meta-item star-today">今日新增 +659</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">为 AI 编码 Agent 打造的生产级工程技能包——覆盖 DEFINE→SHIP 全生命周期</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Google 工程师 Addy Osmani 出品的生产级 Agent 技能集合，把资深工程师的工作流、质量门禁与最佳实践打包成 Agent 可一致遵循的能力。8 个斜杠命令对应开发生命周期：<code>/spec</code>（先规格后代码）、<code>/plan</code>（原子化任务）、<code>/build</code>（一次一个切片）、<code>/test</code>（测试即证据）、<code>/review</code>、<code>/webperf</code>、<code>/code-simplify</code>、<code>/ship</code>。<code>/build auto</code> 可批准一次计划后自动实现每个任务（仍逐个测试驱动提交，遇失败/风险暂停）。技能还会根据当前工作自动激活（设计 API 触发接口设计技能，做 UI 触发前端工程技能）。通过开放 skills CLI 一键装入 70+ Agent 平台。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">想让 AI 编码助手遵循专业开发流程的开发者和团队、Claude Code/Cursor/Codex/Copilot 用户、追求 AI 自动化开发效率的个人与组织。</p>
+<div class="classify-path"><strong>知识归类：</strong>B-开发者工具 › Agent技能框架 › 工程技能包</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">5</span>
+<span class="repo-name"><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai / paperclip</a></span>
+<span class="tags-inline"><span class="tag-mini">TypeScript</span><span class="tag-mini">今日 +167⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-typescript"></span>主语言：<strong>TypeScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>76,427</strong></span>
+<span class="meta-item star-today">今日新增 +167</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">"零人公司"的开源 Agent 编排平台——像管理员工一样管理 AI Agent 团队</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Paperclip 是一个开源的 AI Agent 编排平台（Node.js 服务端 + React UI），核心理念是把 AI Agent 当作"公司员工"来管理。它让你接入自己的 Agent（支持 OpenAI Codex、Claude、OpenClaw 等），为它们分配角色和目标，并像组织架构图一样编排协作。提供组织结构（org chart）、预算管控、治理规则（governance）和目标追踪——全部在一个部署内完成。支持自托管，官方定位为"零人公司"（zero-human company）的基础设施。7.6 万 stars 的体量使其成为 Agent 编排赛道最热门项目之一。与 AutoGPT 等自主 Agent 框架的区别：Paperclip 更强调<strong>组织化管理</strong>而非单个 Agent 的自主性。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">探索"零人公司/AI 员工"模式的创业者、需要多 Agent 协作完成业务流程的团队、AI 自动化运营爱好者、想要为 AI Agent 建立预算和治理体系的技术管理者。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › Agent编排 › 零人公司平台</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">6</span>
+<span class="repo-name"><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank">PrimeIntellect-ai / prime-agent</a></span>
+<span class="tags-inline"><span class="tag-mini">TypeScript</span><span class="tag-mini">今日 +2,655⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-typescript"></span>主语言：<strong>TypeScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>12,973</strong></span>
+<span class="meta-item star-today">今日新增 +2,655</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">自改进的 RLM（递归语言模型）Agent，专为编码工作流和长时间自主任务设计</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Prime Agent 是 Prime Intellect 团队的开源编码与研究 Agent，围绕两大核心抽象构建：<strong>Recursive Language Model（RLM）</strong>——将上下文视为变量、将工具和递归子 Agent 视为函数调用，运行在持久化的 Python REPL 中；以及 <strong>Continual Harness</strong>——将持久控制环境与可保存的 harness 状态结合，使有用的工作上下文和可复用的操作模式能跨会话存活。它专为长时间运行的研究评测任务而生，支持后台自主运行、技能系统和多 Provider 接入，提供 TUI 和 JSON/RPC 模式。MIT 协议，已有 41 个 release、4,480+ commits。今日暴涨 +2,655⭐，是榜单上日增量最高的项目。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">需要长时间自主编码任务的研究人员与工程师、AI Agent 评测研究者、需要持久化上下文与可复用工作流的深度 Agent 用户、偏好开源可自托管 Agent 方案的技术团队。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › Agent框架 › 自改进RLM智能体</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">7</span>
+<span class="repo-name"><a href="https://github.com/LadybirdBrowser/ladybird" target="_blank">LadybirdBrowser / ladybird</a></span>
+<span class="tags-inline"><span class="tag-mini">C++</span><span class="tag-mini">今日 +106⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-cpp"></span>主语言：<strong>C++</strong></span>
+<span class="meta-item">⭐ 总计：<strong>65,239</strong></span>
+<span class="meta-item star-today">今日新增 +106</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">从零构建的真正独立浏览器——不 fork 任何现有引擎，挑战 Chrome/Firefox 双寡头</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Ladybird 是自 Firefox 以来首个真正从零开始构建的独立浏览器引擎项目。由前 Apple WebKit 开发者 <strong>Andreas Kling</strong> 创立，不是任何现有浏览器的 fork——自己实现 HTML/CSS/JS 引擎（LibWeb 和 LibJS），从 SerenityOS 项目独立发展而来。2024 年成立非营利组织 Ladybird Browser Initiative 接管，计划 2026 年发布 Alpha 版。最近宣布将采用 Swift 作为未来语言。6.5 万 stars 的社区体量说明市场对打破 Chromium/Gecko/WebKit 三引擎垄断格局的强烈期待。项目在技术上代表了一种"理想主义"：在大家都用 Chromium 的时代，还有人愿意从第一性原理重新造浏览器。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">浏览器引擎/Web 标准研究者、关注 Web 平台多元化的开发者、C++ 系统编程爱好者、开源理想主义支持者、想要理解浏览器内部工作原理的学习者。</p>
+<div class="classify-path"><strong>知识归类：</strong>C-前端/Web › 浏览器引擎 › 从零构建独立浏览器</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">8</span>
+<span class="repo-name"><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet / RuView</a></span>
+<span class="tags-inline"><span class="tag-mini">Rust</span><span class="tag-mini">今日 +186⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-rust"></span>主语言：<strong>Rust</strong></span>
+<span class="meta-item">⭐ 总计：<strong>89,339</strong></span>
+<span class="meta-item star-today">今日新增 +186</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">用普通 WiFi 信号实现隔墙感知、生命体征监测和存在检测——零摄像头</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">将普通 WiFi 信号转化为空间感知系统。使用低成本 ESP32 传感器（低至 $9/节点）读取 WiFi 信道状态信息（CSI），通过预训练模型实现隔墙人体检测、呼吸和心率监测、17 关键点姿态估计、跌倒检测等——全程零摄像头、零穿戴设备。核心模型仅 8KB（4-bit 量化），可在树莓派上微秒级推理。预训练权重发布于 Hugging Face，在 MM-Fi 基准上达到 82.69% torso-PCK@20，超越此前 SOTA。原生支持 Home Assistant、Apple Home、Google Home、Alexa 四大智能家居生态，内置 105 个边缘模块覆盖健康、安全、建筑、零售等场景。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">智能家居开发者、老年人看护/医疗监测场景、隐私敏感的安防需求、物联网边缘感知研究、无摄像头存在检测需求。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › 边缘感知 › WiFi感知</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">9</span>
+<span class="repo-name"><a href="https://github.com/danielmiessler/LifeOS" target="_blank">danielmiessler / LifeOS</a></span>
+<span class="tags-inline"><span class="tag-mini">TypeScript</span><span class="tag-mini">今日 +357⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-typescript"></span>主语言：<strong>TypeScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>17,862</strong></span>
+<span class="meta-item star-today">今日新增 +357</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">通用爬山法 AI 工具——帮你从"当前状态"逐步优化到"理想状态"的生活与工作助手</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">LifeOS 是知名安全研究者 Daniel Miessler 出品的开源 AI harness，核心理念是把 AI 从"编码助手"扩展为<strong>全生活助手</strong>（Life Harness）。它通过文件系统持久化 + prompt 注入技术，把你的编码 AI 变成有状态的私人助理——自动在本地维护你的上下文、偏好、正在进行的项目状态，无需后端。采用"通用爬山法"（General Hill-Climbing）框架：定义当前状态和理想状态，让 AI 一步步帮你优化。与普通 AI Chatbot 的区别在于：LifeOS 是<strong>有状态的</strong>，它记得你是谁、你在做什么、你的偏好，跨会话持续工作。作者 Daniel Miessler 是 Unsupervised Learning newsletter 创始人，在安全与 AI 社区影响力极大。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">追求个人效率系统化的知识工作者、想用 AI 管理生活与工作流程的早期实践者、Daniel Miessler 内容的粉丝、对"AI harness"概念感兴趣的开发者。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › AI工具增强 › 个人AI助手框架</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">10</span>
+<span class="repo-name"><a href="https://github.com/firecrawl/firecrawl" target="_blank">firecrawl / firecrawl</a></span>
+<span class="tags-inline"><span class="tag-mini">TypeScript</span><span class="tag-mini">今日 +815⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-typescript"></span>主语言：<strong>TypeScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>165,004</strong></span>
+<span class="meta-item star-today">今日新增 +815</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">把整个 Web 变成 AI Agent 能用的数据——一个 API 调用将任意 URL 转为干净的 Markdown</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Firecrawl 是 Y Combinator（S22）孵化的 Web 数据 API 平台，定位为"AI Agent 的数据管道"。核心能力：一个 API 调用就能把任意 URL 转换为干净的、LLM 可直接使用的 Markdown 或结构化数据；支持大规模爬取、搜索和与 Web 交互。技术亮点包括智能 JS 渲染（处理 SPA/动态内容）、反爬绕过、自动分块和结构化提取。已完成 <strong>$1,450 万 A 轮融资</strong>（Nexus Venture Partners 领投，总融资 $1,620 万），是 AI 爬虫赛道商业化最成功的项目之一。16.5 万 stars 的体量使其成为 AI 数据基础设施的事实标准之一。与 Playwright/Puppeteer 等通用爬虫的区别：Firecrawl 专注<strong>为 LLM 优化的输出</strong>——Markdown 格式、干净文本、结构化 JSON。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">构建 RAG/Agent 应用的开发者（需要 Web 数据喂给 LLM）、AI 搜索引擎开发者、数据工程师、需要大规模采集网页内容的数据团队。</p>
+<div class="classify-path"><strong>知识归类：</strong>B-开发者工具 › Web数据API › AI爬虫平台</div>
+</div>
+</div>
+</div>
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi/semantica</a></td>
+<td>Python</td>
+<td class="today-star">+967</td>
+<td>A-AI › 知识图谱 › Agent上下文基础设施</td>
+</tr>
+<tr>
+<td>#2</td>
+<td><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></td>
+<td>Shell</td>
+<td class="today-star">+1,352</td>
+<td>B-开发者工具 › AI-Agent角色 › 人格库</td>
+</tr>
+<tr>
+<td>#3</td>
+<td><a href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder/MediaCrawler</a></td>
+<td>Python</td>
+<td class="today-star">+215</td>
+<td>F-数据 › 数据采集 › 多平台爬虫</td>
+</tr>
+<tr>
+<td>#4</td>
+<td><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></td>
+<td>JavaScript</td>
+<td class="today-star">+659</td>
+<td>B-开发者工具 › Agent技能 › 工程技能包</td>
+</tr>
+<tr>
+<td>#5</td>
+<td><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a></td>
+<td>TypeScript</td>
+<td class="today-star">+167</td>
+<td>A-AI › Agent编排 › 零人公司平台</td>
+</tr>
+<tr>
+<td>#6</td>
+<td><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank">PrimeIntellect-ai/prime-agent</a></td>
+<td>TypeScript</td>
+<td class="today-star">+2,655</td>
+<td>A-AI › Agent框架 › 自改进RLM智能体</td>
+</tr>
+<tr>
+<td>#7</td>
+<td><a href="https://github.com/LadybirdBrowser/ladybird" target="_blank">LadybirdBrowser/ladybird</a></td>
+<td>C++</td>
+<td class="today-star">+106</td>
+<td>C-前端/Web › 浏览器引擎 › 独立浏览器</td>
+</tr>
+<tr>
+<td>#8</td>
+<td><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a></td>
+<td>Rust</td>
+<td class="today-star">+186</td>
+<td>A-AI › 边缘感知 › WiFi感知</td>
+</tr>
+<tr>
+<td>#9</td>
+<td><a href="https://github.com/danielmiessler/LifeOS" target="_blank">danielmiessler/LifeOS</a></td>
+<td>TypeScript</td>
+<td class="today-star">+357</td>
+<td>A-AI › AI工具增强 › 个人AI助手</td>
+</tr>
+<tr>
+<td>#10</td>
+<td><a href="https://github.com/firecrawl/firecrawl" target="_blank">firecrawl/firecrawl</a></td>
+<td>TypeScript</td>
+<td class="today-star">+815</td>
+<td>B-开发者工具 › Web数据API › AI爬虫</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer">
+  📊 GitHub 热点日报 · 数据来源：GitHub Trending（since=daily）<br/>
+  生成时间：2026-08-11 · 每日追踪开源世界脉搏
+</div>
+</body>
+</html>

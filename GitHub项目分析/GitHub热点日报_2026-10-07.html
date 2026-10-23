@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-10-07</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #24292e; color: #fff; padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+  .navbar .brand .cat { color: #3fb950; }
+  .navbar .date { font-size: 14px; color: #c9d1d9; }
+  .hero {
+    margin-top: 54px;
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    color: #fff; padding: 56px 32px 44px; text-align: center;
+  }
+  .hero h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: 2px; }
+  .hero .sub { font-size: 15px; color: rgba(255,255,255,.85); }
+  .hero .badge {
+    display: inline-block; margin-top: 14px; padding: 4px 14px;
+    border: 1px solid rgba(255,255,255,.4); border-radius: 20px; font-size: 13px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 28px 20px 60px; }
+  .summary {
+    background: #fff; border-radius: 10px; padding: 22px 26px; margin-bottom: 30px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08); border-left: 5px solid #2da44e;
+  }
+  .summary h2 { font-size: 18px; margin-bottom: 10px; color: #24292e; }
+  .summary p { font-size: 14.5px; color: #4b5563; }
+  .card {
+    background: #fff; border-radius: 10px; margin-bottom: 26px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+    border-left: 6px solid #2da44e;
+  }
+  .card:nth-child(even) { border-left-color: #24292e; }
+  .card-head { padding: 18px 24px 12px; }
+  .rank {
+    display: inline-block; background: #24292e; color: #fff; font-weight: 700;
+    border-radius: 6px; padding: 2px 10px; font-size: 13px; margin-right: 8px;
+  }
+  .card-head h3 { display: inline; font-size: 20px; }
+  .card-head h3 a { color: #0969da; text-decoration: none; }
+  .card-head h3 a:hover { text-decoration: underline; }
+  .lang {
+    display: inline-block; margin-left: 10px; font-size: 12.5px; color: #57606a;
+    background: #f0f3f6; padding: 2px 10px; border-radius: 12px; vertical-align: middle;
+  }
+  .tagline { padding: 0 24px; font-size: 15px; color: #1a7f37; font-weight: 600; }
+  .meta {
+    padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 18px;
+    font-size: 14px; border-bottom: 1px solid #eaeef2;
+  }
+  .meta .stars { color: #e3b341; font-weight: 700; }
+  .meta .today { color: #2da44e; font-weight: 700; }
+  .card-body { padding: 14px 24px 6px; }
+  .card-body h4 { font-size: 14px; color: #57606a; margin-bottom: 4px; }
+  .card-body p { font-size: 14.5px; color: #364152; margin-bottom: 12px; text-align: justify; }
+  .usecase {
+    margin: 4px 24px 18px; padding: 10px 14px; background: #f6f8fa;
+    border-radius: 8px; font-size: 14px; color: #4b5563;
+  }
+  .usecase b { color: #24292e; }
+  .klabel {
+    display: inline-block; margin: 0 24px 18px; padding: 3px 12px;
+    background: #dafbe1; color: #116329; border-radius: 6px; font-size: 13px; font-weight: 600;
+  }
+  table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    font-size: 14px;
+  }
+  th { background: #24292e; color: #fff; padding: 10px 12px; text-align: left; }
+  td { padding: 9px 12px; border: 1px solid #e6e9ee; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .todays-table td:nth-child(4) { color: #2da44e; font-weight: 700; }
+  .footer { text-align: center; padding: 26px 0 10px; color: #8b949e; font-size: 12.5px; }
+  .footer a { color: #0969da; text-decoration: none; }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 24px; }
+    .container { padding: 20px 12px 40px; }
+    .card-head h3 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand">🐱 GitHub <span class="cat">热点日报</span></div>
+<div class="date">2026-10-07 星期三</div>
+</div>
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="badge">数据来源：github.com/trending · since=daily</div>
+</div>
+<div class="container">
+<div class="summary">
+<h2>📊 今日风向</h2>
+<p>今天的榜单出现罕见的「完全延续」：12 个项目与昨日一字不差、连排名都没变，Agent 工具生态的热度稳定得不像话。细分看依然是「给 Agent 装外挂」的天下——测试（e2e）、逆向（rea）、记忆（claude-mem）、技能库（skills / impeccable / diagram-design / text-to-cad）、人格（agency-agents）各占一席。焦点项目仍是 <b>morluto/rea</b>：连续第二天日增近 3,000 star（今日 +2,963 再度全榜第一），总星已破 9K；<b>boykopovar/AnyPS5</b>（PS5 重链接）与 <b>DuarteSantos8/openGym</b>（自托管健身）媒体效应仍在发酵。老将 mattpocock/skills 总星突破 278K。</p>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#1</span>
+<h3><a href="https://github.com/tester-army/e2e">tester-army/e2e</a></h3>
+<span class="lang">TypeScript</span>
+</div>
+<div class="tagline">用自然语言描述目标、由 Agent 驱动应用的 Web/移动端 E2E 测试框架</div>
+<div class="meta">
+<span class="stars">⭐ 总计 6,207</span>
+<span class="today">今日 +1,720</span>
+<span>🔗 <a href="https://github.com/tester-army/e2e">github.com/tester-army/e2e</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>TesterArmy（YC P26 三人团队）开源的端到端测试框架：用自然语言描述测试目标，Agent 像真实用户一样操作应用，再用传统定位器和断言验证结果，语义动作 + 严格断言双层验证。杀手锏是「动作回放」——被断言验证过的 Agent 步骤会录制下来，下次运行直接回放、零模型调用，界面措辞变化不再导致测试碎裂。Web 引擎基于 Playwright（Chromium/Firefox/WebKit），移动端覆盖 iOS/Android 模拟器，仓库自带 Vite、Next.js、Expo、SwiftUI 完整示例，BYO 模型（自带订阅或 API Key）。与 Playwright/Cypress 的核心区别：不用手写选择器，验收测试代码量大幅下降。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>前端/移动团队的验收与回归测试；被脆弱选择器脚本折磨的 QA；想在 PR 上自动跑自然语言用例的工程团队。</div>
+<span class="klabel">B-开发者工具 › 测试框架 › AI智能体E2E测试</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#2</span>
+<h3><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h3>
+<span class="lang">Shell</span>
+</div>
+<div class="tagline">「给真正工程师的」AI Agent 技能集——直接来自 Matt Pocock 的 .agents 目录</div>
+<div class="meta">
+<span class="stars">⭐ 总计 278,062</span>
+<span class="today">今日 +972</span>
+<span>🔗 <a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>TypeScript 教育圈顶流 Matt Pocock 公开的日常 AI 编程技能集，核心理念是「做真正的工程，而不是 vibe coding」。针对 AI 编程四大痛点各给一剂解药：Agent 没做对（grill-me / grill-with-docs 深度对齐需求）、Agent 太啰嗦（共享语言 CONTEXT.md 减噪）、代码不能用（TDD 红绿重构循环）、代码变泥球（improve-codebase-architecture 定期扫架构）。技能分用户调用与模型自动调用两类，强调小、可改、可组合，npx skills@latest add 一键装进 Claude Code / Codex。与泛泛的 prompt 合集不同，这是一套经真实工程流打磨的方法论。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>使用 Claude Code / Codex 的资深工程师；想从 vibe coding 转向结构化 AI 辅助开发的全栈/后端开发者。</div>
+<span class="klabel">B-开发者工具 › AI编程工具 › Agent技能集</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#3</span>
+<h3><a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a></h3>
+<span class="lang">Python</span>
+</div>
+<div class="tagline">给 Agent 装上 CAD 超能力——用自然语言生成工程级 CAD 模型的技能库</div>
+<div class="meta">
+<span class="stars">⭐ 总计 17,937</span>
+<span class="today">今日 +620</span>
+<span>🔗 <a href="https://github.com/earthtojake/text-to-cad">github.com/earthtojake/text-to-cad</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>面向 CAD、机器人和硬件设计的 Agent 技能库，让编程 Agent 能直接产出工程可用的 CAD 模型而非泛泛的 3D 网格。技能覆盖参数化建模、装配与运动学描述等真实工程环节，模型以标准工程格式导出，可进 SolidWorks/Fusion/FreeCAD 等工具链继续加工。与「AI 生成漂亮图」类项目不同，它把重心放在尺寸约束、公差和可制造性上，定位是硬件工程师的 Copilot。配 cadskills.xyz 在线演示，可装到 Claude Code 等 Agent 里直接用。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>机械/硬件工程师做快速原型；机器人团队生成零件与夹具；创客与工程教育场景。</div>
+<span class="klabel">A-AI/机器学习 › Agent技能库 › CAD/硬件设计</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#4</span>
+<h3><a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a></h3>
+<span class="lang">C++</span>
+</div>
+<div class="tagline">把 PS5 游戏可执行文件直接转换成 Linux/Windows 原生程序——不做模拟</div>
+<div class="meta">
+<span class="stars">⭐ 总计 6,369</span>
+<span class="today">今日 +943</span>
+<span>🔗 <a href="https://github.com/boykopovar/AnyPS5">github.com/boykopovar/AnyPS5</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>AnyPS5 走「重链接」而非模拟路线：PS5 本就是 AMD x86-64 架构，CPU 指令无需翻译，relinker 把 PS5 可执行文件转成 Windows PE / Linux ELF 原生格式，重新实现一套 PRX 系统库替代品供动态链接，PS5 着色器重编译为 SPIR-V 走 Vulkan——思路类似 Valve Proton，没有模拟层和独立运行时进程。目前 shader 重编译器已产出通过 Spirv-Tools 验证的 SPIR-V，2D 游戏 Dreaming Sarah 在 GTX 1050 Ti 上稳定 60fps，3A 兼容仍在推进。只用 C++20 标准库、追求编译器可移植性；项目声明仅用于互操作/研究/保存目的，不含版权固件与密钥。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>硬核逆向与系统编程爱好者；游戏保存/研究社区；学习二进制重链接与着色器重编译的开发者。</div>
+<span class="klabel">K-游戏/图形 › 主机移植 › PS5原生移植</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#5</span>
+<h3><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></h3>
+<span class="lang">JavaScript</span>
+</div>
+<div class="tagline">让 AI 编码 Agent 更擅长设计的「设计语言」——确定性规则检测代替玄学审美</div>
+<div class="meta">
+<span class="stars">⭐ 总计 77,647</span>
+<span class="today">今日 +609</span>
+<span>🔗 <a href="https://github.com/pbakaus/impeccable">github.com/pbakaus/impeccable</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>impeccable 是一套给 AI 编程工具用的设计能力框架：1 个技能、23 个命令、60 条确定性设计检测规则，把「好看」拆解成可机器验证的客观标准（间距、层级、对比度、对齐等），Agent 写完界面即刻体检。与「给 Agent 一段审美 prompt 就完事」的做法不同，它主张设计质量应该像 lint 一样可测：每条规则都能机器执行、给出确定性的通过/失败。支持 13+ 种 AI 编码工具（Claude Code、Codex、Cursor 等），是目前覆盖面最广的设计技能框架，配套 impeccable.style 文档站与 npm CLI。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>用 AI 生成 UI 但总觉得「差点意思」的开发者；无设计师的小团队；想让 Agent 输出达到可交付设计质的团队。</div>
+<span class="klabel">A-AI/机器学习 › AI编程设计 › 设计质量检测</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#6</span>
+<h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+<span class="lang">TypeScript</span>
+</div>
+<div class="tagline">给所有 AI Agent 的跨会话持久记忆——捕获、压缩、按需注入历史上下文</div>
+<div class="meta">
+<span class="stars">⭐ 总计 97,123</span>
+<span class="today">今日 +536</span>
+<span>🔗 <a href="https://github.com/thedotmack/claude-mem">github.com/thedotmack/claude-mem</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>解决「Agent 每次新会话都失忆」：自动捕获会话中的工具调用观察记录，AI 生成语义摘要压缩存储，新会话按需注入相关上下文。基于 Claude Agent SDK，提供渐进式披露（分层检索 + token 成本可见）、mem-search 技能搜索、Web 实时记忆流查看器。最初为 Claude Code 而生，现已支持 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等几乎所有主流编程 Agent，OpenClaw 网关有一键安装脚本。npm 周下载 1.2 万+、版本迭代极快（13.28.0），另有 CMEM Pro 托管记忆订阅作商业化。与简单历史拼接的区别：压缩 + 语义检索，token 花在刀刃上。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>天天和 AI 编程助手打交道的开发者；长周期项目需要 Agent 记住「改到哪、为什么」的团队。</div>
+<span class="klabel">A-AI/机器学习 › Agent记忆 › 跨会话持久记忆</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#7</span>
+<h3><a href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a></h3>
+<span class="lang">Python</span>
+</div>
+<div class="tagline">让 AI 编程助手「少废话、先说结论」的技能插件——ADHD 友好输出风格</div>
+<div class="meta">
+<span class="stars">⭐ 总计 54,357</span>
+<span class="today">今日 +318</span>
+<span>🔗 <a href="https://github.com/ayghri/i-have-adhd">github.com/ayghri/i-have-adhd</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>一个小而美的 Claude Code 技能（SKILL.md 一文件设计），专门治 Agent「把答案埋在十段废话里」的毛病：强制输出前置结论、砍掉铺垫与免责声明、短句分段。Reddit r/ClaudeCode 上「I gave Claude Code ADHD.. and it thinks 2x better now」热帖带动爆红，The New Stack 专门报道。名字虽叫 ADHD，实际对所有「只想快点拿到答案」的开发者都友好——毕竟没人喜欢在 200 行解释里找那一行关键改动。MIT 开源，装完即生效，零配置。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>Claude Code / Codex 用户；讨厌 AI 废话的开发者；追求高效人机交互的编程者。</div>
+<span class="klabel">B-开发者工具 › AI Agent 插件 › 输出风格优化</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#8</span>
+<h3><a href="https://github.com/morluto/rea">morluto/rea</a></h3>
+<span class="lang">TypeScript</span>
+</div>
+<div class="tagline">让 Agent 逆向工程任何东西——从应用行为到原生二进制，一个 MCP 全搞定</div>
+<div class="meta">
+<span class="stars">⭐ 总计 9,003</span>
+<span class="today">今日 +2,963</span>
+<span>🔗 <a href="https://github.com/morluto/rea">github.com/morluto/rea</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>REA 把逆向工程变成 Agent 的一句话任务：看到别的 App 里喜欢的功能，把应用交给 Agent，它就能在无源码情况下调查实现原理、展示证据链，并按你的技术栈复刻一版。技术上是一个 CLI + MCP 服务器（npm: rea-agents），深度原生分析走 Hopper 或自带 Ghidra（Linux），另支持 .NET、Electron、网站静态分析；全部分析本地运行、不上传对象，结论附带 Evidence v2 可复现证据。工作流六步：开二进制 → 找线索 → 交叉引用 → 调用图 → 反编译 → 在你项目里实现。与手动操作 Ghidra 的区别：自然语言驱动全程，「理解→复刻」同一会话闭环。MIT 开源。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>安全研究员的二进制分析；想搞懂闭源软件功能实现的开发者；互操作研究、恶意行为溯源、格式恢复。</div>
+<span class="klabel">G-安全 › 逆向工程 › Agent逆向工具</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#9</span>
+<h3><a href="https://github.com/deepseek-ai/DeepGEMM">deepseek-ai/DeepGEMM</a></h3>
+<span class="lang">Cuda</span>
+</div>
+<div class="tagline">DeepSeek 出品的高性能 GPU 张量核 kernel 库——FP8/FP4/BF16 GEMM 与融合 MoE 一站搞定</div>
+<div class="meta">
+<span class="stars">⭐ 总计 8,674</span>
+<span class="today">今日 +363</span>
+<span>🔗 <a href="https://github.com/deepseek-ai/DeepGEMM">github.com/deepseek-ai/DeepGEMM</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>DeepSeek 官方开源的统一张量核 kernel 库，把大模型推理的关键计算原语——FP8/FP4/BF16 GEMM、带通信重叠的融合 MoE（Mega MoE）、闪电索引器 MQA 打分、HyperConnection——收进一份简洁 CUDA 代码库。所有 kernel 经 DeepJIT 运行时编译，安装无需 CUDA 编译。借鉴 CUTLASS/CuTe 概念但避免重模板依赖，核心 kernel 刻意精简，官方定位之一就是「学 GPU kernel 优化的干净教材」；性能却不含糊：H800 上曾跑到 1550 TFLOPS，多形状下持平或超过专家调优库。2026年9月新增 Ascend 版本。要求 SM90/SM100 GPU + CUDA 12.9+。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>LLM 推理引擎开发者、GPU kernel 工程师；自部署 DeepSeek 系模型的团队；学习张量核优化的工程师与学生。</div>
+<span class="klabel">A-AI/机器学习 › LLM推理优化 › GPU kernel库</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#10</span>
+<h3><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></h3>
+<span class="lang">Shell</span>
+</div>
+<div class="tagline">完整的 AI 代理人格库——从前端大法师到 Reddit 社区忍者，一个「AI 事务所」</div>
+<div class="meta">
+<span class="stars">⭐ 总计 157,778</span>
+<span class="today">今日 +621</span>
+<span>🔗 <a href="https://github.com/msitarzewski/agency-agents">github.com/msitarzewski/agency-agents</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>设计师 Michael Sitarzewski 维护的 Agent 角色库，把一个数字代理公司拆成几十个专家人格：前端大法师、文案、测试忍者、Reddit 社区运营、甚至「 whimsy 注入者」（专门给产品加趣味细节的角色）。每个角色一份精调的系统提示词，可装进 Claude Code 等 Agent 作为子代理调用，用「专人人格」换更稳定的输出质量。与泛用 prompt 合集的区别：角色之间有分工与协作关系，拼起来就是一个可运转的虚拟事务所。长期霸榜 Trending 的常客，累计上榜已 7 次。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>独立开发者与一人公司想搭「虚拟团队」；需要多角色协作的 Agent 工作流；寻找细分专家提示词的用户。</div>
+<span class="klabel">B-开发者工具 › AI Agent 角色 › 人格库</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#11</span>
+<h3><a href="https://github.com/DuarteSantos8/openGym">DuarteSantos8/openGym</a></h3>
+<span class="lang">JavaScript</span>
+</div>
+<div class="tagline">真正属于你的自托管健身追踪器——docker compose up 即用，无订阅无广告</div>
+<div class="meta">
+<span class="stars">⭐ 总计 5,607</span>
+<span class="today">今日 +1,419</span>
+<span>🔗 <a href="https://github.com/DuarteSantos8/openGym">github.com/DuarteSantos8/openGym</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>针对健身 App「数据锁在别人服务器、动辄订阅、公司倒闭就消失」的痛点给出自托管答案：数据存自己控制的文件夹，一条 docker compose up 跑起来，无广告无遥测。功能完整：1324 个带动画演示的动作库（按肌肉图浏览、按自有器械过滤）、四个入门计划、超级组/热身组/递减组/计时/有氧、组间休息计时器、PR 自动检测、杠铃片计算。技术栈 React 19 + Vite / 无框架 Node / WebAuthn passkey / 纯 JSON 文件存储（零数据库），另有完全离线的 Android APK 和只读 MCP 服务器（可让 Claude 直接问「我上周卧推多少」）。今年 8-9 月作者 GitHub 账号曾被封三周、靠 GitLab 镜像存活，恢复后社区热度反涨。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>注重数据主权的健身爱好者；想给家人朋友搭共享记录的自托管玩家；homelab/Docker 用户。</div>
+<span class="klabel">L-学习资源-其他 › 自托管应用 › 健身追踪</span>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">#12</span>
+<h3><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></h3>
+<span class="lang">HTML</span>
+</div>
+<div class="tagline">给编程 Agent 的编辑级图表技能——42 种图表类型，自包含 HTML+SVG 输出</div>
+<div class="meta">
+<span class="stars">⭐ 总计 43,983</span>
+<span class="today">今日 +227</span>
+<span>🔗 <a href="https://github.com/cathrynlavery/diagram-design">github.com/cathrynlavery/diagram-design</a></span>
+</div>
+<div class="card-body">
+<h4>详细介绍</h4>
+<p>为 Claude Code、Codex、GitHub Copilot、Factory Droid、Pi 等编程 Agent 设计的图表生成技能，覆盖 42 种图表类型（流程图、架构图、时间线、漏斗、思维导图等），输出自包含的 HTML+SVG——无需外部依赖、浏览器直接打开、矢量可缩放。相比 Mermaid 模板那种「能看但不能改」的图，它追求杂志编辑级的排版质量，图即是可交付物。自 8 月首榜以来持续高频上榜（今天已是第 4 次），是 Agent 技能生态里「设计质量」路线的代表。</p>
+</div>
+<div class="usecase"><b>适用领域：</b>需要快速产出演示级图表的开发者与产品经理；技术文档/架构说明写作；给 Agent 补齐视觉表达能力的用户。</div>
+<span class="klabel">C-前端/Web › SVG图表 › AI生成技能</span>
+</div>
+<h2 style="margin: 34px 0 16px; font-size: 20px;">📋 今日速览</h2>
+<table class="todays-table">
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/tester-army/e2e">tester-army/e2e</a></td><td>TypeScript</td><td>+1,720</td><td>B-开发者工具 › 测试框架 › AI智能体E2E测试</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td>Shell</td><td>+972</td><td>B-开发者工具 › AI编程工具 › Agent技能集</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a></td><td>Python</td><td>+620</td><td>A-AI/机器学习 › Agent技能库 › CAD/硬件设计</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a></td><td>C++</td><td>+943</td><td>K-游戏/图形 › 主机移植 › PS5原生移植</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></td><td>JavaScript</td><td>+609</td><td>A-AI/机器学习 › AI编程设计 › 设计质量检测</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>TypeScript</td><td>+536</td><td>A-AI/机器学习 › Agent记忆 › 跨会话持久记忆</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a></td><td>Python</td><td>+318</td><td>B-开发者工具 › AI Agent 插件 › 输出风格优化</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>TypeScript</td><td>+2,963</td><td>G-安全 › 逆向工程 › Agent逆向工具</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/deepseek-ai/DeepGEMM">deepseek-ai/DeepGEMM</a></td><td>Cuda</td><td>+363</td><td>A-AI/机器学习 › LLM推理优化 › GPU kernel库</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></td><td>Shell</td><td>+621</td><td>B-开发者工具 › AI Agent 角色 › 人格库</td></tr>
+<tr><td>#11</td><td><a href="https://github.com/DuarteSantos8/openGym">DuarteSantos8/openGym</a></td><td>JavaScript</td><td>+1,419</td><td>L-学习资源-其他 › 自托管应用 › 健身追踪</td></tr>
+<tr><td>#12</td><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>HTML</td><td>+227</td><td>C-前端/Web › SVG图表 › AI生成技能</td></tr>
+</tbody>
+</table>
+<div class="footer">数据抓取时间：2026-10-07 · 由 GitHub Trending（since=daily）实时解析生成 分类档案库：项目分类库/ · 累计收录项目见 _索引.md</div>
+</div>
+</body>
+</html>

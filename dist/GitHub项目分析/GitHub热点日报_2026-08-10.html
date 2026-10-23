@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-10</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+  line-height: 1.7;
+  font-size: 15px;
+}
+/* 固定导航栏 */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  background: #24292e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.navbar-brand { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+.navbar-date { font-size: 14px; color: #8b949e; }
+/* 封面 */
+.hero {
+  margin-top: 56px;
+  padding: 70px 28px 55px;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff;
+  text-align: center;
+}
+.hero h1 { font-size: 36px; margin-bottom: 12px; letter-spacing: 1px; }
+.hero .subtitle { font-size: 18px; opacity: 0.9; }
+.hero .date-badge {
+  display: inline-block;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.18);
+  padding: 6px 24px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+/* 概述 */
+.overview {
+  max-width: 960px;
+  margin: 36px auto 28px;
+  padding: 0 24px;
+}
+.overview p {
+  background: #fff;
+  border-left: 4px solid #2da44e;
+  padding: 18px 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  font-size: 15px;
+  line-height: 1.9;
+}
+/* 主体卡片容器 */
+.container {
+  max-width: 960px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+/* 卡片 */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border-left: 5px solid #2da44e;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.card-header {
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid #e1e4e8;
+}
+.rank-badge {
+  display: inline-block;
+  background: #24292e;
+  color: #fff;
+  width: 36px; height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+.repo-name {
+  font-size: 21px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.repo-name a { color: #0969da; text-decoration: none; }
+.repo-name a:hover { text-decoration: underline; }
+.tags-inline { display: inline-block; margin-left: 10px; }
+.tag-mini {
+  display: inline-block;
+  background: #ddf4ff;
+  color: #0969da;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #57606a;
+}
+.meta-item { display: inline-flex; align-items: center; }
+.meta-item strong { color: #24292e; }
+.star-today {
+  background: #dcfce7;
+  color: #166534;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.lang-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.card-body { padding: 20px 28px 24px; }
+.positioning {
+  font-size: 16px;
+  color: #1a7f37;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  background: #f0fdf4;
+  border-radius: 6px;
+  border-left: 3px solid #2da44e;
+}
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #57606a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+.detail-text { font-size: 15px; line-height: 1.85; color: #24292e; }
+.scope-text { font-size: 14px; color: #424a53; line-height: 1.8; }
+.classify-path {
+  font-size: 13px;
+  color: #57606a;
+  background: #f6f8fa;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+.classify-path strong { color: #24292e; }
+/* 速览表 */
+.summary-section {
+  max-width: 960px;
+  margin: 20px auto 60px;
+  padding: 0 24px;
+}
+.summary-section h2 {
+  font-size: 24px;
+  color: #24292e;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #2da44e;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 14px;
+}
+th {
+  background: #24292e;
+  color: #fff;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+td { padding: 12px 16px; border-bottom: 1px solid #e1e4e8; }
+tr:nth-child(even) td { background: #f6f8fa; }
+tr:hover td { background: #ddf4ff; }
+td a { color: #0969da; text-decoration: none; }
+td a:hover { text-decoration: underline; }
+.today-star { color: #166534; font-weight: 700; }
+/* footer */
+.footer {
+  text-align: center;
+  padding: 30px 24px;
+  color: #8b949e;
+  font-size: 13px;
+  background: #24292e;
+  color: #8b949e;
+}
+/* 颜色点 */
+.c-typescript { background: #3178c6; }
+.c-python { background: #3572A5; }
+.c-javascript { background: #f1e05a; }
+.c-go { background: #00ADD8; }
+.c-shell { background: #89e051; }
+.c-other { background: #8b949e; }
+@media (max-width: 700px) {
+  .hero h1 { font-size: 26px; }
+  .repo-name { font-size: 17px; }
+  .card-header { padding: 18px 20px 14px; }
+  .card-body { padding: 16px 20px 20px; }
+  table { font-size: 12px; }
+  th, td { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="navbar-brand">📊 GitHub 热点日报</div>
+<div class="navbar-date">2026-08-10 · 每日追踪开源世界脉搏</div>
+</div>
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="date-badge">📅 2026 年 8 月 10 日（周一）</div>
+</div>
+<div class="overview">
+<p>
+    🔥 今日榜单 AI/Agent 生态依然占据绝对主导地位，Top 10 中过半项目与 AI Agent、编码智能体、RAG 相关。最大黑马当属 <strong>PrimeIntellect-ai/prime-agent</strong>（自改进 RLM Agent，今日 +2,319 ⭐），以及 <strong>pranshuparmar/witr</strong>（Go 进程溯源 TUI 工具，今日 +342 ⭐）强势冲榜。此外 <strong>google-deepmind/weathernext</strong>（DeepMind 天气预报模型开源）和 <strong>harveyai/harvey-labs</strong>（法律 Agent 基准测试）展现了 AI 在垂直科研与专业法律领域的深入落地。整体风向：Agent 自主化 + 垂直场景深耕。
+  </p>
+</div>
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">1</span>
+<span class="repo-name"><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank">PrimeIntellect-ai / prime-agent</a></span>
+<span class="tags-inline"><span class="tag-mini">TypeScript</span><span class="tag-mini">今日 +2,319⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-typescript"></span>主语言：<strong>TypeScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>10,900</strong></span>
+<span class="meta-item star-today">今日新增 +2,319</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">一个自改进的 RLM（递归语言模型）Agent，专为编码工作流和长时间运行的自主任务设计</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Prime Agent 是 Prime Intellect 团队的开源编码与研究 Agent，围绕两大核心抽象构建：<strong>Recursive Language Model（RLM）</strong>——将上下文视为变量、将工具和递归子 Agent 视为函数调用，运行在持久化的 Python REPL 中；以及 <strong>Continual Harness</strong>——将持久控制环境与可保存的 harness 状态结合，使有用的工作上下文和可复用的操作模式能跨会话存活。它专为长时间运行的研究评测任务而生，支持后台自主运行、技能系统和多 Provider 接入，提供 TUI 和 JSON/RPC 模式。MIT 协议，截至当前已有 41 个 release、4,480+ commits。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">需要长时间自主编码任务的研究人员与工程师、AI Agent 评测研究者、需要持久化上下文与可复用工作流的深度 Agent 用户、偏好开源可自托管 Agent 方案的技术团队。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › Agent框架 › 自改进RLM智能体</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">2</span>
+<span class="repo-name"><a href="https://github.com/vitali87/code-graph-rag" target="_blank">vitali87 / code-graph-rag</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +59⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>2,950</strong></span>
+<span class="meta-item star-today">今日新增 +59</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">面向 Monorepo 的终极 RAG 工具——用知识图谱 + AI 查询、理解和编辑多语言代码库</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Code-Graph-RAG 用 Tree-sitter 解析多语言代码库，在 <strong>Memgraph</strong> 中构建代码结构知识图谱，让你能用自然语言查询、编辑和优化代码。核心亮点：统一的图 schema 支持混合语言的 Monorepo，支持实时 watch 模式增量更新图谱，提供 MCP server 集成让 AI Agent 直接调用。项目极其活跃——365 个分支、560 个 Tag、4,660+ commits，版本已迭代到 0.0.584，有完整的 benchmarks、evals 和 governance 文档。与同类代码 RAG 的区别在于「知识图谱」而非「向量检索」，关系推理更精确。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">维护大型 Monorepo 的工程团队、需要 AI 深度理解代码结构和依赖关系的开发者、MCP 生态用户、想用自然语言重构和查询复杂代码库的技术团队。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › RAG框架 › 代码知识图谱</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">3</span>
+<span class="repo-name"><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski / agency-agents</a></span>
+<span class="tags-inline"><span class="tag-mini">Shell</span><span class="tag-mini">今日 +932⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-shell"></span>主语言：<strong>Shell</strong></span>
+<span class="meta-item">⭐ 总计：<strong>140,590</strong></span>
+<span class="meta-item star-today">今日新增 +932</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">触手可及的完整 AI Agency——从前端到社区运营，每个 Agent 都是有个性的专业专家</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">这是一个完整的 AI Agent 角色集合库，将一个"虚拟 AI 公司"的各个岗位打包成开箱即用的 Agent。包含前端巫师、Reddit 社区忍者、创意注入器、现实核查员等角色化 Agent，每个都有独特性格、工作流程和交付标准。以 Shell 脚本为主要载体，可无缝集成到 Claude Code、Codex 等 AI 编程生态。14 万 stars 的体量说明它在 Agent 角色化/拟人化方向是绝对头部。与通用 Agent 框架的区别在于：它不提供框架，而是提供"人设+流程+交付物"的完整 Agent 定义。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">想快速组建"AI 虚拟团队"的创业者与独立开发者、AI Agent 自动化工作流爱好者、需要角色化 Agent 提示词/技能模板的内容创作者和运营人员。</p>
+<div class="classify-path"><strong>知识归类：</strong>B-开发者工具 › AI-Agent角色 › Agent角色集合</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">4</span>
+<span class="repo-name"><a href="https://github.com/pranshuparmar/witr" target="_blank">pranshuparmar / witr</a></span>
+<span class="tags-inline"><span class="tag-mini">Go</span><span class="tag-mini">今日 +342⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-go"></span>主语言：<strong>Go</strong></span>
+<span class="meta-item">⭐ 总计：<strong>20,584</strong></span>
+<span class="meta-item star-today">今日新增 +342</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">"这玩意儿为什么在运行？"——追踪任何进程、端口、容器或文件的来源，CLI + TUI 双模式</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">witr（Why Is This Running）是一个用 Go 编写的系统进程溯源工具，解决一个经典痛点：看到一个进程/端口在跑却不知道是谁启动的。它能将任意进程、端口、容器或文件<strong>反向追踪到启动它的源头</strong>——父进程、容器、服务、定时任务等。提供 CLI 和交互式 TUI 两种界面，支持 Linux 的 D-Bus 和 /proc 高效读取（避免子进程 fork 开销），跨平台支持（含 Windows PowerShell 安装脚本）。20K+ stars、588 commits、21 个 Tag、有 Nix flake 支持，还有专属 llms.txt 供 LLM 阅读项目摘要。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">运维工程师和 SRE、排查异常进程的系统管理员、容器环境调试开发者、偏好终端工具而非图形界面的系统极客、需要快速定位"谁占用了端口"的开发者。</p>
+<div class="classify-path"><strong>知识归类：</strong>I-系统/底层 › 进程管理 › 进程溯源工具</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">5</span>
+<span class="repo-name"><a href="https://github.com/google-deepmind/weathernext" target="_blank">google-deepmind / weathernext</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +105⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>7,052</strong></span>
+<span class="meta-item star-today">今日新增 +105</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">Google DeepMind 全球中期大气与气旋预报模型 WeatherNext 2 的开源代码库</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">WeatherNext 是 Google DeepMind 和 Google Research 联合开发的<strong>全球中期天气预报 + 气旋预报 AI 模型</strong>。该仓库包含最新的 WeatherNext 2（WN2）模型代码及预训练权重，同时也收录了前代模型 <strong>GraphCast</strong>（基于图神经网络）和 <strong>GenCast</strong>（基于扩散模型）。WN2 的 0.25° 分辨率（约 30km）版本已在 ECMWF 业务化运行，并在 2025 年大西洋飓风季实时运行。提供 Google Cloud、WeatherLab、OpenMeteo 多平台数据获取渠道，附带 Colab 快速上手和预训练模型权重下载。Apache 2.0 协议。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">气象科研人员、大气科学领域研究者、AI for Science 方向的工程师、需要天气预报数据的农业/物流/能源行业应用开发者、AI 模型复现与评测爱好者。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › 科学计算 › 气象预报模型</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">6</span>
+<span class="repo-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani / agent-skills</a></span>
+<span class="tags-inline"><span class="tag-mini">JavaScript</span><span class="tag-mini">今日 +670⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-javascript"></span>主语言：<strong>JavaScript</strong></span>
+<span class="meta-item">⭐ 总计：<strong>85,083</strong></span>
+<span class="meta-item star-today">今日新增 +670</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">为 AI 编码 Agent 打造的生产级工程技能包——覆盖 DEFINE→SHIP 全生命周期</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">Google 工程师 Addy Osmani 出品的生产级 Agent 技能集合，把资深工程师的工作流、质量门禁与最佳实践打包成 Agent 可一致遵循的能力。8 个斜杠命令对应开发生命周期：<code>/spec</code>（先规格后代码）、<code>/plan</code>（原子化任务）、<code>/build</code>（一次一个切片）、<code>/test</code>、<code>/review</code>、<code>/webperf</code>、<code>/code-simplify</code>、<code>/ship</code>。<code>/build auto</code> 可批准计划后自动实现并逐个测试驱动提交，遇失败/风险暂停。技能会根据当前工作自动激活（设计 API 触发接口设计技能），通过 skills CLI 一键装入 70+ Agent 平台。8.5 万 stars，本周连续上榜。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">想让 AI 编码助手遵循专业开发流程的开发者和团队、Claude Code/Cursor/Codex/Copilot 用户、追求 AI 自动化开发效率的个人与组织。</p>
+<div class="classify-path"><strong>知识归类：</strong>B-开发者工具 › Agent技能框架 › 工程技能包</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">7</span>
+<span class="repo-name"><a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen / daily_stock_analysis</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +287⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>61,141</strong></span>
+<span class="meta-item star-today">今日新增 +287</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">LLM 驱动的多市场股票智能分析系统——多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">这是一个用 LLM 驱动的多市场（A股/美股/港股）股票智能分析系统，整合了多源行情数据、实时新闻抓取、AI 决策看板和自动消息推送。核心亮点是<strong>"零成本定时运行"</strong>——通过 GitHub Actions 等免费 CI/CD 即可实现每日自动分析，无需服务器。项目结构完整，包含 api、apps、bot、data_provider、strategies 等模块，支持 Longbridge 等券商数据源、飞书/企业微信推送、小红书分享图生成。61K+ stars、52K forks（fork 数极高说明大量用户在自部署），最新版本 v3.30.0，活跃迭代中。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">个人投资者和量化爱好者、想用 AI 辅助选股/看盘的散户、关注 A股/美股/港股的中文用户、想零成本搭建自动化行情分析系统的开发者。</p>
+<div class="classify-path"><strong>知识归类：</strong>A-AI/机器学习 › 金融应用 › LLM股票分析系统</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">8</span>
+<span class="repo-name"><a href="https://github.com/goauthentik/authentik" target="_blank">goauthentik / authentik</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +312⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>24,243</strong></span>
+<span class="meta-item star-today">今日新增 +312</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">开源身份认证与访问管理平台——你需要的"身份认证粘合剂"</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">authentik 是用 Python/Django 编写的开源身份提供者（IdP）和访问管理平台，2020 年由 Jens Langhammer 创建。支持 OAuth2/OIDC、SAML、LDAP、RADIUS、SCIM 等几乎所有主流认证协议，可作为自托管方案替代 Okta、Auth0。核心特色是 <strong>Flows</strong>——一套可视化可组合认证流程构建器，管理员像搭积木一样自定义登录/注册/密码重置流程，支持 MFA、条件策略和社交登录。当前版本 2026.11，正引入 Rust worker 提升性能。本周连续上榜，被视为 Keycloak 的现代化替代方案。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">需要自托管 SSO（单点登录）的中小企业和开发者；想脱离 Okta/Auth0 商业锁定的组织；为内部应用、Homelab 统一对接身份认证的玩家；需要灵活定制认证流程的技术团队。</p>
+<div class="classify-path"><strong>知识归类：</strong>G-安全 › 身份认证 › 开源IAM平台</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">9</span>
+<span class="repo-name"><a href="https://github.com/google/skills" target="_blank">google / skills</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +532⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>17,189</strong></span>
+<span class="meta-item star-today">今日新增 +532</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">Google 官方出品的 Agent Skills——为 Google 产品和技术打造的智能体技能集</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">这是 Google 官方维护的 Agent Skills 仓库，为 Google 全系产品和技术（GCP、Android、TensorFlow、Gemini 生态等）提供 AI Agent 可用的技能包。每个 Skill 是一组结构化的指令和能力定义，让 AI 编码 Agent 在处理 Google 技术栈相关任务时更准确、更符合最佳实践。由 Google 内部多个团队（cloud-ix-copybara、holtskinner、martinvarelaj 等）协同维护。17K+ stars，体现了大厂对 Agent 技能标准化方向的重视——与 addyosmani/agent-skills（个人工程师向）形成互补。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">使用 Google 技术栈（GCP、Android、TensorFlow 等）的开发者、Claude Code/Cursor 等 Agent 用户、企业级 Agent 部署团队、需要官方权威技能定义的组织。</p>
+<div class="classify-path"><strong>知识归类：</strong>B-开发者工具 › Agent技能框架 › 官方技术栈技能</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">10</span>
+<span class="repo-name"><a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org / ComfyUI</a></span>
+<span class="tags-inline"><span class="tag-mini">Python</span><span class="tag-mini">今日 +333⭐</span></span>
+<div class="meta-row">
+<span class="meta-item"><span class="lang-dot c-python"></span>主语言：<strong>Python</strong></span>
+<span class="meta-item">⭐ 总计：<strong>125,438</strong></span>
+<span class="meta-item star-today">今日新增 +333</span>
+</div>
+</div>
+<div class="card-body">
+<div class="positioning">最强大、最模块化的扩散模型 GUI、API 和后端——节点/图形化界面</div>
+<div class="section-label">📖 详细介绍</div>
+<p class="detail-text">ComfyUI 是 AI 图像/视频生成领域最知名的节点式工作流工具，提供了一个基于图形/节点的界面来设计和执行扩散模型管线。它将 Stable Diffusion、FLUX、视频生成等各类模型的加载器、采样器、控制网、LoRA 等组件抽象为可拖拽连接的节点，让用户像搭电路一样构建复杂的生成流程。核心优势在于<strong>极强的模块化和可扩展性</strong>——庞大的自定义节点生态（数万个社区节点）、完整的 API 和后端服务、支持本地和云端部署。12.5 万 stars 的体量使其成为 AIGC 创作工具的事实标准之一。</p>
+<div class="section-label">🎯 适用领域</div>
+<p class="scope-text">AIGC 艺术家和创作者、AI 图像/视频生成爱好者、需要搭建批量生成管线的团队、Stable Diffusion/FLUX 模型研究者、想开发自定义节点的开发者。</p>
+<div class="classify-path"><strong>知识归类：</strong>K-游戏/图形 › AI图像生成 › 节点式扩散模型GUI</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>#1</strong></td>
+<td><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank">PrimeIntellect-ai/prime-agent</a></td>
+<td>TypeScript</td>
+<td class="today-star">+2,319</td>
+<td>A-AI/机器学习 › Agent框架</td>
+</tr>
+<tr>
+<td><strong>#2</strong></td>
+<td><a href="https://github.com/vitali87/code-graph-rag" target="_blank">vitali87/code-graph-rag</a></td>
+<td>Python</td>
+<td class="today-star">+59</td>
+<td>A-AI/机器学习 › RAG框架</td>
+</tr>
+<tr>
+<td><strong>#3</strong></td>
+<td><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></td>
+<td>Shell</td>
+<td class="today-star">+932</td>
+<td>B-开发者工具 › AI-Agent角色</td>
+</tr>
+<tr>
+<td><strong>#4</strong></td>
+<td><a href="https://github.com/pranshuparmar/witr" target="_blank">pranshuparmar/witr</a></td>
+<td>Go</td>
+<td class="today-star">+342</td>
+<td>I-系统/底层 › 进程管理</td>
+</tr>
+<tr>
+<td><strong>#5</strong></td>
+<td><a href="https://github.com/google-deepmind/weathernext" target="_blank">google-deepmind/weathernext</a></td>
+<td>Python</td>
+<td class="today-star">+105</td>
+<td>A-AI/机器学习 › 科学计算</td>
+</tr>
+<tr>
+<td><strong>#6</strong></td>
+<td><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></td>
+<td>JavaScript</td>
+<td class="today-star">+670</td>
+<td>B-开发者工具 › Agent技能框架</td>
+</tr>
+<tr>
+<td><strong>#7</strong></td>
+<td><a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen/daily_stock_analysis</a></td>
+<td>Python</td>
+<td class="today-star">+287</td>
+<td>A-AI/机器学习 › 金融应用</td>
+</tr>
+<tr>
+<td><strong>#8</strong></td>
+<td><a href="https://github.com/goauthentik/authentik" target="_blank">goauthentik/authentik</a></td>
+<td>Python</td>
+<td class="today-star">+312</td>
+<td>G-安全 › 身份认证</td>
+</tr>
+<tr>
+<td><strong>#9</strong></td>
+<td><a href="https://github.com/google/skills" target="_blank">google/skills</a></td>
+<td>Python</td>
+<td class="today-star">+532</td>
+<td>B-开发者工具 › Agent技能框架</td>
+</tr>
+<tr>
+<td><strong>#10</strong></td>
+<td><a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org/ComfyUI</a></td>
+<td>Python</td>
+<td class="today-star">+333</td>
+<td>K-游戏/图形 › AI图像生成</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer">📊 数据来源：GitHub Trending（daily） · 抓取时间：2026-08-10 依据公开资料整理 · 每日追踪开源世界脉搏</div>
+</body>
+</html>

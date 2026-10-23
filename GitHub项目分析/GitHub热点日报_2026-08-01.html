@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-01</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa; color: #24292e; line-height: 1.7;
+}
+/* 固定导航栏 */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: #24292e; color: #fff; padding: 12px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2); font-size: 14px;
+}
+.navbar .nav-title { font-size: 18px; font-weight: 600; }
+.navbar .nav-date { color: #8b949e; }
+/* 封面 */
+.cover {
+  margin-top: 48px; padding: 60px 32px 48px; text-align: center;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff;
+}
+.cover h1 { font-size: 2.6rem; margin-bottom: 12px; letter-spacing: 2px; }
+.cover .date { font-size: 1.4rem; opacity: .9; margin-bottom: 8px; }
+.cover .subtitle { font-size: 1rem; opacity: .7; letter-spacing: 4px; }
+/* 开头概括 */
+.intro {
+  max-width: 920px; margin: 36px auto 24px; padding: 0 24px;
+  font-size: 1rem; color: #57606a; line-height: 1.9;
+  background: #fff; border-radius: 12px; padding: 24px 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06); border-left: 5px solid #2da44e;
+}
+/* 项目卡片 */
+.cards { max-width: 920px; margin: 0 auto 48px; padding: 0 24px; }
+.card {
+  background: #fff; border-radius: 12px; margin-bottom: 24px;
+  overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  border-left: 6px solid #2da44e; transition: transform .15s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+.card-header {
+  padding: 20px 28px 12px; border-bottom: 1px solid #f0f0f0;
+}
+.card-rank {
+  display: inline-block; background: #24292e; color: #fff;
+  width: 32px; height: 32px; line-height: 32px; text-align: center;
+  border-radius: 50%; font-size: 16px; font-weight: 700; margin-right: 10px;
+}
+.card-title {
+  display: inline-block; vertical-align: middle; font-size: 1.4rem;
+}
+.card-title a { color: #0969da; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-meta {
+  display: flex; flex-wrap: wrap; gap: 20px; padding: 12px 28px;
+  font-size: .9rem; color: #57606a;
+}
+.badge {
+  display: inline-block; padding: 2px 12px; border-radius: 20px;
+  font-size: .85rem; font-weight: 600;
+}
+.badge-lang { background: #ddf4ff; color: #0969da; }
+.badge-star { background: #fff8c5; color: #7d4e00; }
+.badge-today { background: #dafbe1; color: #1a7f37; }
+.badge-fork { background: #f6f8fa; color: #57606a; }
+.card-body { padding: 16px 28px 24px; }
+.card-tagline {
+  font-size: 1.05rem; font-weight: 600; color: #24292e;
+  margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #d0d7de;
+}
+.card-desc { font-size: .95rem; color: #424a53; margin-bottom: 14px; line-height: 1.85; }
+.card-section { margin-bottom: 10px; }
+.card-section .label {
+  font-weight: 700; color: #24292e; font-size: .9rem;
+}
+.card-section .text { font-size: .92rem; color: #57606a; }
+.card-classify {
+  display: inline-block; background: #f6f8fa; border: 1px solid #d0d7de;
+  padding: 4px 14px; border-radius: 6px; font-size: .85rem; color: #57606a;
+}
+/* 速览表 */
+.summary { max-width: 920px; margin: 0 auto 60px; padding: 0 24px; }
+.summary h2 {
+  font-size: 1.5rem; margin-bottom: 20px; color: #24292e;
+  border-bottom: 3px solid #2da44e; padding-bottom: 8px;
+}
+table {
+  width: 100%; border-collapse: collapse; font-size: .9rem;
+  background: #fff; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+th {
+  background: #24292e; color: #fff; padding: 12px 14px;
+  text-align: left; font-weight: 600;
+}
+td { padding: 10px 14px; border-bottom: 1px solid #eaeef2; }
+tr:nth-child(even) td { background: #f6f8fa; }
+tr:hover td { background: #ddf4ff; }
+.center { text-align: center; }
+.footer {
+  text-align: center; padding: 24px; color: #8b949e; font-size: .85rem;
+}
+@media (max-width: 600px) {
+  .cover h1 { font-size: 1.6rem; }
+  .card-meta { gap: 8px; }
+  th, td { padding: 6px 8px; font-size: .8rem; }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<span class="nav-title">⚓ GitHub 热点日报</span>
+<span class="nav-date">2026-08-01</span>
+</div>
+<div class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 8 月 1 日（星期六）</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+<div class="intro">
+  🔥 今日榜单的鲜明特点是 <b>AI 安全与逆向工程</b> 强势崛起——排名第一的 <b>reverse-skill</b> 将 AI 编程助手变成逆向/渗透/安全研究专家，堪称今日黑马。微软官方 <b>AI-For-Beginners</b> 以 +1,592 星登顶今日增长榜，教育类资源持续走强。<b>不同-ai/openwork</b> 和 <b>last30days-skill</b> 等 Agent 技能/协作平台延续近期热度，硬件安全领域 <b>ESP32-Bit-Pirate</b> 的上榜也值得关注。总体来看，AI 工具链生态与安全研究工具是今日两大主线。
+</div>
+<div class="cards">
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">1</span>
+<span class="card-title"><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520/reverse-skill</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">PowerShell</span>
+<span class="badge badge-star">⭐ 总计 10,645</span>
+<span class="badge badge-today">今日 +612</span>
+<span class="badge badge-fork">🍴 Fork 1,644</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">给 AI 编程助手装上"安全专家大脑"——逆向/渗透/安全研究的技能路由包</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> 当 AI Agent（Claude Code、Codex CLI、Cursor 等）遇到 APK、二进制文件、前端 JS 加密、CTF 题目或渗透测试目标时，这个包会自动将其路由到正确的方法论，检查可用工具并执行可重复的工作流，而不是靠猜测命令来应对。核心设计是"AI 自动路由 + 按需自举工具链 + 自动进化经验库"，涵盖 APK 逆向、iOS 移动分析、二进制逆向（IDA/radare2/Ghidra）、JS 逆向、恶意软件分析、渗透测试、CTF 编排（40+ 子技能）等 15+ 个场景。与同类通用 Skill 包的区别在于，它内置了完整的路由矩阵（MASTER-ROUTING），能根据目标类型自动选择 jadx、apktool、Frida、IDA 或 BurpSuite 等工具，并通过经验回写机制让经验库持续进化。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 逆向工程师、安全研究员、渗透测试人员、CTF 选手、使用 Claude Code / Kiro / Cursor / Cline 等 AI 编程客户端的安全从业者。</span></div>
+<div class="card-classify">G-安全 › 逆向工程 › AI安全技能路由</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">2</span>
+<span class="card-title"><a href="https://github.com/different-ai/openwork" target="_blank">different-ai/openwork</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">TypeScript</span>
+<span class="badge badge-star">⭐ 总计 19,459</span>
+<span class="badge badge-today">今日 +796</span>
+<span class="badge badge-fork">🍴 Fork 2,000</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">开源的 Claude Cowork 替代品——本地优先的 AI 工作流共享桌面应用</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> OpenWork 是一个免费开源的桌面应用，专为共享 AI 工作流而设计，是 Claude Cowork 和 Codex 的开源替代方案，支持 macOS、Windows、Linux 三大平台。核心理念是：只需添加一个 OpenWork MCP 到 Codex、Claude Code、Cursor 或其他兼容 Agent，就能在不同工具、团队成员、机器之间复用同一套技能、MCP 连接和服务。提供两个核心工具：search_capabilities（发现可用能力）和 execute_capability（执行能力），通过 OAuth 完成组织认证。团队版 OpenWork Den 提供推理资源管理、权限控制、技能市场发布等企业级功能。基于 opencode 构建，支持 50+ LLM 和自带 Key 模式。与 Claude Cowork 相比，它完全本地优先、数据自主可控。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者和团队；需要在团队内共享 AI 工作流配置的组织；追求数据本地化的隐私敏感场景。</span></div>
+<div class="card-classify">B-开发者工具 › AI协作平台 › 开源Claude Cowork替代</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">3</span>
+<span class="card-title"><a href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Python</span>
+<span class="badge badge-star">⭐ 总计 56,193</span>
+<span class="badge badge-today">今日 +660</span>
+<span class="badge badge-fork">🍴 Fork 4,880</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">AI Agent 驱动的搜索引擎——用真实人类投票（点赞/投注）排序，而非编辑排名</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> last30days 是一个 AI Agent 技能（Skill），让 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等 50+ AI 编程工具获得跨平台搜索能力。它并行搜索 Reddit、X（Twitter）、YouTube、Hacker News、Polymarket、TikTok、arXiv 等平台，然后按真实人类行为（Reddit upvotes、X likes、YouTube 观看量、Polymarket 真金白银的投注赔率）对内容评分排序，最后由 AI 综合成一份简报。核心理念是"Google 聚合编辑，last30days 搜索真实人群"。支持零配置快速启动（Reddit/HN/Polymarket/GitHub 开箱即用），设置向导 30 秒内解锁 X、YouTube、TikTok 等平台。与 Perplexity 等搜索引擎相比，它利用用户自带的 API Key 和浏览器会话打通各平台围墙花园，实现单次搜索覆盖全部平台。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 使用 AI 编程工具的开发者、市场研究员、趋势分析师、新闻工作者、投资研究者、需要快速了解某话题全网热度的任何人。</span></div>
+<div class="card-classify">B-开发者工具 › Agent技能 › 跨平台信息搜索</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">4</span>
+<span class="card-title"><a href="https://github.com/paperswithbacktest/awesome-systematic-trading" target="_blank">paperswithbacktest/awesome-systematic-trading</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Python</span>
+<span class="badge badge-star">⭐ 总计 11,714</span>
+<span class="badge badge-today">今日 +765</span>
+<span class="badge badge-fork">🍴 Fork 1,460</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">系统化交易（量化交易）资源合集——论文、策略、软件、书籍一站式整理</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> 由 paperswithbacktest 团队维护的系统化交易精选资源列表，汇集了量化交易领域的论文、开源软件、策略、书籍、博客和教程。背靠 paperswithbacktest.com 平台（提供 5000+ 学术策略，每个都附带可运行的 Python 代码和干净数据），这个 awesome 列表是其社区资源的入口。涵盖回测框架、数据源、机器学习策略、高频交易等子领域，适合从入门到进阶的量化交易研究者。与 awesome-quant 等同类列表相比，它更注重与实际可回测策略的关联。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 量化交易研究者、金融工程师、对算法交易感兴趣的开发者、金融数据科学从业者。</span></div>
+<div class="card-classify">L-学习资源/其他 › 金融资源合集 › 量化交易</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">5</span>
+<span class="card-title"><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft/AI-For-Beginners</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Python / Jupyter Notebook</span>
+<span class="badge badge-star">⭐ 总计 55,259</span>
+<span class="badge badge-today">今日 +1,592 🔥</span>
+<span class="badge badge-fork">🍴 Fork 11,142</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">微软出品——12 周 24 节课的 AI 入门课程，从神经网络到大语言模型全覆盖</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> AI-For-Beginners 是微软官方推出的 AI 学习课程，用 12 周时间、24 节课系统讲解人工智能核心知识。课程涵盖神经网络基础（感知机、多层网络、反向传播）、计算机视觉（CNN、迁移学习）、自然语言处理（嵌入、RNN、Transformer）以及大语言模型（GPT、提示工程）等前沿主题。每节课配有可运行的 Jupyter Notebook 实验和测验，支持 Azure ML 云端实验室和本地运行。已翻译为 10+ 种语言（含中文），是 GitHub 上 star 数最高的 AI 学习资源之一。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> AI 初学者、想系统学习深度学习的开发者、高校学生、培训机构讲师、需要补充 AI 知识体系的技术从业者。</span></div>
+<div class="card-classify">L-学习资源/其他 › AI教程 › 入门课程</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">6</span>
+<span class="card-title"><a href="https://github.com/github/copilot-sdk" target="_blank">github/copilot-sdk</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Java / 多语言</span>
+<span class="badge badge-star">⭐ 总计 10,126</span>
+<span class="badge badge-today">今日 +7</span>
+<span class="badge badge-fork">🍴 Fork 1,370</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">GitHub 官方多平台 SDK，将 Copilot Agent 的代理能力嵌入到自定义应用中</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> GitHub 官方发布的 Copilot SDK（2026 年 6 月正式 GA），提供与 Copilot CLI 背后相同的 Agent 运行时的编程访问——包括规划、工具调用、文件编辑等核心能力。支持 Python、TypeScript、Go、.NET、Java、Rust 六种语言，内置 MCP 协议支持。开发者可以用它构建自己的 AI 编程助手、CLI 工具或集成 Copilot 能力的自定义工作流。核心价值是将 GitHub 官方的 Agent 基础设施开放为可编程接口，让企业不再依赖 Copilot 的 UI，而是将其能力深度嵌入到自己的产品管线中。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 需要在产品中集成 AI Agent 能力的开发团队、构建自定义 AI 编程工具的开发者、企业内部工具开发。</span></div>
+<div class="card-classify">B-开发者工具 › AI编程工具 › Copilot集成SDK</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">7</span>
+<span class="card-title"><a href="https://github.com/chatwoot/chatwoot" target="_blank">chatwoot/chatwoot</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Ruby / Vue.js</span>
+<span class="badge badge-star">⭐ 总计 35,094</span>
+<span class="badge badge-today">今日 +175</span>
+<span class="badge badge-fork">🍴 Fork 8,435</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">开源全渠道客服平台——网站实时聊天、邮件、WhatsApp、社交媒体的统一收件箱</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> Chatwoot 是一个开源、可自托管的客户支持平台，定位为 Intercom、Zendesk、Salesforce Service Cloud 的开源替代品。核心功能是将所有客户沟通渠道（网站实时聊天、邮件、WhatsApp、Facebook、Twitter/X、Telegram、LINE 等）汇聚到一个统一收件箱，客服团队可以在同一个界面处理所有渠道的对话。支持自动分配、SLA 管理、帮助中心/知识库、聊天机器人、对话分析等企业级功能。Y Combinator W21 孵化项目，基于 Ruby on Rails 后端 + Vue.js 前端构建，可完全自托管，也可使用官方云托管版。与闭源竞品相比，最大优势是完全掌控客户数据、无需按席位/对话量付费。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 需要多渠道客户支持的中小企业、SaaS 公司客服团队、想要自托管客服系统的技术团队、寻求 Intercom/Zendesk 开源替代的组织。</span></div>
+<div class="card-classify">D-后端/服务端 › 客服平台 › 全渠道客服</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">8</span>
+<span class="card-title"><a href="https://github.com/agavra/tuicr" target="_blank">agavra/tuicr</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">Rust</span>
+<span class="badge badge-star">⭐ 总计 2,137</span>
+<span class="badge badge-today">今日 +336</span>
+<span class="badge badge-fork">🍴 Fork 172</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">带 Vim 键绑定的终端代码审查工具——支持 GitHub/GitLab 真实 PR Review 提交</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> tuicr（发音 "tweaker"）是一个终端 UI（TUI）代码审查工具，提供 GitHub 风格的连续差异查看器，可以在终端中流畅滚动浏览所有改动文件。核心亮点是完整的 Vim 键绑定模型（j/k 导航、c 评论、y 复制、:submit 提交），支持行级、范围级、文件级和 Review 级四层评论粒度。审查完成后可将评论直接推送为 GitHub 或 GitLab 的真实 PR Review（包括 Approve / Comment / Request changes），也可复制结构化 Markdown 粘贴给 AI 编程助手处理。自动检测 git、jj（Jujutsu）、mercurial 三种版本控制系统。与 hunk、lumen、gh pr review 等同类工具相比，tuicr 是唯一同时支持完整 Vim 模型、GitHub + GitLab 双平台 PR 提交、jj/hg 兼容且单二进制分发的工具。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 习惯终端工作流的开发者、Vim/Neovim 用户、需要人机协作审查 AI 生成代码的开发者、使用 jj 或 mercurial 的团队。</span></div>
+<div class="card-classify">B-开发者工具 › 代码审查 › 终端审查TUI</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">9</span>
+<span class="card-title"><a href="https://github.com/usekaneo/kaneo" target="_blank">usekaneo/kaneo</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">TypeScript</span>
+<span class="badge badge-star">⭐ 总计 5,026</span>
+<span class="badge badge-today">今日 +188</span>
+<span class="badge badge-fork">🍴 Fork 449</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">极简主义开源项目管理平台——Jira/Linear/Monday 的自托管替代</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> Kaneo 是一个开源、可自托管的项目管理工具，核心理念是"你需要的全都有，你不需要的一个不塞"。以看板（Kanban）界面为核心，聚焦于任务管理和 Issue 追踪，刻意摒弃了过度复杂的工作流和多余的按钮。技术栈采用 React + Hono（TypeScript 全栈），单容器 Docker 部署即可启动，也提供 Helm Chart 支持 Kubernetes 部署。内置一键部署工具 drim，可自动配置 HTTPS、数据库和全部服务。提供 Kaneo Cloud 云托管版（按用户/月计费）。与 Jira 相比，Kaneo 的核心卖点是极致简洁——不为演示效果堆砌功能，每个功能都为解决真实问题而存在，MIT 许可证完全开源。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 觉得 Jira/Linear 过于复杂的小型开发团队、追求自托管的项目管理方案的技术团队、需要轻量看板工具的初创公司。</span></div>
+<div class="card-classify">D-后端/服务端 › 项目管理 › 开源Jira替代</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">10</span>
+<span class="card-title"><a href="https://github.com/geo-tp/ESP32-Bit-Pirate" target="_blank">geo-tp/ESP32-Bit-Pirate</a></span>
+</div>
+<div class="card-meta">
+<span class="badge badge-lang">C++</span>
+<span class="badge badge-star">⭐ 总计 4,965</span>
+<span class="badge badge-today">今日 +161</span>
+<span class="badge badge-fork">🍴 Fork 403</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">硬件黑客的瑞士军刀——ESP32 版 Bus Pirate，一个设备通杀 20+ 种协议</div>
+<div class="card-section"><span class="label">📋 详细介绍：</span><span class="text"> ESP32 Bit Pirate 是一款开源固件，灵感来自传奇的 Bus Pirate，可将 ESP32 设备变成多协议开发和分析工具。它支持嗅探、发送、脚本化以及与各种数字协议交互——I2C、SPI、UART、1-Wire、2-Wire、JTAG、CAN、I2S、USB 等，还能处理无线协议如蓝牙、Wi-Fi、Sub-GHz、RFID、RF24、FM 和蜂窝通信。提供 Web 串行 CLI 界面，可通过浏览器直接操作，无需安装额外软件。内置 LittleFS 文件系统支持脚本保存和自动化。与原版 Bus Pirate 相比，ESP32 版本的优势在于更强的处理能力、无线协议支持和 Web 界面的便捷性，且硬件成本极低。</span></div>
+<div class="card-section"><span class="label">🎯 适用领域：</span><span class="text"> 硬件安全研究员、嵌入式开发者、IoT 安全审计人员、电子爱好者、需要低成本多协议分析工具的创客。</span></div>
+<div class="card-classify">I-系统/底层 › 硬件工具 › 多协议分析</div>
+</div>
+</div>
+</div>
+
+<div class="summary">
+<h2>📊 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th class="center">排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th class="center">今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="center">1</td><td>zhaoxuya520/reverse-skill</td><td>PowerShell</td><td class="center">+612</td><td>G-安全 › 逆向工程 › AI安全技能路由</td></tr>
+<tr><td class="center">2</td><td>different-ai/openwork</td><td>TypeScript</td><td class="center">+796</td><td>B-开发者工具 › AI协作平台 › Claude Cowork替代</td></tr>
+<tr><td class="center">3</td><td>mvanhorn/last30days-skill</td><td>Python</td><td class="center">+660</td><td>B-开发者工具 › Agent技能 › 跨平台信息搜索</td></tr>
+<tr><td class="center">4</td><td>paperswithbacktest/awesome-systematic-trading</td><td>Python</td><td class="center">+765</td><td>L-学习资源 › 金融资源合集 › 量化交易</td></tr>
+<tr><td class="center">5</td><td>microsoft/AI-For-Beginners</td><td>Python / Jupyter</td><td class="center">+1,592 🔥</td><td>L-学习资源 › AI教程 › 入门课程</td></tr>
+<tr><td class="center">6</td><td>github/copilot-sdk</td><td>Java / 多语言</td><td class="center">+7</td><td>B-开发者工具 › AI编程工具 › Copilot集成SDK</td></tr>
+<tr><td class="center">7</td><td>chatwoot/chatwoot</td><td>Ruby / Vue.js</td><td class="center">+175</td><td>D-后端/服务端 › 客服平台 › 全渠道客服</td></tr>
+<tr><td class="center">8</td><td>agavra/tuicr</td><td>Rust</td><td class="center">+336</td><td>B-开发者工具 › 代码审查 › 终端审查TUI</td></tr>
+<tr><td class="center">9</td><td>usekaneo/kaneo</td><td>TypeScript</td><td class="center">+188</td><td>D-后端/服务端 › 项目管理 › 开源Jira替代</td></tr>
+<tr><td class="center">10</td><td>geo-tp/ESP32-Bit-Pirate</td><td>C++</td><td class="center">+161</td><td>I-系统/底层 › 硬件工具 › 多协议分析</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer">📅 数据来源：GitHub Trending (since=daily) · 抓取时间：2026-08-01 依据公开资料整理 · 每日追踪开源世界脉搏</div>
+</body>
+</html>

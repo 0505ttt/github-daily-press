@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-24</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  /* 固定导航栏 */
+  nav.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 52px;
+    background: #24292e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  nav.navbar .nav-title { font-size: 16px; font-weight: 700; }
+  nav.navbar .nav-date { font-size: 14px; color: #8b949e; }
+
+  /* 封面 */
+  .cover {
+    background: linear-gradient(135deg, #1a1e22 0%, #24292e 40%, #2da44e 120%);
+    color: #fff;
+    text-align: center;
+    padding: 90px 24px 50px;
+  }
+  .cover h1 { font-size: 36px; margin-bottom: 10px; letter-spacing: 1px; }
+  .cover .date { font-size: 18px; color: #7ee787; margin-bottom: 8px; }
+  .cover .subtitle { font-size: 15px; color: #c9d1d9; }
+
+  /* 主体 */
+  .container { max-width: 920px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .intro {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    border-left: 5px solid #2da44e;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-size: 15px;
+  }
+  .intro strong { color: #1a7f37; }
+
+  /* 项目卡片 */
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-left: 5px solid #2da44e;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+
+  .card-header {
+    padding: 18px 24px 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-rank {
+    display: inline-block;
+    background: #24292e;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    width: 36px; height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .card-title { flex: 1; }
+  .card-title a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0969da;
+    text-decoration: none;
+  }
+  .card-title a:hover { text-decoration: underline; }
+  .card-tagline {
+    font-size: 14px;
+    color: #57606a;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .stars-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 0 24px 8px;
+    font-size: 14px;
+  }
+  .star-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #ddf4ff;
+    color: #0969da;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .star-today {
+    background: #dafbe1;
+    color: #1a7f37;
+  }
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #f0f3f6;
+    color: #24292e;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .lang-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    display: inline-block;
+  }
+
+  .card-body { padding: 8px 24px 20px; }
+  .card-body h3 {
+    font-size: 15px;
+    color: #24292e;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #eaeef2;
+    padding-bottom: 4px;
+  }
+  .card-body p {
+    font-size: 14px;
+    color: #3b4252;
+    margin-bottom: 12px;
+  }
+  .card-section { margin-bottom: 14px; }
+  .classify {
+    font-size: 13px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border-left: 3px solid #8250df;
+  }
+  .classify .main-cat { color: #8250df; font-weight: 700; }
+
+  /* 表格 */
+  .table-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th {
+    background: #24292e;
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #eaeef2;
+  }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  tr:hover td { background: #ddf4ff; }
+  td a { color: #0969da; text-decoration: none; font-weight: 600; }
+  td a:hover { text-decoration: underline; }
+
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #8b949e;
+    font-size: 13px;
+  }
+
+  @media (max-width: 640px) {
+    .cover h1 { font-size: 26px; }
+    .card-header { flex-direction: column; align-items: flex-start; }
+    th, td { padding: 8px 10px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<span class="nav-title">⚡ GitHub 热点日报</span>
+<span class="nav-date">2026-07-24</span>
+</nav>
+
+<div class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">📅 2026 年 7 月 24 日</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+<div class="container">
+
+<div class="intro">
+    今日 GitHub Trending <strong>AI 工具与开发者效率赛道</strong>持续领跑：Block（Square）推出的 AI+人类协作工作区 Buzz 空降 #1，worldmonitor 以 3,196 今日星标继续高歌猛进。金融市场基础模型 Kronos、WiFi 空间感知平台 RuView、人机并行浏览器 ego-lite 等硬科技项目也表现抢眼。整体来看，<strong>AI Agent 工作流工具</strong>和<strong>边缘 AI 感知</strong>是今日最大亮点。
+  </div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">1</span>
+<div class="card-title">
+<a href="https://github.com/block/buzz" target="_blank">block/buzz</a>
+<div class="card-tagline">人类与 AI Agent 共享的协作工作区，基于自托管 Nostr 中继</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 6,699</span>
+<span class="star-badge star-today">🔥 今日 +2,460</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#dea584;"></span> Rust</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>Buzz 由 Block（原 Square）团队开发，是一个自托管的工作空间平台，核心设计理念是"Agent 是成员，不是机器人"——人与 AI Agent 共享同一频道、同一个事件日志。底层基于 Nostr 协议，每条消息、代码补丁、工作流步骤都以签名事件形式存储在同一审计链中，无论作者是人还是进程。Agent 拥有独立的密钥对和身份，可以打开代码库、发送补丁、运行 CI、审查代码、编辑画布，享有与人类团队成员相同的能力表面。桌面端基于 Tauri + React，支持 macOS / Linux / Windows。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>需要深度集成 AI Agent 到日常开发协作流程的技术团队、追求统一审计轨迹的合规导向组织、自托管优先的隐私敏感型企业</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">B-开发者工具</span> › AI 协作平台 › 人机协作工作区
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">2</span>
+<div class="card-title">
+<a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a>
+<div class="card-tagline">实时全球情报仪表盘——AI 驱动的新闻聚合、地缘政治监测和基础设施追踪</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 71,455</span>
+<span class="star-badge star-today">🔥 今日 +3,196</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#3178c6;"></span> TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>聚合 500+ 新闻源跨 15 个分类，使用 AI 合成情报简报。配备双地图引擎（3D 地球 + WebGL 平面地图，56 种图层类型），支持跨流信号关联分析（军事、经济、灾害、升级信号汇合检测）。内置国家不稳定指数（CII）对 31 个 Tier-1 国家进行压力评分，覆盖 29 个证券交易所和加密货币的金融雷达。可完全本地运行（支持 Ollama），无需 API 密钥。从单一代码库生成 6 个站点变体（世界/科技/金融/商品/快乐/能源），同时提供原生桌面应用。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>地缘政治分析师、金融交易者、新闻工作者、需要实时全球态势感知的决策者、开源情报（OSINT）研究者</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">A-AI/机器学习</span> › 情报聚合 › 态势感知
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">3</span>
+<div class="card-title">
+<a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a>
+<div class="card-tagline">金融市场 K 线数据的开源基础模型——首个金融蜡烛图 Foundation Model</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 33,012</span>
+<span class="star-badge star-today">🔥 今日 +398</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#3572A5;"></span> Python</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>Kronos 是首个专门为金融市场 K 线（蜡烛图）序列数据预训练的开源 Foundation Model，在 45+ 全球交易所的数据上训练。采用两阶段框架：先通过专用 Tokenizer 将连续的 OHLCV 多维数据量化为分层离散 Token，再用大型自回归 Transformer 在这些 Token 上预训练。提供 mini（4.1M）/ small（24.7M）/ base（102.3M）三个开源模型版本，支持预测、分类、异常检测等多种量化任务，已被 AAAI 2026 接收。提供完整的 Qlib 微调和回测管线，支持多 GPU 训练和概率性预测。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>量化交易研究员、金融数据科学家、需要时间序列预测的金融科技团队、AI for Finance 学术研究者</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">A-AI/机器学习</span> › 量化交易 › 金融基础模型
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">4</span>
+<div class="card-title">
+<a href="https://github.com/Pumpkin-MC/Pumpkin" target="_blank">Pumpkin-MC/Pumpkin</a>
+<div class="card-tagline">完全用 Rust 编写的 Minecraft 服务器——高性能、高效率</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 8,867</span>
+<span class="star-badge star-today">🔥 今日 +563</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#dea584;"></span> Rust</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>Pumpkin 是一个完全用 Rust 从头编写的 Minecraft 服务器实现，目标是提供极致性能和玩家体验。利用 Rust 的多线程特性实现高并发处理，同时兼容最新的 Java 版和 Bedrock 版 Minecraft 协议，遵循 Vanilla 游戏机制。已实现：世界加载/保存、区块管理（Vanilla 和 Linear 格式）、玩家移动、背包系统、实体生成、计分板、RCON、Query、BungeeCord 和 Velocity 代理支持等核心功能。Redstone 和命令系统仍在开发中。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>Minecraft 服务器运营者、追求极致性能的游戏社区管理员、Rust 游戏后端开发者、游戏网络协议研究者</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">K-游戏/图形</span> › 游戏服务器 › Minecraft
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">5</span>
+<div class="card-title">
+<a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/ego-lite</a>
+<div class="card-tagline">让你和你的 AI Agent 并行工作的浏览器——专为双用户设计</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 1,577</span>
+<span class="star-badge star-today">🔥 今日 +219</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#f1e05a;"></span> JavaScript</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>ego lite 是一款从零开始为"人与 AI Agent 共享"设计的浏览器。与 browser-use 等自动化框架不同，它本身就是浏览器——Agent 在自己的隔离 Space 中运行多个任务，而你的标签页始终不受干扰。核心亮点：基于 JavaScript 函数调用而非 CLI 模式，复杂任务速度提升 2.5 倍且 Token 消耗更少；每个 Agent 拥有完全隔离的 Space（独立工作区）；通过 ego-browser 技能层桥接任何 Agent CLI（Claude Code、Codex、Cursor 等）；可迁移 Chrome 数据（登录态、Cookie、扩展）。目前在 macOS 上可用。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>使用 AI Agent 进行浏览器自动化的开发者、需要并行运行多个 Agent 任务的重度用户、注重隐私和效率的自动化工程师</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">B-开发者工具</span> › AI 浏览器 › 人机并行
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">6</span>
+<div class="card-title">
+<a href="https://github.com/chrislgarry/Apollo-11" target="_blank">chrislgarry/Apollo-11</a>
+<div class="card-tagline">阿波罗 11 号制导计算机（AGC）原始源代码——命令舱和登月舱</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 71,069</span>
+<span class="star-badge star-today">🔥 今日 +599</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#6E4C13;"></span> Assembly</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>这是 1969 年阿波罗 11 号登月任务中使用的制导计算机（AGC）的原始源代码，由 MIT 仪器实验室编写，涵盖命令舱（Comanche）和登月舱（Luminary）两个模块。代码使用 AGC 汇编语言编写，由 Margaret Hamilton 领导的团队开发。这个仓库将历史代码以可读格式公开，每行代码都附有注释和上下文说明，成为计算机科学史上最具传奇色彩的开源存档之一。代码中的优先级显示和异步中断处理理念影响了后来的实时操作系统设计。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>计算机科学史爱好者、航天工程研究者、汇编语言学习者、嵌入式系统工程师、对软件工程起源感兴趣的开发者</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">L-学习资源/其他</span> › 历史代码存档 › 航天软件
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">7</span>
+<div class="card-title">
+<a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a>
+<div class="card-tagline">免费开源的 AI 网关：一个端点接入 290+ 供应商、500+ 模型</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 27,049</span>
+<span class="star-badge star-today">🔥 今日 +1,925</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#3178c6;"></span> TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>MIT 协议的 AI 网关项目，一个本地端点即可连接 290 个供应商（其中 90+ 免费），覆盖 Claude、GPT、Gemini、Kimi K3、GLM、DeepSeek 等 500+ 模型。兼容 Claude Code、Codex、Cursor、OpenCode、Cline、Copilot 等主流编程工具。核心亮点是配额感知的自动降级机制和 RTK+Caveman 压缩技术，可节省 15-95% 的 Token 消耗。支持 MCP/A2A 协议和多模态，500+ 贡献者共建社区生态，同时可调度云端 Agent。提供桌面版和 PWA 版本。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>想免费或低成本使用多种 AI 模型进行编程的开发者、AI 编程工具重度用户、需要统一模型管理的团队</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">B-开发者工具</span> › AI 网关 › 多模型路由
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">8</span>
+<div class="card-title">
+<a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a>
+<div class="card-tagline">1000+ 实用 Claude Skills 精选目录——覆盖开发、数据分析、营销、安全等全场景</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 69,383</span>
+<span class="star-badge star-today">🔥 今日 +637</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#3572A5;"></span> Python</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>由 Composio 维护的 Claude Skills 精选列表，收录 1000+ 生产级、可直接使用的 Claude Skills 和 Plugins。覆盖文档处理（Word/PDF/PPT/Excel）、开发工具（MCP 构建、Playwright 自动化、代码审查）、数据分析（CSV/PostgreSQL）、商业营销（品牌、SEO、线索）、创意媒体、安全系统等十余个类别。特别亮眼的是通过 Composio 平台让 Claude 直接连接 500+ SaaS 应用（Gmail、Slack、GitHub、Jira 等），实现真正意义上的"Skills that do more than generate text"。兼容 Claude Code、Codex、Cursor、Gemini CLI、Antigravity、Windsurf 等多平台。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>Claude 用户、AI Agent 开发者、希望快速构建自动化工作流的团队、寻找现成 Agent Skill 模板的开发者</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">L-学习资源/其他</span> › 资源合集 › Claude Skills 目录
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">9</span>
+<div class="card-title">
+<a href="https://github.com/earthtojake/text-to-cad" target="_blank">earthtojake/text-to-cad</a>
+<div class="card-tagline">CAD / 机器人 / 硬件设计的 Agent 技能库——用自然语言生成工程级 CAD 模型</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 9,943</span>
+<span class="star-badge star-today">🔥 今日 +293</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#f1e05a;"></span> JavaScript</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>一套面向 AI Agent 的 CAD 技能库，覆盖从模型生成到制造的完整工作流。核心能力包括：用自然语言或图片生成 STEP 格式 CAD 模型（可导出 STL / 3MF / GLB）、搜索现成零件（螺丝/轴承/电机）、创建 2D DXF 图纸、编写机器人 URDF / SRDF / SDF 描述文件、将网格切片为打印机可用的 G-code 并可直连 Bambu Lab 打印机。还支持在浏览器中预览 CAD 模型和 G-code。通过 Skills CLI 一键安装到 Claude Code 或 Codex，将工程设计能力直接嵌入 Agent 工作流。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>机械工程师、硬件设计师、机器人开发者、3D 打印爱好者、使用 AI Agent 辅助工程设计的团队</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">A-AI/机器学习</span> › Agent 技能库 › CAD/硬件设计
+      </div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">10</span>
+<div class="card-title">
+<a href="https://github.com/agegr/pi-web" target="_blank">agegr/pi-web</a>
+<div class="card-tagline">pi 编程智能体的 Web 界面——在浏览器中管理 AI Agent 会话</div>
+</div>
+</div>
+<div class="stars-row">
+<span class="star-badge">⭐ 总计 2,335</span>
+<span class="star-badge star-today">🔥 今日 +315</span>
+<span class="lang-badge"><span class="lang-dot" style="background:#3178c6;"></span> TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-section">
+<h3>📋 详细介绍</h3>
+<p>pi-web 是 pi 编程智能体（pi-mono）的网页界面，让用户通过浏览器管理 AI Agent 的会话和交互。核心功能包括：会话浏览器（按工作目录分组展示所有 pi 会话）、实时对话（SSE 流式输出）、会话分叉（从任意消息创建独立分支）、会话内分支导航器（可视化切换不同分支）、模型切换（对话中途切换模型）、工具面板（控制 Agent 可用工具）、会话压缩（摘要长会话以节省上下文窗口）。无需安装，通过 npx 即可直接运行。</p>
+</div>
+<div class="card-section">
+<h3>🎯 适用领域</h3>
+<p>pi 编程智能体用户、需要一个可视化 Web 界面管理 Agent 会话的开发者、偏好浏览器操作而非终端的开发者</p>
+</div>
+<div class="card-section classify">
+<span class="main-cat">B-开发者工具</span> › AI 编程工具 › Agent Web 界面
+      </div>
+</div>
+</div>
+
+<h2 style="font-size: 22px; margin: 36px 0 12px; color: #24292e;">📊 今日速览</h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td><a href="https://github.com/block/buzz" target="_blank">block/buzz</a></td>
+<td>Rust</td>
+<td>+2,460</td>
+<td>B-开发者工具 › AI协作平台</td>
+</tr>
+<tr>
+<td>#2</td>
+<td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td>
+<td>TypeScript</td>
+<td>+3,196</td>
+<td>A-AI/机器学习 › 情报聚合</td>
+</tr>
+<tr>
+<td>#3</td>
+<td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td>
+<td>Python</td>
+<td>+398</td>
+<td>A-AI/机器学习 › 量化交易</td>
+</tr>
+<tr>
+<td>#4</td>
+<td><a href="https://github.com/Pumpkin-MC/Pumpkin" target="_blank">Pumpkin-MC/Pumpkin</a></td>
+<td>Rust</td>
+<td>+563</td>
+<td>K-游戏/图形 › Minecraft服务器</td>
+</tr>
+<tr>
+<td>#5</td>
+<td><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/ego-lite</a></td>
+<td>JavaScript</td>
+<td>+219</td>
+<td>B-开发者工具 › AI浏览器</td>
+</tr>
+<tr>
+<td>#6</td>
+<td><a href="https://github.com/chrislgarry/Apollo-11" target="_blank">chrislgarry/Apollo-11</a></td>
+<td>Assembly</td>
+<td>+599</td>
+<td>L-学习资源/其他 › 历史存档</td>
+</tr>
+<tr>
+<td>#7</td>
+<td><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a></td>
+<td>TypeScript</td>
+<td>+1,925</td>
+<td>B-开发者工具 › AI网关</td>
+</tr>
+<tr>
+<td>#8</td>
+<td><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></td>
+<td>Python</td>
+<td>+637</td>
+<td>L-学习资源/其他 › 资源合集</td>
+</tr>
+<tr>
+<td>#9</td>
+<td><a href="https://github.com/earthtojake/text-to-cad" target="_blank">earthtojake/text-to-cad</a></td>
+<td>JavaScript</td>
+<td>+293</td>
+<td>A-AI/机器学习 › CAD Agent技能</td>
+</tr>
+<tr>
+<td>#10</td>
+<td><a href="https://github.com/agegr/pi-web" target="_blank">agegr/pi-web</a></td>
+<td>TypeScript</td>
+<td>+315</td>
+<td>B-开发者工具 › Agent Web界面</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer">📡 数据来源：GitHub Trending (daily) · 抓取时间：2026-07-24 依据公开资料整理 · 仅供技术参考</div>
+</div>
+</body>
+</html>

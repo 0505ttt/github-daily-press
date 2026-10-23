@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-08-18</title>
+<style>
+  :root {
+    --gh-black: #24292e;
+    --gh-green: #2da44e;
+    --gh-gray: #57606a;
+    --gh-border: #d0d7de;
+    --gh-bg: #f6f8fa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: var(--gh-bg);
+    color: var(--gh-black);
+    line-height: 1.7;
+  }
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--gh-black);
+    color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.25);
+  }
+  .topbar .brand { font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+  .topbar .brand::before { content: "🐙 "; }
+  .topbar .date { color: #8b949e; font-size: 13px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 72px 20px 40px; }
+  .cover {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    border-radius: 16px;
+    color: #fff;
+    padding: 44px 36px 38px;
+    margin-bottom: 28px;
+    box-shadow: 0 6px 24px rgba(36,41,46,.35);
+  }
+  .cover h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: 1px; }
+  .cover .sub { font-size: 15px; opacity: .85; }
+  .cover .meta { margin-top: 14px; font-size: 13px; opacity: .7; }
+  .brief {
+    background: #fff;
+    border: 1px solid var(--gh-border);
+    border-left: 5px solid var(--gh-green);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+  .brief b { color: var(--gh-green); }
+  .card {
+    background: #fff;
+    border: 1px solid var(--gh-border);
+    border-left: 6px solid var(--gh-green);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(36,41,46,.08);
+    margin-bottom: 26px;
+    display: flex;
+    overflow: hidden;
+  }
+  .card-rank {
+    background: var(--gh-black);
+    color: var(--gh-green);
+    font-weight: 800;
+    font-size: 20px;
+    min-width: 64px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-body { padding: 20px 24px; flex: 1; min-width: 0; }
+  .card-title-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .card-title { font-size: 20px; }
+  .card-title a { color: var(--gh-black); text-decoration: none; }
+  .card-title a:hover { color: var(--gh-green); }
+  .card-title .repo-name { color: #0969da; }
+  .lang { font-size: 13px; color: var(--gh-gray); white-space: nowrap; }
+  .lang .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px; }
+  .oneliner { margin: 8px 0 12px; font-size: 15px; color: #1f2328; font-weight: 600; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .stat {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--gh-bg);
+    border: 1px solid var(--gh-border);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 13px;
+    color: var(--gh-gray);
+  }
+  .stat.today { background: #dafbe1; border-color: #2da44e66; color: #116329; font-weight: 700; }
+  .section-label { font-size: 13px; font-weight: 700; color: var(--gh-green); letter-spacing: 2px; margin: 14px 0 6px; }
+  .card p.desc { font-size: 14.5px; color: #363b41; }
+  .usage {
+    background: #f6f8fa;
+    border: 1px dashed var(--gh-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 13.5px;
+    color: var(--gh-gray);
+  }
+  .usage b { color: var(--gh-black); }
+  .tagline {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #0969da;
+    background: #ddf4ff;
+    border: 1px solid #54aeff66;
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: inline-block;
+  }
+  h2.sec {
+    font-size: 22px; margin: 36px 0 16px;
+    padding-left: 12px;
+    border-left: 5px solid var(--gh-green);
+  }
+  table.summary {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(36,41,46,.08);
+    font-size: 14px;
+  }
+  table.summary th {
+    background: var(--gh-black);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table.summary td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--gh-border);
+  }
+  table.summary tr:nth-child(even) td { background: #f6f8fa; }
+  table.summary tr:last-child td { border-bottom: none; }
+  table.summary a { color: #0969da; text-decoration: none; }
+  table.summary a:hover { text-decoration: underline; }
+  .today-star { color: #116329; font-weight: 700; }
+  .footer {
+    margin-top: 30px; text-align: center;
+    color: var(--gh-gray); font-size: 12.5px;
+  }
+  @media (max-width: 640px) {
+    .card { flex-direction: column; }
+    .card-rank { min-width: 100%; padding: 6px 0; font-size: 16px; }
+    .cover h1 { font-size: 24px; }
+    .topbar { padding: 10px 14px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topbar">
+<div class="brand">GitHub 热点日报</div>
+<div class="date">2026-08-18 · 每日追踪开源世界脉搏</div>
+</nav>
+<div class="wrap">
+<header class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="meta">数据来源：github.com/trending?since=daily · 抓取时间：2026-08-18（Asia/Shanghai）· 今日 Trending 实际返回 11 个项目，全部收录</div>
+</header>
+<section class="brief">
+    今日榜单 <b>AI 依旧霸榜</b>：11 个项目中 8 个与 AI 直接相关，中文 AI 短视频项目 <b>MoneyPrinterTurbo</b> 以单日 +1,275 星强势登顶，AI 渗透测试工具 <b>strix</b> 紧随其后（+656）。安全赛道出现「双响炮」：strix 与 817 技能的 <b>Anthropic-Cybersecurity-Skills</b> 同日上榜。最大黑马是 Fabio Akita 的 <b>ai-memory</b>——仅 2K 总星却以 +207 冲到第 4，解决「换 Agent CLI 就失忆」的刚需；<b>cordis</b> 凭论文热度连续第三天在榜（今日 +959）。此外自托管相册 <b>immich</b>（111K 星）和老牌下载器 <b>Motrix</b> 的 v2 重写版也重回视野。
+  </section>
+
+<article class="card">
+<div class="card-rank">#1</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/<span class="repo-name">MoneyPrinterTurbo</span></a></div>
+<div class="lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+</div>
+<div class="oneliner">一站式 AI 短视频生成工具——输入主题或关键词，成片直接交付</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 105,890</span>
+<span class="stat today">今日 +1,275</span>
+<span class="stat">🍴 Fork 16,098</span>
+<span class="stat">📄 MIT</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">MoneyPrinterTurbo 只需一个视频主题或关键词，即可全自动生成视频脚本、匹配素材、生成字幕和背景音乐，最终合成高清短视频，提供 AI Agent、WebUI、API 和 CLI 四种使用方式。工作流串联 LLM 文案生成（官方推荐 Kimi K3，也支持 DeepSeek、Qwen 等十余家模型）、Pexels/Pixabay/Coverr 素材检索、Edge TTS/Azure 等 TTS 语音合成、ffmpeg 合成渲染，支持 9:16 与 16:9 多尺寸批量生成。项目中文生态浓郁：README 提供完整中文文档，社区围绕它衍生出大量「AI 搬砖」「无人直播」教程，录咖等合作方还提供免部署的在线版。与商业化的剪映 AI 成片相比，它完全开源可自托管、素材和模型可自由替换，但需要一定部署能力（Docker 一键起服务）。今日登顶说明这波热度仍在持续发酵。</p>
+<div class="usage"><b>适用领域</b>：短视频/自媒体矩阵运营者批量产出内容、需要关键词批量生成营销视频的电商团队、想学习 LLM+ffmpeg 工作流编排的开发者、无人直播间的内容供给。</div>
+<div class="tagline">📚 知识归类：A-AI/机器学习 › AI视频生成 › 短视频自动化生产</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#2</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/usestrix/strix">usestrix/<span class="repo-name">strix</span></a></div>
+<div class="lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+</div>
+<div class="oneliner">开源 AI 渗透测试工具——自主 AI「黑客」替你找漏洞、写 PoC、出补丁</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 54,084</span>
+<span class="stat today">今日 +656</span>
+<span class="stat">🍴 Fork 5,791</span>
+<span class="stat">📄 Apache-2.0</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">Strix 是一组自主的 AI 渗透测试智能体，像真实黑客一样动态运行你的代码、寻找漏洞并用实际可用的 PoC（概念验证 exploit）加以证实，杜绝静态扫描器常见的误报。开箱即用覆盖侦察、利用、验证全流程，支持多 Agent 协作编排；每个发现都附带复现步骤和修复建议，可一键生成合规级渗透测试报告。CLI 一行命令 strix --target ./app 即可发起扫描（需本地 Docker 沙箱 + 任意主流 LLM API Key），也已无缝集成 GitHub Actions，在每个 PR 上自动拦截不安全代码。与 XBOW 等商业产品相比它是 Apache-2.0 完全开源，还提供 npx skills add usestrix/strix 让 Claude Code、Cursor 等编程 Agent 直接具备安全测试能力。</p>
+<div class="usage"><b>适用领域</b>：应用安全工程师做快速渗透测试、开发团队在 CI/CD 中前置安全卡点、漏洞赏金猎人自动化信息收集与 PoC 生成、DevSecOps 团队替代昂贵的人工 pentest。</div>
+<div class="tagline">📚 知识归类：G-安全 › AI渗透测试 › 自主攻击Agent</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#3</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/nautechsystems/nautilus_trader">nautechsystems/<span class="repo-name">nautilus_trader</span></a></div>
+<div class="lang"><span class="dot" style="background:#dea584"></span>Rust</div>
+</div>
+<div class="oneliner">生产级 Rust 原生量化交易引擎——研究、回测、实盘同一套事件驱动架构</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 25,873</span>
+<span class="stat today">今日 +115</span>
+<span class="stat">🍴 Fork 3,371</span>
+<span class="stat">📄 LGPL-3.0</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">NautilusTrader 是 Nautech Systems 开发的开源生产级交易引擎，核心用 Rust 编写（mimalloc 分配器 + tokio 异步网络），Python 作为控制平面负责策略逻辑与编排，关键任务甚至可以纯 Rust 编写。最大卖点是「研究与实盘同构」：同一套执行语义和确定性时间模型贯穿回测与实盘，策略从研究环境部署到生产无需改一行代码，回测支持多市场、多品种、多策略并行，数据分辨率达纳秒级。资产类别无关设计，任何有 REST API 或 WebSocket 的交易所都能通过模块化适配器接入，已覆盖加密货币（CEX/DEX）、外汇、股票、期货、期权乃至博彩交易所。高级订单类型齐全：IOC/FOK/GTC/GTD、冰山单、post-only/reduce-only、OCO/OUO/OTO 条件单，另支持 Redis 状态持久化与跨市场做市策略。</p>
+<div class="usage"><b>适用领域</b>：量化交易团队构建低延迟多资产策略、加密货币做市与跨所套利、需要研究-生产一致性的算法交易工程师、从 backtrader 等 Python 框架升级到生产级引擎的开发者。</div>
+<div class="tagline">📚 知识归类：A-AI/机器学习 › 量化交易引擎 › 事件驱动回测与实盘</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#4</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/<span class="repo-name">ai-memory</span></a></div>
+<div class="lang"><span class="dot" style="background:#dea584"></span>Rust</div>
+</div>
+<div class="oneliner">给 AI 编程 Agent 装上长期记忆——Claude Code 干到一半换 Codex 接着干</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 1,993</span>
+<span class="stat today">今日 +207</span>
+<span class="stat">🍴 Fork 192</span>
+<span class="stat">📄 MIT</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">ai-memory 解决编程 Agent 的「失忆」问题：在 Claude Code 里干到一半的任务，切换到 OpenAI Codex 后不用重新解释架构、失败的尝试和待办问题，直接无缝接续。它通过 MCP 配置 + 生命周期钩子接入各家 Agent CLI，支持 Claude Code、Codex、Cursor、Gemini CLI、OpenCode、Devin CLI 等 10 余种工具，跨厂商共享项目记忆。核心机制是把项目历史整理为可检索的长期记忆（不断合并摘要），并以「workstream」形式支持跨工具会话延续（ai-memory run 命令可透明切换 Agent 而不丢上下文）。Rust 编写，提供 Docker 镜像、macOS ARM/x86 原生二进制、Windows 实验版和 systemd 单元等多种部署形态。与各家官方记忆方案的区别在于「厂商中立」——记忆不绑定任何一家 Agent。</p>
+<div class="usage"><b>适用领域</b>：多 Agent CLI 混用重度用户（Claude Code + Codex + Cursor）、长期维护大型项目需要 Agent 记住历史决策的开发者、团队希望沉淀「AI 可读」的项目知识库。</div>
+<div class="tagline">📚 知识归类：B-开发者工具 › Agent记忆 › 跨厂商会话延续</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#5</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">mukul975/<span class="repo-name">Anthropic-Cybersecurity-Skills</span></a></div>
+<div class="lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+</div>
+<div class="oneliner">817 个结构化网络安全技能库——让 AI Agent 拥有资深安全分析师的知识</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 28,366</span>
+<span class="stat today">今日 +156</span>
+<span class="stat">🍴 Fork 3,445</span>
+<span class="stat">📄 Apache-2.0</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">社区项目（与 Anthropic 官方无隶属关系），号称最大的开源 AI Agent 网络安全技能库：817 个生产级技能覆盖 29 个安全领域，每个技能遵循 agentskills.io 开放标准。最大亮点是行业框架映射：每个技能按主题挂接 MITRE ATT&amp;CK（805 个技能）、NIST CSF 2.0（804 个）、D3FEND、NIST AI RMF、MITRE ATLAS 和 F3 反欺诈框架——取证技能带 ATT&amp;CK+CSF，AI 安全技能再加 ATLAS+AI RMF，可直接按合规框架组织知识。兼容 26+ AI 平台（Claude Code、Cursor 等），克隆下来把 Agent 指向它，安全调查就能获得专家级指引：该跑哪个 Volatility3 插件、哪些 Sigma 规则能抓 Kerberoasting。库内含红队 C2、钓鱼模拟等双用途技术，明确仅限授权测试与防御研究使用。</p>
+<div class="usage"><b>适用领域</b>：安全运营中心（SOC）给 AI Agent 加持分析师能力、红队/渗透测试人员扩展 Agent 的安全技能、企业按 NIST/ATT&amp;CK 框架组织安全知识库、安全教育培训。</div>
+<div class="tagline">📚 知识归类：G-安全 › AI安全技能库 › 框架映射技能集</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#6</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/AlexsJones/llmfit">AlexsJones/<span class="repo-name">llmfit</span></a></div>
+<div class="lang"><span class="dot" style="background:#dea584"></span>Rust</div>
+</div>
+<div class="oneliner">一条命令找出你的硬件能跑哪些 LLM——本地模型选型终端利器</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 32,220</span>
+<span class="stat today">今日 +239</span>
+<span class="stat">🍴 Fork 1,997</span>
+<span class="stat">📄 MIT</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">llmfit 是 Rust 编写的终端工具，自动检测你的 RAM、CPU、GPU，对数百个模型与提供方按质量、速度、适配度、上下文四个维度打分，告诉你哪些模型在你的机器上「真的能跑好」。支持多 GPU、MoE 架构、动态量化选择与速度估算，并对接 Ollama、llama.cpp、MLX、Docker Model Runner、LM Studio 等本地运行时。默认交互式 TUI，也有经典 CLI 模式；1.0 版本引入「基准测试与分享」机制：在本机实测 tok/s 后可直接从 TUI 提 PR 回馈项目，同款硬件的用户就能看到带 ✓ 的实测数据而非估算值。安装覆盖 scoop/Homebrew/MacPorts/uv/Docker 全平台。与 HuggingFace 按显存筛模型相比，它更进一步给出「能不能跑好」的综合评分。</p>
+<div class="usage"><b>适用领域</b>：本地 LLM 玩家选型（16GB 内存该跑哪个量化版本）、企业为员工电脑批量推荐可离线运行的模型、评测社区共建硬件-模型适配数据库。</div>
+<div class="tagline">📚 知识归类：B-开发者工具 › 本地LLM工具 › 硬件选型推荐</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#7</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/santifer/career-ops">santifer/<span class="repo-name">career-ops</span></a></div>
+<div class="lang"><span class="dot" style="background:#f1e05a"></span>JavaScript</div>
+</div>
+<div class="oneliner">开源 AI 求职系统——把任意 AI 编程 CLI 变成你的求职指挥中心</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 64,573</span>
+<span class="stat today">今日 +147</span>
+<span class="stat">🍴 Fork 12,650</span>
+<span class="stat">📄 MIT</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">career-ops 把 Claude Code 等 AI 编程 CLI 变成完整的求职流水线：自动扫描职位门户（Greenhouse、Ashby、Lever 及 150+ 公司官网），用结构化 A-F 评分表 + 五个加权维度给职位打 1.0-5.0 分（G 区块单独评估招聘信息合法性，不影响总分），再按职位描述生成 ATS 优化的定制 PDF 简历。它强调「过滤」而非海投——官方强烈建议低于 4.0 分别投，帮你在几百个职位里找出真正值得花时间的少数。Agent 用 Playwright 导航招聘页、通过理解简历与 JD 的语义匹配（而非关键词匹配）评估适配度，支持子 Agent 并行评估 10+ 职位，附带公司调研与关键联系人挖掘。作者用这套系统评估了 740+ 职位、生成 100+ 定制简历并成功拿到 Head of Applied AI 岗位，是「吃自家狗粮」的典范。</p>
+<div class="usage"><b>适用领域</b>：求职者（尤其技术岗）系统化管理投递流水线、职业转型者需要 AI 评估匹配度、想学习 Agent 工作流编排（Playwright + 子 Agent + 结构化输出）的开发者。</div>
+<div class="tagline">📚 知识归类：A-AI/机器学习 › Agent应用 › AI求职流水线</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#8</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/jundot/omlx">jundot/<span class="repo-name">omlx</span></a></div>
+<div class="lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+</div>
+<div class="oneliner">Mac 菜单栏里的 LLM 推理服务器——Apple Silicon 专属，KV 缓存热内存+冷 SSD 分层</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 18,964</span>
+<span class="stat today">今日 +96</span>
+<span class="stat">🍴 Fork 1,644</span>
+<span class="stat">📄 Apache-2.0</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">oMLX 是专为 Apple Silicon 打造的 LLM 推理服务器，基于 Apple 官方 MLX 框架，从 macOS 菜单栏直接启停和监控，下载 DMG 拖进应用程序即用。核心创新是分层 KV 缓存：将 KV cache 持久化到「热内存层 + 冷 SSD 层」，即使对话中途切换上下文，历史上下文仍保持缓存并可跨请求复用，让本地 LLM 在 Claude Code 等编程 Agent 下真正可用（这正是作者造它的动机）。支持连续批处理、块级前缀共享与写时复制缓存，对外提供 OpenAI 兼容接口；可选装 GLM-5.2 / MiniMax M3 原生自定义内核——官方实测 M3 Ultra 上 GLM-5.2 融合 DSA prefill 提速约 30 倍（845 vs 29 tok/s）。需要 macOS 15+ 与 M1 及以上芯片，支持 MCP 可选安装。</p>
+<div class="usage"><b>适用领域</b>：Mac 用户本地跑 LLM 服务编程 Agent（Claude Code/Codex 接本地模型）、内存有限但 SSD 富余的 Apple Silicon 设备、追求「菜单栏一点就跑」低门槛本地推理的用户。</div>
+<div class="tagline">📚 知识归类：A-AI/机器学习 › LLM推理框架 › AppleSilicon本地推理</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#9</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/immich-app/immich">immich-app/<span class="repo-name">immich</span></a></div>
+<div class="lang"><span class="dot" style="background:#3178c6"></span>TypeScript</div>
+</div>
+<div class="oneliner">高性能自托管照片视频管理——自己的照片自己管，Google Photos 开源替代</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 111,103</span>
+<span class="stat today">今日 +337</span>
+<span class="stat">🍴 Fork 6,574</span>
+<span class="stat">📄 AGPL-3.0</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">Immich 是直接对标 Google Photos 的自托管照片/视频管理方案，提供 iOS/Android 移动端（打开即自动备份、支持选择性相册与后台备份）与 Web 端，支持多用户、共享相册、合伙人共享与公开分享。功能面覆盖 RAW 原图格式、LivePhoto/MotionPhoto、360° 全景、EXIF 元数据与全局地图视图，搜索支持按元数据、物体、人脸和 CLIP 语义检索，还有人脸识别聚类、「N 年前的回忆」时间线、离线支持与只读相册。技术栈为 NestJS（后端）+ Flutter（移动端）+ SvelteKit（Web），文档完善并提供在线演示。README 特意提醒：自托管不等于不丢数据，务必遵循 3-2-1 备份原则。与 PhotoPrism 等同类相比，Immich 移动端体验和迭代速度明显占优，已是 GitHub 百 K 星俱乐部成员。</p>
+<div class="usage"><b>适用领域</b>：想从 Google Photos/iCloud 相册迁出的隐私敏感用户、NAS/家庭服务器玩家搭建私有相册、家庭多成员共享照片、需要 RAW 工作流管理的摄影爱好者。</div>
+<div class="tagline">📚 知识归类：E-基础设施/DevOps › 自托管服务 › 私有云相册</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#10</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/cordiverse/cordis">cordiverse/<span class="repo-name">cordis</span></a></div>
+<div class="lang"><span class="dot" style="background:#3178c6"></span>TypeScript</div>
+</div>
+<div class="oneliner">时空可组合性元框架——TypeScript 世界的依赖注入框架升华，论文热度第三天延续</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 5,544</span>
+<span class="stat today">今日 +959</span>
+<span class="stat">🍴 Fork 294</span>
+<span class="stat">📄 MIT</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">Cordis 自称「时空可组合性（Spatiotemporal Composability）元框架」，是一个 TypeScript 核心库，提供带效应追踪（effect tracking）与协效应解析（coeffect resolution）的编程范式。它其实是 Koishi 聊天机器人生态的底层框架，经过多年打磨后于 2026 年 8 月发布配套论文《A Programming Paradigm for Spatiotemporal Composability》，将插件间的依赖注入、生命周期管理上升到「时间与空间维度可组合」的理论层面。与一般 DI 框架（如 InversifyJS）的区别在于它同时管理组件的「空间组合」（依赖图）和「时间组合」（动态加载/卸载的生命周期）。仓库标注活跃开发中、API 尚不稳定，文档以 cordis-primer 形式提供。自 8 月 13 日论文发布后连续三日上榜，是典型的「论文驱动」翻红项目。</p>
+<div class="usage"><b>适用领域</b>：TypeScript/Node.js 后端与机器人开发者（尤其 Koishi 生态用户）、研究插件化架构与依赖注入的工程师、对效应系统和可组合性理论感兴趣的编程语言爱好者。</div>
+<div class="tagline">📚 知识归类：B-开发者工具 › 应用框架 › TypeScript 元框架</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-rank">#11</div>
+<div class="card-body">
+<div class="card-title-row">
+<div class="card-title"><a href="https://github.com/agalwood/Motrix">agalwood/<span class="repo-name">Motrix</span></a></div>
+<div class="lang"><span class="dot" style="background:#3178c6"></span>TypeScript</div>
+</div>
+<div class="oneliner">界面清爽的全功能下载管理器——HTTP/BT/磁力链全支持，v2「Turbo」重写进行中</div>
+<div class="stat-row">
+<span class="stat">⭐ 总计 53,025</span>
+<span class="stat today">今日 +295</span>
+<span class="stat">🍴 Fork 4,926</span>
+<span class="stat">📄 自定义协议</span>
+</div>
+<div class="section-label">详细介绍</div>
+<p class="desc">Motrix 是老牌开源下载管理器，支持 HTTP、FTP、BitTorrent、磁力链接等主流协议，界面现代清爽、保持简单易用。v2 版本「Motrix Turbo」用 Electron + React + TypeScript 从零重写：下载核心与 UI 彻底分离，浏览器扩展和 CLI 通过自研开放协议 MDXP（基于 JSON-RPC 2.0 的 Motrix Download eXchange Protocol）与主程序通信，插件运行在 QuickJS 沙箱并有细粒度权限 + 应用内插件市场。同一核心支持两种形态：跨平台桌面应用（macOS/Windows/Linux）和 Headless 服务器模式（Node.js 直跑或 Docker，自带 Web UI，面向 NAS 与家庭服务器）。BT 下载支持单文件选择、tracker 列表自动更新与健康检查、UPnP/NAT-PMP 端口映射、SQLite 会话恢复；官方 CLI @motrix/cli 适配日常 shell 与 AI Agent 调用。v2 目前处于 beta（v2.0.0-beta.18），官方提示迁移前务必备份 v1 数据。</p>
+<div class="usage"><b>适用领域</b>：替代 IDM/迅雷的日常下载工具、NAS 用户跑 Headless 模式集中管理下载、需要浏览器扩展一键接管的用户、对插件生态与开放协议感兴趣的开发者。</div>
+<div class="tagline">📚 知识归类：I-系统/底层 › 下载工具 › 跨平台下载管理器</div>
+</div>
+</article>
+<h2 class="sec">📊 今日速览</h2>
+<table class="summary">
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>总计 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></td><td>Python</td><td class="today-star">+1,275</td><td>105,890</td><td>A-AI/机器学习 › AI视频生成</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/usestrix/strix">usestrix/strix</a></td><td>Python</td><td class="today-star">+656</td><td>54,084</td><td>G-安全 › AI渗透测试</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/nautechsystems/nautilus_trader">nautechsystems/nautilus_trader</a></td><td>Rust</td><td class="today-star">+115</td><td>25,873</td><td>A-AI/机器学习 › 量化交易引擎</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a></td><td>Rust</td><td class="today-star">+207</td><td>1,993</td><td>B-开发者工具 › Agent记忆</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">mukul975/Anthropic-Cybersecurity-Skills</a></td><td>Python</td><td class="today-star">+156</td><td>28,366</td><td>G-安全 › AI安全技能库</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/AlexsJones/llmfit">AlexsJones/llmfit</a></td><td>Rust</td><td class="today-star">+239</td><td>32,220</td><td>B-开发者工具 › 本地LLM工具</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/santifer/career-ops">santifer/career-ops</a></td><td>JavaScript</td><td class="today-star">+147</td><td>64,573</td><td>A-AI/机器学习 › Agent应用</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/jundot/omlx">jundot/omlx</a></td><td>Python</td><td class="today-star">+96</td><td>18,964</td><td>A-AI/机器学习 › LLM推理框架</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/immich-app/immich">immich-app/immich</a></td><td>TypeScript</td><td class="today-star">+337</td><td>111,103</td><td>E-基础设施/DevOps › 自托管服务</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/cordiverse/cordis">cordiverse/cordis</a></td><td>TypeScript</td><td class="today-star">+959</td><td>5,544</td><td>B-开发者工具 › 应用框架</td></tr>
+<tr><td>#11</td><td><a href="https://github.com/agalwood/Motrix">agalwood/Motrix</a></td><td>TypeScript</td><td class="today-star">+295</td><td>53,025</td><td>I-系统/底层 › 下载工具</td></tr>
+</tbody>
+</table>
+<div class="footer">
+    数据抓取自 GitHub Trending（daily）· 共收录 11 个项目 · 其中 3 个为再次上榜（MoneyPrinterTurbo、strix、cordis）<br/>
+    GitHub 热点情报研究员 · 2026-08-18 自动生成
+  </div>
+</div>
+</body>
+</html>

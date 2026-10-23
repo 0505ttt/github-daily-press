@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-14</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+  line-height: 1.7;
+}
+/* 固定导航栏 */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  background: #24292e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.navbar-brand { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+.navbar-date { font-size: 14px; color: #8b949e; }
+/* 封面区域 */
+.cover {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff;
+  padding: 60px 32px 48px;
+  text-align: center;
+}
+.cover h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+.cover .date { font-size: 22px; opacity: 0.9; margin-bottom: 8px; }
+.cover .subtitle { font-size: 16px; opacity: 0.75; }
+/* 内容容器 */
+.container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+/* 风向概括 */
+.overview {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-bottom: 36px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 4px solid #2da44e;
+}
+.overview h2 { font-size: 20px; margin-bottom: 10px; color: #24292e; }
+.overview p { font-size: 15px; color: #57606a; }
+/* 项目卡片 */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  overflow: hidden;
+  border-left: 5px solid #2da44e;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.card-header {
+  padding: 20px 28px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.card-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: #24292e;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.card-title { flex: 1; min-width: 200px; }
+.card-title a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0969da;
+  text-decoration: none;
+}
+.card-title a:hover { text-decoration: underline; }
+.lang-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.lang-python { background: #3572A5; }
+.lang-html { background: #e34c26; }
+.lang-swift { background: #F05138; }
+.lang-rust { background: #dea584; color: #24292e; }
+.lang-typescript { background: #3178c6; }
+.lang-shell { background: #89e051; color: #24292e; }
+.lang-go { background: #00ADD8; }
+.lang-md { background: #6c757d; }
+.tag-new {
+  background: #2da44e;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.tag-repeat {
+  background: #8b949e;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.star-bar {
+  padding: 0 28px 12px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #57606a;
+}
+.star-item { display: flex; align-items: center; gap: 4px; }
+.star-icon { color: #e3b341; font-size: 16px; }
+.star-today { color: #2da44e; font-weight: 600; }
+.card-body { padding: 0 28px 24px; }
+.card-tagline {
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292e;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eaeef2;
+}
+.card-detail {
+  font-size: 14px;
+  color: #57606a;
+  margin-bottom: 12px;
+}
+.card-detail strong { color: #24292e; }
+.card-usecase {
+  font-size: 14px;
+  color: #57606a;
+  margin-bottom: 12px;
+}
+.card-usecase strong { color: #24292e; }
+.card-category {
+  font-size: 13px;
+  color: #57606a;
+  background: #f6f8fa;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.card-category strong { color: #2da44e; }
+/* 速览表 */
+.summary-section { margin-top: 48px; }
+.summary-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #24292e;
+  border-bottom: 2px solid #2da44e;
+  padding-bottom: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+thead th {
+  background: #24292e;
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eaeef2;
+}
+tbody tr:nth-child(even) { background: #f6f8fa; }
+tbody tr:hover { background: #ddf4ff; }
+.table-star { color: #e3b341; }
+.table-new { color: #2da44e; font-weight: 600; }
+/* 底部 */
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  color: #8b949e;
+  font-size: 13px;
+}
+/* 响应式 */
+@media (max-width: 768px) {
+  .cover h1 { font-size: 26px; }
+  .cover .date { font-size: 18px; }
+  .navbar { padding: 0 16px; }
+  .container { padding: 24px 12px; }
+  .card-header, .star-bar, .card-body { padding-left: 16px; padding-right: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 8px 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="navbar-brand">📰 GitHub 热点日报</div>
+<div class="navbar-date">2026-08-14</div>
+</nav>
+
+<div class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 8 月 14 日</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+<div class="container">
+
+<div class="overview">
+<h2>📊 今日风向</h2>
+<p>今日榜单 <strong>AI / Agent 生态继续主导</strong>，17 个上榜项目中近半数与 AI Agent 技能、模型训练或 AI 工具相关。<strong>cathrynlavery/diagram-design</strong> 以 +4,504 日增 star 遥遥领先，Claude Code 图表技能需求旺盛。<strong>macro-inc/macro</strong>（+1,180）作为团队协作黑马强势上升。安全领域今日也有两个 OSINT 工具同时上榜（holehe + spiderfoot），反映开源情报工具热度回暖。值得关注的新面孔包括 <strong>cactus-compute/needle</strong>（14MB 超微模型）和 <strong>Lightricks/LTX-2</strong>（音视频一体生成模型）。</p>
+</div>
+
+<div class="card" style="border-left-color: #e3b341;">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank" style="background:#e3b341;color:#24292e;">1</span>
+<div class="card-title">
+<a href="https://github.com/cathrynlavery/diagram-design" target="_blank">cathrynlavery/diagram-design</a>
+<span class="tag-repeat">连续上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-html">HTML</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>14,231</strong></span>
+<span class="star-item star-today">今日 +4,504 🚀</span>
+<span class="star-item">Fork 854</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">Claude Code 的编辑级图表技能——29 种图表类型，自包含 HTML+SVG，告别 Mermaid 模板</div>
+<p class="card-detail">Diagram Design 是一个专为 Claude Code、Codex 和 Pi 设计的 Agent 技能，提供 29 种编辑级图表类型（架构图、流程图、时序图、状态机、ER 图、时间线、泳道图等）。每种图表都提供极简浅色、极简深色、完整编辑三种变体，输出为自包含的 HTML+SVG 文件——无 JS 依赖、无外部图片，浏览器直接打开。核心亮点：60 秒读取你的网站品牌色和字体并应用到所有图表，还能导入 draw.io 或 Mermaid 源文件重绘。作者定位明确：「没有 Figma，没有通用圆角框，没有 30 分钟调色」。</p>
+<p class="card-usecase"><strong>适用领域：</strong>内容创作者、技术博主、使用 Claude Code / Codex 的开发者——需要高质量技术图表又不想跟 Figma 较劲的场景。</p>
+<div class="card-category"><strong>知识归类：</strong>C-前端/Web › SVG图表 › AI生成技能</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">2</span>
+<div class="card-title">
+<a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi/semantica</a>
+<span class="tag-repeat">连续上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-python">Python</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>6,568</strong></span>
+<span class="star-item star-today">今日 +727</span>
+<span class="star-item">Fork 692</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">图原生的 AI 上下文基础设施——为 AI 系统提供结构化上下文、因果推理和完整决策溯源</div>
+<p class="card-detail">Semantica 是一个开源的图原生（Graph-Native）基础设施层，解决 AI Agent 缺乏结构化上下文和决策可审计性的问题。它通过知识图谱摄入企业数据，自动提取实体、关系和语义信息，构建可查询的上下文图谱（Context Graph）。核心能力包括：为 LLM/Agent 提供可追溯的推理路径（provenance）、支持因果推理和语义搜索、内置本体（ontology）引擎让数据具有语义层。与传统向量数据库 RAG 的区别在于：Semantica 用图谱关系而非向量相似度做检索，决策过程可解释、可审计。</p>
+<p class="card-usecase"><strong>适用领域：</strong>需要可解释 AI 决策的企业团队、构建 Agent 的开发者（需要给 Agent 提供结构化知识上下文）、知识图谱/语义搜索方向的工程师、需要决策溯源与合规审计的金融/法律/医疗场景。</p>
+<div class="card-category"><strong>知识归类：</strong>A-AI/机器学习 › 知识图谱 › Agent上下文基础设施</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">3</span>
+<div class="card-title">
+<a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a>
+<span class="tag-repeat">连续上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-python">Python</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>168,980</strong></span>
+<span class="star-item star-today">今日 +383</span>
+<span class="star-item">Fork 20,129</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">Anthropic 官方 Agent Skills 仓库——让 Claude 掌握可复用的专业任务能力</div>
+<p class="card-detail">这是 Anthropic 官方发布的 Agent Skills（智能体技能）公开仓库，展示了 Claude 技能系统的各种可能性。Skills 本质上是包含指令、脚本和资源的文件夹（核心是 SKILL.md 文件），Claude 会动态加载这些技能来提升特定任务的表现——无论是按照公司品牌指南创建文档、用特定工作流分析数据，还是自动化个人任务。仓库涵盖创意应用（艺术、音乐、设计）、技术任务（Web 应用测试、MCP server 生成）、企业工作流等多种技能集。文档创建与编辑技能（docx/pdf/pptx/xlsx）是 Claude 文档能力的底层实现，以 source-available 形式公开作为复杂技能的参考。</p>
+<p class="card-usecase"><strong>适用领域：</strong>Claude / Claude Code 用户、构建自定义 Agent 技能的开发者、企业团队（需要为 AI 定制品牌规范和工作流技能）、Agent Skills 生态的早期探索者。</p>
+<div class="card-category"><strong>知识归类：</strong>B-开发者工具 › Agent技能框架 › 官方技能库</div>
+</div>
+</div>
+
+<div class="card" style="border-left-color: #2da44e;">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">4</span>
+<div class="card-title">
+<a href="https://github.com/cactus-compute/needle" target="_blank">cactus-compute/needle</a>
+<span class="tag-new">🆕 新上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-python">Python</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>4,917</strong></span>
+<span class="star-item star-today">今日 +768</span>
+<span class="star-item">Fork 332</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">14MB 超微基础模型——为手机、穿戴设备、智能家居和机器人打造的工具调用引擎</div>
+<p class="card-detail">Needle 2 是一个开源的 4500 万参数模型，专为工具调用（tool calling）、设备使用和结构化提取设计。整个模型打包成单个 14MB 二进制文件，完整会话仅需约 28MB 内存。它基于 Cactus Compute 的 Simple Attention Network 研究成果，采用 CQ2-bit 量化压缩并内置推理引擎。在基准测试中，Needle 2 与 FunctionGemma 270M、LFM2.5 230M 等模型互有胜负，但体积小 5-70 倍。核心特色：权重烧入引擎（无需单独模型文件）、置信度门控（每个响应携带校准置信分数）、工具检索（声明大型工具目录后自动检索 Top 5）、256 token 滑动窗口确保内存恒定在 28MB。通过 <code>pip install cactus-needle</code> 即可使用。</p>
+<p class="card-usecase"><strong>适用领域：</strong>嵌入式 AI 开发者、物联网/可穿戴设备工程师、需要在边缘设备上运行工具调用的团队、机器人开发者、对超小型模型推理感兴趣的研究人员。</p>
+<div class="card-category"><strong>知识归类：</strong>A-AI/机器学习 › 边缘AI › 超小模型</div>
+</div>
+</div>
+
+<div class="card" style="border-left-color: #2da44e;">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">5</span>
+<div class="card-title">
+<a href="https://github.com/altic-dev/FluidVoice" target="_blank">altic-dev/FluidVoice</a>
+<span class="tag-new">🆕 新上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-swift">Swift</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>9,829</strong></span>
+<span class="star-item star-today">今日 +187</span>
+<span class="star-item">Fork 662</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">macOS 最快的本地 AI 听写应用——完全在设备上运行 STT + 自训练增强模型</div>
+<p class="card-detail">FluidVoice 是一款开源的 macOS 语音转文字听写应用，核心特色是所有 AI 处理完全在设备本地完成，无需云端、无需 API 密钥、数据不离开你的 Mac。1.6.0 版本引入了 "Fluid Intelligence"——一个完全本地运行的 AI 运行时，负责智能格式化、上下文感知大小写、后处理优化等。支持 NVIDIA Nemotron Speech 3.5、Parakeet Flash / v3 / v2、Cohere、Apple Speech、Whisper 等多种语音模型。作者将其定位为 Wispr Flow 的本地替代方案。通过 Homebrew 一键安装：<code>brew install --cask fluidvoice</code>。iOS 和 Windows 版本已开放候补名单。</p>
+<p class="card-usecase"><strong>适用领域：</strong>macOS 用户（特别是写作、编程、邮件场景）、注重隐私的用户（不想语音数据上传云端）、Wispr Flow 替代需求者、对本地 AI 语音技术感兴趣的开发者。</p>
+<div class="card-category"><strong>知识归类：</strong>A-AI/机器学习 › 语音识别 › 本地听写</div>
+</div>
+</div>
+
+<div class="card" style="border-left-color: #2da44e;">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">6</span>
+<div class="card-title">
+<a href="https://github.com/unslothai/unsloth" target="_blank">unslothai/unsloth</a>
+<span class="tag-new">🆕 新上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-python">Python</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>71,017</strong></span>
+<span class="star-item star-today">今日 +354</span>
+<span class="star-item">Fork 6,404</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">本地运行和训练大模型的桌面应用——支持 Qwen3.8、Kimi K3、MiniMax-H3、DeepSeek-V4、FLUX 等</div>
+<p class="card-detail">Unsloth 是首个提供桌面 GUI 来运行和训练大模型的工具，让用户无需命令行即可在本地机器上跑起 LLM 和扩散模型。支持的主流模型包括 Qwen3.8、Kimi K3、MiniMax-H3、Gemma 4、DeepSeek-V4、FLUX 等最新模型。核心能力涵盖：模型推理运行、LoRA/QLoRA 微调、强化学习训练、TTS 语音合成、图像生成等。提供 Windows / macOS / Linux 原生桌面安装包，也有命令行安装方式。由 Unsloth AI 团队开发，该项目是开源社区中训练效率优化的标杆——号称训练速度提升 2 倍以上，显存占用减少 60%。</p>
+<p class="card-usecase"><strong>适用领域：</strong>需要在本地微调大模型的开发者和研究者、AI 应用开发者（想用桌面 GUI 而非代码训练模型）、对模型微调有需求的创业团队、自托管 AI 方案的工程师。</p>
+<div class="card-category"><strong>知识归类：</strong>A-AI/机器学习 › 模型训练 › 本地训练框架</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">7</span>
+<div class="card-title">
+<a href="https://github.com/macro-inc/macro" target="_blank">macro-inc/macro</a>
+<span class="tag-repeat">连续上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-rust">Rust</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>2,567</strong></span>
+<span class="star-item star-today">今日 +1,180 🚀</span>
+<span class="star-item">Fork 274</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">团队统一工作空间——邮件+聊天+文档+任务+Agent+电话+CRM，全部 @ 关联共享 AI 记忆</div>
+<p class="card-detail">Macro 是一个统一的团队工作空间，将邮件、聊天、文档、任务、Agent、电话和 CRM 整合到一个快速界面中，所有内容通过 @ 链接互联并共享团队级 AI 记忆。核心理念：一切可搜索，团队和 Agent 永远不用切换工具。基于 SolidJS + Rust 构建，由约 15 人团队在 NYC 和 Toronto 设计，已内部使用两年。功能模块包括：多账户统一邮箱（受 Superhuman 启发）、频道消息、Linear 风格任务、基于 CRDT 的实时协作文档、2D Canvas 画板、统一团队级记忆的 Agent、可录制转录的电话、CRM。最大区别：所有模块共享同一后端，跨引用（文档↔任务、消息↔邮件）原生存储为双向图。</p>
+<p class="card-usecase"><strong>适用领域：</strong>需要「一站式操作平台」的小型创业团队、想用 AI Agent 增强协作的远程团队、不想在 Slack+Notion+Linear+HubSpot 之间反复切换的公司。</p>
+<div class="card-category"><strong>知识归类：</strong>D-后端/服务端 › 协作平台 › AI统一工作空间</div>
+</div>
+</div>
+
+<div class="card" style="border-left-color: #2da44e;">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">8</span>
+<div class="card-title">
+<a href="https://github.com/megadose/holehe" target="_blank">megadose/holehe</a>
+<span class="tag-new">🆕 新上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-python">Python</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>12,389</strong></span>
+<span class="star-item star-today">今日 +166</span>
+<span class="star-item">Fork 1,667</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">邮箱注册检测工具——检查邮箱在 Twitter、Instagram 等 120+ 网站是否已注册</div>
+<p class="card-detail">Holehe 是一个经典的 OSINT（开源情报）工具，通过网站的「忘记密码」功能检查一个邮箱地址是否在 Twitter、Instagram、Imgur 等 120+ 网站上注册了账号。核心原理是利用密码重置流程的信息差异来判断邮箱是否关联了账号，整个过程<strong>不会向目标邮箱发送任何邮件</strong>（不会惊动被调查者）。支持命令行（<code>holehe test@gmail.com</code>）和 Python 库两种使用方式，也可通过 Docker 部署。已有商业化在线版本 osint.industries。该项目自 2020 年开源，使用 Trio 异步框架并行检测。</p>
+<p class="card-usecase"><strong>适用领域：</strong>OSINT 调查人员、安全研究人员、渗透测试工程师、私家调查员、需要做邮箱归属分析的安全团队。</p>
+<div class="card-category"><strong>知识归类：</strong>G-安全 › OSINT › 邮箱侦察</div>
+</div>
+</div>
+
+<div class="card" style="border-left-color: #2da44e;">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">9</span>
+<div class="card-title">
+<a href="https://github.com/smicallef/spiderfoot" target="_blank">smicallef/spiderfoot</a>
+<span class="tag-new">🆕 新上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-python">Python</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>20,645</strong></span>
+<span class="star-item star-today">今日 +278</span>
+<span class="star-item">Fork 3,313</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">OSINT 自动化引擎——集成 200+ 数据源，自动化威胁情报和攻击面映射</div>
+<p class="card-detail">SpiderFoot 是一个成熟的开源情报（OSINT）自动化工具，自 2012 年持续开发至今，已集成超过 200 个模块/数据源。它通过内置 Web 服务器提供直观的 Web 界面，也支持完全的命令行操作。核心功能包括：YAML 可配置的关联引擎（37 条预定义规则）、CSV/JSON/GEXF 导出、API 密钥导入导出、SQLite 后端自定义查询、TOR 集成（暗网搜索）、可视化图表、Docker 部署。还能调用 DNSTwist、Whatweb、Nmap、CMSeeK 等外部工具。商业化版本 SpiderFoot HX 提供云端托管、攻击面监控、多用户协作等高级功能。</p>
+<p class="card-usecase"><strong>适用领域：</strong>安全分析师和威胁情报团队、红队/渗透测试工程师、企业攻击面管理、安全合规审计、OSINT 研究者。</p>
+<div class="card-category"><strong>知识归类：</strong>G-安全 › OSINT › 威胁情报自动化</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">10</span>
+<div class="card-title">
+<a href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank">NVIDIA-NeMo/Switchyard</a>
+<span class="tag-repeat">连续上榜</span>
+</div>
+</div>
+<span class="lang-badge lang-rust">Rust</span>
+</div>
+<div class="star-bar">
+<span class="star-item"><span class="star-icon">⭐</span> 总计 <strong>1,182</strong></span>
+<span class="star-item star-today">今日 +408</span>
+<span class="star-item">Fork 105</span>
+</div>
+<div class="card-body">
+<div class="card-tagline">NVIDIA 出品的 LLM 流量代理——让 Claude Code / Codex 无缝对接开源模型</div>
+<p class="card-detail">Switchyard 是 NVIDIA NeMo 团队推出的 Rust 代理和库，专为 LLM 流量路由设计。核心能力是协议翻译：在 OpenAI Chat、Anthropic Messages 和 OpenAI Responses 三种 API 格式之间自动转换，让 Claude Code 或 Codex 等编程 Agent 继续说它们的「母语 API」，而后端实际由 vLLM、NVIDIA NIM、Ollama 或任何 OpenAI 兼容端点提供服务。支持多后端路由（随机路由、LLM 分类器路由、信号驱动的阶段路由器、自定义算法）、Prometheus 运维指标（请求、错误、延迟、token 用量、路由开销全覆盖）。一条命令即可启动：<code>switchyard launch claude --model switchyard</code>。</p>
+<p class="card-usecase"><strong>适用领域：</strong>使用 Claude Code / Codex 但想接入开源模型的开发者、需要 LLM 流量路由和 A/B 基准测试的工程团队、NVIDIA NIM / vLLM 用户。</p>
+<div class="card-category"><strong>知识归类：</strong>B-开发者工具 › AI网关 › LLM流量代理</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/cathrynlavery/diagram-design" style="color:#0969da;text-decoration:none;" target="_blank">cathrynlavery/diagram-design</a></td>
+<td><span class="lang-badge lang-html">HTML</span></td>
+<td><span class="table-new">+4,504</span></td>
+<td>前端/Web › SVG图表</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/semantica-agi/semantica" style="color:#0969da;text-decoration:none;" target="_blank">semantica-agi/semantica</a></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+727</span></td>
+<td>AI/机器学习 › 知识图谱</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/anthropics/skills" style="color:#0969da;text-decoration:none;" target="_blank">anthropics/skills</a></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+383</span></td>
+<td>开发者工具 › Agent技能</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/cactus-compute/needle" style="color:#0969da;text-decoration:none;" target="_blank">cactus-compute/needle</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+768</span></td>
+<td>AI/机器学习 › 边缘AI</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://github.com/altic-dev/FluidVoice" style="color:#0969da;text-decoration:none;" target="_blank">altic-dev/FluidVoice</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-swift">Swift</span></td>
+<td><span class="table-new">+187</span></td>
+<td>AI/机器学习 › 语音识别</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://github.com/unslothai/unsloth" style="color:#0969da;text-decoration:none;" target="_blank">unslothai/unsloth</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+354</span></td>
+<td>AI/机器学习 › 模型训练</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://github.com/macro-inc/macro" style="color:#0969da;text-decoration:none;" target="_blank">macro-inc/macro</a></td>
+<td><span class="lang-badge lang-rust">Rust</span></td>
+<td><span class="table-new">+1,180</span></td>
+<td>后端/服务端 › 协作平台</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://github.com/megadose/holehe" style="color:#0969da;text-decoration:none;" target="_blank">megadose/holehe</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+166</span></td>
+<td>安全 › OSINT</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://github.com/smicallef/spiderfoot" style="color:#0969da;text-decoration:none;" target="_blank">smicallef/spiderfoot</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+278</span></td>
+<td>安全 › OSINT</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://github.com/NVIDIA-NeMo/Switchyard" style="color:#0969da;text-decoration:none;" target="_blank">NVIDIA-NeMo/Switchyard</a></td>
+<td><span class="lang-badge lang-rust">Rust</span></td>
+<td><span class="table-new">+408</span></td>
+<td>开发者工具 › AI网关</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="summary-section">
+<h2>🔥 更多今日热门（排名 11-17）</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td><a href="https://github.com/holaboss-ai/holaOS" style="color:#0969da;text-decoration:none;" target="_blank">holaboss-ai/holaOS</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-typescript">TypeScript</span></td>
+<td><span class="table-new">+380</span></td>
+<td>开发者工具 › Agent工作空间</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="https://github.com/kepano/obsidian-skills" style="color:#0969da;text-decoration:none;" target="_blank">kepano/obsidian-skills</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-md">Markdown</span></td>
+<td><span class="table-new">+411</span></td>
+<td>开发者工具 › Agent技能</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://github.com/3b1b/manim" style="color:#0969da;text-decoration:none;" target="_blank">3b1b/manim</a></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+204</span></td>
+<td>学习资源 › 数学动画</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://github.com/msitarzewski/agency-agents" style="color:#0969da;text-decoration:none;" target="_blank">msitarzewski/agency-agents</a></td>
+<td><span class="lang-badge lang-shell">Shell</span></td>
+<td><span class="table-new">+762</span></td>
+<td>开发者工具 › AI Agent角色</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://github.com/Lightricks/LTX-2" style="color:#0969da;text-decoration:none;" target="_blank">Lightricks/LTX-2</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-python">Python</span></td>
+<td><span class="table-new">+201</span></td>
+<td>AI/机器学习 › 视频生成</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://github.com/lightningpixel/modly" style="color:#0969da;text-decoration:none;" target="_blank">lightningpixel/modly</a> <span class="table-new">🆕</span></td>
+<td><span class="lang-badge lang-typescript">TypeScript</span></td>
+<td><span class="table-new">+221</span></td>
+<td>游戏/图形 › 3D建模</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://github.com/infiniflow/ragflow" style="color:#0969da;text-decoration:none;" target="_blank">infiniflow/ragflow</a></td>
+<td><span class="lang-badge lang-go">Go</span></td>
+<td><span class="table-new">+473</span></td>
+<td>AI/机器学习 › RAG框架</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footer">数据来源：GitHub Trending (since=daily) · 抓取时间：2026-08-14 依据公开资料整理 · 每日追踪开源世界脉搏</div>
+</body>
+</html>

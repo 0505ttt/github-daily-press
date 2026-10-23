@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 16 — 2026-09-13</title>
+<style>
+  :root {
+    --gh-dark: #24292e;
+    --gh-green: #2da44e;
+    --gh-green-dark: #218838;
+    --bg: #f6f8fa;
+    --card-bg: #ffffff;
+    --border: #d0d7de;
+    --text: #1f2328;
+    --muted: #57606a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--gh-dark);
+    color: #fff;
+    padding: 10px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+  .navbar .brand::before { content: "⭐ "; }
+  .navbar .date { color: #8b949e; font-size: 13px; }
+  .hero {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 34px; margin-bottom: 8px; letter-spacing: 1px; }
+  .hero .sub { font-size: 15px; opacity: .85; margin-bottom: 4px; }
+  .hero .slogan { margin-top: 14px; display: inline-block; padding: 6px 18px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; font-size: 13px; letter-spacing: 3px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+  .overview {
+    background: #fff; border: 1px solid var(--border); border-left: 5px solid var(--gh-green);
+    border-radius: 8px; padding: 18px 20px; margin-bottom: 28px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  .overview h3 { font-size: 16px; margin-bottom: 8px; color: var(--gh-dark); }
+  .overview p { font-size: 14px; color: var(--muted); }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gh-green);
+    border-radius: 10px;
+    padding: 20px 22px 18px 76px;
+    margin-bottom: 22px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,.07);
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+  .card-rank {
+    position: absolute; left: 16px; top: 20px;
+    width: 46px; height: 46px; border-radius: 10px;
+    background: var(--gh-dark); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 15px;
+  }
+  .card:nth-child(1) .card-rank { background: linear-gradient(135deg,#f0883e,#da5b0f); }
+  .card-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .repo-name {
+    font-size: 19px; font-weight: 700; color: var(--gh-green-dark);
+    text-decoration: none; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .repo-name:hover { text-decoration: underline; }
+  .badge {
+    font-size: 11px; padding: 2px 10px; border-radius: 999px; font-weight: 600;
+  }
+  .badge-hot { background: #fff1e5; color: #bc4c00; border: 1px solid #f69963; }
+  .oneline { color: var(--gh-dark); font-weight: 600; font-size: 15px; margin-bottom: 10px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; font-size: 13px; color: var(--muted); }
+  .meta-item b { color: var(--gh-dark); }
+  .star-today b { color: var(--gh-green-dark); }
+  .lang-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+  .card h4 {
+    font-size: 13px; color: var(--gh-green-dark); margin: 12px 0 4px;
+    letter-spacing: 1px;
+  }
+  .detail, .usage { font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .usage { color: var(--muted); }
+  .cat-line {
+    margin-top: 12px; font-size: 13px; color: var(--muted);
+    background: #f6f8fa; border-radius: 6px; padding: 8px 12px;
+  }
+  .cat-label {
+    background: var(--gh-green); color: #fff; font-size: 11px;
+    padding: 2px 8px; border-radius: 4px; margin-right: 8px;
+  }
+  .repo-link { margin-top: 8px; font-size: 12px; color: var(--muted); }
+  .repo-link a { color: #0969da; text-decoration: none; }
+  .repo-link a:hover { text-decoration: underline; }
+  h2.section { margin: 34px 0 16px; font-size: 20px; color: var(--gh-dark); border-left: 5px solid var(--gh-green); padding-left: 12px; }
+  table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    font-size: 13.5px; border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden;
+  }
+  th {
+    background: var(--gh-dark); color: #fff; padding: 10px 12px;
+    text-align: left; font-weight: 600; letter-spacing: 1px;
+  }
+  td { padding: 9px 12px; border-top: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  td a { color: #0969da; text-decoration: none; font-family: ui-monospace, Menlo, monospace; }
+  td a:hover { text-decoration: underline; }
+  tr:hover td { background: #eaf6ec !important; }
+  .footer {
+    margin-top: 40px; text-align: center; color: var(--muted);
+    font-size: 12px; border-top: 1px solid var(--border); padding-top: 18px;
+  }
+  @media (max-width: 640px) {
+    .card { padding-left: 20px; padding-top: 66px; }
+    .card-rank { left: 20px; top: 14px; }
+    .hero h1 { font-size: 24px; }
+    table { font-size: 12px; }
+    th, td { padding: 7px 6px; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<span class="brand">GitHub 热点日报</span>
+<span class="date">2026-09-13 · 数据来源 github.com/trending</span>
+</nav>
+<header class="hero">
+<h1>📰 GitHub 今日热点 Top 16</h1>
+<div class="sub">2026-09-13 · 星期日</div>
+<div class="slogan">每 日 追 踪 开 源 世 界 脉 搏</div>
+</header>
+<div class="container">
+<section class="overview">
+<h3>🧭 今日风向</h3>
+<p>今日榜单 AI 应用占绝对主力（7 席）：AI 销售 CRM、AI 交易终端、数学建模 Agent、音乐生成、AI 渗透测试等"Agent 落地"项目扎堆，说明社区重心已从模型层转向应用层。安全类 4 席罕见走高，其中两个都是网络审查规避工具（DPI 绕过 + 协议伪装隧道）。黑马当属 #1 gods-eye-view——"间谍卫星"实时地球监控续热度不减，以及 #8 CloddsBot（对话式交易 Agent，黑客松 12 天作品）。分类分布：AI机器学习×4、安全×4、学习资源-其他×2、移动开发×2、前端-Web×1、基础设施-DevOps×1、游戏-图形×1、开发者工具×1。</p>
+</section>
+<h2 class="section">🏆 今日榜单（按 Trending 排名）</h2>
+<article class="card">
+<div class="card-rank"># 1</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a>
+<span class="badge badge-hot">🔥 今日最热</span>
+</div>
+<p class="oneline">「浏览器里的"间谍卫星"模拟器——界面像绝密系统，数据全是真实公开数据源」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+<span class="meta-item">⭐ 总计 <b>29,708</b></span>
+<span class="meta-item star-today">📈 今日 <b>+2,265</b></span>
+<span class="meta-item">🍴 5,991</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">渲染出照片级 3D 地球，实时追踪全球飞机、轮船、卫星、地震、交通和公共摄像头，还支持语音免手动操控（由实时 AI agent 驱动）。看起来像间谍卫星界面，但所有数据都来自公开渠道（ADS-B 航班、AIS 船舶、地震监测等），安装后无需 API Key 即可启动。来自 YouTube 上播放量 500 万+ 的 God's Eye View 系列背后团队，2026 年 8 月曾登顶 GitHub Trending 日榜和周榜，JavaScript 之父 Brendan Eich 也公开点赞。支持 Pinokio 一键安装，也可本地从终端运行。</p>
+<h4>适用领域</h4>
+<p class="usage">地理可视化爱好者、OSINT 开源情报爱好者、做实时数据大屏的开发者；想学习 3D 地球 + 多源实时数据流（飞机/船舶/卫星）聚合架构的 WebGIS 工程师</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> C-前端/Web › 3D可视化 › 实时地球监控</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/bilawalsidhu/gods-eye-view">github.com/bilawalsidhu/gods-eye-view</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 2</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/melgarafael/DeskcommCRM">melgarafael/DeskcommCRM</a>
+</div>
+<p class="oneline">「开源 AI 销售 CRM：AI 代理在 WhatsApp 上自动接待、筛选线索、促成交易」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+<span class="meta-item">⭐ 总计 <b>1,772</b></span>
+<span class="meta-item star-today">📈 今日 <b>+505</b></span>
+<span class="meta-item">🍴 548</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">巴西团队的出品，定位是"带 AI 的销售操作系统"：AI 代理直接在 WhatsApp 上接待客户、资格审核、跟进并成交，全程跑在你自己的服务器上，数据不出门。技术栈为 Next.js 16 + TypeScript strict + Supabase（Postgres/Auth/Storage），一条命令即可部署到 VPS。对标 Kommo、Octadesk、Intercom 等商业产品，主打无月费、无功能锁定。与 HostGator 达成合作，提供一条命令上生产的部署套件。</p>
+<h4>适用领域</h4>
+<p class="usage">以 WhatsApp 为主要获客渠道的外贸、跨境销售团队；想把客户数据和 AI 对话都留在自己服务器上的中小企业；寻找开源 CRM 二次开发起点的团队</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> A-AI/机器学习 › Agent应用 › AI销售CRM</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/melgarafael/DeskcommCRM">github.com/melgarafael/DeskcommCRM</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 3</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a>
+</div>
+<p class="oneline">「各大 AI 聊天机器人系统提示词的"逐字泄露"档案库」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+<span class="meta-item">⭐ 总计 <b>65,358</b></span>
+<span class="meta-item star-today">📈 今日 <b>+357</b></span>
+<span class="meta-item">🍴 10,733</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">逐字收录 ChatGPT、Claude、Gemini、Grok 等主流 AI 在用户发出第一条消息之前收到的隐藏系统指令，随各家模型发版持续更新（最新已覆盖 Claude Fable 5.1 等新版本）。对于研究提示词工程、AI 安全和模型行为边界的人来说是第一手资料：你能直接看到大厂如何约束模型的人格、拒答边界和工具调用规则。《华盛顿邮报》曾用该仓库的提示词文件做了交互式数据新闻报道，CEPS 智库 AI World 也基于它搭建了可视化看板。</p>
+<h4>适用领域</h4>
+<p class="usage">提示词工程师（学习大厂的 system prompt 写法）、AI 安全与对齐研究者、想了解模型"出厂设定"的产品经理和普通用户</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> L-学习资源/其他 › 提示词资料 › 系统提示词档案</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/asgeirtj/system_prompts_leaks">github.com/asgeirtj/system_prompts_leaks</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 4</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/nab138/iloader">nab138/iloader</a>
+</div>
+<p class="oneline">「傻瓜式 iOS 应用侧载工具：图形界面安装 SideStore 并自动导入配对文件」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+<span class="meta-item">⭐ 总计 <b>3,065</b></span>
+<span class="meta-item star-today">📈 今日 <b>+209</b></span>
+<span class="meta-item">🍴 209</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">把 iOS 侧载最麻烦的环节（安装 SideStore 等Monkey ancestor商店/自签应用、导入 pairing file）做成了图形化一键操作。跨平台支持 Windows/macOS/Linux，只需先装好 usbmuxd（Windows 装 iTunes、macOS 自带）即可使用。官方发布渠道只有 GitHub Releases 和 iloader.app，社区还自发维护了 Homebrew cask、AUR 和 Fedora COPR 源。作者是 SideStore 生态的活跃贡献者，下载量通过 GitHub Actions 徽章实时展示。</p>
+<h4>适用领域</h4>
+<p class="usage">不想越狱但想侧载自签 App 的 iPhone/iPad 用户；需要在真机上反复安装测试包的 iOS 开发者；AltStore/SideStore 用户（替代更繁琐的原生流程）</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> H-移动开发 › iOS侧载工具</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/nab138/iloader">github.com/nab138/iloader</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 5</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/Flowseal/zapret-discord-youtube">Flowseal/zapret-discord-youtube</a>
+</div>
+<p class="oneline">「Windows 下 Discord/YouTube 连接异常的 DPI 绕过批处理套件」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#C1F12E"></span>Batchfile</span>
+<span class="meta-item">⭐ 总计 <b>33,200</b></span>
+<span class="meta-item star-today">📈 今日 <b>+52</b></span>
+<span class="meta-item">🍴 2,540</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">基于 bol-van 的 zapret 引擎封装的 Windows 批处理包，用 WinDivert 驱动在包层面拦截和处理 TCP 流量，针对 Discord 语音和 YouTube 视频连接被干扰的场景做了预设配置。配置文件随版本持续更新，支持游戏模式等多种参数。注意事项：部分杀毒软件会把 WinDivert 判为"黑客工具"而拦截，属于误报，需手动加白名单；作者强调仓库之外以他名义流传的都是假货。</p>
+<h4>适用领域</h4>
+<p class="usage">Discord/YouTube 连接不稳定地区的 Windows 用户（主要为独联体地区用户）；想研究 DPI 工作原理的网络工程师（参考其配置思路）</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> G-安全 › 网络审查规避 › DPI绕过</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/Flowseal/zapret-discord-youtube">github.com/Flowseal/zapret-discord-youtube</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 6</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/jihe520/MathModelAgent">jihe520/MathModelAgent</a>
+</div>
+<p class="oneline">「数学建模 Agent：从解题到出论文一条龙，产出可直接提交的完整成稿」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<span class="meta-item">⭐ 总计 <b>5,113</b></span>
+<span class="meta-item star-today">📈 今日 <b>+264</b></span>
+<span class="meta-item">🍴 401</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">国产项目，专为数学建模竞赛（国赛/美赛）设计：自动完成问题分析、建模、求解、可视化全流程，最终生成一份格式完整、可直接提交的论文。桌面版内置 Claude Code 与全套 MathModelAgent SKILLS，不用装 Python/Node.js/Redis，不用手动配置技能，装好填一个模型 API Key 就能开跑。姊妹项目 sci-box 提供科研图表与流程图技能合集，形成"建模+绘图"的完整科研工具链。</p>
+<h4>适用领域</h4>
+<p class="usage">数学建模竞赛参赛学生（国赛/美赛/研赛）；需要快速产出建模分析报告的科研人员；研究"Agent+专业技能(Skills)"架构的开发者</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> A-AI/机器学习 › Agent应用 › 数学建模</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/jihe520/MathModelAgent">github.com/jihe520/MathModelAgent</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 7</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/Sonarr/Sonarr">Sonarr/Sonarr</a>
+</div>
+<p class="oneline">「剧集自动化管理 PVR：追新集、抓取、命名、提质全自动」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#178600"></span>C#</span>
+<span class="meta-item">⭐ 总计 <b>15,908</b></span>
+<span class="meta-item star-today">📈 今日 <b>+228</b></span>
+<span class="meta-item">🍴 1,952</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">监控多个 RSS 源，发现你追的剧集更新后自动抓取、按规范重命名归档；当更高质量版本（如从 1080p 到 4K）出现时可自动替换升级。支持 Usenet 和 BitTorrent 双通道，是 servarr 生态的核心成员（与电影版 Radarr、索引版 Prowlarr、电影/剧集通吃版 Lidarr 协同）。社区成熟度极高：官方 wiki、论坛、Discord、Reddit 一应俱全，C# 编写跨平台运行。</p>
+<h4>适用领域</h4>
+<p class="usage">自建家庭媒体库（Jellyfin/Plex/Emby）的玩家；不想手动追剧下载整理的人；研究"监控-抓取-整理"自动化流水线的自托管爱好者</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> E-基础设施/DevOps › 自托管服务 › 媒体自动化</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/Sonarr/Sonarr">github.com/Sonarr/Sonarr</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 8</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/alsk1992/CloddsBot">alsk1992/CloddsBot</a>
+</div>
+<p class="oneline">「对话式 AI 交易终端：预测市场、加密货币、期货全打通（Claude + Odds = Clodds）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+<span class="meta-item">⭐ 总计 <b>2,474</b></span>
+<span class="meta-item star-today">📈 今日 <b>+377</b></span>
+<span class="meta-item">🍴 310</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">用自然语言对话就能下单的自主交易 agent：支持 Polymarket/Kalinka 预测市场、Solana DEX（经 Jupiter）、EVM 链（Uniswap V3/1inch）、Bittensor 挖矿和投资组合管理。内置 118+ 交易策略、鲸鱼追踪、套利检测、跟单和定投机器人。为 Colosseum Solana Agent 黑客松开发，12 天做出完整功能。自带 WebChat 界面（Claude 风格侧边栏、9 种语言、上下文自动压缩、无限历史记录），`npm install` 一条命令装好，`clodds onboard` 向导引导配置。</p>
+<h4>适用领域</h4>
+<p class="usage">加密量化爱好者、预测市场玩家；想参考"LLM+交易执行"完整架构（策略库/风控/多市场适配）的开发者；黑客松项目级别的快速交付范本</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> A-AI/机器学习 › 量化交易Agent</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/alsk1992/CloddsBot">github.com/alsk1992/CloddsBot</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 9</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/yuliskov/SmartTube">yuliskov/SmartTube</a>
+</div>
+<p class="oneline">「Android TV 上的无广告进阶版 YouTube 客户端」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#b07219"></span>Java</span>
+<span class="meta-item">⭐ 总计 <b>33,197</b></span>
+<span class="meta-item star-today">📈 今日 <b>+160</b></span>
+<span class="meta-item">🍴 2,013</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">为电视端打造：跳过片头广告和赞助片段（SponsorBlock 集成）、支持 8K 与 HDR、自由调节倍速、可看直播聊天、按钮全自定义。覆盖 Android TV/Google TV/Amazon Fire TV 及大部分电视盒子，分 Beta（更新快）和 Stable 两条发布线。需要注意：README 顶部安全公告披露开发者环境曾感染未知恶意软件、个别构建可能受影响，作者已全盘重置并把所有构建接入 VirusTotal 扫描；2025 年 10 月后的新 FireTV 设备改用 VegaOS 已不再兼容。</p>
+<h4>适用领域</h4>
+<p class="usage">想在大屏电视上无广告看 YouTube 的 Android TV/盒子用户；SponsorBlock 的受益者；关注供应链安全的自托管玩家（建议只从官方渠道下载）</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> H-移动开发 › Android TV应用</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/yuliskov/SmartTube">github.com/yuliskov/SmartTube</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 10</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a>
+</div>
+<p class="oneline">「100+ 可直接运行的 AI Agent 与 RAG 应用模板库（第 4 次上榜）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<span class="meta-item">⭐ 总计 <b>137,591</b></span>
+<span class="meta-item star-today">📈 今日 <b>+237</b></span>
+<span class="meta-item">🍴 20,233</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">覆盖 14 个大类：入门 Agent、多 Agent 协作、语音 AI、生成式 UI、游戏 Agent、MCP Agent、RAG 教程、Agent Skills、带记忆的 LLM 应用、Chat with X 等。每个模板都是完整独立源码，3 条命令即可运行，支持 Claude/Gemini/GPT/Llama/Qwen 多模型一键切换。由 Shubham Saboo 维护，配套 Unwind AI 博客的免费分步教程，Apache-2.0 许可。从 7 月中旬首次上榜至今已第 4 次登榜，是本项目分类库中最稳定的热榜常客。</p>
+<h4>适用领域</h4>
+<p class="usage">LLM 应用开发者照抄作业起步、AI 创业者找产品原型、学习 Agent 架构的工程师；找 RAG/多 Agent 最佳实践参考的团队</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> L-学习资源/其他 › AI应用模板 › LLM应用集合</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/Shubhamsaboo/awesome-llm-apps">github.com/Shubhamsaboo/awesome-llm-apps</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 11</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/p1neappleXpress/OpenFlux">p1neappleXpress/OpenFlux</a>
+</div>
+<p class="oneline">「网络协议研究工具：TCP 隧道 + 可插拔伪装传输层（Yandex Docs/WebRTC）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#00ADD8"></span>Go</span>
+<span class="meta-item">⭐ 总计 <b>1,388</b></span>
+<span class="meta-item star-today">📈 今日 <b>+355</b></span>
+<span class="meta-item">🍴 102</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">客户端跑 SOCKS5 代理，出口节点负责拆包转发；巧在"可插拔传输层"设计——目前有两种：把 TCP 报文伪装成 Yandex Docs 文档光标消息传输，或走 WebRTC DataChannel（MAX）。出口节点的 TCP 连接跑在 gvisor 用户态协议栈里，内核不持有 socket，因此需要精确抑制 RST 包防止隧道被拆。覆盖桌面/iOS/Android 三端客户端，Go 编写。作者声明项目完全非商业、不鼓励用于绕过任何限制。</p>
+<h4>适用领域</h4>
+<p class="usage">网络协议与审查技术研究者在研究流量伪装架构（把任意 TCP 流量嵌进合法应用信道的通用框架）；需要理解 gvisor 用户态网络栈落地方式的开发者</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> G-安全 › 网络审查规避 › 协议伪装隧道</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/p1neappleXpress/OpenFlux">github.com/p1neappleXpress/OpenFlux</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 12</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/armory3d/armorpaint">armory3d/armorpaint</a>
+</div>
+<p class="oneline">「GPU 全程加速的 3D PBR 纹理绘制软件（开源代码 + 付费发行版）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#555555"></span>C</span>
+<span class="meta-item">⭐ 总计 <b>4,900</b></span>
+<span class="meta-item star-today">📈 今日 <b>+237</b></span>
+<span class="meta-item">🍴 546</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">直接在 3D 模型表面绘制 PBR 材质的独立软件，绘制全程跑在 GPU 上，笔刷响应和烘焙速度是其卖点，配套 150+ 页官方手册。采用"代码开源、二进制收费"的模式：官方编译好的版本付费（支撑项目开发），自己动手编译则免费——需要 Visual Studio/clang/Xcode 等工具链，仓库里各平台编译说明齐全。属于 Armory3D 游戏引擎生态的工具矩阵成员，面向游戏、影视和可视化行业。</p>
+<h4>适用领域</h4>
+<p class="usage">游戏美术、3D 艺术家（贴图绘制环节替代 Substance Painter 的高性价比选择）；愿意自己编译省钱的学生和个人开发者；Krom/Armory 技术栈使用者</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> K-游戏/图形 › 3D图形 › 纹理绘制</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/armory3d/armorpaint">github.com/armory3d/armorpaint</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 13</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/SnailSploit/Claude-Red">SnailSploit/Claude-Red</a>
+</div>
+<p class="oneline">「把 Claude 变成红队专家的 78 个攻击技能库（SKILL.md 即插即用）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<span class="meta-item">⭐ 总计 <b>3,564</b></span>
+<span class="meta-item star-today">📈 今日 <b>+99</b></span>
+<span class="meta-item">🍴 549</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">为 Claude Skills 体系打造的进攻安全技能库：78 个技能、23 个大类，每个技能是一份结构化 SKILL.md，把 Claude 训练成特定攻击面的领域专家——从 SQL 注入、shellcode 编写到 EDR 绕过、ADCS 滥用、Metasploit/Empire/Starkiller 工具链操作。技能按对话触发按需加载，不用的技能不占上下文，这点设计很聪明。MIT 许可，技能索引、贡献指南和路线图齐全。</p>
+<h4>适用领域</h4>
+<p class="usage">授权渗透测试中的红队工程师（把 Claude 变成懂方法论的搭档）；防守方研究攻击者会如何用 AI 提效；Agent Skills 架构的学习者（按需加载的教科书案例）</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> G-安全 › AI安全技能库 › 红队技能</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/SnailSploit/Claude-Red">github.com/SnailSploit/Claude-Red</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 14</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/multimodal-art-projection/YuE">multimodal-art-projection/YuE</a>
+</div>
+<p class="oneline">「YuE2：统一符号与音频音乐生成的前沿开源模型（"歌词成歌"开源先行者）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<span class="meta-item">⭐ 总计 <b>7,254</b></span>
+<span class="meta-item star-today">📈 今日 <b>+193</b></span>
+<span class="meta-item">🍴 818</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">港科大等机构的开源音乐生成项目：初代 YuE 是首个开源"歌词成歌"基础模型（基于 LLaMA2 架构扩展到万亿 token，人声/伴奏双轨解耦，能生成 5 分钟歌词对齐的完整歌曲，乐感对标 Suno/Udio），论文发表于 ICLR 2026。本次上榜的新版本 YuE2 统一了符号音乐生成与音频生成，附带来 MERT2 音乐理解模型与 SheetSage2 符号转谱模型，还提供了可直接调用的 Agent skill。旧版代码保留在 YuE-v1 分支。</p>
+<h4>适用领域</h4>
+<p class="usage">AI 音乐工具开发者（可本地部署的开源底座，替代封闭 API）；音乐 AI 研究者（论文+代码+基准齐全）；内容创作者做配乐小样</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> A-AI/机器学习 › 音乐生成</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/multimodal-art-projection/YuE">github.com/multimodal-art-projection/YuE</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 15</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a>
+</div>
+<p class="oneline">「为并行 AI 编程工作流设计的 Git worktree 管理 CLI」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#dea584"></span>Rust</span>
+<span class="meta-item">⭐ 总计 <b>7,205</b></span>
+<span class="meta-item star-today">📈 今日 <b>+137</b></span>
+<span class="meta-item">🍴 255</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">git worktree 能让多个分支同时检出互不干扰，但原生命令又难记又难清理。Worktrunk 把多 worktree 的创建、进入、删除、清理做成一条快命令，明确为"同时跑多个 AI 编程 agent"的场景设计——每个 agent 一个干净工作树，互不踩脚。Rust 编写，配套文档站 worktrunk.dev，CI + Codecov 齐全，双许可 MIT/Apache-2.0。作者是 Rust 与数据科学社区的活跃贡献者。</p>
+<h4>适用领域</h4>
+<p class="usage">同时开多个 AI 编程 agent（Claude Code/Codex 等）并行干活的开发者；需要在多个分支间频繁切换编译验证的工程师；受不了 worktree 手动清理的人</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> B-开发者工具 › Git工具 › worktree管理</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/max-sixty/worktrunk">github.com/max-sixty/worktrunk</a></div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank"># 16</div>
+<div class="card-body">
+<div class="card-head">
+<a class="repo-name" href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a>
+</div>
+<p class="oneline">「全自主 AI 渗透测试多 Agent 系统（PentAGI）」</p>
+<div class="meta">
+<span class="meta-item"><span class="lang-dot" style="background:#00ADD8"></span>Go</span>
+<span class="meta-item">⭐ 总计 <b>23,403</b></span>
+<span class="meta-item star-today">📈 今日 <b>+193</b></span>
+<span class="meta-item">🍴 3,055</span>
+</div>
+<h4>详细介绍</h4>
+<p class="detail">一套多 Agent 架构的自动化渗透测试平台：研发 Agent、渗透 Agent、命令执行 Agent、OSINT Agent 等分工协作，能自主完成从信息收集到利用的完整渗透流程。亮点在"高级 Agent 监督"机制和对安全边界的重视：支持给 Agent 开 Docker 权限而不暴露宿主机、支持多租户隔离运行多实例。自带 Web 管理界面，Docker 一键部署，Go 编写。</p>
+<h4>适用领域</h4>
+<p class="usage">企业安全团队做自动化渗透/红队演练；安全研究者研究"多 Agent 分工+监督"在攻防场景的落地；想搭建内部安全训练靶场的团队</p>
+<div class="cat-line"><span class="cat-label">知识归类</span> G-安全 › AI渗透测试</div>
+<div class="repo-link">仓库链接：<a href="https://github.com/vxcontrol/pentagi">github.com/vxcontrol/pentagi</a></div>
+</div>
+</article>
+<h2 class="section">📋 今日速览表</h2>
+<table>
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></td><td>JavaScript</td><td>+2,265</td><td>C-前端/Web › 3D可视化 › 实时地球监控</td></tr><tr><td>#2</td><td><a href="https://github.com/melgarafael/DeskcommCRM">melgarafael/DeskcommCRM</a></td><td>TypeScript</td><td>+505</td><td>A-AI/机器学习 › Agent应用 › AI销售CRM</td></tr><tr><td>#3</td><td><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></td><td>JavaScript</td><td>+357</td><td>L-学习资源/其他 › 提示词资料 › 系统提示词档案</td></tr><tr><td>#4</td><td><a href="https://github.com/nab138/iloader">nab138/iloader</a></td><td>TypeScript</td><td>+209</td><td>H-移动开发 › iOS侧载工具</td></tr><tr><td>#5</td><td><a href="https://github.com/Flowseal/zapret-discord-youtube">Flowseal/zapret-discord-youtube</a></td><td>Batchfile</td><td>+52</td><td>G-安全 › 网络审查规避 › DPI绕过</td></tr><tr><td>#6</td><td><a href="https://github.com/jihe520/MathModelAgent">jihe520/MathModelAgent</a></td><td>Python</td><td>+264</td><td>A-AI/机器学习 › Agent应用 › 数学建模</td></tr><tr><td>#7</td><td><a href="https://github.com/Sonarr/Sonarr">Sonarr/Sonarr</a></td><td>C#</td><td>+228</td><td>E-基础设施/DevOps › 自托管服务 › 媒体自动化</td></tr><tr><td>#8</td><td><a href="https://github.com/alsk1992/CloddsBot">alsk1992/CloddsBot</a></td><td>TypeScript</td><td>+377</td><td>A-AI/机器学习 › 量化交易Agent</td></tr><tr><td>#9</td><td><a href="https://github.com/yuliskov/SmartTube">yuliskov/SmartTube</a></td><td>Java</td><td>+160</td><td>H-移动开发 › Android TV应用</td></tr><tr><td>#10</td><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></td><td>Python</td><td>+237</td><td>L-学习资源/其他 › AI应用模板 › LLM应用集合</td></tr><tr><td>#11</td><td><a href="https://github.com/p1neappleXpress/OpenFlux">p1neappleXpress/OpenFlux</a></td><td>Go</td><td>+355</td><td>G-安全 › 网络审查规避 › 协议伪装隧道</td></tr><tr><td>#12</td><td><a href="https://github.com/armory3d/armorpaint">armory3d/armorpaint</a></td><td>C</td><td>+237</td><td>K-游戏/图形 › 3D图形 › 纹理绘制</td></tr><tr><td>#13</td><td><a href="https://github.com/SnailSploit/Claude-Red">SnailSploit/Claude-Red</a></td><td>Python</td><td>+99</td><td>G-安全 › AI安全技能库 › 红队技能</td></tr><tr><td>#14</td><td><a href="https://github.com/multimodal-art-projection/YuE">multimodal-art-projection/YuE</a></td><td>Python</td><td>+193</td><td>A-AI/机器学习 › 音乐生成</td></tr><tr><td>#15</td><td><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></td><td>Rust</td><td>+137</td><td>B-开发者工具 › Git工具 › worktree管理</td></tr><tr><td>#16</td><td><a href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a></td><td>Go</td><td>+193</td><td>G-安全 › AI渗透测试</td></tr>
+</tbody>
+</table>
+<div class="footer">数据抓取自 GitHub Trending（daily）· 2026-09-13（数据对应当次采集时点） 依据公开资料整理 · 项目详情已同步归档至「项目分类库」</div>
+</div>
+</body>
+</html>

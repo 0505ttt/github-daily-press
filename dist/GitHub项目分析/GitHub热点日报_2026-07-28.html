@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-28</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 固定导航栏 */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    background: #24292e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .navbar-brand {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .navbar-brand .icon { font-size: 22px; }
+  .navbar-date {
+    color: #8b949e;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+  }
+  /* 封面 */
+  .hero {
+    text-align: center;
+    padding: 56px 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+    color: #fff;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(45,164,78,0.3);
+  }
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .hero .date {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+  }
+  .hero .subtitle {
+    font-size: 16px;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  /* 风向概括 */
+  .summary {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border-left: 4px solid #2da44e;
+  }
+  .summary h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #24292e;
+  }
+  .summary p {
+    color: #57606a;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  /* 项目卡片 */
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #2da44e;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  .card-header {
+    padding: 20px 28px 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-rank {
+    display: inline-block;
+    background: #24292e;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    width: 32px; height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .card-title {
+    flex: 1;
+    min-width: 0;
+  }
+  .card-title a {
+    color: #0969da;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    word-break: break-all;
+  }
+  .card-title a:hover { text-decoration: underline; }
+  .card-tagline {
+    color: #57606a;
+    font-size: 15px;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .card-meta {
+    padding: 8px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #57606a;
+  }
+  .meta-item .star-icon { color: #e3b341; }
+  .meta-item .lang-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .meta-item strong { color: #24292e; }
+  .today-stars {
+    background: #dafbe1;
+    color: #1a7f37;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .card-body {
+    padding: 0 28px 20px;
+  }
+  .card-body h3 {
+    font-size: 14px;
+    color: #24292e;
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+  .card-body p {
+    font-size: 14px;
+    color: #57606a;
+    line-height: 1.75;
+  }
+  .card-body .classify {
+    display: inline-block;
+    background: #ddf4ff;
+    color: #0969da;
+    border: 1px solid #b6e3ff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  /* 速览表 */
+  .table-section {
+    margin-top: 48px;
+  }
+  .table-section h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #24292e;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 14px;
+  }
+  thead {
+    background: #24292e;
+  }
+  th {
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #eaeef2;
+    color: #24292e;
+  }
+  tbody tr:nth-child(even) { background: #f6f8fa; }
+  tbody tr:hover { background: #ddf4ff; }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  .footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #8b949e;
+    font-size: 13px;
+  }
+  /* 响应式 */
+  @media (max-width: 640px) {
+    .navbar { padding: 0 16px; }
+    .navbar-brand { font-size: 15px; }
+    .container { padding: 76px 12px 40px; }
+    .hero { padding: 36px 20px; }
+    .hero h1 { font-size: 24px; }
+    .hero .date { font-size: 16px; }
+    .card-header { padding: 16px 16px 8px; }
+    .card-body { padding: 0 16px 16px; }
+    .card-meta { padding: 8px 16px; }
+    .card-title a { font-size: 17px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="navbar-brand"><span class="icon">📰</span> GitHub 热点日报</div>
+<div class="navbar-date">2026-07-28</div>
+</nav>
+<div class="container">
+
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 28 日</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+
+<div class="summary">
+<h2>📊 今日榜单风向</h2>
+<p>今日榜单呈现「AI 工具链 + 隐私通讯」双主线。<strong>bitchat</strong>（蓝牙 Mesh 去中心化聊天）以 +2,344 星连续两天霸榜第一名，隐私/抗审查赛道热度不减。<strong>alibaba/open-code-review</strong>（AI 代码评审）今日 +980 星，夺增速冠军。AI 领域共占 4 席（airi 虚拟伴侣、impeccable 设计检测、Kronos 金融模型），开发者工具和基础设施各占 2 席。两个新面孔值得关注：<strong>GeoLibre</strong>（全平台开源 GIS）和 <strong>MediaCrawler</strong>（多平台自媒体爬虫，58K 星老牌项目首次进入 Trending）。</p>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">1</span>
+<div class="card-title">
+<a href="https://github.com/permissionlesstech/bitchat" target="_blank">permissionlesstech / bitchat</a>
+<div class="card-tagline">去中心化蓝牙 Mesh 网络聊天，无需账号、无需网络的 IRC 风格即时通讯</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#F05138;"></span> Swift</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>32,176</strong></span>
+<span class="today-stars">🔥 今日 +2,344</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>BitChat 是一款双传输层架构的去中心化消息应用：本地使用蓝牙低功耗（BLE）Mesh 网络实现离线通讯，互联网环境下通过 Nostr 协议实现全球通讯。无需账号、无需手机号、无需中央服务器，隐私优先设计。蓝牙层采用 Noise 协议端到端加密并支持多跳中继（最多7跳）；Nostr 层使用 NIP-17 加密和 290+ 全球中继网络。支持基于 geohash 的地理频道，三击紧急擦除所有数据。原生支持 iOS 和 macOS，界面采用 IRC 风格命令。</p>
+<h3>🎯 适用领域</h3>
+<p>注重隐私的通讯用户、处于网络受限或断网环境的人群、去中心化通讯技术爱好者、比特币/Nostr 生态开发者</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">G-安全 › 去中心化通讯 › 蓝牙Mesh网络</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">2</span>
+<div class="card-title">
+<a href="https://github.com/amnezia-vpn/amnezia-client" target="_blank">amnezia-vpn / amnezia-client</a>
+<div class="card-tagline">自托管 VPN 客户端（桌面+移动），支持多种抗审查协议</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#f34b7d;"></span> C++</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>13,772</strong></span>
+<span class="today-stars">🔥 今日 +515</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>Amnezia VPN 是一款主打"自托管、抗审查"的开源 VPN 客户端，支持桌面和移动端。其特色是支持多种协议（OpenVPN、Shadowsocks、IKEv2、Cloak 等），并针对 GFW 等审查环境做了优化，让用户能在自己的服务器上一键部署混合协议 VPN。C++ 实现，性能与跨平台兼顾。区别于商业 VPN，它强调完全自主可控、无第三方介入。</p>
+<h3>🎯 适用领域</h3>
+<p>需要翻墙/抗审查的用户、注重隐私自托管的开发者、在网络受限地区工作的团队</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">G-安全 › VPN › 抗审查自托管 VPN</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">3</span>
+<div class="card-title">
+<a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai / airi</a>
+<div class="card-tagline">自托管的 AI 虚拟伴侣——重现 Neuro-sama 的开源实现，支持实时语音和游戏交互</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6;"></span> TypeScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>43,986</strong></span>
+<span class="today-stars">🔥 今日 +554</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>Project AIRI 旨在重现虚拟主播 Neuro-sama 的能力，打造一个可以自托管的 AI 虚拟伴侣。支持实时语音对话、VRM/Live2D 模型驱动、以及自主玩 Minecraft、Factorio 等游戏。技术栈大量使用 Web 技术（WebGPU、WebAudio、WebAssembly），桌面版可利用 NVIDIA CUDA 和 Apple Metal 加速。支持 30+ 种 LLM 提供商，跨 Web/macOS/Windows 平台运行。</p>
+<h3>🎯 适用领域</h3>
+<p>虚拟主播爱好者、AI 伴侣开发者、VTuber 技术研究者；对 WebGPU/浏览器端 AI 推理感兴趣的前端开发者</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">A-AI/机器学习 › AI虚拟伴侣 › 开源VTuber</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">4</span>
+<div class="card-title">
+<a href="https://github.com/opengeos/GeoLibre" target="_blank">opengeos / GeoLibre</a>
+<div class="card-tagline">🆕 轻量级、云原生的开源 GIS 平台——浏览器、桌面、移动端、Jupyter 全平台运行</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6;"></span> TypeScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>2,623</strong></span>
+<span class="today-stars">🔥 今日 +420</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>GeoLibre 是一款免费开源的轻量级 GIS 平台，致力于在 Web 浏览器、桌面应用、移动端和 Jupyter Notebook 中统一运行，同时保持数据本地化与隐私。技术栈采用 Tauri v2 + React + TypeScript + MapLibre GL JS + DuckDB-WASM Spatial + deck.gl 构建。支持 3D Tiles 渲染、行星底图（地球、月球、火星等）、SQL 工作空间、700+ 免费 GIS 工具、时间滑块动画。与 QGIS 等桌面 GIS 相比，GeoLibre 强调零安装、跨平台和云端协作。</p>
+<h3>🎯 适用领域</h3>
+<p>地理数据分析师、GIS 研究人员、城市规划者；需要在浏览器中快速可视化和分析地理空间数据的团队；Jupyter Notebook 用户的地理数据工作流</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">C-前端/Web › GIS平台 › 云原生地理可视化</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">5</span>
+<div class="card-title">
+<a href="https://github.com/yorukot/superfile" target="_blank">yorukot / superfile</a>
+<div class="card-tagline">精致现代的终端文件管理器，Go 编写</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#00ADD8;"></span> Go</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>20,839</strong></span>
+<span class="today-stars">🔥 今日 +600</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>一款用 Go 编写的终端文件管理器，界面精致现代，操作流畅。支持 macOS、Linux、Windows 全平台，提供插件系统、丰富的自定义主题、完全可配置的热键（支持 Vim 风格快捷键），安装仅需一行命令。内置自动更新检查功能。与传统的命令行文件操作（cd / ls / mv）相比，superfile 提供了可视化的双面板操作体验，大幅提升终端下的文件管理效率。</p>
+<h3>🎯 适用领域</h3>
+<p>终端重度用户、Vim/Neovim 使用者、追求键盘操作效率的开发者和系统管理员</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">B-开发者工具 › 终端工具 › 文件管理器</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">6</span>
+<div class="card-title">
+<a href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder / MediaCrawler</a>
+<div class="card-tagline">🆕 多平台自媒体数据采集工具——小红书/抖音/快手/B站/微博/贴吧/知乎全覆盖</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5;"></span> Python</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>58,134</strong></span>
+<span class="today-stars">🔥 今日 +349</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>MediaCrawler 是一个功能强大的多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、百度贴吧、知乎七大主流平台的公开信息抓取，涵盖笔记/视频/帖子内容及其评论。核心技术基于 Playwright 浏览器自动化框架登录保存登录态，通过 JS 表达式获取签名参数，无需逆向复杂加密算法即可绕过反爬。支持关键词搜索、指定帖子爬取、创作者主页、IP 代理池、WebUI 可视化界面和 PostgreSQL 存储。与传统爬虫框架相比，最大优势是大幅降低技术门槛。</p>
+<h3>🎯 适用领域</h3>
+<p>社交媒体数据分析师、舆情监控团队、市场研究人员、NLP/推荐系统数据准备者（仅限学习研究用途）</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">F-数据/数据库 › 数据采集 › 多平台爬虫框架</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">7</span>
+<div class="card-title">
+<a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus / impeccable</a>
+<div class="card-tagline">让 AI 编码 Agent 更擅长设计的设计语言框架——1 个技能、23 个命令、60 条检测规则</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#f1e05a;"></span> JavaScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>51,481</strong></span>
+<span class="today-stars">🔥 今日 +849</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>Impeccable 是一套面向 AI 编码 Agent 的设计指导框架，解决"AI 生成的 UI 都长一样"的问题。核心包含三部分：初始化流程（生成 PRODUCT.md 和 DESIGN.md）；23 个设计命令（polish/audit/critique/distill/animate 等）；60 条确定性检测规则（纯 CLI 运行，无需 LLM）。支持 Claude Code、Cursor、Codex、Gemini CLI 等 13+ 种工具。提供浏览器扩展实时迭代和设计 Hook 自动检测。</p>
+<h3>🎯 适用领域</h3>
+<p>使用 AI 编码工具构建前端界面的开发者、关注 AI 生成 UI 设计质量的团队、前端设计系统维护者</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">A-AI/机器学习 › AI编程设计 › 设计质量检测</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">8</span>
+<div class="card-title">
+<a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder / Kronos</a>
+<div class="card-tagline">金融市场 K 线数据的开源基础模型——首个金融蜡烛图 Foundation Model</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5;"></span> Python</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>34,539</strong></span>
+<span class="today-stars">🔥 今日 +442</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>Kronos 是首个专门为金融市场 K 线（蜡烛图）序列数据预训练的开源 Foundation Model，在 45+ 全球交易所数据上训练。采用两阶段框架：先通过专用 Tokenizer 将连续 OHLCV 数据量化为分层离散 Token，再用大型自回归 Transformer 预训练。提供 mini/small/base 三个模型版本，支持预测、分类、异常检测等量化任务，已被 AAAI 2026 接收。提供完整的 Qlib 微调和回测管线。</p>
+<h3>🎯 适用领域</h3>
+<p>量化交易研究员、金融数据科学家、需要时间序列预测的金融科技团队、AI for Finance 学术研究者</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">A-AI/机器学习 › 量化交易 › 金融基础模型</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">9</span>
+<div class="card-title">
+<a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba / open-code-review</a>
+<div class="card-tagline">阿里巴巴开源的混合架构代码评审工具——确定性流水线 + LLM Agent</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#00ADD8;"></span> Go</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>14,730</strong></span>
+<span class="today-stars">🔥 今日 +980</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>open-code-review 是阿里巴巴开源的代码评审工具，采用"确定性流水线 + LLM Agent"的混合架构，能在精确到行级别给出评审意见。内置经过微调的规则集（NPE、线程安全、XSS、SQL 注入等），兼容 OpenAI 与 Anthropic 接口。在阿里巴巴内部大规模实战检验过。区别于纯 LLM 评审工具，混合架构兼顾了确定性的准确率和 LLM 的灵活性。今日 +980 星为全榜增速第一。</p>
+<h3>🎯 适用领域</h3>
+<p>中大型研发团队的代码质量把关、安全审计场景，希望引入 AI 代码评审但要求高准确率的工程团队</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">B-开发者工具 › 代码审查 › 混合架构 AI 代码评审</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">10</span>
+<div class="card-title">
+<a href="https://github.com/jenkinsci/jenkins" target="_blank">jenkinsci / jenkins</a>
+<div class="card-tagline">Jenkins 自动化服务器——CI/CD 领域最经典的开源自动化服务器</div>
+</div>
+</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#b07219;"></span> Java</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 <strong>25,870</strong></span>
+<span class="today-stars">🔥 今日 +179</span>
+</div>
+<div class="card-body">
+<h3>📝 详细介绍</h3>
+<p>Jenkins 是 CI/CD 领域最经典的开源自动化服务器，历史悠久、生态庞大。通过丰富的插件体系支持几乎所有构建、部署、自动化流水线场景。今日上榜反映其在 DevOps 基础设施中的常青地位——尽管新一代 CI 工具（GitHub Actions 等）兴起，Jenkins 凭借自托管、极强的可扩展性仍被大量企业使用。Java 实现，可独立部署。</p>
+<h3>🎯 适用领域</h3>
+<p>企业 DevOps 团队、需要自托管 CI/CD 流水线的组织、传统软件交付流程</p>
+<h3>🏷️ 知识归类</h3>
+<span class="classify">E-基础设施/DevOps › CI/CD › 自动化服务器</span>
+</div>
+</div>
+
+<div class="table-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>#1</strong></td>
+<td><a href="https://github.com/permissionlesstech/bitchat" target="_blank">permissionlesstech/bitchat</a></td>
+<td>Swift</td>
+<td>+2,344</td>
+<td>G-安全 › 去中心化通讯</td>
+</tr>
+<tr>
+<td><strong>#2</strong></td>
+<td><a href="https://github.com/amnezia-vpn/amnezia-client" target="_blank">amnezia-vpn/amnezia-client</a></td>
+<td>C++</td>
+<td>+515</td>
+<td>G-安全 › VPN</td>
+</tr>
+<tr>
+<td><strong>#3</strong></td>
+<td><a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai/airi</a></td>
+<td>TypeScript</td>
+<td>+554</td>
+<td>A-AI/机器学习 › AI虚拟伴侣</td>
+</tr>
+<tr>
+<td><strong>#4</strong></td>
+<td><a href="https://github.com/opengeos/GeoLibre" target="_blank">opengeos/GeoLibre</a> 🆕</td>
+<td>TypeScript</td>
+<td>+420</td>
+<td>C-前端/Web › GIS平台</td>
+</tr>
+<tr>
+<td><strong>#5</strong></td>
+<td><a href="https://github.com/yorukot/superfile" target="_blank">yorukot/superfile</a></td>
+<td>Go</td>
+<td>+600</td>
+<td>B-开发者工具 › 终端工具</td>
+</tr>
+<tr>
+<td><strong>#6</strong></td>
+<td><a href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder/MediaCrawler</a> 🆕</td>
+<td>Python</td>
+<td>+349</td>
+<td>F-数据/数据库 › 爬虫工具</td>
+</tr>
+<tr>
+<td><strong>#7</strong></td>
+<td><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a></td>
+<td>JavaScript</td>
+<td>+849</td>
+<td>A-AI/机器学习 › AI编程设计</td>
+</tr>
+<tr>
+<td><strong>#8</strong></td>
+<td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td>
+<td>Python</td>
+<td>+442</td>
+<td>A-AI/机器学习 › 金融基础模型</td>
+</tr>
+<tr>
+<td><strong>#9</strong></td>
+<td><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></td>
+<td>Go</td>
+<td>+980</td>
+<td>B-开发者工具 › 代码审查</td>
+</tr>
+<tr>
+<td><strong>#10</strong></td>
+<td><a href="https://github.com/jenkinsci/jenkins" target="_blank">jenkinsci/jenkins</a></td>
+<td>Java</td>
+<td>+179</td>
+<td>E-基础设施/DevOps › CI/CD</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer">数据来源：GitHub Trending (since=daily) | 抓取时间：2026-07-28 依据公开资料整理 · 每日追踪开源世界脉搏</div>
+</div>
+</body>
+</html>

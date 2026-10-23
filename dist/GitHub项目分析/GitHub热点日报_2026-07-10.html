@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>GitHub 热点日报 2026-07-10</title>
+<style>
+  @page {
+    size: A4;
+    margin: 25mm 20mm 30mm 20mm;
+    @top-center {
+      content: "GitHub 热点日报 · 2026-07-10";
+      font-size: 9px;
+      color: #666;
+      font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    }
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-size: 9px;
+      color: #999;
+      font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Helvetica Neue",Arial,sans-serif;
+    color: #24292e;
+    font-size: 13px;
+    line-height: 1.7;
+    background: #fff;
+  }
+
+  /* ── 封面 ── */
+  .cover {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  .cover-icon { font-size: 64px; margin-bottom: 20px; }
+  .cover h1 {
+    font-size: 36px;
+    color: #24292e;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .cover .date {
+    font-size: 20px;
+    color: #2da44e;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .cover .subtitle {
+    font-size: 16px;
+    color: #57606a;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+  .cover .divider {
+    width: 80px;
+    height: 4px;
+    background: #2da44e;
+    border-radius: 2px;
+    margin-bottom: 40px;
+  }
+  .cover .meta {
+    font-size: 12px;
+    color: #8b949e;
+  }
+
+  /* ── 概览 ── */
+  .overview {
+    page-break-after: always;
+    padding: 10px 0;
+  }
+  .overview h2 {
+    font-size: 20px;
+    color: #24292e;
+    border-bottom: 3px solid #2da44e;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .overview p {
+    font-size: 14px;
+    color: #24292e;
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+
+  /* ── 卡片 ── */
+  .card {
+    page-break-inside: avoid;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    padding: 20px 22px;
+    background: #fafbfc;
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #24292e;
+  }
+  .card-title .rank {
+    display: inline-block;
+    background: #2da44e;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .card-title a {
+    color: #0969da;
+    text-decoration: none;
+  }
+  .card-stats {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .stat-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .stat-stars { background: #fff8c5; color: #9a6700; border: 1px solid #d4a72c; }
+  .stat-today { background: #dafbe1; color: #116329; border: 1px solid #2da44e; }
+  .stat-lang  { background: #ddf4ff; color: #0550ae; border: 1px solid #54aeff; }
+
+  .card-oneliner {
+    font-size: 14px;
+    font-weight: 600;
+    color: #24292e;
+    margin: 8px 0 6px 0;
+    padding-left: 2px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #24292e;
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 1.75;
+  }
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 12px;
+    color: #57606a;
+    border-top: 1px solid #d0d7de;
+    padding-top: 10px;
+    margin-top: 6px;
+  }
+  .card-meta strong { color: #24292e; }
+
+  /* ── 速览表 ── */
+  .summary-section {
+    page-break-before: always;
+    padding: 10px 0;
+  }
+  .summary-section h2 {
+    font-size: 20px;
+    color: #24292e;
+    border-bottom: 3px solid #2da44e;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  thead th {
+    background: #24292e;
+    color: #fff;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #24292e;
+  }
+  tbody td {
+    padding: 9px 8px;
+    border: 1px solid #d0d7de;
+    color: #24292e;
+  }
+  tbody tr:nth-child(even) { background: #f6f8fa; }
+  tbody tr:nth-child(odd) { background: #fff; }
+  .tag-cell { font-size: 11px; color: #57606a; }
+  .link-cell a { color: #0969da; text-decoration: none; font-weight: 600; }
+
+  /* ── 页脚 ── */
+  .footer-note {
+    text-align: center;
+    font-size: 11px;
+    color: #8b949e;
+    margin-top: 30px;
+    padding-top: 16px;
+    border-top: 1px solid #d0d7de;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<div class="cover-icon">📰</div>
+<h1>GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 10 日</div>
+<div class="divider"></div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="meta">数据来源：GitHub Trending（Daily）· 自动抓取生成</div>
+</div>
+
+<div class="overview">
+<h2>📊 今日榜单概览</h2>
+<p>今日 GitHub Trending 榜单被 AI 相关项目强势霸榜，前 10 中至少 7 个项目直接与 AI Agent、LLM 工具链或 AI 开发流程相关，凸显开源社区当前对 AI 编程辅助工具的巨大热情。排名第一的 <strong>ai-job-search</strong> 单日新增 3,716 星，将 Claude Code 变成求职全流程助手，思路令人眼前一亮。</p>
+<p>今日最大黑马当属 <strong>OfficeCLI</strong>（+1,929 星），它让 AI Agent 无需安装 Office 即可操控 Word/Excel/PPT，填补了 AI 办公自动化领域的重要空白。<strong>agent-skills</strong>（+2,554 星）持续飙升，为 AI 编程 Agent 提供全套工程最佳实践，已成为该品类的标杆资源库。游戏领域也有一席之地——<strong>Unturned</strong> 开源了完整源码，引发社区热议。</p>
+<p>总体来看，"AI Agent 基础设施"是今天最明确的主题：从技能包、MCP 服务器到办公自动化，开发者正在系统性地为 AI Agent 搭建从代码到文档、从终端到浏览器的全栈工具链。</p>
+</div>
+
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +3,716</span>
+<span class="stat-badge stat-stars">总计 19,155</span>
+<span class="stat-badge stat-lang">TypeScript</span>
+</div>
+<div class="card-oneliner">AI 驱动的全流程求职助手，让 Claude Code 帮你写简历和求职信</div>
+<div class="card-desc">
+    基于 Claude Code 构建的结构化求职应用框架。用户通过 <code>/setup</code> 导入个人资料后，AI 可自动评估职位匹配度、用 LaTeX 生成定制简历与求职信，并通过「起草者-审核者」双 Agent 流水线确保内容质量。核心亮点包括 PDF 验证循环（编译后逐页检查排版）、相关性加权简历裁剪（按与目标岗位的相关度智能删减），以及技能差距分析（<code>/upskill</code>）功能。框架本身语言和国别无关，当前内置丹麦求职平台爬虫，可通过 <code>/add-portal</code> 扩展至任意市场。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>求职者自动化申请流程、AI 工具开发者参考、职业辅导场景</span>
+<span><strong>知识归类：</strong>A-AI/机器学习 › Agent 应用 › 智能求职</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/SmartlyDressedGames/U3-SDK">SmartlyDressedGames/U3-SDK</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +524</span>
+<span class="stat-badge stat-stars">总计 2,059</span>
+<span class="stat-badge stat-lang">C#</span>
+</div>
+<div class="card-oneliner">Steam 热门生存游戏 Unturned 完整源码正式开源</div>
+<div class="card-desc">
+    Unturned 是一款免费的开放世界僵尸生存沙盒游戏，在 Steam 上拥有大量玩家基础。本次开源包含基于 Unity 2022.3.62f3 的完整游戏源代码，社区可直接 clone 仓库、用 Unity 编辑器打开项目进行修改和二次开发。项目包含游戏启动场景、模组支持文档和 YouTube 开发教程等资源。对于独立游戏开发者和 Unity 学习者来说，这是一份难得的「商业级生存游戏」参考素材，涵盖开放世界、多人联网、物品系统等核心机制。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>Unity 游戏开发者、游戏 Mod 社区、生存沙盒品类研究者</span>
+<span><strong>知识归类：</strong>K-游戏/图形 › 游戏引擎 › Unity 开源</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +2,554</span>
+<span class="stat-badge stat-stars">总计 75,931</span>
+<span class="stat-badge stat-lang">JavaScript</span>
+</div>
+<div class="card-oneliner">让 AI 编程 Agent 遵循高级工程师纪律的全套技能包</div>
+<div class="card-desc">
+    由 Google Chrome 团队的 Addy Osmani 维护，包含 24 个生产级工程技能，覆盖从需求定义、计划拆解、增量实现、测试驱动、代码审查到部署上线的完整软件开发生命周期。每个技能都是 Agent 可直接遵循的结构化工作流（而非参考文档），内置反合理化表格防止 Agent 跳过关键步骤。提供 8 个 slash 命令（<code>/spec</code>、<code>/build</code>、<code>/test</code> 等），支持根据上下文自动激活对应技能。兼容 Claude Code、Cursor、Windsurf、Gemini CLI、GitHub Copilot 等主流 AI 编码工具，是同类项目中覆盖最全、工程化程度最高的技能集合。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>使用 AI 编码工具的所有开发者、团队工程规范制定者</span>
+<span><strong>知识归类：</strong>B-开发者工具 › AI 编码辅助 › Agent 技能框架</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/VoltAgent/awesome-design-md">VoltAgent/awesome-design-md</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +1,391</span>
+<span class="stat-badge stat-stars">总计 99,772</span>
+<span class="stat-badge stat-lang">Markdown</span>
+</div>
+<div class="card-oneliner">73 个知名品牌的 DESIGN.md，让 AI Agent 秒出高颜值 UI</div>
+<div class="card-desc">
+    精选收集了 73 个知名网站（Apple、Stripe、Vercel、Nike、BMW 等）的 DESIGN.md 设计系统文件。DESIGN.md 是 Google Stitch 引入的新概念——用纯 Markdown 描述设计系统（配色、字体、组件样式、布局规则、响应式行为），AI Agent 读取后即可生成视觉一致的 UI。每个文件包含 9 个标准章节，附带浅色/深色两套预览 HTML。使用方式极简：复制目标品牌的 DESIGN.md 到项目根目录，告诉 AI Agent「按这个风格来」即可。还包含一组「复古 Web」系列，如 1996 年的 Dell 和 2001 年的 Nintendo 网站设计文件。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>前端开发者、AI 辅助 UI 生成、产品设计师、vibe coding 实践者</span>
+<span><strong>知识归类：</strong>C-前端/Web › 设计系统 › AI UI 生成</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/iOfficeAI/OfficeCLI">iOfficeAI/OfficeCLI</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +1,929</span>
+<span class="stat-badge stat-stars">总计 13,514</span>
+<span class="stat-badge stat-lang">C#</span>
+</div>
+<div class="card-oneliner">让 AI Agent 一行命令操控 Word/Excel/PPT 的开源办公套件</div>
+<div class="card-desc">
+    自称「全球首个专为 AI Agent 设计的 Office 套件」，以单一自包含二进制文件交付，无需安装 Office 或任何运行时依赖。核心差异化能力是内置高保真 HTML 渲染引擎，可将 .docx/.xlsx/.pptx 渲染为 HTML 或 PNG——这让 AI Agent 真正能「看到」文档效果，形成「渲染→检查→修复」的闭环。功能覆盖面极广：Excel 支持 350+ 内置函数自动求值和原生数据透视表，PowerPoint 支持动画、过渡、3D 模型、图表，Word 支持完整 i18n 和 RTL。还提供 Resident Mode（内存驻留低延迟操作）、模板合并（<code>merge</code>）和逆向 dump（从现有文档学习结构）等高级特性。内置 MCP Server，一键注册到 Claude Code、Cursor 等工具。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>AI Agent 办公自动化、文档批量生成流水线、CI/CD 中的文档产出</span>
+<span><strong>知识归类：</strong>B-开发者工具 › AI 办公自动化 › 文档操控 CLI</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP">wonderwhy-er/DesktopCommanderMCP</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +185</span>
+<span class="stat-badge stat-stars">总计 6,586</span>
+<span class="stat-badge stat-lang">TypeScript</span>
+</div>
+<div class="card-oneliner">让 Claude 全面掌控你的终端和文件系统的 MCP 服务器</div>
+<div class="card-desc">
+    基于 MCP 协议构建的 Claude Desktop 扩展，赋予 AI 完整的终端命令执行、文件系统操作和进程管理能力。支持在内存中直接运行 Python、Node.js、R 代码（无需保存文件），可交互式控制 SSH、数据库等长时运行进程，还能实时分析 CSV/JSON 数据文件。文件编辑采用 search/replace block 模式配合 fuzzy search 回退，精确度高且 token 友好。提供 Docker 隔离安装方案，持久化开发环境在重启后保留所有配置。使用 Claude Pro 订阅（$20/月）即可无限量使用，不消耗额外 API token，这是相比 Cursor/Windsurf 的核心成本优势。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>Claude 桌面用户、全栈开发者、系统自动化运维</span>
+<span><strong>知识归类：</strong>B-开发者工具 › MCP 服务器 › 桌面控制</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/anthropics/claude-cookbooks">anthropics/claude-cookbooks</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +194</span>
+<span class="stat-badge stat-stars">总计 47,186</span>
+<span class="stat-badge stat-lang">Jupyter Notebook</span>
+</div>
+<div class="card-oneliner">Anthropic 官方 Claude API 使用示例与最佳实践合集</div>
+<div class="card-desc">
+    Anthropic 官方维护的 Cookbook 项目，提供大量可直接复制的 Jupyter Notebook 代码示例，帮助开发者高效使用 Claude API。覆盖分类、RAG（检索增强生成）、摘要、Tool Use、多模态视觉等核心能力，还包含 Prompt Caching、自动化评估、JSON 模式、内容审核过滤器等进阶技巧。示例以 Python 为主，概念可适配任意支持 Claude API 的语言。第三方集成部分涵盖 Pinecone 向量数据库、Voyage AI Embedding、Wikipedia 搜索等常见场景。项目持续更新，是学习 Claude 编程的权威起点。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>Claude API 开发者、AI 应用工程师、LLM 学习入门者</span>
+<span><strong>知识归类：</strong>L-学习资源/其他 › API 文档 › Claude 教程</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +535</span>
+<span class="stat-badge stat-stars">总计 19,437</span>
+<span class="stat-badge stat-lang">Go</span>
+</div>
+<div class="card-oneliner">全自主 AI 多 Agent 渗透测试系统</div>
+<div class="card-desc">
+    全称为「Penetration testing Artificial General Intelligence」，是一个全自主的多 Agent 系统，专为执行复杂渗透测试任务设计。采用 Agent Supervision 架构，多个专业 Agent 协同完成侦察、漏洞分析、利用、报告等不同阶段的安全测试。支持广泛的 LLM 后端：Ollama 本地模型、OpenAI、Anthropic、Google Gemini、AWS Bedrock、DeepSeek 等，可根据安全需求灵活选择。集成 Langfuse 实现全链路监控与调试，便于审计 Agent 的每一步决策。以 Go 语言编写，性能优秀且部署简洁，适合安全团队集成到现有工作流。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>安全研究员、渗透测试工程师、红队自动化、CTF 选手</span>
+<span><strong>知识归类：</strong>G-安全 › 渗透测试 › AI 自动化安全</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/unclecode/crawl4ai">unclecode/crawl4ai</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +215</span>
+<span class="stat-badge stat-stars">总计 71,860</span>
+<span class="stat-badge stat-lang">Python</span>
+</div>
+<div class="card-oneliner">专为 LLM 和 AI Agent 设计的开源网页爬虫</div>
+<div class="card-desc">
+    专为 LLM 和 AI Agent 设计的开源网页爬虫与抓取工具，核心设计理念是将网页内容转化为 LLM 友好格式的输出。Python 实现，支持大规模网页内容高效提取，提供 Cloud API 版本（内测中），号称成本远低于现有方案。作为 RAG 管线、训练数据采集和内容分析场景中的关键基础设施，已成为该品类最受欢迎的开源项目之一（7 万+ 星）。项目活跃度高，社区庞大，是构建 AI 数据管线时绕不开的核心组件。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>AI 数据工程师、RAG 管线开发者、内容分析、训练数据构建</span>
+<span><strong>知识归类：</strong>A-AI/机器学习 › 数据采集 › LLM 爬虫</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server">imthenachoman/How-To-Secure-A-Linux-Server</a></div>
+</div>
+<div class="card-stats">
+<span class="stat-badge stat-today">⭐ 今日 +243</span>
+<span class="stat-badge stat-stars">总计 29,106</span>
+<span class="stat-badge stat-lang">Markdown</span>
+</div>
+<div class="card-oneliner">持续进化的 Linux 服务器安全加固实战指南</div>
+<div class="card-desc">
+    一份持续更新的 Linux 服务器安全加固指南，目标是既教你怎么做，也解释为什么这么做。从 SSH 安全配置（公私钥、2FA/MFA、Diffie-Hellman 密钥）、基础安全（sudo/su 权限控制、防火墙规则）到应用层安全和网络监控，覆盖服务器安全加固全链路。每个配置项都附带原理解释而非简单罗列步骤，帮助读者理解安全措施的本质。提供 Ansible Playbooks 支持自动化部署，适合批量服务器管理。采用 CC-BY-SA 许可证，鼓励社区贡献和二次传播。适合从入门到中级水平的 Linux 管理员系统学习安全知识。
+  </div>
+<div class="card-meta">
+<span><strong>适用领域：</strong>Linux 系统管理员、DevOps 工程师、服务器安全初学者</span>
+<span><strong>知识归类：</strong>G-安全 › 系统安全 › Linux 加固</span>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th style="width:40px">排名</th>
+<th>项目</th>
+<th style="width:100px">主语言</th>
+<th style="width:85px">今日⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td class="link-cell"><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></td>
+<td>TypeScript</td>
+<td>+3,716</td>
+<td class="tag-cell">A-AI/机器学习 › Agent 应用 › 智能求职</td>
+</tr>
+<tr>
+<td>2</td>
+<td class="link-cell"><a href="https://github.com/SmartlyDressedGames/U3-SDK">SmartlyDressedGames/U3-SDK</a></td>
+<td>C#</td>
+<td>+524</td>
+<td class="tag-cell">K-游戏/图形 › 游戏引擎 › Unity 开源</td>
+</tr>
+<tr>
+<td>3</td>
+<td class="link-cell"><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></td>
+<td>JavaScript</td>
+<td>+2,554</td>
+<td class="tag-cell">B-开发者工具 › AI 编码辅助 › Agent 技能</td>
+</tr>
+<tr>
+<td>4</td>
+<td class="link-cell"><a href="https://github.com/VoltAgent/awesome-design-md">VoltAgent/awesome-design-md</a></td>
+<td>Markdown</td>
+<td>+1,391</td>
+<td class="tag-cell">C-前端/Web › 设计系统 › AI UI 生成</td>
+</tr>
+<tr>
+<td>5</td>
+<td class="link-cell"><a href="https://github.com/iOfficeAI/OfficeCLI">iOfficeAI/OfficeCLI</a></td>
+<td>C#</td>
+<td>+1,929</td>
+<td class="tag-cell">B-开发者工具 › AI 办公自动化 › 文档 CLI</td>
+</tr>
+<tr>
+<td>6</td>
+<td class="link-cell"><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP">wonderwhy-er/DesktopCommanderMCP</a></td>
+<td>TypeScript</td>
+<td>+185</td>
+<td class="tag-cell">B-开发者工具 › MCP 服务器 › 桌面控制</td>
+</tr>
+<tr>
+<td>7</td>
+<td class="link-cell"><a href="https://github.com/anthropics/claude-cookbooks">anthropics/claude-cookbooks</a></td>
+<td>Jupyter</td>
+<td>+194</td>
+<td class="tag-cell">L-学习资源/其他 › API 文档 › Claude 教程</td>
+</tr>
+<tr>
+<td>8</td>
+<td class="link-cell"><a href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a></td>
+<td>Go</td>
+<td>+535</td>
+<td class="tag-cell">G-安全 › 渗透测试 › AI 自动化安全</td>
+</tr>
+<tr>
+<td>9</td>
+<td class="link-cell"><a href="https://github.com/unclecode/crawl4ai">unclecode/crawl4ai</a></td>
+<td>Python</td>
+<td>+215</td>
+<td class="tag-cell">A-AI/机器学习 › 数据采集 › LLM 爬虫</td>
+</tr>
+<tr>
+<td>10</td>
+<td class="link-cell"><a href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server">imthenachoman/How-To-Secure-A-Linux-Server</a></td>
+<td>Markdown</td>
+<td>+243</td>
+<td class="tag-cell">G-安全 › 系统安全 › Linux 加固</td>
+</tr>
+</tbody>
+</table>
+<div class="footer-note">本报告依据公开资料整理 · 数据来源 GitHub Trending（Daily）· 2026-07-10 仓库链接及 star 数据均来自 GitHub 实时页面，仅供参考。</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-25</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  /* 顶部固定导航 */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: #24292e; color: #fff; padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15); font-size: 14px;
+  }
+  .navbar-brand { font-weight: 700; font-size: 16px; }
+  .navbar-date { color: #8b949e; font-size: 13px; }
+  .navbar-badge {
+    background: #2da44e; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;
+  }
+  /* 封面 */
+  .hero {
+    margin-top: 50px;
+    background: linear-gradient(135deg, #1a1e22 0%, #24292e 40%, #2da44e 140%);
+    color: #fff; padding: 60px 24px 50px; text-align: center;
+  }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 12px; letter-spacing: 1px; }
+  .hero .subtitle { font-size: 1.15rem; color: #c9d1d9; margin-bottom: 8px; }
+  .hero .date { font-size: 1rem; color: #8b949e; }
+  .hero .tagline { margin-top: 16px; font-size: 0.95rem; color: #56d364; font-style: italic; }
+  /* 内容容器 */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  /* 风向概述 */
+  .overview {
+    background: #fff; border-radius: 10px; padding: 24px 28px; margin: 30px auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08); border-left: 4px solid #2da44e;
+    max-width: 960px;
+  }
+  .overview h2 { font-size: 1.2rem; margin-bottom: 10px; color: #24292e; }
+  .overview p { font-size: 0.95rem; color: #424a53; }
+  /* 卡片 */
+  .card {
+    background: #fff; border-radius: 12px; margin: 24px auto; overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,.07); max-width: 960px;
+    border-left: 5px solid #2da44e; transition: transform .15s, box-shadow .15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  .card-header {
+    padding: 18px 24px 10px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;
+  }
+  .card-rank {
+    background: #24292e; color: #fff; font-weight: 700; font-size: 1.1rem;
+    width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-right: 14px;
+  }
+  .card-title-area { flex: 1; min-width: 200px; }
+  .card-title { font-size: 1.3rem; font-weight: 700; }
+  .card-title a { color: #0969da; text-decoration: none; }
+  .card-title a:hover { text-decoration: underline; }
+  .card-tagline { font-size: 0.9rem; color: #57606a; margin-top: 2px; }
+  .card-stars { text-align: right; flex-shrink: 0; margin-left: 12px; }
+  .star-total { font-size: 1.4rem; font-weight: 700; color: #24292e; }
+  .star-today { font-size: 0.85rem; color: #2da44e; font-weight: 600; }
+  .card-body { padding: 0 24px 20px; }
+  .card-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.85rem; }
+  .meta-item { display: flex; align-items: center; gap: 5px; color: #57606a; }
+  .lang-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .card-desc { font-size: 0.92rem; color: #424a53; margin-bottom: 12px; line-height: 1.65; }
+  .card-section { margin-bottom: 10px; }
+  .card-section-label {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+    color: #8250df; margin-bottom: 4px;
+  }
+  .card-section-text { font-size: 0.9rem; color: #424a53; }
+  .card-classify {
+    display: inline-block; background: #ddf4ff; color: #0969da; padding: 3px 12px;
+    border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+  }
+  /* 速览表 */
+  .summary-section { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+  .summary-section h2 { font-size: 1.4rem; margin-bottom: 16px; text-align: center; color: #24292e; }
+  .summary-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); font-size: 0.88rem; }
+  .summary-table th { background: #24292e; color: #fff; padding: 12px 14px; text-align: left; font-weight: 600; }
+  .summary-table td { padding: 10px 14px; border-bottom: 1px solid #eaeef2; }
+  .summary-table tr:nth-child(even) td { background: #f6f8fa; }
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table a { color: #0969da; text-decoration: none; }
+  .summary-table a:hover { text-decoration: underline; }
+  .summary-table .star-num { color: #2da44e; font-weight: 700; }
+  /* 页脚 */
+  .footer { text-align: center; padding: 40px 20px; color: #8b949e; font-size: 0.85rem; }
+  /* 响应式 */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6rem; }
+    .card-header { flex-direction: column; }
+    .card-stars { text-align: left; margin-left: 0; margin-top: 8px; }
+    .summary-table { font-size: 0.78rem; }
+    .summary-table th, .summary-table td { padding: 8px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="navbar-brand">📡 GitHub 热点日报</div>
+<div class="navbar-date">2026-07-25 · Saturday</div>
+<div class="navbar-badge">Top 10</div>
+</div>
+
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="date">📅 2026 年 7 月 25 日（周六）</div>
+<div class="tagline">「数据来源：GitHub Trending (daily) · 实时抓取」</div>
+</div>
+
+<div class="overview">
+<h2>🌬️ 今日榜单风向</h2>
+<p>
+    今日榜单<strong>AI/开发者工具依旧主导</strong>，Top 3 全部与 AI Agent 生态相关——Block 的 <strong>buzz</strong>（人机协作工作区）以 +3,274 星空降 #1，
+    <strong>worldmonitor</strong>（全球情报仪表盘）稳居 #2 持续吸星。
+    <strong>黑马</strong>当属 <strong>RuView</strong>——用普通 WiFi 信号隔墙感知人体，85K+ 星且今日 +1,021，堪称今日最硬核项目。
+    Rust 语言在今日 Top 10 中占据 4 席（buzz / Pumpkin / harper / RuView），生态势头强劲。
+  </p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">1</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/block/buzz" target="_blank">block/buzz</a> 🐝</div>
+<div class="card-tagline">人类与 AI Agent 共享的协作工作区，基于自托管 Nostr 中继</div>
+</div>
+<div class="card-stars">
+<div class="star-total">9,239 ⭐</div>
+<div class="star-today">▲ +3,274 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#dea584"></span> Rust</span>
+<span class="meta-item">🍴 708 Forks</span>
+<span class="meta-item">📄 Apache 2.0</span>
+</div>
+<div class="card-desc">
+      Block（原 Square）团队推出的自托管协作工作空间。核心理念是"Agent 是成员，不是机器人"——人与 AI Agent 共享同一频道和事件日志。底层基于 Nostr 协议，每条消息、代码补丁、工作流步骤都以签名事件形式存储在同一审计链中。Agent 拥有独立密钥对，可以打开代码库、发送补丁、运行 CI、审查代码、编辑画布，享有与人类团队成员相同的能力表面。桌面端基于 Tauri + React，支持 macOS / Linux / Windows。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">需要深度集成 AI Agent 到日常开发协作流程的技术团队、追求统一审计轨迹的合规导向组织、自托管优先的隐私敏感型企业</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › AI协作平台 › 人机协作工作区</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">2</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a> 🌍</div>
+<div class="card-tagline">实时全球情报仪表盘——AI 驱动的新闻聚合与态势感知</div>
+</div>
+<div class="card-stars">
+<div class="star-total">73,013 ⭐</div>
+<div class="star-today">▲ +2,194 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6"></span> TypeScript</span>
+<span class="meta-item">🍴 10,962 Forks</span>
+<span class="meta-item">📄 AGPL-3.0</span>
+</div>
+<div class="card-desc">
+      聚合 500+ 新闻源跨 15 个分类，用 AI 合成情报简报。配备双地图引擎（3D 地球 globe.gl + WebGL 平面地图 deck.gl，56 种图层类型），支持跨流信号关联分析（军事、经济、灾害、升级信号汇合检测）。内置国家不稳定指数（CII）对 31 个 Tier-1 国家进行压力评分，覆盖 29 个证券交易所和加密货币的金融雷达。可完全本地运行（Ollama），无需 API 密钥。从单一代码库生成 6 个站点变体，原生桌面应用（Tauri 2）覆盖 macOS / Windows / Linux。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">地缘政治分析师、金融交易者、新闻工作者、需要实时全球态势感知的决策者、开源情报（OSINT）研究者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">A-AI/机器学习 › 情报聚合 › 态势感知</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">3</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a> 🧩</div>
+<div class="card-tagline">1000+ 实用 Claude Skills 精选目录——覆盖开发、数据分析、营销、安全等全场景</div>
+</div>
+<div class="card-stars">
+<div class="star-total">69,912 ⭐</div>
+<div class="star-today">▲ +662 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5"></span> Python</span>
+<span class="meta-item">🍴 7,885 Forks</span>
+<span class="meta-item">📄 Apache 2.0</span>
+</div>
+<div class="card-desc">
+      由 Composio 维护的 Claude Skills 精选列表，收录 1000+ 生产级、可直接使用的 Claude Skills 和 Plugins。覆盖文档处理（Word/PDF/PPT/Excel）、开发工具（MCP 构建、Playwright 自动化、代码审查）、数据分析（CSV/PostgreSQL）、商业营销（品牌、SEO、线索）、创意媒体、安全系统等十余个类别。特别亮眼的是通过 Composio 平台让 Claude 直接连接 500+ SaaS 应用（Gmail、Slack、GitHub、Jira 等），实现真正意义上的"Skills that do more than generate text"。兼容 Claude Code、Codex、Cursor、Gemini CLI、Antigravity、Windsurf 等多平台。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">Claude 用户、AI Agent 开发者、希望快速构建自动化工作流的团队、寻找现成 Agent Skill 模板的开发者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">L-学习资源/其他 › 资源合集 › Claude Skills 目录</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">4</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/Pumpkin-MC/Pumpkin" target="_blank">Pumpkin-MC/Pumpkin</a> 🎃</div>
+<div class="card-tagline">完全用 Rust 编写的 Minecraft 服务器——高性能、高效率</div>
+</div>
+<div class="card-stars">
+<div class="star-total">9,250 ⭐</div>
+<div class="star-today">▲ +472 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#dea584"></span> Rust</span>
+<span class="meta-item">🍴 626 Forks</span>
+<span class="meta-item">📄 GPLv3</span>
+</div>
+<div class="card-desc">
+      完全用 Rust 从头编写的 Minecraft 服务器实现，目标是提供极致性能和玩家体验。利用 Rust 的多线程特性实现高并发处理，同时兼容最新的 Java 版和 Bedrock 版 Minecraft 协议，遵循 Vanilla 游戏机制。已实现：世界加载/保存、区块管理（Vanilla 和 Linear 格式）、玩家移动、背包系统、实体生成、计分板、RCON、Query、BungeeCord 和 Velocity 代理支持等核心功能。Redstone 和命令系统仍在开发中，插件系统框架已就绪。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">Minecraft 服务器运营者、追求极致性能的游戏社区管理员、Rust 游戏后端开发者、游戏网络协议研究者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">K-游戏/图形 › 游戏服务器 › Minecraft</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">5</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a> 📈</div>
+<div class="card-tagline">金融市场 K 线数据的开源 Foundation Model——首个金融蜡烛图基础模型</div>
+</div>
+<div class="card-stars">
+<div class="star-total">33,407 ⭐</div>
+<div class="star-today">▲ +506 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3572A5"></span> Python</span>
+<span class="meta-item">🍴 5,675 Forks</span>
+<span class="meta-item">📄 MIT</span>
+</div>
+<div class="card-desc">
+      首个专门为金融市场 K 线（蜡烛图）序列数据预训练的开源 Foundation Model，在 45+ 全球交易所的数据上训练。采用两阶段框架：先通过专用 Tokenizer 将连续的 OHLCV 多维数据量化为分层离散 Token，再用大型自回归 Transformer 在这些 Token 上预训练。提供 mini（4.1M）/ small（24.7M）/ base（102.3M）三个开源模型版本，支持预测、分类、异常检测等多种量化任务，已被 AAAI 2026 接收。提供完整的 Qlib 微调和回测管线，支持多 GPU 训练和概率性预测。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">量化交易研究员、金融数据科学家、需要时间序列预测的金融科技团队、AI for Finance 学术研究者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">A-AI/机器学习 › 量化交易 › 金融基础模型</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">6</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/Automattic/harper" target="_blank">Automattic/harper</a> ✍️</div>
+<div class="card-tagline">离线隐私优先的英语语法检查器，Rust 驱动，极速轻量</div>
+</div>
+<div class="card-stars">
+<div class="star-total">12,877 ⭐</div>
+<div class="star-today">▲ +877 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#dea584"></span> Rust</span>
+<span class="meta-item">🍴 479 Forks</span>
+</div>
+<div class="card-desc">
+      由 Automattic（WordPress 母公司）开发的离线语法检查器，完全用 Rust 编写。创建动机是对 Grammarly（昂贵、隐私噩梦——所有文本发送到服务器）和 LanguageTool（需要 16GB n-gram 数据集、吃内存、速度慢）的不满。Harper 检查文档只需毫秒级，内存占用不到 LanguageTool 的 1/50，数据完全不离开本地设备。甚至可以通过 WebAssembly 在浏览器中直接运行，无需任何后端。提供 LSP 语言服务器（harper-ls）、Obsidian 插件、VS Code / Neovim / Helix / Emacs / Zed 等编辑器集成，以及 harper.js 浏览器库。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">注重隐私的写作者、离线环境下的文档工作者、编辑器开发者（集成 LSP）、不信任云语法检查的合规敏感团队</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › 开发者辅助 › 语法检查器</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">7</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/likec4/likec4" target="_blank">likec4/likec4</a> 🏗️</div>
+<div class="card-tagline">架构即代码——从代码生成实时软件架构图，始终与代码同步</div>
+</div>
+<div class="card-stars">
+<div class="star-total">4,944 ⭐</div>
+<div class="star-today">▲ +339 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#3178c6"></span> TypeScript</span>
+<span class="meta-item">🍴 334 Forks</span>
+<span class="meta-item">📄 MIT</span>
+</div>
+<div class="card-desc">
+      受 C4 Model 和 Structurizr DSL 启发的架构即代码工具。用自定义 DSL（LikeC4 建模语言）描述软件架构，工具自动生成美观的交互式架构图，并随代码变化实时更新。与传统的"画完就过时"的架构图不同，LikeC4 的图表始终反映代码的真实状态。支持自定义元素类型和任意数量的嵌套层级，灵活适配不同团队需求。提供 CLI 预览（npx likec4 start）、VS Code 扩展、在线 Playground（playground.likec4.dev）以及模板仓库，MIT 开源。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">需要可视化和管理复杂软件架构的技术团队、架构师、技术文档维护者、使用 C4 Model 的组织</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › 架构工具 › 架构图生成</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">8</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/ego-lite</a> 🌐</div>
+<div class="card-tagline">让人类与 AI Agent 并行工作的浏览器——专为双用户共享设计</div>
+</div>
+<div class="card-stars">
+<div class="star-total">2,335 ⭐</div>
+<div class="star-today">▲ +884 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript</span>
+<span class="meta-item">🍴 112 Forks</span>
+<span class="meta-item">📄 MIT</span>
+</div>
+<div class="card-desc">
+      从零开始为"人与 AI Agent 共享"设计的浏览器。与 browser-use 等自动化框架不同，它本身就是浏览器——Agent 在自己的隔离 Space 中运行多个任务，而你的标签页始终不受干扰。核心亮点：基于 JavaScript 函数调用而非 CLI 模式，复杂任务速度提升 2.5 倍且 Token 消耗更少；每个 Agent 拥有完全隔离的 Space；通过 ego-browser 技能层桥接任何 Agent CLI（Claude Code、Codex、Cursor 等）；可迁移 Chrome 数据（登录态、Cookie、扩展）。目前在 macOS 上可用，Windows 和 Linux 在路线图中。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">使用 AI Agent 进行浏览器自动化的开发者、需要并行运行多个 Agent 任务的重度用户、注重隐私和效率的自动化工程师</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › AI浏览器 › 人机并行</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">9</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/yorukot/superfile" target="_blank">yorukot/superfile</a> 📁</div>
+<div class="card-tagline">精致现代的终端文件管理器，Go 编写</div>
+</div>
+<div class="card-stars">
+<div class="star-total">19,357 ⭐</div>
+<div class="star-today">▲ +312 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#00ADD8"></span> Go</span>
+<span class="meta-item">🍴 592 Forks</span>
+<span class="meta-item">📄 MIT</span>
+</div>
+<div class="card-desc">
+      一款用 Go 编写的终端文件管理器，界面精致现代，操作流畅。支持 macOS、Linux、Windows 全平台（Windows 尚不完全支持）。提供插件系统、丰富的自定义主题、完全可配置的热键（支持 Vim 风格快捷键），安装仅需一行命令。内置自动更新检查功能。与传统的命令行文件操作（cd / ls / mv）相比，superfile 提供了可视化的双面板操作体验，大幅提升终端下的文件管理效率。通过 Warp 终端赞助，社区活跃。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">终端重度用户、Vim/Neovim 使用者、追求键盘操作效率的开发者和系统管理员</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › 终端工具 › 文件管理器</span></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-rank">10</div>
+<div class="card-title-area">
+<div class="card-title"><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a> 📡</div>
+<div class="card-tagline">用普通 WiFi 信号实现隔墙感知、生命体征监测和存在检测——零摄像头</div>
+</div>
+<div class="card-stars">
+<div class="star-total">85,772 ⭐</div>
+<div class="star-today">▲ +1,021 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot" style="background:#dea584"></span> Rust</span>
+<span class="meta-item">🍴 11,430 Forks</span>
+<span class="meta-item">📄 MIT</span>
+</div>
+<div class="card-desc">
+      将普通 WiFi 信号转化为空间感知系统。使用低成本 ESP32 传感器（低至 $9/节点）读取 WiFi 信道状态信息（CSI），通过预训练模型实现隔墙人体检测、呼吸和心率监测、17 关键点姿态估计、跌倒检测等——全程零摄像头、零穿戴设备。核心模型仅 8KB（4-bit 量化），可在树莓派上微秒级推理。预训练权重发布于 Hugging Face，在 MM-Fi 基准上达到 82.69% torso-PCK@20，超越此前 SOTA。原生支持 Home Assistant、Apple Home、Google Home、Alexa 四大智能家居生态，内置 105 个边缘模块覆盖健康、安全、建筑、零售等场景。
+    </div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<div class="card-section-text">智能家居开发者、老年人看护/医疗监测场景、隐私敏感的安防需求、物联网边缘感知研究、无摄像头存在检测需求</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<div class="card-section-text"><span class="card-classify">A-AI/机器学习 › 边缘感知 › WiFi感知</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📊 今日速览表</h2>
+<table class="summary-table">
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td><a href="https://github.com/block/buzz" target="_blank">block/buzz</a></td><td>Rust</td><td class="star-num">+3,274</td><td>B-开发者工具 › AI协作平台</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td><td>TypeScript</td><td class="star-num">+2,194</td><td>A-AI/机器学习 › 情报聚合</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></td><td>Python</td><td class="star-num">+662</td><td>L-学习资源 › Claude Skills</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/Pumpkin-MC/Pumpkin" target="_blank">Pumpkin-MC/Pumpkin</a></td><td>Rust</td><td class="star-num">+472</td><td>K-游戏/图形 › Minecraft</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td><td>Python</td><td class="star-num">+506</td><td>A-AI/机器学习 › 金融模型</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/Automattic/harper" target="_blank">Automattic/harper</a></td><td>Rust</td><td class="star-num">+877</td><td>B-开发者工具 › 语法检查器</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/likec4/likec4" target="_blank">likec4/likec4</a></td><td>TypeScript</td><td class="star-num">+339</td><td>B-开发者工具 › 架构图生成</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/ego-lite</a></td><td>JavaScript</td><td class="star-num">+884</td><td>B-开发者工具 › AI浏览器</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/yorukot/superfile" target="_blank">yorukot/superfile</a></td><td>Go</td><td class="star-num">+312</td><td>B-开发者工具 › 终端文件管理</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a></td><td>Rust</td><td class="star-num">+1,021</td><td>A-AI/机器学习 › WiFi感知</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="footer">📡 GitHub 热点日报 · 2026-07-25 · 依据公开资料整理 数据来源：GitHub Trending (daily) · 项目介绍基于各仓库 README</div>
+</body>
+</html>

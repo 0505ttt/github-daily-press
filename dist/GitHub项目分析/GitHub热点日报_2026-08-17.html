@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-08-17</title>
+<style>
+  :root {
+    --gh-black: #24292e;
+    --gh-green: #2da44e;
+    --gh-gray: #57606a;
+    --gh-border: #d0d7de;
+    --gh-bg: #f6f8fa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: var(--gh-bg);
+    color: var(--gh-black);
+    line-height: 1.7;
+  }
+  /* 顶部固定导航 */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--gh-black);
+    color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.25);
+  }
+  .topbar .brand { font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+  .topbar .brand::before { content: "🐙 "; }
+  .topbar .date { color: #8b949e; font-size: 13px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 72px 20px 40px; }
+  /* 封面 */
+  .cover {
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    border-radius: 16px;
+    color: #fff;
+    padding: 44px 36px 38px;
+    margin-bottom: 28px;
+    box-shadow: 0 6px 24px rgba(36,41,46,.35);
+  }
+  .cover h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: 1px; }
+  .cover .sub { font-size: 15px; opacity: .85; }
+  .cover .meta { margin-top: 14px; font-size: 13px; opacity: .7; }
+  /* 风向概括 */
+  .brief {
+    background: #fff;
+    border: 1px solid var(--gh-border);
+    border-left: 5px solid var(--gh-green);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+  .brief b { color: var(--gh-green); }
+  /* 卡片 */
+  .card {
+    background: #fff;
+    border: 1px solid var(--gh-border);
+    border-left: 6px solid var(--gh-green);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(36,41,46,.08);
+    margin-bottom: 26px;
+    display: flex;
+    overflow: hidden;
+  }
+  .card-rank {
+    background: var(--gh-black);
+    color: var(--gh-green);
+    font-weight: 800;
+    font-size: 20px;
+    min-width: 64px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-body { padding: 20px 24px; flex: 1; min-width: 0; }
+  .card-title-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .card-title { font-size: 20px; }
+  .card-title a { color: var(--gh-black); text-decoration: none; }
+  .card-title a:hover { color: var(--gh-green); }
+  .card-title .repo-name { color: #0969da; }
+  .lang { font-size: 13px; color: var(--gh-gray); white-space: nowrap; }
+  .lang .dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#f1e05a; margin-right:5px; vertical-align:-1px; }
+  .oneliner { margin: 8px 0 12px; font-size: 15px; color: #1f2328; font-weight: 600; }
+  .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .stat {
+    font-size: 13px; padding: 3px 12px; border-radius: 999px;
+    border: 1px solid var(--gh-border); background: var(--gh-bg);
+    color: var(--gh-gray); white-space: nowrap;
+  }
+  .stat-today { background: #dafbe1; border-color: #2da44e66; color: #116329; font-weight: 700; }
+  .stat-total { font-weight: 600; color: var(--gh-black); }
+  .stat-link { text-decoration: none; color: #0969da; }
+  .stat-link:hover { text-decoration: underline; }
+  .section { margin-bottom: 10px; font-size: 14px; }
+  .sec-label {
+    display: inline-block; font-size: 12px; font-weight: 700; color: #fff;
+    background: var(--gh-gray); border-radius: 4px; padding: 1px 8px; margin-right: 6px;
+    vertical-align: 2px;
+  }
+  .section p { display: inline; }
+  .section > p { display: block; margin-top: 4px; }
+  .tagline .tag {
+    background: #ddf4ff; color: #0969da; border-radius: 4px; padding: 1px 8px; font-size: 13px;
+  }
+  /* 速览表 */
+  h2.summary-title {
+    font-size: 20px; margin: 34px 0 14px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--gh-black);
+  }
+  table.summary {
+    width: 100%; border-collapse: collapse; background: #fff;
+    font-size: 14px; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 6px rgba(36,41,46,.08);
+  }
+  table.summary th {
+    background: var(--gh-black); color: #fff; padding: 10px 12px;
+    text-align: left; font-weight: 600;
+  }
+  table.summary td { padding: 9px 12px; border: 1px solid var(--gh-border); }
+  table.summary tr:nth-child(even) td { background: #f6f8fa; }
+  table.summary tr:hover td { background: #ddf4ff66; }
+  .t-rank { font-weight: 800; color: var(--gh-green); width: 52px; }
+  .t-name a { color: #0969da; text-decoration: none; font-weight: 600; }
+  .t-name a:hover { text-decoration: underline; }
+  .t-today { color: #116329; font-weight: 700; }
+  .footer {
+    margin-top: 30px; text-align: center; color: var(--gh-gray); font-size: 12px;
+    padding-bottom: 20px;
+  }
+  @media (max-width: 640px) {
+    .card { flex-direction: column; }
+    .card-rank { min-width: 0; padding: 6px; font-size: 16px; }
+    .cover h1 { font-size: 24px; }
+    .wrap { padding: 64px 12px 30px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topbar">
+<span class="brand">GitHub 热点日报</span>
+<span class="date">2026-08-17 · 每日追踪开源世界脉搏</span>
+</nav>
+<div class="wrap">
+<header class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<p class="sub">每日追踪开源世界脉搏</p>
+<p class="meta">数据来源：github.com/trending（daily） · 生成时间：2026-08-17 · 自动化情报研究员</p>
+</header>
+<section class="brief">
+<b>今日风向：</b>AI 与 Agent 基础设施依旧霸榜——Top 10 中 6 席与 AI 直接相关，「本地微调」（unsloth、Soup）与「Agent 操控软件」（ego-lite、CLI-Anything）两大主线持续发酵。安全赛道杀出黑马：<b>usestrix/strix</b>（AI 渗透测试 Agent）以 +781 星强势拿下榜眼，是今日最值得关注的新面孔；<b>harry0703/MoneyPrinterTurbo</b>（AI 短视频生成，总 star 已破 10 万）与港大 <b>HKUDS/CLI-Anything</b> 两个「新上榜」项目也都冲进前十。老牌资源合集 public-apis 凭 +1,583 星的绝对增量蝉联榜首。
+  </section>
+<article class="card">
+<div class="card-rank">#1</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/public-apis/public-apis" target="_blank">public-apis/<span class="repo-name">public-apis</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">全网最大的免费 API 目录——程序员找接口的「新华字典」</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 461,639</span>
+<span class="stat stat-today">🔥 今日 +1,583</span>
+<span class="stat stat-fork">🍴 Fork 50,993</span>
+<a class="stat stat-link" href="https://github.com/public-apis/public-apis" target="_blank">github.com/public-apis/public-apis</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>由社区人工维护的大型免费 API 合集，覆盖天气、金融、地理编码、音乐、游戏等上百个分类，每条条目标注认证方式、HTTPS 支持、开源状态。新东家 APILayer 接管运营后在 README 顶部推广其统一 API 套件（一个 Key 调用 IPstack、mediastack 等生产级 API），但目录本身仍完全免费开放。它是 GitHub 上 star 数最高的资源合集类仓库之一（超 46 万），几十年来持续被开发者当作原型开发、黑客马拉松和教学示例的「接口词典」。与零散的 awesome-xxx 列表相比，它的条目经过多年人工筛选，死链清理和格式一致性做得最好。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>后端/前端开发者找免费数据源、黑客马拉松选手快速拼装原型、编程教学场景演示 API 调用、产品经理调研某领域有哪些开放数据可用。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">L-学习资源/其他</span> › <span class="tag">资源合集</span> › API 目录</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#2</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/usestrix/strix" target="_blank">usestrix/<span class="repo-name">strix</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">开源 AI 渗透测试工具——自主 AI「黑客」替你找漏洞、写 PoC、出补丁</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 53,352</span>
+<span class="stat stat-today">🔥 今日 +781</span>
+<span class="stat stat-fork">🍴 Fork 5,717</span>
+<a class="stat stat-link" href="https://github.com/usestrix/strix" target="_blank">github.com/usestrix/strix</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>Strix 是一组自主的 AI 渗透测试智能体，像真实黑客一样动态运行你的代码、寻找漏洞并用实际可用的 PoC（概念验证exploit）加以证实，杜绝静态扫描器常见的误报。开箱即用覆盖侦察、利用、验证全流程，支持多 Agent 协作编排；每个发现都附带复现步骤和修复建议，可一键生成合规级渗透测试报告。CLI 一行命令 `strix --target ./app` 即可发起扫描（需本地 Docker 沙箱 + 任意主流 LLM API Key），也已无缝集成 GitHub Actions，在每个 PR 上自动拦截不安全代码。与 XBOW 等商业产品相比它是 Apache-2.0 完全开源，还提供 `npx skills add usestrix/strix` 让 Claude Code、Cursor 等编程 Agent 直接具备安全测试能力。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>应用安全工程师做快速渗透测试、开发团队在 CI/CD 中前置安全卡点、漏洞赏金猎人自动化信息收集与 PoC 生成、DevSecOps 团队替代昂贵的人工 pentest。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">G-安全</span> › <span class="tag">AI渗透测试</span> › 自主攻击Agent</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#3</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/cordiverse/cordis" target="_blank">cordiverse/<span class="repo-name">cordis</span></a></h2>
+<span class="lang"><span class="dot"></span>TypeScript</span>
+</div>
+<p class="oneliner">「时空可组合性」元框架——TypeScript 插件化架构的理论与实践合体</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 4,680</span>
+<span class="stat stat-today">🔥 今日 +719</span>
+<span class="stat stat-fork">🍴 Fork 244</span>
+<a class="stat stat-link" href="https://github.com/cordiverse/cordis" target="_blank">github.com/cordiverse/cordis</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>Cordis 自称「时空可组合性（Spatiotemporal Composability）元框架」，是 TypeScript 世界依赖注入框架的升华：插件是实现 Service 的对象，上下文是服务容器，通过 `inject` 声明依赖、类型化事件（emit/waterfall/parallel/serial 四种分发模式）通信，且所有注册都是可逆副作用，reload 和 teardown 时按预期撤销。它长期作为 Koishi 聊天机器人生态的底层框架演进，2026 年 8 月发布配套论文《A Programming Paradigm for Spatiotemporal Composability》后翻红冲榜——如今它还是 DeepSeek Harness 以 vendor 方式引入的插件框架。与 InversifyJS 等传统 DI 框架的区别在于：它同时管理组件的「空间组合」（依赖图）和「时间组合」（动态加载/卸载的生命周期），API 仍在活跃开发中尚未稳定。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>TypeScript/Node.js 后端与机器人开发者（尤其 Koishi 生态用户）、DeepSeek Harness 插件作者、研究插件化架构与依赖注入的工程师、对效应系统（Effect System）感兴趣的编程语言爱好者。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">B-开发者工具</span> › <span class="tag">应用框架</span> › TypeScript 元框架</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#4</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/<span class="repo-name">ego-lite</span></a></h2>
+<span class="lang"><span class="dot"></span>JavaScript</span>
+</div>
+<p class="oneliner">为 AI Agent 打造的极速浏览器——你和你的 Agent 各用各的标签页，互不打扰</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 11,300</span>
+<span class="stat stat-today">🔥 今日 +633</span>
+<span class="stat stat-fork">🍴 Fork 578</span>
+<a class="stat stat-link" href="https://github.com/citrolabs/ego-lite" target="_blank">github.com/citrolabs/ego-lite</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>ego lite 是一款「你和 AI Agent 共用」的浏览器：Agent 在自己独立的 Space（隔离工作区）里并行跑多个浏览器任务，你的标签页始终是你自己的，互不抢夺。现有 browser-use、agent-browser 等方案需要外挂一个浏览器去驱动、登录态难以延续，而 ego lite 从设计之初就让人和 Agent 共享同一浏览器，Agent 通过 `ego-browser` 技能直接触达你的真实登录态。技术亮点：能力以 JavaScript 函数而非 CLI 暴露给 Agent，复杂任务快 2.5 倍、token 消耗更少；内核级定制产出市场最强的页面 Snapshot，稳如老狗地处理深层嵌套 iframe。`npx skills add citrolabs/ego-lite` 一条命令即可让 Claude Code、Codex、Cursor 获得浏览器能力，目前支持 macOS（Windows/Linux 在路线图上）。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>用 Claude Code/Codex/Cursor 做网页自动化、数据抓取、批量表单操作的开发者；需要 Agent 复用本人登录态（内网系统、已订阅站点）的场景；一个人同时跑多个并行浏览器任务的效率玩家。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">B-开发者工具</span> › <span class="tag">AI浏览器</span> › Agent 浏览器自动化</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#5</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/unslothai/unsloth" target="_blank">unslothai/<span class="repo-name">unsloth</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">本地跑+训大模型的第一桌面应用——一条命令微调 Kimi K3、Qwen3.8、DeepSeek-V4</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 72,525</span>
+<span class="stat stat-today">🔥 今日 +580</span>
+<span class="stat stat-fork">🍴 Fork 6,540</span>
+<a class="stat stat-link" href="https://github.com/unslothai/unsloth" target="_blank">github.com/unslothai/unsloth</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>Unsloth 定位为「第一个运行和训练模型的桌面应用」，提供 Windows/macOS/Linux 原生安装包。支持本地运行和微调 LLM、扩散、嵌入、音频多类模型，覆盖 Kimi K3、MiniMax-H3、Qwen3.8、DeepSeek-V4、Gemma 4 等主流开源模型；训练侧以 2 倍速度、70% 显存节省著称，支持 LoRA/QLoRA、强化学习（GRPO/RLHF）。它还能把本地模型接入 Claude Code、Codex 和 MCP 当编程助手用，自带私有网页搜索、深度研究和 RAG，通过 Cloudflare 可将本地模型安全暴露为远程 HTTPS 端点。硬件覆盖 CPU、NVIDIA、AMD、Intel、Apple Silicon 和多卡。与直接用 transformers + peft 相比，它把环境配置、显存优化、量化导出（GGUF）全流程封装成桌面级体验，是开源微调生态事实上的首选起点。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>在消费级显卡/笔记本上微调大模型的个人开发者、需要数据不出域本地训练的企业、想给 Claude Code 配本地模型省 API 费的用户、做 RL 微调实验的研究者。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">A-AI/机器学习</span> › <span class="tag">模型训练</span> › 本地训练框架</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#6</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/<span class="repo-name">MoneyPrinterTurbo</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">一站式 AI 短视频生成工具——输入主题或关键词，成片直接交付</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 104,592</span>
+<span class="stat stat-today">🔥 今日 +494</span>
+<span class="stat stat-fork">🍴 Fork 15,889</span>
+<a class="stat stat-link" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">github.com/harry0703/MoneyPrinterTurbo</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>MoneyPrinterTurbo 只需一个视频主题或关键词，即可全自动生成视频脚本、匹配素材、生成字幕和背景音乐，最终合成高清短视频，提供 WebUI 和 API 两种使用方式。工作流串联 LLM 文案生成（官方推荐 Kimi K3，也支持 DeepSeek、Qwen 等）、素材库检索、TTS 语音合成、ffmpeg 合成渲染，批量生成能力适合矩阵运营。项目中文生态浓郁：README 提供完整中文文档，社区围绕它衍生出大量「AI 搬砖」「无人直播」教程，录咖等合作方还提供免部署的在线版。与商业化的剪映 AI 成片相比，它完全开源可自托管、素材和模型可自由替换，但需要一定部署能力（Docker 一键起服务）。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>短视频/自媒体矩阵运营者批量产出内容、需要关键词批量生成营销视频的电商团队、想学习 LLM+ffmpeg 工作流编排的开发者、无人直播间的内容供给。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">A-AI/机器学习</span> › <span class="tag">AI视频生成</span> › 短视频自动化生产</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#7</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/MakazhanAlpamys/Soup" target="_blank">MakazhanAlpamys/<span class="repo-name">Soup</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">一条命令微调 LLM——「无 SSH、无配置地狱」的极简训练 CLI</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 1,988</span>
+<span class="stat stat-today">🔥 今日 +456</span>
+<span class="stat stat-fork">🍴 Fork 294</span>
+<a class="stat stat-link" href="https://github.com/MakazhanAlpamys/Soup" target="_blank">github.com/MakazhanAlpamys/Soup</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>Soup 把 LLM 微调的痛苦压缩成「一个配置 + 一条命令」：`soup init --template chat` 生成 YAML，`soup train` 开跑，batch size、GPU 检测、量化全部自动处理，无需 SSH 到 GPU 机器上折腾环境。招牌的层流式加载（layer streaming，beta）把冻结的基座模型挡在显存之外、逐层喂给 GPU，实测在 4GB 的 RTX 3050 笔记本上以 3.32GB 峰值显存微调 Llama-3.1-8B（NF4 量化，119.6 tok/s），结果与常驻显存训练 bit 级一致，并提供免费 Colab T4 notebook 供独立复验。v0.73 的 `soup ship` 发布门禁会跑七套评测并带噪声地板（--noise-floor）判断「模型是变好还是练坏」，还新增了过度拒答检测轴防止安全微调把模型练「傻」。与 Unsloth 的区别：Soup 主打 CLI 工作流与发布质量门禁，U nsloth 主打训练内核加速与桌面体验。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>只有游戏本/入门显卡却想微调 8B 模型的个人开发者、讨厌配环境的 ML 新手、需要在训练后自动验证模型没有退化的工程团队、教学场景演示完整微调-发布流程。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">A-AI/机器学习</span> › <span class="tag">模型训练</span> › 微调工作流工具</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#8</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/cactus-compute/needle" target="_blank">cactus-compute/<span class="repo-name">needle</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">14MB 的超微基础模型——给手机、手表、机器人装上工具调用能力</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 6,531</span>
+<span class="stat stat-today">🔥 今日 +447</span>
+<span class="stat stat-fork">🍴 Fork 431</span>
+<a class="stat stat-link" href="https://github.com/cactus-compute/needle" target="_blank">github.com/cactus-compute/needle</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>Needle 2 是一个 4500 万参数的开源模型，专为工具调用、设备使用和结构化提取设计：整个模型是单个 14MB 二进制文件，完整会话仅吃约 28MB 内存。它基于团队自研的 Simple Attention Network（用 Hadamard MLP 替代 FFN、GQA 注意力、engram 键值记忆），以 CQ 2-bit 量化压缩并内置推理引擎，与 FunctionGemma 270M、LFM2.5 230M 等模型互有胜负但体积小 5-70 倍。工程细节讲究：置信度门控让每个响应携带校准置信分数（低于阈值可升级人工）、工具检索头在大型工具目录中只渲染 Top 5、256 token 滑动窗口加 KV sinks 让内存恒定。`pip install cactus-needle` 装完即用，装饰器标注函数即可当工具，支持离线气隙部署，也支持 LoRA 微调和导出。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>嵌入式 AI 开发者、物联网/可穿戴设备工程师、需要在边缘设备上跑工具调用的团队、机器人开发者、研究超小模型推理的学者。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">A-AI/机器学习</span> › <span class="tag">边缘AI</span> › 超小模型</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#9</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/ToolJet/ToolJet" target="_blank">ToolJet/<span class="repo-name">ToolJet</span></a></h2>
+<span class="lang"><span class="dot"></span>JavaScript</span>
+</div>
+<p class="oneliner">开源低代码平台——拖拽构建内部工具与 AI Agent，ToolJet AI 的开源基座</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 39,985</span>
+<span class="stat stat-today">🔥 今日 +446</span>
+<span class="stat stat-fork">🍴 Fork 5,326</span>
+<a class="stat stat-link" href="https://github.com/ToolJet/ToolJet" target="_blank">github.com/ToolJet/ToolJet</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>ToolJet 社区版提供强大的可视化构建器：60+ 响应式组件（表格、图表、表单、进度条等）、拖拽式 UI、内置无代码数据库、80+ 数据源连接（数据库/API/SaaS/对象存储）、多人协作编辑与行内评论。支持在应用内直接跑 JavaScript 和 Python，安全设计上采用 AES-256-GCM 加密、代理式数据流、SSO；部署灵活，Docker/Kubernetes/AWS/GCP/Azure 均可自托管。商业版 ToolJet AI 在此之上叠加 AI 应用生成（自然语言直接生成应用）、AI 查询构建器、AI 一键调试、Agent Builder 工作流编排，以及 SOC 2/GDPR 合规、RBAC、GitSync 等企业能力。作为 Retool 的开源替代，它的差异点是 AI 能力深度内嵌到建站流程本身，官方 CLI 还支持自定义插件和连接器开发。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>需要快速搭建后台管理面板/内部工具的工程团队、想用 AI 生成内部应用的企业、替代 Retool 的自托管需求团队、需要工作流自动化和 Agent 编排的业务团队。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">C-前端/Web</span> › <span class="tag">低代码平台</span> › 内部工具构建</p>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-rank">#10</div>
+<div class="card-body">
+<div class="card-title-row">
+<h2 class="card-title"><a href="https://github.com/HKUDS/CLI-Anything" target="_blank">HKUDS/<span class="repo-name">CLI-Anything</span></a></h2>
+<span class="lang"><span class="dot"></span>Python</span>
+</div>
+<p class="oneliner">一行命令让任意软件变 Agent 原生——港大出品的世界软件 CLI 化工程</p>
+<div class="stat-row">
+<span class="stat stat-total">⭐ 总计 47,623</span>
+<span class="stat stat-today">🔥 今日 +418</span>
+<span class="stat stat-fork">🍴 Fork 4,411</span>
+<a class="stat stat-link" href="https://github.com/HKUDS/CLI-Anything" target="_blank">github.com/HKUDS/CLI-Anything</a>
+</div>
+<div class="section"><span class="sec-label">详细介绍</span>
+<p>CLI-Anything 的口号是「今天的软件为人而生，明天的用户是 Agent」：它把 GIMP、Blender、LibreOffice、Sketch 乃至 ArcGIS Pro 等桌面软件封装成结构化 CLI，让 Claude Code、OpenClaw、Codex、Cursor 等 Agent 框架一行命令即可调用。选 CLI 而非 MCP 的理由很硬核：文本命令天然匹配 LLM 输入格式、`--help` 即自描述、JSON 输出无需解析、确定可靠可预测，项目还发布过「MCP vs CLI 浏览器自动化对比，CLI 快 25 倍」的基准测试。配套 CLI-Hub 注册表（`pip install cli-anything-hub`）让社区构建的 CLI 即时上架，社区以贡献者签约制高速扩张——近期合并了 Joplin、Calibre、Rekordbox、3MF、MiniMax 等数十个 CLI，每个都带单元测试和安全加固（defusedxml 解析不可信输入）。背靠港大数据智能实验室（HKUDS，LightRAG、AutoAgent 等明星项目的出品方），学术与工程双轮驱动。</p>
+</div>
+<div class="section"><span class="sec-label">适用领域</span>
+<p>想让 AI Agent 操控桌面软件完成 CAD 建模、3D 场景、文档批处理的开发者；构建 Agent 工作流的自动化工程师；为自己的软件做 Agent 接口的厂商；Agent 生态研究者。</p>
+</div>
+<div class="section"><span class="sec-label">知识归类</span>
+<p class="tagline"><span class="tag">A-AI/机器学习</span> › <span class="tag">Agent基础设施</span> › 软件CLI化</p>
+</div>
+</div>
+</article>
+<h2 class="summary-title">📊 今日速览</h2>
+<table class="summary">
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td class="t-rank">#1</td><td class="t-name"><a href="https://github.com/public-apis/public-apis" target="_blank">public-apis/public-apis</a></td><td>Python</td><td class="t-today">+1,583</td><td>L-学习资源/其他 › 资源合集</td></tr>
+<tr><td class="t-rank">#2</td><td class="t-name"><a href="https://github.com/usestrix/strix" target="_blank">usestrix/strix</a></td><td>Python</td><td class="t-today">+781</td><td>G-安全 › AI渗透测试</td></tr>
+<tr><td class="t-rank">#3</td><td class="t-name"><a href="https://github.com/cordiverse/cordis" target="_blank">cordiverse/cordis</a></td><td>TypeScript</td><td class="t-today">+719</td><td>B-开发者工具 › 应用框架</td></tr>
+<tr><td class="t-rank">#4</td><td class="t-name"><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/ego-lite</a></td><td>JavaScript</td><td class="t-today">+633</td><td>B-开发者工具 › AI浏览器</td></tr>
+<tr><td class="t-rank">#5</td><td class="t-name"><a href="https://github.com/unslothai/unsloth" target="_blank">unslothai/unsloth</a></td><td>Python</td><td class="t-today">+580</td><td>A-AI/机器学习 › 模型训练</td></tr>
+<tr><td class="t-rank">#6</td><td class="t-name"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a></td><td>Python</td><td class="t-today">+494</td><td>A-AI/机器学习 › AI视频生成</td></tr>
+<tr><td class="t-rank">#7</td><td class="t-name"><a href="https://github.com/MakazhanAlpamys/Soup" target="_blank">MakazhanAlpamys/Soup</a></td><td>Python</td><td class="t-today">+456</td><td>A-AI/机器学习 › 模型训练</td></tr>
+<tr><td class="t-rank">#8</td><td class="t-name"><a href="https://github.com/cactus-compute/needle" target="_blank">cactus-compute/needle</a></td><td>Python</td><td class="t-today">+447</td><td>A-AI/机器学习 › 边缘AI</td></tr>
+<tr><td class="t-rank">#9</td><td class="t-name"><a href="https://github.com/ToolJet/ToolJet" target="_blank">ToolJet/ToolJet</a></td><td>JavaScript</td><td class="t-today">+446</td><td>C-前端/Web › 低代码平台</td></tr>
+<tr><td class="t-rank">#10</td><td class="t-name"><a href="https://github.com/HKUDS/CLI-Anything" target="_blank">HKUDS/CLI-Anything</a></td><td>Python</td><td class="t-today">+418</td><td>A-AI/机器学习 › Agent基础设施</td></tr>
+</tbody>
+</table>
+<p class="footer">数据抓取自 GitHub Trending（总榜 + 22 个分语言榜合并去重，按当日新增 star 排序） · 仅供参考 · 2026-08-17</p>
+</div>
+</body>
+</html>

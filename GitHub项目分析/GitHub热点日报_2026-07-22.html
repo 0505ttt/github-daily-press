@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  /* Fixed Nav */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #24292e;
+    color: #fff;
+    padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  }
+  .navbar-brand { font-size: 18px; font-weight: 700; letter-spacing: .5px; }
+  .navbar-date { font-size: 14px; color: #8b949e; }
+  /* Hero */
+  .hero {
+    margin-top: 52px;
+    padding: 60px 24px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #24292e 0%, #1a1e22 40%, #2da44e 120%);
+    color: #fff;
+  }
+  .hero h1 { font-size: 36px; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 18px; color: #d0d7de; }
+  .hero .date-badge {
+    display: inline-block; margin-top: 12px;
+    background: rgba(45,164,78,.25);
+    border: 1px solid #2da44e;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 16px;
+  }
+  /* Summary */
+  .summary {
+    max-width: 900px; margin: -20px auto 30px;
+    background: #fff; border-radius: 12px;
+    padding: 24px 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    position: relative; z-index: 10;
+  }
+  .summary h2 { font-size: 20px; color: #24292e; margin-bottom: 10px; border-left: 4px solid #2da44e; padding-left: 10px; }
+  .summary p { color: #57606a; font-size: 15px; }
+  /* Container */
+  .container { max-width: 900px; margin: 0 auto 60px; padding: 0 16px; }
+  /* Project Card */
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    border-left: 5px solid #2da44e;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  .card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+    background: #f6f8fa;
+    border-bottom: 1px solid #d0d7de;
+  }
+  .card-rank {
+    font-size: 24px; font-weight: 800; color: #2da44e;
+    min-width: 44px;
+  }
+  .card-title a {
+    font-size: 18px; font-weight: 700; color: #0969da;
+    text-decoration: none;
+  }
+  .card-title a:hover { text-decoration: underline; }
+  .card-lang {
+    font-size: 13px; color: #57606a;
+    background: #ddf4ff; padding: 3px 10px; border-radius: 12px;
+    white-space: nowrap;
+  }
+  .card-body { padding: 20px 24px; }
+  .card-stars {
+    display: flex; gap: 16px; margin-bottom: 12px;
+    font-size: 14px; flex-wrap: wrap;
+  }
+  .star-item { display: flex; align-items: center; gap: 4px; }
+  .star-icon { font-size: 16px; }
+  .star-total { color: #24292e; font-weight: 600; }
+  .star-today { color: #2da44e; font-weight: 600; }
+  .star-forks { color: #57606a; }
+  .card-position {
+    font-size: 14px; color: #57606a; margin-bottom: 8px;
+    font-style: italic;
+  }
+  .card-detail { font-size: 14px; color: #24292e; margin-bottom: 10px; }
+  .card-usecase { font-size: 14px; color: #57606a; margin-bottom: 10px; }
+  .card-tags {
+    font-size: 13px; color: #8250df;
+    background: #faf0ff; padding: 6px 12px; border-radius: 6px;
+    display: inline-block;
+  }
+  /* Summary Table */
+  .table-section { margin-top: 40px; }
+  .table-section h2 {
+    font-size: 22px; text-align: center; margin-bottom: 20px; color: #24292e;
+  }
+  table {
+    width: 100%; border-collapse: collapse;
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  thead { background: #24292e; color: #fff; }
+  th { padding: 12px 16px; text-align: left; font-size: 14px; }
+  td { padding: 10px 16px; font-size: 14px; border-top: 1px solid #d0d7de; }
+  tbody tr:nth-child(even) { background: #f6f8fa; }
+  tbody tr:hover { background: #ddf4ff; }
+  .rank-cell { font-weight: 700; color: #2da44e; }
+  .lang-cell { font-size: 13px; }
+  .star-cell { color: #2da44e; font-weight: 600; }
+  /* Footer */
+  .footer {
+    text-align: center; padding: 24px;
+    color: #8b949e; font-size: 13px;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 24px; }
+    .card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .card-rank { font-size: 18px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="navbar-brand">🐙 GitHub 热点日报</div>
+<div class="navbar-date">2026-07-22</div>
+</nav>
+<section class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<p class="subtitle">每日追踪开源世界脉搏</p>
+<span class="date-badge">📅 2026 年 7 月 22 日</span>
+</section>
+<div class="summary">
+<h2>📊 今日风向</h2>
+<p>今日榜单 <strong>AI / Agent 生态</strong>继续霸榜，Top 10 中超过半数项目直接与 AI 编程、Agent 框架或 MCP 相关。最大黑马是 <strong>koala73/worldmonitor</strong>——一个实时全球情报仪表盘，以 65K stars 空降榜首。<strong>bojieli/ai-agent-book</strong> 日增 4,434 stars 成为今日增长冠军，这本开源 AI Agent 教材正以惊人的速度扩散。<strong>diegosouzapw/OmniRoute</strong>（AI 网关）日增 2,040 stars 紧随其后。值得关注的是 <strong>ayghri/i-have-adhd</strong>，一个让 AI 编程助手「少废话、先说结论」的趣味插件意外爆火，日增 1,846 stars。</p>
+</div>
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#1</span>
+<span class="card-title"><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></span>
+</div>
+<span class="card-lang">TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">65,147</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+1,167</span></span>
+<span class="star-item">🍴 <span class="star-forks">10,165 forks</span></span>
+</div>
+<p class="card-position">实时全球情报仪表盘——AI 驱动的新闻聚合、地缘政治监测和基础设施追踪一体化态势感知平台</p>
+<p class="card-detail">聚合 500+ 新闻源跨 15 个分类，使用 AI 合成情报简报。配备双地图引擎（3D 地球 + WebGL 平面地图，56 种图层类型），支持跨流信号关联分析（军事、经济、灾害、升级信号汇合检测）。内置国家不稳定指数（CII）对 31 个 Tier-1 国家进行压力评分，覆盖 29 个证券交易所和加密货币的金融雷达。可完全本地运行（支持 Ollama），无需 API 密钥。从单一代码库生成 6 个站点变体（世界/科技/金融/商品/快乐/能源），同时提供 macOS / Windows / Linux 原生桌面应用（Tauri 2）。</p>
+<p class="card-usecase"><strong>适用领域：</strong>地缘政治分析师、金融交易者、新闻工作者、需要实时全球态势感知的决策者、开源情报（OSINT）研究者</p>
+<span class="card-tags">A-AI/机器学习 › 情报聚合 › 态势感知</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#2</span>
+<span class="card-title"><a href="https://github.com/bojieli/ai-agent-book" target="_blank">bojieli/ai-agent-book</a></span>
+</div>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">14,271</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+4,434</span></span>
+<span class="star-item">🍴 <span class="star-forks">1,334 forks</span></span>
+</div>
+<p class="card-position">《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）——全书正文、编译版 PDF 与按章配套代码全部开源</p>
+<p class="card-detail">前华为天才少年李博杰撰写的 AI Agent 系统教材，围绕核心公式「Agent = LLM + 上下文 + 工具」展开 10 章内容，从基础知识到多 Agent 协作层层递进。全书包含 88 个配套实验（70+ 可独立运行），覆盖上下文工程、工具调用（MCP 协议）、Coding Agent、Agent 评估、模型后训练等核心主题。支持 5 种语言（中/繁体/英/泰米尔/越南语），社区翻译活跃。读者可免费下载 PDF / EPUB，也可自行用 pandoc + ElegantBook 编译。</p>
+<p class="card-usecase"><strong>适用领域：</strong>AI 工程师、Agent 开发者、希望从理论到实战系统掌握 Agent 设计原理的学习者</p>
+<span class="card-tags">L-学习资源 › 开源书籍 › AI Agent 教材</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#3</span>
+<span class="card-title"><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></span>
+</div>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">24,485</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+1,921</span></span>
+<span class="star-item">🍴 <span class="star-forks">2,347 forks</span></span>
+</div>
+<p class="card-position">本地优先的代码知识图谱工具——让 AI 编程助手只读真正相关的代码，减少 Token 浪费</p>
+<p class="card-detail">使用 Tree-sitter 构建代码结构图谱，追踪增量变化，分析变更影响范围。通过 MCP 协议与 Claude Code、Cursor、Codex、Gemini CLI 等 AI 编程工具集成，使 AI 能精准定位相关代码而非全量扫描。一行命令自动检测已安装的工具并配置 MCP，无需手动编写配置文件。所有数据本地存储，不依赖云服务，基准测试显示可显著减少 Token 消耗（代码审查场景减少 5-10 倍）。支持 Git 和 SVN，有 VS Code 扩展。</p>
+<p class="card-usecase"><strong>适用领域：</strong>使用 Claude Code / Cursor 等 AI 编程工具的开发者，管理大型代码库的团队</p>
+<span class="card-tags">B-开发者工具 › AI 编程辅助 › 代码知识图谱</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#4</span>
+<span class="card-title"><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></span>
+</div>
+<span class="card-lang">N/A（Skill/Plugin）</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">6,731</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+1,846</span></span>
+<span class="star-item">🍴 <span class="star-forks">275 forks</span></span>
+</div>
+<p class="card-position">让 AI 编程助手「少废话、先说结论」的 Claude Code 技能插件——ADHD 友好输出风格</p>
+<p class="card-detail">一个极简的 Claude Code / Codex 技能插件，核心就是一个 SKILL.md 文件，定义了 10 条规则强制 AI 改变输出风格：首行给答案、步骤编号、每轮报进度、压制跑题、无废话开头和结尾。将 AI 常见的「好问题！让我想想……」式冗长回复压缩为直接可操作的结果。灵感来自《The Adult ADHD Tool Kit》一书，适配 LLM 的回复方式而非人类的日程管理。可 Fork 后自定义规则，安装简单。</p>
+<p class="card-usecase"><strong>适用领域：</strong>Claude Code / Codex 用户、讨厌 AI 废话的开发者、追求高效交互的编程者</p>
+<span class="card-tags">B-开发者工具 › AI Agent 插件 › 输出风格优化</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#5</span>
+<span class="card-title"><a href="https://github.com/earthtojake/text-to-cad" target="_blank">earthtojake/text-to-cad</a></span>
+</div>
+<span class="card-lang">JavaScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">9,053</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+378</span></span>
+<span class="star-item">🍴 <span class="star-forks">1,023 forks</span></span>
+</div>
+<p class="card-position">CAD / 机器人 / 硬件设计的 Agent 技能库——用自然语言生成工程级 CAD 模型</p>
+<p class="card-detail">一套面向 AI Agent 的 CAD 技能库，覆盖从模型生成到制造的完整工作流。核心能力包括：用自然语言或图片生成 STEP 格式 CAD 模型（可导出 STL / 3MF / GLB）、搜索现成零件（螺丝/轴承/电机）、创建 2D DXF 图纸、编写机器人 URDF / SRDF / SDF 描述文件、将网格切片为打印机可用的 G-code 并可直连 Bambu Lab 打印机。还支持在浏览器中预览 CAD 模型和 G-code。通过 Skills CLI 一键安装到 Claude Code 或 Codex。</p>
+<p class="card-usecase"><strong>适用领域：</strong>机械工程师、硬件设计师、机器人开发者、3D 打印爱好者、使用 AI Agent 辅助工程设计的团队</p>
+<span class="card-tags">A-AI/机器学习 › Agent 技能库 › CAD/硬件设计</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#6</span>
+<span class="card-title"><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang/jcode</a></span>
+</div>
+<span class="card-lang">Rust</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">10,268</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+835</span></span>
+<span class="star-item">🍴 <span class="star-forks">1,128 forks</span></span>
+</div>
+<p class="card-position">用 Rust 打造的下一代高性能编程 Agent 框架——极致资源效率，支持多会话并行</p>
+<p class="card-detail">一个用 Rust 编写的 AI 编程 Agent 框架（agent harness），定位为「最智能的代码 Agent」。核心卖点是极致的性能和资源效率：单会话仅占用约 27.8 MB 内存，启动速度远超同类工具。支持多会话并行工作流，可同时处理多个编程任务。具备无限可定制性，支持本地嵌入向量做代码语义搜索。跨平台支持 macOS / Linux / Windows，可通过一行命令安装。强调速度和扩展性，目标是成为 Claude Code 等工具的高性能替代方案。</p>
+<p class="card-usecase"><strong>适用领域：</strong>偏好 Rust 生态的开发者、追求高性能和低资源占用的 AI 编程用户、需要多会话并行编程的场景</p>
+<span class="card-tags">B-开发者工具 › AI 编程工具 › CLI Agent 框架</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#7</span>
+<span class="card-title"><a href="https://github.com/oblien/openship" target="_blank">oblien/openship</a></span>
+</div>
+<span class="card-lang">TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">6,124</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+1,556</span></span>
+<span class="star-item">🍴 <span class="star-forks">442 forks</span></span>
+</div>
+<p class="card-position">自托管部署平台——零配置文件、零流水线、零 YAML，推送即部署</p>
+<p class="card-detail">一个开源的自托管部署平台，内置 CI/CD。核心卖点是「零配置」：指向一个仓库，Openship 自动检测技术栈（Node / Python / Go / Rust / PHP / Ruby / Java / .NET / Docker / monorepo）、构建、配置一切并部署。数据库、域名、SSL、CDN、邮件、备份全部从一个面板管理。支持三种使用方式：桌面应用、Web 仪表盘、CLI。配合 Openship Cloud（托管版）或任意 Linux 服务器使用，个人开发者和团队生产环境使用同一套工具。</p>
+<p class="card-usecase"><strong>适用领域：</strong>需要自托管部署的团队、注重数据主权的开发者、希望搭建私有部署平台的运维团队、独立开发者快速上线项目</p>
+<span class="card-tags">E-基础设施/DevOps › 部署平台 › 自托管</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#8</span>
+<span class="card-title"><a href="https://github.com/AstrBotDevs/AstrBot" target="_blank">AstrBotDevs/AstrBot</a></span>
+</div>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">37,438</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+416</span></span>
+<span class="star-item">🍴 <span class="star-forks">2,608 forks</span></span>
+</div>
+<p class="card-position">多平台 AI Agent 助手与开发框架——集成 IM 平台、LLM、插件，OpenClaw 替代方案</p>
+<p class="card-detail">一个开源的一体化 AI Agent 聊天机器人平台，深度集成主流即时通讯应用。支持 AI 对话、多模态、Agent、MCP、技能系统、知识库、人设设置和自动上下文压缩。可对接 Dify、阿里云百炼、Coze 等 Agent 平台。多平台覆盖 QQ、企业微信、飞书、钉钉、微信公众号、Telegram、Slack 等。拥有 1000+ 社区插件可一键安装，内置 Agent 沙箱（隔离执行代码和 Shell 命令），支持 WebUI 和 ChatUI。国际化（i18n）支持完善。</p>
+<p class="card-usecase"><strong>适用领域：</strong>需要在 IM 平台部署 AI 机器人的开发者、社区运营者、希望自建 AI 客服或知识库的团队</p>
+<span class="card-tags">A-AI/机器学习 › Agent 框架 › 多平台 IM 集成</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#9</span>
+<span class="card-title"><a href="https://github.com/every-app/open-seo" target="_blank">every-app/open-seo</a></span>
+</div>
+<span class="card-lang">TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">6,547</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+850</span></span>
+<span class="star-item">🍴 <span class="star-forks">709 forks</span></span>
+</div>
+<p class="card-position">Semrush 和 Ahrefs 的开源替代品——按需付费的 SEO 分析工具，支持 AI Agent 集成</p>
+<p class="card-detail">一个面向大众的 SEO 工具，定位为 Semrush / Ahrefs 等昂贵订阅制平台的开源替代方案。提供关键词研究、排名追踪、竞品分析、反向链接、站点审计、AI 可见性等核心功能。内置 MCP 服务器，支持 Claude Code / OpenClaw 等 AI Agent 直接调用 SEO 数据。采用按需付费模式：自带 DataForSEO API 密钥，只为实际使用量付费。支持 Docker 或 Cloudflare 自托管，也提供 $10/月 的托管版本。</p>
+<p class="card-usecase"><strong>适用领域：</strong>独立站运营者、SEO 从业者、内容营销团队、需要低成本 SEO 分析的中小企业</p>
+<span class="card-tags">C-前端/Web › SEO 工具 › 开源 SEO 分析</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="card-rank">#10</span>
+<span class="card-title"><a href="https://github.com/tradesdontlie/tradingview-mcp" target="_blank">tradesdontlie/tradingview-mcp</a></span>
+</div>
+<span class="card-lang">JavaScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-item">⭐ <span class="star-total">4,813</span></span>
+<span class="star-item">🚀 今日 <span class="star-today">+219</span></span>
+<span class="star-item">🍴 <span class="star-forks">2,172 forks</span></span>
+</div>
+<p class="card-position">AI 辅助 TradingView 图表分析 MCP 服务器——连接 Claude Code 与你的本地 TradingView 桌面端</p>
+<p class="card-detail">一个 MCP 服务器，通过 Chrome DevTools Protocol（CDP）将 Claude Code 连接到本地运行的 TradingView 桌面应用，实现 AI 辅助图表分析。功能涵盖 Pine Script 开发（编写/注入/编译/调试）、图表导航（切换标的/时间框架/缩放）、视觉分析（读取指标值/价格水平）、图表绘制（趋势线/水平线/矩形/文本）、告警管理、历史回放练习和截图。所有数据处理在本地完成，不传输或存储市场数据。提供 81 个 MCP 工具，同时附带 CLI 命令行工具。项目明确声明这不是交易机器人，而是让交易界面「对 LLM 可读」的接口层。</p>
+<p class="card-usecase"><strong>适用领域：</strong>使用 TradingView 的交易者、量化交易研究者、需要 AI 辅助 Pine Script 开发的开发者、人机协作金融工作流研究者</p>
+<span class="card-tags">B-开发者工具 › MCP 服务器 › 交易图表分析</span>
+</div>
+</div>
+
+<div class="table-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="rank-cell">#1</td><td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td><td class="lang-cell">TypeScript</td><td class="star-cell">+1,167</td><td>A-AI › 情报聚合</td></tr>
+<tr><td class="rank-cell">#2</td><td><a href="https://github.com/bojieli/ai-agent-book" target="_blank">bojieli/ai-agent-book</a></td><td class="lang-cell">Python</td><td class="star-cell">+4,434</td><td>L-学习资源 › AI Agent 教材</td></tr>
+<tr><td class="rank-cell">#3</td><td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td><td class="lang-cell">Python</td><td class="star-cell">+1,921</td><td>B-开发者工具 › 代码知识图谱</td></tr>
+<tr><td class="rank-cell">#4</td><td><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></td><td class="lang-cell">N/A</td><td class="star-cell">+1,846</td><td>B-开发者工具 › Agent 插件</td></tr>
+<tr><td class="rank-cell">#5</td><td><a href="https://github.com/earthtojake/text-to-cad" target="_blank">earthtojake/text-to-cad</a></td><td class="lang-cell">JavaScript</td><td class="star-cell">+378</td><td>A-AI › CAD Agent 技能</td></tr>
+<tr><td class="rank-cell">#6</td><td><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang/jcode</a></td><td class="lang-cell">Rust</td><td class="star-cell">+835</td><td>B-开发者工具 › CLI Agent</td></tr>
+<tr><td class="rank-cell">#7</td><td><a href="https://github.com/oblien/openship" target="_blank">oblien/openship</a></td><td class="lang-cell">TypeScript</td><td class="star-cell">+1,556</td><td>E-基础设施 › 部署平台</td></tr>
+<tr><td class="rank-cell">#8</td><td><a href="https://github.com/AstrBotDevs/AstrBot" target="_blank">AstrBotDevs/AstrBot</a></td><td class="lang-cell">Python</td><td class="star-cell">+416</td><td>A-AI › Agent 框架</td></tr>
+<tr><td class="rank-cell">#9</td><td><a href="https://github.com/every-app/open-seo" target="_blank">every-app/open-seo</a></td><td class="lang-cell">TypeScript</td><td class="star-cell">+850</td><td>C-前端/Web › SEO 工具</td></tr>
+<tr><td class="rank-cell">#10</td><td><a href="https://github.com/tradesdontlie/tradingview-mcp" target="_blank">tradesdontlie/tradingview-mcp</a></td><td class="lang-cell">JavaScript</td><td class="star-cell">+219</td><td>B-开发者工具 › MCP 服务器</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footer">数据来源：GitHub Trending (daily) · 抓取时间：2026-07-22 依据公开资料整理 · 🤖 每日追踪开源世界脉搏</div>
+</body>
+</html>

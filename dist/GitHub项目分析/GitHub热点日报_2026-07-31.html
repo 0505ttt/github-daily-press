@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-31</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 固定导航栏 */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: #24292e;
+    color: #fff;
+    padding: 10px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .navbar-brand { font-size: 16px; font-weight: 700; }
+  .navbar-brand span { color: #2da44e; }
+  .navbar-date { font-size: 14px; color: #8b949e; }
+
+  /* 封面区域 */
+  .hero {
+    background: linear-gradient(135deg, #1a1e22 0%, #24292e 40%, #2da44e 120%);
+    color: #fff;
+    padding: 100px 24px 50px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.6em; margin-bottom: 10px; letter-spacing: 1px; }
+  .hero .date { font-size: 1.3em; color: #7ee787; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1.1em; color: #c9d1d9; opacity: 0.9; }
+
+  /* 概括 */
+  .summary {
+    max-width: 880px; margin: -30px auto 30px;
+    background: #fff; border-radius: 10px; padding: 24px 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-left: 5px solid #2da44e;
+  }
+  .summary h2 { font-size: 1.15em; margin-bottom: 10px; color: #24292e; }
+  .summary p { font-size: 0.95em; color: #57606a; }
+
+  /* 主体 */
+  .container { max-width: 880px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* 卡片 */
+  .card {
+    background: #fff; border-radius: 10px; margin-bottom: 24px;
+    overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border-left: 5px solid #2da44e;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .card-header {
+    padding: 18px 24px 14px; border-bottom: 1px solid #eaeef2;
+  }
+  .rank-badge {
+    display: inline-block; background: #24292e; color: #fff;
+    font-size: 0.8em; font-weight: 700; padding: 2px 10px; border-radius: 12px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .repo-name {
+    font-size: 1.3em; font-weight: 700; color: #0969da;
+    text-decoration: none; vertical-align: middle;
+  }
+  .repo-name:hover { text-decoration: underline; }
+  .card-tagline { font-size: 0.9em; color: #57606a; margin-top: 8px; font-style: italic; }
+
+  .card-body { padding: 16px 24px 20px; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;
+    font-size: 0.85em;
+  }
+  .meta-pill {
+    background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 20px;
+    padding: 3px 12px; color: #57606a; white-space: nowrap;
+  }
+  .meta-pill strong { color: #24292e; }
+  .star-today { color: #2da44e; }
+
+  .section-title {
+    font-size: 0.8em; font-weight: 700; color: #8b949e;
+    text-transform: uppercase; letter-spacing: 0.5px; margin: 12px 0 5px;
+  }
+  .card-desc { font-size: 0.92em; color: #3b4148; line-height: 1.75; }
+  .card-usage { font-size: 0.88em; color: #57606a; }
+  .classification {
+    display: inline-block; font-size: 0.8em; color: #0969da;
+    background: #ddf4ff; border-radius: 4px; padding: 2px 8px; margin-top: 6px;
+  }
+
+  /* 速览表 */
+  .table-section { margin-top: 20px; }
+  .table-section h2 { font-size: 1.3em; margin-bottom: 14px; color: #24292e; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 0.88em;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  th {
+    background: #24292e; color: #fff; padding: 12px 14px;
+    text-align: left; font-weight: 600;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid #eaeef2; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #e8f5e9; }
+  .lang-badge { font-size: 0.82em; color: #57606a; }
+  .star-cell { color: #2da44e; font-weight: 600; }
+
+  /* 页脚 */
+  footer {
+    text-align: center; padding: 30px 20px; color: #8b949e; font-size: 0.85em;
+  }
+  footer a { color: #0969da; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.8em; }
+    .hero .date { font-size: 1.05em; }
+    .navbar-brand { font-size: 14px; }
+    .card-header { padding: 14px 16px 10px; }
+    .card-body { padding: 12px 16px 16px; }
+    table { font-size: 0.78em; }
+    th, td { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="navbar-brand">📰 GitHub <span>热点日报</span></div>
+<div class="navbar-date">2026-07-31</div>
+</div>
+
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 31 日（星期五）</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+<div style="max-width: 880px; margin: 0 auto; padding: 0 20px;">
+
+<div class="summary">
+<h2>📊 今日风向速读</h2>
+<p>今日榜单<strong>AI 与开发者工具仍占主导</strong>，Top 3 中 AI 语音 Agent 和量化交易资源合集表现抢眼。<strong>最大黑马是 mvanhorn/last30days-skill</strong>——一个 AI Agent 跨平台搜索技能，凭"用人类投票排序替代编辑排名"的理念冲到 55K stars。老牌基础设施项目（Ansible、ASP.NET Core、PowerToys）回归榜单，加上 tuicr 和 chrome-devtools-mcp 等 Agent 工具链项目，显示<strong>AI Agent 生态工具持续发酵</strong>。</p>
+</div>
+</div>
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#1</span>
+<a class="repo-name" href="https://github.com/huggingface/speech-to-speech" target="_blank">huggingface/speech-to-speech</a>
+<div class="card-tagline">用开源模型在本地构建语音对话 Agent</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>Python</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>8,688</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+627</strong></span>
+<span class="meta-pill">🍴 Fork 1,085</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">Hugging Face 官方推出的本地语音 Agent 框架，支持用完全开源的模型构建端到端语音对话系统。集成语音识别（STT）、LLM 对话推理、语音合成（TTS）三大模块，用户可以自由组合不同开源模型（如 Whisper、VAD、XTTS 等）构建低延迟的实时语音 Agent。支持本地服务器和云端提供商两种后端模式，无需依赖商业 API。需要 Python 3.10+。与商业语音方案相比，它强调完全本地化、数据隐私和模型可替换性。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">语音助手开发者、需要构建本地化语音交互系统的团队、对开源语音模型感兴趣的研究者、隐私敏感场景下的语音应用开发。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">A-AI/机器学习 › 语音技术 › 语音对话Agent</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#2</span>
+<a class="repo-name" href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft/AI-For-Beginners</a>
+<div class="card-tagline">12 周 24 节课的 AI 入门课程，从神经网络到大语言模型全覆盖</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>Python / Jupyter</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>53,828</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+115</strong></span>
+<span class="meta-pill">🍴 Fork 10,937</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">微软官方推出的 AI 学习课程，用 12 周时间、24 节课系统讲解人工智能核心知识。课程涵盖神经网络基础（感知机、多层网络、反向传播）、计算机视觉（CNN、迁移学习）、自然语言处理（嵌入、RNN、Transformer）以及大语言模型（GPT、提示工程）等前沿主题。每节课配有可运行的 Jupyter Notebook 实验和测验，支持 Azure ML 云端实验室和本地运行。已翻译为 10+ 种语言（含中文），是 GitHub 上 star 数最高的 AI 学习资源之一。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">AI 初学者、想系统学习深度学习的开发者、高校学生、培训机构讲师、需要补充 AI 知识体系的技术从业者。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">L-学习资源/其他 › AI教程 › 入门课程</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#3</span>
+<a class="repo-name" href="https://github.com/paperswithbacktest/awesome-systematic-trading" target="_blank">paperswithbacktest/awesome-systematic-trading</a>
+<div class="card-tagline">系统化交易（量化交易）资源合集——论文、策略、软件、书籍一站式整理</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>Python</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>10,991</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+628</strong></span>
+<span class="meta-pill">🍴 Fork 1,410</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">由 paperswithbacktest 团队维护的系统化交易精选资源列表，汇集了量化交易领域的论文、开源软件、策略、书籍、博客和教程。背靠 paperswithbacktest.com 平台（提供 5000+ 学术策略，每个都附带可运行的 Python 代码和干净数据），这个 awesome 列表是其社区资源的入口。涵盖回测框架、数据源、机器学习策略、高频交易等子领域，适合从入门到进阶的量化交易研究者。与 awesome-quant 等同类列表相比，它更注重与实际可回测策略的关联。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">量化交易研究者、金融工程师、对算法交易感兴趣的开发者、金融数据科学从业者。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">L-学习资源/其他 › 金融资源合集 › 量化交易</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#4</span>
+<a class="repo-name" href="https://github.com/different-ai/openwork" target="_blank">different-ai/openwork</a>
+<div class="card-tagline">开源的 Claude Cowork 替代品——本地优先的 AI 工作流共享桌面应用</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>TypeScript</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>18,666</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+916</strong></span>
+<span class="meta-pill">🍴 Fork 1,904</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">OpenWork 是一个免费开源的桌面应用，专为共享 AI 工作流而设计，是 Claude Cowork 和 Codex 的开源替代方案，支持 macOS、Windows、Linux 三大平台。核心理念是：只需添加一个 OpenWork MCP 到 Codex、Claude Code、Cursor 或其他兼容 Agent，就能在不同工具、团队成员、机器之间复用同一套技能、MCP 连接和服务。提供两个核心工具：search_capabilities（发现可用能力）和 execute_capability（执行能力），通过 OAuth 完成组织认证。团队版 OpenWork Den 提供推理资源管理、权限控制、技能市场发布等企业级功能。基于 opencode 构建，支持 50+ LLM 和自带 Key 模式。与 Claude Cowork 相比，它完全本地优先、数据自主可控。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者和团队；需要在团队内共享 AI 工作流配置的组织；希望降低 Claude Cowork 订阅成本的团队；追求数据本地化的隐私敏感场景。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">B-开发者工具 › AI协作平台 › 开源Claude Cowork替代</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#5</span>
+<a class="repo-name" href="https://github.com/WhiskeySockets/Baileys" target="_blank">WhiskeySockets/Baileys</a>
+<div class="card-tagline">逆向工程 WhatsApp Web 协议的 TypeScript 库——用 WebSocket 构建聊天机器人</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>TypeScript</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>10,419</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+12</strong></span>
+<span class="meta-pill">🍴 Fork 3,249</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">Baileys 是一个通过逆向工程 WhatsApp Web 协议实现的 TypeScript/JavaScript 库，使用 WebSocket 连接让开发者可以程序化操控 WhatsApp 账号——发送/接收消息、管理群组、处理媒体文件、读取联系人等。支持 Bun、Deno、Node.js 多运行时环境，提供完整的 Protobuf 协议定义（WAProto 目录）。与官方 WhatsApp Business API 相比，Baileys 无需付费、无需审批，但属于非官方方案，存在被 WhatsApp 封号风险。社区维护活跃，提供详细的 Wiki 文档和 Discord 支持群。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">聊天机器人开发者、客服自动化系统构建者、需要 WhatsApp 集成的中小企业、营销自动化团队、消息中间件开发者。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">D-后端/服务端 › 即时通讯API › WhatsApp自动化</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#6</span>
+<a class="repo-name" href="https://github.com/pascalorg/editor" target="_blank">pascalorg/editor</a>
+<div class="card-tagline">基于 React Three Fiber 和 WebGPU 构建的浏览器端 3D 建筑编辑器</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>TypeScript</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>20,072</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+617</strong></span>
+<span class="meta-pill">🍴 Fork 2,619</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">Pascal Editor 是一个完全在浏览器中运行的 3D 建筑设计工具，使用 React Three Fiber + WebGPU 实现 GPU 级渲染速度，即使五年前的笔记本也能流畅运行。采用 Turborepo monorepo 架构，分离为 core（场景状态）、viewer（3D 渲染运行时）、editor（编辑工具）、nodes（内置节点定义）四个包，职责清晰。支持楼层平面图绘制、门窗放置、区域标注等完整建筑设计流程，并通过 IndexedDB 持久化场景数据、Zundo 实现撤销/重做。与专业 3D 建模软件相比，它零安装、即开即用，数据完全本地化。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">建筑师、室内设计师、3D 建模爱好者；需要在浏览器中快速创建和分享建筑方案的用户；对 WebGPU/React Three Fiber 感兴趣的前端开发者。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">C-前端/Web › 3D建筑编辑器 › WebGPU渲染</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#7</span>
+<a class="repo-name" href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a>
+<div class="card-tagline">AI Agent 驱动的搜索引擎——用真实人类投票（点赞/投注）排序，而非编辑排名</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>Python</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>55,497</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+377</strong></span>
+<span class="meta-pill">🍴 Fork 4,785</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">last30days 是一个 AI Agent 技能（Skill），让 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等 50+ AI 编程工具获得跨平台搜索能力。它并行搜索 Reddit、X（Twitter）、YouTube、Hacker News、Polymarket、TikTok、arXiv 等平台，然后按真实人类行为（Reddit upvotes、X likes、YouTube 观看量、Polymarket 真金白银的投注赔率）对内容评分排序，最后由 AI 综合成一份简报。核心理念是"Google 聚合编辑，last30days 搜索真实人群"。支持零配置快速启动（Reddit/HN/Polymarket/GitHub 开箱即用），设置向导 30 秒内解锁 X、YouTube、TikTok 等平台。与 Perplexity 等搜索引擎相比，它利用用户自带的 API Key 和浏览器会话打通各平台围墙花园，实现单次搜索覆盖全部平台。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">使用 AI 编程工具的开发者、市场研究员、趋势分析师、新闻工作者、投资研究者、需要快速了解某话题全网热度的任何人。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">B-开发者工具 › Agent技能 › 跨平台信息搜索</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#8</span>
+<a class="repo-name" href="https://github.com/dotnet/aspnetcore" target="_blank">dotnet/aspnetcore</a>
+<div class="card-tagline">微软官方出品的跨平台 Web 框架——构建现代云端 Web 应用的 .NET 基石</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>C#</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>38,279</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+5</strong></span>
+<span class="meta-pill">🍴 Fork 10,858</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">ASP.NET Core 是微软官方开发的跨平台、高性能 Web 框架，用于在 Windows、macOS、Linux 上构建现代云端 Web 应用。它集成了 MVC、Web API、Razor Pages、SignalR（实时通信）、Blazor（前端 C#）等多种开发模式，支持依赖注入、中间件管道、配置管理等企业级特性。基于 .NET 运行时，提供 AOT 编译和出色的性能基准（TechEmpower 基准测试中长期排名前列）。与 Java Spring Boot、Node.js Express 相比，ASP.NET Core 在性能、类型安全和开发效率上均有竞争力，且完全开源。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">企业级 Web 应用开发者、.NET 生态开发者、微服务架构师、需要高性能后端的团队、从 Java/Node.js 考虑迁移的技术决策者。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">D-后端/服务端 › Web框架 › .NET</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#9</span>
+<a class="repo-name" href="https://github.com/microsoft/PowerToys" target="_blank">microsoft/PowerToys</a>
+<div class="card-tagline">微软出品的 Windows 效率工具箱——高级用户的瑞士军刀</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>C++</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>137,087</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+68</strong></span>
+<span class="meta-pill">🍴 Fork 8,364</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">Microsoft PowerToys 是一组免费的系统实用工具集，为 Windows 高级用户提供强大的生产力增强和自定义功能。包含 20+ 个工具：PowerToys Run（快速启动器，类似 Alfred/Raycast）、FancyZones（窗口管理器，自定义分屏布局）、ColorPicker（屏幕取色）、Keyboard Manager（键位重映射）、PowerRename（批量重命名）、File Explorer Add-ons（预览 SVG/Markdown）、Always On Top（窗口置顶）、Text Extractor（OCR 文字提取）等。采用 WinUI 3 / WPF 技术栈，支持 Windows 10/11。与第三方工具拼凑相比，PowerToys 由微软官方维护、质量有保障、更新频繁。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">Windows 高级用户、追求效率的开发者/设计师/运营人员、需要窗口管理和快捷操作的用户、从 macOS 迁移到 Windows 的用户（替代 Alfred/Raycast）。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">I-系统/底层 › Windows工具 › 系统增强</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="rank-badge">#10</span>
+<a class="repo-name" href="https://github.com/ansible/ansible" target="_blank">ansible/ansible</a>
+<div class="card-tagline">极简 IT 自动化平台——用接近自然语言的方式自动化一切运维操作</div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="meta-pill">主语言：<strong>Python</strong></span>
+<span class="meta-pill">⭐ 总计 <strong>69,858</strong></span>
+<span class="meta-pill star-today">今日新增 <strong>+20</strong></span>
+<span class="meta-pill">🍴 Fork 24,248</span>
+</div>
+<div class="section-title">详细介绍</div>
+<p class="card-desc">Ansible 是一个极简的 IT 自动化平台，让应用程序和系统的部署、维护变得简单。它通过 SSH 进行无 Agent（agentless）远程管理——无需在目标机器上安装客户端，使用接近自然语言的 YAML 描述配置（Playbooks）。覆盖从代码部署、网络配置到云管理的全部运维场景，拥有庞大的模块生态（数千个社区模块）和 Ansible Galaxy 角色市场。与 Chef/Puppet 相比，Ansible 的学习曲线最低、上手最快，无 Agent 架构也意味着更少的维护负担。由 Red Hat 维护，是企业级自动化的事实标准之一。</p>
+<div class="section-title">适用领域</div>
+<p class="card-usage">运维工程师、DevOps 团队、云基础设施管理者、网络自动化工程师、需要批量管理服务器的技术团队、从手动运维转向自动化运维的组织。</p>
+<div class="section-title">知识归类</div>
+<span class="classification">E-基础设施/DevOps › 自动化运维 › 配置管理</span>
+</div>
+</div>
+
+<div class="table-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>#1</strong></td>
+<td><a href="https://github.com/huggingface/speech-to-speech" target="_blank">huggingface/speech-to-speech</a></td>
+<td class="lang-badge">Python</td>
+<td class="star-cell">+627</td>
+<td>A-语音Agent</td>
+</tr>
+<tr>
+<td><strong>#2</strong></td>
+<td><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft/AI-For-Beginners</a></td>
+<td class="lang-badge">Python</td>
+<td class="star-cell">+115</td>
+<td>L-AI教程</td>
+</tr>
+<tr>
+<td><strong>#3</strong></td>
+<td><a href="https://github.com/paperswithbacktest/awesome-systematic-trading" target="_blank">paperswithbacktest/awesome-systematic-trading</a></td>
+<td class="lang-badge">Python</td>
+<td class="star-cell">+628</td>
+<td>L-量化交易</td>
+</tr>
+<tr>
+<td><strong>#4</strong></td>
+<td><a href="https://github.com/different-ai/openwork" target="_blank">different-ai/openwork</a></td>
+<td class="lang-badge">TypeScript</td>
+<td class="star-cell">+916</td>
+<td>B-AI协作平台</td>
+
+<tr>
+<td><strong>#5</strong></td>
+<td><a href="https://github.com/WhiskeySockets/Baileys" target="_blank">WhiskeySockets/Baileys</a></td>
+<td class="lang-badge">TypeScript</td>
+<td class="star-cell">+12</td>
+<td>D-即时通讯API</td>
+</tr>
+<tr>
+<td><strong>#6</strong></td>
+<td><a href="https://github.com/pascalorg/editor" target="_blank">pascalorg/editor</a></td>
+<td class="lang-badge">TypeScript</td>
+<td class="star-cell">+617</td>
+<td>C-3D建筑编辑器</td>
+</tr>
+<tr>
+<td><strong>#7</strong></td>
+<td><a href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a></td>
+<td class="lang-badge">Python</td>
+<td class="star-cell">+377</td>
+<td>B-Agent搜索技能</td>
+</tr>
+<tr>
+<td><strong>#8</strong></td>
+<td><a href="https://github.com/dotnet/aspnetcore" target="_blank">dotnet/aspnetcore</a></td>
+<td class="lang-badge">C#</td>
+<td class="star-cell">+5</td>
+<td>D-Web框架</td>
+</tr>
+<tr>
+<td><strong>#9</strong></td>
+<td><a href="https://github.com/microsoft/PowerToys" target="_blank">microsoft/PowerToys</a></td>
+<td class="lang-badge">C++</td>
+<td class="star-cell">+68</td>
+<td>I-Windows工具</td>
+</tr>
+<tr>
+<td><strong>#10</strong></td>
+<td><a href="https://github.com/ansible/ansible" target="_blank">ansible/ansible</a></td>
+<td class="lang-badge">Python</td>
+<td class="star-cell">+20</td>
+<td>E-自动化运维</td>
+</tr>
+</tr></tbody>
+</table>
+</div>
+</div>
+<footer>
+<p>📰 <strong>GitHub 热点日报</strong> · 数据来源：<a href="https://github.com/trending?since=daily" target="_blank">GitHub Trending</a> · 2026-07-31</p>
+<p style="margin-top:6px;">本报告由自动化脚本抓取真实数据生成，项目介绍基于仓库 README 整理。</p>
+</footer>
+</body>
+</html>

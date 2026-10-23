@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-21</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+  line-height: 1.7;
+}
+/* Fixed Nav */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: #24292e;
+  color: #fff;
+  padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.navbar .nav-title { font-size: 16px; font-weight: 700; letter-spacing: 1px; }
+.navbar .nav-date { font-size: 14px; color: #8b949e; }
+.container { max-width: 900px; margin: 0 auto; padding: 70px 20px 40px; }
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 48px 36px;
+  text-align: center;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(36,41,46,.3);
+}
+.hero h1 { font-size: 30px; margin-bottom: 8px; }
+.hero .date { font-size: 18px; opacity: .9; margin-bottom: 6px; }
+.hero .subtitle { font-size: 15px; opacity: .75; }
+/* Summary */
+.summary {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  border-left: 5px solid #2da44e;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+.summary p { font-size: 15px; }
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 0 20px 0;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  overflow: hidden;
+  border-left: 5px solid #24292e;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+.card-header {
+  background: linear-gradient(135deg, #f0f3f6, #e9ecef);
+  padding: 18px 24px;
+  border-bottom: 1px solid #d8dee4;
+}
+.card-rank {
+  display: inline-block; background: #24292e; color: #fff;
+  font-size: 13px; font-weight: 700; padding: 2px 10px;
+  border-radius: 4px; margin-right: 8px; vertical-align: middle;
+}
+.card-title {
+  display: inline; font-size: 20px; font-weight: 700;
+}
+.card-title a { color: #0969da; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-lang {
+  display: inline-block; font-size: 12px; color: #57606a;
+  background: #eaeef2; padding: 2px 8px; border-radius: 12px;
+  margin-left: 8px; vertical-align: middle;
+}
+.card-body { padding: 16px 24px 0; }
+.card-stars {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  margin-bottom: 14px; font-size: 14px;
+}
+.star-badge { display: inline-flex; align-items: center; gap: 4px; }
+.star-badge .star-emoji { font-size: 16px; }
+.star-today { color: #2da44e; font-weight: 700; }
+.star-total { color: #57606a; }
+.card-tagline { font-size: 15px; font-weight: 600; color: #24292e; margin-bottom: 10px; }
+.card-detail { font-size: 14px; color: #444; margin-bottom: 12px; }
+.card-detail strong { color: #24292e; }
+.card-field { font-size: 14px; margin-bottom: 8px; }
+.card-field .label { font-weight: 700; color: #57606a; }
+.card-category {
+  display: inline-block; font-size: 12px; color: #fff;
+  background: #2da44e; padding: 3px 10px; border-radius: 4px;
+  margin-top: 4px;
+}
+/* Table */
+.section-title {
+  font-size: 22px; font-weight: 700; color: #24292e;
+  margin: 40px 0 16px; padding-bottom: 8px;
+  border-bottom: 3px solid #2da44e;
+}
+table {
+  width: 100%; border-collapse: collapse; font-size: 14px;
+  background: #fff; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+th {
+  background: #24292e; color: #fff; padding: 12px 14px;
+  text-align: left; font-weight: 700;
+}
+td { padding: 10px 14px; border-bottom: 1px solid #eaeef2; }
+tr:nth-child(even) td { background: #f8f9fa; }
+tr:hover td { background: #eaf5ec; }
+td.rank { text-align: center; font-weight: 700; color: #2da44e; }
+td.today-stars { text-align: center; color: #2da44e; font-weight: 600; }
+td.lang-cell { color: #57606a; }
+table a { color: #0969da; text-decoration: none; }
+table a:hover { text-decoration: underline; }
+.footer {
+  text-align: center; padding: 32px; color: #8b949e; font-size: 13px;
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 22px; }
+  .card-title { font-size: 17px; }
+  th, td { padding: 8px 6px; font-size: 12px; }
+  .navbar .nav-date { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="nav-title">⭐ GitHub 热点日报</div>
+<div class="nav-date">2026-07-21</div>
+</div>
+<div class="container">
+
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 21 日（周二）</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+
+<div class="summary">
+<p><strong>今日风向：</strong>AI / 开发者工具依然霸榜，Top 10 中超过 70% 项目与 AI 编程、Agent 生态直接相关。最大黑马是 <code>oblien/openship</code>（自托管部署平台，日增 1,719 ⭐）和 <code>every-app/open-seo</code>（Semrush 开源替代，日增 983 ⭐），两者均非 AI 赛道却杀入前列。语音赛道也值得关注——<code>voicebox</code>（AI 语音工作室）和 <code>moonshine</code>（低延迟语音识别）同时上榜，说明语音 AI 正在加速落地。</p>
+</div>
+
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#1</span>
+<span class="card-title"><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205 / code-review-graph</a></span>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +1,876 今日</span>
+<span class="star-badge star-total">总计 23,018</span>
+<span class="star-badge">🍴 2,268 forks</span>
+</div>
+<p class="card-tagline">本地优先的代码知识图谱工具，为 AI 编程助手构建持久化代码地图</p>
+<p class="card-detail">解决了 AI 编程工具每次都要重新读取整个代码库的痛点。使用 Tree-sitter 构建代码结构图谱，追踪增量变化，分析变更影响范围，支持 12 种编程语言。通过 MCP 协议与 Claude Code 等 AI 编程工具集成，使 AI 能精准定位相关代码而非全量扫描，大幅提升代码审查和编辑效率。所有数据本地存储，不依赖云服务，基准测试显示可减少 5-10 倍 token 消耗。</p>
+<p class="card-field"><span class="label">适用领域：</span>使用 Claude Code / Cursor 等 AI 编程工具的开发者，管理大型代码库的团队</p>
+<div class="card-category">B-开发者工具 › AI 编程辅助 › 代码知识图谱</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#2</span>
+<span class="card-title"><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw / OmniRoute</a></span>
+<span class="card-lang">TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +1,300 今日</span>
+<span class="star-badge star-total">总计 21,668</span>
+<span class="star-badge">🍴 2,950 forks</span>
+</div>
+<p class="card-tagline">免费开源的 AI 网关：一个端点接入 268+ 供应商、500+ 模型，让 AI 编程零成本</p>
+<p class="card-detail">MIT 协议的 AI 网关项目，一个本地端点即可连接 268 个供应商（其中 50+ 免费），覆盖 Claude、GPT、Gemini、Kimi K3、GLM、DeepSeek 等 500+ 模型。兼容 Claude Code、Codex、Cursor、Cline、Copilot 等主流编程工具。核心亮点是配额感知的自动降级机制和 RTK+Caveman 压缩技术，可节省 15-95% 的 token 消耗。支持 MCP/A2A 协议和多模态，500+ 贡献者共建社区生态。</p>
+<p class="card-field"><span class="label">适用领域：</span>想免费或低成本使用多种 AI 模型进行编程的开发者、AI 编程工具重度用户</p>
+<div class="card-category">B-开发者工具 › AI 网关 › 多模型路由</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#3</span>
+<span class="card-title"><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00 / ai-engineering-from-scratch</a></span>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +846 今日</span>
+<span class="star-badge star-total">总计 40,476</span>
+<span class="star-badge">🍴 6,717 forks</span>
+</div>
+<p class="card-tagline">从零开始的 AI 工程实战教程，每节课产出一个可复用的 AI 组件</p>
+<p class="card-detail">由 Rohit Ghumare（GitHub 50K+ stars 开发者）创建的 AI 工程学习项目。核心理念是「学它、构建它、为他人交付它」，每节课都产出可复用的实际产物——prompt、skill、agent 或 MCP server。内容免费开源，覆盖 AI 工程的完整技术栈，从基础 prompt 工程到 agent 架构再到 MCP 服务器构建。区别于纯理论教程，强调动手产出可部署的实际组件。</p>
+<p class="card-field"><span class="label">适用领域：</span>AI 工程初学者到进阶开发者、希望系统性学习 AI 应用构建的开发者</p>
+<div class="card-category">L-学习资源 › AI 工程教程 › 实战课程</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#4</span>
+<span class="card-title"><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski / agency-agents</a></span>
+<span class="card-lang">Shell</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +744 今日</span>
+<span class="star-badge star-total">总计 134,661</span>
+<span class="star-badge">🍴 21,960 forks</span>
+</div>
+<p class="card-tagline">完整的 AI 代理人格库——从前端大法师到 Reddit 社区忍者，每个角色都是专业专家</p>
+<p class="card-detail">一个开源的 AI Agent 角色合集，每个 Agent 都是一个拥有独特人格、工作流程和交付物的专业角色。覆盖前端开发、社区运营、创意注入、现实校验等多个领域，旨在将 IDE 编程助手变成多角色 AI 代理团队。支持一键安装到 Claude Code、Cursor、Codex、Gemini 等主流工具，并提供原生桌面应用浏览和安装。已有 80K+ stars，Reddit 上引发大量讨论。</p>
+<p class="card-field"><span class="label">适用领域：</span>使用 AI 编程工具的开发者、希望让 AI Agent 扮演不同专业角色的团队</p>
+<div class="card-category">B-开发者工具 › AI Agent 角色 › 人格库</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#5</span>
+<span class="card-title"><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine / voicebox</a></span>
+<span class="card-lang">TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +839 今日</span>
+<span class="star-badge star-total">总计 44,114</span>
+<span class="star-badge">🍴 5,363 forks</span>
+</div>
+<p class="card-tagline">开源本地优先的 AI 语音工作室，支持语音克隆、23 种语言 TTS、全局热键听写</p>
+<p class="card-detail">作为 ElevenLabs 等云端语音服务的免费开源替代方案，Voicebox 支持从几秒音频克隆声音，集成 7 种 TTS 引擎，覆盖 23 种语言。具备 DAW（数字音频工作站）级别的专业语音合成功能，支持全局热键在任何文本框进行语音听写，还能用自定义声音与 AI Agent 对话。所有处理在本地完成，数据隐私有充分保障。</p>
+<p class="card-field"><span class="label">适用领域：</span>内容创作者、播客制作者、需要语音合成/克隆的开发者、注重隐私的用户</p>
+<div class="card-category">A-AI/机器学习 › 语音合成 › 开源 TTS 工作室</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#6</span>
+<span class="card-title"><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang / jcode</a></span>
+<span class="card-lang">Rust</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +612 今日</span>
+<span class="star-badge star-total">总计 9,576</span>
+<span class="star-badge">🍴 1,078 forks</span>
+</div>
+<p class="card-tagline">自称「最智能的代码 Agent 框架」，用 Rust 打造高性能编程智能体</p>
+<p class="card-detail">一个用 Rust 编写的 AI 编程 Agent 框架（agent harness），定位为最智能的代码助手。利用 Rust 的性能优势提供快速、可靠的编程 Agent 运行环境，可读取和编辑代码、执行命令、搜索文件。作为 CLI 工具运行，强调速度和扩展性，旨在成为 Claude Code 等工具的高性能替代方案。</p>
+<p class="card-field"><span class="label">适用领域：</span>偏好 Rust 生态的开发者、追求高性能 AI 编程 Agent 的用户</p>
+<div class="card-category">B-开发者工具 › AI 编程工具 › CLI Agent 框架</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#7</span>
+<span class="card-title"><a href="https://github.com/Robbyant/lingbot-map" target="_blank">Robbyant / lingbot-map</a></span>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +554 今日</span>
+<span class="star-badge star-total">总计 14,172</span>
+<span class="star-badge">🍴 1,480 forks</span>
+</div>
+<p class="card-tagline">前馈式 3D 基础模型，从流式数据中重建三维场景</p>
+<p class="card-detail">一个用于从流式数据（如连续图像/深度流）进行 3D 场景重建的前馈式基础模型。区别于传统的迭代优化方法，采用前馈网络直接输出场景表示，速度更快。适用于机器人导航、AR/VR 场景重建、自动驾驶环境感知等需要实时三维理解的场景。属于计算机视觉领域的前沿研究项目。</p>
+<p class="card-field"><span class="label">适用领域：</span>计算机视觉研究者、机器人/AR/自动驾驶领域开发者</p>
+<div class="card-category">A-AI/机器学习 › 计算机视觉 › 3D 场景重建</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#8</span>
+<span class="card-title"><a href="https://github.com/kvcache-ai/ktransformers" target="_blank">kvcache-ai / ktransformers</a></span>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +448 今日</span>
+<span class="star-badge star-total">总计 18,722</span>
+<span class="star-badge">🍴 1,463 forks</span>
+</div>
+<p class="card-tagline">基于 CPU/GPU 异构计算的 LLM 推理与微调优化框架，低显存也能跑百亿参数大模型</p>
+<p class="card-detail">由 KVCache.AI 团队开发的研发项目，专注通过 CPU-GPU 异构计算实现高效大语言模型推理和微调。核心优势是利用 CPU 内存和算力部署 100B+ 参数的全精度大模型，大幅降低显存门槛。支持长上下文推理加速，利用注意力稀疏性在异构 CPU/GPU 系统上加速长文本处理。相比纯 GPU 方案，在消费级硬件上即可运行 DeepSeek-R1 等超大模型。</p>
+<p class="card-field"><span class="label">适用领域：</span>需要在有限 GPU 资源下本地部署大模型的开发者、AI 基础设施工程师、大模型研究人员</p>
+<div class="card-category">A-AI/机器学习 › LLM 推理框架 › 异构计算</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#9</span>
+<span class="card-title"><a href="https://github.com/KnockOutEZ/wigolo" target="_blank">KnockOutEZ / wigolo</a></span>
+<span class="card-lang">TypeScript</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +695 今日</span>
+<span class="star-badge star-total">总计 2,484</span>
+<span class="star-badge">🍴 144 forks</span>
+</div>
+<p class="card-tagline">为 AI 编程 Agent 提供本地优先网络情报能力的 MCP 服务器，零成本搜索/抓取/爬取</p>
+<p class="card-detail">一个通过 MCP 协议为 AI 编程助手（如 Claude Code）提供网络访问能力的 TypeScript 项目。无需 API 密钥、无需云端服务、每次查询零成本，所有功能在本地运行。支持网页搜索、内容抓取、网站爬取和深度研究四种模式，让 AI 编程 Agent 能自主获取网络信息辅助编码。目前处于公测阶段，增长势头强劲。</p>
+<p class="card-field"><span class="label">适用领域：</span>Claude Code / Cursor 等 MCP 客户端用户、需要 AI Agent 具备网络搜索能力的开发者</p>
+<div class="card-category">B-开发者工具 › MCP 服务器 › 网络情报</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#10</span>
+<span class="card-title"><a href="https://github.com/MoonshotAI/kimi-cli" target="_blank">MoonshotAI / kimi-cli</a></span>
+<span class="card-lang">Python</span>
+</div>
+<div class="card-body">
+<div class="card-stars">
+<span class="star-badge star-today">⭐ +405 今日</span>
+<span class="star-badge star-total">总计 10,212</span>
+<span class="star-badge">🍴 1,217 forks</span>
+</div>
+<p class="card-tagline">月之暗面出品的终端 AI 编程 Agent，可读/改代码、执行命令、搜索文件</p>
+<p class="card-detail">由 Moonshot AI（月之暗面）开发的终端 AI 编程 Agent（Kimi Code CLI）。能读取和编辑代码、执行 shell 命令、搜索文件、抓取网页，完整覆盖软件开发工作流。与 VS Code 集成，支持 shell 命令模式，并配有 Kimi Agent SDK 可将 Agent 运行时嵌入应用。正在进化为 Kimi Code——下一代终端 AI Agent，配合 Kimi K2.5 模型效果最佳。</p>
+<p class="card-field"><span class="label">适用领域：</span>习惯命令行操作的开发者、Moonshot Kimi 生态用户、想要开源终端 AI Agent 的团队</p>
+<div class="card-category">B-开发者工具 › AI 编程工具 › CLI Agent</div>
+</div>
+</div>
+
+<h2 class="section-title">📊 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">#1</td>
+<td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+1,876</td>
+<td>B-开发者工具 › AI 编程辅助</td>
+</tr>
+<tr>
+<td class="rank">#2</td>
+<td><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+1,300</td>
+<td>B-开发者工具 › AI 网关</td>
+</tr>
+<tr>
+<td class="rank">#3</td>
+<td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+846</td>
+<td>L-学习资源 › AI 工程教程</td>
+</tr>
+<tr>
+<td class="rank">#4</td>
+<td><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></td>
+<td class="lang-cell">Shell</td>
+<td class="today-stars">+744</td>
+<td>B-开发者工具 › AI Agent 角色</td>
+</tr>
+<tr>
+<td class="rank">#5</td>
+<td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+839</td>
+<td>A-AI/机器学习 › 语音合成</td>
+</tr>
+<tr>
+<td class="rank">#6</td>
+<td><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang/jcode</a></td>
+<td class="lang-cell">Rust</td>
+<td class="today-stars">+612</td>
+<td>B-开发者工具 › AI 编程工具</td>
+</tr>
+<tr>
+<td class="rank">#7</td>
+<td><a href="https://github.com/Robbyant/lingbot-map" target="_blank">Robbyant/lingbot-map</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+554</td>
+<td>A-AI/机器学习 › 计算机视觉</td>
+</tr>
+<tr>
+<td class="rank">#8</td>
+<td><a href="https://github.com/kvcache-ai/ktransformers" target="_blank">kvcache-ai/ktransformers</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+448</td>
+<td>A-AI/机器学习 › LLM 推理框架</td>
+</tr>
+<tr>
+<td class="rank">#9</td>
+<td><a href="https://github.com/KnockOutEZ/wigolo" target="_blank">KnockOutEZ/wigolo</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+695</td>
+<td>B-开发者工具 › MCP 服务器</td>
+</tr>
+<tr>
+<td class="rank">#10</td>
+<td><a href="https://github.com/MoonshotAI/kimi-cli" target="_blank">MoonshotAI/kimi-cli</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+405</td>
+<td>B-开发者工具 › AI 编程工具</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="section-title">🔥 额外关注（Top 10 之外的热门项目）</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rank">#11</td>
+<td><a href="https://github.com/every-app/open-seo" target="_blank">every-app/open-seo</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+983</td>
+<td>C-前端/Web › SEO 工具</td>
+</tr>
+<tr>
+<td class="rank">#12</td>
+<td><a href="https://github.com/AstrBotDevs/AstrBot" target="_blank">AstrBotDevs/AstrBot</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+330</td>
+<td>A-AI/机器学习 › Agent 框架</td>
+</tr>
+<tr>
+<td class="rank">#13</td>
+<td><a href="https://github.com/topoteretes/cognee" target="_blank">topoteretes/cognee</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+249</td>
+<td>A-AI/机器学习 › AI 记忆平台</td>
+</tr>
+<tr>
+<td class="rank">#14</td>
+<td><a href="https://github.com/PrefectHQ/fastmcp" target="_blank">PrefectHQ/fastmcp</a></td>
+<td class="lang-cell">Python</td>
+<td class="today-stars">+77</td>
+<td>B-开发者工具 › MCP 开发框架</td>
+</tr>
+<tr>
+<td class="rank">#15</td>
+<td><a href="https://github.com/tokio-rs/topcoat" target="_blank">tokio-rs/topcoat</a></td>
+<td class="lang-cell">Rust</td>
+<td class="today-stars">+374</td>
+<td>C-前端/Web › Web 框架</td>
+</tr>
+<tr>
+<td class="rank">#16</td>
+<td><a href="https://github.com/iptv-org/iptv" target="_blank">iptv-org/iptv</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+144</td>
+<td>L-学习资源/其他 › 资源合集</td>
+</tr>
+<tr>
+<td class="rank">#17</td>
+<td><a href="https://github.com/oblien/openship" target="_blank">oblien/openship</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+1,719</td>
+<td>E-基础设施/DevOps › 部署平台</td>
+</tr>
+<tr>
+<td class="rank">#18</td>
+<td><a href="https://github.com/microsoft/Ontology-Playground" target="_blank">microsoft/Ontology-Playground</a></td>
+<td class="lang-cell">TypeScript</td>
+<td class="today-stars">+487</td>
+<td>L-学习资源/其他 › 知识图谱工具</td>
+</tr>
+<tr>
+<td class="rank">#19</td>
+<td><a href="https://github.com/handy-computer/transcribe.cpp" target="_blank">handy-computer/transcribe.cpp</a></td>
+<td class="lang-cell">C++</td>
+<td class="today-stars">+401</td>
+<td>A-AI/机器学习 › 语音识别</td>
+</tr>
+<tr>
+<td class="rank">#20</td>
+<td><a href="https://github.com/moonshine-ai/moonshine" target="_blank">moonshine-ai/moonshine</a></td>
+<td class="lang-cell">C++</td>
+<td class="today-stars">+264</td>
+<td>A-AI/机器学习 › 语音识别</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">📊 数据来源：GitHub Trending (daily) · 抓取时间：2026-07-21 依据公开资料整理 · 每日追踪开源世界脉搏</div>
+</div>
+</body>
+</html>

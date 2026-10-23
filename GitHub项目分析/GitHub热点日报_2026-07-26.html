@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-07-26</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  /* 固定导航栏 */
+  nav.navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: #24292e; color: #fff;
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  }
+  nav.navbar .brand { font-size: 16px; font-weight: 700; letter-spacing: .5px; }
+  nav.navbar .brand span { color: #2da44e; }
+  nav.navbar .date { font-size: 14px; color: #8b949e; }
+
+  /* 封面 */
+  .hero {
+    margin-top: 50px;
+    background: linear-gradient(135deg, #1a1e22 0%, #24292e 40%, #2da44e 120%);
+    color: #fff; text-align: center;
+    padding: 70px 20px 60px;
+  }
+  .hero h1 { font-size: 42px; margin-bottom: 12px; letter-spacing: 1px; }
+  .hero .date { font-size: 20px; color: #7ee787; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 16px; color: #c9d1d9; }
+
+  /* 主体 */
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+
+  /* 开头概览 */
+  .overview {
+    background: #fff; border-radius: 12px; padding: 28px 32px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.08); margin-bottom: 40px;
+    border-left: 5px solid #2da44e;
+  }
+  .overview h2 { font-size: 20px; margin-bottom: 12px; color: #24292e; }
+  .overview p { font-size: 15px; color: #57606a; }
+
+  /* 项目卡片 */
+  .card {
+    background: #fff; border-radius: 12px; margin-bottom: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    overflow: hidden; border-left: 5px solid #2da44e;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  .card-header {
+    padding: 24px 28px 16px;
+    border-bottom: 1px solid #eaecef;
+  }
+  .card-rank {
+    display: inline-block; background: #24292e; color: #fff;
+    font-size: 13px; font-weight: 700; border-radius: 6px;
+    padding: 3px 12px; margin-bottom: 10px;
+  }
+  .card-title { font-size: 22px; margin-bottom: 8px; }
+  .card-title a {
+    color: #0969da; text-decoration: none; font-weight: 700;
+  }
+  .card-title a:hover { text-decoration: underline; }
+  .card-tagline {
+    font-size: 15px; color: #57606a; font-style: italic;
+    border-left: 3px solid #d0d7de; padding-left: 12px; margin: 8px 0;
+  }
+  .card-meta {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;
+    font-size: 14px;
+  }
+  .meta-item { display: flex; align-items: center; gap: 5px; }
+  .meta-item .lang-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .meta-item .star-icon { color: #e3b341; }
+  .meta-item .today-star {
+    background: #dafbe1; color: #1a7f37; padding: 2px 8px;
+    border-radius: 12px; font-weight: 600;
+  }
+  .card-body { padding: 20px 28px 28px; }
+  .card-body h3 {
+    font-size: 15px; color: #24292e; margin: 18px 0 8px;
+    border-bottom: 1px solid #eaecef; padding-bottom: 4px;
+  }
+  .card-body h3:first-child { margin-top: 0; }
+  .card-body p { font-size: 14px; color: #424a53; margin-bottom: 6px; }
+  .card-body .category {
+    display: inline-block; background: #ddf4ff; color: #0969da;
+    font-size: 12px; padding: 3px 12px; border-radius: 12px; font-weight: 600;
+  }
+
+  /* 速览表 */
+  .summary { margin-top: 40px; }
+  .summary h2 { font-size: 24px; margin-bottom: 20px; text-align: center; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  }
+  thead { background: #24292e; color: #fff; }
+  th { padding: 14px 16px; text-align: left; font-weight: 600; }
+  td { padding: 12px 16px; border-bottom: 1px solid #eaecef; }
+  tbody tr:nth-child(even) { background: #f6f8fa; }
+  tbody tr:hover { background: #eaeef2; }
+  td .rank-badge {
+    display: inline-block; background: #2da44e; color: #fff;
+    font-weight: 700; padding: 2px 8px; border-radius: 6px; font-size: 13px;
+  }
+  td a { color: #0969da; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  /* 语言颜色 */
+  .lang-Swift { background: #F05138; }
+  .lang-JavaScript { background: #f1e05a; }
+  .lang-Rust { background: #dea584; }
+  .lang-TypeScript { background: #3178c6; }
+  .lang-Go { background: #00ADD8; }
+  .lang-Python { background: #3572A5; }
+  .lang-Java { background: #b07219; }
+  .lang-Kotlin { background: #A97BFF; }
+  .lang-Jupyter-Notebook { background: #DA5B0B; }
+  .lang-CPP { background: #f34b7d; }
+
+  footer {
+    text-align: center; padding: 40px 20px; color: #8b949e; font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .container { padding: 20px 12px; }
+    .card-header, .card-body { padding: 16px; }
+    .card-title { font-size: 18px; }
+    th, td { padding: 8px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand">📰 GitHub <span>热点日报</span></div>
+<div class="date">2026-07-26</div>
+</nav>
+<section class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 7 月 26 日</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</section>
+<div class="container">
+
+<div class="overview">
+<h2>📊 今日榜单风向</h2>
+<p>今日榜单最大的主题是「AI Agent 生态工具」——从 Agent 浏览器（ego-lite）、Agent 协作工作区（Buzz）、Agent 编程 GUI（t3code）到 Agent 设计质量检测（impeccable），AI Agent 的工具链正在全面爆发。<strong>开发者工具类项目占了 6 席</strong>，是今日最强品类。黑马方面，去中心化蓝牙聊天 <strong>bitchat 以 +1,198 今日星标登顶 #1</strong>，超越了连续三天霸榜的 Buzz；开源可视化 CMS <strong>Instatic 上榜即斩获 +892 星</strong>，势头猛烈。另外 Node.js 运行时和 DBeaver 替代品 Chat2DB 等基础设施项目也稳定上榜。</p>
+</div>
+
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #1</span>
+<div class="card-title"><a href="https://github.com/permissionlesstech/bitchat" target="_blank">permissionlesstech / bitchat</a></div>
+<div class="card-tagline">去中心化蓝牙网状网络聊天应用，无需账号、无需网络的 IRC 风格即时通讯</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-Swift"></span> Swift</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 29,352</span>
+<span class="meta-item today-star">🔥 今日 +1,198</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>BitChat 是一款双传输层架构的去中心化消息应用：本地使用蓝牙低功耗（BLE）Mesh 网络实现离线通讯，互联网环境下通过 Nostr 协议实现全球通讯。无需账号、无需手机号、无需中央服务器，隐私优先设计。</p>
+<p>蓝牙层采用 Noise 协议端到端加密并支持多跳中继（最多 7 跳）；Nostr 层使用 NIP-17 加密和 290+ 全球中继网络。支持基于 geohash 的地理频道（从街区到国家级别），三击紧急擦除所有数据，LZ4 消息压缩和自适应电池模式。原生支持 iOS 和 macOS，界面采用 IRC 风格命令（/slap、/msg、/who）。</p>
+<h3>适用领域</h3>
+<p>注重隐私的通讯用户、处于网络受限或断网环境的人群（抗议、灾区、偏远地区）、去中心化通讯技术爱好者、比特币/Nostr 生态开发者</p>
+<h3>知识归类</h3>
+<p><span class="category">G-安全 › 去中心化通讯 › 蓝牙Mesh网络</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #2</span>
+<div class="card-title"><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs / ego-lite</a></div>
+<div class="card-tagline">为 AI Agent 打造的最快浏览器自动化工具——你浏览网页时 Agent 在并行工作</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-JavaScript"></span> JavaScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 4,064</span>
+<span class="meta-item today-star">🔥 今日 +898</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>ego lite 是一款从零开始为"人与 AI Agent 共享"设计的浏览器。与 browser-use 等自动化框架不同，它本身就是浏览器——Agent 在自己的隔离 Space 中运行多个任务，而你的标签页始终不受干扰。</p>
+<p>核心亮点：基于 JavaScript 函数调用而非 CLI 模式，复杂任务速度提升 2.5 倍且 Token 消耗更少；每个 Agent 拥有完全隔离的 Space（独立工作区）；通过 ego-browser 技能层桥接任何 Agent CLI（Claude Code、Codex、Cursor 等）；可迁移 Chrome 数据（登录态、Cookie、扩展）。目前在 macOS 上可用，Windows 和 Linux 在路线图中。</p>
+<h3>适用领域</h3>
+<p>使用 AI Agent 进行浏览器自动化的开发者、需要并行运行多个 Agent 任务的重度用户、注重隐私和效率的自动化工程师</p>
+<h3>知识归类</h3>
+<p><span class="category">B-开发者工具 › AI 浏览器 › 人机并行</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #3</span>
+<div class="card-title"><a href="https://github.com/block/buzz" target="_blank">block / buzz</a></div>
+<div class="card-tagline">人类与 AI Agent 共享的协作工作区，基于自托管 Nostr 中继</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-Rust"></span> Rust</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 12,671</span>
+<span class="meta-item today-star">🔥 今日 +1,705</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Buzz 由 Block（原 Square）团队开发，是一个自托管的工作空间平台，核心设计理念是"Agent 是成员，不是机器人"——人与 AI Agent 共享同一频道、同一个事件日志。底层基于 Nostr 协议，每条消息、代码补丁、工作流步骤都以签名事件形式存储在同一审计链中，无论作者是人还是进程。</p>
+<p>Agent 拥有独立的密钥对和身份，可以打开代码库、发送补丁、运行 CI、审查代码、编辑画布，享有与人类团队成员相同的能力表面。桌面端基于 Tauri + React，支持 macOS / Linux / Windows。提供 buzz-cli（Agent 优先的 JSON 接口）和 ACP 框架（支持 Goose/Codex/Claude Code）。</p>
+<h3>适用领域</h3>
+<p>需要深度集成 AI Agent 到日常开发协作流程的技术团队、追求统一审计轨迹的合规导向组织、自托管优先的隐私敏感型企业</p>
+<h3>知识归类</h3>
+<p><span class="category">B-开发者工具 › AI 协作平台 › 人机协作工作区</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #4</span>
+<div class="card-title"><a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg / t3code</a></div>
+<div class="card-tagline">AI 编码 Agent 的极简 Web GUI——为 Codex、Claude、Cursor 等提供统一界面</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-TypeScript"></span> TypeScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 14,932</span>
+<span class="meta-item today-star">🔥 今日 +202</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>T3 Code 是一个极简的 Web GUI，用于管理和驱动各类 AI 编码 Agent（目前支持 Codex、Claude、Cursor、OpenCode，更多即将支持）。由知名开发者/YouTuber Theo（t3dotgg）开发，是 T3 生态的一部分（与 create-t3-app、t3.chat 同系列）。</p>
+<p>核心理念是"一个界面管理所有 AI 编码工具"，让你不必在多个终端窗口和 Agent 之间切换。项目完全开源，基于 TypeScript 构建，专为喜欢在浏览器中操作 AI Agent 的开发者设计。与同类工具的区别在于其极简设计和对多种 Agent 的统一抽象。</p>
+<h3>适用领域</h3>
+<p>同时使用多种 AI 编码 Agent 的开发者、偏好 Web 界面而非终端的 AI 辅助编程用户、T3 Stack 生态用户</p>
+<h3>知识归类</h3>
+<p><span class="category">B-开发者工具 › AI 编程工具 › Agent GUI 管理器</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #5</span>
+<div class="card-title"><a href="https://github.com/CoreBunch/Instatic" target="_blank">CoreBunch / Instatic</a></div>
+<div class="card-tagline">Webflow/Framer/WordPress 的开源替代品——自托管可视化 CMS，输出纯净静态页面</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-TypeScript"></span> TypeScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 5,386</span>
+<span class="meta-item today-star">🔥 今日 +892</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Instatic 是一款自托管可视化 CMS，一个 Bun 服务器承载整个网站生命周期：可视化画布编辑器、内容引擎、媒体管理、认证、表单、插件和发布器。最大亮点是输出纯净的语义化 HTML 和精简 CSS——没有框架运行时、没有编辑器残留标记、没有 div 嵌套地狱，页面像静态文件一样加载。</p>
+<p>内置 Core Framework 设计令牌引擎（颜色色阶自动生成、流式数学排版比例、间距节奏系统）。支持可视化组件（带类型参数和命名插槽）、循环渲染、表单自建（提交数据进入自有数据表）、AI Agent 直接在画布上构建页面（支持 Claude/OpenAI/Ollama）。插件运行在 QuickJS-WASM 沙箱中，零文件系统/网络权限除非显式授权。</p>
+<h3>适用领域</h3>
+<p>WordPress 开发者迁移到现代技术栈、需要自托管建站平台的小团队和个人、注重输出代码质量的 Web 开发者、WordPress 生态用户（Core Framework 已有大量 WP 用户）</p>
+<h3>知识归类</h3>
+<p><span class="category">C-前端/Web › 可视化 CMS › 自托管建站</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #6</span>
+<div class="card-title"><a href="https://github.com/yorukot/superfile" target="_blank">yorukot / superfile</a></div>
+<div class="card-tagline">精致现代的终端文件管理器，Go 编写</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-Go"></span> Go</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 19,973</span>
+<span class="meta-item today-star">🔥 今日 +586</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>一款用 Go 编写的终端文件管理器，界面精致现代，操作流畅。支持 macOS、Linux、Windows 全平台（Windows 尚不完全支持）。提供插件系统、丰富的自定义主题、完全可配置的热键（支持 Vim 风格快捷键），安装仅需一行命令。内置自动更新检查功能。</p>
+<p>与传统的命令行文件操作（cd / ls / mv）相比，superfile 提供了可视化的双面板操作体验，大幅提升终端下的文件管理效率。通过 Warp 终端赞助，社区活跃，支持 Winget / Scoop / Homebrew 等多种安装方式。</p>
+<h3>适用领域</h3>
+<p>终端重度用户、Vim/Neovim 使用者、追求键盘操作效率的开发者和系统管理员</p>
+<h3>知识归类</h3>
+<p><span class="category">B-开发者工具 › 终端工具 › 文件管理器</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #7</span>
+<div class="card-title"><a href="https://github.com/nodejs/node" target="_blank">nodejs / node</a></div>
+<div class="card-tagline">Node.js JavaScript 运行时——基于 V8 引擎构建的服务端 JavaScript 平台</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-JavaScript"></span> JavaScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 118,403</span>
+<span class="meta-item today-star">🔥 今日 +37</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Node.js 是基于 Chrome V8 引擎构建的 JavaScript 运行时，是服务端 JavaScript 生态的基石。自 2009 年由 Ryan Dahl 发布以来，Node.js 已成为全球最流行的服务端运行时之一，驱动着无数 Web 应用、API 服务、构建工具和桌面应用（Electron）。</p>
+<p>核心贡献者包括 Ryan Dahl（原作者）、Ben Noordhuis、Isaac Z. Schlueter 等知名开发者。项目由 OpenJS Foundation 管理，拥有庞大的包管理生态 npm（200 万+ 包）。持续迭代中，近年引入了原生 ESM 支持、Worker Threads、Fetch API、Test Runner 等现代特性。</p>
+<h3>适用领域</h3>
+<p>Web 后端开发者、API 服务构建者、工具链开发者、全栈 JavaScript 开发者、需要事件驱动异步 I/O 的应用场景</p>
+<h3>知识归类</h3>
+<p><span class="category">D-后端/服务端 › 运行时 › JavaScript 运行时</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #8</span>
+<div class="card-title"><a href="https://github.com/OtterMind/Chat2DB" target="_blank">OtterMind / Chat2DB</a></div>
+<div class="card-tagline">AI 驱动的数据库工具和 SQL 客户端——支持 30+ 数据库的智能数据库管理平台</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-Java"></span> Java</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 26,910</span>
+<span class="meta-item today-star">🔥 今日 +399</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Chat2DB 是一款 AI 驱动的跨平台数据库客户端，支持 MySQL、PostgreSQL、Oracle、SQL Server、ClickHouse、MongoDB、Redis、SQLite、MariaDB、TiDB、Hive、DB2、Snowflake、BigQuery 等 30+ 种数据库。核心功能包括：完整的 SQL 工作区（编辑、补全、格式化、执行、历史记录）、AI 助手（自然语言生成/解释/优化 SQL，支持接入自有 AI 模型）。</p>
+<p>还提供可视化数据管理（表结构 DDL/DML、原地编辑数据）、数据导入导出、仪表盘和图表、ER 图、开源 CLI 带 MCP 支持。安全方面使用 AES-256-GCM 加密存储数据源密码和 AI API 密钥。社区版完全免费，桌面应用支持 Windows/macOS/Linux，也可通过 Docker 部署 Web 版。</p>
+<h3>适用领域</h3>
+<p>需要管理多种数据库的 DBA、数据分析师、后端开发者、需要 AI 辅助编写和优化 SQL 的数据团队、从 Navicat/DBeaver 迁移的用户</p>
+<h3>知识归类</h3>
+<p><span class="category">F-数据/数据库 › 数据库工具 › AI SQL 客户端</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #9</span>
+<div class="card-title"><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus / impeccable</a></div>
+<div class="card-tagline">让 AI 编码 Agent 更擅长设计的技能框架——1 个技能、23 个命令、60 条检测规则</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-JavaScript"></span> JavaScript</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 50,316</span>
+<span class="meta-item today-star">🔥 今日 +471</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Impeccable 是一套面向 AI 编码 Agent 的设计指导框架，解决"AI 生成的 UI 都长一样"的问题——每个模型都在同样的 SaaS 模板上训练，不加引导就会产出千篇一律的设计（Inter 字体、紫蓝渐变、卡片嵌套、灰底彩字、圆角方块图标）。</p>
+<p>核心包含三部分：一套初始化流程（/impeccable init 生成 PRODUCT.md 和 DESIGN.md）；23 个设计命令（polish/audit/critique/distill/animate/bolder/quieter 等）；60 条确定性检测规则（纯 CLI 运行，无需 LLM 或 API Key）。支持 Claude Code、Cursor、Codex、Gemini CLI、GitHub Copilot、Grok Build 等 13+ 种工具。提供浏览器扩展实时迭代和设计 Hook（在编辑 UI 文件时自动运行检测）。</p>
+<h3>适用领域</h3>
+<p>使用 AI 编码工具构建前端界面的开发者、关注 AI 生成 UI 设计质量的团队、前端设计系统维护者、AI Agent 工作流优化者</p>
+<h3>知识归类</h3>
+<p><span class="category">A-AI/机器学习 › AI 编程设计 › 设计质量检测</span></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">排名 #10</span>
+<div class="card-title"><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder / Kronos</a></div>
+<div class="card-tagline">金融市场 K 线数据的开源基础模型——首个金融蜡烛图 Foundation Model</div>
+<div class="card-meta">
+<span class="meta-item"><span class="lang-dot lang-Python"></span> Python</span>
+<span class="meta-item"><span class="star-icon">⭐</span> 总计 33,984</span>
+<span class="meta-item today-star">🔥 今日 +322</span>
+</div>
+</div>
+<div class="card-body">
+<h3>详细介绍</h3>
+<p>Kronos 是首个专门为金融市场 K 线（蜡烛图）序列数据预训练的开源 Foundation Model，在 45+ 全球交易所的数据上训练。采用两阶段框架：先通过专用 Tokenizer 将连续的 OHLCV 多维数据量化为分层离散 Token，再用大型自回归 Transformer 在这些 Token 上预训练。</p>
+<p>提供 mini（4.1M）/ small（24.7M）/ base（102.3M）三个开源模型版本，支持预测、分类、异常检测等多种量化任务，已被 AAAI 2026 接收。提供完整的 Qlib 微调和回测管线，支持多 GPU 训练和概率性预测。论文作者来自清华大学相关团队。</p>
+<h3>适用领域</h3>
+<p>量化交易研究员、金融数据科学家、需要时间序列预测的金融科技团队、AI for Finance 学术研究者</p>
+<h3>知识归类</h3>
+<p><span class="category">A-AI/机器学习 › 量化交易 › 金融基础模型</span></p>
+</div>
+</div>
+
+<div class="summary">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="rank-badge">#1</span></td>
+<td><a href="https://github.com/permissionlesstech/bitchat" target="_blank">permissionlesstech/bitchat</a></td>
+<td>Swift</td>
+<td>+1,198</td>
+<td>G-安全 › 去中心化通讯</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#2</span></td>
+<td><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs/ego-lite</a></td>
+<td>JavaScript</td>
+<td>+898</td>
+<td>B-开发者工具 › AI 浏览器</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#3</span></td>
+<td><a href="https://github.com/block/buzz" target="_blank">block/buzz</a></td>
+<td>Rust</td>
+<td>+1,705</td>
+<td>B-开发者工具 › AI 协作平台</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#4</span></td>
+<td><a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg/t3code</a></td>
+<td>TypeScript</td>
+<td>+202</td>
+<td>B-开发者工具 › Agent GUI</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#5</span></td>
+<td><a href="https://github.com/CoreBunch/Instatic" target="_blank">CoreBunch/Instatic</a></td>
+<td>TypeScript</td>
+<td>+892</td>
+<td>C-前端/Web › 可视化 CMS</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#6</span></td>
+<td><a href="https://github.com/yorukot/superfile" target="_blank">yorukot/superfile</a></td>
+<td>Go</td>
+<td>+586</td>
+<td>B-开发者工具 › 终端工具</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#7</span></td>
+<td><a href="https://github.com/nodejs/node" target="_blank">nodejs/node</a></td>
+<td>JavaScript</td>
+<td>+37</td>
+<td>D-后端/服务端 › 运行时</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#8</span></td>
+<td><a href="https://github.com/OtterMind/Chat2DB" target="_blank">OtterMind/Chat2DB</a></td>
+<td>Java</td>
+<td>+399</td>
+<td>F-数据/数据库 › AI SQL 客户端</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#9</span></td>
+<td><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a></td>
+<td>JavaScript</td>
+<td>+471</td>
+<td>A-AI/机器学习 › AI 编程设计</td>
+</tr>
+<tr>
+<td><span class="rank-badge">#10</span></td>
+<td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td>
+<td>Python</td>
+<td>+322</td>
+<td>A-AI/机器学习 › 量化交易</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer>
+<p>📰 GitHub 热点日报 · 数据来源：GitHub Trending (daily) · 自动化生成于 2026-07-26</p>
+</footer>
+</body>
+</html>

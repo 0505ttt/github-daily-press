@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-12</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+  line-height: 1.7;
+}
+/* 固定导航栏 */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: #24292e; color: #fff;
+  padding: 12px 30px;
+  display: flex; justify-content: space-between; align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.navbar .nav-title { font-size: 16px; font-weight: 700; letter-spacing: 1px; }
+.navbar .nav-date { font-size: 14px; color: #8b949e; }
+/* 封面 */
+.cover {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff;
+  text-align: center;
+  padding: 70px 30px 60px;
+}
+.cover h1 { font-size: 36px; margin-bottom: 12px; letter-spacing: 2px; }
+.cover .date { font-size: 20px; color: #d0f0d0; margin-bottom: 10px; }
+.cover .subtitle { font-size: 15px; color: #c9d1d9; }
+/* 开头概括 */
+.intro {
+  max-width: 900px; margin: 30px auto; padding: 0 20px;
+  background: #fff; border-radius: 12px; padding: 24px 30px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border-left: 5px solid #2da44e;
+}
+.intro p { font-size: 15px; }
+/* 卡片容器 */
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+/* 项目卡片 */
+.card {
+  background: #fff; border-radius: 12px; margin-bottom: 24px;
+  overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 6px solid #2da44e;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+.card-header { padding: 18px 24px; border-bottom: 1px solid #e1e4e8; }
+.card-rank {
+  display: inline-block; background: #24292e; color: #fff;
+  font-size: 13px; font-weight: 700; padding: 2px 10px; border-radius: 10px;
+  margin-right: 10px;
+}
+.card-title { font-size: 20px; font-weight: 700; color: #0969da; }
+.card-title a { color: #0969da; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-stars { margin-top: 8px; font-size: 13px; color: #57606a; }
+.star-badge {
+  display: inline-block; background: #fff8c5; color: #7d4e01;
+  font-weight: 600; padding: 2px 8px; border-radius: 6px; margin-right: 8px;
+}
+.lang-badge {
+  display: inline-block; background: #ddf4ff; color: #0969da;
+  font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 12px;
+}
+.card-body { padding: 18px 24px; }
+.card-tagline { font-size: 15px; color: #24292e; font-weight: 600; margin-bottom: 10px; font-style: italic; }
+.card-detail { font-size: 14px; color: #424a53; margin-bottom: 12px; }
+.card-section { margin-bottom: 10px; }
+.card-section-label {
+  font-size: 13px; font-weight: 700; color: #2da44e;
+  margin-bottom: 4px;
+}
+.card-section-text { font-size: 14px; color: #424a53; }
+.card-category {
+  font-size: 13px; color: #57606a;
+  background: #f6f8fa; padding: 6px 12px; border-radius: 6px;
+  display: inline-block;
+}
+/* 速览表 */
+.summary { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+.summary h2 {
+  font-size: 22px; color: #24292e; margin-bottom: 16px;
+  border-bottom: 3px solid #2da44e; padding-bottom: 8px;
+}
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+th { background: #24292e; color: #fff; font-size: 13px; padding: 12px 10px; text-align: left; }
+td { font-size: 13px; padding: 10px; border-bottom: 1px solid #e1e4e8; }
+tr:nth-child(even) td { background: #f6f8fa; }
+tr:hover td { background: #e8f5e9; }
+.footer { text-align: center; padding: 30px; color: #8b949e; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<span class="nav-title">📊 GitHub 热点日报</span>
+<span class="nav-date">2026-08-12</span>
+</div>
+
+<div class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="date">2026 年 8 月 12 日</div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+</div>
+
+<div class="intro">
+<p>今日榜单 AI/Agent 赛道继续占据半壁江山——Agent 角色库、Agent 技能框架、Agent 编排平台齐头并进，开发者工具类项目占据 6 席。黑马方面，<strong>stablyai/orca</strong>（并行 Agent 编排 IDE）首日上榜即斩获 +881 stars，<strong>semantica-agi/semantica</strong>（图原生 AI 基础设施）连续两日稳居 Top 2。此外，经典老牌工具 <strong>nvm-sh/nvm</strong> 和数学动画引擎 <strong>3b1b/manim</strong> 回归榜单，为今日增添了几分怀旧色彩。</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#1</span>
+<span class="card-title"><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 143,086 总计</span>
+<span class="star-badge">🔥 +971 今日</span>
+<span class="lang-badge">Shell</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">完整的 AI 代理人格库——从前端大法师到 Reddit 社区忍者，每个角色都是专业专家</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">一个开源的 AI Agent 角色合集，每个 Agent 都是一个拥有独特人格、工作流程和交付物的专业角色。覆盖前端开发、社区运营、创意注入、现实校验等多个领域，旨在将 IDE 编程助手变成多角色 AI 代理团队。支持一键安装到 Claude Code、Cursor、Codex、Gemini 等主流工具，并提供原生桌面应用浏览和安装。已有 14 万+ stars，Reddit 上引发大量讨论。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">使用 AI 编程工具的开发者、希望让 AI Agent 扮演不同专业角色的团队</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">B-开发者工具 › AI Agent 角色 › 人格库</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#2</span>
+<span class="card-title"><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi/semantica</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 4,822 总计</span>
+<span class="star-badge">🔥 +884 今日</span>
+<span class="lang-badge">Python</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">图原生的 AI 上下文基础设施——为 AI 系统提供结构化上下文、因果推理和完整决策溯源</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">Semantica 是一个开源的图原生（Graph-Native）基础设施层，解决 AI Agent 缺乏结构化上下文和决策可审计性的问题。它通过知识图谱摄入企业数据，自动提取实体、关系和语义信息，构建可查询的上下文图谱。核心能力包括：为 LLM/Agent 提供可追溯的推理路径（provenance）、支持因果推理和语义搜索、内置本体引擎让数据具有语义层。与传统向量数据库 RAG 的区别在于：用图谱关系而非向量相似度做检索，决策过程可解释、可审计。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">需要可解释 AI 决策的企业团队、构建 Agent 的开发者、知识图谱/语义搜索方向的工程师、需要决策溯源与合规审计的金融/法律/医疗场景</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">A-AI/机器学习 › 知识图谱 › Agent上下文基础设施</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#3</span>
+<span class="card-title"><a href="https://github.com/nvm-sh/nvm" target="_blank">nvm-sh/nvm</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 94,471 总计</span>
+<span class="star-badge">🔥 +18 今日</span>
+<span class="lang-badge">Shell</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">Node.js 版本管理器——一行命令在多个 Node 版本间切换</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">nvm（Node Version Manager）是一个 POSIX 兼容的 bash 脚本工具，用于在同一台机器上安装和管理多个 Node.js 版本。只需 `nvm install 24` 或 `nvm use 22` 即可在不同版本间无缝切换，支持 LTS 别名、`.nvmrc` 文件自动检测项目所需 Node 版本、离线安装、全局包迁移等实用功能。以纯 shell 脚本实现，无需编译，支持 bash/zsh 等 POSIX 兼容 shell，运行在 Unix、macOS 和 Windows WSL 上。与同类工具相比，nvm 历史最悠久（2014 年起由 OpenJS Foundation 托管），社区生态最完善。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">所有 Node.js / JavaScript 开发者、需要在多个项目间切换不同 Node 版本的团队、需要测试兼容性的库作者</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">B-开发者工具 › Node.js工具 › 版本管理器</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#4</span>
+<span class="card-title"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 86,191 总计</span>
+<span class="star-badge">🔥 +571 今日</span>
+<span class="lang-badge">JavaScript</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">为 AI 编码 Agent 打造的生产级工程技能包——覆盖 DEFINE→SHIP 全生命周期</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">Google 工程师 Addy Osmani 出品的 24 个生产级 Agent 技能集合，把资深工程师的工作流、质量门禁与最佳实践打包成 Agent 可一致遵循的能力。8 个斜杠命令对应开发生命周期：`/spec`、`/plan`、`/build`、`/test`、`/review`、`/webperf`、`/code-simplify`、`/ship`。`/build auto` 可批准一次计划后自动实现每个任务（仍逐个测试驱动提交，遇失败暂停）。技能还会根据当前工作自动激活。通过开放 skills CLI 一键装入 70+ Agent 平台。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">想让 AI 编码助手遵循专业开发流程的开发者和团队、Claude Code/Cursor/Codex 用户、追求 AI 自动化开发效率的组织</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">B-开发者工具 › Agent技能框架 › 工程技能包</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#5</span>
+<span class="card-title"><a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen/daily_stock_analysis</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 62,086 总计</span>
+<span class="star-badge">🔥 +317 今日</span>
+<span class="lang-badge">Python</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">LLM 驱动的多市场股票智能分析系统——多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">这是一个用 LLM 驱动的多市场（A股/美股/港股）股票智能分析系统，整合了多源行情数据、实时新闻抓取、AI 决策看板和自动消息推送。核心亮点是"零成本定时运行"——通过 GitHub Actions 等免费 CI/CD 即可实现每日自动分析，无需服务器。项目结构完整，包含 api、apps、bot、data_provider、strategies 等模块，支持 Longbridge 等券商数据源、飞书/企业微信推送、小红书分享图生成。62K+ stars、52K forks（fork 数极高说明大量用户在自部署）。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">个人投资者和量化爱好者、想用 AI 辅助选股/看盘的散户、关注 A股/美股/港股的中文用户、想零成本搭建自动化行情分析系统的开发者</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">A-AI/机器学习 › 金融应用 › LLM股票分析系统</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#6</span>
+<span class="card-title"><a href="https://github.com/vitali87/code-graph-rag" target="_blank">vitali87/code-graph-rag</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 3,790 总计</span>
+<span class="star-badge">🔥 +339 今日</span>
+<span class="lang-badge">Python</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">面向 Monorepo 的终极 RAG 工具——用知识图谱 + AI 查询、理解和编辑多语言代码库</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">Code-Graph-RAG 用 Tree-sitter 解析多语言代码库，在 Memgraph 中构建代码结构知识图谱，让你能用自然语言查询、编辑和优化代码。核心亮点：统一的图 schema 支持混合语言的 Monorepo，支持实时 watch 模式增量更新图谱，提供 MCP server 集成让 AI Agent 直接调用。项目极其活跃——365 个分支、560 个 Tag、4,660+ commits，版本已迭代到 0.0.584。与同类代码 RAG 的区别在于「知识图谱」而非「向量检索」，关系推理更精确。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">维护大型 Monorepo 的工程团队、需要 AI 深度理解代码结构和依赖关系的开发者、MCP 生态用户、想用自然语言重构和查询复杂代码库的技术团队</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">A-AI/机器学习 › RAG框架 › 代码知识图谱</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#7</span>
+<span class="card-title"><a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 168,078 总计</span>
+<span class="star-badge">🔥 +468 今日</span>
+<span class="lang-badge">Python</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">Anthropic 官方 Agent Skills 仓库——让 Claude 掌握可复用的专业任务能力</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">这是 Anthropic 官方发布的 Agent Skills（智能体技能）公开仓库，展示了 Claude 技能系统的各种可能性。Skills 本质上是包含指令、脚本和资源的文件夹（核心是 SKILL.md 文件），Claude 会动态加载这些技能来提升特定任务的表现。仓库涵盖创意应用（艺术、音乐、设计）、技术任务（Web 应用测试、MCP server 生成）、企业工作流（沟通、品牌）等多种技能集。特别值得注意的是，文档创建与编辑技能（docx/pdf/pptx/xlsx）是 Claude 文档能力的底层实现。技能可在 Claude Code、Claude.ai 和 Claude API 中使用。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">Claude / Claude Code 用户、构建自定义 Agent 技能的开发者、企业团队（需要为 AI 定制品牌规范和工作流技能）、Agent Skills 生态的早期探索者</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">B-开发者工具 › Agent技能框架 › 官方技能库</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#8</span>
+<span class="card-title"><a href="https://github.com/3b1b/manim" target="_blank">3b1b/manim</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 90,139 总计</span>
+<span class="star-badge">🔥 +246 今日</span>
+<span class="lang-badge">Python</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">精确的程序化动画引擎——专为创建数学解释视频而生</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">Manim 是由著名数学科普 YouTuber 3Blue1Brown（Grant Sanderson）开发的程序化数学动画引擎，专门用于创建精确的解释性数学视频。通过 Python 代码定义数学对象和动画，渲染出高质量的教学动画——从函数图像变换到几何证明。核心技术亮点：纯 Python 接口，支持 OpenGL 渲染、FFmpeg 视频输出和 LaTeX 公式排版。注意有两个版本：此仓库（ManimGL）是 3b1b 个人原始版本；2020 年社区 fork 出 Manim Community Edition（更稳定、更易上手）。通过代码精确控制动画每一步，特别适合需要数学精度的可视化内容。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">数学/理工科教育者、数学科普内容创作者、需要精确数学可视化的研究人员、学习 3Blue1Brown 视频背后的技术实现的人</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">L-学习资源/其他 › 数学动画 › 动画引擎</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#9</span>
+<span class="card-title"><a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS/DeepTutor</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 34,661 总计</span>
+<span class="star-badge">🔥 +829 今日</span>
+<span class="lang-badge">Python</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">终身个性化辅导——Agent 原生的 AI 学习工作台</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">DeepTutor 由香港大学数据科学实验室（HKUDS）开发，是一个 Agent 原生的个性化学习工作台，将辅导、解题、测验生成、研究、可视化和掌握练习整合到一个可扩展的系统中。核心亮点：一个 Agent 运行时驱动所有模式（Chat/Quiz/Research/Visualize/Solve/Mastery Path）；多引擎知识库（LlamaIndex、PageIndex、GraphRAG、LightRAG、Obsidian）；三层可检视记忆系统（L1 事件追踪 / L2 表面摘要 / L3 跨面综合）；可连接外部 Agent（Claude Code、Codex、自定义 Partner）作为子代理协作；配套 CLI 和 SDK 支持 Agent 驱动。项目有配套 arXiv 论文，迭代非常活跃。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">学生、终身学习者、需要个性化辅导的自律型学习者；教育平台开发者、AI 辅导系统研究者；需要可自托管的 RAG+Agent 学习环境的教师和学校</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">A-AI/机器学习 › 教育AI › 个性化辅导</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="card-rank">#10</span>
+<span class="card-title"><a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a></span>
+<div class="card-stars">
+<span class="star-badge">⭐ 42,690 总计</span>
+<span class="star-badge">🔥 +881 今日</span>
+<span class="lang-badge">TypeScript</span>
+</div>
+</div>
+<div class="card-body">
+<p class="card-tagline">并行 AI 编码 Agent 的编排平台——用一个界面同时管理你的整个 Agent 舰队</p>
+<div class="card-section">
+<div class="card-section-label">详细介绍</div>
+<p class="card-detail">Orca 是一个 ADE（Agent Development Environment），专为并行运行多个 AI 编码 Agent 而设计。它让你可以同时运行 Claude Code、Codex、OpenCode、Cursor 等任何 CLI 编码 Agent——每个 Agent 在独立的 git worktree 中工作，结果集中在一个界面中追踪和对比。核心功能包括：并行 worktree 编排（一个 prompt 分发给 5 个 Agent 各自跑，比较结果后合并赢家）、移动端伴侣 App、Ghostty 级 WebGL 终端分屏、Design Mode（点击 Chromium 窗口中任意 UI 元素直接送入 Agent prompt）、GitHub 和 Linear 原生集成、SSH 远程 worktree、AI diff 标注。你用自己的订阅，无需额外 API 费用。</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">适用领域</div>
+<p class="card-section-text">同时使用多个 AI 编码 Agent 的资深开发者、追求"100x 开发效率"的团队、需要并行对比多个 Agent 代码产出质量的工程团队</p>
+</div>
+<div class="card-section">
+<div class="card-section-label">知识归类</div>
+<span class="card-category">B-开发者工具 › AI编程工具 › Agent编排IDE</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th>今日 ⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>#1</td><td>msitarzewski/agency-agents</td><td>Shell</td><td>+971</td><td>B-开发者工具 › Agent角色 › 人格库</td></tr>
+<tr><td>#2</td><td>semantica-agi/semantica</td><td>Python</td><td>+884</td><td>A-AI/机器学习 › 知识图谱 › Agent上下文</td></tr>
+<tr><td>#3</td><td>nvm-sh/nvm</td><td>Shell</td><td>+18</td><td>B-开发者工具 › Node.js工具 › 版本管理</td></tr>
+<tr><td>#4</td><td>addyosmani/agent-skills</td><td>JavaScript</td><td>+571</td><td>B-开发者工具 › Agent技能框架 › 工程技能</td></tr>
+<tr><td>#5</td><td>ZhuLinsen/daily_stock_analysis</td><td>Python</td><td>+317</td><td>A-AI/机器学习 › 金融应用 › LLM股票分析</td></tr>
+<tr><td>#6</td><td>vitali87/code-graph-rag</td><td>Python</td><td>+339</td><td>A-AI/机器学习 › RAG框架 › 代码知识图谱</td></tr>
+<tr><td>#7</td><td>anthropics/skills</td><td>Python</td><td>+468</td><td>B-开发者工具 › Agent技能框架 › 官方技能库</td></tr>
+<tr><td>#8</td><td>3b1b/manim</td><td>Python</td><td>+246</td><td>L-学习资源/其他 › 数学动画 › 动画引擎</td></tr>
+<tr><td>#9</td><td>HKUDS/DeepTutor</td><td>Python</td><td>+829</td><td>A-AI/机器学习 › 教育AI › 个性化辅导</td></tr>
+<tr><td>#10</td><td>stablyai/orca</td><td>TypeScript</td><td>+881</td><td>B-开发者工具 › AI编程工具 › Agent编排IDE</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer">数据来源：GitHub Trending (since=daily) · 抓取时间：2026-08-12 依据公开资料整理</div>
+</body>
+</html>

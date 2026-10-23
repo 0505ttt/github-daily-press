@@ -1,0 +1,129 @@
+"""从公开历史构建离线杂志及受限静态站点。"""
+from __future__ import annotations
+
+import hashlib
+import importlib.util
+import json
+import os
+import shutil
+import tempfile
+from pathlib import Path
+
+DATA_DIRS = ("GitHub项目分析", "AI前沿资讯")
+DATA_SUFFIXES = {".html", ".md", ".pdf"}
+
+
+def load_builder(root: Path):
+    spec = importlib.util.spec_from_file_location("gh_daily_magazine_builder", root / "tools/build_magazine.py")
+    if spec is None or spec.loader is None:
+        raise RuntimeError("未找到杂志构建脚本，请从完整项目目录运行。")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def atomic_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, name = tempfile.mkstemp(prefix=".writing-", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as stream:
+            stream.write(text)
+        os.replace(name, path)
+    finally:
+        Path(name).unlink(missing_ok=True)
+
+
+def public_data_files(root: Path):
+    for directory in DATA_DIRS:
+        base = root / directory
+        if not base.exists():
+            continue
+        for file in sorted(base.rglob("*")):
+            if file.is_symlink():
+                raise ValueError("公开数据中存在符号链接，请移除后重建。")
+            if file.is_file() and file.suffix.lower() in DATA_SUFFIXES and file.name != "IDEA.md":
+                yield file
+
+
+def build_site(root: Path) -> dict:
+    root = Path(root).resolve()
+    builder = load_builder(root)
+    db, logs, skipped = builder.build_db()
+    if not db["issues"]:
+        raise ValueError("未解析到任何有效报告，保留上一版产物。")
+    html = builder.render_html(db)
+    json_data = json.dumps(db, ensure_ascii=False, indent=1)
+    stage = Path(tempfile.mkdtemp(prefix="site-", dir=root / ".runtime")) if (root / ".runtime").exists() else None
+    if stage is None:
+        (root / ".runtime").mkdir()
+        stage = Path(tempfile.mkdtemp(prefix="site-", dir=root / ".runtime"))
+    try:
+        for file in public_data_files(root):
+            target = stage / file.relative_to(root)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(file, target)
+        for name in ("补档说明.md", "数据来源.md", "README.md"):
+            if (root / name).is_file():
+                shutil.copyfile(root / name, stage / name)
+        atomic_text(stage / "GitHub项目分析/GitHub热点杂志.html", html)
+        for file in sorted((root / "web").rglob("*")):
+            if file.is_symlink():
+                raise ValueError("网页资源不能使用符号链接。")
+            if file.is_file():
+                target = stage / file.relative_to(root / "web")
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(file, target)
+        atomic_text(stage / "index.html", '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=GitHub项目分析/GitHub热点杂志.html"><title>正在打开杂志</title><a href="GitHub项目分析/GitHub热点杂志.html">打开 GitHub 热点杂志</a></html>')
+        atomic_text(stage / "offline.html", '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>离线阅读</title><h1>当前内容尚未缓存</h1><p>请启动本地服务，连线打开杂志并等待显示“可离线阅读”。</p><a href="/">返回杂志</a></html>')
+        files = []
+        for file in sorted(stage.rglob("*")):
+            if file.is_file():
+                blob = file.read_bytes()
+                files.append({"path": file.relative_to(stage).as_posix(), "sha256": hashlib.sha256(blob).hexdigest(), "size": len(blob)})
+        revision = hashlib.sha256(json.dumps(files, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:24]
+        manifest = {"revision": revision, "generated_at": db["generated_at"], "files": files}
+        atomic_text(stage / "content-version.json", json.dumps({"revision": revision, "generated_at": db["generated_at"]}, ensure_ascii=False))
+        version_file = stage / "content-version.json"
+        blob = version_file.read_bytes()
+        files.append({"path": "content-version.json", "sha256": hashlib.sha256(blob).hexdigest(), "size": len(blob)})
+        serialized = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
+        atomic_text(stage / "content-manifest.json", serialized)
+        from .privacy import scan_paths
+        findings = scan_paths(stage, site_release=True)
+        if findings:
+            raise ValueError("公开站点隐私检查未通过：" + "、".join(sorted({x["path"] for x in findings})[:5]))
+        target = root / "dist"
+        backup = root / ".runtime/previous-dist"
+        updates = {
+            root / "content-manifest.json": serialized,
+            root / "GitHub项目分析/GitHub热点杂志.html": html,
+            root / "tools/_杂志数据.json": json_data,
+        }
+        previous = {path: path.read_text(encoding="utf-8") if path.exists() else None for path in updates}
+        if backup.exists():
+            shutil.rmtree(backup)
+        moved_old = False
+        installed_new = False
+        try:
+            for path, content in updates.items():
+                atomic_text(path, content)
+            if target.exists():
+                os.replace(target, backup)
+                moved_old = True
+            os.replace(stage, target)
+            installed_new = True
+        except BaseException:
+            if installed_new and target.exists():
+                shutil.rmtree(target)
+            if moved_old:
+                os.replace(backup, target)
+            for path, content in previous.items():
+                if content is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    atomic_text(path, content)
+            raise
+        return {"status": "success", "revision": revision, "files": len(files), "meta": db["meta"], "skipped": skipped}
+    finally:
+        if stage.exists():
+            shutil.rmtree(stage)

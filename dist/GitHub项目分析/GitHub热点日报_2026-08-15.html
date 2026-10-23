@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 今日热点 Top 10 — 2026-08-15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background: #f6f8fa; color: #24292e; line-height: 1.7;
+  }
+  /* 固定导航栏 */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #24292e; color: #fff; padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .navbar .brand { font-size: 17px; font-weight: 700; letter-spacing: 1px; }
+  .navbar .brand .octicon { color: #2da44e; margin-right: 6px; }
+  .navbar .date { font-size: 13px; color: #8b949e; }
+  /* 封面 */
+  .cover {
+    margin-top: 46px;
+    background: linear-gradient(135deg, #24292e 0%, #2da44e 130%);
+    color: #fff; text-align: center; padding: 64px 20px 56px;
+  }
+  .cover h1 { font-size: 34px; font-weight: 800; letter-spacing: 1px; }
+  .cover .sub { font-size: 15px; opacity: .92; margin-top: 10px; }
+  .cover .date-pill {
+    display: inline-block; margin-top: 18px; padding: 6px 22px;
+    border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
+    font-size: 14px; background: rgba(255,255,255,.12);
+  }
+  /* 主体 */
+  .container { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
+  .overview {
+    background: #fff; border-radius: 12px; padding: 22px 26px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08); border-left: 5px solid #2da44e;
+    margin-bottom: 34px; font-size: 15px;
+  }
+  .overview h2 { font-size: 18px; margin-bottom: 10px; color: #24292e; }
+  .section-title {
+    font-size: 22px; font-weight: 800; margin: 8px 0 20px;
+    padding-left: 12px; border-left: 5px solid #2da44e;
+  }
+  /* 项目卡片 */
+  .card {
+    background: #fff; border-radius: 12px; margin-bottom: 26px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07); overflow: hidden;
+    border-left: 6px solid #2da44e;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+  .card-head {
+    padding: 18px 24px 14px; border-bottom: 1px solid #eaeef2;
+    display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap;
+  }
+  .rank {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+    background: #24292e; color: #fff; font-size: 20px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .rank.top3 { background: linear-gradient(135deg,#2da44e,#1a7f37); }
+  .card-title { flex: 1; min-width: 220px; }
+  .card-title a {
+    color: #0969da; text-decoration: none; font-size: 20px; font-weight: 700;
+    word-break: break-all;
+  }
+  .card-title a:hover { text-decoration: underline; }
+  .card-title .tagline { font-size: 14px; color: #57606a; margin-top: 2px; }
+  .stars { text-align: right; flex-shrink: 0; }
+  .stars .today { color: #1a7f37; font-weight: 800; font-size: 16px; }
+  .stars .total { color: #57606a; font-size: 13px; }
+  .card-body { padding: 16px 24px 20px; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .chip {
+    font-size: 12.5px; padding: 3px 12px; border-radius: 999px;
+    background: #eef4ff; color: #0969da; font-weight: 600;
+  }
+  .chip.lang { background: #f0fff4; color: #1a7f37; border: 1px solid #b6e5c5; }
+  .chip.cat { background: #fdf6e3; color: #9a6700; border: 1px solid #f0dcb2; }
+  .block { margin-bottom: 14px; }
+  .block:last-child { margin-bottom: 0; }
+  .block h3 {
+    font-size: 14px; color: #2da44e; font-weight: 700; margin-bottom: 4px;
+    letter-spacing: .5px;
+  }
+  .block p { font-size: 14.5px; color: #3b434b; }
+  /* 速览表 */
+  table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border-radius: 10px; overflow: hidden; font-size: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  th {
+    background: #24292e; color: #fff; padding: 11px 14px;
+    text-align: left; font-weight: 700; white-space: nowrap;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid #eaeef2; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  tr:hover td { background: #eef4ff; }
+  td a { color: #0969da; text-decoration: none; font-weight: 600; }
+  td a:hover { text-decoration: underline; }
+  td .st { color: #1a7f37; font-weight: 700; white-space: nowrap; }
+  .footer-note {
+    text-align: center; color: #8b949e; font-size: 13px; margin-top: 40px;
+  }
+  @media (max-width: 640px) {
+    .cover h1 { font-size: 24px; }
+    .card-head { flex-direction: column; }
+    .stars { text-align: left; }
+    table { font-size: 12.5px; }
+    th, td { padding: 8px 8px; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand"><span class="octicon">●</span>GitHub 热点日报</div>
+<div class="date">2026-08-15 · 星期六</div>
+</nav>
+<header class="cover">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="date-pill">数据来源：github.com/trending?since=daily · 2026-08-15</div>
+</header>
+<div class="container">
+<div class="overview">
+<h2>今日风向</h2>
+    今日榜单与昨日高度重合，Top 10 全部是连续上榜的「熟面孔」——<b>diagram-design 三连冠继续霸榜</b>（连续第 3 天 #1，今日再涨 3,651 星，总星数突破 1.7 万）。AI Agent 生态依然是绝对主线：spec-kit（+1,147）、holaOS（+769）、ego-lite、macro 等 Agent 工作空间/编程流程项目占据 6 席；安全赛道 OSINT 双雄 holehe、spiderfoot 连续第二日在榜。值得关注的黑马在榜单后段：<b>semantica 今日新增 +1,183</b>（图原生 AI 基础设施，连续 5 天上榜），老牌项目 rustdesk、ToolJet、unsloth、OpenCut 在 11-17 名稳定输出。
+  </div>
+<h2 class="section-title">今日 Top 10 项目卡片</h2>
+
+<div class="card">
+<div class="card-head">
+<div class="rank top3">1</div>
+<div class="card-title">
+<a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+<div class="tagline">Claude Code 的编辑级图表技能——29 种图表类型，自包含 HTML+SVG</div>
+</div>
+<div class="stars"><div class="today">⭐ +3,651 今日</div><div class="total">总计 17,137</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：HTML/SVG</span>
+<span class="chip cat">C-前端/Web › SVG图表 › AI生成技能</span>
+<span class="chip">连续 3 天 #1</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>Diagram Design 是一个专为 Claude Code、Codex 和 Pi 设计的 Agent 技能，提供 29 种编辑级图表类型（架构图、流程图、时序图、状态机、ER 图、时间线、泳道图、四象限等），输出自包含的 HTML+SVG 文件——无 JS 依赖、无外部图片，浏览器直接打开。每种图表提供极简浅色、极简深色、完整编辑三种变体，还能 60 秒读取你的网站品牌色和字体统一应用到所有图表，并支持导入 draw.io 或 Mermaid 源文件重绘。作者定位明确：「没有 Figma，没有通用圆角框，没有 30 分钟调色」，与 Mermaid 生成千篇一律的模板图形成鲜明对比。上线三天星数破 1.7 万，是目前 Agent Skills 生态最火的项目。</p></div>
+<div class="block"><h3>适用领域</h3><p>内容创作者、技术博主、使用 Claude Code / Codex 的开发者——需要高质量技术图表又不想跟 Figma 较劲的场景。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank top3">2</div>
+<div class="card-title">
+<a href="https://github.com/cactus-compute/needle">cactus-compute/needle</a>
+<div class="tagline">14MB 超微基础模型——为手机、穿戴设备、智能家居和机器人打造</div>
+</div>
+<div class="stars"><div class="today">⭐ +661 今日</div><div class="total">总计 5,568</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：Python</span>
+<span class="chip cat">A-AI/机器学习 › 边缘AI › 超小模型</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>Needle 2 是一个开源的 4500 万参数模型，专为工具调用（tool calling）、设备使用和结构化提取设计，整个模型打包成单个 14MB 二进制文件，完整会话仅需约 28MB 内存。它基于 Cactus Compute 的 Simple Attention Network 研究成果，采用 CQ2-bit 量化压缩并内置推理引擎，权重直接烧入引擎、无需单独模型文件。在基准测试中与 FunctionGemma 270M、LFM2.5 230M 等模型互有胜负，但体积小 5-70 倍；核心特色还包括置信度门控（每个响应携带校准置信分数）、大型工具目录自动检索 Top 5、256 token 滑动窗口确保内存恒定。通过 <code>pip install cactus-needle</code> 即可使用。</p></div>
+<div class="block"><h3>适用领域</h3><p>嵌入式 AI 开发者、物联网/可穿戴设备工程师、需要在边缘设备上运行工具调用的团队、机器人开发者、对超小型模型推理感兴趣的研究人员。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank top3">3</div>
+<div class="card-title">
+<a href="https://github.com/megadose/holehe">megadose/holehe</a>
+<div class="tagline">邮箱注册检测工具——检查邮箱在 Twitter、Instagram 等 120+ 网站是否已注册</div>
+</div>
+<div class="stars"><div class="today">⭐ +427 今日</div><div class="total">总计 12,818</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：Python</span>
+<span class="chip cat">G-安全 › OSINT › 邮箱侦察</span>
+<span class="chip">连续 2 日上榜</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>Holehe 是 OSINT（开源情报）领域的经典工具，通过网站的「忘记密码」功能检查一个邮箱地址是否在 Twitter、Instagram、Imgur 等 120+ 网站上注册了账号。核心原理是利用密码重置流程返回信息的差异判断邮箱是否关联账号，整个过程不会向目标邮箱发送任何邮件（不会惊动被调查者）。支持命令行和 Python 库两种使用方式，也可通过 Docker 部署；基于 Trio 异步框架并行检测，效率高。自 2020 年开源至今已成为邮箱归属调查的事实标准，商业化在线版本 osint.industries 提供托管服务。</p></div>
+<div class="block"><h3>适用领域</h3><p>OSINT 调查人员、安全研究人员、渗透测试工程师、私家调查员、需要做邮箱归属分析的安全团队。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">4</div>
+<div class="card-title">
+<a href="https://github.com/macro-inc/macro">macro-inc/macro</a>
+<div class="tagline">团队统一工作空间——邮件+聊天+文档+任务+Agent+电话+CRM，全部 @ 关联共享 AI 记忆</div>
+</div>
+<div class="stars"><div class="today">⭐ +435 今日</div><div class="total">总计 3,007</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：Rust / TypeScript</span>
+<span class="chip cat">D-后端/服务端 › 协作平台 › AI统一工作空间</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>Macro 是一个统一的团队工作空间，将邮件、聊天、文档、任务、Agent、电话和 CRM 整合到一个快速界面中，所有内容通过 @ 链接互联并共享团队级 AI 记忆，核心理念是「一切可搜索，团队和 Agent 永远不用切换工具」。基于 SolidJS + Rust 构建，由约 15 人团队在 NYC 和 Toronto 开发并内部使用两年。功能模块（Block）包括：多账户统一邮箱（受 Superhuman 启发）、频道消息、Linear 风格任务、基于 CRDT 的实时协作文档、2D Canvas 画板、统一团队级记忆的 Agent、可录制转录的电话、自动导入的文件存储、Pull Request 关联、CRM。最大区别：所有模块共享同一后端，跨引用（文档↔任务、消息↔邮件）原生存储为双向图，而非多个工具的拼接。</p></div>
+<div class="block"><h3>适用领域</h3><p>需要「一站式操作平台」的小型创业团队、想用 AI Agent 增强协作的远程团队、不想在 Slack+Notion+Linear+HubSpot 之间反复切换的公司。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">5</div>
+<div class="card-title">
+<a href="https://github.com/smicallef/spiderfoot">smicallef/spiderfoot</a>
+<div class="tagline">OSINT 自动化引擎——集成 200+ 数据源，自动化威胁情报和攻击面映射</div>
+</div>
+<div class="stars"><div class="today">⭐ +292 今日</div><div class="total">总计 20,917</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：Python</span>
+<span class="chip cat">G-安全 › OSINT › 威胁情报自动化</span>
+<span class="chip">连续 2 日上榜</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>SpiderFoot 是一个成熟的开源情报自动化工具，自 2012 年持续开发至今，已集成超过 200 个模块/数据源，通过内置 Web 服务器提供直观界面，也支持完全的命令行操作。核心功能包括：YAML 可配置的关联引擎（37 条预定义规则）、CSV/JSON/GEXF 导出、API 密钥导入导出、SQLite 后端自定义查询、TOR 集成（暗网搜索）、可视化图表、Docker 部署，还能调用 DNSTwist、Whatweb、Nmap、CMSeeK 等外部工具。与 holehe 这类单点工具不同，SpiderFoot 强调「自动化关联」：把散落的情报源串成攻击面全景图。商业化版本 SpiderFoot HX 提供云端托管、攻击面监控、多用户协作等高级功能。</p></div>
+<div class="block"><h3>适用领域</h3><p>安全分析师和威胁情报团队、红队/渗透测试工程师、企业攻击面管理、安全合规审计、OSINT 研究者。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">6</div>
+<div class="card-title">
+<a href="https://github.com/citrolabs/ego-lite">citrolabs/ego-lite</a>
+<div class="tagline">让 AI Agent 并行工作的浏览器——把你的登录态共享给 Agent，互不打扰</div>
+</div>
+<div class="stars"><div class="today">⭐ +153 今日</div><div class="total">总计 10,324</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：JavaScript</span>
+<span class="chip cat">B-开发者工具 › AI浏览器 › 人机并行</span>
+<span class="chip">回归上榜 · 总星破 1 万</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>ego lite 是一款从零开始为「人与 AI Agent 共享」设计的浏览器，号称面向 AI Agent 自动化最快的浏览器。与 browser-use 等自动化框架不同，它本身就是浏览器——Agent 在自己的隔离 Space 中运行多个任务，而你的标签页始终不受干扰。核心亮点：基于 JavaScript 函数调用而非 CLI 模式，复杂任务速度提升 2.5 倍且 Token 消耗更少；每个 Agent 拥有完全隔离的工作区；通过 ego-browser 技能层桥接任何 Agent CLI（Claude Code、Codex、Cursor 等）；可迁移 Chrome 数据（登录态、Cookie、扩展）。7 月底首次上榜后经过半个月发酵，总星数已从 4 千冲破 1 万，目前 macOS 可用，Windows 和 Linux 在路线图中。</p></div>
+<div class="block"><h3>适用领域</h3><p>使用 AI Agent 进行浏览器自动化的开发者、需要并行运行多个 Agent 任务的重度用户、注重隐私和效率的自动化工程师。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">7</div>
+<div class="card-title">
+<a href="https://github.com/holaboss-ai/holaOS">holaboss-ai/holaOS</a>
+<div class="tagline">开源全能 AI Agent 工作空间——运行任意 Agent，跨工具/应用/浏览器/文件，共享记忆</div>
+</div>
+<div class="stars"><div class="today">⭐ +769 今日</div><div class="total">总计 7,249</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：TypeScript</span>
+<span class="chip cat">B-开发者工具 › Agent工作空间 › 本地优先</span>
+<span class="chip">连续 2 日上榜</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>holaOS 是一个开源的 All-in-One AI Agent 工作空间，核心理念是「The Computer for You and Your Agent」。它让你在同一个本地优先的工作空间中运行任意 Agent（Claude Code、Codex 或内置 holaOS Agent），跨你的工具、文件和应用共享同一套记忆。核心差异化能力：共享记忆层（上下文、偏好、项目历史存储为本地纯文件，可读可编辑），所有 Agent 继承相同连接和技能；100+ 集成（Gmail、Notion、Slack、GitHub、Linear 等）一键 OAuth 连接；MCP 协议支持；HolaApps——安装的 App 作为真实交互界面（不只是聊天）与 Agent 并排运行；内置前沿模型（Kimi K3、GLM 5.2、GPT 5.6 等）或 BYOK；支持定时/触发器自动化。基于 Electron + TypeScript 构建。</p></div>
+<div class="block"><h3>适用领域</h3><p>需要多 Agent 协同工作的开发者/团队、想统一管理 Claude Code / Codex 等编程 Agent 的用户、需要 Agent 跨工具操作的团队、对 AI 工作空间感兴趣的个人用户。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">8</div>
+<div class="card-title">
+<a href="https://github.com/github/spec-kit">github/spec-kit</a>
+<div class="tagline">GitHub 官方规格驱动开发工具包——今日 +1,147，总星突破 12.8 万</div>
+</div>
+<div class="stars"><div class="today">⭐ +1,147 今日</div><div class="total">总计 128,471</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：Python</span>
+<span class="chip cat">B-开发者工具 › 开发流程工具 › 规格驱动开发</span>
+<span class="chip">今日增速 Top 2</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>Spec Kit 由 GitHub 官方开发，是推行 Spec-Driven Development（规格驱动开发）的开源工具包，核心理念是翻转传统开发流程：先写规格（what &amp; why），再由 AI Agent 生成实现。提供 Specify CLI 工具和 7 个斜杠命令：<code>/speckit.constitution</code>（项目原则）→ <code>/speckit.specify</code>（需求规格）→ <code>/speckit.plan</code>（技术方案）→ <code>/speckit.tasks</code>（任务分解）→ <code>/speckit.implement</code>（执行实现）。支持 30+ AI 编程助手集成（Claude Code、Copilot、Codex、Cursor 等），并提供 Extensions、Presets、Bundles 三层定制体系。距上次上榜一个月后强势回归，今日 +1,147 星为全场第二快，总星数突破 12.8 万，是 GitHub 官方在 AI 编程流程工具领域的核心布局。</p></div>
+<div class="block"><h3>适用领域</h3><p>使用 AI 编程助手的开发团队、技术负责人；希望规范 AI 辅助开发流程的组织；需要从需求到实现全流程结构化的产品工程团队。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">9</div>
+<div class="card-title">
+<a href="https://github.com/lightningpixel/modly">lightningpixel/modly</a>
+<div class="tagline">本地 AI 图片转 3D 模型桌面应用——完全在你的 GPU 上运行</div>
+</div>
+<div class="stars"><div class="today">⭐ +580 今日</div><div class="total">总计 5,899</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：TypeScript</span>
+<span class="chip cat">K-游戏/图形 › 3D建模 › AI图片转3D</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>Modly 是一款开源桌面应用，利用本地 AI 模型将任意照片或文字提示转换为 3D 网格模型，所有 AI 推理完全在你的 GPU 上运行，无需云端。支持 Windows、Linux 和 Apple Silicon macOS 平台。技术架构前端使用 Electron + TypeScript，后端 Python 环境（含 venv 虚拟环境），通过本地 AI 模型完成图生 3D 的转换。与云端 3D 生成服务（如 Tripo、Meshy）相比，核心卖点是「完全本地运行」的隐私优势和零成本——不上传任何图片。用户可以直接从 Releases 页面下载安装包，也可克隆仓库运行。上线两周星数稳步逼近 6 千。</p></div>
+<div class="block"><h3>适用领域</h3><p>3D 建模师、游戏开发者（需要快速生成 3D 资产）、3D 打印爱好者、AR/VR 内容创作者、注重隐私不想上传图片到云端的用户。</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<div class="rank">10</div>
+<div class="card-title">
+<a href="https://github.com/infiniflow/ragflow">infiniflow/ragflow</a>
+<div class="tagline">开源 RAG 引擎领跑者——融合检索增强生成与 Agent 能力，为 LLM 打造优质上下文层</div>
+</div>
+<div class="stars"><div class="today">⭐ +474 今日</div><div class="total">总计 88,384</div></div>
+</div>
+<div class="card-body">
+<div class="meta-row">
+<span class="chip lang">主语言：Python/Go</span>
+<span class="chip cat">A-AI/机器学习 › RAG框架 › 企业级检索增强生成</span>
+</div>
+<div class="block"><h3>详细介绍</h3><p>RAGFlow 是一个领先的开源 RAG（检索增强生成）引擎，将前沿 RAG 技术与 Agent 能力融合，为 LLM 创建卓越的上下文层。核心功能包括：深度文档解析（支持 PDF、DOCX、PPTX 等复杂版式，精准识别表格、图片和布局）、基于模板的文本切片、混合检索（关键词+向量+知识图谱）、多路召回重排序、引用溯源。支持接入主流大模型（OpenAI、Claude、通义千问等），内置可视化 Agent 编排（工作流拖拽），可自托管。由 InfiniFlow 团队开发，总星数已达 8.8 万，是开源 RAG 赛道 star 数最高的标杆项目，连续三日上榜且日增星数持续走高。</p></div>
+<div class="block"><h3>适用领域</h3><p>构建企业知识库问答系统的开发者、需要文档智能解析的团队、RAG 应用开发的工程师、希望自托管 RAG 服务的企业。</p></div>
+</div>
+</div>
+<h2 class="section-title">今日速览表</h2>
+<table>
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>HTML</td><td class="st">+3,651</td><td>C-前端/Web › SVG图表 › AI生成技能</td></tr>
+<tr><td>2</td><td><a href="https://github.com/cactus-compute/needle">cactus-compute/needle</a></td><td>Python</td><td class="st">+661</td><td>A-AI/机器学习 › 边缘AI › 超小模型</td></tr>
+<tr><td>3</td><td><a href="https://github.com/megadose/holehe">megadose/holehe</a></td><td>Python</td><td class="st">+427</td><td>G-安全 › OSINT › 邮箱侦察</td></tr>
+<tr><td>4</td><td><a href="https://github.com/macro-inc/macro">macro-inc/macro</a></td><td>Rust</td><td class="st">+435</td><td>D-后端/服务端 › 协作平台 › AI统一工作空间</td></tr>
+<tr><td>5</td><td><a href="https://github.com/smicallef/spiderfoot">smicallef/spiderfoot</a></td><td>Python</td><td class="st">+292</td><td>G-安全 › OSINT › 威胁情报自动化</td></tr>
+<tr><td>6</td><td><a href="https://github.com/citrolabs/ego-lite">citrolabs/ego-lite</a></td><td>JavaScript</td><td class="st">+153</td><td>B-开发者工具 › AI浏览器 › 人机并行</td></tr>
+<tr><td>7</td><td><a href="https://github.com/holaboss-ai/holaOS">holaboss-ai/holaOS</a></td><td>TypeScript</td><td class="st">+769</td><td>B-开发者工具 › Agent工作空间 › 本地优先</td></tr>
+<tr><td>8</td><td><a href="https://github.com/github/spec-kit">github/spec-kit</a></td><td>Python</td><td class="st">+1,147</td><td>B-开发者工具 › 开发流程工具 › 规格驱动开发</td></tr>
+<tr><td>9</td><td><a href="https://github.com/lightningpixel/modly">lightningpixel/modly</a></td><td>TypeScript</td><td class="st">+580</td><td>K-游戏/图形 › 3D建模 › AI图片转3D</td></tr>
+<tr><td>10</td><td><a href="https://github.com/infiniflow/ragflow">infiniflow/ragflow</a></td><td>Python/Go</td><td class="st">+474</td><td>A-AI/机器学习 › RAG框架 › 企业级检索增强生成</td></tr>
+</tbody>
+</table>
+<h2 class="section-title" style="margin-top:36px">延伸观察（11-17 名）</h2>
+<table>
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>一句话</th></tr>
+</thead>
+<tbody>
+<tr><td>11</td><td><a href="https://github.com/cursor/plugins">cursor/plugins</a> 🆕</td><td>TypeScript</td><td class="st">+69</td><td>Cursor 官方插件规范与插件市场（首上榜）</td></tr>
+<tr><td>12</td><td><a href="https://github.com/semantica-agi/semantica">semantica-agi/semantica</a></td><td>Python</td><td class="st">+1,183</td><td>图原生 AI 上下文基础设施，连续 5 天上榜</td></tr>
+<tr><td>13</td><td><a href="https://github.com/deepseek-ai/awesome-deepseek-agent">deepseek-ai/awesome-deepseek-agent</a> 🆕</td><td>Markdown</td><td class="st">+203</td><td>DeepSeek 官方：接入 23+ AI 工具的指南合集（首上榜）</td></tr>
+<tr><td>14</td><td><a href="https://github.com/rustdesk/rustdesk">rustdesk/rustdesk</a> 🆕</td><td>Rust</td><td class="st">+182</td><td>开源远程桌面，TeamViewer 替代品，12 万星（首上榜）</td></tr>
+<tr><td>15</td><td><a href="https://github.com/unslothai/unsloth">unslothai/unsloth</a></td><td>Python</td><td class="st">+502</td><td>本地运行/训练 LLM 的桌面应用，7.1 万星</td></tr>
+<tr><td>16</td><td><a href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a></td><td>TypeScript</td><td class="st">+238</td><td>开源 CapCut，总星破 8.3 万</td></tr>
+<tr><td>17</td><td><a href="https://github.com/ToolJet/ToolJet">ToolJet/ToolJet</a> 🆕</td><td>JavaScript</td><td class="st">+302</td><td>开源低代码平台，3.9 万星（首上榜）</td></tr>
+</tbody>
+</table>
+<div class="footer-note">
+    数据抓取自 GitHub Trending（since=daily）· 生成时间 2026-08-15 · Hermes 热点情报研究员<br/>
+    星数为抓取时点数据，与其他统计口径可能存在少量差异
+  </div>
+</div>
+</body>
+</html>

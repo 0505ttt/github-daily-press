@@ -1,0 +1,17 @@
+.venv/
+.runtime/
+.codegraph/
+.codegraph-tools/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+test-results/

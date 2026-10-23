@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 热点日报 2026-08-24</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa; color: #24292e; line-height: 1.75;
+}
+.topnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #24292e; color: #fff; height: 52px;
+  box-shadow: 0 1px 8px rgba(0,0,0,.25);
+}
+.nav-inner {
+  max-width: 980px; margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between; height: 52px;
+}
+.nav-logo { font-weight: 700; font-size: 16px; }
+.nav-date { color: #7ee787; font-size: 14px; }
+.hero {
+  margin-top: 52px;
+  background: linear-gradient(135deg, #24292e 0%, #2da44e 100%);
+  color: #fff; padding: 64px 20px 56px; text-align: center;
+}
+.hero-inner { max-width: 980px; margin: 0 auto; }
+.hero h1 { font-size: 34px; margin-bottom: 12px; letter-spacing: 1px; }
+.hero-date { font-size: 18px; opacity: .92; margin-bottom: 6px; }
+.hero-sub { font-size: 14px; opacity: .75; letter-spacing: 6px; }
+main { max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }
+.intro {
+  background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08); border-left: 5px solid #2da44e;
+}
+.intro h2 { font-size: 20px; margin-bottom: 12px; color: #24292e; }
+.intro p { margin-bottom: 10px; font-size: 15px; color: #424242; }
+.card {
+  background: #fff; border-radius: 12px; margin-bottom: 28px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.09); position: relative;
+  padding: 24px 28px 20px 64px; border-left: 6px solid #2da44e;
+  transition: transform .15s;
+}
+.card:hover { transform: translateY(-2px); }
+.card-rank {
+  position: absolute; left: 14px; top: 24px;
+  background: #24292e; color: #7ee787; font-weight: 800; font-size: 15px;
+  border-radius: 8px; padding: 4px 8px;
+}
+.card-head h3 { font-size: 20px; margin-bottom: 6px; word-break: break-all; }
+.card-head h3 a { color: #0969da; text-decoration: none; }
+.card-head h3 a:hover { text-decoration: underline; }
+.quote { color: #57606a; font-size: 14.5px; font-style: italic; margin-bottom: 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.chip {
+  background: #f0f6ff; border: 1px solid #d0e1ff; color: #0969da;
+  border-radius: 20px; padding: 2px 12px; font-size: 13px; font-weight: 600;
+}
+.chip.lang { background: #fff8e6; border-color: #ffe58f; color: #ad6800; }
+.chip.hot { background: #eef7ee; border-color: #b5dfb5; color: #1a7f37; }
+.chip.repeat { background: #f5f0ff; border-color: #ddd0f5; color: #6f42c1; }
+.sec { margin-bottom: 12px; }
+.sec h4 {
+  font-size: 13px; color: #2da44e; text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 4px; border-bottom: 1px dashed #d8e4d8; padding-bottom: 3px;
+}
+.sec p { font-size: 14.5px; color: #3c434b; text-align: justify; }
+.sec.classify p { font-weight: 600; color: #24292e; }
+.summary { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.summary h2 { font-size: 20px; margin-bottom: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { border: 1px solid #d8dee4; padding: 8px 12px; text-align: left; }
+th { background: #24292e; color: #fff; font-weight: 600; }
+tbody tr:nth-child(even) { background: #f6f8fa; }
+tbody tr:hover { background: #eef7ee; }
+td a { color: #0969da; text-decoration: none; font-weight: 600; }
+td a:hover { text-decoration: underline; }
+.rank-cell { font-weight: 800; color: #24292e; text-align: center; white-space: nowrap; }
+.plus-cell { color: #1a7f37; font-weight: 700; white-space: nowrap; }
+.foot-note { margin-top: 14px; font-size: 12.5px; color: #8b949e; text-align: right; }
+@media (max-width: 640px) {
+  .hero h1 { font-size: 24px; }
+  .card { padding: 18px 16px 16px 52px; }
+  th, td { padding: 6px 8px; font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="nav-inner"><span class="nav-logo">⭐ GitHub 热点日报</span><span class="nav-date">2026-08-24</span></div></nav>
+<header class="hero"><div class="hero-inner">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<p class="hero-date">2026-08-24 星期一</p>
+<p class="hero-sub">每日追踪开源世界脉搏</p>
+</div></header>
+<main>
+<section class="intro"><h2>🔍 今日风向</h2>
+<p>今天的榜单出现了罕见的「全老面孔」现象——Top 10 全部是复榜项目，没有一张新面孔，其中 block/buzz 已是第 6 次上榜、mattpocock/skills 和 affaan-m/ECC 均为第 4 次。这标志着 AI 编程工具赛道进入深度内卷期：codex、skills、ECC、free-claude-code 押注「编码 Agent 增强」，buzz、maka、openhuman 押注「人机协作工作区」，两股势力几乎瓜分了整个榜单。</p>
+<p>类别分布上，AI/Agent 相关占 8 席，系统底层 2 席（omarchy、OpenLogi，且都是「反臃肿、本地优先」理念）；语言方面 Rust 拿下 5 席，继续巩固高性能工具首选语言的地位。今日增量王是 openai/codex（+2,729），紧随其后的是 mattpocock/skills（+2,448）。</p></section>
+<article class="card">
+<div class="card-rank">#1</div>
+<div class="card-head">
+<h3><a href="https://github.com/openai/codex" target="_blank">openai/codex</a></h3>
+<p class="quote">OpenAI 官方终端编程 Agent，Rust 编写的轻量级 CLI</p>
+</div>
+<div class="meta">
+<span class="chip lang">Rust</span>
+<span class="chip">⭐ 总计 115,093</span>
+<span class="chip hot">📈 今日 +2,729</span>
+<span class="chip repeat">🔁 累计 2 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>OpenAI 官方开源的编码 Agent，用 Rust 编写、在终端本地运行，主打轻量与启动即用。除 CLI 外已形成完整矩阵：IDE 扩展（VS Code / Cursor / Windsurf）、桌面应用（codex app）以及云端版 Codex Web。登录方式支持 ChatGPT 账号（Plus / Pro / Business / Edu / Enterprise 套餐均包含）或 API key。安装路径覆盖 curl 一键脚本、npm（@openai/codex）与 Homebrew，并针对 macOS arm64/x86_64 和 Linux musl 提供独立二进制。Apache-2.0 协议，2025 年 4 月开源，是目前 OpenAI 在 AI 编程赛道对抗 Claude Code 的正面主力。</p></div>
+<div class="sec"><h4>适用领域</h4><p>习惯终端工作流、想用 OpenAI 模型做 AI 编程的开发者；已有 ChatGPT 订阅、希望零额外成本获得编码 Agent 的用户；需要在 IDE / 终端 / 云端之间保持同一 Agent 体验的团队。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>B-开发者工具 › AI编程工具 › 终端编程Agent</p></div>
+</article><article class="card">
+<div class="card-rank">#2</div>
+<div class="card-head">
+<h3><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></h3>
+<p class="quote">GPT-Image2 工业级提示词引擎与模板库，「Prompt as Code」理念</p>
+</div>
+<div class="meta">
+<span class="chip lang">JavaScript</span>
+<span class="chip">⭐ 总计 12,655</span>
+<span class="chip hot">📈 今日 +440</span>
+<span class="chip repeat">🔁 累计 2 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>作者「苍何」打造的中文社区项目，目标是把散落的 AI 图像生成案例变成 Agent 与自动化工作流可复用的 Prompt-as-Code 资产：将散文式提示词压缩成结构化协议，主体、光照、材质、版式、视觉细节拆为可组合的原子模块。目前已逆向工程 532 个案例（UI 界面 73、图表信息图 52、海报排版 86、电商产品 41、品牌 Logo 27、建筑空间 12、摄影写实 77 等），提炼 20+ 套工业级模板和避坑指南，并封装成可直接装进 Claude Code / Cursor 的 Agent Skill。配套在线画廊 gpt-image2.canghe.ai 支持按风格筛选、大图预览与一键复制提示词。区别于普通 awesome 合集的关键在于「结构化、可组合、面向批量生产」，适合真正要上生产流水线的图像生成场景。</p></div>
+<div class="sec"><h4>适用领域</h4><p>用 GPT-Image2 做批量营销图、电商素材、海报排版的设计师与运营；想把图像生成接入 Agent 自动化工作流的开发者；研究提示词工程与模板化生产的 AI 从业者。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>A-AI/机器学习 › 提示词工程 › 图像生成</p></div>
+</article><article class="card">
+<div class="card-rank">#3</div>
+<div class="card-head">
+<h3><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></h3>
+<p class="quote">给真正工程师的 AI Agent 技能集——直接来自 Matt Pocock 的 .agents 目录</p>
+</div>
+<div class="meta">
+<span class="chip lang">Shell</span>
+<span class="chip">⭐ 总计 233,766</span>
+<span class="chip hot">📈 今日 +2,448</span>
+<span class="chip repeat">🔁 累计 4 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>这是 TypeScript 教育领域知名人物 Matt Pocock（Total TypeScript 创始人）公开的日常 AI 编程技能集，核心理念是"做真正的工程，而不是 vibe coding"。项目针对 AI 编程助手的四大痛点提供解决方案：Agent 没做对（用 grill-me / grill-with-docs 深度对齐需求）、Agent 太啰嗦（构建共享语言 CONTEXT.md 减少沟通噪音）、代码不能用（TDD 红绿重构循环）、代码变泥球（improve-codebase-architecture 定期扫描架构）。技能分为用户调用（grill-me、to-spec、implement 等）和模型自动调用（tdd、diagnosing-bugs、code-review 等）两类，设计哲学强调小、可改、可组合。支持通过 npx skills@latest add 一键安装到 Claude Code、Codex 等。</p></div>
+<div class="sec"><h4>适用领域</h4><p>使用 Claude Code / Codex 等 AI 编程助手的资深工程师；希望从 vibe coding 转向结构化 AI 辅助开发的全栈/后端开发者；需要可复用工程实践来约束 Agent 行为的技术团队。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>B-开发者工具 › AI编程工具 › Agent技能集</p></div>
+</article><article class="card">
+<div class="card-rank">#4</div>
+<div class="card-head">
+<h3><a href="https://github.com/basecamp/omarchy" target="_blank">basecamp/omarchy</a></h3>
+<p class="quote">DHH 出品的"开箱即用"美学 Linux 发行版——基于 Arch + Hyprland，装完即是成品</p>
+</div>
+<div class="meta">
+<span class="chip lang">Shell</span>
+<span class="chip">⭐ 总计 29,061</span>
+<span class="chip hot">📈 今日 +814</span>
+<span class="chip repeat">🔁 累计 3 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>Omarchy 是 Basecamp 创始人 DHH（David Heinemeier Hansson）打造的 Linux 发行版，定位"beautiful, modern &amp; opinionated"——漂亮、现代、且观点鲜明。它基于 Arch Linux + Hyprland 平铺合成器，把字体、终端、状态栏、应用列表等桌面细节全部预先调校好，用户装完即得一套接近 macOS 质感的默认桌面，省去传统 Arch 安装后数天的配置折腾。作为"opinionated"发行版，它不提供大量开关，而是替用户做掉绝大多数决定：默认应用选型、按键绑定、主题风格均由 DHH 团队拍板，换来的是极高的一致性和低维护成本。已迭代到 v4.0.0，100+ 贡献者参与，2,600+ forks。与 NixOS 或 Ubuntu 这类通用发行版的区别在于：Omarchy 明确面向"想要 Mac 般顺滑 Linux 桌面体验"的开发者，牺牲自由度换取精致默认值。MIT 协议。</p></div>
+<div class="sec"><h4>适用领域</h4><p>适合想要一套省心、高颜值 Linux 桌面用于日常开发的程序员，尤其是从 macOS 迁移、不想陷入 Arch 手工配置的用户；也适合作为 Hyprland 窗口管理器最佳实践的参考实现。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>I-系统/底层 › Linux发行版 › 桌面环境整合</p></div>
+</article><article class="card">
+<div class="card-rank">#5</div>
+<div class="card-head">
+<h3><a href="https://github.com/AprilNEA/OpenLogi" target="_blank">AprilNEA/OpenLogi</a></h3>
+<p class="quote">Rust 写的本地优先 Logitech Options+ 替代品：无账号、无遥测</p>
+</div>
+<div class="meta">
+<span class="chip lang">Rust</span>
+<span class="chip">⭐ 总计 14,869</span>
+<span class="chip hot">📈 今日 +1,008</span>
+<span class="chip repeat">🔁 累计 2 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>国产开源项目（作者 AprilNEA），用原生 Rust + GPUI 编写，通过 HID++ / UVC 协议直接驱动罗技鼠标、键盘和摄像头，彻底摆脱 Logitech Options+ 的臃肿、强制账号与遥测。功能全面超越官方：任意物理按键手势绑定、按键重映射（内置动作目录 + TOML 自定义快捷键）、按应用自动切换配置、DPI 预设与循环切换（0x2201）、SmartShift 滚轮模式（0x2111）、Litra 补光灯联动摄像头自动开关，以及 UVC 摄像头硬件级图像调节——缩放、曝光、白平衡等直写硬件，在 Meet / Zoom / OBS 等所有应用全局生效。跨 macOS / Linux / Windows 三平台且 Linux 为一等公民，全部配置浓缩为一个可同步的 TOML 纯文本文件，GUI 之外还提供真正的 CLI。2026 年 5 月创建即冲上 Trendshift，已登陆 Product Hunt。</p></div>
+<div class="sec"><h4>适用领域</h4><p>受够 Options+ 臃肿与隐私问题的罗技 MX Master 等外设用户；Linux 桌面用户（官方几乎放弃的平台）；喜欢纯文本配置、可版本管理外设设置的极客。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>I-系统/底层 › 外设工具 › 罗技驱动替代</p></div>
+</article><article class="card">
+<div class="card-rank">#6</div>
+<div class="card-head">
+<h3><a href="https://github.com/block/buzz" target="_blank">block/buzz</a></h3>
+<p class="quote">人机协作的群体智能工作空间</p>
+</div>
+<div class="meta">
+<span class="chip lang">Rust</span>
+<span class="chip">⭐ 总计 30,065</span>
+<span class="chip hot">📈 今日 +349</span>
+<span class="chip repeat">🔁 累计 6 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>Buzz 由 Block 公司（原 Square）出品，定位为"蜂巢式（hive mind）协作平台"。底层本质是一个自托管的 Nostr relay：每条消息、反应、工作流步骤、代码评审、git 事件都是一条签名事件，人和 Agent 共享同一套身份模型与审计轨迹。外观像团队工作区，内核是事件日志。支持自建 relay，数据自主可控。区别于 Slack/Discord 的核心在于——Agent 是一等公民，与人类平权协作。</p></div>
+<div class="sec"><h4>适用领域</h4><p>希望让 AI Agent 深度融入团队协作流程的技术团队，重视数据主权、自托管需求，以及对人机协同工作流感兴趣的组织。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>A-AI/机器学习 › Agent协作平台 › 人机工作空间 / Nostr</p></div>
+</article><article class="card">
+<div class="card-rank">#7</div>
+<div class="card-head">
+<h3><a href="https://github.com/apache/maka" target="_blank">apache/maka</a></h3>
+<p class="quote">Apache 孵化中的本地优先 Agent 工作区，一切执行皆可追溯、可恢复</p>
+</div>
+<div class="meta">
+<span class="chip lang">TypeScript</span>
+<span class="chip">⭐ 总计 2,322</span>
+<span class="chip hot">📈 今日 +49</span>
+<span class="chip repeat">🔁 累计 2 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>Apache 孵化器项目（2026 年 5 月进入孵化），定位「为真实工作构建的 local-first Agent 工作区」。核心设计是把模型消息、工具调用、工具结果、权限决策、终止事件全部写入 append-only log——UI 和下一次模型调用只是这份记录的视图，而非唯一副本，因此「缩短上下文 ≠ 删除历史」，崩溃后可恢复、可中途续跑被打断的回合。桌面（Electron + React，macOS Apple Silicon 早期公测）、终端（maka / maka run）与评测（maka eval，声明式多臂实验、逐单元格不可变记录）三个入口统一走同一个 Runtime Host。内置 Read / Write / Edit / Bash / Glob / Grep 工具，出沙箱操作必须人工审批；模型自带——云 API、本地模型或网关皆可。与商业 Agent 工作区的区别：数据默认留在本机 + Apache 基金会治理的中立生态。尚未发布 Apache 正式版，目前需源码构建。</p></div>
+<div class="sec"><h4>适用领域</h4><p>重视数据主权与执行审计的 Agent 重度用户；需要可复现评测实验的 AI 工程师；偏好基金会治理、担心商业工作区锁定的团队。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>B-开发者工具 › Agent工作空间 › 本地优先工作区</p></div>
+</article><article class="card">
+<div class="card-rank">#8</div>
+<div class="card-head">
+<h3><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a></h3>
+<p class="quote">聚合 49 个免费模型提供商，让 9 款编码 Agent 每月白嫖 13 亿+ token</p>
+</div>
+<div class="meta">
+<span class="chip lang">Python</span>
+<span class="chip">⭐ 总计 47,913</span>
+<span class="chip hot">📈 今日 +1,040</span>
+<span class="chip repeat">🔁 累计 2 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>FCC 是一个本地代理服务（Python 3.14，MIT 协议，与 Anthropic 无关联），把免费、付费、订阅与本地模型聚合进一个可搜索的统一目录，供 Claude Code、Codex、Pi、OpenCode、Cline、Hermes、DeepSeek Harness、Grok Build、Muse Code 九款编码 Agent 使用，宣称每月合计 1.3B+ 免费 token。最大卖点是「ToS 友好」：遵循各提供商服务条款，不再被允许的集成就下架。工程细节扎实：提供商故障时重试耗尽自动切换下一个模型、不用重启回合；可选 RTK 过滤器最高砍掉 90% 终端输出 token；支持本地 Whisper / NVIDIA NIM 语音输入；使用入口覆盖终端、桌面、VS Code、JetBrains，甚至 Discord 与 Telegram 手机端。与简单 API 中转的区别：面向编码 Agent 生态做了工具调用、交织思考、图像输入等能力保真，并保留 Opus / Sonnet / Haiku 独立路由。</p></div>
+<div class="sec"><h4>适用领域</h4><p>想零成本试用顶级编码 Agent 的学生与个人开发者；需要在多个模型提供商间自动容错切换的重度用户；想用手机/语音远程驱动编码 Agent 的折腾党。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>B-开发者工具 › AI网关 › 免费模型聚合</p></div>
+</article><article class="card">
+<div class="card-rank">#9</div>
+<div class="card-head">
+<h3><a href="https://github.com/tinyhumansai/openhuman" target="_blank">tinyhumansai/openhuman</a></h3>
+<p class="quote">个人 AI 超级智能：本地记忆大脑 + Agent 舰队编排器 + 深度研究员</p>
+</div>
+<div class="meta">
+<span class="chip lang">Rust</span>
+<span class="chip">⭐ 总计 36,697</span>
+<span class="chip hot">📈 今日 +106</span>
+<span class="chip repeat">🔁 累计 2 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>tinyhumansai 团队（创始人 @senamakel）推出的开源个人 AI 操作系统，自称「不是 AGI，但在记忆、编排、工具三方面向其迈出实质一步」。①大脑：把你的邮件、文档、聊天压缩成 SQLite 中的评分 Markdown 记忆树，并镜像为可直接编辑的 Obsidian 库（受 Karpathy 的 LLM Knowledgebase 启发）——不是黑盒向量汤；100+ OAuth 集成、5000+ MCP 服务器、9 万+ Skills，auto-fetch 每 20 分钟自动喂数。②编排器：工作流跑在开源 tinyagents 的检查点图上，可暂停、可重启、可恢复；子代理舰队最深三层，卡住的 Agent 自动转为根因报告；Agent 间通信走 Signal 协议端到端加密，甚至有 x402 USDC 赏金经济。③研究员：内置 Exa 搜索、真浏览器、原生语音、Seedream/Seedance 图像视频生成，17 个消息渠道触达（Telegram / WhatsApp / iMessage / 原生邮件 IMAP IDLE 等）。TokenJuice 将工具输出压缩最多 80%，隐私模式一键切换全本地推理（Rust 核心强制执行）。上线一周曾连续 9 天登顶 GitHub Trending，Product Hunt 日榜第一。</p></div>
+<div class="sec"><h4>适用领域</h4><p>想要「越用越懂你」的个人 AI 助手的重度用户；重视本地数据隐私、希望记忆可导出可审计的人；想统一编排多个 Agent 与自动化工作流的效率极客。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>A-AI/机器学习 › 个人AI助手 › 本地记忆智能体</p></div>
+</article><article class="card">
+<div class="card-rank">#10</div>
+<div class="card-head">
+<h3><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></h3>
+<p class="quote">Agent Harness 性能优化系统——261 个工作流技能 + 64 个专用子代理</p>
+</div>
+<div class="meta">
+<span class="chip lang">JavaScript</span>
+<span class="chip">⭐ 总计 242,526</span>
+<span class="chip hot">📈 今日 +427</span>
+<span class="chip repeat">🔁 累计 4 次上榜</span>
+</div>
+<div class="sec"><h4>详细介绍</h4><p>ECC（Everything Claude Code）是一个开源的 Agent Harness 性能优化系统，为 Claude Code、Codex、Cursor、OpenCode、Gemini、Zed、GitHub Copilot、Antigravity 等 AI 编程工具提供统一的技能、记忆、安全和研发流程框架。包含 261 个工作流技能、64 个专用子代理、覆盖 12+ 语言生态系统，横跨编码、研究、安全、媒体等场景。2.0 版本定位为「跨 Harness 操作系统」，可在不同 AI 编程助手间共享配置。该项目是 GitHub 上星标最高的 Agent 工具仓库之一。</p></div>
+<div class="sec"><h4>适用领域</h4><p>使用 Claude Code / Codex / Cursor 等 AI 编程工具的开发者；希望系统化管理和优化 Agent 工作流的团队；追求 AI 辅助编程效率最大化的个人和团队。</p></div>
+<div class="sec classify"><h4>知识归类</h4><p>B-开发者工具 › Agent优化框架 › 跨工具技能系统</p></div>
+</article>
+<section class="summary"><h2>📋 今日速览</h2>
+<table>
+<thead><tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr></thead>
+<tbody>
+<tr>
+<td class="rank-cell">#1</td>
+<td><a href="https://github.com/openai/codex" target="_blank">openai/codex</a></td>
+<td>Rust</td>
+<td class="plus-cell">+2,729</td>
+<td>B-开发者工具 › AI编程工具 › 终端编程Agent</td>
+</tr><tr>
+<td class="rank-cell">#2</td>
+<td><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></td>
+<td>JavaScript</td>
+<td class="plus-cell">+440</td>
+<td>A-AI/机器学习 › 提示词工程 › 图像生成</td>
+</tr><tr>
+<td class="rank-cell">#3</td>
+<td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td>
+<td>Shell</td>
+<td class="plus-cell">+2,448</td>
+<td>B-开发者工具 › AI编程工具 › Agent技能集</td>
+</tr><tr>
+<td class="rank-cell">#4</td>
+<td><a href="https://github.com/basecamp/omarchy" target="_blank">basecamp/omarchy</a></td>
+<td>Shell</td>
+<td class="plus-cell">+814</td>
+<td>I-系统/底层 › Linux发行版 › 桌面环境整合</td>
+</tr><tr>
+<td class="rank-cell">#5</td>
+<td><a href="https://github.com/AprilNEA/OpenLogi" target="_blank">AprilNEA/OpenLogi</a></td>
+<td>Rust</td>
+<td class="plus-cell">+1,008</td>
+<td>I-系统/底层 › 外设工具 › 罗技驱动替代</td>
+</tr><tr>
+<td class="rank-cell">#6</td>
+<td><a href="https://github.com/block/buzz" target="_blank">block/buzz</a></td>
+<td>Rust</td>
+<td class="plus-cell">+349</td>
+<td>A-AI/机器学习 › Agent协作平台 › 人机工作空间 / Nostr</td>
+</tr><tr>
+<td class="rank-cell">#7</td>
+<td><a href="https://github.com/apache/maka" target="_blank">apache/maka</a></td>
+<td>TypeScript</td>
+<td class="plus-cell">+49</td>
+<td>B-开发者工具 › Agent工作空间 › 本地优先工作区</td>
+</tr><tr>
+<td class="rank-cell">#8</td>
+<td><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a></td>
+<td>Python</td>
+<td class="plus-cell">+1,040</td>
+<td>B-开发者工具 › AI网关 › 免费模型聚合</td>
+</tr><tr>
+<td class="rank-cell">#9</td>
+<td><a href="https://github.com/tinyhumansai/openhuman" target="_blank">tinyhumansai/openhuman</a></td>
+<td>Rust</td>
+<td class="plus-cell">+106</td>
+<td>A-AI/机器学习 › 个人AI助手 › 本地记忆智能体</td>
+</tr><tr>
+<td class="rank-cell">#10</td>
+<td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td>
+<td>JavaScript</td>
+<td class="plus-cell">+427</td>
+<td>B-开发者工具 › Agent优化框架 › 跨工具技能系统</td>
+</tr>
+</tbody>
+</table>
+<p class="foot-note">数据来源：GitHub Trending（daily）· 抓取时间 2026-08-24 · 依据公开资料整理</p>
+</section>
+</main>
+</body>
+</html>

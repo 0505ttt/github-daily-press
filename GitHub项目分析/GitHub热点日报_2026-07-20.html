@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<style>
+  @page {
+    size: A4;
+    margin: 2.2cm 1.8cm 2cm 1.8cm;
+    @top-center {
+      content: "GitHub 热点日报 · 2026-07-20";
+      font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+      font-size: 9px;
+      color: #8b949e;
+      border-bottom: 1px solid #d0d7de;
+      padding-bottom: 4px;
+      width: 100%;
+    }
+    @bottom-center {
+      content: "第 " counter(page) " 页 / 共 " counter(pages) " 页";
+      font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+      font-size: 9px;
+      color: #8b949e;
+    }
+  }
+  @page :first {
+    margin: 0;
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    color: #24292e;
+  }
+  /* === 封面页 === */
+  .cover {
+    page-break-after: always;
+    width: 100%;
+    height: 297mm;
+    background: linear-gradient(135deg, #24292e 0%, #1a1e22 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4cm;
+  }
+  .cover .badge {
+    font-size: 14px;
+    color: #2da44e;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .cover h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .cover .date {
+    font-size: 22px;
+    color: #7ee787;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .cover .subtitle {
+    font-size: 16px;
+    color: #c9d1d9;
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
+  .cover .divider {
+    width: 80px;
+    height: 4px;
+    background: #2da44e;
+    border-radius: 2px;
+    margin: 0 auto 40px;
+  }
+  .cover .stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  .cover .stat-item {
+    text-align: center;
+  }
+  .cover .stat-num {
+    font-size: 32px;
+    font-weight: 700;
+    color: #7ee787;
+  }
+  .cover .stat-label {
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 4px;
+  }
+  .cover .footer-note {
+    position: absolute;
+    bottom: 30px;
+    font-size: 10px;
+    color: #6e7681;
+  }
+
+  /* === 概述 === */
+  .overview {
+    background: #f6f8fa;
+    border-left: 4px solid #2da44e;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 30px;
+  }
+  .overview h2 {
+    font-size: 16px;
+    color: #24292e;
+    margin-bottom: 8px;
+  }
+  .overview p {
+    font-size: 11px;
+    color: #57606a;
+    line-height: 1.8;
+  }
+
+  /* === 项目卡片 === */
+  .card {
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+    background: #ffffff;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeef2;
+  }
+  .card-rank {
+    display: inline-block;
+    background: #24292e;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 6px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0969da;
+    text-decoration: none;
+  }
+  .card-title:hover { text-decoration: underline; }
+  .card-lang {
+    font-size: 10px;
+    color: #fff;
+    background: #6366f1;
+    padding: 2px 8px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .card-stars {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .star-total {
+    font-size: 13px;
+    font-weight: 700;
+    color: #24292e;
+  }
+  .star-today {
+    font-size: 11px;
+    font-weight: 600;
+    color: #2da44e;
+  }
+  .card-body { margin-top: 8px; }
+  .card-tagline {
+    font-size: 12px;
+    color: #24292e;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .card-detail {
+    font-size: 10.5px;
+    color: #57606a;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .card-section {
+    margin-top: 6px;
+  }
+  .card-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #24292e;
+    margin-bottom: 2px;
+  }
+  .card-section-text {
+    font-size: 10.5px;
+    color: #57606a;
+    line-height: 1.7;
+  }
+  .card-classify {
+    display: inline-block;
+    font-size: 9.5px;
+    color: #8250df;
+    background: #fbefff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .card-link {
+    font-size: 10px;
+    color: #8b949e;
+    font-family: "SF Mono","Consolas",monospace;
+    margin-top: 4px;
+  }
+
+  /* === 速览表 === */
+  .summary-section {
+    page-break-before: always;
+    margin-top: 10px;
+  }
+  .summary-section h2 {
+    font-size: 18px;
+    color: #24292e;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2da44e;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+  }
+  th {
+    background: #24292e;
+    color: #ffffff;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 10.5px;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #eaeef2;
+    vertical-align: middle;
+  }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  .table-rank {
+    font-weight: 700;
+    color: #24292e;
+    text-align: center;
+  }
+  .table-repo {
+    color: #0969da;
+    font-weight: 600;
+  }
+  .table-star {
+    color: #2da44e;
+    font-weight: 700;
+    text-align: right;
+  }
+  .table-end {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 10px;
+    color: #8b949e;
+    border-top: 1px solid #d0d7de;
+    padding-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<div class="badge">⚙ Daily Report</div>
+<h1>GitHub 今日热点</h1>
+<div class="date">2026 年 7 月 20 日</div>
+<div class="divider"></div>
+<div class="subtitle">每日追踪开源世界脉搏</div>
+<div class="stats">
+<div class="stat-item">
+<div class="stat-num">10</div>
+<div class="stat-label">收录项目</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">5,159</div>
+<div class="stat-label">今日新增 Star</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">7</div>
+<div class="stat-label">主类覆盖</div>
+</div>
+</div>
+<div class="footer-note">数据来源：github.com/trending · since=daily · 自动生成</div>
+</div>
+
+<div class="overview">
+<h2>📊 今日榜单风向</h2>
+<p>今日 GitHub Trending 榜单以 <strong>AI/机器学习</strong> 项目为主导（占 4 席），其中 <strong>bojieli/ai-agent-book</strong>（李博杰《深入理解 AI Agent》开源书）以日增 1,734 star 领跑，成为今日最大黑马。<strong>开发者工具</strong> 紧随其后（占 3 席），MCP 生态相关项目（code-review-graph、wigolo、copilot-sdk）持续活跃。<strong>jamiepine/voicebox</strong>（开源 AI 语音工作室）日增 629 star 表现亮眼。今日榜单整体呈现「AI 基础设施 + Agent 工具链」双轮驱动格局。</p>
+</div>
+
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">1</span>
+<a class="card-title" href="https://github.com/bojieli/ai-agent-book">bojieli/ai-agent-book</a>
+<span class="card-lang" style="background:#3572A5;margin-left:8px;">Python</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 5,316</div>
+<div class="star-today">+1,734 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">李博杰著《深入理解 AI Agent：设计原理与工程实践》开源书籍主仓库，含全书正文、编译版 PDF 与按章配套代码</div>
+<div class="card-detail">前华为天才少年李博杰撰写的 AI Agent 系统教材，全书正文、配图与配套实验代码全部开源。内容覆盖 Agent 核心理论、Prompt 工程、工具调用、多智能体系统等主题，围绕核心公式「Agent = LLM + 记忆 + 规划 + 工具使用」展开。读者可免费下载 PDF 并获取每章配套实验代码，从理论推导到工程落地形成完整闭环。区别于碎片化博客，该书提供了系统性的 Agent 知识框架。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">AI 工程师、Agent 开发者、希望从理论到实战系统掌握 Agent 设计原理的学习者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">L-学习资源 › 开源书籍 › AI Agent 教材</span></div>
+</div>
+<div class="card-link">🔗 github.com/bojieli/ai-agent-book</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">2</span>
+<a class="card-title" href="https://github.com/tirth8205/code-review-graph">tirth8205/code-review-graph</a>
+<span class="card-lang" style="background:#3572A5;margin-left:8px;">Python</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 21,090</div>
+<div class="star-today">+551 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">本地优先的代码知识图谱工具，为 AI 编程助手构建持久化代码地图，让 AI 只读真正相关的代码</div>
+<div class="card-detail">解决了 AI 编程工具每次都要重新读取整个代码库的痛点。使用 Tree-sitter 构建代码结构图谱，追踪增量变化，分析变更影响范围，支持 12 种编程语言。通过 MCP 协议与 Claude Code 等 AI 编程工具集成，使 AI 能精准定位相关代码而非全量扫描，大幅提升代码审查和编辑效率。所有数据本地存储，不依赖云服务，基准测试显示可减少 5-10 倍 token 消耗。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">使用 Claude Code / Cursor 等 AI 编程工具的开发者，管理大型代码库的团队</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › AI 编程辅助 › 代码知识图谱</span></div>
+</div>
+<div class="card-link">🔗 github.com/tirth8205/code-review-graph</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">3</span>
+<a class="card-title" href="https://github.com/kvcache-ai/ktransformers">kvcache-ai/ktransformers</a>
+<span class="card-lang" style="background:#3572A5;margin-left:8px;">Python</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 18,322</div>
+<div class="star-today">+328 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">基于 CPU/GPU 异构计算的 LLM 推理与微调优化框架，低显存也能跑百亿参数大模型</div>
+<div class="card-detail">由 KVCache.AI 团队开发的研发项目，专注通过 CPU-GPU 异构计算实现高效大语言模型推理和微调。核心优势是利用 CPU 内存和算力部署 100B+ 参数的全精度大模型，大幅降低显存门槛。支持长上下文推理加速，利用注意力稀疏性在异构 CPU/GPU 系统上加速长文本处理。相比纯 GPU 方案，在消费级硬件上即可运行 DeepSeek-R1 等超大模型。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">需要在有限 GPU 资源下本地部署大模型的开发者、AI 基础设施工程师、大模型研究人员</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">A-AI/机器学习 › LLM 推理框架 › 异构计算</span></div>
+</div>
+<div class="card-link">🔗 github.com/kvcache-ai/ktransformers</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">4</span>
+<a class="card-title" href="https://github.com/rohitg00/ai-engineering-from-scratch">rohitg00/ai-engineering-from-scratch</a>
+<span class="card-lang" style="background:#3572A5;margin-left:8px;">Python</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 39,615</div>
+<div class="star-today">+507 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">从零开始的 AI 工程实战教程，每节课产出一个可复用的 AI 组件——prompt、skill、agent 或 MCP server</div>
+<div class="card-detail">由 Rohit Ghumare（GitHub 50K+ stars 开发者）创建的 AI 工程学习项目。核心理念是「学它、构建它、为他人交付它」，每节课都产出可复用的实际产物。内容免费开源，覆盖 AI 工程的完整技术栈——从基础 prompt 工程到 agent 架构再到 MCP 服务器构建。区别于纯理论教程，强调动手产出可部署的实际组件。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">AI 工程初学者到进阶开发者、希望系统性学习 AI 应用构建的开发者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">L-学习资源 › AI 工程教程 › 实战课程</span></div>
+</div>
+<div class="card-link">🔗 github.com/rohitg00/ai-engineering-from-scratch</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">5</span>
+<a class="card-title" href="https://github.com/jamiepine/voicebox">jamiepine/voicebox</a>
+<span class="card-lang" style="background:#3178c6;margin-left:8px;">TypeScript</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 43,287</div>
+<div class="star-today">+629 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">开源本地优先的 AI 语音工作室，支持语音克隆、23 种语言 TTS 合成、全局热键听写</div>
+<div class="card-detail">作为 ElevenLabs 等云端语音服务的免费开源替代方案，Voicebox 支持从几秒音频克隆声音，集成 7 种 TTS 引擎，覆盖 23 种语言。具备 DAW（数字音频工作站）级别的专业语音合成功能，支持全局热键在任何文本框进行语音听写，还能用自定义声音与 AI Agent 对话。所有处理在本地完成，数据隐私有充分保障。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">内容创作者、播客制作者、需要语音合成/克隆的开发者、注重隐私的用户</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">A-AI/机器学习 › 语音合成 › 开源 TTS 工作室</span></div>
+</div>
+<div class="card-link">🔗 github.com/jamiepine/voicebox</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">6</span>
+<a class="card-title" href="https://github.com/KnockOutEZ/wigolo">KnockOutEZ/wigolo</a>
+<span class="card-lang" style="background:#3178c6;margin-left:8px;">TypeScript</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 1,774</div>
+<div class="star-today">+605 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">为 AI 编程 Agent 提供本地优先网络情报能力的 MCP 服务器，支持搜索、抓取、爬取和深度研究</div>
+<div class="card-detail">一个通过 MCP 协议为 AI 编程助手（如 Claude Code）提供网络访问能力的 TypeScript 项目。无需 API 密钥、无需云端服务、每次查询零成本，所有功能在本地运行。支持网页搜索、内容抓取、网站爬取和深度研究四种模式，让 AI 编程 Agent 能自主获取网络信息辅助编码。目前处于公测阶段，日增 605 star 显示出强劲势头。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">Claude Code / Cursor 等 MCP 客户端用户、需要 AI Agent 具备网络搜索能力的开发者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › MCP 服务器 › 网络情报</span></div>
+</div>
+<div class="card-link">🔗 github.com/KnockOutEZ/wigolo</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">7</span>
+<a class="card-title" href="https://github.com/andrewrabert/jellium-desktop">andrewrabert/jellium-desktop</a>
+<span class="card-lang" style="background:#dea584;margin-left:8px;">Rust</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 1,271</div>
+<div class="star-today">+54 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">Jellyfin 媒体服务器的非官方桌面客户端（Rust），原 Jellyfin Desktop V3 独立发展版</div>
+<div class="card-detail">由 Andrew Rabert 开发的 Jellyfin 桌面客户端，原名 Jellyfin Desktop。作者从 Jellyfin 官方团队独立后，将 V3 版本更名为 Jellium Desktop 继续独立开发。基于 Rust 构建，提供原生桌面体验，支持 Jellyfin 媒体服务器的完整功能。由于已非官方项目，社区正在讨论新的品牌定位和命名。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">Jellyfin 媒体服务器用户、需要原生桌面客户端的家庭媒体中心搭建者</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">C-前端/Web › 桌面应用 › 媒体播放器</span></div>
+</div>
+<div class="card-link">🔗 github.com/andrewrabert/jellium-desktop</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">8</span>
+<a class="card-title" href="https://github.com/github/copilot-sdk">github/copilot-sdk</a>
+<span class="card-lang" style="background:#b07219;margin-left:8px;">Java</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 9,945</div>
+<div class="star-today">+46 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">GitHub 官方多平台 SDK，将 Copilot Agent 的代理能力（规划、工具调用、文件编辑）嵌入到自定义应用中</div>
+<div class="card-detail">GitHub 官方发布的 Copilot SDK（2026 年 6 月正式 GA），提供与 Copilot CLI 背后相同的 Agent 运行时的编程访问——包括规划、工具调用、文件编辑等核心能力。支持 Python、TypeScript、Go、.NET、Java、Rust 六种语言，内置 MCP 协议支持。开发者可以用它构建自己的 AI 编程助手、CLI 工具或集成 Copilot 能力的自定义工作流。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">需要在产品中集成 AI Agent 能力的开发团队、构建自定义 AI 编程工具的开发者、企业内部工具开发</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">B-开发者工具 › AI 编程工具 › Copilot 集成 SDK</span></div>
+</div>
+<div class="card-link">🔗 github.com/github/copilot-sdk</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">9</span>
+<a class="card-title" href="https://github.com/PostHog/posthog">PostHog/posthog</a>
+<span class="card-lang" style="background:#3572A5;margin-left:8px;">Python</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 36,908</div>
+<div class="star-today">+424 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">一体化产品分析平台，集产品分析、AI 可观测性、会话回放、功能开关、A/B 测试于一体</div>
+<div class="card-detail">PostHog 定位为「自动驾驶产品」平台，将产品分析、Web 分析、会话回放、错误追踪、功能开关、A/B 测试和 CDP 等能力整合在单一平台中。新增的 AI 可观测性功能可监控 LLM 性能，按模型、延迟、成本等维度分解使用指标。支持自动诊断问题、修复 Bug、生成 PR，目标是让产品开发实现「自动驾驶」。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">产品团队、增长团队、需要全链路产品分析的 SaaS 公司、AI 应用开发者（AI 可观测性）</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">D-后端/服务端 › 产品分析平台 › 一体化可观测性</span></div>
+</div>
+<div class="card-link">🔗 github.com/PostHog/posthog</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div style="display:flex;align-items:center;flex:1;">
+<span class="card-rank">10</span>
+<a class="card-title" href="https://github.com/microsoft/terminal">microsoft/terminal</a>
+<span class="card-lang" style="background:#f34b7d;margin-left:8px;">C++</span>
+</div>
+<div class="card-stars">
+<div class="star-total">⭐ 104,154</div>
+<div class="star-today">+103 今日</div>
+</div>
+</div>
+<div class="card-body">
+<div class="card-tagline">微软官方 Windows Terminal 终端模拟器，现代化、功能丰富的命令行体验</div>
+<div class="card-detail">Windows Terminal 是微软开发的现代终端应用，集成了原 Windows 控制台主机（conhost）。支持多标签页、GPU 加速文本渲染、Unicode 和 CJK 字符、自定义主题和配色方案、可编程快捷键等现代终端特性。支持 PowerShell、CMD、WSL 等多种 Shell，是 Windows 平台开发者的标准终端工具。作为微软最受欢迎的开源项目之一，社区持续活跃迭代。</div>
+<div class="card-section">
+<div class="card-section-label">🎯 适用领域</div>
+<div class="card-section-text">Windows 平台开发者、系统管理员、所有需要在 Windows 上使用命令行的用户</div>
+</div>
+<div class="card-section">
+<div class="card-section-label">🏷 知识归类</div>
+<div class="card-section-text"><span class="card-classify">I-系统/底层 › 终端模拟器 › Windows Terminal</span></div>
+</div>
+<div class="card-link">🔗 github.com/microsoft/terminal</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th style="width:6%;">排名</th>
+<th style="width:30%;">项目</th>
+<th style="width:12%;">主语言</th>
+<th style="width:12%;">今日 ⭐</th>
+<th style="width:40%;">知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="table-rank">#1</td>
+<td class="table-repo">bojieli/ai-agent-book</td>
+<td>Python</td>
+<td class="table-star">+1,734</td>
+<td>L-学习资源 › AI Agent 教材</td>
+</tr>
+<tr>
+<td class="table-rank">#2</td>
+<td class="table-repo">tirth8205/code-review-graph</td>
+<td>Python</td>
+<td class="table-star">+551</td>
+<td>B-开发者工具 › 代码知识图谱</td>
+</tr>
+<tr>
+<td class="table-rank">#3</td>
+<td class="table-repo">kvcache-ai/ktransformers</td>
+<td>Python</td>
+<td class="table-star">+328</td>
+<td>A-AI/机器学习 › LLM 推理框架</td>
+</tr>
+<tr>
+<td class="table-rank">#4</td>
+<td class="table-repo">rohitg00/ai-engineering-from-scratch</td>
+<td>Python</td>
+<td class="table-star">+507</td>
+<td>L-学习资源 › AI 工程教程</td>
+</tr>
+<tr>
+<td class="table-rank">#5</td>
+<td class="table-repo">jamiepine/voicebox</td>
+<td>TypeScript</td>
+<td class="table-star">+629</td>
+<td>A-AI/机器学习 › 语音合成</td>
+</tr>
+<tr>
+<td class="table-rank">#6</td>
+<td class="table-repo">KnockOutEZ/wigolo</td>
+<td>TypeScript</td>
+<td class="table-star">+605</td>
+<td>B-开发者工具 › MCP 服务器</td>
+</tr>
+<tr>
+<td class="table-rank">#7</td>
+<td class="table-repo">andrewrabert/jellium-desktop</td>
+<td>Rust</td>
+<td class="table-star">+54</td>
+<td>C-前端/Web › 桌面应用</td>
+</tr>
+<tr>
+<td class="table-rank">#8</td>
+<td class="table-repo">github/copilot-sdk</td>
+<td>Java</td>
+<td class="table-star">+46</td>
+<td>B-开发者工具 › Copilot SDK</td>
+</tr>
+<tr>
+<td class="table-rank">#9</td>
+<td class="table-repo">PostHog/posthog</td>
+<td>Python</td>
+<td class="table-star">+424</td>
+<td>D-后端/服务端 › 产品分析平台</td>
+</tr>
+<tr>
+<td class="table-rank">#10</td>
+<td class="table-repo">microsoft/terminal</td>
+<td>C++</td>
+<td class="table-star">+103</td>
+<td>I-系统/底层 › 终端模拟器</td>
+</tr>
+</tbody>
+</table>
+<div class="table-end">数据采集时间：2026-07-20 · GitHub Trending (since=daily) 依据公开资料整理 · 共 10 个项目 · 7 大分类覆盖</div>
+</div>
+</body>
+</html>

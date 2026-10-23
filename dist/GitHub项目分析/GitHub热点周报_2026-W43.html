@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub 本周热点 · 2026-W43</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; color: #24292e; line-height: 1.7; font-size: 14px; background: #f6f8fa; }
+.navbar { position: sticky; top: 0; z-index: 100; background: #24292e; color: white; padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.cover { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 380px; text-align: center; background: linear-gradient(135deg, #24292e 0%, #2da44e 100%); color: white; border-radius: 0 0 20px 20px; margin-bottom: 30px; }
+.cover h1 { font-size: 36px; margin-bottom: 10px; }
+.cover .sub { font-size: 16px; opacity: .9; margin-bottom: 6px; }
+.summary-box { background: white; border-left: 4px solid #2da44e; padding: 20px 24px; margin: 0 auto 30px auto; max-width: 900px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.summary-box h2 { font-size: 18px; margin-bottom: 8px; }
+.project-card { border: 1px solid #e1e4e8; border-radius: 10px; padding: 24px; margin: 0 auto 24px auto; max-width: 900px; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+.project-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+.card-header { display: flex; align-items: center; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 2px solid #2da44e; }
+.rank-badge { background: #24292e; color: white; font-size: 16px; font-weight: bold; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.repo-name { font-size: 18px; font-weight: bold; margin-left: 12px; flex-grow: 1; }
+.repo-name a { color: #0969da; text-decoration: none; }
+.today-stars { background: #ddf4ff; color: #0969da; padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; white-space: nowrap; }
+.today-stars.hot { background: #ffe3da; color: #cf222e; }
+.meta { color: #57606a; font-size: 13px; margin-bottom: 14px; }
+.tag-line { background: #fff8c5; padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; font-style: italic; color: #555; }
+.section-label { font-size: 12px; font-weight: bold; color: #2da44e; text-transform: uppercase; letter-spacing: 0.5px; margin: 12px 0 4px 0; }
+.category-tag { display: inline-block; background: #eaddff; color: #5b46b6; padding: 3px 10px; border-radius: 4px; font-size: 12px; }
+p.detail { margin-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; }
+.wrap { max-width: 900px; margin: 0 auto 40px auto; }
+table th { background: #24292e; color: white; padding: 12px 14px; text-align: left; font-size: 13px; }
+table td { padding: 10px 14px; border-bottom: 1px solid #e1e4e8; font-size: 13px; background: white; }
+table tr:nth-child(even) td { background: #f6f8fa; }
+table tr:hover td { background: #ddf4ff; }
+.ai-week { background: linear-gradient(135deg, #f6f0ff 0%, #eef6ff 100%); border: 1px solid #e4dcf7; border-radius: 10px; padding: 20px 24px; margin: 0 auto 30px auto; max-width: 900px; }
+.ai-week h2 { font-size: 18px; margin-bottom: 10px; color: #5b46b6; }
+.ai-week ul { list-style: none; }
+.ai-week li { padding: 7px 0; border-bottom: 1px dashed #ddd2f2; font-size: 13.5px; }
+.ai-week li:last-child { border-bottom: none; }
+.ai-week a { color: #0969da; text-decoration: none; }
+.footer-note { text-align: center; color: #57606a; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+<div class="navbar"><div>📰 GitHub 热点周报</div><div>2026-W43 · 10-13 ~ 10-19</div></div>
+<div class="cover"><h1>🔥 GitHub 本周热点</h1><div class="sub">2026-W43（10 月第 3 周）</div><div class="sub">每周追踪开源世界脉搏</div><div class="sub" style="font-size:13px;opacity:.8;margin-top:8px">本期周榜实际返回 10 席，如实收录</div></div>
+<div class="summary-box"><h2>🔭 本周风向</h2>
+<p>这是本工作区的首份周报，尚无上周基线可对比。本周最大事件无疑是 <strong>morluto/rea 一家引爆全场</strong>：周增近 23 万星、总量冲破 32 万——"用 agent 逆向一切"的现象级爆发，把安全/逆向方向推上风口（NSA 的 Ghidra 同步回榜，两席同题）。榜单结构性看点：Agent 技能生态占 6 席（官方插件目录、图表技能、上下文优化、HTML 转视频、Cursor 插件、AI 求职框架），AI 创作工具两席（ArtCraft、Hyperframes），加上 PS5 移植这种硬核极客项目——"给 agent 装装备"与"agent 本体能力"两条线并行升温。</p></div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">1</div><div class="repo-name"><a href="https://github.com/morluto/rea">morluto/rea</a></div><div class="today-stars hot">本周 +229,268 ⭐</div></div>
+<div class="meta">主语言：TypeScript ｜ 总 Star：322,537 ｜ Fork：81,728 ｜ 创建：2026-04-14 ｜ 🏆 现象级</div>
+<div class="tag-line">用 agent 逆向一切：从应用行为到原生二进制</div>
+<div class="section-label">详细介绍</div><p class="detail">把逆向工程流程彻底 agent 化，从 app 行为分析一路打到原生二进制层，自动跑工具链、汇总发现。本周暴涨 22.9 万星成为现象级项目，逆向门槛被 AI 大幅拉低是核心卖点。</p>
+<div class="section-label">适用领域</div><p class="detail">安全研究员、逆向工程师、CTF 选手</p>
+<div class="section-label">知识归类</div><span class="category-tag">G-安全 › 逆向工程 › Agent化</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">2</div><div class="repo-name"><a href="https://github.com/storytold/artcraft">storytold/artcraft</a></div><div class="today-stars hot">本周 +16,379 ⭐</div></div>
+<div class="meta">主语言：Rust ｜ 总 Star：32,749 ｜ Fork：5,188 ｜ 创建：2022-03-31</div>
+<div class="tag-line">面向艺术家、设计师与电影人的「意图创作引擎」</div>
+<div class="section-label">详细介绍</div><p class="detail">强调按创作者意图驱动生成流程的 crafting 引擎，而非一键抽卡。Rust 编写，为专业创意工作流设计，本周 +1.6 万星领跑 AI 创作赛道。</p>
+<div class="section-label">适用领域</div><p class="detail">设计师、电影人、数字艺术家</p>
+<div class="section-label">知识归类</div><span class="category-tag">A-AI/机器学习 › AIGC创作 › 创意引擎</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">3</div><div class="repo-name"><a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a></div><div class="today-stars hot">本周 +14,224 ⭐</div></div>
+<div class="meta">主语言：C++ ｜ 总 Star：43,231 ｜ Fork：3,922 ｜ 创建：2026-08-03</div>
+<div class="tag-line">PS5 可执行文件自动移植到 Linux 与 Windows 的工具</div>
+<div class="section-label">详细介绍</div><p class="detail">自动化的 PS5 可执行文件移植工具，把主机程序带回 PC 平台。本周 +1.4 万星，主机模拟/移植社区的重要基建持续升温。</p>
+<div class="section-label">适用领域</div><p class="detail">主机移植爱好者、逆向社区</p>
+<div class="section-label">知识归类</div><span class="category-tag">K-游戏/图形 › 主机移植</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">4</div><div class="repo-name"><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></div><div class="today-stars">本周 +4,774 ⭐</div></div>
+<div class="meta">主语言：Python ｜ 总 Star：42,708 ｜ Fork：4,535 ｜ 创建：2025-11-20</div>
+<div class="tag-line">Anthropic 官方维护的 Claude Code 高质量插件目录</div>
+<div class="section-label">详细介绍</div><p class="detail">官方背书的插件精选仓库，相当于 Claude Code 生态的「应用商店白名单」，找官方认证插件的第一站。周稳增 +4,774。</p>
+<div class="section-label">适用领域</div><p class="detail">Claude Code 用户、插件开发者</p>
+<div class="section-label">知识归类</div><span class="category-tag">B-开发者工具 › Claude插件 › 官方目录</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">5</div><div class="repo-name"><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></div><div class="today-stars">本周 +4,138 ⭐</div></div>
+<div class="meta">主语言：TypeScript ｜ 总 Star：30,762 ｜ Fork：2,278 ｜ 创建：2026-02-23</div>
+<div class="tag-line">AI 编码 agent 的上下文窗口优化器：工具输出瘦身 98% + 会话记忆持久化</div>
+<div class="section-label">详细介绍</div><p class="detail">通过沙箱化工具输出（上下文占用降 98%）、持久化会话记忆、强制路由，解决编码 agent 上下文爆炸问题。经 MCP+hooks 接入 17 个平台。</p>
+<div class="section-label">适用领域</div><p class="detail">长会话编码 agent 用户、上下文经常爆掉的工程团队</p>
+<div class="section-label">知识归类</div><span class="category-tag">A-AI/机器学习 › Agent记忆 › 上下文优化</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">6</div><div class="repo-name"><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></div><div class="today-stars hot">本周 +7,901 ⭐</div></div>
+<div class="meta">主语言：HTML ｜ 总 Star：57,711 ｜ Fork：3,695 ｜ 创建：2026-04-16</div>
+<div class="tag-line">编辑级图表技能：44 种图型，自包含 HTML+SVG，拒绝 Mermaid 垃圾产出</div>
+<div class="section-label">详细介绍</div><p class="detail">为 Claude Code、Codex、Copilot、Cursor、Factory Droid、Pi 准备的图表设计技能库，每种图都是干净的自包含 HTML/SVG。本周扩展到 44 种图型后 +7,901。</p>
+<div class="section-label">适用领域</div><p class="detail">需要 agent 产出高质量架构图/流程图的人</p>
+<div class="section-label">知识归类</div><span class="category-tag">B-开发者工具 › 可视化 › 图表技能</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">7</div><div class="repo-name"><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a></div><div class="today-stars hot">本周 +7,602 ⭐</div></div>
+<div class="meta">主语言：Java ｜ 总 Star：90,917 ｜ Fork：10,180 ｜ 创建：2019-03-01</div>
+<div class="tag-line">NSA 开源的软件逆向工程框架 Ghidra</div>
+<div class="section-label">详细介绍</div><p class="detail">美国国家安全局开源的老牌逆向工程框架，逆向领域的工业标准之一。在 rea 引爆逆向赛道的同一周回榜 +7,602，经典工具被 AI 浪潮重新带火。</p>
+<div class="section-label">适用领域</div><p class="detail">安全研究员、逆向工程师</p>
+<div class="section-label">知识归类</div><span class="category-tag">G-安全 › 逆向工程</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">8</div><div class="repo-name"><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></div><div class="today-stars hot">本周 +5,883 ⭐</div></div>
+<div class="meta">主语言：TypeScript ｜ 总 Star：66,755 ｜ Fork：6,056 ｜ 创建：2026-03-10</div>
+<div class="tag-line">写 HTML，渲染成视频——HeyGen 出品，为 agent 而设计</div>
+<div class="section-label">详细介绍</div><p class="detail">HeyGen 官方开源的视频渲染方案：用 HTML/CSS 描述画面即可渲染成片，天然适配 agent 生成，声明式视频生产的新范式。</p>
+<div class="section-label">适用领域</div><p class="detail">视频自动化开发者、agent 工作流工程师</p>
+<div class="section-label">知识归类</div><span class="category-tag">A-AI/机器学习 › AI视频 › HTML转视频</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">9</div><div class="repo-name"><a href="https://github.com/cursor/plugins">cursor/plugins</a></div><div class="today-stars">本周 +1,717 ⭐</div></div>
+<div class="meta">主语言：TypeScript ｜ 总 Star：12,751 ｜ Fork：1,256 ｜ 创建：2026-01-23</div>
+<div class="tag-line">Cursor 官方插件规范与官方插件实现</div>
+<div class="section-label">详细介绍</div><p class="detail">Cursor 编辑器的插件系统规范文档与官方插件集合，给 Cursor 写插件的权威依据。编辑器厂商开放插件生态的代表性动作。</p>
+<div class="section-label">适用领域</div><p class="detail">Cursor 用户、编辑器插件开发者</p>
+<div class="section-label">知识归类</div><span class="category-tag">B-开发者工具 › 编辑器插件 › Cursor</span>
+</div>
+<div class="project-card">
+<div class="card-header"><div class="rank-badge">10</div><div class="repo-name"><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></div><div class="today-stars hot">本周 +5,742 ⭐</div></div>
+<div class="meta">主语言：Python ｜ 总 Star：53,258 ｜ Fork：17,396 ｜ 创建：2026-03-18</div>
+<div class="tag-line">在你自己电脑上跑的 AI 求职框架：评估 JD、定制简历、写求职信、备面试</div>
+<div class="section-label">详细介绍</div><p class="detail">基于 Claude Code 的求职自动化框架，职位评估、按 JD 定制 CV、生成求职信、面试准备四环节全在本机完成，数据不外泄。秋招季持续霸榜，本周再增 5,742。</p>
+<div class="section-label">适用领域</div><p class="detail">正在找工作的求职者、应届生</p>
+<div class="section-label">知识归类</div><span class="category-tag">A-AI/机器学习 › AI求职 › 本地求职框架</span>
+</div>
+<div class="ai-week">
+<h2>⚡ 本周 AI 大事件回顾</h2>
+<ul>
+<li>🌙 <strong>Kimi K3 引发海外"DeepSeek 式焦虑"</strong>：开放权重+低成本直追顶尖模型 <a href="https://money.udn.com/money/story/124480/9639365">[经济日报]</a></li>
+<li>🚀 <strong>Kimi K3.1 计划 10 月中旬发布</strong>：主打 Agent 长程任务，K4 目标 5-6 万亿参数 <a href="https://feng.ifeng.com/c/8x8jp3PM9jp">[凤凰网]</a></li>
+<li>🧮 <strong>中国团队用国产大模型破解三维 Ghys 猜想</strong>：30 余年数学难题首次 AI 赋能攻克 <a href="https://k.sina.com.cn/article_7857201856_1d45362c001908rfiy.html?from=tech">[新浪]</a></li>
+<li>⚖️ <strong>智谱发布法律垂直模型 GLM-Legal</strong>（10-13）：HarveyLAB 超基座 12.5pct <a href="https://z.ai/blog/glm-legal">[Z.ai]</a></li>
+<li>🔁 <strong>Replit 把默认模型从 Anthropic 换成 OpenAI</strong>，编码 agent 格局再变 <a href="https://techcrunch.com/feed/">[TechCrunch]</a></li>
+</ul>
+</div>
+<div class="wrap"><h2 style="margin-bottom:12px">📋 本周速览表</h2>
+<table>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>本周⭐</th><th>知识归类</th></tr>
+<tr><td>#1</td><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>TypeScript</td><td>+229,268</td><td>G-安全 › 逆向工程</td></tr>
+<tr><td>#2</td><td><a href="https://github.com/storytold/artcraft">storytold/artcraft</a></td><td>Rust</td><td>+16,379</td><td>A-AI/机器学习 › AIGC创作</td></tr>
+<tr><td>#3</td><td><a href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a></td><td>C++</td><td>+14,224</td><td>K-游戏/图形 › 主机移植</td></tr>
+<tr><td>#4</td><td><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></td><td>Python</td><td>+4,774</td><td>B-开发者工具 › Claude插件</td></tr>
+<tr><td>#5</td><td><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></td><td>TypeScript</td><td>+4,138</td><td>A-AI/机器学习 › 上下文优化</td></tr>
+<tr><td>#6</td><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>HTML</td><td>+7,901</td><td>B-开发者工具 › 图表技能</td></tr>
+<tr><td>#7</td><td><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a></td><td>Java</td><td>+7,602</td><td>G-安全 › 逆向工程</td></tr>
+<tr><td>#8</td><td><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></td><td>TypeScript</td><td>+5,883</td><td>A-AI/机器学习 › AI视频</td></tr>
+<tr><td>#9</td><td><a href="https://github.com/cursor/plugins">cursor/plugins</a></td><td>TypeScript</td><td>+1,717</td><td>B-开发者工具 › 编辑器插件</td></tr>
+<tr><td>#10</td><td><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></td><td>Python</td><td>+5,742</td><td>A-AI/机器学习 › AI求职</td></tr>
+</table></div>
+<div class="footer-note">数据来源：GitHub Trending（since=weekly），抓取于 2026-10-19 · 公开资料整理 · 本期为首份周报（2026-W43），本周 AI 大事件回顾来自本周 AI 前沿日报</div>
+</body>
+</html>

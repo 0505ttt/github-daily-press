@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 10 — 2026-08-07</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+  line-height: 1.7;
+  padding-top: 56px;
+}
+/* 固定导航栏 */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; height: 56px;
+  background: #24292e; color: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+.navbar .nav-left { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.navbar .nav-left .dot { width: 10px; height: 10px; border-radius: 50%; background: #2da44e; }
+.navbar .nav-date { font-size: 14px; color: #8b949e; }
+/* 封面 */
+.hero {
+  background: linear-gradient(135deg, #1a1e22 0%, #24292e 40%, #1a6f3a 100%);
+  color: #fff; text-align: center; padding: 60px 24px 50px;
+}
+.hero h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: 1px; }
+.hero .subtitle { font-size: 16px; color: #8b949e; margin-bottom: 6px; }
+.hero .tagline { font-size: 15px; color: #2da44e; font-weight: 600; }
+.hero .meta-row { margin-top: 18px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.hero .meta-item { font-size: 13px; color: #c9d1d9; }
+.hero .meta-item strong { color: #fff; font-size: 20px; display: block; }
+/* 概括 */
+.summary {
+  max-width: 920px; margin: -24px auto 0; background: #fff;
+  border-radius: 12px; padding: 24px 28px; box-shadow: 0 4px 16px rgba(0,0,0,.1);
+  position: relative; z-index: 10;
+}
+.summary h2 { font-size: 18px; margin-bottom: 10px; color: #24292e; border-left: 4px solid #2da44e; padding-left: 10px; }
+.summary p { font-size: 14px; color: #57606a; }
+/* 卡片容器 */
+.container { max-width: 920px; margin: 0 auto; padding: 30px 16px; }
+/* 卡片 */
+.card {
+  background: #fff; border-radius: 12px; margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  overflow: hidden; border-left: 5px solid #2da44e;
+  transition: transform .15s, box-shadow .15s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+.card-header {
+  padding: 16px 22px 10px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;
+}
+.rank-badge {
+  background: #24292e; color: #fff; font-size: 13px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+}
+.rank-badge.top3 { background: linear-gradient(135deg,#d4a017,#f0c040); color: #24292e; }
+.repo-title { font-size: 20px; font-weight: 700; }
+.repo-title a { color: #0969da; text-decoration: none; }
+.repo-title a:hover { text-decoration: underline; }
+.repo-title .lang-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.card-body { padding: 0 22px 18px; }
+.one-liner { font-size: 14px; color: #1f883d; font-weight: 600; margin-bottom: 10px; }
+.detail { font-size: 14px; color: #57606a; margin-bottom: 12px; }
+.fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; margin-bottom: 10px; }
+@media (max-width: 600px) { .fields-grid { grid-template-columns: 1fr; } }
+.field-item { font-size: 13px; color: #57606a; }
+.field-item strong { color: #24292e; }
+.star-badge {
+  display: inline-block; background: #fff8c5; color: #7d4e00;
+  font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-left: 4px;
+}
+.today-star {
+  display: inline-block; background: #dafbe1; color: #1a7f37;
+  font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-left: 4px;
+}
+.tag-row { margin-top: 8px; }
+.tag {
+  display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px;
+  margin-right: 5px; margin-bottom: 4px; font-weight: 600;
+}
+.tag.cat { background: #ddf4ff; color: #0969da; }
+.tag.lang { background: #f0f0f0; color: #57606a; }
+.section-label { font-size: 12px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: .5px; margin-top: 10px; margin-bottom: 4px; }
+/* 速览表 */
+.table-section { max-width: 920px; margin: 0 auto 50px; padding: 0 16px; }
+.table-section h2 { font-size: 22px; margin-bottom: 16px; text-align: center; color: #24292e; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+th { background: #24292e; color: #fff; font-size: 13px; padding: 12px 10px; text-align: left; }
+td { font-size: 13px; padding: 10px; border-bottom: 1px solid #eaecef; }
+tbody tr:nth-child(odd) { background: #f9fafb; }
+tbody tr:hover { background: #f0f6ff; }
+td.center { text-align: center; }
+/* 页脚 */
+.footer { text-align: center; padding: 30px; color: #8b949e; font-size: 13px; }
+.footer a { color: #0969da; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="nav-left"><span class="dot"></span> GitHub 热点日报</div>
+<div class="nav-date">2026-08-07</div>
+</div>
+
+<div class="hero">
+<h1>📰 GitHub 今日热点 Top 10</h1>
+<div class="subtitle">2026 年 8 月 7 日</div>
+<div class="tagline">每日追踪开源世界脉搏</div>
+<div class="meta-row">
+<div class="meta-item"><strong>13</strong>个项目上榜</div>
+<div class="meta-item"><strong>4</strong>个新面孔</div>
+<div class="meta-item"><strong>+9,966</strong>今日总新增⭐</div>
+</div>
+</div>
+
+<div class="summary">
+<h2>今日榜单风向</h2>
+<p>今日榜单被 <strong>AI Agent 生态</strong> 统治——从 Agent 记忆中枢（TencentDB-Agent-Memory 空降 #1）、虚拟计算机（cloudflare/computer）、Agent 技能框架（mattpocock/skills、obra/superpowers、addyosmani/agent-skills）到终端编码 Agent（DeepSeek-Reasonix、loopx），Agent 工具链占据过半席位。<strong>cloudflare/computer</strong> 今日狂揽 +2,690 星为增幅之最，mattpocock/skills 也以 +2,002 星紧随其后。新面孔方面，<strong>goauthentik/authentik</strong>（开源 IAM 平台）、<strong>google/guava</strong>（Java 核心库）、<strong>TapXWorld/ChinaTextbook</strong>（中国教材合集）、<strong>AutoGPT</strong>（自主 Agent 平台）首次亮相。</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge top3">#1</span>
+<span class="repo-title"><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud / TencentDB-Agent-Memory</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 16,272</span>
+<span class="today-star">今日 +1,053</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">AI Agent 的团队级记忆中枢——把对话、文档、代码变成可治理、可共享的记忆资产</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：TypeScript</div>
+<div class="field-item"><strong>Fork</strong>：1,465</div>
+</div>
+<div class="detail">腾讯云出品的 Agent 记忆系统，核心基于记忆分层和符号化记忆两大支柱。短期记忆用 Mermaid 符号图压缩工具日志，Token 消耗降低最高 61.38%；长期记忆构建语义金字塔（L0 对话→L1 原子事实→L2 场景块→L3 人物画像）。强调"渐进式披露"，Agent 只看顶层结构，需细节时通过 node_id 下钻。已适配 OpenClaw 和 Hermes Agent，本地零配置即用。PersonaMem 准确率从 48% 提升至 76%。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">AI Agent 开发者、需要持久记忆的团队、Agent 基础设施建设者。场景：多会话记忆保留、用户画像建模、长程任务上下文压缩、跨 Agent 记忆共享。</div>
+<div class="tag-row">
+<span class="tag cat">A-AI/机器学习</span>
+<span class="tag cat">Agent记忆</span>
+<span class="tag cat">团队记忆中枢</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge top3">#2</span>
+<span class="repo-title"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani / agent-skills</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 82,856</span>
+<span class="today-star">今日 +588</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">为 AI 编码 Agent 打造的生产级工程技能包——覆盖 DEFINE→SHIP 全生命周期</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：JavaScript</div>
+<div class="field-item"><strong>Fork</strong>：8,883</div>
+</div>
+<div class="detail">Google 工程师 Addy Osmani 出品的 24 个生产级 Agent 技能集合，把资深工程师的工作流打包成 Agent 可遵循的能力。8 个斜杠命令覆盖全生命周期：/spec、/plan、/build、/test、/review、/webperf、/code-simplify、/ship。/build auto 可批准计划后自动实现并逐个 TDD 提交。技能会根据工作自动激活，通过开放 skills CLI 一键装入 70+ Agent 平台。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">想让 AI 编码助手遵循专业流程的开发者和团队、Claude Code/Cursor/Codex/Copilot 用户、追求 AI 自动化开发效率的个人与组织。</div>
+<div class="tag-row">
+<span class="tag cat">B-开发者工具</span>
+<span class="tag cat">Agent技能框架</span>
+<span class="tag cat">工程技能包</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge top3">#3</span>
+<span class="repo-title"><a href="https://github.com/cloudflare/computer" target="_blank">cloudflare / computer</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 4,729</span>
+<span class="today-star">今日 +2,690 🔥</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">给 AI Agent 一台虚拟"计算机"——运行在 Cloudflare Durable Object 里的可执行虚拟文件系统</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：TypeScript</div>
+<div class="field-item"><strong>Fork</strong>：237</div>
+</div>
+<div class="detail">驻留在 Durable Object 内的虚拟文件系统，状态以 SQLite 为权威来源。三种后端：Container（完整 Linux 用户态沙箱）、Isolate shell（Worker 中运行 bash）、Isolate JavaScript（Worker 中执行 ES 模块）。让 Agent 拥有持久、可写、可执行的"工作目录"——读写文件、跑命令、调 pandoc，全部在 Cloudflare 边缘完成。区别于 E2B/沙箱方案，状态天然带强一致性。当前 PREVIEW 阶段。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">AI Agent 基础设施开发者、需在云上给 Agent 提供持久工作空间的团队、Cloudflare Workers 生态用户、研究 Agent 代码执行与文件持久化的开发者。</div>
+<div class="tag-row">
+<span class="tag cat">B-开发者工具</span>
+<span class="tag cat">Agent运行时</span>
+<span class="tag cat">虚拟计算机</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge top3">#4</span>
+<span class="repo-title"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock / skills</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 206,893</span>
+<span class="today-star">今日 +2,002</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">给真正工程师的 AI Agent 技能集——直接来自 Matt Pocock 的 .agents 目录</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Shell</div>
+<div class="field-item"><strong>Fork</strong>：17,869</div>
+</div>
+<div class="detail">TypeScript 教育领域知名人物 Matt Pocock（Total TypeScript 创始人）公开的日常 AI 编程技能集，核心理念"做真正的工程，而非 vibe coding"。针对 Agent 四大痛点：没做对（grill-me 深度对齐）、太啰嗦（CONTEXT.md 减噪）、代码不能用（TDD 红绿重构）、变泥球（架构扫描）。技能分用户调用和模型自动调用两类，强调小、可改、可组合，npx 一键安装。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">使用 Claude Code/Codex 等 AI 编程助手的资深工程师；希望从 vibe coding 转向结构化 AI 辅助开发的全栈/后端开发者；需要可复用工程实践约束 Agent 行为的技术团队。</div>
+<div class="tag-row">
+<span class="tag cat">B-开发者工具</span>
+<span class="tag cat">AI编程工具</span>
+<span class="tag cat">Agent技能集</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge">#5</span>
+<span class="repo-title"><a href="https://github.com/goauthentik/authentik" target="_blank">goauthentik / authentik</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 23,063</span>
+<span class="today-star">今日 +123</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">开源身份认证与访问管理平台——你需要的"身份认证粘合剂"</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Python</div>
+<div class="field-item"><strong>Fork</strong>：1,770</div>
+</div>
+<div class="detail">Python/Django 编写的开源身份提供者（IdP）和访问管理平台，2020 年由 Jens Langhammer 创建。支持 OAuth2/OIDC、SAML、LDAP、RADIUS、SCIM 等所有主流协议，可替代 Okta、Auth0。核心特色是"Flows"——可视化的可组合认证流程构建器，像搭积木一样自定义登录/注册/密码重置流程，支持 MFA、条件策略和社交登录。当前最新版 2026.11，正引入 Rust worker 提升性能。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">需要自托管 SSO 的中小企业、运维团队；想脱离 Okta/Auth0 商业锁定的组织；为内部应用、Homelab 统一对接身份认证的玩家；需灵活定制认证流程的团队。</div>
+<div class="tag-row">
+<span class="tag cat">G-安全</span>
+<span class="tag cat">身份认证</span>
+<span class="tag cat">开源IAM平台</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge">#6</span>
+<span class="repo-title"><a href="https://github.com/huangruiteng/loopx" target="_blank">huangruiteng / loopx</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 2,811</span>
+<span class="today-star">今日 +854</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">长时运行 AI Agent 团队的轻量级"状态内核"与本地控制平面</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Python</div>
+<div class="field-item"><strong>Fork</strong>：207</div>
+</div>
+<div class="detail">不替换 Agent 运行时，而是外挂一层持久控制状态：目标、门禁、待办、范围、证据、配额。Agent 协作可视化为"Agent 原生看板"，卡片承载身份、权限和续接。Agent 间是平等 peer 关系，靠 claim、lease、任务边界决定下一步行动，无需固定"领导者"。可处理跨 200+ 小时的长程任务轨迹（如 Issue 修复、Auto ML 实验），危险权限始终留给人类。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">运行多日工程/研究/实验类长任务的 Agent 团队；Issue 与 PR 循环需保留范围与证据；需把 Agent 产出"对非工程操作者可读"的工作流。</div>
+<div class="tag-row">
+<span class="tag cat">B-开发者工具</span>
+<span class="tag cat">Agent运行时</span>
+<span class="tag cat">长时任务控制平面</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge">#7</span>
+<span class="repo-title"><a href="https://github.com/google/guava" target="_blank">google / guava</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 51,617</span>
+<span class="today-star">今日 +35</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">Google 官方 Java 核心库——集合、并发、缓存的瑞士军刀</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Java</div>
+<div class="field-item"><strong>Fork</strong>：11,163</div>
+</div>
+<div class="detail">Google 内部广泛使用的 Java 核心库集合，包含新集合类型（Multimap、Multiset、BiMap）、不可变集合、图库，以及并发（ListenableFuture、RateLimiter）、I/O、缓存（Cache/LoadingCache）、哈希、字符串处理等工具。提供 JRE 和 Android 两种构建版本。几乎所有 Google 内部 Java 项目都在使用它，是 Java 生态 star 数最高的基础设施库之一。当前稳定版 33.6.0。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">所有 Java/JVM 开发者；Android 应用开发者；需要高质量集合工具、并发原语、缓存方案的后端团队；追求代码简洁和健壮性的 Java 工程师。</div>
+<div class="tag-row">
+<span class="tag cat">I-系统/底层</span>
+<span class="tag cat">Java基础库</span>
+<span class="tag cat">Google核心库</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge">#8</span>
+<span class="repo-title"><a href="https://github.com/TapXWorld/ChinaTextbook" target="_blank">TapXWorld / ChinaTextbook</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 77,041</span>
+<span class="today-star">今日 +157</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">中国小学到大学全套 PDF 教材开源合集——打破教育信息差</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Roff（实际为 PDF 资源合集）</div>
+<div class="field-item"><strong>Fork</strong>：17,402</div>
+</div>
+<div class="detail">收集中国小学、初中（含五四学制）、高中、大学全学段官方 PDF 教材，总库超 110GB。发起初衷是反对有人把免费教材加水印贩卖牟利，将资源集中开源，促进教育公平，也方便海外华人子女接触国内教育。涵盖各学段各科目，大学部分含高等数学、线性代数、离散数学、概率论。大文件拆分为 35MB 分片，需用配套合并工具（tchMaterial-parser）拼接。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">学生、家长、教师；需要查阅/下载教材的自学者；海外华人家庭；教育公益组织；需教材语料做 NLP/教育研究的开发者。</div>
+<div class="tag-row">
+<span class="tag cat">L-学习资源/其他</span>
+<span class="tag cat">教育资源</span>
+<span class="tag cat">教材合集</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge">#9</span>
+<span class="repo-title"><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank">Significant-Gravitas / AutoGPT</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 185,976</span>
+<span class="today-star">今日 +28</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">开源 AI Agent 平台——用自然语言构建、部署和运行自动化工作流</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Python</div>
+<div class="field-item"><strong>Fork</strong>：46,053</div>
+</div>
+<div class="detail">最早引爆"自主 AI Agent"概念的开源项目，如今已进化为完整 Agent 平台。核心理念：描述结果，AutoGPT 构建 Agent、运行它、再汇报，号称每周省 10 小时。四大入口：AutoPilot（自然语言转 Agent）、Agents（管理与监控）、Marketplace（社区模板）、Build（可视化拖拽编辑器）。支持 45+ 对接平台和数百模型，Agent 可按需、按计划、按触发器运行。提供托管平台（付费）和自托管（免费）两条路径。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">想用 AI 自动化日常重复工作的个人和团队；需构建多步骤业务流程的企业；追求 no-code 搭建 AI 工作流的非技术用户；AI Agent 研究者。</div>
+<div class="tag-row">
+<span class="tag cat">A-AI/机器学习</span>
+<span class="tag cat">Agent平台</span>
+<span class="tag cat">开源自动化Agent</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div>
+<span class="rank-badge">#10</span>
+<span class="repo-title"><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205 / code-review-graph</a></span>
+</div>
+<div class="field-item">
+<span class="star-badge">⭐ 28,990</span>
+<span class="today-star">今日 +232</span>
+</div>
+</div>
+<div class="card-body">
+<div class="one-liner">本地优先的代码知识图谱工具，为 AI 编程助手构建持久化代码地图，让 AI 只读真正相关的代码</div>
+<div class="fields-grid">
+<div class="field-item"><strong>主语言</strong>：Python</div>
+<div class="field-item"><strong>Fork</strong>：2,681</div>
+</div>
+<div class="detail">解决 AI 编程工具每次重新读取整个代码库的痛点。用 Tree-sitter 构建代码结构图谱，追踪增量变化，分析变更影响范围，支持 12 种语言。通过 MCP 协议与 Claude Code 等集成，使 AI 精准定位相关代码而非全量扫描，大幅提升代码审查效率。数据本地存储，基准测试显示可减少 5-10 倍 token 消耗。</div>
+<div class="section-label">适用领域</div>
+<div class="detail">使用 Claude Code/Cursor 等 AI 编程工具的开发者，管理大型代码库的团队，需要代码审查与变更影响分析的场景。</div>
+<div class="tag-row">
+<span class="tag cat">B-开发者工具</span>
+<span class="tag cat">AI编程辅助</span>
+<span class="tag cat">代码知识图谱</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="table-section">
+<h2>📊 今日速览表</h2>
+<table>
+<thead>
+<tr>
+<th class="center">排名</th>
+<th>项目</th>
+<th>主语言</th>
+<th class="center">今日⭐</th>
+<th>知识归类</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="center">🥇 #1</td><td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a></td><td>TypeScript</td><td class="center">+1,053</td><td>A-AI › Agent记忆 › 团队记忆中枢</td></tr>
+<tr><td class="center">🥈 #2</td><td><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></td><td>JavaScript</td><td class="center">+588</td><td>B-开发者工具 › Agent技能框架 › 工程技能包</td></tr>
+<tr><td class="center">🥉 #3</td><td><a href="https://github.com/cloudflare/computer" target="_blank">cloudflare/computer</a></td><td>TypeScript</td><td class="center">+2,690</td><td>B-开发者工具 › Agent运行时 › 虚拟计算机</td></tr>
+<tr><td class="center">#4</td><td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td><td>Shell</td><td class="center">+2,002</td><td>B-开发者工具 › AI编程工具 › Agent技能集</td></tr>
+<tr><td class="center">#5</td><td><a href="https://github.com/goauthentik/authentik" target="_blank">goauthentik/authentik</a></td><td>Python</td><td class="center">+123</td><td>G-安全 › 身份认证 › 开源IAM平台</td></tr>
+<tr><td class="center">#6</td><td><a href="https://github.com/huangruiteng/loopx" target="_blank">huangruiteng/loopx</a></td><td>Python</td><td class="center">+854</td><td>B-开发者工具 › Agent运行时 › 长时任务控制平面</td></tr>
+<tr><td class="center">#7</td><td><a href="https://github.com/google/guava" target="_blank">google/guava</a></td><td>Java</td><td class="center">+35</td><td>I-系统/底层 › Java基础库 › Google核心库</td></tr>
+<tr><td class="center">#8</td><td><a href="https://github.com/TapXWorld/ChinaTextbook" target="_blank">TapXWorld/ChinaTextbook</a></td><td>Roff</td><td class="center">+157</td><td>L-学习资源 › 教育资源 › 教材合集</td></tr>
+<tr><td class="center">#9</td><td><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank">Significant-Gravitas/AutoGPT</a></td><td>Python</td><td class="center">+28</td><td>A-AI › Agent平台 › 开源自动化Agent</td></tr>
+<tr><td class="center">#10</td><td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td><td>Python</td><td class="center">+232</td><td>B-开发者工具 › AI编程辅助 › 代码知识图谱</td></tr>
+<tr><td class="center">#11</td><td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td><td>Go</td><td class="center">+894</td><td>B-开发者工具 › AI编程工具 › 终端编码Agent</td></tr>
+<tr><td class="center">#12</td><td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td><td>Shell</td><td class="center">+858</td><td>B-开发者工具 › Agent技能框架 › 软件开发方法论</td></tr>
+<tr><td class="center">#13</td><td><a href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a></td><td>Rust</td><td class="center">+1,194</td><td>B-开发者工具 › 文档处理工具 › PDF解析</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer">
+<p>数据来源：<a href="https://github.com/trending?since=daily" target="_blank">GitHub Trending</a> · 自动抓取生成 · 2026-08-07</p>
+</div>
+</body>
+</html>

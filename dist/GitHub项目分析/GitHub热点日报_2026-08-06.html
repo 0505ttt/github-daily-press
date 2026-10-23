@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>📰 GitHub 今日热点 Top 13 — 2026-08-06</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    background:#f6f8fa; color:#24292e; line-height:1.7; padding-top:60px;
+  }
+  /* 固定导航栏 */
+  .nav {
+    position:fixed; top:0; left:0; right:0; height:52px; z-index:1000;
+    background:#24292e; color:#fff; display:flex; align-items:center;
+    justify-content:space-between; padding:0 24px; box-shadow:0 2px 8px rgba(0,0,0,.3);
+    font-size:14px;
+  }
+  .nav .brand { font-weight:700; letter-spacing:.5px; }
+  .nav .brand .dot { color:#2da44e; }
+  .nav .date { color:#8b949e; }
+  /* 封面 */
+  .cover {
+    background:linear-gradient(135deg,#24292e 0%,#1a1e22 40%,#0d1117 100%);
+    color:#fff; text-align:center; padding:64px 24px 56px;
+  }
+  .cover h1 { font-size:42px; font-weight:800; letter-spacing:1px; }
+  .cover h1 .em { color:#2da44e; }
+  .cover .sub { margin-top:14px; font-size:17px; color:#8b949e; letter-spacing:2px; }
+  .cover .bigdate { margin-top:10px; font-size:22px; color:#c9d1d9; }
+  .cover .tagline {
+    margin-top:18px; font-size:15px; color:#58a6ff;
+    border:1px solid #30363d; display:inline-block; padding:6px 18px; border-radius:20px;
+    background:rgba(45,164,78,.08);
+  }
+  /* 容器 */
+  .wrap { max-width:980px; margin:0 auto; padding:32px 18px 80px; }
+  /* 风向 */
+  .trend {
+    background:#fff; border-left:5px solid #2da44e; border-radius:8px;
+    padding:22px 26px; margin-bottom:34px; box-shadow:0 1px 4px rgba(0,0,0,.06);
+  }
+  .trend h2 { font-size:19px; color:#24292e; margin-bottom:10px; }
+  .trend p { color:#57606a; font-size:15px; }
+  .trend .hi { color:#1a7f37; font-weight:600; }
+  /* 卡片 */
+  .card {
+    background:#fff; border-radius:12px; margin-bottom:24px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07); overflow:hidden;
+    border-left:6px solid #2da44e; transition:transform .15s, box-shadow .15s;
+  }
+  .card:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.12); }
+  .card-head { padding:20px 24px 14px; border-bottom:1px solid #f0f3f6; }
+  .rank {
+    display:inline-block; background:#24292e; color:#fff; font-weight:800;
+    width:34px; height:34px; line-height:34px; text-align:center; border-radius:50%;
+    font-size:15px; margin-right:12px; vertical-align:middle;
+  }
+  .card-head .repo { font-size:21px; font-weight:700; color:#0969da; text-decoration:none; vertical-align:middle; }
+  .card-head .repo:hover { text-decoration:underline; }
+  .card-head .lang {
+    display:inline-block; margin-left:10px; font-size:12px; color:#57606a;
+    background:#f0f3f6; padding:3px 10px; border-radius:12px; vertical-align:middle;
+  }
+  .lang-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:middle; }
+  .stars { margin-top:12px; font-size:14px; color:#57606a; display:flex; gap:22px; flex-wrap:wrap; }
+  .stars b { color:#24292e; }
+  .stars .today { color:#1a7f37; font-weight:700; }
+  .card-body { padding:18px 24px 22px; }
+  .pos {
+    font-size:16px; color:#24292e; font-weight:600; margin-bottom:12px;
+    padding-left:10px; border-left:3px solid #2da44e;
+  }
+  .desc { color:#424a53; font-size:14.5px; margin-bottom:14px; }
+  .field-label { font-size:13px; font-weight:700; color:#57606a; margin:14px 0 4px; }
+  .field-text { color:#424a53; font-size:14px; margin-bottom:6px; }
+  .klass {
+    display:inline-block; background:#ddf4ff; color:#0969da; font-size:12.5px;
+    padding:4px 12px; border-radius:6px; font-weight:500; margin-top:8px;
+  }
+  /* 速览表 */
+  .summary { margin-top:20px; }
+  .summary h2 { font-size:22px; margin-bottom:18px; color:#24292e; text-align:center; }
+  table {
+    width:100%; border-collapse:collapse; background:#fff; border-radius:8px;
+    overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.07); font-size:13.5px;
+  }
+  thead th {
+    background:#24292e; color:#fff; padding:13px 12px; text-align:left; font-weight:600;
+  }
+  tbody td { padding:11px 12px; border-bottom:1px solid #eaeef2; }
+  tbody tr:nth-child(even) { background:#f6f8fa; }
+  tbody tr:hover { background:#ddf4ff; }
+  tbody td a { color:#0969da; text-decoration:none; }
+  tbody td a:hover { text-decoration:underline; }
+  tbody td.c { text-align:center; }
+  td.rank-cell { font-weight:800; color:#24292e; text-align:center; }
+  td.star-cell { color:#1a7f37; font-weight:700; text-align:center; }
+  .footer { text-align:center; color:#8b949e; font-size:13px; padding:30px 0 10px; }
+  @media (max-width:640px){
+    .cover h1{font-size:30px;} .nav{font-size:13px;padding:0 14px;}
+    .card-head .repo{font-size:17px;} table{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="nav">
+<div class="brand">GitHub 热点日报<span class="dot"> ·</span></div>
+<div class="date">2026-08-06</div>
+</div>
+<div class="cover">
+<h1>📰 GitHub 今日热点 <span class="em">Top 13</span></h1>
+<div class="bigdate">2026 年 8 月 6 日</div>
+<div class="sub">每日追踪开源世界脉搏</div>
+<div class="tagline">数据来源：github.com/trending · since=daily</div>
+</div>
+<div class="wrap">
+<div class="trend">
+<h2>🌬️ 今日风向</h2>
+<p>
+    今日榜单 <span class="hi">AI / Agent 生态绝对称霸</span>——Agent 运行时、记忆中枢、技能框架、编程工具、安全防护齐刷刷上榜，13 席中 8 个与 Agent 直接相关。
+    <span class="hi">TencentDB-Agent-Memory（+1,891⭐）</span> 夺今日新增榜首，<span class="hi">firecrawl/pdf-inspector（+1,583⭐）</span> 紧随其后；
+    新面孔 <span class="hi">cloudflare/computer</span>（给 Agent 一台虚拟计算机）空降 #1；
+    安全赛道杀出黑马 <span class="hi">uber/ADR</span>——Uber 开源的企业级 AI Agent 安全系统，论文被 MLSys 2026 接收。
+    前端双子星 next.js、tailwindcss 稳定上榜。
+  </p>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">1</span>
+<a class="repo" href="https://github.com/cloudflare/computer" target="_blank">cloudflare/computer</a>
+<span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+<div class="stars">
+<span>总计 <b>2,742</b> ⭐</span>
+<span class="today">今日新增 +796 ⭐</span>
+<span>Forks <b>126</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">给 AI Agent 一台虚拟"计算机"——运行在 Cloudflare Durable Object 里的可执行虚拟文件系统</div>
+<div class="desc">
+      Cloudflare 出品的 Computer 是一个驻留在 Durable Object 内的虚拟文件系统，状态以 SQLite 为权威来源，并通过 <code>workspace.runtime</code> 暴露一个可插拔的执行入口。目前提供三种后端：Container（把 SQLite 状态投影进沙箱容器做真实 FUSE 挂载，完整 Linux 用户态）、Isolate shell（在 Dynamic Worker 中运行 just-bash）、Isolate JavaScript（在全新 Dynamic Worker 中执行 ECMAScript 模块）。核心卖点是让 AI Agent 拥有一块持久、可写、可执行代码的"工作目录"——Agent 能读写文件、跑命令、调 pandoc 生成 PDF，全部在 Cloudflare 边缘完成。区别于传统 E2B/沙箱方案，它把状态权威地收在 Durable Object 里，天然带强一致性。当前为 PREVIEW 预览阶段，API 不稳定，尚不适合生产。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">AI Agent 基础设施开发者、需要在云上给 Agent 提供持久工作空间的团队、Cloudflare Workers 生态用户、研究 Agent 代码执行与文件持久化的开发者。</div>
+<div class="klass">B-开发者工具 › Agent运行时 › 虚拟计算机</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">2</span>
+<a class="repo" href="https://github.com/huangruiteng/loopx" target="_blank">huangruiteng/loopx</a>
+<span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<div class="stars">
+<span>总计 <b>2,057</b> ⭐</span>
+<span class="today">今日新增 +327 ⭐</span>
+<span>Forks <b>160</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">长时运行 AI Agent 团队的轻量级"状态内核"与本地控制平面</div>
+<div class="desc">
+      LoopX 不替换你的 Agent 运行时，而是为它外挂一层持久控制状态：目标（objective）、门禁（gates）、待办（todos）、范围（scope）、证据（evidence）、配额（quota）。它把 Agent 协作可视化为一张"Agent 原生看板"——卡片承载身份、权限、证据和续接，移动是经过校验的操作算子（claim / gate / monitor / writeback）。Agent 之间是平等的 peer 关系，靠 claim、lease、任务边界和类型化续接来决定谁下一步行动，无需固定的"领导者"。亮点在于可处理跨 200+ 小时的长程任务轨迹（如开源 Issue 修复、Auto ML 实验），让证据、谱系、晋升/停止门禁始终可查。危险权限、发布、最终归属始终留给人类。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">运行多日工程/研究/实验类长任务的 Agent 团队；Issue 与 PR 循环需保留范围与证据；需要把 Agent 工作产出"对非工程操作者可读"的研究/运营/创作工作流。</div>
+<div class="klass">B-开发者工具 › Agent运行时 › 长时任务控制平面</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">3</span>
+<a class="repo" href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a>
+<span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+<div class="stars">
+<span>总计 <b>14,999</b> ⭐</span>
+<span class="today">今日新增 +1,891 ⭐</span>
+<span>Forks <b>1,365</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">AI Agent 的团队级记忆中枢——把对话、文档、代码变成可治理、可共享的记忆资产</div>
+<div class="desc">
+      腾讯云出品的 Agent 记忆系统，核心基于记忆分层与符号化记忆两大支柱。短期记忆用 Mermaid 符号图压缩冗长工具日志，Token 消耗最高降 61.38%；长期记忆构建语义金字塔 L0→L1→L2→L3（对话→原子事实→场景块→人物画像）。与把数据堆进向量库的传统方案不同，它强调"渐进式披露"——Agent 只关注顶层结构，需要细节时再下钻。已适配 OpenClaw 和 Hermes Agent，本地零配置即用（SQLite + sqlite-vec）。在 OpenClaw WideSearch 基准上 pass rate 提升 51.52%，PersonaMem 准确率从 48% 升至 76%。今日 +1,891 星登顶当日新增榜首。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">AI Agent 开发者、需给 Agent 加持久记忆的团队、Agent 基础设施建设者、Hermes/OpenClaw 用户。场景：多会话记忆保留、用户画像建模、长程任务上下文压缩、跨 Agent 记忆共享。</div>
+<div class="klass">A-AI/机器学习 › Agent记忆 › 团队记忆中枢</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">4</span>
+<a class="repo" href="https://github.com/donnemartin/system-design-primer" target="_blank">donnemartin/system-design-primer</a>
+<span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<div class="stars">
+<span>总计 <b>361,475</b> ⭐</span>
+<span class="today">今日新增 +304 ⭐</span>
+<span>Forks <b>57,644</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">系统设计面试经典教程——学习如何设计大规模系统，附带 Anki 抽认卡</div>
+<div class="desc">
+      这是 GitHub 上星标数最高的计算机科学类项目之一（36 万+ 星），用一套循序渐进的结构讲解分布式系统设计：CAP 定理、一致性、可用性、分区容错、负载均衡、缓存、分片、消息队列、CDN、数据库选型等。每个主题都配有真实面试题与参考答案（如设计 Twitter、设计短链、设计 KV 存储），并提供 Anki 抽认卡帮助记忆。它不是某一门语言或框架的教程，而是面向架构能力的知识体系，长期是大厂系统设计面试的事实标准复习材料。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">准备大厂系统设计面试的工程师、想系统学习后端/分布式架构的开发者、技术面试官、计算机专业学生。</div>
+<div class="klass">L-学习资源/其他 › 编程学习 › 系统设计面试</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">5</span>
+<a class="repo" href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a>
+<span class="lang"><span class="lang-dot" style="background:#dea584"></span>Rust</span>
+<div class="stars">
+<span>总计 <b>11,360</b> ⭐</span>
+<span class="today">今日新增 +1,583 ⭐</span>
+<span>Forks <b>755</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">极速 PDF 解析库——本地 200ms 内智能分类并提取文本转 Markdown，无需 OCR</div>
+<div class="desc">
+      Firecrawl 团队用 Rust 打造的 PDF 检查/分类/文本提取库，专为"约 54% 的文本型 PDF 根本不需要 OCR"这一洞察而设计。它能用 10-50ms 采样判断 PDF 是文本型、扫描型、图像型还是混合型，并给出逐页 OCR 路由建议和置信度；对文本型 PDF 做带位置感知的提取，自动识别多栏排版、表格、标题层级（按字号比例）、列表、代码块，输出干净 Markdown。在 opendataloader-bench（200 篇 PDF）基准上，pdf-inspector 以 0.875 总分、0.470s 总耗时全面领先 pymupdf4llm、markitdown 等。提供 Python、Node.js、浏览器 WebAssembly 三套绑定，纯 Rust 无 ML 模型无外部服务。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">RAG/文档智能流水线开发者、需要大批量低成本解析 PDF 的团队、爬虫与数据抽取工程师、在浏览器端本地解析 PDF 的前端应用。</div>
+<div class="klass">B-开发者工具 › 文档处理工具 › PDF解析</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">6</span>
+<a class="repo" href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a>
+<span class="lang"><span class="lang-dot" style="background:#00ADD8"></span>Go</span>
+<div class="stars">
+<span>总计 <b>31,544</b> ⭐</span>
+<span class="today">今日新增 +747 ⭐</span>
+<span>Forks <b>2,027</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">DeepSeek 原生的终端 AI 编码 Agent——围绕 prefix-cache 稳定性工程化设计</div>
+<div class="desc">
+      Reasonix 是专为 DeepSeek 模型打造的终端编码 Agent（已从 TypeScript 重写为 Go，新版本在 main-v2 分支）。它的核心差异化在于"缓存稳定性不是开关，而是整个循环设计的不变量"——把每一层都调校到 DeepSeek 字节稳定的 prefix-cache 机制上。真实案例：单日 4.35 亿输入 Token，缓存命中 99.82%，花费约 12 美元，而无缓存同等负载需约 61 美元。支持 SEARCH/REPLACE 编辑模式（落地前不碰磁盘）、跨平台（macOS/Linux/Windows），通过 npm 全局安装或 npx 一次性运行。oosmetrics 评为 Agent/LLM/CLI 三个榜单的速度前列。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">使用 DeepSeek 模型做 AI 编码的开发者、追求长会话低成本高缓存命中的重度 Agent 用户、终端原生工作流的工程师。</div>
+<div class="klass">B-开发者工具 › AI编程工具 › 终端编码Agent</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">7</span>
+<a class="repo" href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a>
+<span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+<div class="stars">
+<span>总计 <b>81,953</b> ⭐</span>
+<span class="today">今日新增 +203 ⭐</span>
+<span>Forks <b>8,819</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">为 AI 编码 Agent 打造的生产级工程技能包——覆盖 DEFINE→SHIP 全生命周期</div>
+<div class="desc">
+      Google 工程师 Addy Osmani 出品的 24 个生产级 Agent 技能集合，把资深工程师的工作流、质量门禁与最佳实践打包成 Agent 可一致遵循的能力。8 个斜杠命令对应开发生命周期：<code>/spec</code>（先规格后代码）、<code>/plan</code>（原子化任务）、<code>/build</code>（一次一个切片）、<code>/test</code>（测试即证据）、<code>/review</code>、<code>/webperf</code>、<code>/code-simplify</code>、<code>/ship</code>。<code>/build auto</code> 可批准一次计划后自动实现每个任务（仍逐个测试驱动提交，遇失败/风险暂停）。技能还会根据当前工作自动激活（设计 API 触发接口设计技能，做 UI 触发前端工程技能）。通过开放 skills CLI 一键装入 70+ Agent 平台。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">想让 AI 编码助手遵循专业开发流程的开发者和团队、Claude Code/Cursor/Codex/Copilot 用户、追求 AI 自动化开发效率的个人与组织。</div>
+<div class="klass">B-开发者工具 › Agent技能框架 › 工程技能包</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">8</span>
+<a class="repo" href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a>
+<span class="lang"><span class="lang-dot" style="background:#89e051"></span>Shell</span>
+<div class="stars">
+<span>总计 <b>267,258</b> ⭐</span>
+<span class="today">今日新增 +931 ⭐</span>
+<span>Forks <b>23,878</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">为编码 Agent 打造的完整软件开发方法论——可组合技能 + 自动化研发流程</div>
+<div class="desc">
+      Superpowers 是一套完整的面向编码 Agent 的软件开发方法论，构建在一组可组合技能和初始指令之上，让 AI 编码助手自动遵循专业开发流程。核心流程：Agent 先与用户对齐需求、拆解出可消化的小块规格；设计确认后自动生成清晰到"连初级工程师都能照做"的实现计划；用户说"go"后启动子代理驱动开发，让多个 Agent 分别处理各工程任务并互相审查。强调真正的红/绿 TDD、YAGNI 和 DRY，Agent 可自主工作数小时不偏离计划。支持 Claude Code、Codex、Cursor、Gemini CLI、Copilot CLI 等 11+ 平台。区别于单纯技能堆砌，它更侧重方法论与流程自动化。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">重度使用 AI 编程工具的开发者和团队；希望让 AI Agent 遵循专业 TDD 流程的工程团队；需要跨多个 AI 编程平台共享开发方法论的组织。</div>
+<div class="klass">B-开发者工具 › Agent技能框架 › 软件开发方法论</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">9</span>
+<a class="repo" href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision</a>
+<span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<div class="stars">
+<span>总计 <b>48,891</b> ⭐</span>
+<span class="today">今日新增 +132 ⭐</span>
+<span>Forks <b>4,617</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">可复用的计算机视觉工具库——检测、标注、跟踪、可视化一条龙</div>
+<div class="desc">
+      Roboflow 出品的 supervision 是计算机视觉领域的事实标准工具库，帮你把各种检测/分割模型（YOLO、GroundingDINO、Segment Anything 等）的原始输出快速变成可用产品：自动绘制边界框与标签、过滤与转换检测结果、基于 ByteTrack/BoT-SORT 的目标跟踪、多边形掩膜处理、热力图/计数线等可视化标注。它把模型推理后那层繁琐的"后处理"代码标准化了，让你不用每次都重写绘图和跟踪逻辑。API 设计简洁、文档完善，是 CV 工程师搭原型和做生产流水线的常用基础组件。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">计算机视觉应用开发者、做目标检测/分割/跟踪的工程师、安防/工业质检/零售分析等需要 CV 可视化与后处理的团队。</div>
+<div class="klass">A-AI/机器学习 › 计算机视觉 › CV工具库</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">10</span>
+<a class="repo" href="https://github.com/vercel/next.js" target="_blank">vercel/next.js</a>
+<span class="lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+<div class="stars">
+<span>总计 <b>141,529</b> ⭐</span>
+<span class="today">今日新增 +144 ⭐</span>
+<span>Forks <b>31,679</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">The React Framework——全栈 React 应用的事实标准框架</div>
+<div class="desc">
+      Next.js 是 Vercel 维护的 React 全栈框架，长期占据前端生态核心位置。它把文件式路由、服务端渲染（SSR）、静态生成（SSG）、App Router、Server Components、Server Actions、API Routes、边缘运行时、图片/字体优化等能力整合成一套连贯的开发体验。App Router 让 React Server Components 落地，Server Actions 让前后端边界更自然。区别于纯客户端 SPA（如 CRA），Next.js 在渲染策略、数据获取、SEO 与性能优化上提供了工业级方案，是企业级 React 应用的默认起点。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">React 全栈应用开发者、需要 SSR/SSG 与 SEO 的 Web 产品团队、Vercel 生态用户、从 CRA 迁移到现代 React 架构的团队。</div>
+<div class="klass">C-前端/Web › 前端框架 › React全栈框架</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">11</span>
+<a class="repo" href="https://github.com/tailwindlabs/tailwindcss" target="_blank">tailwindlabs/tailwindcss</a>
+<span class="lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+<div class="stars">
+<span>总计 <b>96,826</b> ⭐</span>
+<span class="today">今日新增 +408 ⭐</span>
+<span>Forks <b>5,546</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">实用优先（utility-first）的 CSS 框架——用原子化类名快速构建 UI</div>
+<div class="desc">
+      Tailwind CSS 颠覆了传统"语义化类名 + 写 CSS"的范式，转而提供一套精心设计的原子化工具类（如 <code>flex</code>、<code>p-4</code>、<code>text-lg</code>、<code>text-center</code>），让你直接在 HTML 里组合出任意设计，几乎不用离开标签写自定义 CSS。配合 JIT 引擎只打包实际用到的类、响应式与暗色模式前缀、以及内容安全扫描，产物极小。v4 重写了引擎（Oxide），性能与配置体验大幅提升。区别于 Bootstrap 这类预设组件库，Tailwind 给的是构建积木而非成品，灵活度极高，已成为现代前端样式方案的主流选择。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">前端开发者、需要快速构建一致设计系统的团队、React/Vue/Svelte 等组件化框架用户、追求 CSS 可维护性的项目。</div>
+<div class="klass">C-前端/Web › CSS框架 › 原子化CSS</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">12</span>
+<a class="repo" href="https://github.com/uber/ADR" target="_blank">uber/ADR</a>
+<span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+<div class="stars">
+<span>总计 <b>1,012</b> ⭐</span>
+<span class="today">今日新增 +354 ⭐</span>
+<span>Forks <b>85</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">企业级 AI Agent 安全系统——可观测性 + 安全基准 + 威胁检测，已在 Uber 生产部署</div>
+<div class="desc">
+      Uber 开源的 ADR（Agentic AI Detection and Response）是企业 AI Agent 的安全防护系统，已在 Uber 生产环境部署，配套论文被 MLSys 2026 接收。它通过四大能力守护 Agent：① 可观测性——在 macOS/Linux/Windows 上捕获 Cursor、Claude Code、Codex 等 7+ 编码工具及客服 Agent 的意图、工具调用与执行轨迹；② ADR-Bench 基准——300+ 任务、133 个 MCP 服务器、覆盖全部 17 种 Agent 攻击手法；③ 双层检测架构——高召回初筛 + 针对可疑会话的深度 Agent 推理；④ 防护组件（未开源）。区别于通用 WAF，它专门针对 Agent 的提示注入、越权工具调用等新型风险。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">企业安全团队、大规模部署 AI 编码/客服 Agent 的组织、需要评估 Agent 攻击面与防护策略的安全工程师、Agent 安全研究者。</div>
+<div class="klass">G-安全 › AI Agent安全 › 企业级检测响应</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-head">
+<span class="rank">13</span>
+<a class="repo" href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm</a>
+<span class="lang"><span class="lang-dot" style="background:#DA5B0B"></span>Jupyter Notebook</span>
+<div class="stars">
+<span>总计 <b>29,035</b> ⭐</span>
+<span class="today">今日新增 +833 ⭐</span>
+<span>Forks <b>3,119</b></span>
+</div>
+</div>
+<div class="card-body">
+<div class="pos">让 70B 大模型跑在单张 4GB 显卡上——极致显存优化的 LLM 推理引擎</div>
+<div class="desc">
+      AirLLM 通过层流式推理（layerwise streaming）技术，大幅降低大模型推理的显存占用，让 70B 参数模型在单张 4GB 显卡上运行——无需量化、蒸馏或剪枝。更夸张的是，405B 的 Llama 3.1 只需 8GB，DeepSeek-V3（671B）约 12GB，而 Kimi K3（2.8T）仅需不到 4GB，因为稀疏 MoE 模型每次只流式加载一个专家而非整层。核心原理是将模型层存储在磁盘/SSD 上，推理时逐层加载、逐层释放，以时间换空间，使超大模型在消费级硬件上成为可能。
+    </div>
+<div class="field-label">适用领域</div>
+<div class="field-text">本地部署超大模型的开发者、GPU 显存有限但想跑大模型的个人研究者、需要离线推理超大模型的场景、教育/演示用途。适合 4-8GB 显存的笔记本/台式机跑 70B+ 级模型。</div>
+<div class="klass">A-AI/机器学习 › LLM推理优化 › 极致显存优化</div>
+</div>
+</div>
+<div class="summary">
+<h2>📋 今日速览表</h2>
+<table>
+<thead>
+<tr><th>排名</th><th>项目</th><th>主语言</th><th>今日 ⭐</th><th>知识归类</th></tr>
+</thead>
+<tbody>
+<tr><td class="rank-cell">1</td><td><a href="https://github.com/cloudflare/computer" target="_blank">cloudflare/computer</a></td><td class="c">TypeScript</td><td class="star-cell">+796</td><td>B-开发者工具 › Agent运行时</td></tr>
+<tr><td class="rank-cell">2</td><td><a href="https://github.com/huangruiteng/loopx" target="_blank">huangruiteng/loopx</a></td><td class="c">Python</td><td class="star-cell">+327</td><td>B-开发者工具 › Agent运行时</td></tr>
+<tr><td class="rank-cell">3</td><td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a></td><td class="c">TypeScript</td><td class="star-cell">+1,891</td><td>A-AI/机器学习 › Agent记忆</td></tr>
+<tr><td class="rank-cell">4</td><td><a href="https://github.com/donnemartin/system-design-primer" target="_blank">donnemartin/system-design-primer</a></td><td class="c">Python</td><td class="star-cell">+304</td><td>L-学习资源 › 系统设计面试</td></tr>
+<tr><td class="rank-cell">5</td><td><a href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a></td><td class="c">Rust</td><td class="star-cell">+1,583</td><td>B-开发者工具 › PDF解析</td></tr>
+<tr><td class="rank-cell">6</td><td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td><td class="c">Go</td><td class="star-cell">+747</td><td>B-开发者工具 › 终端编码Agent</td></tr>
+<tr><td class="rank-cell">7</td><td><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></td><td class="c">JavaScript</td><td class="star-cell">+203</td><td>B-开发者工具 › Agent技能框架</td></tr>
+<tr><td class="rank-cell">8</td><td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td><td class="c">Shell</td><td class="star-cell">+931</td><td>B-开发者工具 › Agent技能框架</td></tr>
+<tr><td class="rank-cell">9</td><td><a href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision</a></td><td class="c">Python</td><td class="star-cell">+132</td><td>A-AI/机器学习 › 计算机视觉</td></tr>
+<tr><td class="rank-cell">10</td><td><a href="https://github.com/vercel/next.js" target="_blank">vercel/next.js</a></td><td class="c">JavaScript</td><td class="star-cell">+144</td><td>C-前端/Web › React全栈框架</td></tr>
+<tr><td class="rank-cell">11</td><td><a href="https://github.com/tailwindlabs/tailwindcss" target="_blank">tailwindlabs/tailwindcss</a></td><td class="c">TypeScript</td><td class="star-cell">+408</td><td>C-前端/Web › 原子化CSS</td></tr>
+<tr><td class="rank-cell">12</td><td><a href="https://github.com/uber/ADR" target="_blank">uber/ADR</a></td><td class="c">Python</td><td class="star-cell">+354</td><td>G-安全 › AI Agent安全</td></tr>
+<tr><td class="rank-cell">13</td><td><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm</a></td><td class="c">Jupyter Notebook</td><td class="star-cell">+833</td><td>A-AI/机器学习 › LLM推理优化</td></tr>
+</tbody>
+</table>
+</div>
+<div class="footer">本报告依据公开资料整理 · 数据采集自 GitHub Trending（since=daily）· 仅供学习参考</div>
+</div>
+</body>
+</html>
