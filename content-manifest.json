@@ -1,5 +1,5 @@
 {
-  "revision": "247e3f0d1a20ae7b93bac13d",
+  "revision": "3353d54e62aeb8efcd24a868",
   "generated_at": "2026-10-23",
   "files": [
     {
@@ -2419,8 +2419,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "3fcac5f49dd7ba1564b7d7ccf36bf94c7a0ac85e3d19739d9e7d7577f59ea824",
-      "size": 4458
+      "sha256": "9c21751a32a651ca24ebcde7aeaed79029840dbeff96fb6b3772f48e4fd379ac",
+      "size": 7790
     },
     {
       "path": "app.css",
@@ -2489,7 +2489,7 @@
     },
     {
       "path": "content-version.json",
-      "sha256": "e0e287c41029b49599612a8d0507914afd56a17b9d254a8d8d4afa34aa493ebc",
+      "sha256": "68731da1c4a137334b557145668cd08770939ea3ca29847ed26213f9972b8170",
       "size": 70
     }
   ]

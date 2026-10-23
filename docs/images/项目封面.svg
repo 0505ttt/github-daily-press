@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560" role="img" aria-labelledby="title desc">
+<title id="title">GitHub 每日项目推送：把开源世界，读成一本杂志</title><desc id="desc">黑绿杂志封面。GitHub 热榜、AI 前沿、项目档案，可安装应用、离线阅读、自选模型。</desc>
+<rect width="1600" height="560" fill="#0b0b0b"/>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
+<text x="72" y="75" fill="#f4f2e8" font-size="27" font-weight="750">GH WEEKLY</text><text x="320" y="75" fill="#b5b6ac" font-size="23">GitHub 每日项目推送</text>
+<path d="M72 103H1528" stroke="#4a4a45"/>
+<text x="72" y="220" fill="#f4f2e8" font-size="70" font-weight="800">把开源世界，</text><text x="72" y="316" fill="#00c46a" font-size="70" font-weight="800">读成一本杂志。</text>
+<text x="75" y="380" fill="#c0c1b7" font-size="26">发现热点，回看历史，找到值得跟进的项目。</text>
+<g transform="translate(1000 143)">
+<rect x="160" y="0" width="340" height="280" fill="#00b963"/>
+<rect x="80" y="34" width="340" height="280" fill="#242924" stroke="#767d74"/>
+<rect x="0" y="68" width="340" height="280" fill="#f4f2e8"/>
+<text x="28" y="113" fill="#0b0b0b" font-size="16" letter-spacing="3">GH WEEKLY</text>
+<path d="M28 133H312" stroke="#0b0b0b" stroke-width="3"/>
+<text x="28" y="200" fill="#0b0b0b" font-size="43" font-weight="800">开源热点</text>
+<text x="28" y="254" fill="#008e4a" font-size="43" font-weight="800">与 AI 前沿</text>
+<text x="28" y="315" fill="#4c5149" font-size="22">今日刊 · 历史刊 · 项目档案</text>
+</g>
+<path d="M72 458H925" stroke="#4a4a45"/>
+<text x="74" y="509" fill="#f4f2e8" font-size="23">可安装应用</text><circle cx="270" cy="500" r="3" fill="#00c46a"/><text x="300" y="509" fill="#f4f2e8" font-size="23">离线阅读</text><circle cx="473" cy="500" r="3" fill="#00c46a"/><text x="503" y="509" fill="#f4f2e8" font-size="23">自选模型</text>
+</g></svg>

@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "date": "2026-10-23",
   "scope": "公开版 Git 跟踪文件；清单本身不计算自己的散列",
-  "count": 1037,
+  "count": 1045,
   "files": [
     {
       "path": ".env.example",
@@ -2471,8 +2471,8 @@
     },
     {
       "path": "README.md",
-      "size": 4458,
-      "sha256": "3fcac5f49dd7ba1564b7d7ccf36bf94c7a0ac85e3d19739d9e7d7577f59ea824"
+      "size": 7790,
+      "sha256": "9c21751a32a651ca24ebcde7aeaed79029840dbeff96fb6b3772f48e4fd379ac"
     },
     {
       "path": "SECURITY.md",
@@ -2482,7 +2482,7 @@
     {
       "path": "content-manifest.json",
       "size": 103933,
-      "sha256": "86f32f1e41b7fda8894c8a5b1d1dc12d98cdf290a25e55a429993befe22c44be"
+      "sha256": "61abc03475a84fa34cdd2c931b311a9611d8a5ea3025cacf17001f32ae648866"
     },
     {
       "path": "dist/AI前沿资讯/回溯特刊_近两月AI新项目榜_2026-08-19至10-19.md",
@@ -4901,8 +4901,8 @@
     },
     {
       "path": "dist/README.md",
-      "size": 4458,
-      "sha256": "3fcac5f49dd7ba1564b7d7ccf36bf94c7a0ac85e3d19739d9e7d7577f59ea824"
+      "size": 7790,
+      "sha256": "9c21751a32a651ca24ebcde7aeaed79029840dbeff96fb6b3772f48e4fd379ac"
     },
     {
       "path": "dist/app.css",
@@ -4912,12 +4912,12 @@
     {
       "path": "dist/content-manifest.json",
       "size": 103933,
-      "sha256": "86f32f1e41b7fda8894c8a5b1d1dc12d98cdf290a25e55a429993befe22c44be"
+      "sha256": "61abc03475a84fa34cdd2c931b311a9611d8a5ea3025cacf17001f32ae648866"
     },
     {
       "path": "dist/content-version.json",
       "size": 70,
-      "sha256": "e0e287c41029b49599612a8d0507914afd56a17b9d254a8d8d4afa34aa493ebc"
+      "sha256": "68731da1c4a137334b557145668cd08770939ea3ca29847ed26213f9972b8170"
     },
     {
       "path": "dist/icons/icon-192.png",
@@ -4980,9 +4980,44 @@
       "sha256": "225c2a451e5e65429eec85ccb919f4828fabf025ea16ac667077aed5e4857e2c"
     },
     {
+      "path": "docs/images/使用流程.svg",
+      "size": 3015,
+      "sha256": "f9b986430576aa4c291092f511c2752ed2f57a0c41b7aec861342911c7059eb8"
+    },
+    {
+      "path": "docs/images/日报阅读.jpg",
+      "size": 187334,
+      "sha256": "339d6f31186f739e1f030f40f1a55c30f953ccab0bcaf389af632809f7ce1fdb"
+    },
+    {
       "path": "docs/images/桌面阅读.jpg",
       "size": 92771,
       "sha256": "180699d2775b3bb3fda51ada7031b7a24e308dabaaae7a796d45aae930ae9762"
+    },
+    {
+      "path": "docs/images/模型设置.jpg",
+      "size": 80903,
+      "sha256": "e697057fda4e632cfd95c83998bc62b923828da1847e5b28d78cf938c51e4987"
+    },
+    {
+      "path": "docs/images/阅读总览.jpg",
+      "size": 146067,
+      "sha256": "653324b7103bd638ba559d4c49ff2fa7fc663cf7c38ae7f9040d840f9c6555d0"
+    },
+    {
+      "path": "docs/images/项目封面-移动.svg",
+      "size": 1822,
+      "sha256": "0d518685130da66546642ee6dd453a6940e244c93fab8dc7ea02a9649be03859"
+    },
+    {
+      "path": "docs/images/项目封面.svg",
+      "size": 2028,
+      "sha256": "7ef2623f0b83d338444e9151c3f7e9fc8191b6ff16d22dd124e36e01b5cb68b3"
+    },
+    {
+      "path": "docs/images/项目档案.jpg",
+      "size": 186557,
+      "sha256": "eff0fe6045d7e9584fccb30d4b1e7f8c1f4398d8e200d3cb8f9e6e3babb8460b"
     },
     {
       "path": "docs/云端自动更新.md",
@@ -5000,9 +5035,14 @@
       "sha256": "6c8d0c4955597a0ace03ae3cc4eaf6ba359cff16adff2adb1b532eb1a39c0dd1"
     },
     {
+      "path": "docs/项目介绍.html",
+      "size": 11422,
+      "sha256": "3ef6785a4c4508e255f17b9594252d4ed1434708917b30d710d8414aa0039689"
+    },
+    {
       "path": "docs/验收记录.md",
-      "size": 3445,
-      "sha256": "e337f80ce8b668facc0a8a89cb1e22714a6097ff6d2ee40a1a97721f60c1018b"
+      "size": 3718,
+      "sha256": "9aa2d1098f2e42848eb90a2fa93f5a3b029d77b82b08e1b2582487ead3a6e014"
     },
     {
       "path": "gh_daily/__init__.py",

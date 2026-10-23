@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
+<title id="title">两种使用方式：云端生成、本地同步；或本地采编</title><desc id="desc">推荐云端定时采编后保存至自己的 main 分支，再同步到本地应用。另一条路径在本机采集公开来源，接入兼容模型或 Ollama，生成并阅读。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#087d48" stroke-width="1.7"/></marker></defs>
+<rect width="1600" height="680" fill="#f4f2e8"/>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
+<text x="64" y="76" font-size="38" font-weight="750" fill="#101510">选择适合自己的更新方式</text><path d="M64 103H1536" stroke="#152017" stroke-width="2"/>
+<text x="64" y="162" font-size="26" font-weight="700" fill="#087d48">推荐 · 云端生成，本地阅读</text>
+<g fill="#fff" stroke="#cad2c7"><rect x="64" y="190" width="418" height="132" rx="8"/><rect x="592" y="190" width="418" height="132" rx="8"/><rect x="1120" y="190" width="416" height="132" rx="8"/></g>
+<g fill="#101510" font-size="30" font-weight="700"><text x="92" y="244">GitHub Actions 采编</text><text x="620" y="244">自己的公开仓库</text><text x="1148" y="244">本地应用同步阅读</text></g>
+<g fill="#566151" font-size="21"><text x="92" y="287">每日 08:30（北京时间）</text><text x="620" y="287">main 分支保存公开产物</text><text x="1148" y="287">缓存完成后可离线阅读</text></g>
+<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 256H566"/><path d="M1032 256H1094"/></g>
+<text x="64" y="359" fill="#626c5e" font-size="20">云端使用自己的模型服务与 Secrets；GitHub 定时可能延迟，也可手动运行。</text>
+<path d="M64 390H1536" stroke="#c5cbbd"/>
+<text x="64" y="445" font-size="26" font-weight="700" fill="#087d48">本地 · 自己采集，自己生成</text>
+<g fill="#fff" stroke="#cad2c7"><rect x="64" y="471" width="418" height="132" rx="8"/><rect x="592" y="471" width="418" height="132" rx="8"/><rect x="1120" y="471" width="416" height="132" rx="8"/></g>
+<g fill="#101510" font-size="30" font-weight="700"><text x="92" y="525">采集公开榜单与资讯</text><text x="620" y="525">兼容接口 / Ollama</text><text x="1148" y="525">本地生成并阅读</text></g>
+<g fill="#566151" font-size="21"><text x="92" y="568">保留日期、来源与采集状态</text><text x="620" y="568">使用自己的模型与配置</text><text x="1148" y="568">手动生成或启用本地定时</text></g>
+<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 537H566"/><path d="M1032 537H1094"/></g>
+<text x="64" y="648" fill="#626c5e" font-size="20">已有历史内容无需配置模型即可阅读；应用图标不负责启动本地服务。</text>
+</g></svg>
