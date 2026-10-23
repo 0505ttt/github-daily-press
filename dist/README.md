@@ -34,6 +34,8 @@
 
 ## 快速开始
 
+**[下载 v1.0.0 公开版](https://github.com/0505ttt/github-daily-press/releases/tag/v1.0.0)** · [版本记录](CHANGELOG.md)
+
 安装 **Python 3.11 或更新版本**，下载本仓库并解压，或使用 Git 克隆。
 
 | 系统 | 启动方式 |

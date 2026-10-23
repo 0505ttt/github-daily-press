@@ -36,7 +36,7 @@ class ReleaseTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     build_site(root)
             for name in ["GitHub项目分析/GitHub热点杂志.html", "tools/_杂志数据.json", "content-manifest.json", "dist/index.html"]:
-                self.assertEqual((root / name).read_text(), "上一份有效内容")
+                self.assertEqual((root / name).read_text(encoding="utf-8"), "上一份有效内容")
 
     def test_failed_publication_rolls_back_source_files_and_site(self):
         from gh_daily.build import build_site, atomic_text
@@ -54,7 +54,7 @@ class ReleaseTests(unittest.TestCase):
                 with self.assertRaises(OSError):
                     build_site(root)
             for name in ["GitHub项目分析/GitHub热点杂志.html", "tools/_杂志数据.json", "content-manifest.json", "dist/index.html"]:
-                self.assertEqual((root / name).read_text(), "上一份有效内容")
+                self.assertEqual((root / name).read_text(encoding="utf-8"), "上一份有效内容")
 
     def test_site_build_rejects_nested_cache_names_and_unknown_attachments(self):
         from gh_daily.build import build_site
@@ -68,7 +68,7 @@ class ReleaseTests(unittest.TestCase):
                 with patch("gh_daily.build.load_builder", return_value=builder):
                     with self.assertRaises(ValueError):
                         build_site(root)
-                self.assertEqual((root / "dist/index.html").read_text(), "上一份有效内容")
+                self.assertEqual((root / "dist/index.html").read_text(encoding="utf-8"), "上一份有效内容")
 
     def test_direct_dist_scan_never_skips_build_directory(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -124,7 +124,7 @@ class ReleaseTests(unittest.TestCase):
         manifest_file = root / "content-manifest.json"
         if not manifest_file.exists():
             self.skipTest("首次构建后验证清单")
-        manifest = json.loads(manifest_file.read_text())
+        manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
         for entry in manifest["files"]:
             path = root / "dist" / entry["path"]
             self.assertEqual(path.stat().st_size, entry["size"], entry["path"])

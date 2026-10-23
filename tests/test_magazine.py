@@ -219,7 +219,7 @@ applySide();
 assert.equal(side.inert,true);
 assert.equal(document.activeElement,tog);
 """
-        result = subprocess.run([shutil.which("node"), "-"], input=harness, text=True,
+        result = subprocess.run([shutil.which("node"), "-"], input=harness, text=True, encoding="utf-8",
                                 capture_output=True, timeout=15, check=False)
         self.assertEqual(result.returncode, 0, result.stderr)
 

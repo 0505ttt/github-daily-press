@@ -56,12 +56,17 @@ class LocalAppTests(unittest.TestCase):
         return result
 
     def test_config_never_echoes_key_and_blank_preserves(self):
-        public = config.save_config({"api_key": "test-only-placeholder", "model": "example-model"})
+        with patch("gh_daily.config.os.chmod", wraps=os.chmod) as chmod:
+            public = config.save_config({"api_key": "test-only-placeholder", "model": "example-model"})
+        chmod.assert_any_call(self.root / "private", 0o700)
+        self.assertTrue(any(call.args[1] == 0o600 for call in chmod.call_args_list))
         self.assertTrue(public["api_key_set"])
         self.assertNotIn("api_key", public)
         config.save_config({"api_key": "", "max_tokens": 1024})
         self.assertEqual(config.load_config()["api_key"], "test-only-placeholder")
-        self.assertEqual((self.root / "private/config.json").stat().st_mode & 0o777, 0o600)
+        # Windows 的 chmod 只控制只读位，不能用 POSIX mode 核验其用户 ACL。
+        if os.name == "posix":
+            self.assertEqual((self.root / "private/config.json").stat().st_mode & 0o777, 0o600)
         config.save_config({"clear_api_key": True})
         self.assertFalse(config.public_config()["api_key_set"])
 
@@ -69,7 +74,7 @@ class LocalAppTests(unittest.TestCase):
         with patch.dict(os.environ, {"GH_DAILY_API_KEY": "environment-placeholder"}):
             config.save_config({"model": "demo"})
             self.assertEqual(config.load_config()["api_key"], "environment-placeholder")
-            self.assertNotIn("environment-placeholder", (self.root / "private/config.json").read_text())
+            self.assertNotIn("environment-placeholder", (self.root / "private/config.json").read_text(encoding="utf-8"))
 
     def test_key_is_cleared_when_endpoint_changes_without_new_key(self):
         base = config.prepare_config({"api_key": "old-placeholder"})
@@ -136,7 +141,7 @@ class LocalAppTests(unittest.TestCase):
             self.assertEqual(public["source_repo"], "example/project")
             self.assertEqual(public["timeout"], 30)
             self.assertEqual(config.load_config()["api_key"], "environment-placeholder")
-            self.assertNotIn("environment-placeholder", (self.root / "private/config.json").read_text())
+            self.assertNotIn("environment-placeholder", (self.root / "private/config.json").read_text(encoding="utf-8"))
 
     def test_provider_and_limits_validation(self):
         for patch_value in ({"base_url": "http://example.com/v1"}, {"base_url": "https://user:pass@example.com/v1"},
@@ -163,7 +168,7 @@ class LocalAppTests(unittest.TestCase):
         self.assertEqual(self.request("POST", "/api/config", {}, accepted)[0], 403)
 
     def test_static_service_rejects_hidden_traversal_and_symlinks(self):
-        (self.root / "secret.txt").write_text("private")
+        (self.root / "secret.txt").write_text("private", encoding="utf-8")
         (self.root / "dist" / "exposed.txt").symlink_to(self.root / "secret.txt")
         self.start()
         self.assertEqual(self.request("GET", "/")[0], 200)
@@ -255,9 +260,9 @@ class LocalAppTests(unittest.TestCase):
         self.start()
         pointer = self.root / ".runtime/content/active.json"
         pointer.parent.mkdir(parents=True)
-        pointer.write_text('{"directory":"previous"}')
+        pointer.write_text('{"directory":"previous"}', encoding="utf-8")
         for build_status, expected_pointer in (("success", False), ("skipped", False), ("failed", True)):
-            pointer.write_text('{"directory":"previous"}')
+            pointer.write_text('{"directory":"previous"}', encoding="utf-8")
             result = {"ok": False, "status": "partial", "tasks": {
                 "ai": {"status": "failed"}, "daily": {"status": "success"}, "build": {"status": build_status}}}
             build = Mock()
@@ -282,7 +287,7 @@ class LocalAppTests(unittest.TestCase):
         self.assertTrue(sync.allowed_content_path("GitHub项目分析/历史前身_Markdown/附件.pdf"))
 
     def test_service_worker_excludes_private_routes(self):
-        script = (Path(__file__).resolve().parents[1] / "web/sw.js").read_text()
+        script = (Path(__file__).resolve().parents[1] / "web/sw.js").read_text(encoding="utf-8")
         self.assertIn('path.startsWith("/api/")', script)
         self.assertIn('path === "/settings.html"', script)
         self.assertIn('path === "/settings.js"', script)

@@ -1,0 +1,9 @@
+# 已生成站点按原始字节校验 SHA-256；各平台检出均保留 LF。
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary

@@ -2,12 +2,17 @@
   "version": "1.0.0",
   "date": "2026-10-23",
   "scope": "公开版 Git 跟踪文件；清单本身不计算自己的散列",
-  "count": 1045,
+  "count": 1046,
   "files": [
     {
       "path": ".env.example",
       "size": 319,
       "sha256": "bce9513a4fae3b4ee9bde5a62a327d3b826a7fa81675d8f593abcb313b75cbd9"
+    },
+    {
+      "path": ".gitattributes",
+      "size": 191,
+      "sha256": "75c299c5e44be4fd63c78e873741fcd623ff924c606922ddbcc5f9ded2d05e18"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/问题反馈.md",
@@ -2471,8 +2476,8 @@
     },
     {
       "path": "README.md",
-      "size": 7790,
-      "sha256": "9c21751a32a651ca24ebcde7aeaed79029840dbeff96fb6b3772f48e4fd379ac"
+      "size": 7920,
+      "sha256": "4cfdf14b89f00ed769cc974b8996f76e699d6e24ba5b5a5856580ad5fb116a2c"
     },
     {
       "path": "SECURITY.md",
@@ -2482,7 +2487,7 @@
     {
       "path": "content-manifest.json",
       "size": 103933,
-      "sha256": "61abc03475a84fa34cdd2c931b311a9611d8a5ea3025cacf17001f32ae648866"
+      "sha256": "0b247b6ee15e75e80c5681ff7abfe1701df3fd18909ad0c3cea629921fac6aa1"
     },
     {
       "path": "dist/AI前沿资讯/回溯特刊_近两月AI新项目榜_2026-08-19至10-19.md",
@@ -4901,8 +4906,8 @@
     },
     {
       "path": "dist/README.md",
-      "size": 7790,
-      "sha256": "9c21751a32a651ca24ebcde7aeaed79029840dbeff96fb6b3772f48e4fd379ac"
+      "size": 7920,
+      "sha256": "4cfdf14b89f00ed769cc974b8996f76e699d6e24ba5b5a5856580ad5fb116a2c"
     },
     {
       "path": "dist/app.css",
@@ -4912,12 +4917,12 @@
     {
       "path": "dist/content-manifest.json",
       "size": 103933,
-      "sha256": "61abc03475a84fa34cdd2c931b311a9611d8a5ea3025cacf17001f32ae648866"
+      "sha256": "0b247b6ee15e75e80c5681ff7abfe1701df3fd18909ad0c3cea629921fac6aa1"
     },
     {
       "path": "dist/content-version.json",
       "size": 70,
-      "sha256": "68731da1c4a137334b557145668cd08770939ea3ca29847ed26213f9972b8170"
+      "sha256": "2dabef2ecc5cdf837bc2b1b49d47167540a652771e637f2b316d9474fa5404e8"
     },
     {
       "path": "dist/icons/icon-192.png",
@@ -5041,8 +5046,8 @@
     },
     {
       "path": "docs/验收记录.md",
-      "size": 3718,
-      "sha256": "9aa2d1098f2e42848eb90a2fa93f5a3b029d77b82b08e1b2582487ead3a6e014"
+      "size": 3845,
+      "sha256": "a4e4fc01f862ae23357881e340339a7ffbcd4be6e5f8a589cce9fd19db1f3cb3"
     },
     {
       "path": "gh_daily/__init__.py",
@@ -5081,8 +5086,8 @@
     },
     {
       "path": "gh_daily/privacy.py",
-      "size": 5218,
-      "sha256": "b2ef44221b95e5fc97ce8b57de4b790222b4f1c9e07af928bcfb18db80808860"
+      "size": 5254,
+      "sha256": "96e09d5dfb1bf13390160b1a4d63a8c146d622f2a2d43f54d0d455dbab24b9f1"
     },
     {
       "path": "gh_daily/reports.py",
@@ -5116,13 +5121,13 @@
     },
     {
       "path": "tests/test_local_app.py",
-      "size": 17791,
-      "sha256": "827e944a5b41451f470136e75dcc5f3e9373b2ee78a9900297ee5c6c7a1321bd"
+      "size": 18243,
+      "sha256": "cd385c9046866e792f599b27267af3bc832821a5d874653c4af21c27812d3133"
     },
     {
       "path": "tests/test_magazine.py",
-      "size": 11419,
-      "sha256": "b096790110c0bafe4bfd713dfd1a7143937944e8829cde188c47709154c7b923"
+      "size": 11437,
+      "sha256": "4f4df5bb508a79d92801b5690d367afd69aaaa1f6a4a7cbda037b0bf434c90a7"
     },
     {
       "path": "tests/test_pipeline.py",
@@ -5131,8 +5136,8 @@
     },
     {
       "path": "tests/test_release.py",
-      "size": 7193,
-      "sha256": "862ceb4cd872e648ec432afe327803e3b46181eb46993a9a56f06df5f33d3554"
+      "size": 7257,
+      "sha256": "903430e6b5b5718e69f66cf2b68b432954891d183445cb5c8106d1d1b07251e8"
     },
     {
       "path": "tests/test_sw.js",
