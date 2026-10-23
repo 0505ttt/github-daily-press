@@ -19,9 +19,9 @@ MAX_FILES = 2000
 MAX_TOTAL = 64 * 1024 * 1024
 MAX_FILE = 16 * 1024 * 1024
 ROOT_FILES = {"index.html", "offline.html", "app.css", "pwa.js", "sw.js",
-              "manifest.webmanifest", "settings.html", "settings.js", "content-version.json",
+              "manifest.webmanifest", "settings.html", "settings.js", "site-config.json", "content-version.json",
               "补档说明.md", "数据来源.md"}
-LOCAL_ASSETS = {"settings.html", "settings.js", "pwa.js", "app.css", "sw.js", "manifest.webmanifest"}
+LOCAL_ASSETS = {"settings.html", "settings.js", "pwa.js", "app.css", "sw.js", "manifest.webmanifest", "site-config.json"}
 
 
 def local_asset(path: str) -> bool:

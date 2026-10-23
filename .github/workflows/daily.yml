@@ -38,7 +38,7 @@ jobs:
       - name: 执行采编（保留独立成功的子任务）
         id: editorial
         continue-on-error: true
-        run: python -m gh_daily update
+        run: python -m gh_daily --root . update
       - name: 验证公开产物和待提交路径
         run: |
           python -m gh_daily build

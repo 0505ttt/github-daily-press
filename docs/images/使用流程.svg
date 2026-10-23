@@ -1,20 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
-<title id="title">两种使用方式：云端生成、本地同步；或本地采编</title><desc id="desc">推荐云端定时采编后保存至自己的 main 分支，再同步到本地应用。另一条路径在本机采集公开来源，接入兼容模型或 Ollama，生成并阅读。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">三种使用方式：在线阅读、自己部署选择模型、已有 AI 工具采编</title>
+<desc id="desc">普通读者打开公开网址即可阅读作者完整历史，无需安装或密钥。本地首次为空白，不带作者历史，不默认同步，第一份自己的日报为第001期并持久累计。自己的采编可选兼容模型接口或 Ollama，也可用已有 AI 工具。关机后能否生成取决于任务运行位置。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#087d48" stroke-width="1.7"/></marker></defs>
-<rect width="1600" height="680" fill="#f4f2e8"/>
+<rect width="1600" height="900" fill="#f4f2e8"/>
 <g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
-<text x="64" y="76" font-size="38" font-weight="750" fill="#101510">选择适合自己的更新方式</text><path d="M64 103H1536" stroke="#152017" stroke-width="2"/>
-<text x="64" y="162" font-size="26" font-weight="700" fill="#087d48">推荐 · 云端生成，本地阅读</text>
-<g fill="#fff" stroke="#cad2c7"><rect x="64" y="190" width="418" height="132" rx="8"/><rect x="592" y="190" width="418" height="132" rx="8"/><rect x="1120" y="190" width="416" height="132" rx="8"/></g>
-<g fill="#101510" font-size="30" font-weight="700"><text x="92" y="244">GitHub Actions 采编</text><text x="620" y="244">自己的公开仓库</text><text x="1148" y="244">本地应用同步阅读</text></g>
-<g fill="#566151" font-size="21"><text x="92" y="287">每日 08:30（北京时间）</text><text x="620" y="287">main 分支保存公开产物</text><text x="1148" y="287">缓存完成后可离线阅读</text></g>
-<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 256H566"/><path d="M1032 256H1094"/></g>
-<text x="64" y="359" fill="#626c5e" font-size="20">云端使用自己的模型服务与 Secrets；GitHub 定时可能延迟，也可手动运行。</text>
-<path d="M64 390H1536" stroke="#c5cbbd"/>
-<text x="64" y="445" font-size="26" font-weight="700" fill="#087d48">本地 · 自己采集，自己生成</text>
-<g fill="#fff" stroke="#cad2c7"><rect x="64" y="471" width="418" height="132" rx="8"/><rect x="592" y="471" width="418" height="132" rx="8"/><rect x="1120" y="471" width="416" height="132" rx="8"/></g>
-<g fill="#101510" font-size="30" font-weight="700"><text x="92" y="525">采集公开榜单与资讯</text><text x="620" y="525">兼容接口 / Ollama</text><text x="1148" y="525">本地生成并阅读</text></g>
-<g fill="#566151" font-size="21"><text x="92" y="568">保留日期、来源与采集状态</text><text x="620" y="568">使用自己的模型与配置</text><text x="1148" y="568">手动生成或启用本地定时</text></g>
-<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 537H566"/><path d="M1032 537H1094"/></g>
-<text x="64" y="648" fill="#626c5e" font-size="20">已有历史内容无需配置模型即可阅读；应用图标不负责启动本地服务。</text>
+<text x="64" y="72" font-size="38" font-weight="750" fill="#101510">三种使用方式，按自己的需要选择</text>
+<path d="M64 100H1536" stroke="#152017" stroke-width="2"/>
+<text x="64" y="151" font-size="26" font-weight="700" fill="#087d48">① 直接在线阅读 · 普通读者最省事</text>
+<g fill="#fff" stroke="#cad2c7"><rect x="64" y="174" width="418" height="112" rx="8"/><rect x="592" y="174" width="418" height="112" rx="8"/><rect x="1120" y="174" width="416" height="112" rx="8"/></g>
+<g fill="#101510" font-size="28" font-weight="700"><text x="92" y="220">作者完成采编</text><text x="620" y="220">GitHub 发布网页</text><text x="1148" y="220">打开网址就能读</text></g>
+<g fill="#566151" font-size="20"><text x="92" y="258">检查真实榜单与来源</text><text x="620" y="258">保留最新已发布内容</text><text x="1148" y="258">不安装，不填 API Key</text></g>
+<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 230H566"/><path d="M1032 230H1094"/></g>
+<text x="64" y="321" fill="#626c5e" font-size="20">网页可随时访问；当日新内容在采编成功并发布后更新，不是持续实时抓取。</text>
+<path d="M64 347H1536" stroke="#c5cbbd"/>
+<text x="64" y="397" font-size="26" font-weight="700" fill="#087d48">② 自己部署 / 桌面应用 · 模型由你选</text>
+<g fill="#fff" stroke="#cad2c7"><rect x="64" y="420" width="418" height="112" rx="8"/><rect x="592" y="420" width="418" height="112" rx="8"/><rect x="1120" y="420" width="416" height="112" rx="8"/></g>
+<g fill="#101510" font-size="28" font-weight="700"><text x="92" y="466">兼容接口 / Ollama</text><text x="620" y="466">本机或云端运行采编</text><text x="1148" y="466">维护自己的杂志</text></g>
+<g fill="#566151" font-size="20"><text x="92" y="504">连接信息按模型方式填写</text><text x="620" y="504">本地定时 / GitHub Actions</text><text x="1148" y="504">空白开始，首份为第001期</text></g>
+<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 476H566"/><path d="M1032 476H1094"/></g>
+<text x="64" y="567" fill="#626c5e" font-size="20">API Key 负责调用模型；任务运行位置决定电脑能否关闭。本机 Ollama 需要本机运行。</text>
+<path d="M64 593H1536" stroke="#c5cbbd"/>
+<text x="64" y="643" font-size="26" font-weight="700" fill="#087d48">③ 已有 AI 工具采编 · 不再另配项目 Key</text>
+<g fill="#fff" stroke="#cad2c7"><rect x="64" y="666" width="418" height="112" rx="8"/><rect x="592" y="666" width="418" height="112" rx="8"/><rect x="1120" y="666" width="416" height="112" rx="8"/></g>
+<g fill="#101510" font-size="28" font-weight="700"><text x="92" y="712">已有 AI 工具执行任务</text><text x="620" y="712">生成日报与项目档案</text><text x="1148" y="712">检查后保存与发布</text></g>
+<g fill="#566151" font-size="20"><text x="92" y="750">按工具能力设置定时任务</text><text x="620" y="750">只写自己的工作区</text><text x="1148" y="750">本地保存，按需公开发布</text></g>
+<g stroke="#087d48" stroke-width="3" marker-end="url(#arrow)"><path d="M504 722H566"/><path d="M1032 722H1094"/></g>
+<text x="64" y="813" fill="#626c5e" font-size="20">工具需具备联网、目标仓库读写与执行能力；其订阅、调度及关机行为以实际环境为准。</text>
+<path d="M64 843H1536" stroke="#152017"/>
+<text x="64" y="878" fill="#101510" font-size="20" font-weight="700">线上保留公共历史；本地从自己的第001期开始，重启不重置，也不默认同步作者内容。</text>
 </g></svg>

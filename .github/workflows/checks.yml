@@ -23,5 +23,6 @@ jobs:
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
       - run: node tests/test_sw.js
+      - run: node tests/test_pwa.js
       - run: python -m gh_daily build
       - run: python -m gh_daily privacy

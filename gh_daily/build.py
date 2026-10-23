@@ -5,6 +5,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import re
 import shutil
 import tempfile
 from pathlib import Path
@@ -45,11 +46,15 @@ def public_data_files(root: Path):
                 yield file
 
 
-def build_site(root: Path) -> dict:
+def build_site(root: Path, *, hosted: bool = False, base_path: str = "/", allow_empty: bool = False) -> dict:
+    if not re.fullmatch(r"/(?:[A-Za-z0-9_-][A-Za-z0-9_.-]*/)*", base_path):
+        raise ValueError("网站路径必须以 / 开始和结束，且不能含跳转或查询参数。")
+    if not hosted and base_path != "/":
+        raise ValueError("本地应用固定使用根路径；子路径仅供在线网站构建。")
     root = Path(root).resolve()
     builder = load_builder(root)
     db, logs, skipped = builder.build_db()
-    if not db["issues"]:
+    if not db["issues"] and (not allow_empty or skipped):
         raise ValueError("未解析到任何有效报告，保留上一版产物。")
     html = builder.render_html(db)
     json_data = json.dumps(db, ensure_ascii=False, indent=1)
@@ -70,11 +75,22 @@ def build_site(root: Path) -> dict:
             if file.is_symlink():
                 raise ValueError("网页资源不能使用符号链接。")
             if file.is_file():
+                if hosted and file.relative_to(root / "web").as_posix() in {"settings.html", "settings.js"}:
+                    continue
                 target = stage / file.relative_to(root / "web")
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(file, target)
+        atomic_text(stage / "site-config.json", json.dumps({"mode": "hosted" if hosted else "local", "base_path": base_path}, ensure_ascii=False))
+        manifest_path = stage / "manifest.webmanifest"
+        if manifest_path.is_file():
+            app_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            app_manifest.update(id=base_path, scope=base_path, start_url=base_path + "GitHub项目分析/GitHub热点杂志.html")
+            for icon in app_manifest.get("icons", []):
+                icon["src"] = base_path + icon["src"].lstrip("/")
+            atomic_text(manifest_path, json.dumps(app_manifest, ensure_ascii=False, indent=2) + "\n")
         atomic_text(stage / "index.html", '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=GitHub项目分析/GitHub热点杂志.html"><title>正在打开杂志</title><a href="GitHub项目分析/GitHub热点杂志.html">打开 GitHub 热点杂志</a></html>')
-        atomic_text(stage / "offline.html", '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>离线阅读</title><h1>当前内容尚未缓存</h1><p>请启动本地服务，连线打开杂志并等待显示“可离线阅读”。</p><a href="/">返回杂志</a></html>')
+        offline_help = "请联网打开网站并等待显示“可离线阅读”。" if hosted else "请启动本地服务，连线打开杂志并等待显示“可离线阅读”。"
+        atomic_text(stage / "offline.html", '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>离线阅读</title><h1>当前内容尚未缓存</h1><p>' + offline_help + '</p><a href="' + base_path + '">返回杂志</a></html>')
         files = []
         for file in sorted(stage.rglob("*")):
             if file.is_file():
@@ -99,6 +115,9 @@ def build_site(root: Path) -> dict:
             root / "GitHub项目分析/GitHub热点杂志.html": html,
             root / "tools/_杂志数据.json": json_data,
         }
+        if hosted:
+            # 在线构建只替换 dist，不改变本地同步使用的清单和单文件源产物。
+            updates = {}
         previous = {path: path.read_text(encoding="utf-8") if path.exists() else None for path in updates}
         if backup.exists():
             shutil.rmtree(backup)

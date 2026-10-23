@@ -14,11 +14,11 @@ PATTERNS = {
     "疑似访问凭据": re.compile(r"(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{20,}"),
     "私钥正文": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 }
-TEXT_SUFFIXES = {".md", ".html", ".json", ".py", ".js", ".css", ".toml", ".yml", ".yaml", ".txt", ".svg", ".webmanifest", ".command", ".ps1"}
+TEXT_SUFFIXES = {".md", ".html", ".json", ".py", ".js", ".css", ".toml", ".yml", ".yaml", ".txt", ".svg", ".webmanifest", ".command", ".ps1", ".iss"}
 FILE_SUFFIXES = TEXT_SUFFIXES | {".png", ".jpg", ".jpeg", ".pdf", ".ico", ".bat"}
 SPECIAL_FILES = {"LICENSE", ".gitignore", ".gitattributes", ".env.example"}
 SITE_SUFFIXES = {".html", ".md", ".pdf", ".css", ".js", ".json", ".txt", ".svg", ".webmanifest", ".png", ".jpg", ".jpeg", ".ico"}
-ALLOWED_TOP = {"AGENTS.md", "README.md", "LICENSE", "CONTRIBUTING.md", "CHANGELOG.md", "SECURITY.md", "NOTICE.md", "pyproject.toml", ".gitignore", ".gitattributes", ".env.example", "启动.command", "启动.ps1", "启动.bat", "content-manifest.json", "数据来源.md", "补档说明.md", "gh_daily", "web", "tools", "tests", "docs", ".github", "GitHub项目分析", "AI前沿资讯", "dist"}
+ALLOWED_TOP = {"AGENTS.md", "README.md", "LICENSE", "CONTRIBUTING.md", "CHANGELOG.md", "SECURITY.md", "NOTICE.md", "pyproject.toml", "requirements-desktop.txt", ".gitignore", ".gitattributes", ".env.example", "启动.command", "启动.ps1", "启动.bat", "content-manifest.json", "数据来源.md", "补档说明.md", "gh_daily", "web", "tools", "tests", "docs", ".github", "GitHub项目分析", "AI前沿资讯", "dist"}
 _PDF_TEXT_CACHE: dict[str, str] = {}
 
 

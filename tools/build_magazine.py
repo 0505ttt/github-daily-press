@@ -634,8 +634,12 @@ SHELL = r"""<!DOCTYPE html>
 <title>GitHub 热点杂志 · GH WEEKLY · 每日项目推送总览刊</title>
 <script>
 if(location.protocol==='http:' || location.protocol==='https:'){
-  [['manifest','/manifest.webmanifest'],['stylesheet','/app.css']].forEach(function(item){
-    var link=document.createElement('link');link.rel=item[0];link.href=item[1];document.head.appendChild(link);
+  var magazinePath=decodeURI(location.pathname),magazineMarker='/GitHub项目分析/';
+  var magazineAt=magazinePath.lastIndexOf(magazineMarker);
+  var magazineBase=magazineAt>=0?magazinePath.slice(0,magazineAt+1):new URL('.',location.href).pathname;
+  window.ghDailyBase=new URL(magazineBase,location.origin).href;
+  [['manifest','manifest.webmanifest'],['stylesheet','app.css']].forEach(function(item){
+    var link=document.createElement('link');link.rel=item[0];link.href=new URL(item[1],window.ghDailyBase).href;document.head.appendChild(link);
   });
 }
 </script>
@@ -960,14 +964,16 @@ var aiDates = Object.keys(AID).sort().reverse();
 function grp(id, title, open, body, purple){ return '<div class="grp'+(open?' open':'')+'" id="'+id+'"><div class="grp-h'+(purple?' purple':'')+'" aria-expanded="'+open+'" onclick="toggleGrp(\''+id+'\')">▸ '+title+'</div><div class="grp-b">'+body+'</div></div>'; }
 function sub(hash, t, n){ return '<div class="sub" onclick="go(\''+esc(hash)+'\')"><span>'+esc(t)+'</span>'+(n?'<span class="n">'+esc(n)+'</span>':'')+'</div>'; }
 function sub2(hash, t){ return '<div class="sub2" onclick="go(\''+hash+'\')">'+esc(t)+'</div>'; }
+function issueLabel(d){ return '第 '+String(d.issue).padStart(3,'0')+' 期'; }
+function issueKind(d){ return d.type==='weekly'?'周刊':d.type==='monthly'?'月刊':'日刊'; }
 function buildNav(){
   var h = '';
-  h += grp('g-latest','今日刊', true, latest?sub('#/day/'+latest.date, latest.date, 'No.'+latest.issue):'<div class="sub">暂无日报</div>');
+  h += grp('g-latest','今日刊', true, latest?sub('#/day/'+latest.date, latest.date, issueLabel(latest)):'<div class="sub">暂无日报</div>');
   var months = Object.keys(byMonth).sort().reverse(), mb = '';
   months.forEach(function(mo){
     var ds = byMonth[mo].slice().reverse();
     mb += sub('#/month/'+mo, '▦ '+mo, ds.length+' 期');
-    ds.forEach(function(d){ mb += sub2('#/day/'+d.date, d.date+' · No.'+d.issue+(d.backfill?' 🗂':'')); });
+    ds.forEach(function(d){ mb += sub2('#/day/'+d.date, issueLabel(d)+' · '+d.date+(d.backfill?' 🗂':'')); });
   });
   h += grp('g-days','日报归档', true, mb);
   var wb = '';
@@ -1083,7 +1089,7 @@ function mastHTML(d, kicker, big, purple){
     + '<div class="kicker"><b'+(purple?' class="p"':'')+'>GH WEEKLY</b>'+(kicker||' DAILY ISSUE')+'</div>'
     + '<h1><span class="d"'+(purple?' style="color:var(--purple)"':'')+'>'+(big||d.date.replace(/-/g,'.'))+'</span></h1>'
     + '<div class="brandline"><i'+(purple?' class="p"':'')+'>GITHUB 每日项目推送</i>总览刊 · 融合 AI 前沿速递</div></div>'
-    + '<div class="side-info"><div class="issue-no">ISSUE<br><b>No.'+('000'+d.issue).slice(-3)+'</b></div>'
+    + '<div class="side-info"><div class="issue-no">'+issueKind(d)+'<br><b>'+issueLabel(d)+'</b></div>'
     + '<div class="wd">'+d.weekday+(d.backfill?'<span class="badge-backfill">🗂 补档</span>':'')+'</div></div></div>';
 }
 function footHTML(){
@@ -1093,7 +1099,7 @@ function footHTML(){
 
 /* 视图 */
 function vHome(){
-  if(!latest)return '<div class="empty">尚未收录日报，请先生成或同步内容。</div>'+footHTML();
+  if(!latest)return '<div class="shelf-h">你的第一期<br><b>从这里开始</b></div><div class="board"><h2>这是你的本地刊物</h2><p class="shelf-sub">默认没有历史数据。第一次成功生成的日报为第 001 期，此后持续累积，重启不会重置。</p><p>你可以在 <a href="../settings.html" style="color:var(--neon-dark);text-decoration:underline">设置</a> 中选择第三方模型或 Ollama，再点击“立即采编”；也可以将自己的工作区交给已有 AI 工具采编，无需在本项目重复填写 API Key。</p><p class="shelf-sub">只想阅读作者的每日内容？<a href="https://0505ttt.github.io/github-daily-press/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">打开公开阅读网站</a>。</p></div>'+footHTML();
   var h = '<div class="mast home-mast"><div>'
     + '<div class="kicker"><b>GH WEEKLY</b> MAGAZINE RACK</div>'
     + '<h1><span class="d">OPEN SOURCE</span><span class="d" style="color:var(--neon-dark)">DAILY PRESS</span></h1>'
@@ -1103,7 +1109,7 @@ function vHome(){
   var latestAi = aiDates.length ? '<div class="row"><span class="k">AI 前沿日报</span><span class="v g">'+META.count_ai_days+' 天</span></div>' : '';
   h += '<div class="cover-grid">'
     + '<div class="latest-card" onclick="go(\'#/day/'+latest.date+'\')">'
-    + '<div class="kk">▶ 最新一期 · ISSUE No.'+('000'+latest.issue).slice(-3)+'</div>'
+    + '<div class="kk">▶ 最新日刊 · '+issueLabel(latest)+'</div>'
     + '<div class="big">'+latest.date.replace(/-/g,'.')+'</div>'
     + '<div class="sub1">'+latest.weekday+' · '+latest.projects.length+' 个项目'+((latest.ai&&latest.ai.length)?' · '+latest.ai.length+' 条 AI 速递':'')
     + (latest.projects[0]?'<br>头条：<b>'+esc(latest.projects[0].repo)+'</b> ▲'+fmt(latest.projects[0].today):'')
@@ -1187,7 +1193,7 @@ function vWeek(weekStr){
   h += '<div class="board"><h2>▤ 本周各期</h2>';
   ds.forEach(function(d){
     h += '<div class="brow"><div class="r" style="font-size:14px">'+d.date.slice(5)+'</div>'
-      + '<div><div class="nm" onclick="go(\'#/day/'+d.date+'\')">ISSUE No.'+d.issue+' · '+d.projects.length+' 个项目 · 头条 '+esc(d.projects[0].repo)+'</div></div>'
+      + '<div><div class="nm" onclick="go(\'#/day/'+d.date+'\')">'+issueLabel(d)+' · '+d.projects.length+' 个项目 · 头条 '+esc(d.projects[0].repo)+'</div></div>'
       + '<div class="v">'+(d.backfill?'🗂 补档':'')+'</div></div>';
   });
   h += '</div>';
@@ -1222,7 +1228,7 @@ function vMonth(monthStr){
   h += '</div><div class="board"><h2>▤ 本月各期</h2>';
   ds.forEach(function(d){
     h += '<div class="brow"><div class="r" style="font-size:14px">'+d.date.slice(5)+'</div>'
-      + '<div><div class="nm" onclick="go(\'#/day/'+d.date+'\')">ISSUE No.'+d.issue+' · 头条 '+esc(d.projects[0].repo)+' ▲'+fmt(d.projects[0].today)+'</div></div>'
+      + '<div><div class="nm" onclick="go(\'#/day/'+d.date+'\')">'+issueLabel(d)+' · 头条 '+esc(d.projects[0].repo)+' ▲'+fmt(d.projects[0].today)+'</div></div>'
       + '<div class="v">'+d.projects.length+'<small>项目</small></div></div>';
   });
   h += '</div>';
@@ -1330,6 +1336,7 @@ function vAbout(){
     + '<p>本页是这套系统的<b>杂志式总览刊</b>——把每期日报、AI 前沿速递、项目档案汇成一本可以翻的杂志。左侧目录按 日 / 周 / 月 / 分类 / AI 前沿 组织，底部支持全文搜索。</p>'
     + '<h3>■ 数据口径</h3><ul>'
     + '<li>报告数据：成功解析 <b>'+META.count_daily+'</b> 期日报、<b>'+META.count_weekly+'</b> 期周报、<b>'+META.count_monthly+'</b> 期月报；日报、周报与月报独立编号。数据跨度 '+(META.span[0]||'暂无')+' → '+(META.span[1]||'暂无')+'</li>'
+    + '<li>期号从第 001 期开始，按已收录且成功解析的同类报告日期连续排列，与日期中的“几号”无关。早期未收录的日期不补造内容；补入更早的史料时会重新排序。</li>'
     + '<li>项目档案：<b>'+META.count_archives+'</b> 份，来自 项目分类库/ 的 owner-repo.md；项目详情页的上榜时间线以档案「历史上榜记录」表为权威源</li>'
     + '<li>AI 前沿：来自 AI前沿资讯/日报/ 的当日完整采集（<b>'+META.count_ai_days+'</b> 天），日报内精选速递为其中节选</li>'
     + '<li>补档报告：<b>'+(META.count_backfill||0)+'</b> 期，带 🗂 标识、快照时间及可获取的原始来源；星数属于快照时点。</li>'
@@ -1467,7 +1474,7 @@ window.addEventListener('hashchange', route);
 window.addEventListener('resize', applySide);
 route();
 if(location.protocol==='http:' || location.protocol==='https:'){
-  var applicationScript=document.createElement('script');applicationScript.src='/pwa.js';document.body.appendChild(applicationScript);
+  var applicationScript=document.createElement('script');applicationScript.src=new URL('pwa.js',window.ghDailyBase).href;document.body.appendChild(applicationScript);
 }
 })();
 </script>

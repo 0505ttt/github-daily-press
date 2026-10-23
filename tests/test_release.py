@@ -38,6 +38,31 @@ class ReleaseTests(unittest.TestCase):
             for name in ["GitHub项目分析/GitHub热点杂志.html", "tools/_杂志数据.json", "content-manifest.json", "dist/index.html"]:
                 self.assertEqual((root / name).read_text(encoding="utf-8"), "上一份有效内容")
 
+    def test_hosted_build_scopes_assets_and_excludes_local_settings(self):
+        from gh_daily.build import build_site
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            builder = self.build_fixture(root)
+            (root / 'web/settings.html').write_text('本地设置', encoding='utf-8')
+            (root / 'web/settings.js').write_text('本地接口', encoding='utf-8')
+            (root / 'web/manifest.webmanifest').write_text(json.dumps({'icons': [{'src': '/icons/icon.svg'}]}), encoding='utf-8')
+            with patch('gh_daily.build.load_builder', return_value=builder):
+                build_site(root, hosted=True, base_path='/project/')
+            self.assertFalse((root / 'dist/settings.html').exists())
+            self.assertFalse((root / 'dist/settings.js').exists())
+            manifest = json.loads((root / 'dist/manifest.webmanifest').read_text(encoding='utf-8'))
+            self.assertEqual(manifest['scope'], '/project/')
+            self.assertEqual(manifest['icons'][0]['src'], '/project/icons/icon.svg')
+            self.assertEqual(json.loads((root / 'dist/site-config.json').read_text())['mode'], 'hosted')
+            self.assertIn('href="/project/"', (root / 'dist/offline.html').read_text(encoding='utf-8'))
+            self.assertEqual((root / 'content-manifest.json').read_text(encoding='utf-8'), '上一份有效内容')
+
+    def test_hosted_build_rejects_unsafe_base_paths(self):
+        from gh_daily.build import build_site
+        for base in ('/../', '//evil/', '/project/?secret=', 'https://example.com/'):
+            with self.subTest(base=base), self.assertRaises(ValueError):
+                build_site(Path('.'), hosted=True, base_path=base)
+
     def test_failed_publication_rolls_back_source_files_and_site(self):
         from gh_daily.build import build_site, atomic_text
         with tempfile.TemporaryDirectory() as directory:

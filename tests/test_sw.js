@@ -1,13 +1,13 @@
 "use strict";
-// 不依赖浏览器插件的 Service Worker 版本一致性回归。
+// 不依赖浏览器插件的离线版本、私密路由与 Pages 子目录回归。
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const {webcrypto, createHash} = require("node:crypto");
-const origin = "http://127.0.0.1:8765";
+const origin = "https://reader.example";
+const source = fs.readFileSync(path.join(__dirname, "../web/sw.js"), "utf8");
 const stores = new Map();
-const handlers = new Map();
 const key = (input) => new URL(typeof input === "string" ? input : input.url || input.href, origin).href;
 const caches = {
   async open(name) {
@@ -15,55 +15,114 @@ const caches = {
     const store = stores.get(name);
     return {
       async put(input, response) { store.set(key(input), response.clone()); },
-      async match(input) { return store.get(key(input))?.clone(); }
+      async match(input, options = {}) {
+        if (!options.ignoreSearch) return store.get(key(input))?.clone();
+        const target = new URL(key(input)); target.search = "";
+        for (const [saved, response] of store) {
+          const candidate = new URL(saved); candidate.search = "";
+          if (target.href === candidate.href) return response.clone();
+        }
+      }
     };
   },
   async keys() { return [...stores.keys()]; },
   async has(name) { return stores.has(name); },
   async delete(name) { return stores.delete(name); }
 };
-let manifest;
-let network = {};
-let failScript = false;
-const environment = {
-  URL, Request, Response, crypto: webcrypto, caches, console,
-  self: {
-    location: {origin},
-    clients: {async matchAll() { return []; }, async claim() {}},
-    async skipWaiting() {},
-    addEventListener(type, callback) { handlers.set(type, callback); }
-  },
-  async fetch(input) {
-    const pathname = new URL(key(input)).pathname;
-    if (pathname === "/content-manifest.json") return new Response(JSON.stringify(manifest));
-    if (pathname === "/pwa.js" && failScript) return new Response("暂不可用", {status: 503});
-    return new Response(network[pathname] || "未找到", {status: pathname in network ? 200 : 404});
-  }
-};
-const context = vm.createContext(environment);
-vm.runInContext(fs.readFileSync(path.join(__dirname, "../web/sw.js"), "utf8"), context);
-function version(revision) {
-  network = {"/index.html": "页面-" + revision, "/pwa.js": "脚本-" + revision};
-  manifest = {revision, files: Object.entries(network).map(([file, value]) => ({
-    path: file.slice(1), size: Buffer.byteLength(value), sha256: createHash("sha256").update(value).digest("hex")
-  }))};
-}
-async function read(resource) {
-  let promise;
-  handlers.get("fetch")({request: new Request(origin + resource), respondWith(value) { promise = value; }});
-  return (await promise).text();
+function application(basePath) {
+  const handlers = new Map(), requests = [], ownMessages = [], otherMessages = [];
+  let manifest, network = {}, failScript = false;
+  const environment = {
+    URL, Request, Response, crypto: webcrypto, caches, console,
+    self: {
+      location: {origin}, registration: {scope: origin + basePath},
+      clients: {
+        async matchAll() { return [
+          {url: origin + basePath + "index.html", postMessage(message) { ownMessages.push(message); }},
+          {url: origin + "/outside/index.html", postMessage(message) { otherMessages.push(message); }},
+          {url: "https://other.example" + basePath, postMessage(message) { otherMessages.push(message); }}
+        ]; },
+        async claim() {}
+      },
+      async skipWaiting() {}, addEventListener(type, callback) { handlers.set(type, callback); }
+    },
+    async fetch(input) {
+      const pathname = decodeURI(new URL(key(input)).pathname);
+      requests.push(pathname);
+      if (pathname === basePath + "content-manifest.json") return new Response(JSON.stringify(manifest));
+      if (pathname === basePath + "pwa.js" && failScript) return new Response("暂不可用", {status: 503});
+      return new Response(network[pathname] || "未找到", {status: pathname in network ? 200 : 404});
+    }
+  };
+  const context = vm.createContext(environment);
+  vm.runInContext(source, context);
+  return {
+    requests, ownMessages, otherMessages, handlers,
+    run(code) { return vm.runInContext(code, context); },
+    setFail(value) { failScript = value; },
+    setManifest(value) { manifest = value; },
+    version(revision, label = revision) {
+      network = Object.fromEntries(Object.entries({
+        "index.html": "页面-" + label, "pwa.js": "脚本-" + label,
+        "offline.html": "离线提示-" + label, "GitHub项目分析/日报.html": "中文路径-" + label,
+        "settings.html": "不应缓存设置", "settings.js": "不应缓存私密脚本", "api/config": "不应缓存接口"
+      }).map(([file, value]) => [basePath + file, value]));
+      manifest = {revision, generated_at: "2026-10-23T08:30:00+08:00", files: Object.entries(network).map(([file, value]) => ({
+        path: file.slice(basePath.length), size: Buffer.byteLength(value), sha256: createHash("sha256").update(value).digest("hex")
+      }))};
+      return manifest;
+    },
+    async read(resource, mode = "cors") {
+      let promise;
+      handlers.get("fetch")({request: {url: origin + resource, method: "GET", mode}, respondWith(value) { promise = value; }});
+      return promise ? (await promise).text() : null;
+    }
+  };
 }
 (async () => {
-  version("a");
-  await vm.runInContext("performCache()", context);
-  version("b"); failScript = true;
-  await assert.rejects(vm.runInContext("performCache()", context));
-  assert.equal(await read("/index.html"), "页面-a", "更新失败时不能混用新版页面");
-  assert.equal(await read("/pwa.js"), "脚本-a", "旧版脚本与页面保持一致");
-  failScript = false;
-  await vm.runInContext("performCache()", context);
-  assert.equal(await read("/index.html"), "页面-b");
-  assert.equal(await read("/pwa.js"), "脚本-b");
-  assert.equal(vm.runInContext("excluded('/api/config') && excluded('/settings.html') && excluded('/settings.js')", context), true);
-  console.log("Service Worker 版本一致性与私密路由隔离检查通过。");
+  const root = application("/");
+  root.version("a"); await root.run("performCache()");
+  root.version("b"); root.setFail(true);
+  await assert.rejects(root.run("performCache()"));
+  assert.equal(await root.read("/index.html"), "页面-a", "更新失败时不能混用新版页面");
+  assert.equal(await root.read("/pwa.js"), "脚本-a", "旧版脚本与页面保持一致");
+  root.setFail(false); await root.run("performCache()");
+  assert.equal(await root.read("/index.html"), "页面-b");
+  assert.equal(await root.read("/pwa.js"), "脚本-b");
+  assert.equal(await root.read("/api/config"), null);
+  assert.equal(await root.read("/settings.html"), null);
+
+  const hosted = application("/github-daily-press/");
+  hosted.version("b", "独立站"); await hosted.run("performCache()");
+  assert.equal(await hosted.read("/github-daily-press/"), "页面-独立站", "子目录首页应命中 index");
+  assert.equal(await hosted.read("/github-daily-press/pwa.js?v=1"), "脚本-独立站");
+  assert.equal(await hosted.read("/github-daily-press/" + encodeURI("GitHub项目分析/日报.html")), "中文路径-独立站");
+  assert.equal(await hosted.read("/github-daily-press/不存在.html", "navigate"), "离线提示-独立站");
+  assert.equal(await hosted.read("/index.html"), null, "不能拦截仓库子目录以外的请求");
+  assert.equal(await hosted.read("/github-daily-press-sibling/index.html"), null);
+  assert.equal(await hosted.read("/github-daily-press/settings.js"), null);
+  assert.equal(await hosted.read("/github-daily-press/api/config"), null);
+  assert.ok(hosted.requests.every((resource) => resource.startsWith("/github-daily-press/") && !resource.includes("/api/") && !resource.includes("settings")));
+  assert.equal(hosted.otherMessages.length, 0, "不能向其他站点窗口广播缓存状态");
+  assert.ok(hosted.ownMessages.some((item) => item.type === "CACHE_READY" && item.generated_at.startsWith("2026-10-23")));
+  assert.equal(await root.read("/index.html"), "页面-b", "相同 revision 不得复用其他目录的缓存");
+
+  for (const revision of ["c", "d", "e"]) { hosted.version(revision); await hosted.run("performCache()"); }
+  assert.equal(await root.read("/pwa.js"), "脚本-b", "子目录清理旧版本不能删除根目录缓存");
+  const unsafe = hosted.version("unsafe"); unsafe.files[0].path = "../index.html";
+  await assert.rejects(hosted.run("performCache()"));
+  assert.equal(await hosted.read("/github-daily-press/index.html"), "页面-e");
+  let handled = false;
+  hosted.handlers.get("message")({source: {url: origin + "/outside/"}, data: {type: "PREPARE_CACHE"}, waitUntil() { handled = true; }});
+  assert.equal(handled, false, "不能接受其他目录窗口的缓存指令");
+  // 从旧版无 scope 命名迁移时，安装失败不能激活一个看不见旧缓存的 Worker。
+  const legacy = await caches.open('gh-daily-content-legacy');
+  await legacy.put(origin + '/legacy/index.html', new Response('旧版仍可阅读'));
+  const upgrade = application('/legacy/');
+  upgrade.version('new'); upgrade.setFail(true);
+  let installation;
+  upgrade.handlers.get('install')({waitUntil(promise) { installation = promise; }});
+  await assert.rejects(installation, /未准备完成/, "缓存失败必须拒绝新 Worker 的安装");
+  assert.equal(await (await legacy.match(origin + '/legacy/index.html')).text(), '旧版仍可阅读');
+  console.log("Service Worker 版本一致性、私密路由与 Pages 子目录隔离检查通过。");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

@@ -1,0 +1,66 @@
+name: 桌面安装包
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: '将通过自检的包附加到指定发行版（可为草稿），留空仅保存构建产物'
+        required: false
+        type: string
+  release:
+    types: [published]
+permissions:
+  contents: read
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-15
+            platform: macos-arm64
+          - os: macos-15-intel
+            platform: macos-x64
+          - os: windows-latest
+            platform: windows-x64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e . -r requirements-desktop.txt
+      - run: python -m unittest discover -s tests -v
+      - run: node tests/test_sw.js
+      - run: node tests/test_pwa.js
+      - name: 安装 Windows 安装包构建器
+        if: runner.os == 'Windows'
+        run: choco install innosetup --no-progress -y
+      - name: 构建并自检桌面应用
+        run: python tools/package_desktop.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: desktop-${{ matrix.platform }}
+          path: .runtime/desktop/artifacts/*
+          if-no-files-found: error
+          retention-days: 14
+  attach:
+    if: github.event_name == 'release' || inputs.release_tag != ''
+    needs: desktop
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: desktop-*
+          path: installers
+          merge-multiple: true
+      - name: 将已通过自检的安装包附加到本次发行版
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag || github.event.release.tag_name }}
+          RELEASE_REPOSITORY: ${{ github.repository }}
+        run: gh release upload "$RELEASE_TAG" installers/* --repo "$RELEASE_REPOSITORY" --clobber
