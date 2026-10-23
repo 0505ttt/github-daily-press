@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
 
-from .build import atomic_text, build_site, load_builder
+from .build import build_site, load_builder
 from .config import REPOSITORY
 from .privacy import PATTERNS, check_changes, scan_paths
 from .public_content import EditorialContentError, sanitize_editorial_content
@@ -29,6 +29,18 @@ TAG_ATTRIBUTES = {"a": {"href", "target", "rel"}, "img": {"src", "alt", "width",
 
 class PublishError(ValueError):
     """只含脱敏信息，适合交给调度工具报告。"""
+
+
+def _atomic_bytes(path: Path, content: bytes) -> None:
+    """原样提交已检查的字节，避免 Windows 文本写入重复转换换行。"""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary = tempfile.mkstemp(prefix=".writing-", dir=path.parent)
+    try:
+        with os.fdopen(descriptor, "wb") as stream:
+            stream.write(content)
+        os.replace(temporary, path)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
 
 
 def _incoming(source: Path):
@@ -116,7 +128,7 @@ def import_content(root: Path, source: Path) -> dict:
                 raise PublishError("导入资料含疑似凭据，未更改公开版。")
             text = _public_text(original, html=file.suffix == ".html")
             target = stage / relative
-            atomic_text(target, text)
+            _atomic_bytes(target, text.encode("utf-8"))
             if file.suffix == ".html" and builder.parse_report(target)[0] is None:
                 raise PublishError("有报告无法解析为有效榜单，已保留原公开内容。")
         if not count:
@@ -134,7 +146,7 @@ def import_content(root: Path, source: Path) -> dict:
             old = target.read_bytes() if target.exists() else None
             if old != blob:
                 previous[target] = old
-                atomic_text(target, blob.decode("utf-8"))
+                _atomic_bytes(target, blob)
         build = build_site(root)
         return {"status": "success", "checked": count, "changed": len(previous), "revision": build["revision"]}
     except BaseException:
@@ -142,7 +154,7 @@ def import_content(root: Path, source: Path) -> dict:
             if old is None:
                 target.unlink(missing_ok=True)
             else:
-                atomic_text(target, old.decode("utf-8"))
+                _atomic_bytes(target, old)
         raise
     finally:
         shutil.rmtree(stage, ignore_errors=True)

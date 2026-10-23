@@ -76,8 +76,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 1564,
-      "sha256": "52ebf2cfc9df887c03219466fbd966e40c9e693455fd3265f720ead8aface289"
+      "size": 1693,
+      "sha256": "9344a4c9f4220d05b9b9c1883d9f566480b7b06c4d64b5f86814bbd05436fa02"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -5126,8 +5126,8 @@
     },
     {
       "path": "docs/验收记录.md",
-      "size": 7038,
-      "sha256": "1cef23acbaa221959ec5be5bae46ac9e53f417472a83dad014d7826085e644d9"
+      "size": 7300,
+      "sha256": "9c959e5c084773164603dfc1f089063fe1e9ce50c75904f173d16dab5657a5df"
     },
     {
       "path": "gh_daily/__init__.py",
@@ -5191,8 +5191,8 @@
     },
     {
       "path": "gh_daily/publishing.py",
-      "size": 12244,
-      "sha256": "088f618330f58158beaf3d35b5f3c365bb98f9077ca0875d6d5f3035dc3d4aa5"
+      "size": 12695,
+      "sha256": "157b4b1c7fad0d893331f96eb016d9d99a75b59fee13d9cd0e0c697955289dbb"
     },
     {
       "path": "gh_daily/reports.py",
@@ -5266,8 +5266,8 @@
     },
     {
       "path": "tests/test_public_content.py",
-      "size": 11190,
-      "sha256": "e959247d41a59fa621d4e244ba21d2c9f36f94f1dc0d07a9694ab6b5fecad9cd"
+      "size": 13147,
+      "sha256": "7d80ab67a1a7043e04a64525d5804b926f0a5229155cc4071495673587fc7325"
     },
     {
       "path": "tests/test_publishing.py",

@@ -1,5 +1,6 @@
 """报告运行注记不得随导入或构建公开；正文中的产品名称应保留。"""
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -100,6 +101,36 @@ class PublicContentTests(unittest.TestCase):
                 with self.assertRaisesRegex(PublishError, '疑似凭据'):
                     import_content(root, source)
             self.assertFalse((root / 'AI前沿资讯').exists())
+
+    def test_import_preserves_newline_bytes_and_is_idempotent_with_windows_text_io(self):
+        native_fdopen = os.fdopen
+
+        def windows_fdopen(fd, mode='r', *args, **kwargs):
+            if 'b' not in mode:
+                kwargs.setdefault('newline', '\r\n')
+            return native_fdopen(fd, mode, *args, **kwargs)
+
+        for newline in ('\n', '\r\n'):
+            with self.subTest(newline=repr(newline)), tempfile.TemporaryDirectory() as directory:
+                root, source = Path(directory) / 'public', Path(directory) / 'source'
+                root.mkdir()
+                (source / 'AI前沿资讯/日报').mkdir(parents=True)
+                (source / 'GitHub项目分析').mkdir()
+                relative = 'AI前沿资讯/日报/2025-02-02-AI日报.md'
+                content = ('公开新闻' + newline + '第二条报道' + newline).encode('utf-8')
+                (source / relative).write_bytes(content)
+                with patch('gh_daily.publishing.os.fdopen', side_effect=windows_fdopen), \
+                        patch('gh_daily.publishing.load_builder'), \
+                        patch('gh_daily.publishing.build_site', return_value={'revision': 'valid'}):
+                    self.assertEqual(import_content(root, source)['changed'], 1)
+                    self.assertEqual((root / relative).read_bytes(), content)
+                    self.assertEqual(import_content(root, source)['changed'], 0)
+                    self.assertEqual((root / relative).read_bytes(), content)
+                    (source / relative).write_bytes(content + '新增报道'.encode('utf-8'))
+                    with patch('gh_daily.publishing.build_site', side_effect=ValueError('模拟构建失败')):
+                        with self.assertRaisesRegex(ValueError, '模拟构建失败'):
+                            import_content(root, source)
+                    self.assertEqual((root / relative).read_bytes(), content)
 
     def test_split_html_and_multiline_markdown_notes_reject_whole_content(self):
         samples = [
