@@ -36,6 +36,7 @@ def main(argv=None) -> int:
     sub.add_parser("privacy", help="扫描公开版的隐私风险")
     sub.add_parser("check-changes", help="验证云端待提交文件白名单")
     args = parser.parse_args(argv)
+    result: dict[str, object]
     try:
         source_root = Path(__file__).resolve().parent.parent
         root = args.root.resolve() if args.root is not None else source_root

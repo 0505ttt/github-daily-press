@@ -31,9 +31,22 @@ const caches = {
 };
 function application(basePath) {
   const handlers = new Map(), requests = [], ownMessages = [], otherMessages = [];
-  let manifest, network = {}, failScript = false;
+  const activeTimers = new Set();
+  let manifest, network = {}, failScript = false, hang = null, fastTimeout = false, aborts = 0, skipped = 0;
+  function untilAborted(signal) {
+    return new Promise((resolve, reject) => {
+      if (signal.aborted) { reject(new Error("请求已中止")); return; }
+      signal.addEventListener("abort", () => { aborts++; reject(new Error("请求已中止")); }, {once: true});
+    });
+  }
   const environment = {
-    URL, Request, Response, crypto: webcrypto, caches, console,
+    URL, Request, Response, AbortController, crypto: webcrypto, caches, console,
+    setTimeout(callback, milliseconds) {
+      const timer = setTimeout(() => { activeTimers.delete(timer); callback(); }, fastTimeout ? 10 : milliseconds);
+      activeTimers.add(timer);
+      return timer;
+    },
+    clearTimeout(timer) { clearTimeout(timer); activeTimers.delete(timer); },
     self: {
       location: {origin}, registration: {scope: origin + basePath},
       clients: {
@@ -44,11 +57,17 @@ function application(basePath) {
         ]; },
         async claim() {}
       },
-      async skipWaiting() {}, addEventListener(type, callback) { handlers.set(type, callback); }
+      async skipWaiting() { skipped++; }, addEventListener(type, callback) { handlers.set(type, callback); }
     },
-    async fetch(input) {
+    async fetch(input, options = {}) {
       const pathname = decodeURI(new URL(key(input)).pathname);
       requests.push(pathname);
+      if (hang?.path === pathname && hang.phase === "fetch") return untilAborted(options.signal);
+      if (hang?.path === pathname && hang.phase === "body") return {
+        ok: true, redirected: false, headers: new Headers(),
+        arrayBuffer() { return untilAborted(options.signal); },
+        json() { return untilAborted(options.signal); }
+      };
       if (pathname === basePath + "content-manifest.json") return new Response(JSON.stringify(manifest));
       if (pathname === basePath + "pwa.js" && failScript) return new Response("暂不可用", {status: 503});
       return new Response(network[pathname] || "未找到", {status: pathname in network ? 200 : 404});
@@ -57,9 +76,12 @@ function application(basePath) {
   const context = vm.createContext(environment);
   vm.runInContext(source, context);
   return {
-    requests, ownMessages, otherMessages, handlers,
+    requests, ownMessages, otherMessages, handlers, activeTimers,
     run(code) { return vm.runInContext(code, context); },
     setFail(value) { failScript = value; },
+    hang(path, phase) { hang = {path: basePath + path, phase}; fastTimeout = true; },
+    get aborts() { return aborts; },
+    get skipped() { return skipped; },
     setManifest(value) { manifest = value; },
     version(revision, label = revision) {
       network = Object.fromEntries(Object.entries({
@@ -124,5 +146,27 @@ function application(basePath) {
   upgrade.handlers.get('install')({waitUntil(promise) { installation = promise; }});
   await assert.rejects(installation, /未准备完成/, "缓存失败必须拒绝新 Worker 的安装");
   assert.equal(await (await legacy.match(origin + '/legacy/index.html')).text(), '旧版仍可阅读');
+  for (const [resource, phase] of [
+    ["content-manifest.json", "fetch"], ["content-manifest.json", "body"],
+    ["pwa.js", "fetch"], ["pwa.js", "body"]
+  ]) {
+    const stalled = application('/stalled-' + resource.split('.')[0] + '-' + phase + '/');
+    stalled.version('stable'); await stalled.run('performCache()');
+    stalled.ownMessages.length = 0;
+    stalled.version('unfinished'); stalled.hang(resource, phase);
+    const previousRequests = stalled.requests.length;
+    let result;
+    stalled.handlers.get('install')({waitUntil(promise) { result = promise; }});
+    await assert.rejects(result, /未准备完成/, '响应头或响应体超时必须使新 Worker 安装失败');
+    const attempts = stalled.requests.slice(previousRequests).filter((request) => request.endsWith('/' + resource));
+    assert.equal(attempts.length, 2, '每个超时资源最多尝试两次');
+    assert.equal(stalled.aborts, 2, '两次超时均须中止网络请求或响应体读取');
+    assert.equal(stalled.skipped, 0, '缓存不完整时不能激活新 Worker');
+    assert.equal(stalled.ownMessages.some((message) => message.type === 'CACHE_READY'), false, '不能误报新版本已可离线阅读');
+    assert.equal(await stalled.read(stalled.requests[0].replace('content-manifest.json', 'index.html')), '页面-stable', '超时后旧版本仍可阅读');
+    assert.equal(stalled.activeTimers.size, 0, '成功、失败和超时路径均须清除 deadline timer');
+  }
+  assert.equal(root.activeTimers.size, 0);
+  assert.equal(hosted.activeTimers.size, 0);
   console.log("Service Worker 版本一致性、私密路由与 Pages 子目录隔离检查通过。");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

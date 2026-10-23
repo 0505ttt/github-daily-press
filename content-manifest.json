@@ -1,5 +1,5 @@
 {
-  "revision": "f2505a296af2e7fab5fb18bd",
+  "revision": "ee897275cf0411cad5c9711e",
   "generated_at": "2026-10-23",
   "files": [
     {
@@ -2419,8 +2419,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "8e7f80f21771e88f93121691c9e762ec015c7e14d85e5eeceedb822703a5ed6f",
-      "size": 12971
+      "sha256": "79bf0d4cc9ac58afce1451e0c4dbe666e753794d2a5e5b56ef9579da67b984fb",
+      "size": 13167
     },
     {
       "path": "app.css",
@@ -2459,13 +2459,13 @@
     },
     {
       "path": "pwa.js",
-      "sha256": "a702bf1e3050b52be8a97f05e2ce1d071a800936ddefe58fbffb010a3b266882",
-      "size": 9692
+      "sha256": "1857033a2b135e1f4abf9de0e9f652c2aa5ecc74a805c7b4e77ac462579b417b",
+      "size": 9832
     },
     {
       "path": "settings.html",
-      "sha256": "284198e4e251e9c12f1527a6e7dda5cb1f35a8912f982e6c049d567a0163e37e",
-      "size": 4557
+      "sha256": "73789857c6eb16632fafff5b6fad6c7c7b13fc395cb2fe9333631556d40daf44",
+      "size": 4821
     },
     {
       "path": "settings.js",
@@ -2479,8 +2479,8 @@
     },
     {
       "path": "sw.js",
-      "sha256": "6a458837484acd37aeb44c2056583d36a12ff1303dbe6e469371d3778db51688",
-      "size": 6783
+      "sha256": "361253a638d1bedade926946f4d75c58267c1a7af34b002a6f929377fdb269e7",
+      "size": 7510
     },
     {
       "path": "数据来源.md",
@@ -2494,7 +2494,7 @@
     },
     {
       "path": "content-version.json",
-      "sha256": "5d2e6ea5879fb7d3e482b354b9a79af1a527361b62b2f26f1327a1fbae015c05",
+      "sha256": "ca62594eb9ba954bcc319d4b1b112411c2b3d1cc04c84972264d769f13fa05ed",
       "size": 70
     }
   ]

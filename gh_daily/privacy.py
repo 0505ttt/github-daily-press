@@ -14,7 +14,7 @@ PATTERNS = {
     "疑似访问凭据": re.compile(r"(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{20,}"),
     "私钥正文": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 }
-TEXT_SUFFIXES = {".md", ".html", ".json", ".py", ".js", ".css", ".toml", ".yml", ".yaml", ".txt", ".svg", ".webmanifest", ".command", ".ps1", ".iss"}
+TEXT_SUFFIXES = {".md", ".html", ".json", ".py", ".js", ".css", ".toml", ".yml", ".yaml", ".txt", ".svg", ".webmanifest", ".command", ".ps1", ".iss", ".isl"}
 FILE_SUFFIXES = TEXT_SUFFIXES | {".png", ".jpg", ".jpeg", ".pdf", ".ico", ".bat"}
 SPECIAL_FILES = {"LICENSE", ".gitignore", ".gitattributes", ".env.example"}
 SITE_SUFFIXES = {".html", ".md", ".pdf", ".css", ".js", ".json", ".txt", ".svg", ".webmanifest", ".png", ".jpg", ".jpeg", ".ico"}

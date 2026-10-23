@@ -7,6 +7,7 @@ const STATE_URL = new URL("__gh_daily_cache_state__", BASE_URL).href;
 const PREFIX = "gh-daily-content-v2-" + SCOPE_KEY + "-";
 const MAX_FILES = 2000;
 const MAX_TOTAL = 64 * 1024 * 1024;
+const NETWORK_TIMEOUT = 30000;
 let pending = null;
 
 function scopedPath(url) {
@@ -38,11 +39,37 @@ async function cacheStatus() {
     await announce({type: "CACHE_READY", revision: state.revision, generated_at: state.generated_at || ""});
   }
 }
+async function readResource(url, readBody) {
+  // 超时覆盖响应头和完整响应体；单个连接卡住时不能无限阻塞整套缓存。
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const controller = new AbortController();
+    let timer;
+    const deadline = new Promise((resolve, reject) => {
+      timer = setTimeout(() => {
+        controller.abort();
+        reject(new Error("读取超时"));
+      }, NETWORK_TIMEOUT);
+    });
+    try {
+      return await Promise.race([
+        (async () => {
+          const response = await fetch(url, {cache: "no-store", credentials: "omit", signal: controller.signal});
+          if (!response.ok || response.redirected) throw new Error("读取失败");
+          return {response, body: await readBody(response)};
+        })(),
+        deadline
+      ]);
+    } catch (error) {
+      controller.abort();
+      if (attempt === 1) throw error;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+}
 async function performCache() {
   const manifestUrl = new URL("content-manifest.json", BASE_URL);
-  const manifestResponse = await fetch(manifestUrl, {cache: "no-store", credentials: "omit"});
-  if (!manifestResponse.ok || manifestResponse.redirected) throw new Error("清单未就绪");
-  const manifest = await manifestResponse.json();
+  const {body: manifest} = await readResource(manifestUrl, (response) => response.json());
   if (!Array.isArray(manifest.files) || !manifest.files.length || manifest.files.length > MAX_FILES || !/^[a-zA-Z0-9_.-]{1,128}$/.test(manifest.revision)) throw new Error("清单不正确");
   const paths = new Set();
   let size = 0;
@@ -61,9 +88,7 @@ async function performCache() {
     for (let start = 0; start < entries.length; start += 6) {
       await Promise.all(entries.slice(start, start + 6).map(async (entry) => {
         const url = new URL(entry.path, BASE_URL);
-        const response = await fetch(url, {cache: "no-store", credentials: "omit"});
-        if (!response.ok || response.redirected) throw new Error("读取失败");
-        const bytes = await response.arrayBuffer();
+        const {response, body: bytes} = await readResource(url, (response) => response.arrayBuffer());
         const digest = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))).map((value) => value.toString(16).padStart(2, "0")).join("");
         if (bytes.byteLength !== entry.size || digest !== entry.sha256) throw new Error("校验失败");
         await cache.put(url, new Response(bytes, {headers: response.headers, status: 200}));

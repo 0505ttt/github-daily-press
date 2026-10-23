@@ -33,8 +33,9 @@
     let generatedAt = "";
     let syncing = false;
     let updateRequested = false;
-    const installed = () => window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+    const installed = () => !!window.pywebview || window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
     if (installed()) bar.querySelector('[data-action="install"]').hidden = true;
+    window.addEventListener("pywebviewready", () => { bar.querySelector('[data-action="install"]').hidden = true; });
     function text(message) { state.textContent = message; }
     function offlineStatus() {
       return "已可离线阅读" + (generatedAt ? " · 内容更新于 " + generatedAt.slice(0, 16).replace("T", " ") : "");

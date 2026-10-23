@@ -53,11 +53,19 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/download-artifact@v4
         with:
           pattern: desktop-*
           path: installers
           merge-multiple: true
+      - name: 附带同一提交的源码包和校验值
+        run: |
+          git archive --format=zip --prefix=GitHubDailyPress-1.0.0/ --output=installers/GitHubDailyPress-1.0.0-source.zip HEAD
+          cd installers
+          sha256sum GitHubDailyPress-1.0.0-source.zip > GitHubDailyPress-1.0.0-source.zip.sha256
       - name: 将已通过自检的安装包附加到本次发行版
         env:
           GH_TOKEN: ${{ github.token }}

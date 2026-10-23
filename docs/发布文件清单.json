@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "date": "2026-10-23",
   "scope": "公开版 Git 跟踪文件；清单本身不计算自己的散列",
-  "count": 1047,
+  "count": 1064,
   "files": [
     {
       "path": ".env.example",
@@ -21,13 +21,23 @@
     },
     {
       "path": ".github/workflows/checks.yml",
-      "size": 759,
-      "sha256": "05059e0359f46552a1952d938e1b74e753133adb42a001e3014c62a3172975fc"
+      "size": 795,
+      "sha256": "2dcf8ac552cea4f37db83c2aec7f88f5e9bf5b012b5230abfed5b769657daab1"
     },
     {
       "path": ".github/workflows/daily.yml",
-      "size": 2336,
-      "sha256": "1a6ac965dce0d69eabf5f20dae03b470d36064709400bb82031f67e18a2352bc"
+      "size": 2345,
+      "sha256": "abf03da1912030535d56062ceb35522ad2f1b012555e2a682bcb8fc3f45c694a"
+    },
+    {
+      "path": ".github/workflows/desktop.yml",
+      "size": 2517,
+      "sha256": "d994b724446679276776164124887ddf002ad2d2175b8ce51ae7a87fd5c04588"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "size": 1439,
+      "sha256": "dfab49f0ad7892c71ae99e3ce82943eccca7e77ea88525184018dee870e74bfb"
     },
     {
       "path": ".gitignore",
@@ -66,8 +76,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 518,
-      "sha256": "18d97a107f074bed2c49d2fe1a6d21c2b781998bd6ad492d310c371f6155da72"
+      "size": 984,
+      "sha256": "9aa574458ff6a588bbc942fe51fe12e405a7f89a3fcf50b939445cabf10f59ce"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -76,8 +86,8 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点周报_2026-W43.html",
-      "size": 17633,
-      "sha256": "2eccdbe03d1f9fc380d3059f4c589c04f601aed57814cfd618342064ebe6f05f"
+      "size": 17503,
+      "sha256": "2f24bcb02ac5d4b9f6e96ab492b3d08696f1d824528e2385e7970916a51698ef"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-06-29.pdf",
@@ -91,8 +101,8 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-10.html",
-      "size": 24864,
-      "sha256": "892cd6b429f9974e88974ae4503d2c235cb0cb64ce869bc0211e9d7a317a97e1"
+      "size": 23835,
+      "sha256": "75576c70627f015db041131cb990c9bdb5d3b7e679d88a55b3e5d75ae21d237b"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-10.pdf",
@@ -116,8 +126,8 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-15.html",
-      "size": 33364,
-      "sha256": "8b63eb1470abfbd36450e0076feaf2507ced95502e9a76cd376b3aa0d7c832ce"
+      "size": 31430,
+      "sha256": "f0f69ba7919ff9112e740eb5f74e3190fa4fb472aed92ba3d806b89550d4c2aa"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-15.pdf",
@@ -131,463 +141,463 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-20.html",
-      "size": 27646,
-      "sha256": "0b51e729c49a1b81efd27d1d30970fca808fa21b2bbf18c15c600eb175e8ba01"
+      "size": 25898,
+      "sha256": "e7000c7f9a3064fb1bdeecd317aeee50edee4f3c6261c38a44bf4a4cd96d9d78"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-21.html",
-      "size": 25802,
-      "sha256": "e042ccd449956a90f46b5adb04f831575e6f46aa10f90360bfdf4215a5bc22c5"
+      "size": 24299,
+      "sha256": "3871ccb95935770bba08a10a2fff686f27c3decbcb07e0d8d07d0dd4dfdc0022"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-22.html",
-      "size": 25537,
-      "sha256": "d051dcd61795c70c6a92513d0c7b3bd148d8b39881978174d24c84194a037b95"
+      "size": 24635,
+      "sha256": "0754b13932f91bb1ae669f69893c4f09466464f82ec8475a5aecccaf84a1c820"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-24.html",
-      "size": 26758,
-      "sha256": "697a27dc1be0534f9bffdc25e0570a9a00f91a91ac25e71ea1c5bdcc71750706"
+      "size": 24442,
+      "sha256": "77f7c7a4feb64bd6e6e862c66123ef476571f456f09c80c74c672e84081d97cc"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-25.html",
-      "size": 28704,
-      "sha256": "4334bf74d8130deb5dc05e14634d64cf1669ed453e86d1ec1b2bbe2ce285197e"
+      "size": 27319,
+      "sha256": "dc20e2210635658558fafadd3d77b535ca5bee3819154864a3d01b8073ed0b27"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-26.html",
-      "size": 26695,
-      "sha256": "2ab447af252c660759a4d83b665fb8beafd300947a919e8fbf372a0ba7d0a94a"
+      "size": 25329,
+      "sha256": "d1b2eb5f452b2f4b0b99a4781e0d24f3372cdb1a1585625c9b2d14730d63d988"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-27.html",
-      "size": 31339,
-      "sha256": "2a65fdd45a64cad5b19d207b683f09e5f4bfbb7baaa41ee1bf727116dc009f44"
+      "size": 29444,
+      "sha256": "e492e9768307ca0d9b6c3f797e59e7a00a4249b5d6754517856ecf8669a56d44"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-28.html",
-      "size": 25790,
-      "sha256": "4e0635f3cbb9d1edbb8c9fb2a1cceb4b8f8d60bd739e5219b0fc4547a5cf6e54"
+      "size": 23779,
+      "sha256": "7b1418d5a9b52411120bbfe9bfa44072f0e61f374ad20fb45a67e18fc783f0c4"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-29.html",
-      "size": 27077,
-      "sha256": "e7c79be795722fe797dbbcf327032e4146820fb1184335e01833c3d7d92ae5f2"
+      "size": 25230,
+      "sha256": "3a93a2a7bc736f7b589a2cebf2eec14e01776a7bb89ba82c50edba5256e5a51e"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-30.html",
-      "size": 33969,
-      "sha256": "8f9e4d4e8465060dd0423a691b63d54d025295343b60acd1a57d1396e326ca0a"
+      "size": 29216,
+      "sha256": "ee9e3364916b8530fa5ed405daf1ff8022b680a82a792af489da2215268f7346"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-07-31.html",
-      "size": 28012,
-      "sha256": "b350705fe1258d8ead4cc676baa8feb56b3d9a9f7061cdd3952bc52ec17daf62"
+      "size": 26621,
+      "sha256": "4220645f689c9a79dc9deeded81cd062ff53ce3e616f8409bc1b2f1f0e47f432"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-01.html",
-      "size": 25954,
-      "sha256": "35a3c3b6beb2f54d6dfdd9eca42a520272730e99fbb520b44427faf08fc2f9f2"
+      "size": 25276,
+      "sha256": "c808800acb28c1842b118902820d26e9b4f068a4a777ffa92439e2fa86d93656"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-02.html",
-      "size": 24889,
-      "sha256": "740f52d46bacb512c901fbbad10ebd5d3a149f24e76af3cdfd8b382423ae31de"
+      "size": 24077,
+      "sha256": "6f93c2a0562b166301c61f68111a0eea4cffa8d5211ba735362286f7e111794f"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-03.html",
-      "size": 27300,
-      "sha256": "09ff8eeeb5ef7825ca4b3ec261badee57b1eea9a16080a579ac22dd2d32f3f32"
+      "size": 26097,
+      "sha256": "d6f72a99c823fe56c55483589d41674a3e5acc95b68755df2d9918b255f082e7"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-06.html",
-      "size": 31773,
-      "sha256": "35ecc77c8afd47e8397893b3a4c1820bfe8bf77836bbed4269004cd4677154ee"
+      "size": 30776,
+      "sha256": "0e272e9457a8f03e166838603c49139972e0c280bbffc5c29736a6da16e655f4"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-07.html",
-      "size": 27278,
-      "sha256": "774036c27931deebd0f191502294600f2993bd4d63c39764d8a6fa1177aed0cf"
+      "size": 25979,
+      "sha256": "125b14d9617d9383b392df1c5f065817c9f9290dd401d3eb40f7733ab38d6d05"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-10.html",
-      "size": 29978,
-      "sha256": "73a4f062ac5619354f41b3843c44927a7d3a1de4cc25b1acf18e66a2297b225a"
+      "size": 28233,
+      "sha256": "45c0f652574fbbe0497d206f6bbe5b99f33fc72ef019eaec59131f1842b620a6"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-11.html",
-      "size": 31138,
-      "sha256": "66b9b246ea86be28fde4bd2ce9055e5688fdffe7fdc12866a54da266cd6510e0"
+      "size": 29398,
+      "sha256": "789972d5be02f7a55e61be885d36fb27469ab1d1fc1eb13d9e0aef498895ab03"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-12.html",
-      "size": 25000,
-      "sha256": "e62d80135b22e0adaa2c99b456c009edf94631c63b452fbfb8c27d0470a36661"
+      "size": 23780,
+      "sha256": "2dd161c1be37c2000454faeaa26dbf398ff3b50e309f0b13809c8b4cc38502d4"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-13.html",
-      "size": 29360,
-      "sha256": "044d34dd296e60c033c6ad241de845d13476d943084f2322fe109c217f2cef93"
+      "size": 26081,
+      "sha256": "0a25209ccf31824963bdd5c891e1b28d926eeb8882a70ea00a70e2f4c887bab1"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-14.html",
-      "size": 33061,
-      "sha256": "7125cf8062f47bf336186be8f123a20c9afd57ac54e606f917a7f827a5334d74"
+      "size": 31140,
+      "sha256": "54ffb4e254cd3d176b5ad9dba195b09446b653f55e04f1c0f71b67b8514b55cb"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-15.html",
-      "size": 28017,
-      "sha256": "f108ae78c01e85825f5b1afedec8431b30973449b0ac185ac3b66a10ad8b0238"
+      "size": 26760,
+      "sha256": "6014862a685452cb0dbe3c1132931333e8ba35321efbd3188dea6c8f817b8222"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-16.html",
-      "size": 27221,
-      "sha256": "a3d2f8b1e54e1c6988894ed4ce0f14dafa63a696c0c365bfb4824ecf1257a349"
+      "size": 25637,
+      "sha256": "1d2427227721dea1d1ba13221c4702c5d84164e585be0cc76a8f690be909960a"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-17.html",
-      "size": 32292,
-      "sha256": "42dfbcaa026ce09d54243670b0a06a62c22f8f3b43e5d3bdf9bec8edefd0a48e"
+      "size": 30611,
+      "sha256": "50fec4987efe360051bd909dfcbd991846fbcbe554e644f6f3e01273b588bfee"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-18.html",
-      "size": 31962,
-      "sha256": "916db53c5646a0c2c657f066028b5081d5639d036d02b9602d4f4baefca3064c"
+      "size": 30524,
+      "sha256": "e74f8016af57262841cab54fa2bb8d66693ad14ead86b4105f4b528e6f9b7fd0"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-19.html",
-      "size": 25831,
-      "sha256": "bcb489498b56c425ba1c888519cd919cda5025989b79bb89fb7399c853dfa5a5"
+      "size": 24830,
+      "sha256": "c11581cfea5971bd0d06d4e2409cf961151ad59d813bc9739fe1c7324802567a"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-20.html",
-      "size": 16356,
-      "sha256": "826576ae26b722e155f787e1e0c75a98bcaf26eab433fed2864c339a96813e0e"
+      "size": 16159,
+      "sha256": "6b4b5f1f51bae9830db59a3a6d0f73a0c9144a28a1fb8727a7e4eb4e7feff198"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-21.html",
-      "size": 15719,
-      "sha256": "e00c03676009fe20e2346e88edfc5d3451c4c63be869ff552865169f8da9b54c"
+      "size": 15522,
+      "sha256": "86f0205e33944d70c48b1d462ae74b0208d9dd9c30c43f512414add9f84f2b81"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-22.html",
-      "size": 16179,
-      "sha256": "557fdeeda2248e8a11ab9e2eddafd95eece150bdcc13bab4faa00be91d38359c"
+      "size": 15982,
+      "sha256": "f569ce02b679a74a425da93da65bd6a029e6a78fb66884546750d9c184c578f9"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-23.html",
-      "size": 28125,
-      "sha256": "2cee967f04c28a0cfb834fdaf331e319a64d5663d7d0878037792e0a11491f5c"
+      "size": 26784,
+      "sha256": "cf0bf437dd8b209a525eb5cfa30bcae31717925c95a3709365c5024119559f38"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-24.html",
-      "size": 25484,
-      "sha256": "98d61d9d879791d47082552c7de7d9005346c14574184793037a24676dbc9573"
+      "size": 25487,
+      "sha256": "fe67b7781d45a6167a72743f966c14b2c6228f4d4da58e8445e8f792a4a7c3f1"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-25.html",
-      "size": 16374,
-      "sha256": "bd5641ae25cdb52d366afbb4d2d027708103e4a973b8e905eab98496503814c7"
+      "size": 16177,
+      "sha256": "973fe45390606d68cdaacf25183137f0166449d3a7f03a16d2b89dc60f440c74"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-26.html",
-      "size": 16294,
-      "sha256": "06da73d2e62d8dfc15f0251b553fe57828394a59a9de0509b3bf32d1cb20637a"
+      "size": 16097,
+      "sha256": "3f1e1dc478f5c4845e509a4c551219859448d1612e413f12603add8c69183b07"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-27.html",
-      "size": 16246,
-      "sha256": "7dd18ee5483b32c037afe3d91d2fc5804cda23bd38e51a5af907a708095dd1ff"
+      "size": 16049,
+      "sha256": "5a0314758bdd98c07c0a42312371d06dbffbb24c69ecca1f05915f19ac22db75"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-28.html",
-      "size": 16196,
-      "sha256": "a42cf4d4fa0a67ad719d959b3346bce176425662a38f5dadd0979b7e0e5edd86"
+      "size": 15999,
+      "sha256": "bfb4f5dd453f4ce015ad31e9cd88a726dfe2e02c94fc979a7ccc30a67c14fdac"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-29.html",
-      "size": 16315,
-      "sha256": "c7de80bb1978bbe97d4e476df12b911708f795503a6cae7600f64a5f7ce9dbd7"
+      "size": 16118,
+      "sha256": "9cd01b3428c16b4790371ce4dcd16836fb249779b68c824a2e1037d81965f414"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-30.html",
-      "size": 15894,
-      "sha256": "9bb7569fcdaea134ba352b91fd293ef3fe9d527171983fb1aeccf726c2de0a31"
+      "size": 15697,
+      "sha256": "254df8994fe0a2c7d38385fc0e3100305494fbb2debcd709aec004dd6f8633e4"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-08-31.html",
-      "size": 15910,
-      "sha256": "42cca93dd1d754f8bc79ee86560d65004dc963c0f88dcf2929e809272be4bc3b"
+      "size": 15713,
+      "sha256": "af76f9ddbe7abd1e21fce403e0984dbaac791d3e947316f525703c06d16b1d7b"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-01.html",
-      "size": 16436,
-      "sha256": "7b5b37649bef94982a137d762949e7ff8aee16f00651860ca02116cd3b630ef0"
+      "size": 16239,
+      "sha256": "6a966af884eddb78c33e6a89a53af6767419e7451bfb5c913bf2eb95a2413840"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-02.html",
-      "size": 15705,
-      "sha256": "d7fc085959c8154ac5e9d76a56d8503b0eaaa22b6a00d5f469ed68fb45a7c02e"
+      "size": 15508,
+      "sha256": "2e76d697bbf68a3f5fc5946523ffddc00aec8e5c1efafc65025a43ef89fd4ee7"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-03.html",
-      "size": 15859,
-      "sha256": "c604aaff2a0b05cfaeaba4a61c9b09a44599b2ccf8189bd87e9bbe3d7b9ebbe5"
+      "size": 15662,
+      "sha256": "b974b5efbacdb9da7f694a8f6bed3d32011a15110ac4ea72e7f2522ac87a87ae"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-04.html",
-      "size": 15826,
-      "sha256": "74ca46320b3fb23eb52592579b5724bb46c4ce522e0d3fe0fdf9089cd2037d89"
+      "size": 15629,
+      "sha256": "8bc251d7ea2494e17e32e8e8cef8a1269e9cb34ebe68421d88ea8951ae76d5db"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-05.html",
-      "size": 16169,
-      "sha256": "bdf79b338ff9853c5269ae6dab8390604cd1d0bd3afda5ed18cd55bd5744494e"
+      "size": 15972,
+      "sha256": "79c2e28ff13e11280046b66648bab742ab82164600127e174ca7a526f8098f78"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-06.html",
-      "size": 15809,
-      "sha256": "a2c14e82378c212c9469656ed78bb88270b8640ad132a08211dbc647e095fec7"
+      "size": 15612,
+      "sha256": "1008a8751d27e71e194f5e593add16a3c407a72a8e1ae629a7e6e7ad8924b244"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-07.html",
-      "size": 15936,
-      "sha256": "b033be02a631b89ef4bfc7c6d8733d0cb8aca6aa71140dd43be4ddbdb5204c08"
+      "size": 15739,
+      "sha256": "a64e85997196cb3bcecac7a2117806e4b2996ec443c689662065c69fbd6645c2"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-08.html",
-      "size": 16334,
-      "sha256": "46de426bbfde3d36499987cd3166859a328ca37c2800711166648aa15798e445"
+      "size": 16137,
+      "sha256": "4a4d9076bd884be4c3e942cd4784fc0812f9c2bd27636de5850690fb036ccfd2"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-09.html",
-      "size": 16041,
-      "sha256": "3b3c6bc79839961696bf9554da8c8f4588efbccdb33ac31a955b0b19393cbc13"
+      "size": 15844,
+      "sha256": "237ada234f5df7fe9aeb2cb48125370f6e9eff99a6bd7c2bfb52e5cc1b7e8cf6"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-10.html",
-      "size": 15676,
-      "sha256": "4924ae0e87143005e8ed8dbb3b815a9fb0ff2bae7f76fa5e11925b7d52bd0ce0"
+      "size": 15479,
+      "sha256": "10a30b80bf1b575a90b6a404ba794affecca318316b937722682d7d16c89838c"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-11.html",
-      "size": 16113,
-      "sha256": "3c95828fbc85855ab66cf76cd9f5cf703b3e0ee36b74af34dd644dd240a6dfed"
+      "size": 15916,
+      "sha256": "0cd8989c75ebd18e373f0167c6789fbdbed2d7783431df70e7bf252210e40e68"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-12.html",
-      "size": 16256,
-      "sha256": "be77886e3472ef5dd9dd21ed46ef1ea154bece64a3fedf3dddafcb40f7501efb"
+      "size": 16059,
+      "sha256": "1d2428e991ff36768d6ffa41964e898ba7e380a1e0078c228701dfe6cda46f15"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-13.html",
-      "size": 37687,
-      "sha256": "cc28fb37140796f93426b4a13d68b2ce42cf7ffb7b929a6a0596e04124418821"
+      "size": 36262,
+      "sha256": "9df39bc40dec9d533318d306002456c2252059b4296753c31f5ef6ef3818215b"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-14.html",
-      "size": 16343,
-      "sha256": "aee644c79d0aa826a316051e6ca5e00ff827fe7b3464d67cc547384b14b80a5b"
+      "size": 16146,
+      "sha256": "7ffae1933afcabecc634da19dc7121bcac2e21c2921b3699aab93e0b0a146c53"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-15.html",
-      "size": 27768,
-      "sha256": "8c4d33c75336cf75e1fd64833f2f7f9a2078a17b0878782d91fd2e64af5e9362"
+      "size": 26471,
+      "sha256": "4355f60630db95761d1a1d6e8573b119fbe1b73467c2c54747b1315c8a85c40b"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-16.html",
-      "size": 30644,
-      "sha256": "ea1a293548d1e04b0beefbf383370b16ba97dd39cbcf7db4a3b6d3077ddbf706"
+      "size": 29741,
+      "sha256": "c010c62d3ab5dcf1694078a51602b7f3071644d3a867b7e30a95113515ef862e"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-17.html",
-      "size": 24281,
-      "sha256": "cb3b3e8a1447246367b8534c20a935d8d326b313f5440f5844378a6e5411a4ac"
+      "size": 23546,
+      "sha256": "5386c9ce42ae615fd25b30e015ae17b539c1f3c195589226aded2a90b358a232"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-18.html",
-      "size": 15857,
-      "sha256": "d413339329b0db881a17144b3be5144c5a9770c3c2e7b6280ad9627af2e92789"
+      "size": 15660,
+      "sha256": "7a0e005bf301298689c87bf4e7381d760d8f956e97035654ca896c2d769c04b8"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-19.html",
-      "size": 15862,
-      "sha256": "4e02a73c80e982916e532bd535170e2f12157f2fc1e47f917ff069972a54cb1d"
+      "size": 15665,
+      "sha256": "81ccc0af5a4d84bf4a40fea50f69169d1cecc12969575e6e4cdc5225e823ab09"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-20.html",
-      "size": 15513,
-      "sha256": "822ca375bbb5b925cc55bb45aec807b1cc1c39ae4931c630935473a1b0713bcb"
+      "size": 15316,
+      "sha256": "4ce237856a17cfb8ea6fdf4784216c743db32f31858cf5b5b1d9be24efcc9709"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-21.html",
-      "size": 15895,
-      "sha256": "d7320e0b0c9c11f71f8d7d8f6b2daad33341ea1737725f3ae47e941a27f74fb4"
+      "size": 15698,
+      "sha256": "3aa3f18a5e20e5453edd580b808193cb95eb14d31e885a0d9a0888e4fea7a571"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-22.html",
-      "size": 15379,
-      "sha256": "c58fdc03f1f2fcc0d2ed87a0f70f4ade6476a48c658795c0a5bcfb3fd32fc33c"
+      "size": 15182,
+      "sha256": "4ff3254336a3a821d240f9e933758e94e846b535fe112f836937a514e87d0645"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-23.html",
-      "size": 30891,
-      "sha256": "95809b3318d842ad15fb2f6e390e9ca23633d90d0e6a9b38cf54184cc2604ce2"
+      "size": 28763,
+      "sha256": "664a0422a1c1df0b1b8af8fe309fb1159b4e72e8fd2925d4df6cdf8a646a0cd7"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-24.html",
-      "size": 25851,
-      "sha256": "2d48238c242cfd74af2c99fc24fff372b774685f4a23a5ecdbe79a9308df607a"
+      "size": 24581,
+      "sha256": "b25ceea6801eb0f113f4b25b4713a638d75bfc5086c4e2998307ec1d875a1e61"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-25.html",
-      "size": 15990,
-      "sha256": "27c41102243039afddc6049768cbec745a921182bb6735a990ab7f197cbc952b"
+      "size": 15793,
+      "sha256": "1ef554f1f03de47929389aa6cdb07e444291ebcdb57ef028fc92cd7c5f6a2a13"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-26.html",
-      "size": 15852,
-      "sha256": "4ef110267be8dfd9f845cd8709fc024f64705096a3f161f04a314219d6010747"
+      "size": 15655,
+      "sha256": "7130d5cb85728078fb30b94a20fdf737cba422d011e855e74f9637099196ddd9"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-27.html",
-      "size": 15962,
-      "sha256": "2dde2b8fad0625fd337f46084a4dfa897a46916ab546852284a23c278c57dbd6"
+      "size": 15765,
+      "sha256": "8787dbdd21e4b096b27fd405191272353b1df4f47471b51ad9cf26e439dd66af"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-28.html",
-      "size": 14405,
-      "sha256": "ad0ab5a24147109bf9011805e4ad150a13c834d21f2dca095882f33d5bc0dcb8"
+      "size": 14228,
+      "sha256": "35036cdc7d2e9d41902015d8b5e8633daa46cab841374721d0712c33cd8a0fe0"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-29.html",
-      "size": 13562,
-      "sha256": "63de547f25b179a4aad192bc62ea398413d085d748331a8d69a9499418156e71"
+      "size": 13405,
+      "sha256": "cc3f41f4becf4c8019093e727621ac045e6176f3b45c20202d5f988b9dd49b10"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-09-30.html",
-      "size": 15716,
-      "sha256": "5ab69db92bda5d8011b5ef7fb6b429028c844b67ea7c4e5d1fc083f40e81a701"
+      "size": 15519,
+      "sha256": "2f626f44eb871d2f04c387da3a586c2b5f618715d98181ec98313d3c3938058c"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-01.html",
-      "size": 16137,
-      "sha256": "e1da8dac75984c927216179cc329773bbc13399d096749061b1cf453197378e1"
+      "size": 15940,
+      "sha256": "304293907260fd1b806293f09a071fd4f6172c4eda72a1738af338b32096d10f"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-02.html",
-      "size": 15895,
-      "sha256": "cd3722d5c616846b6b90f694dfef5d25c19e8ea9ccd0ec310d9f77742f70afbc"
+      "size": 15698,
+      "sha256": "1f73c21b5277b0d2ceec9b14282c0ecb0b9a0871f1fccb4314381c5c04f5cd11"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-03.html",
-      "size": 16143,
-      "sha256": "87f48a638e5d63f71d53e4e8a81b31a70a1ea64b7b67cd007a312a78eb087b3f"
+      "size": 15946,
+      "sha256": "e786b78c545cd3748f2c32367a339c6342a4485a2fbb09ae99279a41e1809f42"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-04.html",
-      "size": 15990,
-      "sha256": "c1ebd3be3fbc7a5696ad78e5e1a36e880f5dcb92c3095c2b02e6489d18bf0031"
+      "size": 15793,
+      "sha256": "06cd2162132c4f6ecb6ec5831e66984e3bc319d81af13fd25ca5c476c61bcb72"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-05.html",
-      "size": 15521,
-      "sha256": "cc2a538a507f635d3be2c8f70d85615dfbe62f1185480ab21d48723e8c0e8d11"
+      "size": 15324,
+      "sha256": "a5422827a6a8055e2910058b60643ee2383f9f41179592c5f15698e466915d61"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-06.html",
-      "size": 27634,
-      "sha256": "e25e679efec23a8a825c294a9fb9810b6dd1f26a825d66aa72a56ae74911c2d3"
+      "size": 26457,
+      "sha256": "b9685d71ed73b332d21a2bda91ae37241a6a01042bc057d1b329eeeaeed25c79"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-07.html",
-      "size": 27560,
-      "sha256": "40a43260d5e5ade66b8c173cb4c4ed636b379bf8ecd916fe3a3ea4a8923642d1"
+      "size": 26341,
+      "sha256": "7e8945c485834aec71a1572500391e90952ce5a5b90c7e7c4d4f562ae9d0089a"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-08.html",
-      "size": 25081,
-      "sha256": "99412bd983dabaa34fe1f5edf70a0746ac209d2bc392c23bf7fc450ff0b881b0"
+      "size": 24040,
+      "sha256": "f14243ea254cfe7b26a710ea7f29d27df26b92880edb95624d01ded36d881fed"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-09.html",
-      "size": 14782,
-      "sha256": "7fe3c6b9378541890bd7581f9c26cc66a99e4df937b3cb7ad75e0a3e8ed28107"
+      "size": 14605,
+      "sha256": "e23a338b04f71b747cac89eba9e278998bbcc78b8f0c44f8c91bf257734f5354"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-10.html",
-      "size": 16045,
-      "sha256": "2968981684b4b2943ab79fc9748d7fb5ed7e2cbb41a2d75da99f1e40e79ceeb7"
+      "size": 15848,
+      "sha256": "365734581f1764a64d8c0e2d54975e793b71d81985fb36075e7d9880c27b047a"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-11.html",
-      "size": 15864,
-      "sha256": "451081e5aef68d4426192671997b4a8704f17a3b608c14668c6c8ecc01dd2305"
+      "size": 15667,
+      "sha256": "3f9a9480215e118c9f3ddea4a1d588104685577ab31f674e82b4672daffa843b"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-12.html",
-      "size": 13424,
-      "sha256": "849ef0ea701eb20751aac50b08bef540a95d5d9a81117628b4658707f85cc00f"
+      "size": 13267,
+      "sha256": "9a2e2d177b71ce9a2fd9b937504df124b8b2ae736b91fb772877235efe8845b8"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-13.html",
-      "size": 14570,
-      "sha256": "43e19757d78119c9ea33822dac5065f5a5e12135b25d03474f8293f4cd79978c"
+      "size": 14393,
+      "sha256": "68ad8a6d5d3b1729d19b81e4d27d90b09ea3555b1fb4112bdbb8f15f80839e98"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-14.html",
-      "size": 14803,
-      "sha256": "3ed071cdf5690687fef75d47df92e8dbfcd562e2740354bb526e7783f29c8bc2"
+      "size": 14626,
+      "sha256": "dadb211c8f14ce52fa09d9c8c0edc90228a3b9160639db62c758dad61023c832"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-15.html",
-      "size": 15977,
-      "sha256": "99a8f1add66e186cc25050cf08aaab9cc6a91397ddb9a98156104bbb841b0ab3"
+      "size": 15780,
+      "sha256": "5cf1546bf1b75f284b8f47322b2dbd0a008f296e34348cd37a3995cdaae1da67"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-16.html",
-      "size": 16122,
-      "sha256": "445a0cc134e23e683db85c2c23ca2cd9448ef9b57a95d7fd0b24d4160d9ddeb4"
+      "size": 15925,
+      "sha256": "6bea1b47f1cccbc8b7a9e01914504e352029f7c02939727229c763491110cdaf"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-17.html",
-      "size": 16034,
-      "sha256": "a211f931fa957c061f706078eae685fc9e5a5f0eba1e9c73067f33ab7899f288"
+      "size": 15837,
+      "sha256": "18e7e7deb20387ceb39d17401bb5e0cb592c80e8a886597f2ddea9f658cf2ecc"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-18.html",
-      "size": 16175,
-      "sha256": "aafe3cbe4e2995c88e87a74d73f262317261c9873cfcf59f84494c0d6a179cf1"
+      "size": 15978,
+      "sha256": "9b364a14f1b24be02062e3f571e6536a37b33af5e4486b36204e1f21b8ff6cdf"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-19.html",
-      "size": 19145,
-      "sha256": "d20acf8a0c1c5063de600c8412777982c9dcfa8bdf710e7f8e624f0cf9252fcc"
+      "size": 19015,
+      "sha256": "29c97bd723a3efd715cb6842b445da6890c659afc271af6c24cd1a3444a33709"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-20.html",
-      "size": 19647,
-      "sha256": "66e211b3785ed9f229ffd28c00ff5c38ba2bfc3b40ee922210daeabdefbba120"
+      "size": 19517,
+      "sha256": "ec19b1b73822826bfa3d404f15c57936e43c7465fd7c0699a339f78b45998764"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-21.html",
-      "size": 19528,
-      "sha256": "8564bf377415e769feb34209f39e1c40bc33a90f57684517178d91321fd5144e"
+      "size": 19398,
+      "sha256": "eb37af78f34c4d96d5d73f1d2832daeb2d6e88182b26f97123f9fb2fee50e2f0"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-22.html",
-      "size": 15260,
-      "sha256": "5e9a7a1a0cd674590da9ce5c1353ab1c0b030c67b154a51c9634470c85ac3bce"
+      "size": 15131,
+      "sha256": "3f63407c9e368a61a0f9a952111a75d01c35a6e286ebcf809625f4883ada58d4"
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-23.html",
-      "size": 18389,
-      "sha256": "e0f211dde073768aa9d7317b09999b8ad6b665b44a081789a9905657f779697c"
+      "size": 18272,
+      "sha256": "73a22685c4f58b72bef7c1d7313b81ca0ab51dd036e2baf7ebd923d284245309"
     },
     {
       "path": "GitHub项目分析/GitHub热点杂志.html",
-      "size": 1253671,
-      "sha256": "bfb1df5640bc561201dbd3db70663f0bad8c67b0554cd29c4d0f7e989bd170e8"
+      "size": 1255128,
+      "sha256": "0960f9eca4387357d3da90134160f23115769e53423469922a7277497f749f1f"
     },
     {
       "path": "GitHub项目分析/历史前身_Markdown/2026-06-22-github-daily.md",
@@ -2471,13 +2481,13 @@
     },
     {
       "path": "NOTICE.md",
-      "size": 705,
-      "sha256": "6c2cfe6bff68fcd8211cac12336d31953f254a5dd259c37cde394e7a5055d3bb"
+      "size": 2791,
+      "sha256": "01f21bb6d96114baa7c302fd554b846c9b5bb080fc934c9811821ff024766942"
     },
     {
       "path": "README.md",
-      "size": 7935,
-      "sha256": "e38171cf3ca5cebad715d2a0e7690901042007f3503b4aa388b38f5679b26585"
+      "size": 13167,
+      "sha256": "79bf0d4cc9ac58afce1451e0c4dbe666e753794d2a5e5b56ef9579da67b984fb"
     },
     {
       "path": "SECURITY.md",
@@ -2486,8 +2496,8 @@
     },
     {
       "path": "content-manifest.json",
-      "size": 103933,
-      "sha256": "95d8b4140d23c59d6c67f4164be3a1e7a27f28384d151b1e6f5fccd111ee1672"
+      "size": 104082,
+      "sha256": "4e60fbd4f15492e74b5e2221078f98686e0df8978976e50c97c7eda4497bd771"
     },
     {
       "path": "dist/AI前沿资讯/回溯特刊_近两月AI新项目榜_2026-08-19至10-19.md",
@@ -2516,8 +2526,8 @@
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点周报_2026-W43.html",
-      "size": 17633,
-      "sha256": "2eccdbe03d1f9fc380d3059f4c589c04f601aed57814cfd618342064ebe6f05f"
+      "size": 17503,
+      "sha256": "2f24bcb02ac5d4b9f6e96ab492b3d08696f1d824528e2385e7970916a51698ef"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-06-29.pdf",
@@ -2531,8 +2541,8 @@
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-10.html",
-      "size": 24864,
-      "sha256": "892cd6b429f9974e88974ae4503d2c235cb0cb64ce869bc0211e9d7a317a97e1"
+      "size": 23835,
+      "sha256": "75576c70627f015db041131cb990c9bdb5d3b7e679d88a55b3e5d75ae21d237b"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-10.pdf",
@@ -2556,8 +2566,8 @@
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-15.html",
-      "size": 33364,
-      "sha256": "8b63eb1470abfbd36450e0076feaf2507ced95502e9a76cd376b3aa0d7c832ce"
+      "size": 31430,
+      "sha256": "f0f69ba7919ff9112e740eb5f74e3190fa4fb472aed92ba3d806b89550d4c2aa"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-15.pdf",
@@ -2571,463 +2581,463 @@
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-20.html",
-      "size": 27646,
-      "sha256": "0b51e729c49a1b81efd27d1d30970fca808fa21b2bbf18c15c600eb175e8ba01"
+      "size": 25898,
+      "sha256": "e7000c7f9a3064fb1bdeecd317aeee50edee4f3c6261c38a44bf4a4cd96d9d78"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-21.html",
-      "size": 25802,
-      "sha256": "e042ccd449956a90f46b5adb04f831575e6f46aa10f90360bfdf4215a5bc22c5"
+      "size": 24299,
+      "sha256": "3871ccb95935770bba08a10a2fff686f27c3decbcb07e0d8d07d0dd4dfdc0022"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-22.html",
-      "size": 25537,
-      "sha256": "d051dcd61795c70c6a92513d0c7b3bd148d8b39881978174d24c84194a037b95"
+      "size": 24635,
+      "sha256": "0754b13932f91bb1ae669f69893c4f09466464f82ec8475a5aecccaf84a1c820"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-24.html",
-      "size": 26758,
-      "sha256": "697a27dc1be0534f9bffdc25e0570a9a00f91a91ac25e71ea1c5bdcc71750706"
+      "size": 24442,
+      "sha256": "77f7c7a4feb64bd6e6e862c66123ef476571f456f09c80c74c672e84081d97cc"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-25.html",
-      "size": 28704,
-      "sha256": "4334bf74d8130deb5dc05e14634d64cf1669ed453e86d1ec1b2bbe2ce285197e"
+      "size": 27319,
+      "sha256": "dc20e2210635658558fafadd3d77b535ca5bee3819154864a3d01b8073ed0b27"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-26.html",
-      "size": 26695,
-      "sha256": "2ab447af252c660759a4d83b665fb8beafd300947a919e8fbf372a0ba7d0a94a"
+      "size": 25329,
+      "sha256": "d1b2eb5f452b2f4b0b99a4781e0d24f3372cdb1a1585625c9b2d14730d63d988"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-27.html",
-      "size": 31339,
-      "sha256": "2a65fdd45a64cad5b19d207b683f09e5f4bfbb7baaa41ee1bf727116dc009f44"
+      "size": 29444,
+      "sha256": "e492e9768307ca0d9b6c3f797e59e7a00a4249b5d6754517856ecf8669a56d44"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-28.html",
-      "size": 25790,
-      "sha256": "4e0635f3cbb9d1edbb8c9fb2a1cceb4b8f8d60bd739e5219b0fc4547a5cf6e54"
+      "size": 23779,
+      "sha256": "7b1418d5a9b52411120bbfe9bfa44072f0e61f374ad20fb45a67e18fc783f0c4"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-29.html",
-      "size": 27077,
-      "sha256": "e7c79be795722fe797dbbcf327032e4146820fb1184335e01833c3d7d92ae5f2"
+      "size": 25230,
+      "sha256": "3a93a2a7bc736f7b589a2cebf2eec14e01776a7bb89ba82c50edba5256e5a51e"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-30.html",
-      "size": 33969,
-      "sha256": "8f9e4d4e8465060dd0423a691b63d54d025295343b60acd1a57d1396e326ca0a"
+      "size": 29216,
+      "sha256": "ee9e3364916b8530fa5ed405daf1ff8022b680a82a792af489da2215268f7346"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-07-31.html",
-      "size": 28012,
-      "sha256": "b350705fe1258d8ead4cc676baa8feb56b3d9a9f7061cdd3952bc52ec17daf62"
+      "size": 26621,
+      "sha256": "4220645f689c9a79dc9deeded81cd062ff53ce3e616f8409bc1b2f1f0e47f432"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-01.html",
-      "size": 25954,
-      "sha256": "35a3c3b6beb2f54d6dfdd9eca42a520272730e99fbb520b44427faf08fc2f9f2"
+      "size": 25276,
+      "sha256": "c808800acb28c1842b118902820d26e9b4f068a4a777ffa92439e2fa86d93656"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-02.html",
-      "size": 24889,
-      "sha256": "740f52d46bacb512c901fbbad10ebd5d3a149f24e76af3cdfd8b382423ae31de"
+      "size": 24077,
+      "sha256": "6f93c2a0562b166301c61f68111a0eea4cffa8d5211ba735362286f7e111794f"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-03.html",
-      "size": 27300,
-      "sha256": "09ff8eeeb5ef7825ca4b3ec261badee57b1eea9a16080a579ac22dd2d32f3f32"
+      "size": 26097,
+      "sha256": "d6f72a99c823fe56c55483589d41674a3e5acc95b68755df2d9918b255f082e7"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-06.html",
-      "size": 31773,
-      "sha256": "35ecc77c8afd47e8397893b3a4c1820bfe8bf77836bbed4269004cd4677154ee"
+      "size": 30776,
+      "sha256": "0e272e9457a8f03e166838603c49139972e0c280bbffc5c29736a6da16e655f4"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-07.html",
-      "size": 27278,
-      "sha256": "774036c27931deebd0f191502294600f2993bd4d63c39764d8a6fa1177aed0cf"
+      "size": 25979,
+      "sha256": "125b14d9617d9383b392df1c5f065817c9f9290dd401d3eb40f7733ab38d6d05"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-10.html",
-      "size": 29978,
-      "sha256": "73a4f062ac5619354f41b3843c44927a7d3a1de4cc25b1acf18e66a2297b225a"
+      "size": 28233,
+      "sha256": "45c0f652574fbbe0497d206f6bbe5b99f33fc72ef019eaec59131f1842b620a6"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-11.html",
-      "size": 31138,
-      "sha256": "66b9b246ea86be28fde4bd2ce9055e5688fdffe7fdc12866a54da266cd6510e0"
+      "size": 29398,
+      "sha256": "789972d5be02f7a55e61be885d36fb27469ab1d1fc1eb13d9e0aef498895ab03"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-12.html",
-      "size": 25000,
-      "sha256": "e62d80135b22e0adaa2c99b456c009edf94631c63b452fbfb8c27d0470a36661"
+      "size": 23780,
+      "sha256": "2dd161c1be37c2000454faeaa26dbf398ff3b50e309f0b13809c8b4cc38502d4"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-13.html",
-      "size": 29360,
-      "sha256": "044d34dd296e60c033c6ad241de845d13476d943084f2322fe109c217f2cef93"
+      "size": 26081,
+      "sha256": "0a25209ccf31824963bdd5c891e1b28d926eeb8882a70ea00a70e2f4c887bab1"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-14.html",
-      "size": 33061,
-      "sha256": "7125cf8062f47bf336186be8f123a20c9afd57ac54e606f917a7f827a5334d74"
+      "size": 31140,
+      "sha256": "54ffb4e254cd3d176b5ad9dba195b09446b653f55e04f1c0f71b67b8514b55cb"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-15.html",
-      "size": 28017,
-      "sha256": "f108ae78c01e85825f5b1afedec8431b30973449b0ac185ac3b66a10ad8b0238"
+      "size": 26760,
+      "sha256": "6014862a685452cb0dbe3c1132931333e8ba35321efbd3188dea6c8f817b8222"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-16.html",
-      "size": 27221,
-      "sha256": "a3d2f8b1e54e1c6988894ed4ce0f14dafa63a696c0c365bfb4824ecf1257a349"
+      "size": 25637,
+      "sha256": "1d2427227721dea1d1ba13221c4702c5d84164e585be0cc76a8f690be909960a"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-17.html",
-      "size": 32292,
-      "sha256": "42dfbcaa026ce09d54243670b0a06a62c22f8f3b43e5d3bdf9bec8edefd0a48e"
+      "size": 30611,
+      "sha256": "50fec4987efe360051bd909dfcbd991846fbcbe554e644f6f3e01273b588bfee"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-18.html",
-      "size": 31962,
-      "sha256": "916db53c5646a0c2c657f066028b5081d5639d036d02b9602d4f4baefca3064c"
+      "size": 30524,
+      "sha256": "e74f8016af57262841cab54fa2bb8d66693ad14ead86b4105f4b528e6f9b7fd0"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-19.html",
-      "size": 25831,
-      "sha256": "bcb489498b56c425ba1c888519cd919cda5025989b79bb89fb7399c853dfa5a5"
+      "size": 24830,
+      "sha256": "c11581cfea5971bd0d06d4e2409cf961151ad59d813bc9739fe1c7324802567a"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-20.html",
-      "size": 16356,
-      "sha256": "826576ae26b722e155f787e1e0c75a98bcaf26eab433fed2864c339a96813e0e"
+      "size": 16159,
+      "sha256": "6b4b5f1f51bae9830db59a3a6d0f73a0c9144a28a1fb8727a7e4eb4e7feff198"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-21.html",
-      "size": 15719,
-      "sha256": "e00c03676009fe20e2346e88edfc5d3451c4c63be869ff552865169f8da9b54c"
+      "size": 15522,
+      "sha256": "86f0205e33944d70c48b1d462ae74b0208d9dd9c30c43f512414add9f84f2b81"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-22.html",
-      "size": 16179,
-      "sha256": "557fdeeda2248e8a11ab9e2eddafd95eece150bdcc13bab4faa00be91d38359c"
+      "size": 15982,
+      "sha256": "f569ce02b679a74a425da93da65bd6a029e6a78fb66884546750d9c184c578f9"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-23.html",
-      "size": 28125,
-      "sha256": "2cee967f04c28a0cfb834fdaf331e319a64d5663d7d0878037792e0a11491f5c"
+      "size": 26784,
+      "sha256": "cf0bf437dd8b209a525eb5cfa30bcae31717925c95a3709365c5024119559f38"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-24.html",
-      "size": 25484,
-      "sha256": "98d61d9d879791d47082552c7de7d9005346c14574184793037a24676dbc9573"
+      "size": 25487,
+      "sha256": "fe67b7781d45a6167a72743f966c14b2c6228f4d4da58e8445e8f792a4a7c3f1"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-25.html",
-      "size": 16374,
-      "sha256": "bd5641ae25cdb52d366afbb4d2d027708103e4a973b8e905eab98496503814c7"
+      "size": 16177,
+      "sha256": "973fe45390606d68cdaacf25183137f0166449d3a7f03a16d2b89dc60f440c74"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-26.html",
-      "size": 16294,
-      "sha256": "06da73d2e62d8dfc15f0251b553fe57828394a59a9de0509b3bf32d1cb20637a"
+      "size": 16097,
+      "sha256": "3f1e1dc478f5c4845e509a4c551219859448d1612e413f12603add8c69183b07"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-27.html",
-      "size": 16246,
-      "sha256": "7dd18ee5483b32c037afe3d91d2fc5804cda23bd38e51a5af907a708095dd1ff"
+      "size": 16049,
+      "sha256": "5a0314758bdd98c07c0a42312371d06dbffbb24c69ecca1f05915f19ac22db75"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-28.html",
-      "size": 16196,
-      "sha256": "a42cf4d4fa0a67ad719d959b3346bce176425662a38f5dadd0979b7e0e5edd86"
+      "size": 15999,
+      "sha256": "bfb4f5dd453f4ce015ad31e9cd88a726dfe2e02c94fc979a7ccc30a67c14fdac"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-29.html",
-      "size": 16315,
-      "sha256": "c7de80bb1978bbe97d4e476df12b911708f795503a6cae7600f64a5f7ce9dbd7"
+      "size": 16118,
+      "sha256": "9cd01b3428c16b4790371ce4dcd16836fb249779b68c824a2e1037d81965f414"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-30.html",
-      "size": 15894,
-      "sha256": "9bb7569fcdaea134ba352b91fd293ef3fe9d527171983fb1aeccf726c2de0a31"
+      "size": 15697,
+      "sha256": "254df8994fe0a2c7d38385fc0e3100305494fbb2debcd709aec004dd6f8633e4"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-08-31.html",
-      "size": 15910,
-      "sha256": "42cca93dd1d754f8bc79ee86560d65004dc963c0f88dcf2929e809272be4bc3b"
+      "size": 15713,
+      "sha256": "af76f9ddbe7abd1e21fce403e0984dbaac791d3e947316f525703c06d16b1d7b"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-01.html",
-      "size": 16436,
-      "sha256": "7b5b37649bef94982a137d762949e7ff8aee16f00651860ca02116cd3b630ef0"
+      "size": 16239,
+      "sha256": "6a966af884eddb78c33e6a89a53af6767419e7451bfb5c913bf2eb95a2413840"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-02.html",
-      "size": 15705,
-      "sha256": "d7fc085959c8154ac5e9d76a56d8503b0eaaa22b6a00d5f469ed68fb45a7c02e"
+      "size": 15508,
+      "sha256": "2e76d697bbf68a3f5fc5946523ffddc00aec8e5c1efafc65025a43ef89fd4ee7"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-03.html",
-      "size": 15859,
-      "sha256": "c604aaff2a0b05cfaeaba4a61c9b09a44599b2ccf8189bd87e9bbe3d7b9ebbe5"
+      "size": 15662,
+      "sha256": "b974b5efbacdb9da7f694a8f6bed3d32011a15110ac4ea72e7f2522ac87a87ae"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-04.html",
-      "size": 15826,
-      "sha256": "74ca46320b3fb23eb52592579b5724bb46c4ce522e0d3fe0fdf9089cd2037d89"
+      "size": 15629,
+      "sha256": "8bc251d7ea2494e17e32e8e8cef8a1269e9cb34ebe68421d88ea8951ae76d5db"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-05.html",
-      "size": 16169,
-      "sha256": "bdf79b338ff9853c5269ae6dab8390604cd1d0bd3afda5ed18cd55bd5744494e"
+      "size": 15972,
+      "sha256": "79c2e28ff13e11280046b66648bab742ab82164600127e174ca7a526f8098f78"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-06.html",
-      "size": 15809,
-      "sha256": "a2c14e82378c212c9469656ed78bb88270b8640ad132a08211dbc647e095fec7"
+      "size": 15612,
+      "sha256": "1008a8751d27e71e194f5e593add16a3c407a72a8e1ae629a7e6e7ad8924b244"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-07.html",
-      "size": 15936,
-      "sha256": "b033be02a631b89ef4bfc7c6d8733d0cb8aca6aa71140dd43be4ddbdb5204c08"
+      "size": 15739,
+      "sha256": "a64e85997196cb3bcecac7a2117806e4b2996ec443c689662065c69fbd6645c2"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-08.html",
-      "size": 16334,
-      "sha256": "46de426bbfde3d36499987cd3166859a328ca37c2800711166648aa15798e445"
+      "size": 16137,
+      "sha256": "4a4d9076bd884be4c3e942cd4784fc0812f9c2bd27636de5850690fb036ccfd2"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-09.html",
-      "size": 16041,
-      "sha256": "3b3c6bc79839961696bf9554da8c8f4588efbccdb33ac31a955b0b19393cbc13"
+      "size": 15844,
+      "sha256": "237ada234f5df7fe9aeb2cb48125370f6e9eff99a6bd7c2bfb52e5cc1b7e8cf6"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-10.html",
-      "size": 15676,
-      "sha256": "4924ae0e87143005e8ed8dbb3b815a9fb0ff2bae7f76fa5e11925b7d52bd0ce0"
+      "size": 15479,
+      "sha256": "10a30b80bf1b575a90b6a404ba794affecca318316b937722682d7d16c89838c"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-11.html",
-      "size": 16113,
-      "sha256": "3c95828fbc85855ab66cf76cd9f5cf703b3e0ee36b74af34dd644dd240a6dfed"
+      "size": 15916,
+      "sha256": "0cd8989c75ebd18e373f0167c6789fbdbed2d7783431df70e7bf252210e40e68"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-12.html",
-      "size": 16256,
-      "sha256": "be77886e3472ef5dd9dd21ed46ef1ea154bece64a3fedf3dddafcb40f7501efb"
+      "size": 16059,
+      "sha256": "1d2428e991ff36768d6ffa41964e898ba7e380a1e0078c228701dfe6cda46f15"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-13.html",
-      "size": 37687,
-      "sha256": "cc28fb37140796f93426b4a13d68b2ce42cf7ffb7b929a6a0596e04124418821"
+      "size": 36262,
+      "sha256": "9df39bc40dec9d533318d306002456c2252059b4296753c31f5ef6ef3818215b"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-14.html",
-      "size": 16343,
-      "sha256": "aee644c79d0aa826a316051e6ca5e00ff827fe7b3464d67cc547384b14b80a5b"
+      "size": 16146,
+      "sha256": "7ffae1933afcabecc634da19dc7121bcac2e21c2921b3699aab93e0b0a146c53"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-15.html",
-      "size": 27768,
-      "sha256": "8c4d33c75336cf75e1fd64833f2f7f9a2078a17b0878782d91fd2e64af5e9362"
+      "size": 26471,
+      "sha256": "4355f60630db95761d1a1d6e8573b119fbe1b73467c2c54747b1315c8a85c40b"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-16.html",
-      "size": 30644,
-      "sha256": "ea1a293548d1e04b0beefbf383370b16ba97dd39cbcf7db4a3b6d3077ddbf706"
+      "size": 29741,
+      "sha256": "c010c62d3ab5dcf1694078a51602b7f3071644d3a867b7e30a95113515ef862e"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-17.html",
-      "size": 24281,
-      "sha256": "cb3b3e8a1447246367b8534c20a935d8d326b313f5440f5844378a6e5411a4ac"
+      "size": 23546,
+      "sha256": "5386c9ce42ae615fd25b30e015ae17b539c1f3c195589226aded2a90b358a232"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-18.html",
-      "size": 15857,
-      "sha256": "d413339329b0db881a17144b3be5144c5a9770c3c2e7b6280ad9627af2e92789"
+      "size": 15660,
+      "sha256": "7a0e005bf301298689c87bf4e7381d760d8f956e97035654ca896c2d769c04b8"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-19.html",
-      "size": 15862,
-      "sha256": "4e02a73c80e982916e532bd535170e2f12157f2fc1e47f917ff069972a54cb1d"
+      "size": 15665,
+      "sha256": "81ccc0af5a4d84bf4a40fea50f69169d1cecc12969575e6e4cdc5225e823ab09"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-20.html",
-      "size": 15513,
-      "sha256": "822ca375bbb5b925cc55bb45aec807b1cc1c39ae4931c630935473a1b0713bcb"
+      "size": 15316,
+      "sha256": "4ce237856a17cfb8ea6fdf4784216c743db32f31858cf5b5b1d9be24efcc9709"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-21.html",
-      "size": 15895,
-      "sha256": "d7320e0b0c9c11f71f8d7d8f6b2daad33341ea1737725f3ae47e941a27f74fb4"
+      "size": 15698,
+      "sha256": "3aa3f18a5e20e5453edd580b808193cb95eb14d31e885a0d9a0888e4fea7a571"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-22.html",
-      "size": 15379,
-      "sha256": "c58fdc03f1f2fcc0d2ed87a0f70f4ade6476a48c658795c0a5bcfb3fd32fc33c"
+      "size": 15182,
+      "sha256": "4ff3254336a3a821d240f9e933758e94e846b535fe112f836937a514e87d0645"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-23.html",
-      "size": 30891,
-      "sha256": "95809b3318d842ad15fb2f6e390e9ca23633d90d0e6a9b38cf54184cc2604ce2"
+      "size": 28763,
+      "sha256": "664a0422a1c1df0b1b8af8fe309fb1159b4e72e8fd2925d4df6cdf8a646a0cd7"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-24.html",
-      "size": 25851,
-      "sha256": "2d48238c242cfd74af2c99fc24fff372b774685f4a23a5ecdbe79a9308df607a"
+      "size": 24581,
+      "sha256": "b25ceea6801eb0f113f4b25b4713a638d75bfc5086c4e2998307ec1d875a1e61"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-25.html",
-      "size": 15990,
-      "sha256": "27c41102243039afddc6049768cbec745a921182bb6735a990ab7f197cbc952b"
+      "size": 15793,
+      "sha256": "1ef554f1f03de47929389aa6cdb07e444291ebcdb57ef028fc92cd7c5f6a2a13"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-26.html",
-      "size": 15852,
-      "sha256": "4ef110267be8dfd9f845cd8709fc024f64705096a3f161f04a314219d6010747"
+      "size": 15655,
+      "sha256": "7130d5cb85728078fb30b94a20fdf737cba422d011e855e74f9637099196ddd9"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-27.html",
-      "size": 15962,
-      "sha256": "2dde2b8fad0625fd337f46084a4dfa897a46916ab546852284a23c278c57dbd6"
+      "size": 15765,
+      "sha256": "8787dbdd21e4b096b27fd405191272353b1df4f47471b51ad9cf26e439dd66af"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-28.html",
-      "size": 14405,
-      "sha256": "ad0ab5a24147109bf9011805e4ad150a13c834d21f2dca095882f33d5bc0dcb8"
+      "size": 14228,
+      "sha256": "35036cdc7d2e9d41902015d8b5e8633daa46cab841374721d0712c33cd8a0fe0"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-29.html",
-      "size": 13562,
-      "sha256": "63de547f25b179a4aad192bc62ea398413d085d748331a8d69a9499418156e71"
+      "size": 13405,
+      "sha256": "cc3f41f4becf4c8019093e727621ac045e6176f3b45c20202d5f988b9dd49b10"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-09-30.html",
-      "size": 15716,
-      "sha256": "5ab69db92bda5d8011b5ef7fb6b429028c844b67ea7c4e5d1fc083f40e81a701"
+      "size": 15519,
+      "sha256": "2f626f44eb871d2f04c387da3a586c2b5f618715d98181ec98313d3c3938058c"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-01.html",
-      "size": 16137,
-      "sha256": "e1da8dac75984c927216179cc329773bbc13399d096749061b1cf453197378e1"
+      "size": 15940,
+      "sha256": "304293907260fd1b806293f09a071fd4f6172c4eda72a1738af338b32096d10f"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-02.html",
-      "size": 15895,
-      "sha256": "cd3722d5c616846b6b90f694dfef5d25c19e8ea9ccd0ec310d9f77742f70afbc"
+      "size": 15698,
+      "sha256": "1f73c21b5277b0d2ceec9b14282c0ecb0b9a0871f1fccb4314381c5c04f5cd11"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-03.html",
-      "size": 16143,
-      "sha256": "87f48a638e5d63f71d53e4e8a81b31a70a1ea64b7b67cd007a312a78eb087b3f"
+      "size": 15946,
+      "sha256": "e786b78c545cd3748f2c32367a339c6342a4485a2fbb09ae99279a41e1809f42"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-04.html",
-      "size": 15990,
-      "sha256": "c1ebd3be3fbc7a5696ad78e5e1a36e880f5dcb92c3095c2b02e6489d18bf0031"
+      "size": 15793,
+      "sha256": "06cd2162132c4f6ecb6ec5831e66984e3bc319d81af13fd25ca5c476c61bcb72"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-05.html",
-      "size": 15521,
-      "sha256": "cc2a538a507f635d3be2c8f70d85615dfbe62f1185480ab21d48723e8c0e8d11"
+      "size": 15324,
+      "sha256": "a5422827a6a8055e2910058b60643ee2383f9f41179592c5f15698e466915d61"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-06.html",
-      "size": 27634,
-      "sha256": "e25e679efec23a8a825c294a9fb9810b6dd1f26a825d66aa72a56ae74911c2d3"
+      "size": 26457,
+      "sha256": "b9685d71ed73b332d21a2bda91ae37241a6a01042bc057d1b329eeeaeed25c79"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-07.html",
-      "size": 27560,
-      "sha256": "40a43260d5e5ade66b8c173cb4c4ed636b379bf8ecd916fe3a3ea4a8923642d1"
+      "size": 26341,
+      "sha256": "7e8945c485834aec71a1572500391e90952ce5a5b90c7e7c4d4f562ae9d0089a"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-08.html",
-      "size": 25081,
-      "sha256": "99412bd983dabaa34fe1f5edf70a0746ac209d2bc392c23bf7fc450ff0b881b0"
+      "size": 24040,
+      "sha256": "f14243ea254cfe7b26a710ea7f29d27df26b92880edb95624d01ded36d881fed"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-09.html",
-      "size": 14782,
-      "sha256": "7fe3c6b9378541890bd7581f9c26cc66a99e4df937b3cb7ad75e0a3e8ed28107"
+      "size": 14605,
+      "sha256": "e23a338b04f71b747cac89eba9e278998bbcc78b8f0c44f8c91bf257734f5354"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-10.html",
-      "size": 16045,
-      "sha256": "2968981684b4b2943ab79fc9748d7fb5ed7e2cbb41a2d75da99f1e40e79ceeb7"
+      "size": 15848,
+      "sha256": "365734581f1764a64d8c0e2d54975e793b71d81985fb36075e7d9880c27b047a"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-11.html",
-      "size": 15864,
-      "sha256": "451081e5aef68d4426192671997b4a8704f17a3b608c14668c6c8ecc01dd2305"
+      "size": 15667,
+      "sha256": "3f9a9480215e118c9f3ddea4a1d588104685577ab31f674e82b4672daffa843b"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-12.html",
-      "size": 13424,
-      "sha256": "849ef0ea701eb20751aac50b08bef540a95d5d9a81117628b4658707f85cc00f"
+      "size": 13267,
+      "sha256": "9a2e2d177b71ce9a2fd9b937504df124b8b2ae736b91fb772877235efe8845b8"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-13.html",
-      "size": 14570,
-      "sha256": "43e19757d78119c9ea33822dac5065f5a5e12135b25d03474f8293f4cd79978c"
+      "size": 14393,
+      "sha256": "68ad8a6d5d3b1729d19b81e4d27d90b09ea3555b1fb4112bdbb8f15f80839e98"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-14.html",
-      "size": 14803,
-      "sha256": "3ed071cdf5690687fef75d47df92e8dbfcd562e2740354bb526e7783f29c8bc2"
+      "size": 14626,
+      "sha256": "dadb211c8f14ce52fa09d9c8c0edc90228a3b9160639db62c758dad61023c832"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-15.html",
-      "size": 15977,
-      "sha256": "99a8f1add66e186cc25050cf08aaab9cc6a91397ddb9a98156104bbb841b0ab3"
+      "size": 15780,
+      "sha256": "5cf1546bf1b75f284b8f47322b2dbd0a008f296e34348cd37a3995cdaae1da67"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-16.html",
-      "size": 16122,
-      "sha256": "445a0cc134e23e683db85c2c23ca2cd9448ef9b57a95d7fd0b24d4160d9ddeb4"
+      "size": 15925,
+      "sha256": "6bea1b47f1cccbc8b7a9e01914504e352029f7c02939727229c763491110cdaf"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-17.html",
-      "size": 16034,
-      "sha256": "a211f931fa957c061f706078eae685fc9e5a5f0eba1e9c73067f33ab7899f288"
+      "size": 15837,
+      "sha256": "18e7e7deb20387ceb39d17401bb5e0cb592c80e8a886597f2ddea9f658cf2ecc"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-18.html",
-      "size": 16175,
-      "sha256": "aafe3cbe4e2995c88e87a74d73f262317261c9873cfcf59f84494c0d6a179cf1"
+      "size": 15978,
+      "sha256": "9b364a14f1b24be02062e3f571e6536a37b33af5e4486b36204e1f21b8ff6cdf"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-19.html",
-      "size": 19145,
-      "sha256": "d20acf8a0c1c5063de600c8412777982c9dcfa8bdf710e7f8e624f0cf9252fcc"
+      "size": 19015,
+      "sha256": "29c97bd723a3efd715cb6842b445da6890c659afc271af6c24cd1a3444a33709"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-20.html",
-      "size": 19647,
-      "sha256": "66e211b3785ed9f229ffd28c00ff5c38ba2bfc3b40ee922210daeabdefbba120"
+      "size": 19517,
+      "sha256": "ec19b1b73822826bfa3d404f15c57936e43c7465fd7c0699a339f78b45998764"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-21.html",
-      "size": 19528,
-      "sha256": "8564bf377415e769feb34209f39e1c40bc33a90f57684517178d91321fd5144e"
+      "size": 19398,
+      "sha256": "eb37af78f34c4d96d5d73f1d2832daeb2d6e88182b26f97123f9fb2fee50e2f0"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-22.html",
-      "size": 15260,
-      "sha256": "5e9a7a1a0cd674590da9ce5c1353ab1c0b030c67b154a51c9634470c85ac3bce"
+      "size": 15131,
+      "sha256": "3f63407c9e368a61a0f9a952111a75d01c35a6e286ebcf809625f4883ada58d4"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点日报_2026-10-23.html",
-      "size": 18389,
-      "sha256": "e0f211dde073768aa9d7317b09999b8ad6b665b44a081789a9905657f779697c"
+      "size": 18272,
+      "sha256": "73a22685c4f58b72bef7c1d7313b81ca0ab51dd036e2baf7ebd923d284245309"
     },
     {
       "path": "dist/GitHub项目分析/GitHub热点杂志.html",
-      "size": 1253671,
-      "sha256": "bfb1df5640bc561201dbd3db70663f0bad8c67b0554cd29c4d0f7e989bd170e8"
+      "size": 1255128,
+      "sha256": "0960f9eca4387357d3da90134160f23115769e53423469922a7277497f749f1f"
     },
     {
       "path": "dist/GitHub项目分析/历史前身_Markdown/2026-06-22-github-daily.md",
@@ -4906,8 +4916,8 @@
     },
     {
       "path": "dist/README.md",
-      "size": 7935,
-      "sha256": "e38171cf3ca5cebad715d2a0e7690901042007f3503b4aa388b38f5679b26585"
+      "size": 13167,
+      "sha256": "79bf0d4cc9ac58afce1451e0c4dbe666e753794d2a5e5b56ef9579da67b984fb"
     },
     {
       "path": "dist/app.css",
@@ -4916,13 +4926,13 @@
     },
     {
       "path": "dist/content-manifest.json",
-      "size": 103933,
-      "sha256": "95d8b4140d23c59d6c67f4164be3a1e7a27f28384d151b1e6f5fccd111ee1672"
+      "size": 104082,
+      "sha256": "4e60fbd4f15492e74b5e2221078f98686e0df8978976e50c97c7eda4497bd771"
     },
     {
       "path": "dist/content-version.json",
       "size": 70,
-      "sha256": "7f9982c98f7d49c2f63b6b1a712d57c1ff97116aaa0fa49161504e6dbddb4b4c"
+      "sha256": "ca62594eb9ba954bcc319d4b1b112411c2b3d1cc04c84972264d769f13fa05ed"
     },
     {
       "path": "dist/icons/icon-192.png",
@@ -4946,8 +4956,8 @@
     },
     {
       "path": "dist/manifest.webmanifest",
-      "size": 681,
-      "sha256": "6e21e6980ade681a1c3b42e6b6f56b79cea8f8c9bc7e92b4f4a694fa262180fb"
+      "size": 771,
+      "sha256": "fe8e6ae4a845573c9689e83633e1297e745b1bbbe7ce2d4fdfaab4795a6d67be"
     },
     {
       "path": "dist/offline.html",
@@ -4956,13 +4966,13 @@
     },
     {
       "path": "dist/pwa.js",
-      "size": 7391,
-      "sha256": "ce101ae6609fd25833832d7a8a827c88df672a66a8027f7b01b5b8ab217ac120"
+      "size": 9832,
+      "sha256": "1857033a2b135e1f4abf9de0e9f652c2aa5ecc74a805c7b4e77ac462579b417b"
     },
     {
       "path": "dist/settings.html",
-      "size": 4557,
-      "sha256": "284198e4e251e9c12f1527a6e7dda5cb1f35a8912f982e6c049d567a0163e37e"
+      "size": 4821,
+      "sha256": "73789857c6eb16632fafff5b6fad6c7c7b13fc395cb2fe9333631556d40daf44"
     },
     {
       "path": "dist/settings.js",
@@ -4970,9 +4980,14 @@
       "sha256": "abdd02ca3b172f495a5f9c374fcdfb9e097e631d41ec6827adce8c3ca17a46e9"
     },
     {
+      "path": "dist/site-config.json",
+      "size": 35,
+      "sha256": "d8904b8cd76c2eb1291deffb05e589949d99bb11e3a21c073ff54a91dd1238dc"
+    },
+    {
       "path": "dist/sw.js",
-      "size": 5538,
-      "sha256": "bcd8f6975ad6a4e3582133341a28da77edc47b05efba24ad4f3020e9f3c2ccdc"
+      "size": 7510,
+      "sha256": "361253a638d1bedade926946f4d75c58267c1a7af34b002a6f929377fdb269e7"
     },
     {
       "path": "dist/数据来源.md",
@@ -4985,9 +5000,14 @@
       "sha256": "225c2a451e5e65429eec85ccb919f4828fabf025ea16ac667077aed5e4857e2c"
     },
     {
+      "path": "docs/AI工具采编.md",
+      "size": 9113,
+      "sha256": "6b15fb747a9b833cee566475d7c48963e3b0a8f37ee17973740eca87d4d69220"
+    },
+    {
       "path": "docs/images/使用流程.svg",
-      "size": 3015,
-      "sha256": "f9b986430576aa4c291092f511c2752ed2f57a0c41b7aec861342911c7059eb8"
+      "size": 4562,
+      "sha256": "d6a9b2d57931169f73ce504b964a9aa22e4c050e3437808a107524df4757e408"
     },
     {
       "path": "docs/images/日报阅读.jpg",
@@ -5026,28 +5046,33 @@
     },
     {
       "path": "docs/云端自动更新.md",
-      "size": 2996,
-      "sha256": "bdc977fa5e76c5d878ba3e264d9aed64045e365ff01ea375da2c662e3dffb710"
+      "size": 5980,
+      "sha256": "024b44e86eff11d7a6da75ff122939e278a2e1fb9e938b5d9dfdc61c6319ccdf"
     },
     {
       "path": "docs/安装与模型设置.md",
-      "size": 2977,
-      "sha256": "8a428c68c0081a8cf2b42d698551e93c7ac71251992aed6dc7da17960f986f65"
+      "size": 6788,
+      "sha256": "ba655533bb3d737748b48e9073cd4909d7accee9ddcea8af06750e3a9b181c75"
+    },
+    {
+      "path": "docs/桌面安装.md",
+      "size": 4353,
+      "sha256": "433f1dbc10b5468a5eb78251a16a309e3cb00f36c3a7f37775de12642823cc5c"
     },
     {
       "path": "docs/自动采编.md",
-      "size": 4913,
-      "sha256": "6c8d0c4955597a0ace03ae3cc4eaf6ba359cff16adff2adb1b532eb1a39c0dd1"
+      "size": 6007,
+      "sha256": "bb4105e7d8555d1ad9342cbe4c91caf4a73921303afe15ff1738cf60bf1cc65d"
     },
     {
       "path": "docs/项目介绍.html",
-      "size": 11438,
-      "sha256": "79dea8cfccb42149120c6e9f9fe37b79b60eaefc9e8b941904294fa4bc1bf775"
+      "size": 12788,
+      "sha256": "9199693f5da4347301e781a8097088a382146654d2e26eb53090b2b484772072"
     },
     {
       "path": "docs/验收记录.md",
-      "size": 3924,
-      "sha256": "b3a54733085d30d15440844d63efe5efc2a565fc08706abfe915f5c907c88bae"
+      "size": 5069,
+      "sha256": "df3368d32a93f86d551a81ff64813a2f0da3bbea4687478802101fe047de8e35"
     },
     {
       "path": "gh_daily/__init__.py",
@@ -5061,18 +5086,28 @@
     },
     {
       "path": "gh_daily/build.py",
-      "size": 6310,
-      "sha256": "f5c7d85b62c3f9015b3ade71964dbac26a7268b71b93706d35561b5998f0fde9"
+      "size": 7850,
+      "sha256": "cfb185483d822d05fc6928e5e850020e903d1a58f3968d65d15546baa6832c3a"
     },
     {
       "path": "gh_daily/cli.py",
-      "size": 4429,
-      "sha256": "0f8bba56aab51b338f080d1a53dcf935a54da30ae5edd6653b5d4af79a3dd90d"
+      "size": 6092,
+      "sha256": "63894c780617fb5229cdc46a71dfe413963abf3869906cc00e79df36ec1a5bd7"
     },
     {
       "path": "gh_daily/config.py",
       "size": 7253,
       "sha256": "c809f5a829270936a8d4392f238f4ab3fabbd3e9b75f61de1b495f0cde966a0a"
+    },
+    {
+      "path": "gh_daily/desktop.py",
+      "size": 10266,
+      "sha256": "464d531c1d47cebf55b85321dbdd4bc4b5a1454b3c1df0e052aa03a6e472e883"
+    },
+    {
+      "path": "gh_daily/local.py",
+      "size": 2292,
+      "sha256": "09a063eeadfd6c0f57a24ad109daec79d65199c5276731a1b26d16f3d72fd879"
     },
     {
       "path": "gh_daily/models.py",
@@ -5086,8 +5121,13 @@
     },
     {
       "path": "gh_daily/privacy.py",
-      "size": 5254,
-      "sha256": "96e09d5dfb1bf13390160b1a4d63a8c146d622f2a2d43f54d0d455dbab24b9f1"
+      "size": 5298,
+      "sha256": "fdfaf623831fb5f8286050786a8b9cd55412d0bf4c7a0819c1a2e8c4bf233d61"
+    },
+    {
+      "path": "gh_daily/publishing.py",
+      "size": 11794,
+      "sha256": "a2c66b32da3b610cb34b3076775af4ffbae93b5bd4069531538573ae752b9623"
     },
     {
       "path": "gh_daily/reports.py",
@@ -5106,8 +5146,8 @@
     },
     {
       "path": "gh_daily/sync.py",
-      "size": 9963,
-      "sha256": "9828b4fb20cefe92e8093d7854014b2da59bf1b74314aaaa58fb72a2ce7f36dd"
+      "size": 10003,
+      "sha256": "236828e425f2c00b856f3bd7b9bd25f29f340bfa453db5eb76eaa10a12c2f4a0"
     },
     {
       "path": "gh_daily/tls.py",
@@ -5120,14 +5160,29 @@
       "sha256": "a3e03a3ddd76c8a5eb01e737a15c0868d334b73227f9f33933d319251e5c7cb8"
     },
     {
+      "path": "requirements-desktop.txt",
+      "size": 136,
+      "sha256": "b4eca6b5836f0f089a361dd5b70995686677f03ff60cde82579e6d5f57e4e524"
+    },
+    {
       "path": "tests/test_cli.py",
       "size": 1805,
       "sha256": "8a7baaddd07e2c93747b4feba7aa4487cd822b91114520db082f746730da92ae"
     },
     {
+      "path": "tests/test_desktop.py",
+      "size": 10268,
+      "sha256": "24f8493d23cf57edad752c9f7febf870a6c8c8585ae85c0a5d5dbbc50c28dd7b"
+    },
+    {
       "path": "tests/test_local_app.py",
       "size": 18243,
       "sha256": "cd385c9046866e792f599b27267af3bc832821a5d874653c4af21c27812d3133"
+    },
+    {
+      "path": "tests/test_local_workspace.py",
+      "size": 1629,
+      "sha256": "6910fecf8e1c6fa032daced6390b25dcb6f5e5f4e00412720050d0b3b55ecbc2"
     },
     {
       "path": "tests/test_magazine.py",
@@ -5140,14 +5195,29 @@
       "sha256": "6d5c71d51ba6a23b44912e926bf47b76fb7ee28fab660cb34877065bb0fbcc33"
     },
     {
+      "path": "tests/test_publishing.py",
+      "size": 5542,
+      "sha256": "6271f13f73171e222726066fda01e966b7e77bcece9077b0b38afafa323cc29b"
+    },
+    {
+      "path": "tests/test_pwa.js",
+      "size": 5365,
+      "sha256": "e585da36fc76d8612b270b782080b059d7325b9c858587944472e2fb2e2c12f2"
+    },
+    {
       "path": "tests/test_release.py",
-      "size": 7257,
-      "sha256": "903430e6b5b5718e69f66cf2b68b432954891d183445cb5c8106d1d1b07251e8"
+      "size": 9013,
+      "sha256": "3a3263649ef299d9a96c739ba44721eab679b78b6e00c9569cc35ad3c1e25495"
     },
     {
       "path": "tests/test_sw.js",
-      "size": 3143,
-      "sha256": "b2d0bced2f3126005641f32c1e064e3d0eff3a9e054ef2b8ab750c719b863ec5"
+      "size": 10328,
+      "sha256": "7f0b06a8ee656e60498633d0d77cdbefadad915363f21d286a83290c91196562"
+    },
+    {
+      "path": "tools/ChineseSimplified.isl",
+      "size": 21099,
+      "sha256": "bf0751fa176569c6faa2f6e17ed2734617bef325d5cc06eae030fdd0258ee778"
     },
     {
       "path": "tools/_杂志数据.json",
@@ -5156,8 +5226,18 @@
     },
     {
       "path": "tools/build_magazine.py",
-      "size": 80047,
-      "sha256": "136981683fdaa9edc94296a33146d5d17f94d458adaecb1217a554a546ad8fe8"
+      "size": 81504,
+      "sha256": "24f7f88dd8544bedbe6a7f82b7b97b25a3f156780ac03f860cbcc80d9e7ba496"
+    },
+    {
+      "path": "tools/desktop_entry.py",
+      "size": 189,
+      "sha256": "46e70adf6f2a3858e8a78c095d767422a13173e26b1dc73c07d0df3bb551b657"
+    },
+    {
+      "path": "tools/package_desktop.py",
+      "size": 7590,
+      "sha256": "fdb85d8aa8f202a80e73500d87530d53919b8aa3eba253734057506ecf92fd21"
     },
     {
       "path": "tools/parse_trending.py",
@@ -5168,6 +5248,11 @@
       "path": "tools/sanitize_pdfs.py",
       "size": 1515,
       "sha256": "0f55862739858e43e6c5aad1ca231e2d52f66546bced30315b256c3e042709f7"
+    },
+    {
+      "path": "tools/windows-installer.iss",
+      "size": 2565,
+      "sha256": "d825390a9f10fb4d3cd54e9f1053cb41c5e3b61dbe1d108f165b404cd9f6a413"
     },
     {
       "path": "web/app.css",
@@ -5196,13 +5281,13 @@
     },
     {
       "path": "web/pwa.js",
-      "size": 7391,
-      "sha256": "ce101ae6609fd25833832d7a8a827c88df672a66a8027f7b01b5b8ab217ac120"
+      "size": 9832,
+      "sha256": "1857033a2b135e1f4abf9de0e9f652c2aa5ecc74a805c7b4e77ac462579b417b"
     },
     {
       "path": "web/settings.html",
-      "size": 4557,
-      "sha256": "284198e4e251e9c12f1527a6e7dda5cb1f35a8912f982e6c049d567a0163e37e"
+      "size": 4821,
+      "sha256": "73789857c6eb16632fafff5b6fad6c7c7b13fc395cb2fe9333631556d40daf44"
     },
     {
       "path": "web/settings.js",
@@ -5211,8 +5296,8 @@
     },
     {
       "path": "web/sw.js",
-      "size": 5538,
-      "sha256": "bcd8f6975ad6a4e3582133341a28da77edc47b05efba24ad4f3020e9f3c2ccdc"
+      "size": 7510,
+      "sha256": "361253a638d1bedade926946f4d75c58267c1a7af34b002a6f929377fdb269e7"
     },
     {
       "path": "启动.bat",
