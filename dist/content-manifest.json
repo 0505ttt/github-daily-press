@@ -1,5 +1,5 @@
 {
-  "revision": "3fa0c8f3596b7a2e9385da8a",
+  "revision": "bb8cbf42916c7e6782ab5c7d",
   "generated_at": "2026-10-23",
   "files": [
     {
@@ -2514,8 +2514,8 @@
     },
     {
       "path": "settings.html",
-      "sha256": "ee0ac8aae909711ce1959dec769538b99b026c870c87044af2a78220c7a49c5e",
-      "size": 6271
+      "sha256": "213d5a452f81bdf06db0e8f92927fd062e8bd8ed02df8040f577efdef8da9ba9",
+      "size": 6264
     },
     {
       "path": "settings.js",
@@ -2544,7 +2544,7 @@
     },
     {
       "path": "content-version.json",
-      "sha256": "476614ab2129dcf6f4761de32ccf775fec8d29392b65835bb4bf72b090991bb2",
+      "sha256": "f5d4a9eb03e0ec8ee6ca516e359636e69c6824944c6368b98edddf0cb86d1545",
       "size": 70
     }
   ]

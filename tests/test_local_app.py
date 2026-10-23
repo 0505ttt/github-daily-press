@@ -15,6 +15,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
+from urllib.parse import quote
 
 from gh_daily import config, models, sync
 from gh_daily.server import LocalServer
@@ -285,6 +286,62 @@ class LocalAppTests(unittest.TestCase):
             self.assertFalse(sync.allowed_content_path(value))
         self.assertTrue(sync.allowed_content_path("GitHub项目分析/历史前身_Markdown/日报.md"))
         self.assertTrue(sync.allowed_content_path("GitHub项目分析/历史前身_Markdown/附件.pdf"))
+
+    def test_sync_accepts_current_manifest_and_rejects_unsafe_extras(self):
+        public_root = Path(__file__).resolve().parents[1]
+        manifest = json.loads((public_root / "content-manifest.json").read_text(encoding="utf-8"))
+        for entry in manifest["files"]:
+            with self.subTest(path=entry["path"]):
+                self.assertTrue(sync.allowed_content_path(entry["path"]))
+        for path in (
+            "docs/内部笔记.md", "docs/private.html", "docs/images/config.json",
+            "docs/images/.secret.jpg", "docs/images/.private/截图.png",
+            "docs/images/../private.jpg", "docs/images//截图.jpg",
+            "docs/images/https://example.com/截图.jpg", "docs/images/链接%2e.jpg",
+            "docs\\images\\截图.jpg", "/docs/images/截图.jpg",
+            "AI前沿资讯/config.json", "AI前沿资讯/私人笔记.md",
+            "AI前沿资讯/回溯特刊_附件.html", "AI前沿资讯/其他/日报.md",
+            "README.md/附件", "gh_daily/config.py",
+        ):
+            with self.subTest(rejected=path):
+                self.assertFalse(sync.allowed_content_path(path))
+
+    def test_sync_complete_current_publication_in_temporary_workspace(self):
+        public_root = Path(__file__).resolve().parents[1]
+        manifest_bytes = (public_root / "content-manifest.json").read_bytes()
+        manifest = json.loads(manifest_bytes)
+        prefix = "/example/project/main/"
+        downloads = {prefix + "content-manifest.json": manifest_bytes}
+        contents = {}
+        for entry in manifest["files"]:
+            data = (public_root / "dist" / entry["path"]).read_bytes()
+            self.assertEqual(len(data), entry["size"], entry["path"])
+            self.assertEqual(hashlib.sha256(data).hexdigest(), entry["sha256"], entry["path"])
+            downloads[prefix + "dist/" + quote(entry["path"], safe="/")] = data
+            contents[entry["path"]] = data
+            if sync.local_asset(entry["path"]):
+                local = self.root / "dist" / entry["path"]
+                local.parent.mkdir(parents=True, exist_ok=True)
+                local.write_bytes(data)
+
+        def download(path, maximum):
+            self.assertIn(path, downloads)
+            data = downloads[path]
+            self.assertLessEqual(len(data), maximum)
+            return data
+
+        with patch.object(sync, "_download", side_effect=download) as request:
+            result = sync.sync_content(self.root, "example/project")
+        self.assertTrue(result["ok"])
+        self.assertTrue(result["changed"])
+        self.assertEqual(result["files"], len(manifest["files"]))
+        self.assertEqual(request.call_count, len(manifest["files"]) + 1)
+        active = sync.active_site(self.root)
+        self.assertNotEqual(active, self.root / "dist")
+        for path, data in contents.items():
+            self.assertEqual((active / path).read_bytes(), data, path)
+        self.assertTrue((active / "docs/项目介绍.html").is_file())
+        self.assertFalse((self.root / "gh_daily").exists())
 
     def test_service_worker_excludes_private_routes(self):
         script = (Path(__file__).resolve().parents[1] / "web/sw.js").read_text(encoding="utf-8")

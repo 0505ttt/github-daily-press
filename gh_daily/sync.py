@@ -20,7 +20,7 @@ MAX_TOTAL = 64 * 1024 * 1024
 MAX_FILE = 16 * 1024 * 1024
 ROOT_FILES = {"index.html", "offline.html", "app.css", "pwa.js", "sw.js",
               "manifest.webmanifest", "settings.html", "settings.js", "site-config.json", "content-version.json",
-              "补档说明.md", "数据来源.md"}
+              "README.md", "补档说明.md", "数据来源.md"}
 LOCAL_ASSETS = {"settings.html", "settings.js", "pwa.js", "app.css", "sw.js", "manifest.webmanifest", "site-config.json"}
 
 
@@ -91,7 +91,13 @@ def allowed_content_path(path: str) -> bool:
         return len(parts) > 1 and Path(path).suffix.lower() in {".png", ".svg", ".ico", ".webp", ".jpg", ".css", ".js"}
     if parts[0] == "GitHub项目分析":
         return len(parts) > 1 and Path(path).suffix.lower() in {".html", ".md", ".pdf"}
-    return len(parts) == 3 and parts[:2] == ("AI前沿资讯", "日报") and path.endswith(".md")
+    if parts[0] == "AI前沿资讯":
+        return ((len(parts) == 3 and parts[1] == "日报" and path.endswith(".md"))
+                or (len(parts) == 2 and re.fullmatch(r"回溯特刊_[^/]+\.md", parts[1]) is not None))
+    if path == "docs/项目介绍.html":
+        return True
+    return (len(parts) >= 3 and parts[:2] == ("docs", "images")
+            and Path(path).suffix in {".svg", ".png", ".jpg", ".jpeg"})
 
 
 def _download(path: str, maximum: int) -> bytes:

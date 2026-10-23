@@ -2497,7 +2497,7 @@
     {
       "path": "content-manifest.json",
       "size": 105720,
-      "sha256": "ad7e0e391de65cf40cb7c2862a64999755c41ee34fa4c5fe1227ff5dbcfdaffe"
+      "sha256": "42031b87f8c5fab75b22eb1bc9be553ea6ef077c456d11aa198a621866148a7d"
     },
     {
       "path": "dist/AI前沿资讯/回溯特刊_近两月AI新项目榜_2026-08-19至10-19.md",
@@ -4927,12 +4927,12 @@
     {
       "path": "dist/content-manifest.json",
       "size": 105720,
-      "sha256": "ad7e0e391de65cf40cb7c2862a64999755c41ee34fa4c5fe1227ff5dbcfdaffe"
+      "sha256": "42031b87f8c5fab75b22eb1bc9be553ea6ef077c456d11aa198a621866148a7d"
     },
     {
       "path": "dist/content-version.json",
       "size": 70,
-      "sha256": "476614ab2129dcf6f4761de32ccf775fec8d29392b65835bb4bf72b090991bb2"
+      "sha256": "f5d4a9eb03e0ec8ee6ca516e359636e69c6824944c6368b98edddf0cb86d1545"
     },
     {
       "path": "dist/docs/images/使用流程.svg",
@@ -5021,8 +5021,8 @@
     },
     {
       "path": "dist/settings.html",
-      "size": 6271,
-      "sha256": "ee0ac8aae909711ce1959dec769538b99b026c870c87044af2a78220c7a49c5e"
+      "size": 6264,
+      "sha256": "213d5a452f81bdf06db0e8f92927fd062e8bd8ed02df8040f577efdef8da9ba9"
     },
     {
       "path": "dist/settings.js",
@@ -5126,8 +5126,8 @@
     },
     {
       "path": "docs/验收记录.md",
-      "size": 6586,
-      "sha256": "59508d85d31e94e9415443525bbb664d378a5d72fdbcc985d7137022f181380f"
+      "size": 6613,
+      "sha256": "79ecf7d346f9109c83a907b94f7373d2a9be0a33fa0f196c1a27b8afa71fc4db"
     },
     {
       "path": "gh_daily/__init__.py",
@@ -5211,8 +5211,8 @@
     },
     {
       "path": "gh_daily/sync.py",
-      "size": 10003,
-      "sha256": "236828e425f2c00b856f3bd7b9bd25f29f340bfa453db5eb76eaa10a12c2f4a0"
+      "size": 10340,
+      "sha256": "70f5ce3af5df9ec1ff5843ad0a46b8bf0f61345f87cdd19516ae4ebd8b9343f8"
     },
     {
       "path": "gh_daily/tls.py",
@@ -5246,8 +5246,8 @@
     },
     {
       "path": "tests/test_local_app.py",
-      "size": 18243,
-      "sha256": "cd385c9046866e792f599b27267af3bc832821a5d874653c4af21c27812d3133"
+      "size": 21333,
+      "sha256": "1d94edfd9255131e14b2f77a2e7d4f98820ec2daa07ecbbd6209ece4e43d903a"
     },
     {
       "path": "tests/test_local_workspace.py",
@@ -5366,8 +5366,8 @@
     },
     {
       "path": "web/settings.html",
-      "size": 6271,
-      "sha256": "ee0ac8aae909711ce1959dec769538b99b026c870c87044af2a78220c7a49c5e"
+      "size": 6264,
+      "sha256": "213d5a452f81bdf06db0e8f92927fd062e8bd8ed02df8040f577efdef8da9ba9"
     },
     {
       "path": "web/settings.js",
