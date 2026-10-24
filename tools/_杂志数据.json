@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-23",
+ "generated_at": "2026-10-24",
  "meta": {
-  "count_days": 94,
-  "count_daily": 93,
+  "count_days": 95,
+  "count_daily": 94,
   "count_weekly": 1,
   "count_monthly": 0,
   "count_backfill": 50,
@@ -17,13 +17,13 @@
    "GitHub热点日报_2026-07-15.pdf",
    "GitHub热点日报_2026-07-16.pdf"
   ],
-  "count_projects": 929,
-  "count_repos": 337,
-  "count_archives": 369,
-  "count_ai_days": 4,
+  "count_projects": 937,
+  "count_repos": 339,
+  "count_archives": 371,
+  "count_ai_days": 5,
   "span": [
    "2026-07-10",
-   "2026-10-23"
+   "2026-10-24"
   ]
  },
  "issues": [
@@ -14697,6 +14697,196 @@
     "miss_total": 0,
     "miss_desc": 0
    }
+  },
+  {
+   "id": "daily:2026-10-24",
+   "period": "2026-10-24",
+   "file": "GitHub热点日报_2026-10-24.html",
+   "date": "2026-10-24",
+   "issue": 94,
+   "type": "daily",
+   "weekday": "星期六",
+   "week": "2026-W43",
+   "month": "2026-10",
+   "backfill": false,
+   "snapshot": "",
+   "snapshot_url": "",
+   "wind": "今日榜单 8 席（连续第三日不足 10，页面实际返回数，如实收录）。 Cloudflare 安全审计技能连续第四日上榜且仍是全榜最热 （+2,716）；语言/运行时老牌双雄 PHP 源码与 Node.js 同榜，\"基建回流\"延续。两个有趣新面孔： 开源紫微斗数排盘引擎 （\"算法是公开的传统智慧\"）与清华系 OpenBMB 的语音生成模型 VoxCPM——玄学与硬核同框，恰是 GitHub 生态的众生相。",
+   "ai": [
+    {
+     "t": "月之暗面今晨发布 Kimi K3.1 Pro",
+     "d": "🌙  ：3 万亿级参数/100 万上下文，编程对标 GPT-6，11-4 前开放权重",
+     "url": "https://finance.sina.com.cn/roll/2026-10-24/doc-iniwhtfs8127567.shtml",
+     "src": "新浪"
+    },
+    {
+     "t": "OpenAI 宣布不再用实时互联网训练模型",
+     "d": "🚫  ，称存在\"重大风险\"",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "OpenAI 模型（含 GPT-6 Astra）将上线 Google Cloud",
+     "d": "☁️  ，服务受监管行业",
+     "url": "https://www.facebook.com/KSLNewsradio/posts/openai-will-offer-its-ai-models-including-gpt-6-astra-on-google-cloudthis-will-a/1573007094863112",
+     "src": "KSL"
+    },
+    {
+     "t": "智谱 GLM-5.5 月底压轴在即",
+     "d": "🧠  （网传 2.5-3.5 万亿参数，本周背景）",
+     "url": "https://tech.ifeng.com/c/8xPRsqw746o",
+     "src": "凤凰"
+    },
+    {
+     "t": "Anthropic Duet 加入\"离场代理\"竞赛",
+     "d": "🤖  ，与 Meta/OpenAI 抢专业用户",
+     "url": "https://fortune.com/2026/10/23/anthropic-joins-meta-and-openais-personal-ai-assistant-race-with-duet",
+     "src": "Fortune"
+    },
+    {
+     "t": "Agent 云初创 Daytona 估值 10 亿美元",
+     "d": "🦄  ，FirstMark 领投",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "英国 1 亿英镑建 AI 生物安全实验室",
+     "d": "🇬🇧  ，OpenAI/Anthropic 再出 2 亿额度",
+     "url": "https://www.bloomberg.com/news/articles/2026-10-23/uk-vows-100-million-for-biosecurity-lab-with-openai-anthropic",
+     "src": "Bloomberg"
+    },
+    {
+     "t": "华尔街催 Anthropic/OpenAI 尽快 IPO",
+     "d": "📈  ，上市窗口成共识",
+     "url": "https://nypost.com/2026/10/23/business/wall-street-is-urging-anthropic-openai-to-do-their-ipos-in-a-hurry-heres-why",
+     "src": "NYPost"
+    },
+    {
+     "t": "Eric Schmidt：\"AI 不是泡沫\"",
+     "d": "🧮  ，Anthropic 营收为证",
+     "url": "https://finance.yahoo.com/technology/ai/articles/eric-schmidt-rejects-ai-bubble-220014912.html",
+     "src": "Yahoo"
+    },
+    {
+     "t": "英伟达 Microduck 机器人玩具 2 万台售罄",
+     "d": "🦆  ，黄仁勋亲自带货",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    }
+   ],
+   "projects": [
+    {
+     "rank": 1,
+     "repo": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill",
+     "lang": "JavaScript",
+     "today": 2716,
+     "total": 42455,
+     "cat": "G-安全 › 安全审计",
+     "tagline": "Cloudflare 出品：多阶段安全审计技能，产出独立验证、机器可读的结果",
+     "desc": "编码 agent 安全审计技能：分阶段审计、每条发现独立验证、机器可读输出。本周从上榜起持续霸占热度榜首，agent 安全审计已成稳定刚需赛道，总量冲向 4.3 万星。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 2,
+     "repo": "php/php-src",
+     "url": "https://github.com/php/php-src",
+     "lang": "C",
+     "today": 716,
+     "total": 41594,
+     "cat": "I-系统-底层 › 编程语言源码",
+     "tagline": "PHP 语言官方源码仓库：驱动全球数亿网站的脚本语言发源地",
+     "desc": "PHP 语言本体官方实现，15 年历史老牌。昨日空降榜首后连续第二日在榜且日增扩大到 +716——语言层事件仍在发酵，值得跟进 Releases/Commits。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 3,
+     "repo": "anthropics/knowledge-work-plugins",
+     "url": "https://github.com/anthropics/knowledge-work-plugins",
+     "lang": "Python",
+     "today": 635,
+     "total": 32322,
+     "cat": "B-开发者工具 › Claude插件",
+     "tagline": "Anthropic 官方知识工作者插件库（Claude Cowork 场景）",
+     "desc": "面向非程序员知识工作者的官方插件集合。配合本周 Agent Skills 标准捐入基金会的新闻，官方插件生态标准化持续加速。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 4,
+     "repo": "NVIDIA/OpenShell",
+     "url": "https://github.com/NVIDIA/OpenShell",
+     "lang": "Rust",
+     "today": 1119,
+     "total": 18911,
+     "cat": "G-安全 › Agent沙箱",
+     "tagline": "英伟达出品：自主 AI agent 的安全、私有运行时",
+     "desc": "给自主跑任务的 agent 一个受控执行环境，安全隔离与隐私优先，Rust 实现。大厂 agent 沙箱方案回流上榜，与本周安全主题同频。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 5,
+     "repo": "Renhuai123/ziwei-doushu",
+     "url": "https://github.com/Renhuai123/ziwei-doushu",
+     "lang": "TypeScript",
+     "today": 546,
+     "total": 6993,
+     "cat": "L-学习资源-其他 › 命理工具",
+     "tagline": "开源紫微斗数排盘引擎：「算法是公开的传统智慧，不应该被锁在围墙里」",
+     "desc": "基于倪海厦《天纪》体系梳理的正宗紫微斗数开源排盘引擎，中英双语，理念是让传统命理学以开源方式被更多人学习和验证。玄学 × 开源的罕见组合冲上热榜。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 6,
+     "repo": "SnailSploit/Claude-Red",
+     "url": "https://github.com/SnailSploit/Claude-Red",
+     "lang": "Python",
+     "today": 226,
+     "total": 8606,
+     "cat": "G-安全 › 攻防技能",
+     "tagline": "Claude-Red：面向 Claude 生态的安全攻防技能库",
+     "desc": "安全团队 SnailSploit 出品的 Claude 生态安全工具，本库常客回流。与 Cloudflare 审计技能、OpenShell 同榜，安全主题本周占三席。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 7,
+     "repo": "OpenBMB/VoxCPM",
+     "url": "https://github.com/OpenBMB/VoxCPM",
+     "lang": "Python",
+     "today": 150,
+     "total": 40341,
+     "cat": "A-AI机器学习 › 语音合成",
+     "tagline": "OpenBMB（清华系）开源语音生成模型：多语言 TTS 的 MiniCPM 家族成员",
+     "desc": "面壁智能 OpenBMB 团队的开源语音生成（TTS）模型，多语言支持，带 Live Playground 与完整文档，4 万星。国产开源语音赛道的主力选手。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 8,
+     "repo": "nodejs/node",
+     "url": "https://github.com/nodejs/node",
+     "lang": "JavaScript",
+     "today": 66,
+     "total": 122938,
+     "cat": "D-后端-服务端 › 运行时",
+     "tagline": "Node.js 官方仓库：JavaScript 运行时的全球基石",
+     "desc": "Node.js 官方源码仓库，12.3 万星。与 PHP 源码同榜，两大语言运行时基建同日回流，\"底层老牌复兴\"的一周。",
+     "field": "",
+     "hot": false
+    }
+   ],
+   "meta": {
+    "quick_rows": 8,
+    "cards": 8,
+    "ai_items": 10,
+    "miss_total": 0,
+    "miss_desc": 0
+   }
   }
  ],
  "ai_days": {
@@ -15694,6 +15884,233 @@
      ]
     }
    ]
+  },
+  "2026-10-24": {
+   "date": "2026-10-24",
+   "file": "2026-10-24-AI日报.md",
+   "sections": [
+    {
+     "title": "一、大模型动态",
+     "items": [
+      {
+       "t": "月之暗面今晨发布 Kimi K3.1 Pro：迄今最强 3 万亿级参数模型",
+       "d": "K3.1 系列首个模型，支持 100 万上下文，主打代码、3D 创作、金融研究等长程 Agent 能力，编程能力称更胜 GPT-6，计划 11 月 4 日前开放权重。",
+       "url": "https://finance.sina.com.cn/roll/2026-10-24/doc-iniwhtfs8127567.shtml",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://finance.sina.com.cn/roll/2026-10-24/doc-iniwhtfs8127567.shtml"
+        },
+        {
+         "src": "星岛",
+         "url": "https://www.stheadline.com/zh-hans/realtime-finance/3629463/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2K3%E6%A8%A1%E5%9E%8B%E9%A6%96%E6%AC%A1%E9%87%8D%E5%A4%A7%E5%8D%87%E7%BA%A7-%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B%E6%9B%B4%E8%83%9CGPT-6%E4%B8%BB%E6%89%933D%E5%88%9B%E4%BD%9C%E5%8F%8A%E9%87%91%E8%9E%8D%E7%A0%94%E7%A9%B6%E7%AD%89"
+        }
+       ]
+      },
+      {
+       "t": "Kimi K3.1 技术博客持续更新，实测手感接近 Opus 5.5",
+       "d": "官方发布窗口临近，X 上博主称\"掀桌子模式\"即将开启。",
+       "url": "https://x.com/NFT_Chen/status/2113578151100207558",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://x.com/NFT_Chen/status/2113578151100207558"
+        }
+       ]
+      },
+      {
+       "t": "OpenAI 宣布不再用实时互联网训练其 AI 模型",
+       "d": "理由是\"重大风险\"——数据源策略的重大转向。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "OpenAI 模型（含 GPT-6 Astra）将上线 Google Cloud",
+       "d": "让受监管行业客户可在自有合规环境访问 OpenAI 模型，两大巨头的竞合新样本。",
+       "url": "https://www.facebook.com/KSLNewsradio/posts/openai-will-offer-its-ai-models-including-gpt-6-astra-on-google-cloudthis-will-a/1573007094863112",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.facebook.com/KSLNewsradio/posts/openai-will-offer-its-ai-models-including-gpt-6-astra-on-google-cloudthis-will-a/1573007094863112"
+        }
+       ]
+      },
+      {
+       "t": "MiniMax 开源 M3.1 Flash，多家芯片厂商首日接入",
+       "d": "；千问 Go! 把应用生成推向自然语言操作——国产模型本周密集交卷。",
+       "url": "https://www.163.com/dy/article/L9UN0GAM05118I96.html",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.163.com/dy/article/L9UN0GAM05118I96.html"
+        }
+       ]
+      },
+      {
+       "t": "智谱 GLM-5.5 有望月底/11 月初发布（本周背景）",
+       "d": "网传专家纪要称参数 2.5-3.5 万亿（待官方）；官方已就 GLM\"降智\"向付费用户补偿重置卡。",
+       "url": "https://tech.ifeng.com/c/8xPRsqw746o",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://tech.ifeng.com/c/8xPRsqw746o"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "二、Agent 与工程实践",
+     "items": [
+      {
+       "t": "Anthropic Duet 正式加入\"离场代理\"竞赛",
+       "d": "Fortune 视角：与 Meta、OpenAI 同场竞逐\"用户离开时继续干活\"的个人 AI 助理，主打专业人群。",
+       "url": "https://fortune.com/2026/10/23/anthropic-joins-meta-and-openais-personal-ai-assistant-race-with-duet",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://fortune.com/2026/10/23/anthropic-joins-meta-and-openais-personal-ai-assistant-race-with-duet"
+        }
+       ]
+      },
+      {
+       "t": "Agent 云初创 Daytona 估值达 10 亿美元",
+       "d": "FirstMark 领投加全明星天使，agent 专属云运行时赛道跑出独角兽。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "英国出资 1 亿英镑建\"世界首个\"AI 生物安全实验室",
+       "d": "OpenAI 与 Anthropic 另合计提供最高 2 亿额度支持。",
+       "url": "https://www.bloomberg.com/news/articles/2026-10-23/uk-vows-100-million-for-biosecurity-lab-with-openai-anthropic",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.bloomberg.com/news/articles/2026-10-23/uk-vows-100-million-for-biosecurity-lab-with-openai-anthropic"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "三、GitHub 热门 AI 项目（24-48h 新仓库）",
+     "items": [
+      {
+       "t": "lillyguisnet/sam3-segmentation",
+       "d": "Agent 技能：在自己 NVIDIA GPU 上跑 Meta SAM 3 做目标轮廓/掩码/计数，带复核、导出与查看器，兼容 Claude Code/Codex/Cursor/Pi。",
+       "url": "https://github.com/lillyguisnet/sam3-segmentation",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/lillyguisnet/sam3-segmentation"
+        }
+       ]
+      },
+      {
+       "t": "Alpha-Park/genpark 系列 agent 技能",
+       "d": "上下文压缩摘要器（中间轮次修剪成语义桥）、令牌桶自适应限流器、对话槽位填充状态机三件套。",
+       "url": "https://github.com/Alpha-Park/genpark-agent-context-window-compaction-summarizer-skill",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/Alpha-Park/genpark-agent-context-window-compaction-summarizer-skill"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "四、论文/技术速览",
+     "items": [
+      {
+       "t": "Eric Schmidt：\"AI 不是泡沫\"",
+       "d": "前 Google CEO 以 Anthropic 营收爆炸式增长为证，反驳当前市场泡沫论。",
+       "url": "https://finance.yahoo.com/technology/ai/articles/eric-schmidt-rejects-ai-bubble-220014912.html",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://finance.yahoo.com/technology/ai/articles/eric-schmidt-rejects-ai-bubble-220014912.html"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "五、产业与观点",
+     "items": [
+      {
+       "t": "华尔街催 Anthropic 与 OpenAI\"尽快 IPO\"",
+       "d": "报道称时机风险远不止估值，上市窗口论成为投行共识。",
+       "url": "https://nypost.com/2026/10/23/business/wall-street-is-urging-anthropic-openai-to-do-their-ipos-in-a-hurry-heres-why",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://nypost.com/2026/10/23/business/wall-street-is-urging-anthropic-openai-to-do-their-ipos-in-a-hurry-heres-why"
+        }
+       ]
+      },
+      {
+       "t": "英伟达 Microduck 机器人玩具 2 万台售罄",
+       "d": "黄仁勋亲自上手\"带货\"，圣诞最热玩具诞生。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "Carta 与 NewView 合作：让初创员工更早卖老股",
+       "d": "二级市场流动性方案新样本。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "Anthropic IPO 前部分股东身价盘点",
+       "d": "上市造富预期升温。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "projects": {
@@ -16657,10 +17074,10 @@
    "tagline": "PHP 语言官方源码仓库：驱动全球数亿网站的脚本语言发源地",
    "desc": "PHP 语言本体的官方实现仓库，2011 年入驻 GitHub，15 年历史的上古老牌。2026-10-23 空降 Trending 榜首，通常意味着语言层面有大新闻或社区事件驱动。",
    "field": "",
-   "total": 41157,
+   "total": 41594,
    "first": "2026-10-23",
-   "last": "2026-10-23",
-   "count": 1,
+   "last": "2026-10-24",
+   "count": 2,
    "records": [
     {
      "date": "2026-10-23",
@@ -16671,6 +17088,16 @@
      "id": "daily:2026-10-23",
      "total": 41157,
      "today": 287
+    },
+    {
+     "date": "2026-10-24",
+     "rank": 2,
+     "rank_label": "#2",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 41594,
+     "today": 716
     }
    ],
    "src": "archive"
@@ -19265,6 +19692,32 @@
    ],
    "src": "archive"
   },
+  "Renhuai123/ziwei-doushu": {
+   "repo": "Renhuai123/ziwei-doushu",
+   "url": "https://github.com/Renhuai123/ziwei-doushu",
+   "lang": "TypeScript",
+   "cat": "L-学习资源-其他 › 命理工具",
+   "tagline": "开源紫微斗数排盘引擎：「算法是公开的传统智慧，不应该被锁在围墙里」",
+   "desc": "开源紫微斗数排盘引擎：基于倪海厦《天纪》体系，中英双语，官网 metisziwei.com。理念是「算法是公开的传统智慧，不应该被锁在围墙里」。2026-10-24 首次上榜。",
+   "field": "",
+   "total": 6993,
+   "first": "2026-10-24",
+   "last": "2026-10-24",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-24",
+     "rank": 5,
+     "rank_label": "#5",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 6993,
+     "today": 546
+    }
+   ],
+   "src": "archive"
+  },
   "strelov1/freehire": {
    "repo": "strelov1/freehire",
    "url": "https://github.com/strelov1/freehire",
@@ -19453,10 +19906,10 @@
    "tagline": "英伟达出品：自主 AI agent 的安全、私有运行时",
    "desc": "给自主跑任务的 agent 一个受控执行环境，安全隔离与隐私优先。大厂给 agent sandbox 问题给出的参考答案。",
    "field": "",
-   "total": 14414,
+   "total": 18911,
    "first": "2026-09-30",
-   "last": "2026-10-03",
-   "count": 4,
+   "last": "2026-10-24",
+   "count": 5,
    "records": [
     {
      "date": "2026-09-30",
@@ -19497,6 +19950,16 @@
      "id": "daily:2026-10-03",
      "total": 14414,
      "today": 584
+    },
+    {
+     "date": "2026-10-24",
+     "rank": 4,
+     "rank_label": "#4",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 18911,
+     "today": 1119
     }
    ],
    "src": "archive"
@@ -19509,10 +19972,10 @@
    "tagline": "Cloudflare 出品的编程 Agent 安全审计技能：六阶段流水线 + 对抗式验证，把你的 Agent 变成安全审计员",
    "desc": "这是一个 coding-agent skill（npx skills add 一行装进 Claude Code 等编程 Agent），源自 Cloudflare 官方博客《Build your own vulnerability harness》中漏洞挖掘 harness 的单仓库起点。它编排多个隔离 Agent 走六阶段审计流水线：侦察（并行研究 Agent 映射架构、信任边界与输入面）→ 狩猎（多个通用 Agent 按攻击类并行进攻：注入/访问控制/业务逻辑/密码学/链式攻击，可再派子 Agent 深挖）→ 验证（专门的独立 Agent 反过来试图推翻每条发现，对抗式杀死误报）→ 报告（人类可读 REPORT.md）→ 结构化输出（符合 report-schema.json 的 findings.json，附带零依赖校验脚本）→ 独立复核（全新 Agent 逐条核对事实声明）。对同一仓库多次运行是叠加式的：会读取历史 findings.json 跳过已知问题、专攻未覆盖路径。核心区别于普通 AI 审计工具的地方：对抗验证 + 机器可读输出 + 独立复核三重把关。",
    "field": "",
-   "total": 39578,
+   "total": 42455,
    "first": "2026-09-18",
-   "last": "2026-10-23",
-   "count": 7,
+   "last": "2026-10-24",
+   "count": 8,
    "records": [
     {
      "date": "2026-09-18",
@@ -19583,6 +20046,16 @@
      "id": "daily:2026-10-23",
      "total": 39578,
      "today": 2979
+    },
+    {
+     "date": "2026-10-24",
+     "rank": 1,
+     "rank_label": "#1",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 42455,
+     "today": 2716
     }
    ],
    "src": "archive"
@@ -19641,10 +20114,10 @@
    "tagline": "把 Claude 变成红队专家的 78 个攻击技能库（SKILL.md 即插即用）",
    "desc": "为 Claude Skills 体系打造的进攻安全技能库：78 个技能、23 个大类，每个技能是一份结构化 SKILL.md，把 Claude 训练成特定攻击面的领域专家——从 SQL 注入、shellcode 编写到 EDR 绕过、ADCS 滥用、Metasploit/Empire/Starkiller 工具链操作。技能按对话触发按需加载，不用的技能不占上下文，这点设计很聪明。MIT 许可，技能索引、贡献指南和路线图齐全。",
    "field": "",
-   "total": 3564,
+   "total": 8606,
    "first": "2026-09-13",
-   "last": "2026-09-13",
-   "count": 1,
+   "last": "2026-10-24",
+   "count": 2,
    "records": [
     {
      "date": "2026-09-13",
@@ -19655,6 +20128,16 @@
      "id": "daily:2026-09-13",
      "total": 3564,
      "today": 99
+    },
+    {
+     "date": "2026-10-24",
+     "rank": 6,
+     "rank_label": "#6",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 8606,
+     "today": 226
     }
    ],
    "src": "archive"
@@ -23315,10 +23798,10 @@
    "tagline": "Anthropic 官方的 Claude 知识工作插件库：把 Claude 训成销售、法务、HR、产品等岗位专家",
    "desc": "Anthropic 面向 Claude Cowork（兼容 Claude Code）的官方插件市场仓库。每个插件按岗位职能打包四件套——技能、连接器、斜杠命令、子 Agent：销售（研究潜客、备战电话、写外联、做竞争战卡）、客服（分诊工单、起草回复、打包升级、沉淀知识库文章）、产品管理（写规格、排路线图、综合用户研究）、法务（合同审查、NDA 分诊、合规流程）、HR、数据分析（写 SQL、做仪表盘）等。所有组件都是纯文件（markdown + JSON），无代码、无基础设施、无构建步骤。设计定位是「可定制的起点」：改 .mcp.json 换成你自己的工具栈，往技能文件里塞公司术语、组织结构和流程，Claude 就成了懂你们公司的岗位专家。Claude Code 一条命令即可从该 marketplace 安装指定插件。",
    "field": "",
-   "total": 31604,
+   "total": 32322,
    "first": "2026-09-17",
-   "last": "2026-10-23",
-   "count": 5,
+   "last": "2026-10-24",
+   "count": 6,
    "records": [
     {
      "date": "2026-09-18",
@@ -23369,6 +23852,16 @@
      "id": "daily:2026-10-23",
      "total": 31604,
      "today": 303
+    },
+    {
+     "date": "2026-10-24",
+     "rank": 3,
+     "rank_label": "#3",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 32322,
+     "today": 635
     }
    ],
    "src": "archive"
@@ -29961,6 +30454,32 @@
    ],
    "src": "archive"
   },
+  "OpenBMB/VoxCPM": {
+   "repo": "OpenBMB/VoxCPM",
+   "url": "https://github.com/OpenBMB/VoxCPM",
+   "lang": "Python",
+   "cat": "A-AI机器学习 › 语音合成 › 开源TTS",
+   "tagline": "OpenBMB（清华系）开源语音生成模型：多语言 TTS 的 MiniCPM 家族成员",
+   "desc": "面壁智能 OpenBMB（清华系）的开源语音生成（TTS）模型：多语言支持、MiniCPM 家族成员、带 Live Playground 与完整文档，4 万星，voxcpm.com。2026-10-24 首次上榜。",
+   "field": "",
+   "total": 40341,
+   "first": "2026-10-24",
+   "last": "2026-10-24",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-24",
+     "rank": 7,
+     "rank_label": "#7",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 40341,
+     "today": 150
+    }
+   ],
+   "src": "archive"
+  },
   "hugohe3/ppt-master": {
    "repo": "hugohe3/ppt-master",
    "url": "https://github.com/hugohe3/ppt-master",
@@ -31487,10 +32006,10 @@
    "tagline": "Node.js JavaScript 运行时——基于 V8 引擎构建的服务端 JavaScript 平台",
    "desc": "Node.js 是基于 Chrome V8 引擎构建的 JavaScript 运行时，是服务端 JavaScript 生态的基石。自 2009 年由 Ryan Dahl 发布以来，Node.js 已成为全球最流行的服务端运行时之一，驱动着无数 Web 应用、API 服务、构建工具和桌面应用（Electron）。核心贡献者包括 Ryan Dahl（原作者）、Ben Noordhuis、Isaac Z. Schlueter 等知名开发者。项目由 OpenJS Foundation 管理，拥有庞大的包管理生态 npm（200万+ 包）。持续迭代中，近年引入了原生 ESM 支持、Worker Threads、Fetch API、Test Runner 等现代特性。",
    "field": "",
-   "total": 118449,
+   "total": 122938,
    "first": "2026-07-26",
-   "last": "2026-07-27",
-   "count": 2,
+   "last": "2026-10-24",
+   "count": 3,
    "records": [
     {
      "date": "2026-07-26",
@@ -31511,6 +32030,16 @@
      "period": "2026-07-27",
      "id": "daily:2026-07-27",
      "rank_label": "#7"
+    },
+    {
+     "date": "2026-10-24",
+     "rank": 8,
+     "rank_label": "#8",
+     "type": "daily",
+     "period": "2026-10-24",
+     "id": "daily:2026-10-24",
+     "total": 122938,
+     "today": 66
     }
    ],
    "src": "archive"
