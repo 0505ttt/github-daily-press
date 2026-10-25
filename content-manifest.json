@@ -1,6 +1,6 @@
 {
-  "revision": "aa032c2cdc64becc4a17d494",
-  "generated_at": "2026-10-24",
+  "revision": "8bf2a6276b7595c3a5f46710",
+  "generated_at": "2026-10-25",
   "files": [
     {
       "path": "AI前沿资讯/回溯特刊_近两月AI新项目榜_2026-08-19至10-19.md",
@@ -31,6 +31,11 @@
       "path": "AI前沿资讯/日报/2026-10-24-AI日报.md",
       "sha256": "36df022812e189a10ce95257b8a34db4024b727dec7fb8af4266a360090ce4ee",
       "size": 5147
+    },
+    {
+      "path": "AI前沿资讯/日报/2026-10-25-AI日报.md",
+      "sha256": "335699e8d81b218b817ecaf680d26fe71d1d39736cc67a95572ff5220b7a8c43",
+      "size": 5173
     },
     {
       "path": "GitHub项目分析/GitHub热点周报_2026-W43.html",
@@ -548,9 +553,14 @@
       "size": 16446
     },
     {
+      "path": "GitHub项目分析/GitHub热点日报_2026-10-25.html",
+      "sha256": "1a97cb9a5029b59e81c72b32a8f97af178b64b249fbf16d67b088b3d92b3cfe4",
+      "size": 19042
+    },
+    {
       "path": "GitHub项目分析/GitHub热点杂志.html",
-      "sha256": "e9c798b8ab2f5a427db53bb5c1d1d03e9bc28272a8767d671387686886258c04",
-      "size": 1270031
+      "sha256": "b3e1d5eddc336093d29285321098845aa5d8c4bdda1180cd84cc28d38dd09288",
+      "size": 1288827
     },
     {
       "path": "GitHub项目分析/历史前身_Markdown/2026-06-22-github-daily.md",
@@ -589,8 +599,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/AI编程设计/pbakaus-impeccable.md",
-      "sha256": "22e50eb7203fac953cecd60f559d5b1c36c9606c69f614ac640427a5d92be7fa",
-      "size": 2334
+      "sha256": "ca2561b293b080019217889ed61eeb3327e2775f877ba3d69fbd92cab19cb9a8",
+      "size": 2370
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/AI聊天界面/danny-avila-LibreChat.md",
@@ -691,6 +701,11 @@
       "path": "GitHub项目分析/项目分类库/AI机器学习/Agent框架/google-labs-code-stitch-skills.md",
       "sha256": "0ee45a5ff84481b2b1254f1808382fdb023e07e2c23ee453ec2e6b7c35b31a85",
       "size": 1613
+    },
+    {
+      "path": "GitHub项目分析/项目分类库/AI机器学习/Agent框架/makecindy-cindy.md",
+      "sha256": "ba9af5154c4dda16e4f9f75b0de795ed2014ae714226b35458745a92bac82873",
+      "size": 1044
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/Agent框架/strands-agents-harness-sdk.md",
@@ -1018,6 +1033,11 @@
       "size": 2619
     },
     {
+      "path": "GitHub项目分析/项目分类库/AI机器学习/具身智能/pollen-robotics-microduck.md",
+      "sha256": "28a0db4e9e2785b3b49491518c0c302087ef398e1b4acba7bfe0be86778df3f2",
+      "size": 1051
+    },
+    {
       "path": "GitHub项目分析/项目分类库/AI机器学习/情报聚合/koala73-worldmonitor.md",
       "sha256": "763d02294e108ce673a457bb5e82416ab071a58af327b227e5840b1fc68673a4",
       "size": 1976
@@ -1169,8 +1189,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/_索引.md",
-      "sha256": "0b00fcee654ae8f4f338edf3aec589ae356feeedcaf695e90bc826a1810d0ba9",
-      "size": 46851
+      "sha256": "9e23a8c63636ab240f0d38817a380bd68295c3da8f4401be6954ebdf9ee2d00a",
+      "size": 47554
     },
     {
       "path": "GitHub项目分析/项目分类库/_索引_2026-07-27.md",
@@ -1403,6 +1423,11 @@
       "size": 940
     },
     {
+      "path": "GitHub项目分析/项目分类库/基础设施-DevOps/云开发工具包/aws-agent-toolkit-for-aws.md",
+      "sha256": "ac9338b1b3b056be80af97279a70c2c9e218770e72e68e6fa2016fb3d8fd40d1",
+      "size": 1025
+    },
+    {
       "path": "GitHub项目分析/项目分类库/基础设施-DevOps/基础设施即代码/hashicorp-terraform.md",
       "sha256": "e9130d3375d5c83244ff3e2eae29a12931fcf23dfd52b49f8648cdd5937e3730",
       "size": 1520
@@ -1464,8 +1489,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/学习资源-其他/Claude教程/luongnv89-claude-howto.md",
-      "sha256": "aa86169d5f82dc9470fd6b2cfd7fea292404bccb952249cfec594d42151bc819",
-      "size": 918
+      "sha256": "7c76e606fef29e9b5fdc1892c496ddf1f54d9925465b9df4c4fc52450cdfb6a0",
+      "size": 954
     },
     {
       "path": "GitHub项目分析/项目分类库/学习资源-其他/LLM教程/mlabonne-llm-course.md",
@@ -1618,6 +1643,11 @@
       "size": 833
     },
     {
+      "path": "GitHub项目分析/项目分类库/学习资源-其他/电子书资源/jbiaojerry-ebook-treasure-chest.md",
+      "sha256": "f4cad24add19e661ca24e9a2d253650957d6ff49ec47c23977de96f2e8ab9806",
+      "size": 1031
+    },
+    {
       "path": "GitHub项目分析/项目分类库/学习资源-其他/知识图谱工具/microsoft-Ontology-Playground.md",
       "sha256": "274e08ec1f92ea5034bcb5757f7e98da5d76846d868bfd375f4617f43d2d3099",
       "size": 1426
@@ -1669,8 +1699,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/AI安全技能库/cloudflare-security-audit-skill.md",
-      "sha256": "65db690c7c5f56a873194c326a43925dbe2366ef9d1eccaddb639af3bf51a0e5",
-      "size": 2781
+      "sha256": "03225e75d19aa398695eede0a1d99d418c2d80dfda51e991a9a14cceacad43a0",
+      "size": 2820
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/AI安全技能库/mukul975-Anthropic-Cybersecurity-Skills.md",
@@ -1694,8 +1724,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/NVIDIA-OpenShell.md",
-      "sha256": "f7a8b04cae0cd54eff6ab1036dfdd352f69916a92800fc07e7612ff58b93c892",
-      "size": 968
+      "sha256": "3aa6bdfea64d74d495c861136fa940de5622bcf7614632eedacd6203997329da",
+      "size": 1002
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/OSINT/megadose-holehe.md",
@@ -1814,8 +1844,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/Nutlope-hallmark.md",
-      "sha256": "3dfbc739e8e6b1c089c841006e5f84cdbde6bfba10ae4872a133ae5c60fb48b7",
-      "size": 1811
+      "sha256": "7f2fddb0ef8e0778de007fc698c91a0adfd6c5bca005cfdae6d5f44b84c2f237",
+      "size": 1846
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/bradautomates-claude-video.md",
@@ -1856,6 +1886,11 @@
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/github-spec-kit.md",
       "sha256": "ad6698882b23962d9642a2122d9884b40ef6fd33725de842072fa4f628faa949",
       "size": 1905
+    },
+    {
+      "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/google-gemini-gemini-cli.md",
+      "sha256": "17717b42743675fa9c95b110b39063dbde98d8d3a267bb2108cde98c1acd78af",
+      "size": 935
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/mattpocock-skills.md",
@@ -2564,7 +2599,7 @@
     },
     {
       "path": "content-version.json",
-      "sha256": "039605f3224a909e9e2650b898368819c819515c465002b40727569d5f48a90d",
+      "sha256": "4ae210a9b4d755197ba7ac0fc74edb9e53352b2508a6ec427e7758ced20d5f84",
       "size": 70
     }
   ]

@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24",
+ "generated_at": "2026-10-25",
  "meta": {
-  "count_days": 95,
-  "count_daily": 94,
+  "count_days": 96,
+  "count_daily": 95,
   "count_weekly": 1,
   "count_monthly": 0,
   "count_backfill": 50,
@@ -17,13 +17,13 @@
    "GitHub热点日报_2026-07-15.pdf",
    "GitHub热点日报_2026-07-16.pdf"
   ],
-  "count_projects": 937,
-  "count_repos": 339,
-  "count_archives": 371,
-  "count_ai_days": 5,
+  "count_projects": 947,
+  "count_repos": 344,
+  "count_archives": 376,
+  "count_ai_days": 6,
   "span": [
    "2026-07-10",
-   "2026-10-24"
+   "2026-10-25"
   ]
  },
  "issues": [
@@ -14887,6 +14887,222 @@
     "miss_total": 0,
     "miss_desc": 0
    }
+  },
+  {
+   "id": "daily:2026-10-25",
+   "period": "2026-10-25",
+   "file": "GitHub热点日报_2026-10-25.html",
+   "date": "2026-10-25",
+   "issue": 95,
+   "type": "daily",
+   "weekday": "星期日",
+   "week": "2026-W43",
+   "month": "2026-10",
+   "backfill": false,
+   "snapshot": "",
+   "snapshot_url": "",
+   "wind": "满 10 席回归。安全双雄领衔：Cloudflare 审计技能 连续第五日霸榜 （+2,264），与 CEO\"天塌\"警告同日互文；NVIDIA OpenShell 连续第三日。最大看点是 具身智能与官方基建同时进场 ：黄仁勋带货 2 万台售罄的 Microduck 双足机器人开源本体 上榜，AWS 官方 Agent Toolkit 与 Google gemini-cli 两大云厂工具同框；中文项目双星（电子书宝库、本地 agent Cindy）。PHP 安全地震余波未平（详见速递 PHP-ocalypse）。",
+   "ai": [
+    {
+     "t": "Kimi K3.1 Pro 评测刷屏",
+     "d": "🏆  ：Artificial Analysis 判其权重发布后登顶开放权重榜首，开源闭源差距 12→3 分",
+     "url": "https://zhuanlan.zhihu.com/p/2097444452830913978",
+     "src": "知乎评测"
+    },
+    {
+     "t": "Cloudflare CEO：每周 AI 发现漏洞的披露\"将像天塌下来\"",
+     "d": "🌪️  （路透）",
+     "url": "https://aiweekly.co/ai-news-today",
+     "src": "AIWeekly"
+    },
+    {
+     "t": "PHP-ocalypse：两个关键 Web 漏洞险崩互联网",
+     "d": "🧨  ——php-src 连日霸榜之谜揭晓",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "Mistral 发布 Voxtral 3",
+     "d": "🎙️  ：50+ 语言语音 Agent SDK/转写/合成/克隆",
+     "url": "https://mistral.ai/news/voxtral-3",
+     "src": "Mistral"
+    },
+    {
+     "t": "Meta 开放 Muse Spark Open 权重",
+     "d": "🔓  ；ChatGPT 增强 Chrome 操作",
+     "url": "https://hk.investing.com/news/stock-market-news/article-1716031",
+     "src": "Investing"
+    },
+    {
+     "t": "智谱 GLM-5.5 月底压轴（网传 2.5-3.5 万亿参数）",
+     "d": "🧠  ，预训练负责人为 00 后",
+     "url": "https://m.36kr.com/p/4037741762598025",
+     "src": "36氪"
+    },
+    {
+     "t": "政治倾向测试：Grok 选共和党，OpenAI 选民主党",
+     "d": "⚖️",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "\"AI 墓地\"清单持续更新",
+     "d": "🪦  ：失败 AI 项目与初创备忘录",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "Block 新语音模型\"像真人到可怕\"",
+     "d": "🗣️",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "中美 AI 差距 10 月显著缩小",
+     "d": "🌏  （whatmodel.sh/race 统计）",
+     "url": "https://k.sina.com.cn/article_7857201856_1d45362c001908san6.html?from=tech",
+     "src": "新浪"
+    }
+   ],
+   "projects": [
+    {
+     "rank": 1,
+     "repo": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill",
+     "lang": "JavaScript",
+     "today": 2264,
+     "total": 45355,
+     "cat": "G-安全 › 安全审计",
+     "tagline": "Cloudflare 出品：多阶段安全审计技能，产出独立验证、机器可读的结果",
+     "desc": "编码 agent 安全审计技能，五连霸期间总量从 3.4 万涨至 4.5 万星。今日路透报道 Cloudflare CEO 称\"每周 AI 发现漏洞的披露将像天塌下来\"——榜首与其 CEO 言论同日互文，安全审计刚需赛道彻底坐实。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 2,
+     "repo": "NVIDIA/OpenShell",
+     "url": "https://github.com/NVIDIA/OpenShell",
+     "lang": "Rust",
+     "today": 896,
+     "total": 19657,
+     "cat": "G-安全 › Agent沙箱",
+     "tagline": "英伟达出品：自主 AI agent 的安全、私有运行时",
+     "desc": "给自主跑任务的 agent 一个受控执行环境，安全隔离与隐私优先，Rust 实现。与榜首安全技能构成\"审计 + 沙箱\"双保险组合，agent 安全基建的两大支柱本周同框。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 3,
+     "repo": "aws/agent-toolkit-for-aws",
+     "url": "https://github.com/aws/agent-toolkit-for-aws",
+     "lang": "Python",
+     "today": 13,
+     "total": 3225,
+     "cat": "E-基础设施-DevOps › 云开发工具包",
+     "tagline": "AWS 官方 Agent Toolkit：给编码 agent 的云上工具、知识与护栏",
+     "desc": "AWS 官方出品，帮 AI 编码 agent 安全地构建、部署和管理 AWS 应用——提供工具集、服务知识与护栏，兼容 Claude Code、Codex、Cursor、Devin、Kiro、fx 等主流 agent，可经 AWS CLI 直接使用。云厂商\"官方进场\"标志性项目。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 4,
+     "repo": "Nutlope/hallmark",
+     "url": "https://github.com/Nutlope/hallmark",
+     "lang": "CSS",
+     "today": 455,
+     "total": 32582,
+     "cat": "B-开发者工具 › 设计组件",
+     "tagline": "给 AI 生成 UI 加\"质感签名\"的设计组件库",
+     "desc": "本库 7 月老朋友回流：让 AI 生成的界面摆脱千篇一律的模板脸，提供有辨识度的设计质感。设计层技能赛道的常青项目。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 5,
+     "repo": "luongnv89/claude-howto",
+     "url": "https://github.com/luongnv89/claude-howto",
+     "lang": "Python",
+     "today": 392,
+     "total": 44767,
+     "cat": "L-学习资源-其他 › Claude教程",
+     "tagline": "Claude Code 实战指南：曾登 GitHub Trending #1 的教程仓库",
+     "desc": "Claude Code 实操教程仓库连续第三日在榜，4.5 万星，Claude 生态学习资源头部代表。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 6,
+     "repo": "pbakaus/impeccable",
+     "url": "https://github.com/pbakaus/impeccable",
+     "lang": "Rust",
+     "today": 619,
+     "total": 86720,
+     "cat": "B-开发者工具 › 设计技能",
+     "tagline": "让你的 AI harness 更懂设计的「设计语言」",
+     "desc": "Paul Bakaus 出品的设计语言技能，显著提升 agent 前端产出的审美下限，8.7 万星体量回流，与 hallmark 同框构成\"设计技能双席\"。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 7,
+     "repo": "pollen-robotics/microduck",
+     "url": "https://github.com/pollen-robotics/microduck",
+     "lang": "Rust",
+     "today": 319,
+     "total": 11187,
+     "cat": "A-AI机器学习 › 具身智能",
+     "tagline": "黄仁勋带货 2 万台售罄的 Microduck：强化学习驱动的小型双足机器人开源本体",
+     "desc": "Pollen Robotics 的迷你双足机器人，用强化学习策略实现行走，Rust 编写、完全开源。昨日 TechCrunch 报道其 2 万台售罄、黄仁勋亲自上手\"带货\"——今日开源本体随即上榜，具身智能消费化的标志性事件。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 8,
+     "repo": "google-gemini/gemini-cli",
+     "url": "https://github.com/google-gemini/gemini-cli",
+     "lang": "TypeScript",
+     "today": 44,
+     "total": 108276,
+     "cat": "B-开发者工具 › 终端Agent",
+     "tagline": "Google 官方 Gemini CLI：10.8 万星的终端 AI agent",
+     "desc": "Google 官方终端 AI 编码 agent，10.8 万星。README 注明免费层与 Google One 用户已被 Antigravity 取代——与本周 Mistral/Meta 动态同看，\"官方 agent 基建大整合\"正在进行。配合本周 ChatGPT 增强 Chrome 操作的新闻，巨头终端入口之争白热化。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 9,
+     "repo": "jbiaojerry/ebook-treasure-chest",
+     "url": "https://github.com/jbiaojerry/ebook-treasure-chest",
+     "lang": "Python",
+     "today": 227,
+     "total": 22919,
+     "cat": "L-学习资源-其他 › 电子书资源",
+     "tagline": "电子书下载宝库：聚合帆书/微信读书/京东读书/喜马拉雅资源的链接库",
+     "desc": "中文社区老牌电子书资源聚合仓库（2023 年创建），GitHub Pages 提供实时多关键字搜索，覆盖经典文学、经管励志、技术手册等品类，2.3 万星。周末效应 + 实用刚需的典型上榜样本。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 10,
+     "repo": "makecindy/cindy",
+     "url": "https://github.com/makecindy/cindy",
+     "lang": "TypeScript",
+     "today": 477,
+     "total": 4310,
+     "cat": "A-AI机器学习 › 本地助手",
+     "tagline": "Cindy：\"Consider it done\"——开箱即用、在你自己电脑上真干活的开源 AI agent",
+     "desc": "开源本地 AI agent 助手（中英双语 README，官网 cindy.app）：主打开箱即用、在你自己的电脑上完成真实任务，支持 Android，Apache-2.0 协议。与 Claude Duet、Grok Bot 等闭源常驻 agent 竞赛同周，开源阵营的\"本地常驻 agent\"答卷。",
+     "field": "",
+     "hot": false
+    }
+   ],
+   "meta": {
+    "quick_rows": 10,
+    "cards": 10,
+    "ai_items": 10,
+    "miss_total": 0,
+    "miss_desc": 0
+   }
   }
  ],
  "ai_days": {
@@ -16105,6 +16321,245 @@
         {
          "src": "来源",
          "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "2026-10-25": {
+   "date": "2026-10-25",
+   "file": "2026-10-25-AI日报.md",
+   "sections": [
+    {
+     "title": "一、大模型动态",
+     "items": [
+      {
+       "t": "Kimi K3.1 Pro 评测刷屏：开放权重登顶在即，开源闭源差距将从 12 分缩至 3 分",
+       "d": "Artificial Analysis 判断权重（11 月 4 日前发布）放出后 K3.1 Pro 将登顶开放权重模型榜首；Reddit 已被跑分刷屏，知乎第一手评测称其\"旗舰级编程、五分之一价格\"，此前报道的 3D 创作与金融研究长程 Agent 能力获多方验证。",
+       "url": "https://zhuanlan.zhihu.com/p/2097444452830913978",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://zhuanlan.zhihu.com/p/2097444452830913978"
+        },
+        {
+         "src": "163",
+         "url": "https://www.163.com/dy/article/LA14NFRE0511AQHO.html"
+        }
+       ]
+      },
+      {
+       "t": "Mistral 发布 Voxtral 3：50+ 语言语音 Agent SDK 与语音模型",
+       "d": "语音 agent、音频转写、语音生成、声音克隆一站式，Studio 游乐场已可试玩。",
+       "url": "https://mistral.ai/news/voxtral-3",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://mistral.ai/news/voxtral-3"
+        }
+       ]
+      },
+      {
+       "t": "Meta 开放 Muse Spark Open 权重；ChatGPT 增强 Chrome 操作",
+       "d": "开放权重与多模态能力双线推进，浏览器控制与 AI 编程持续落地。",
+       "url": "https://hk.investing.com/news/stock-market-news/article-1716031",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://hk.investing.com/news/stock-market-news/article-1716031"
+        }
+       ]
+      },
+      {
+       "t": "中美 AI 大模型差距 10 月显著缩小",
+       "d": "whatmodel.sh/race 统计显示此前 3-4 个月的追赶周期已明显收窄。",
+       "url": "https://k.sina.com.cn/article_7857201856_1d45362c001908san6.html?from=tech",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://k.sina.com.cn/article_7857201856_1d45362c001908san6.html?from=tech"
+        }
+       ]
+      },
+      {
+       "t": "智谱 GLM-5.5 月底发布在即（本周背景）",
+       "d": "网传 2.5-3.5 万亿参数、或采用循环 Transformer 架构；GLM 预训练负责人（00 后、博士未毕业）首次曝光；官方尚未确认任何参数。",
+       "url": "https://m.36kr.com/p/4037741762598025",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://m.36kr.com/p/4037741762598025"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "二、Agent 与工程实践",
+     "items": [
+      {
+       "t": "Cloudflare CEO：每周 AI 发现漏洞的披露\"将像天塌下来\"",
+       "d": "路透报道 Matthew Prince 警告 AI 驱动的漏洞发现节奏——恰与 GitHub 榜首（Cloudflare 安全审计技能连续五日霸榜）同频共振。",
+       "url": "https://aiweekly.co/ai-news-today",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://aiweekly.co/ai-news-today"
+        }
+       ]
+      },
+      {
+       "t": "PHP-ocalypse：两个关键 Web 漏洞几乎搞崩互联网",
+       "d": "TechCrunch 深度复盘本周 PHP 生态安全地震，也解释了 php-src 为何连日霸榜 Trending。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "OpenRouter 创始人收购后首发声：专用 AI 将打败\"上帝模型\"",
+       "d": "与 Replit\"企业独立性层\"思路一脉相承，模型中间层叙事继续升温。",
+       "url": "https://zhuanlan.zhihu.com/p/2097669148457410610",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://zhuanlan.zhihu.com/p/2097669148457410610"
+        }
+       ]
+      },
+      {
+       "t": "盘点：住在短信里的 AI Agents",
+       "d": "TechCrunch 盘点以短信为主界面的常驻 agent 们。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "三、GitHub 热门 AI 项目（24-48h 新仓库）",
+     "items": [
+      {
+       "t": "tenhkspark/secbrief",
+       "d": "面向 AI-agent 托管机器的每日漏洞简报：对 OSV + CISA KEV 做确定性匹配，LLM 只负责解释，MIT 开源。",
+       "url": "https://github.com/tenhkspark/secbrief",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/tenhkspark/secbrief"
+        }
+       ]
+      },
+      {
+       "t": "breakbrawlerheart/pixeluxe-ai",
+       "d": "电影感 AI 绘图界面：深阴影+洋红光的统一视觉方向，拒绝通用模型味。",
+       "url": "https://github.com/breakbrawlerheart/pixeluxe-ai",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/breakbrawlerheart/pixeluxe-ai"
+        }
+       ]
+      },
+      {
+       "t": "Alpha-Park/genpark 企业级 agent 技能系列",
+       "d": "自适应重试熔断器、语义缓存查询匹配器、三方冲突合并器三连发。",
+       "url": "https://github.com/Alpha-Park/genpark-agent-adaptive-retry-circuit-breaker-skill",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/Alpha-Park/genpark-agent-adaptive-retry-circuit-breaker-skill"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "四、论文/技术速览",
+     "items": [
+      {
+       "t": "\"AI 将暴露互联网摇摇欲坠的基础设施\"",
+       "d": "TechCrunch 观点文章：AI 的规模访问正在成为老一代 Web 基建的压力测试仪。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "五、产业与观点",
+     "items": [
+      {
+       "t": "\"AI 墓地\"：失败 AI 项目与初创持续更新清单",
+       "d": "TechCrunch 维护的 running list，行业降温的备忘录。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "政治倾向测试：Grok 的 AI 模型选共和党，OpenAI 的选民主党",
+       "d": "强迫二选一时两大模型阵营的倾向分化。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "Block 发布新语音模型，\"听起来像真人到可怕\"",
+       "d": "Jack Dorsey 系公司在语音赛道投下新变量。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "各国争相与 AI 强国合作获取先进模型，美专家称台湾最具优势",
+       "d": "中小经济体\"自研无望、站队为难\"的全球格局观察。",
+       "url": "https://tw.news.yahoo.com/%E5%90%84%E5%9C%8B%E7%88%AD%E5%8F%96%E8%88%87ai%E5%BC%B7%E5%9C%8B%E5%90%88%E4%BD%9C%E5%8F%96%E5%BE%97%E5%85%88%E9%80%B2%E6%A8%A1%E5%9E%8B-%E7%BE%8E%E5%B0%88%E5%AE%B6-%E5%8F%B0%E7%81%A3%E6%9C%89%E6%9C%80%E5%BC%B7%E5%84%AA%E5%8B%A2-002836769.html",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://tw.news.yahoo.com/%E5%90%84%E5%9C%8B%E7%88%AD%E5%8F%96%E8%88%87ai%E5%BC%B7%E5%9C%8B%E5%90%88%E4%BD%9C%E5%8F%96%E5%BE%97%E5%85%88%E9%80%B2%E6%A8%A1%E5%9E%8B-%E7%BE%8E%E5%B0%88%E5%AE%B6-%E5%8F%B0%E7%81%A3%E6%9C%89%E6%9C%80%E5%BC%B7%E5%84%AA%E5%8B%A2-002836769.html"
         }
        ]
       }
@@ -19057,6 +19512,32 @@
    ],
    "src": "archive"
   },
+  "jbiaojerry/ebook-treasure-chest": {
+   "repo": "jbiaojerry/ebook-treasure-chest",
+   "url": "https://github.com/jbiaojerry/ebook-treasure-chest",
+   "lang": "Python",
+   "cat": "L-学习资源-其他 › 电子书资源",
+   "tagline": "电子书下载宝库：聚合各大读书平台资源的链接库",
+   "desc": "中文社区老牌电子书资源聚合仓库（2023 年创建）：GitHub Pages 实时多关键字搜索，聚合帆书/微信读书/京东读书/喜马拉雅等平台资源，覆盖文学/经管/技术等品类，2.3 万星。2026-10-25 首次上榜（使用请遵循当地版权法规）。",
+   "field": "",
+   "total": 22919,
+   "first": "2026-10-25",
+   "last": "2026-10-25",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-25",
+     "rank": 9,
+     "rank_label": "#9",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 22919,
+     "today": 227
+    }
+   ],
+   "src": "archive"
+  },
   "public-apis/public-apis": {
    "repo": "public-apis/public-apis",
    "url": "https://github.com/public-apis/public-apis",
@@ -19270,10 +19751,10 @@
    "tagline": "Claude Code 实战指南：曾登 GitHub Trending #1 的教程仓库",
    "desc": "面向 Claude Code 的实操教程/指南仓库（topics: claude-code, guide, tutorial），README 自带 GitHub #1 Trending 徽章，4.3 万星，Claude 生态学习资源头部代表。",
    "field": "",
-   "total": 43213,
+   "total": 44767,
    "first": "2026-10-23",
-   "last": "2026-10-23",
-   "count": 1,
+   "last": "2026-10-25",
+   "count": 2,
    "records": [
     {
      "date": "2026-10-23",
@@ -19284,6 +19765,16 @@
      "id": "daily:2026-10-23",
      "total": 43213,
      "today": 177
+    },
+    {
+     "date": "2026-10-25",
+     "rank": 5,
+     "rank_label": "#5",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 44767,
+     "today": 392
     }
    ],
    "src": "archive"
@@ -19906,10 +20397,10 @@
    "tagline": "英伟达出品：自主 AI agent 的安全、私有运行时",
    "desc": "给自主跑任务的 agent 一个受控执行环境，安全隔离与隐私优先。大厂给 agent sandbox 问题给出的参考答案。",
    "field": "",
-   "total": 18911,
+   "total": 19657,
    "first": "2026-09-30",
-   "last": "2026-10-24",
-   "count": 5,
+   "last": "2026-10-25",
+   "count": 6,
    "records": [
     {
      "date": "2026-09-30",
@@ -19960,6 +20451,16 @@
      "id": "daily:2026-10-24",
      "total": 18911,
      "today": 1119
+    },
+    {
+     "date": "2026-10-25",
+     "rank": 2,
+     "rank_label": "#2",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 19657,
+     "today": 896
     }
    ],
    "src": "archive"
@@ -19972,10 +20473,10 @@
    "tagline": "Cloudflare 出品的编程 Agent 安全审计技能：六阶段流水线 + 对抗式验证，把你的 Agent 变成安全审计员",
    "desc": "这是一个 coding-agent skill（npx skills add 一行装进 Claude Code 等编程 Agent），源自 Cloudflare 官方博客《Build your own vulnerability harness》中漏洞挖掘 harness 的单仓库起点。它编排多个隔离 Agent 走六阶段审计流水线：侦察（并行研究 Agent 映射架构、信任边界与输入面）→ 狩猎（多个通用 Agent 按攻击类并行进攻：注入/访问控制/业务逻辑/密码学/链式攻击，可再派子 Agent 深挖）→ 验证（专门的独立 Agent 反过来试图推翻每条发现，对抗式杀死误报）→ 报告（人类可读 REPORT.md）→ 结构化输出（符合 report-schema.json 的 findings.json，附带零依赖校验脚本）→ 独立复核（全新 Agent 逐条核对事实声明）。对同一仓库多次运行是叠加式的：会读取历史 findings.json 跳过已知问题、专攻未覆盖路径。核心区别于普通 AI 审计工具的地方：对抗验证 + 机器可读输出 + 独立复核三重把关。",
    "field": "",
-   "total": 42455,
+   "total": 45355,
    "first": "2026-09-18",
-   "last": "2026-10-24",
-   "count": 8,
+   "last": "2026-10-25",
+   "count": 9,
    "records": [
     {
      "date": "2026-09-18",
@@ -20056,6 +20557,16 @@
      "id": "daily:2026-10-24",
      "total": 42455,
      "today": 2716
+    },
+    {
+     "date": "2026-10-25",
+     "rank": 1,
+     "rank_label": "#1",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 45355,
+     "today": 2264
     }
    ],
    "src": "archive"
@@ -24789,6 +25300,32 @@
    ],
    "src": "archive"
   },
+  "google-gemini/gemini-cli": {
+   "repo": "google-gemini/gemini-cli",
+   "url": "https://github.com/google-gemini/gemini-cli",
+   "lang": "TypeScript",
+   "cat": "B-开发者工具 › AI编程工具 › 终端Agent",
+   "tagline": "Google 官方 Gemini CLI：10.8 万星的终端 AI agent",
+   "desc": "Google 官方终端 AI 编码 agent，10.8 万星。README 注明免费层与 Google One 用户已被 Antigravity 取代，官方 agent 基建大整合进行中。2026-10-25 回流上榜。",
+   "field": "",
+   "total": 108276,
+   "first": "2026-10-25",
+   "last": "2026-10-25",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-25",
+     "rank": 8,
+     "rank_label": "#8",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 108276,
+     "today": 44
+    }
+   ],
+   "src": "archive"
+  },
   "davila7/claude-code-templates": {
    "repo": "davila7/claude-code-templates",
    "url": "https://github.com/davila7/claude-code-templates",
@@ -25007,10 +25544,10 @@
    "tagline": "反 AI 糙设计技能——让 Claude Code / Cursor / Codex 生成的 UI 不再有 AI 味",
    "desc": "Hallmark 由 Together AI 团队开发，是一个面向 AI 编程助手的设计技能（Design Skill）。它将反 AI-slop 的设计共识——排版、配色、布局、动效、微交互、结构多样性——编码为一套有主见的规则集。核心特色：22 种主题、4 种动词模式（构建/审计/重设计/学习）、21 种命名宏结构、65 道 slop-test 检测门、预发射自我批评、以及独有的 study 功能（从截图或 URL 提取设计 DNA）。项目记忆系统会记录每次运行的结构和主题，确保连续输出不重复。支持 Claude Code、Cursor、Codex 一键安装。",
    "field": "",
-   "total": 8295,
+   "total": 32582,
    "first": "2026-07-14",
-   "last": "2026-07-16",
-   "count": 3,
+   "last": "2026-10-25",
+   "count": 4,
    "records": [
     {
      "date": "2026-07-14",
@@ -25041,6 +25578,16 @@
      "id": "daily:2026-07-16",
      "total": 8295,
      "today": 1119
+    },
+    {
+     "date": "2026-10-25",
+     "rank": 4,
+     "rank_label": "#4",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 32582,
+     "today": 455
     }
    ],
    "src": "archive"
@@ -26233,6 +26780,32 @@
      "id": "daily:2026-07-30",
      "total": 14415,
      "today": 197
+    }
+   ],
+   "src": "archive"
+  },
+  "aws/agent-toolkit-for-aws": {
+   "repo": "aws/agent-toolkit-for-aws",
+   "url": "https://github.com/aws/agent-toolkit-for-aws",
+   "lang": "Python",
+   "cat": "E-基础设施-DevOps › 云开发工具包",
+   "tagline": "AWS 官方 Agent Toolkit：给编码 agent 的云上工具、知识与护栏",
+   "desc": "AWS 官方 Agent Toolkit：给 AI 编码 agent（Claude Code/Codex/Cursor/Devin/Kiro/fx）提供在 AWS 上构建、部署、管理应用的工具、服务知识与护栏，可经 AWS CLI 使用。云厂商官方进场的标志性项目，2026-10-25 首次上榜。",
+   "field": "",
+   "total": 3225,
+   "first": "2026-10-25",
+   "last": "2026-10-25",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-25",
+     "rank": 3,
+     "rank_label": "#3",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 3225,
+     "today": 13
     }
    ],
    "src": "archive"
@@ -29756,6 +30329,32 @@
    "records": [],
    "src": "archive"
   },
+  "pollen-robotics/microduck": {
+   "repo": "pollen-robotics/microduck",
+   "url": "https://github.com/pollen-robotics/microduck",
+   "lang": "Rust",
+   "cat": "A-AI机器学习 › 具身智能 › 机器人本体",
+   "tagline": "黄仁勋带货 2 万台售罄的 Microduck：强化学习驱动的小型双足机器人开源本体",
+   "desc": "Pollen Robotics 的迷你双足机器人：强化学习策略驱动行走，Rust 编写、完全开源，官网在售。2026-10-24 TechCrunch 报道 2 万台售罄、黄仁勋亲自带货，次日开源本体上榜——具身智能消费化标志事件。",
+   "field": "",
+   "total": 11187,
+   "first": "2026-10-25",
+   "last": "2026-10-25",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-25",
+     "rank": 7,
+     "rank_label": "#7",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 11187,
+     "today": 319
+    }
+   ],
+   "src": "archive"
+  },
   "Panniantong/Agent-Reach": {
    "repo": "Panniantong/Agent-Reach",
    "url": "https://github.com/Panniantong/Agent-Reach",
@@ -30524,10 +31123,10 @@
    "tagline": "让 AI 编码 Agent 更擅长设计的技能框架——1 个技能、23 个命令、60 条确定性设计检测规则",
    "desc": "Impeccable 是一套面向 AI 编码 Agent 的设计指导框架，解决\"AI 生成的 UI 都长一样\"的问题——每个模型都在同样的 SaaS 模板上训练，不加引导就会产出千篇一律的设计（Inter 字体、紫蓝渐变、卡片嵌套、灰底彩字、圆角方块图标）。核心包含三部分：一套初始化流程（`/impeccable init` 生成 PRODUCT.md 和 DESIGN.md，记录品牌定位、配色、字体、组件）；23 个设计命令（polish/audit/critique/distill/animate/bolder/quieter 等，形成与 AI 共享的设计词汇）；60 条确定性检测规则（纯 CLI 运行，无需 LLM 或 API Key，检测 AI 生成前端的设计反模式）。支持 Claude Code、Cursor、Codex、Gemini CLI、GitHub Copilot、Grok Build 等 13+ 种工具。提供浏览器扩展实时迭代和设计 Hook（在编辑 UI 文件时自动运行检测）。",
    "field": "",
-   "total": 77647,
+   "total": 86720,
    "first": "2026-07-26",
-   "last": "2026-10-07",
-   "count": 8,
+   "last": "2026-10-25",
+   "count": 9,
    "records": [
     {
      "date": "2026-07-26",
@@ -30608,6 +31207,16 @@
      "id": "daily:2026-10-07",
      "total": 77647,
      "today": 609
+    },
+    {
+     "date": "2026-10-25",
+     "rank": 6,
+     "rank_label": "#6",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 86720,
+     "today": 619
     }
    ],
    "src": "archive"
@@ -30960,6 +31569,32 @@
      "id": "daily:2026-08-20",
      "total": 30111,
      "today": 803
+    }
+   ],
+   "src": "archive"
+  },
+  "makecindy/cindy": {
+   "repo": "makecindy/cindy",
+   "url": "https://github.com/makecindy/cindy",
+   "lang": "TypeScript",
+   "cat": "A-AI机器学习 › Agent框架 › 本地助手",
+   "tagline": "Cindy：开箱即用、在你自己电脑上真干活的开源 AI agent",
+   "desc": "开源本地 AI agent 助手 Cindy（cindy.app，Apache-2.0）：主打\"Consider it done\"开箱即用、在用户自己电脑上完成真实任务，支持 Android，中英双语。与闭源常驻 agent（Claude Duet/Grok Bot）竞赛同期的开源答卷。2026-10-25 首次上榜。",
+   "field": "",
+   "total": 4310,
+   "first": "2026-10-25",
+   "last": "2026-10-25",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-25",
+     "rank": 10,
+     "rank_label": "#10",
+     "type": "daily",
+     "period": "2026-10-25",
+     "id": "daily:2026-10-25",
+     "total": 4310,
+     "today": 477
     }
    ],
    "src": "archive"
