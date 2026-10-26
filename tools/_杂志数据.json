@@ -15132,12 +15132,6 @@
      "src": "原始来源"
     },
     {
-     "t": "Apollo 经济学家讨论科技行业以外的 AI 回报",
-     "d": "⚡  — Torsten Slok 于 10 月 24 日发表评论，以 S&P 493 与科技巨头的人均营收、利润率等宏观指标为依据。这是作者的分析观点，不能据此断言所有企业都没有 AI 回报，也不是逐家企业的大规模调查结论。 原始来源",
-     "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
-     "src": "原始来源"
-    },
-    {
      "t": "Grok《Odyssey》首集媒体报道",
      "d": "⚡  — 10 月 25 日报道回顾了 10 月 23 日发布的约 7 分钟首集，不能称整部长片已完成。 原始来源",
      "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
@@ -15279,7 +15273,7 @@
    "meta": {
     "quick_rows": 10,
     "cards": 10,
-    "ai_items": 4,
+    "ai_items": 3,
     "miss_total": 0,
     "miss_desc": 0
    }
@@ -16990,18 +16984,6 @@
     {
      "title": "五、产业与观点",
      "items": [
-      {
-       "t": "Apollo 经济学家讨论科技行业以外的 AI 回报",
-       "d": "Torsten Slok 于 10 月 24 日发表评论，以 S&P 493 与科技巨头的人均营收、利润率等宏观指标为依据。这是作者的分析观点，不能据此断言所有企业都没有 AI 回报，也不是逐家企业的大规模调查结论。",
-       "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector"
-        }
-       ]
-      },
       {
        "t": "Grok《Odyssey》首集媒体报道",
        "d": "10 月 25 日报道回顾了 10 月 23 日发布的约 7 分钟首集，不能称整部长片已完成。",
