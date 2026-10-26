@@ -26,7 +26,7 @@ def ai_collection():
 
 def fake_model(prompt, schema):
     if "articles" in schema["properties"]:
-        return {"articles": [{"source_id": "S1", "title": "公开功能公告", "summary": "公开公告介绍了一项功能，具体可见原文。", "section": "大模型动态"}]}
+        return {"articles": [{"source_id": "S1", "title": "公开功能公告", "summary": "公开公告介绍了一项功能，具体可见原文。", "section": "大模型动态", "evidence": ["公开公告介绍一项新功能"]}]}
     repos = schema["properties"]["projects"]["items"]["properties"]["repo"]["enum"]
     return {"projects": [{"repo": repo, "description": "这个工具用于处理公开数据。功能以仓库说明为准。", "usage": "开发者处理公开数据", "category": "B-开发者工具"} for repo in repos]}
 
@@ -85,7 +85,8 @@ class SourceTests(unittest.TestCase):
         <item><title>未来公告</title><link>https://openai.com/news/future</link><pubDate>2026-06-02T00:00:00Z</pubDate></item>
         <item><title>未标日期</title><link>https://openai.com/news/none</link></item>
         </channel></rss>"""
-        with patch.object(sources, "AI_SOURCES", (("OpenAI", "https://openai.com/feed", "feed"),)), patch.object(sources, "fetch", return_value=feed):
+        article = '<meta property="article:published_time" content="2026-06-01T00:00:00Z"><main><h1>有效公告</h1><p>已访问原文的有效信息</p></main>'
+        with patch.object(sources, "AI_SOURCES", (("OpenAI", "https://openai.com/feed", "feed"),)), patch.object(sources, "fetch", side_effect=lambda url, **_: feed if url.endswith("/feed") else article):
             result = sources.collect_ai(now=datetime(2026, 6, 1, 1, tzinfo=timezone.utc))
         self.assertEqual([item["title"] for item in result["articles"]], ["有效公告"])
         self.assertTrue(result["articles"][0]["id"].startswith("S"))
@@ -130,6 +131,8 @@ class SourceTests(unittest.TestCase):
     def test_ai_source_timeout_retains_other_sources(self):
         feed = '<rss><channel><item><title>新公告</title><link>https://openai.com/news/new</link><pubDate>2026-06-01T00:00:00Z</pubDate></item></channel></rss>'
         def fetch(url, **_):
+            if url == "https://openai.com/news/new":
+                return '<meta property="article:published_time" content="2026-06-01T00:00:00Z"><main><h1>新公告</h1><p>已访问原文的有效信息</p></main>'
             if url.startswith("https://openai.com"):
                 return feed
             raise sources.SourceError("来源无法访问")

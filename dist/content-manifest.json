@@ -1,5 +1,5 @@
 {
-  "revision": "eace1695d58f78910478b77d",
+  "revision": "87ed4ade209f03fbcf42d779",
   "generated_at": "2026-10-26",
   "files": [
     {
@@ -39,8 +39,8 @@
     },
     {
       "path": "AI前沿资讯/日报/2026-10-26-AI日报.md",
-      "sha256": "d3e8dd2511d6308233c838b0e11e03aaa7f4cc82fe458ee93e6c58355cf069b4",
-      "size": 4383
+      "sha256": "8710b2fba2b56c58b9df92ea8943a85b1ea2e03b1ba8a6af23bcc313d2757843",
+      "size": 6279
     },
     {
       "path": "GitHub项目分析/GitHub热点周报_2026-W43.html",
@@ -49,8 +49,8 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点周报_2026-W44.html",
-      "sha256": "c0b20af1f3ab2c9d03cf7b1fd740cbc1cb9e738e76428f25f1268b4983a49b72",
-      "size": 19467
+      "sha256": "9ab8cc765fbfb4ac377dbd138a421c86e763b93381946adb9961ff876a392a6c",
+      "size": 19438
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-06-29.pdf",
@@ -569,13 +569,13 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-26.html",
-      "sha256": "31733e50f5e8929be9b777a3fd3a36d026a8ff9bff190450fe5389412da65cb4",
-      "size": 18480
+      "sha256": "6705e7095233330a3a10bcfd56915f69bce50164b7c7a17f0d58e89fcc353ad0",
+      "size": 20384
     },
     {
       "path": "GitHub项目分析/GitHub热点杂志.html",
-      "sha256": "412218ecad13a12330615ef624e7408cf0c812e5adfd7b947cc99df4cb95e5c2",
-      "size": 1312472
+      "sha256": "27780f92852cc5424326438bdb4c2a30bb95b7320acc999679e7acf9ad8930fe",
+      "size": 1310126
     },
     {
       "path": "GitHub项目分析/历史前身_Markdown/2026-06-22-github-daily.md",
@@ -2624,7 +2624,7 @@
     },
     {
       "path": "content-version.json",
-      "sha256": "c75b9ae1f8f9056984bcd629460c8f4554983354db280bba2641ee37b8987cef",
+      "sha256": "4961178c25517e754dee28b2afd18f49c0914bb6e683665596bfbaa7dd7a6173",
       "size": 70
     }
   ]

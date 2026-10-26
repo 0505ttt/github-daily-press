@@ -13,7 +13,8 @@ SKIP = {".git", ".venv", ".runtime", ".codegraph", ".codegraph-tools", "__pycach
 PATTERNS = {
     "本机用户路径": re.compile(r"/(?:Users|home)/[^\s<>\"']+|[A-Za-z]:\\Users\\[^\s<>\"']+"),
     "私人任务标识": re.compile(r"(?:automation-|sess_)[0-9a-f][0-9a-f-]{15,}", re.I),
-    "疑似访问凭据": re.compile(r"(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{20,}"),
+    # risk-report 等文章路径中的单词尾部不是 sk- 密钥前缀。
+    "疑似访问凭据": re.compile(r"(?:ghp_|github_pat_|(?<![A-Za-z0-9])sk-)[A-Za-z0-9_-]{20,}"),
     "私钥正文": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 }
 TEXT_SUFFIXES = {".md", ".html", ".json", ".py", ".js", ".css", ".toml", ".yml", ".yaml", ".txt", ".svg", ".webmanifest", ".command", ".ps1", ".iss", ".isl"}

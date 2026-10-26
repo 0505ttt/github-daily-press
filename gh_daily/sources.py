@@ -20,6 +20,7 @@ from bs4 import BeautifulSoup
 
 from tools.parse_trending import parse_trending
 from .tls import verified_context
+from .citations import require_article_url
 
 MAX_BODY = 4 * 1024 * 1024
 REPO = re.compile(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\Z")
@@ -267,7 +268,42 @@ def parse_announcements(body: str, base: str) -> list[dict]:
     return items
 
 
-def search_official(base: str, *, deadline: float, now: datetime) -> list[dict]:
+def verify_article(row: dict, *, deadline: float) -> dict:
+    """重新打开文章，读取正文和原文发布日期，不把 RSS 摘要当证据。"""
+    url = row["url"]
+    require_article_url(url)
+    body = fetch(url, deadline=min(deadline, time.monotonic() + 20))
+    soup = BeautifulSoup(body, "html.parser")
+    title = soup.find("h1")
+    content = soup.find("article") or soup.find("main")
+    if title is None or content is None or content not in title.parents:
+        raise SourceError("未读取到文章标题和正文，未采用订阅或搜索摘要")
+    headline = _text(title.get_text(" ", strip=True))
+    for element in soup.select("nav, footer, aside, .related, .recommended"):
+        element.decompose()
+    stamp = soup.find("meta", attrs={"property": "article:published_time"}) or soup.find("meta", attrs={"name": "date"})
+    published = stamp.get("content") if stamp else None
+    if not parsed_date(published):
+        for candidate in parse_announcements(body, url):
+            if (candidate.get("url", "").rstrip("/") == url.rstrip("/")
+                    and candidate.get("title") == headline):
+                published = candidate.get("published_at")
+                break
+    if not parsed_date(published):
+        heading = title.find_parent("header")
+        stamp = heading.find("time") if heading else content.find("time", recursive=False)
+        published = stamp.get("datetime") if stamp else None
+    if not parsed_date(published):
+        raise SourceError("原文发布日期无法确认，未采用 RSS 或搜索日期")
+    for element in content.select("script, style, nav, footer, aside, .related, .recommended"):
+        element.decompose()
+    text = _text(content.get_text(" ", strip=True))
+    if len(text) < 8:
+        raise SourceError("原文内容不足以支持归纳")
+    return {**row, "title": headline, "published_at": published, "text": text, "article_verified": True}
+
+
+def search_official(base: str, *, deadline: float, now: datetime, attempted: set[str] | None = None) -> list[dict]:
     """Bing 公开 RSS 仅用于找原文；摘要日期不作为发布证据。"""
     domain = (urlparse(base).hostname or "").removeprefix("www.")
     if not domain:
@@ -276,31 +312,20 @@ def search_official(base: str, *, deadline: float, now: datetime) -> list[dict]:
     search_url = "https://www.bing.com/search?" + urlencode({"q": query, "format": "rss"})
     candidates = parse_feed(fetch(search_url, deadline=deadline, max_bytes=512000), search_url)
     result, visited = [], set()
+    attempted = attempted if attempted is not None else set()
     for candidate in candidates:
         url = valid_url(candidate.get("url"))
         host = (urlparse(url).hostname or "").lower()
-        if not url or not (host == domain or host.endswith("." + domain)) or url in visited:
+        if not url or not (host == domain or host.endswith("." + domain)) or url in visited or url in attempted:
             continue
         visited.add(url)
         if len(visited) > 2 or time.monotonic() >= deadline:
             break
         try:
-            body = fetch(url, deadline=min(deadline, time.monotonic() + 15))
-            article = BeautifulSoup(body, "html.parser")
-            original_rows = parse_announcements(body, url)
-            # 独立文章的发布日期常在 meta 中，不采用搜索结果的 pubDate。
-            stamp = article.find("meta", attrs={"property": "article:published_time"}) or article.find("meta", attrs={"name": "date"})
-            title = article.find("h1") or article.title
-            content = article.find("article") or article.find("main")
-            if stamp and title:
-                original_rows.append({"title": title.get_text(" ", strip=True), "url": url,
-                                      "published_at": stamp.get("content"), "text": _text(content.get_text(" ", strip=True) if content else "")})
-            for row in original_rows:
-                # 搜索只验证已打开的原文，页面推荐位不能扩展成未经访问的新来源。
-                row_url = valid_url(row.get("url"), url) or url
-                if row_url.rstrip("/") == url.rstrip("/"):
-                    result.append({**row, "url": url})
-        except (SourceError, ET.ParseError, TypeError, AttributeError):
+            # 与直采共用一次原文读取，后续不重复请求同一文章。
+            attempted.add(url)
+            result.append(verify_article({"url": url}, deadline=deadline))
+        except (SourceError, ET.ParseError, TypeError, AttributeError, ValueError):
             continue
     return result
 
@@ -325,7 +350,7 @@ def collect_ai(*, now: datetime | None = None, deadline: float | None = None) ->
     now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
     cutoff = now - timedelta(hours=48)
     limit = min(deadline or (time.monotonic() + 600), time.monotonic() + 600)
-    articles, statuses, seen = [], [], set()
+    articles, statuses, seen, attempted = [], [], set(), set()
     for source, template, kind in AI_SOURCES:
         if time.monotonic() >= limit:
             statuses.append({"source": source, "status": "failed", "reason": "达到十分钟采集时限"})
@@ -350,7 +375,7 @@ def collect_ai(*, now: datetime | None = None, deadline: float | None = None) ->
                 if not isinstance(payload.get("items"), list):
                     raise SourceError("GitHub 搜索响应不可用")
                 rows = [{"title": item.get("full_name"), "url": item.get("html_url"), "published_at": item.get("created_at"),
-                         "text": f"仓库顶部描述：{item.get('description') or '暂未获取'}；当前 Star：{item.get('stargazers_count', '暂未获取')}。"}
+                         "text": f"仓库：{item.get('full_name') or '暂未获取'}；仓库顶部描述：{item.get('description') or '暂未获取'}；当前 Star：{item.get('stargazers_count', '暂未获取')}。"}
                         for item in payload["items"] if isinstance(item, dict)]
             else:
                 payload = json.loads(body)
@@ -362,14 +387,29 @@ def collect_ai(*, now: datetime | None = None, deadline: float | None = None) ->
             fresh = [row for row in rows if (published := parsed_date(row.get("published_at"))) and cutoff <= published <= now and valid_url(row.get("url"))]
             if not fresh and kind not in {"github", "papers"}:
                 try:
-                    rows = search_official(url, deadline=limit, now=now)
+                    rows = search_official(url, deadline=limit, now=now, attempted=attempted)
                 except (SourceError, ET.ParseError, ValueError):
                     rows = []
             accepted = 0
+            rejected = 0
             for row in rows:
                 published = parsed_date(row.get("published_at"))
                 link = valid_url(row.get("url"))
                 if published is None or not cutoff <= published <= now or not link or not row.get("title") or link in seen:
+                    continue
+                try:
+                    require_article_url(link)
+                    if kind not in {"github", "papers"} and not row.get("article_verified"):
+                        if link in attempted:
+                            continue
+                        attempted.add(link)
+                        row = verify_article({**row, "url": link}, deadline=limit)
+                    published = parsed_date(row["published_at"])
+                    if published is None or not cutoff <= published <= now:
+                        rejected += 1
+                        continue
+                except (SourceError, ValueError):
+                    rejected += 1
                     continue
                 seen.add(link)
                 articles.append({"id": "S" + hashlib.sha256(link.encode()).hexdigest()[:14], "source": source,
@@ -377,7 +417,7 @@ def collect_ai(*, now: datetime | None = None, deadline: float | None = None) ->
                 accepted += 1
                 if accepted >= (5 if kind == "github" else 8):
                     break
-            reason = "" if accepted else "直接采集与公开搜索未取得近48小时内可验证日期的原文"
+            reason = (f"{rejected} 条候选未通过原文引用核验" if rejected else "") if accepted else "直接采集与公开搜索未取得近48小时内可验证日期和正文的原文"
             statuses.append({"source": source, "status": "success" if accepted else ("failed" if direct_failed else "empty"), "count": accepted, "reason": reason})
         except (SourceError, json.JSONDecodeError, ET.ParseError, TypeError, AttributeError):
             statuses.append({"source": source, "status": "failed", "reason": "直接采集或公开搜索未取得可验证原文"})

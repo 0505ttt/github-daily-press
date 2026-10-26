@@ -15120,64 +15120,28 @@
    "wind": "榜首易主：昨日新上榜的 开源本地 agent Cindy 一日登顶 （+675）——常驻 agent 竞赛（Claude Duet/Grok Bot）之下开源阵营速赢认可。Cloudflare 安全审计技能虽滑至 #10 但日增 +2,878 仍是全榜最热（连续第六日在榜）；设计双雄 hallmark 与 impeccable 同框、VoiceStudio 回流， \"创意工具日\" ；两个值得记下的新面孔： JetBrains 官方 agentic IDE thinkrail （大厂 IDE agent 化新棋子）与自托管 PaaS 老牌 coolify （PHP 生态回暖第二波）。",
    "ai": [
     {
-     "t": "OpenAI/Anthropic LLM 大降价最高 80%",
-     "d": "💵  ：GPT-4 API 年内降 60%、Claude 部分档位砍 80%",
-     "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
-     "src": "Emergent"
+     "t": "web3illy/private-second-brain-skills",
+     "d": "⚡  — 项目方将其描述为 Wisp 的私有第二大脑技能集，含 8 个 Agent Skills，也可用于 Claude Code、Codex。核验观测为 2 Star；GitHub API 创建时间为 2026-10-26 08:07:29（北京时间）。 原始来源",
+     "url": "https://github.com/web3illy/private-second-brain-skills/tree/c4bbba3a5b08426a55d17148ec7792c8dfcf2feb",
+     "src": "原始来源"
     },
     {
-     "t": "Kimi K3.1 Pro 官方文档上线",
-     "d": "🌙  ：Highspeed 版 2-3 倍速、编程距 Opus 5.5 仅 0.7 分、权重 11-4 前放",
-     "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
-     "src": "Kimi 官方"
+     "t": "Rainling-LingYusi014/misaki-qq-agent",
+     "d": "⚡  — 项目方描述为 QQ 工具型 Agent，提供办公、图像、媒体合成、预算管理和告警等功能；“100+ 工具”为作者自述。核验观测为 1 Star；GitHub API 创建时间为 2026-10-26 09:04:32（北京时间），晚于原定 08:30 采编时点。 原始来源",
+     "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent/tree/df42c1323b1f0616c735d8c781c1cd2a2b978649",
+     "src": "原始来源"
     },
     {
-     "t": "OpenAI 恢复训练但切断实时互联网",
-     "d": "🔌  ，Anthropic 早两周就已行动",
-     "url": "https://www.taipeitimes.com",
-     "src": "Taipei Times"
+     "t": "Apollo 经济学家讨论科技行业以外的 AI 回报",
+     "d": "⚡  — Torsten Slok 于 10 月 24 日发表评论，以 S&P 493 与科技巨头的人均营收、利润率等宏观指标为依据。这是作者的分析观点，不能据此断言所有企业都没有 AI 回报，也不是逐家企业的大规模调查结论。 原始来源",
+     "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+     "src": "原始来源"
     },
     {
-     "t": "Agent 标准中立化",
-     "d": "🏛️  ：OpenAI 也把 agent 技术捐给 Agentic AI Foundation",
-     "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
-     "src": "Emergent"
-    },
-    {
-     "t": "Anthropic S-1：上半年净亏 807 亿美元",
-     "d": "📊  （IPO 招股书，本周背景）",
-     "url": "https://www.wsj.com",
-     "src": "WSJ"
-    },
-    {
-     "t": "\"AI 编码大战\"：GPT-5.3-Codex 对阵 Anthropic 新模型",
-     "d": "⚔️",
-     "url": "https://www.theinformation.com",
-     "src": "The Information"
-    },
-    {
-     "t": "Grok 发布 AI 生成电影《Odyssey》前 7 分钟",
-     "d": "🎬",
-     "url": "https://techcrunch.com/feed/",
-     "src": "TechCrunch"
-    },
-    {
-     "t": "Apollo 首席经济学家：AI 对多数公司\"零财务回报\"",
-     "d": "🧊",
-     "url": "https://techcrunch.com/feed/",
-     "src": "TechCrunch"
-    },
-    {
-     "t": "GLM-5.5 发布倒计时",
-     "d": "🧠  ：月底/11 月初口径不变，重置卡补偿被解读为前兆",
-     "url": "https://tech.ifeng.com/c/8xPRsqw746o",
-     "src": "凤凰"
-    },
-    {
-     "t": "METR 质疑 Anthropic 安全测试方法",
-     "d": "🔍  （虽认可灾难性风险低）",
-     "url": "https://metr.org",
-     "src": "METR"
+     "t": "Grok《Odyssey》首集媒体报道",
+     "d": "⚡  — 10 月 25 日报道回顾了 10 月 23 日发布的约 7 分钟首集，不能称整部长片已完成。 原始来源",
+     "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+     "src": "原始来源"
     }
    ],
    "projects": [
@@ -15315,7 +15279,7 @@
    "meta": {
     "quick_rows": 10,
     "cards": 10,
-    "ai_items": 10,
+    "ai_items": 4,
     "miss_total": 0,
     "miss_desc": 0
    }
@@ -15333,7 +15297,7 @@
    "backfill": false,
    "snapshot": "",
    "snapshot_url": "",
-   "wind": "上周的主角是 morluto/rea 的现象级一家独大（周增 22.9 万）； 本周的主题则是\"安全接棒\" ——Cloudflare 安全审计技能周增 15,072 夺冠，且从上周的第 4 位一路五连霸日榜，CEO\"天塌\"言论与 Agent Skills 标准捐入基金会把 agent 安全推上风口。结构性看点：agent 生态 14 席占 11 席；orca（+9,622）与 graphify（+6,903）两匹黑马放量；andrej-karpathy-skills 总量已达 22.4 万星，成为本库追踪以来成长最快的技能仓库之一；JetBrains/Google/AWS/Anthropic/Cloudflare/英伟达六家大厂同周在榜，\"官方进场\"已成主旋律。",
+   "wind": "上周的主角是 morluto/rea 的现象级一家独大（周增 22.9 万）； 本周的主题则是\"安全接棒\" ——Cloudflare 安全审计技能周增 15,072 夺冠，且从上周的第 4 位一路五连霸日榜，Agent 技能与安全审计工具持续受到关注。结构性看点：agent 生态 14 席占 11 席；orca（+9,622）与 graphify（+6,903）两匹黑马放量；andrej-karpathy-skills 总量已达 22.4 万星，成为本库追踪以来成长最快的技能仓库之一；JetBrains/Google/AWS/Anthropic/Cloudflare/英伟达六家大厂同周在榜，\"官方进场\"已成主旋律。",
    "ai": [],
    "projects": [
     {
@@ -15371,7 +15335,7 @@
      "total": 32988,
      "cat": "B-开发者工具 › Claude插件",
      "tagline": "Anthropic 官方知识工作者插件库（Claude Cowork 场景）",
-     "desc": "配合本周 Agent Skills 标准捐入基金会，官方插件生态标准化叙事持续发酵。",
+     "desc": "官方插件库持续更新，具体能力以仓库说明为准。",
      "field": "",
      "hot": true
     },
@@ -15488,7 +15452,7 @@
      "total": 95497,
      "cat": "A-AI机器学习 › LLM推理",
      "tagline": "LLM 高吞吐、内存高效的推理与服务引擎（行业标准之一）",
-     "desc": "推理引擎标准件连续在榜；在 OpenAI/Anthropic 大降价 80% 的一周，自托管推理的性价比叙事反而更受关注。",
+     "desc": "推理引擎标准件连续在榜；自托管推理的成本需按实际模型、硬件和工作负载评估。",
      "field": "",
      "hot": true
     },
@@ -16995,128 +16959,29 @@
    "file": "2026-10-26-AI日报.md",
    "sections": [
     {
-     "title": "一、大模型动态",
-     "items": [
-      {
-       "t": "Kimi K3.1 Pro 官方文档上线，Highspeed 高速版同步推出",
-       "d": "同等智能下输出速度约 2~3 倍；完整权重确认 11 月 4 日前发布；官方数据显示编程能力距 Claude Opus 5.5 仅差 0.7 分、智能指数 55 分跻身全球第四，是得分最高的开源权重模型之一。",
-       "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart"
-        }
-       ]
-      },
-      {
-       "t": "智谱 GLM-5.5 发布倒计时（仍未官宣）",
-       "d": "网传专家纪要维持\"10 月底-11 月初、2.5~3.5 万亿参数\"口径；Coding Plan 用户的\"降智补偿 3 张重置卡\"被普遍解读为发布前信号。",
-       "url": "https://tech.ifeng.com/c/8xPRsqw746o",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://tech.ifeng.com/c/8xPRsqw746o"
-        }
-       ]
-      },
-      {
-       "t": "\"AI 编码大战\"升温",
-       "d": "OpenAI 推出 GPT-5.3-Codex，Anthropic 同步更新新模型，编码 agent 赛道贴身肉搏。",
-       "url": "https://www.theinformation.com",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://www.theinformation.com"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "title": "二、Agent 与工程实践",
-     "items": [
-      {
-       "t": "OpenAI 恢复训练但切断实时互联网，Anthropic 早两周就已行动",
-       "d": "OpenAI 开始在最强调练中切断实时网络访问；报道显示 Anthropic 比其早约两周开始限制新模型的实时联网。",
-       "url": "https://www.taipeitimes.com",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://www.taipeitimes.com"
-        }
-       ]
-      },
-      {
-       "t": "Agent 标准全面中立化：OpenAI 也把 agent 技术捐给 Agentic AI Foundation",
-       "d": "继 Anthropic 捐出 Agent Skills 标准与 MCP 之后，OpenAI 加入捐赠行列，agent 标准进入\"中立基金会\"时代。",
-       "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026"
-        }
-       ]
-      },
-      {
-       "t": "安全评估机构 METR 质疑 Anthropic 的安全测试方法",
-       "d": "即便认可\"灾难性风险低\"，METR 仍对其测试方法论提出疑问——上市前的第三方压力测试。",
-       "url": "https://metr.org",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://metr.org"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "title": "三、GitHub 热门 AI 项目（24-48h 新仓库）",
+     "title": "三、GitHub热门AI项目",
      "items": [
       {
        "t": "web3illy/private-second-brain-skills",
-       "d": "Wisp 的私有第二大脑：8 个 Agent Skills 记住\"说过什么、决定了什么、承诺过什么\"，兼容 Claude Code 与 Codex。",
-       "url": "https://github.com/web3illy/private-second-brain-skills",
-       "src": "链接",
+       "d": "项目方将其描述为 Wisp 的私有第二大脑技能集，含 8 个 Agent Skills，也可用于 Claude Code、Codex。核验观测为 2 Star；GitHub API 创建时间为 2026-10-26 08:07:29（北京时间）。",
+       "url": "https://github.com/web3illy/private-second-brain-skills/tree/c4bbba3a5b08426a55d17148ec7792c8dfcf2feb",
+       "src": "来源",
        "sources": [
         {
-         "src": "链接",
-         "url": "https://github.com/web3illy/private-second-brain-skills"
+         "src": "来源",
+         "url": "https://github.com/web3illy/private-second-brain-skills/tree/c4bbba3a5b08426a55d17148ec7792c8dfcf2feb"
         }
        ]
       },
       {
        "t": "Rainling-LingYusi014/misaki-qq-agent",
-       "d": "QQ 工具型 Agent：100+ 工具（办公/生图/媒体合成/subagent 外包）+ 预算治理 + 风险告警 + 手机仪表盘，中文社区作品。",
-       "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent",
-       "src": "链接",
-       "sources": [
-        {
-         "src": "链接",
-         "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "title": "四、论文/技术速览",
-     "items": [
-      {
-       "t": "Apollo 首席经济学家：AI 对大多数公司\"零财务回报\"",
-       "d": "大规模企业调研结论：多数公司尚未从 AI 投入中获得可衡量财务回报，与资本市场狂热形成反差。",
-       "url": "https://techcrunch.com/feed/",
+       "d": "项目方描述为 QQ 工具型 Agent，提供办公、图像、媒体合成、预算管理和告警等功能；“100+ 工具”为作者自述。核验观测为 1 Star；GitHub API 创建时间为 2026-10-26 09:04:32（北京时间），晚于原定 08:30 采编时点。 观测日期：2026-10-26；创建时间与 Star 来自 GitHub 仓库 API，README 使用上述固定提交版本。",
+       "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent/tree/df42c1323b1f0616c735d8c781c1cd2a2b978649",
        "src": "来源",
        "sources": [
         {
          "src": "来源",
-         "url": "https://techcrunch.com/feed/"
+         "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent/tree/df42c1323b1f0616c735d8c781c1cd2a2b978649"
         }
        ]
       }
@@ -17126,50 +16991,26 @@
      "title": "五、产业与观点",
      "items": [
       {
-       "t": "OpenAI 与 Anthropic 大降价：LLM 价格最高砍 80%",
-       "d": "OpenAI 年内将 GPT-4 API 成本降约 60%，Anthropic 部分 Claude 档位降价达 80%——推理成本战全面开打。",
-       "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
+       "t": "Apollo 经济学家讨论科技行业以外的 AI 回报",
+       "d": "Torsten Slok 于 10 月 24 日发表评论，以 S&P 493 与科技巨头的人均营收、利润率等宏观指标为依据。这是作者的分析观点，不能据此断言所有企业都没有 AI 回报，也不是逐家企业的大规模调查结论。",
+       "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
        "src": "来源",
        "sources": [
         {
          "src": "来源",
-         "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026"
+         "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector"
         }
        ]
       },
       {
-       "t": "Anthropic S-1 披露：2026 上半年净亏 807 亿美元（本周背景，10-21 披露）",
-       "d": "IPO 招股书显示营收狂奔与巨额算力成本并存。",
-       "url": "https://www.wsj.com",
+       "t": "Grok《Odyssey》首集媒体报道",
+       "d": "10 月 25 日报道回顾了 10 月 23 日发布的约 7 分钟首集，不能称整部长片已完成。",
+       "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
        "src": "来源",
        "sources": [
         {
          "src": "来源",
-         "url": "https://www.wsj.com"
-        }
-       ]
-      },
-      {
-       "t": "Grok 发布 AI 生成电影《Odyssey》前 7 分钟",
-       "d": "xAI 用自家模型生成的长片片段首次亮相。",
-       "url": "https://techcrunch.com/feed/",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://techcrunch.com/feed/"
-        }
-       ]
-      },
-      {
-       "t": "ChatGPT 在韩国逼近 Claude 市占",
-       "d": "GPT-6 Astra 发布后的区域市场变化。",
-       "url": "https://www.theinformation.com",
-       "src": "来源",
-       "sources": [
-        {
-         "src": "来源",
-         "url": "https://www.theinformation.com"
+         "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/"
         }
        ]
       }

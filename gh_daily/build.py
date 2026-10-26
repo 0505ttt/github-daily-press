@@ -74,6 +74,10 @@ def build_site(root: Path, *, hosted: bool = False, base_path: str = "/", allow_
     if not hosted and base_path != "/":
         raise ValueError("本地应用固定使用根路径；子路径仅供在线网站构建。")
     root = Path(root).resolve()
+    from .citations import check_workspace
+    citation_errors = check_workspace(root)
+    if citation_errors:
+        raise ValueError("AI 原文引用检查未通过：" + "、".join(citation_errors[:5]))
     builder = load_builder(root)
     db, logs, skipped = builder.build_db()
     if not db["issues"] and (not allow_empty or skipped):
