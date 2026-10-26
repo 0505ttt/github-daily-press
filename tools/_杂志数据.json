@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-25",
+ "generated_at": "2026-10-26",
  "meta": {
-  "count_days": 96,
-  "count_daily": 95,
-  "count_weekly": 1,
+  "count_days": 98,
+  "count_daily": 96,
+  "count_weekly": 2,
   "count_monthly": 0,
   "count_backfill": 50,
   "count_skipped": 0,
@@ -17,13 +17,13 @@
    "GitHub热点日报_2026-07-15.pdf",
    "GitHub热点日报_2026-07-16.pdf"
   ],
-  "count_projects": 947,
-  "count_repos": 344,
-  "count_archives": 376,
-  "count_ai_days": 6,
+  "count_projects": 971,
+  "count_repos": 346,
+  "count_archives": 378,
+  "count_ai_days": 7,
   "span": [
    "2026-07-10",
-   "2026-10-25"
+   "2026-10-26"
   ]
  },
  "issues": [
@@ -15103,6 +15103,429 @@
     "miss_total": 0,
     "miss_desc": 0
    }
+  },
+  {
+   "id": "daily:2026-10-26",
+   "period": "2026-10-26",
+   "file": "GitHub热点日报_2026-10-26.html",
+   "date": "2026-10-26",
+   "issue": 96,
+   "type": "daily",
+   "weekday": "星期一",
+   "week": "2026-W44",
+   "month": "2026-10",
+   "backfill": false,
+   "snapshot": "",
+   "snapshot_url": "",
+   "wind": "榜首易主：昨日新上榜的 开源本地 agent Cindy 一日登顶 （+675）——常驻 agent 竞赛（Claude Duet/Grok Bot）之下开源阵营速赢认可。Cloudflare 安全审计技能虽滑至 #10 但日增 +2,878 仍是全榜最热（连续第六日在榜）；设计双雄 hallmark 与 impeccable 同框、VoiceStudio 回流， \"创意工具日\" ；两个值得记下的新面孔： JetBrains 官方 agentic IDE thinkrail （大厂 IDE agent 化新棋子）与自托管 PaaS 老牌 coolify （PHP 生态回暖第二波）。",
+   "ai": [
+    {
+     "t": "OpenAI/Anthropic LLM 大降价最高 80%",
+     "d": "💵  ：GPT-4 API 年内降 60%、Claude 部分档位砍 80%",
+     "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
+     "src": "Emergent"
+    },
+    {
+     "t": "Kimi K3.1 Pro 官方文档上线",
+     "d": "🌙  ：Highspeed 版 2-3 倍速、编程距 Opus 5.5 仅 0.7 分、权重 11-4 前放",
+     "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+     "src": "Kimi 官方"
+    },
+    {
+     "t": "OpenAI 恢复训练但切断实时互联网",
+     "d": "🔌  ，Anthropic 早两周就已行动",
+     "url": "https://www.taipeitimes.com",
+     "src": "Taipei Times"
+    },
+    {
+     "t": "Agent 标准中立化",
+     "d": "🏛️  ：OpenAI 也把 agent 技术捐给 Agentic AI Foundation",
+     "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
+     "src": "Emergent"
+    },
+    {
+     "t": "Anthropic S-1：上半年净亏 807 亿美元",
+     "d": "📊  （IPO 招股书，本周背景）",
+     "url": "https://www.wsj.com",
+     "src": "WSJ"
+    },
+    {
+     "t": "\"AI 编码大战\"：GPT-5.3-Codex 对阵 Anthropic 新模型",
+     "d": "⚔️",
+     "url": "https://www.theinformation.com",
+     "src": "The Information"
+    },
+    {
+     "t": "Grok 发布 AI 生成电影《Odyssey》前 7 分钟",
+     "d": "🎬",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "Apollo 首席经济学家：AI 对多数公司\"零财务回报\"",
+     "d": "🧊",
+     "url": "https://techcrunch.com/feed/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "GLM-5.5 发布倒计时",
+     "d": "🧠  ：月底/11 月初口径不变，重置卡补偿被解读为前兆",
+     "url": "https://tech.ifeng.com/c/8xPRsqw746o",
+     "src": "凤凰"
+    },
+    {
+     "t": "METR 质疑 Anthropic 安全测试方法",
+     "d": "🔍  （虽认可灾难性风险低）",
+     "url": "https://metr.org",
+     "src": "METR"
+    }
+   ],
+   "projects": [
+    {
+     "rank": 1,
+     "repo": "makecindy/cindy",
+     "url": "https://github.com/makecindy/cindy",
+     "lang": "TypeScript",
+     "today": 675,
+     "total": 4893,
+     "cat": "A-AI机器学习 › 本地助手",
+     "tagline": "Cindy：\"Consider it done\"——开箱即用、在你自己电脑上真干活的开源 AI agent",
+     "desc": "开源本地 AI agent（cindy.app，Apache-2.0）：开箱即用、本地隐私优先、支持 Android。在 Claude Duet 等闭源常驻 agent 竞赛的白热化期，开源阵营的答卷一天就冲上榜首。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 2,
+     "repo": "Nutlope/hallmark",
+     "url": "https://github.com/Nutlope/hallmark",
+     "lang": "CSS",
+     "today": 1317,
+     "total": 33824,
+     "cat": "B-开发者工具 › 设计组件",
+     "tagline": "给 AI 生成 UI 加\"质感签名\"的设计组件库",
+     "desc": "让 AI 生成的界面摆脱模板脸的设计组件库，本库 7 月老朋友连续第二日在榜且加速（+1,317），设计层技能持续走俏。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 3,
+     "repo": "debpalash/VoiceStudio",
+     "url": "https://github.com/debpalash/VoiceStudio",
+     "lang": "Python",
+     "today": 1592,
+     "total": 86868,
+     "cat": "A-AI机器学习 › 语音技术",
+     "tagline": "开源全本地的 ElevenLabs 替代：语音克隆/设计/配音/转写/有声书，646 种语言",
+     "desc": "完全本地运行的开源语音工作站，总量已冲至 8.7 万星。本周 Mistral Voxtral 3、Block 语音模型接连发布，语音赛道整体回温带动回流。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 4,
+     "repo": "pbakaus/impeccable",
+     "url": "https://github.com/pbakaus/impeccable",
+     "lang": "Rust",
+     "today": 1092,
+     "total": 87725,
+     "cat": "B-开发者工具 › 设计技能",
+     "tagline": "让你的 AI harness 更懂设计的「设计语言」",
+     "desc": "Paul Bakaus 的设计语言技能，与 hallmark 构成\"设计双雄同框\"，agent 前端审美基建的两大支柱同时加速。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 5,
+     "repo": "pollen-robotics/microduck",
+     "url": "https://github.com/pollen-robotics/microduck",
+     "lang": "Rust",
+     "today": 647,
+     "total": 11663,
+     "cat": "A-AI机器学习 › 具身智能",
+     "tagline": "黄仁勋带货 2 万台售罄的 Microduck：强化学习驱动的小型双足机器人开源本体",
+     "desc": "Pollen Robotics 的 RL 双足机器人开源本体，带货效应持续发酵，连续第二日在榜稳步上涨。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 6,
+     "repo": "TauricResearch/TradingAgents",
+     "url": "https://github.com/TauricResearch/TradingAgents",
+     "lang": "Python",
+     "today": 381,
+     "total": 114637,
+     "cat": "A-AI机器学习 › 量化交易Agent",
+     "tagline": "多 Agent LLM 金融交易框架：分析师/风控/交易员角色分工协作",
+     "desc": "多 agent 金融交易框架（分析师、研究员、风控、交易员多角色协作），11.5 万星老牌回流——恰逢 Kimi K3.1 Pro 主打金融研究能力的新闻周期。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 7,
+     "repo": "Renhuai123/ziwei-doushu",
+     "url": "https://github.com/Renhuai123/ziwei-doushu",
+     "lang": "TypeScript",
+     "today": 199,
+     "total": 7591,
+     "cat": "L-学习资源-其他 › 命理工具",
+     "tagline": "开源紫微斗数排盘引擎：「算法是公开的传统智慧，不应该被锁在围墙里」",
+     "desc": "基于倪海厦《天纪》体系的开源排盘引擎连续第二日在榜，玄学 × 开源的破圈组合热度未散。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 8,
+     "repo": "JetBrains/thinkrail",
+     "url": "https://github.com/JetBrains/thinkrail",
+     "lang": "TypeScript",
+     "today": 51,
+     "total": 1767,
+     "cat": "B-开发者工具 › Agentic IDE",
+     "tagline": "JetBrains 出品：越用越懂你项目的 agentic IDE",
+     "desc": "JetBrains 官方 agentic IDE：基于 pi coding agent 构建，隔离工作区 + 持久项目知识（living specs），\"今天学你的项目、明天自建能力\"。老牌 IDE 大厂正式下场的标志性产品。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 9,
+     "repo": "coollabsio/coolify",
+     "url": "https://github.com/coollabsio/coolify",
+     "lang": "PHP",
+     "today": 152,
+     "total": 64406,
+     "cat": "E-基础设施-DevOps › 自托管PaaS",
+     "tagline": "开源自托管部署平台：在你自己的服务器上部署应用/数据库/服务",
+     "desc": "开源自托管 PaaS（对标 Vercel/Heroku 的自有服务器版），\"开源且永久免费\"，6.4 万星。继 php-src 之后 PHP 生态回暖第二波——自托管与数据主权需求持续升温。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 10,
+     "repo": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill",
+     "lang": "JavaScript",
+     "today": 2878,
+     "total": 46947,
+     "cat": "G-安全 › 安全审计",
+     "tagline": "Cloudflare 出品：多阶段安全审计技能，产出独立验证、机器可读的结果",
+     "desc": "六连在榜的安全审计技能虽按 Trending 排序滑至 #10，但日增 +2,878 仍是全榜最热、总量逼近 4.7 万星。CEO\"天塌\"论发酵一周后，安全主题已成本月最稳定赛道。",
+     "field": "",
+     "hot": true
+    }
+   ],
+   "meta": {
+    "quick_rows": 10,
+    "cards": 10,
+    "ai_items": 10,
+    "miss_total": 0,
+    "miss_desc": 0
+   }
+  },
+  {
+   "id": "weekly:2026-W44",
+   "period": "2026-W44",
+   "file": "GitHub热点周报_2026-W44.html",
+   "date": "2026-10-26",
+   "issue": 2,
+   "type": "weekly",
+   "weekday": "星期一",
+   "week": "2026-W44",
+   "month": "2026-10",
+   "backfill": false,
+   "snapshot": "",
+   "snapshot_url": "",
+   "wind": "上周的主角是 morluto/rea 的现象级一家独大（周增 22.9 万）； 本周的主题则是\"安全接棒\" ——Cloudflare 安全审计技能周增 15,072 夺冠，且从上周的第 4 位一路五连霸日榜，CEO\"天塌\"言论与 Agent Skills 标准捐入基金会把 agent 安全推上风口。结构性看点：agent 生态 14 席占 11 席；orca（+9,622）与 graphify（+6,903）两匹黑马放量；andrej-karpathy-skills 总量已达 22.4 万星，成为本库追踪以来成长最快的技能仓库之一；JetBrains/Google/AWS/Anthropic/Cloudflare/英伟达六家大厂同周在榜，\"官方进场\"已成主旋律。",
+   "ai": [],
+   "projects": [
+    {
+     "rank": 1,
+     "repo": "cloudflare/security-audit-skill",
+     "url": "https://github.com/cloudflare/security-audit-skill",
+     "lang": "JavaScript",
+     "today": 15072,
+     "total": 46947,
+     "cat": "G-安全 › 安全审计",
+     "tagline": "Cloudflare 出品：多阶段安全审计技能，产出独立验证、机器可读的结果",
+     "desc": "本周绝对主角：从上周周榜第 4 跃居冠军，日榜连续在榜 6 天，周增超过后四名之和的一半。CEO\"每周 AI 发现漏洞披露将像天塌下来\"的路透采访与其形成完美互文，agent 安全审计从新赛道变成刚需标配。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 2,
+     "repo": "ruvnet/ruflo",
+     "url": "https://github.com/ruvnet/ruflo",
+     "lang": "TypeScript",
+     "today": 2987,
+     "total": 79287,
+     "cat": "B-开发者工具 › 多Agent编排",
+     "tagline": "原创多 Agent 元 harness：多玩家 swarm、自适应记忆、自学习与联邦",
+     "desc": "多智能体编排框架稳定周更约 3 千星，本库连续两周在榜的老面孔。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 3,
+     "repo": "anthropics/knowledge-work-plugins",
+     "url": "https://github.com/anthropics/knowledge-work-plugins",
+     "lang": "Python",
+     "today": 2790,
+     "total": 32988,
+     "cat": "B-开发者工具 › Claude插件",
+     "tagline": "Anthropic 官方知识工作者插件库（Claude Cowork 场景）",
+     "desc": "配合本周 Agent Skills 标准捐入基金会，官方插件生态标准化叙事持续发酵。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 4,
+     "repo": "anomalyco/opencode",
+     "url": "https://github.com/anomalyco/opencode",
+     "lang": "TypeScript",
+     "today": 5921,
+     "total": 221533,
+     "cat": "A-AI机器学习 › AI编程Agent",
+     "tagline": "开源编码 agent：The open source coding agent",
+     "desc": "开源编码 agent 旗舰周增近 6 千、总量 22 万星；供应链攻击事件后热度未受影响，但请从官方渠道安装。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 5,
+     "repo": "stablyai/orca",
+     "url": "https://github.com/stablyai/orca",
+     "lang": "TypeScript",
+     "today": 9622,
+     "total": 105856,
+     "cat": "B-开发者工具 › Agent管理",
+     "tagline": "Agent 机队工作台：用自己的订阅跑任意编码 agent，桌面/移动/远端三端",
+     "desc": "本周最大黑马之一：周增 9,622 排名第五，总量突破 10.5 万星，\"机队管理\"模式获市场验证。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 6,
+     "repo": "heygen-com/hyperframes",
+     "url": "https://github.com/heygen-com/hyperframes",
+     "lang": "TypeScript",
+     "today": 5612,
+     "total": 72179,
+     "cat": "A-AI机器学习 › AI视频",
+     "tagline": "写 HTML，渲染成视频——HeyGen 出品，为 agent 而设计",
+     "desc": "声明式视频生产新范式周增 5.6 千，AI 视频赛道从\"生成\"走向\"编排\"。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 7,
+     "repo": "android/skills",
+     "url": "https://github.com/android/skills",
+     "lang": "Kotlin",
+     "today": 1070,
+     "total": 9720,
+     "cat": "B-开发者工具 › Agent技能",
+     "tagline": "Google Android 官方 Agent 技能仓库",
+     "desc": "大厂官方技能仓库稳步爬升，Agent Skills 标准化浪潮的移动端注脚。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 8,
+     "repo": "Graphify-Labs/graphify",
+     "url": "https://github.com/Graphify-Labs/graphify",
+     "lang": "Python",
+     "today": 6903,
+     "total": 135273,
+     "cat": "B-开发者工具 › 代码知识图谱",
+     "tagline": "把任意代码库变成可查询知识图谱：本地 AST 解析、每条边可解释、无需向量库",
+     "desc": "代码理解基建周增近 7 千，\"确定性 AST + 可解释图谱\"路线持续吃到大模型代码理解的刚需红利。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 9,
+     "repo": "akitaonrails/ai-memory",
+     "url": "https://github.com/akitaonrails/ai-memory",
+     "lang": "Rust",
+     "today": 3254,
+     "total": 13528,
+     "cat": "B-开发者工具 › Agent记忆",
+     "tagline": "编码 agent CLI 的长期记忆方案，兼做跨厂商 agent 交接",
+     "desc": "\"agent 记忆\"赛道代表：与 headroom（上下文压缩）构成\"记忆+压缩\"组合拳，本周双双放量。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 10,
+     "repo": "Comfy-Org/ComfyUI",
+     "url": "https://github.com/Comfy-Org/ComfyUI",
+     "lang": "Python",
+     "today": 4790,
+     "total": 142945,
+     "cat": "K-游戏-图形 › AI图像生成",
+     "tagline": "最强大最模块化的扩散模型 GUI/API/后端：节点式界面 + 世界最快本地推理引擎",
+     "desc": "本地图像工作流事实标准连续三周在榜，14 万星长青。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 11,
+     "repo": "anthropics/claude-plugins-official",
+     "url": "https://github.com/anthropics/claude-plugins-official",
+     "lang": "Python",
+     "today": 2245,
+     "total": 44567,
+     "cat": "B-开发者工具 › Claude插件",
+     "tagline": "Anthropic 官方维护的 Claude Code 高质量插件目录",
+     "desc": "官方插件目录稳定周更，与知识工作插件库构成 Anthropic 生态双入口。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 12,
+     "repo": "vllm-project/vllm",
+     "url": "https://github.com/vllm-project/vllm",
+     "lang": "Python",
+     "today": 1445,
+     "total": 95497,
+     "cat": "A-AI机器学习 › LLM推理",
+     "tagline": "LLM 高吞吐、内存高效的推理与服务引擎（行业标准之一）",
+     "desc": "推理引擎标准件连续在榜；在 OpenAI/Anthropic 大降价 80% 的一周，自托管推理的性价比叙事反而更受关注。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 13,
+     "repo": "multica-ai/andrej-karpathy-skills",
+     "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+     "lang": "未标注",
+     "today": 2937,
+     "total": 223863,
+     "cat": "B-开发者工具 › 行为规范",
+     "tagline": "一份 CLAUDE.md：按 Karpathy 对 LLM 编码陷阱的观察改进 Claude Code 行为",
+     "desc": "本库 8 月底首次收录时还是几十星的新项目，如今总量已达 22.4 万星——单文件技能仓库成长为巨型资产的罕见样本，\"Karpathy 方法论\"的品牌效应惊人。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 14,
+     "repo": "pingdotgg/t3code",
+     "url": "https://github.com/pingdotgg/t3code",
+     "lang": "TypeScript",
+     "today": 1770,
+     "total": 30134,
+     "cat": "B-开发者工具 › AI编程工具",
+     "tagline": "（快照未含描述）T3 栈作者 Theo 的 t3code 项目",
+     "desc": "T3 生态作者 Theo（pingdotgg）的编码工具，本库 8 月补档期曾收录，如今 3 万星正式进入周榜——个人 IP 驱动的开发者工具样本。",
+     "field": "",
+     "hot": true
+    }
+   ],
+   "meta": {
+    "quick_rows": 14,
+    "cards": 14,
+    "ai_items": 0,
+    "miss_total": 0,
+    "miss_desc": 0
+   }
   }
  ],
  "ai_days": {
@@ -16566,6 +16989,193 @@
      ]
     }
    ]
+  },
+  "2026-10-26": {
+   "date": "2026-10-26",
+   "file": "2026-10-26-AI日报.md",
+   "sections": [
+    {
+     "title": "一、大模型动态",
+     "items": [
+      {
+       "t": "Kimi K3.1 Pro 官方文档上线，Highspeed 高速版同步推出",
+       "d": "同等智能下输出速度约 2~3 倍；完整权重确认 11 月 4 日前发布；官方数据显示编程能力距 Claude Opus 5.5 仅差 0.7 分、智能指数 55 分跻身全球第四，是得分最高的开源权重模型之一。",
+       "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart"
+        }
+       ]
+      },
+      {
+       "t": "智谱 GLM-5.5 发布倒计时（仍未官宣）",
+       "d": "网传专家纪要维持\"10 月底-11 月初、2.5~3.5 万亿参数\"口径；Coding Plan 用户的\"降智补偿 3 张重置卡\"被普遍解读为发布前信号。",
+       "url": "https://tech.ifeng.com/c/8xPRsqw746o",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://tech.ifeng.com/c/8xPRsqw746o"
+        }
+       ]
+      },
+      {
+       "t": "\"AI 编码大战\"升温",
+       "d": "OpenAI 推出 GPT-5.3-Codex，Anthropic 同步更新新模型，编码 agent 赛道贴身肉搏。",
+       "url": "https://www.theinformation.com",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.theinformation.com"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "二、Agent 与工程实践",
+     "items": [
+      {
+       "t": "OpenAI 恢复训练但切断实时互联网，Anthropic 早两周就已行动",
+       "d": "OpenAI 开始在最强调练中切断实时网络访问；报道显示 Anthropic 比其早约两周开始限制新模型的实时联网。",
+       "url": "https://www.taipeitimes.com",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.taipeitimes.com"
+        }
+       ]
+      },
+      {
+       "t": "Agent 标准全面中立化：OpenAI 也把 agent 技术捐给 Agentic AI Foundation",
+       "d": "继 Anthropic 捐出 Agent Skills 标准与 MCP 之后，OpenAI 加入捐赠行列，agent 标准进入\"中立基金会\"时代。",
+       "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026"
+        }
+       ]
+      },
+      {
+       "t": "安全评估机构 METR 质疑 Anthropic 的安全测试方法",
+       "d": "即便认可\"灾难性风险低\"，METR 仍对其测试方法论提出疑问——上市前的第三方压力测试。",
+       "url": "https://metr.org",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://metr.org"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "三、GitHub 热门 AI 项目（24-48h 新仓库）",
+     "items": [
+      {
+       "t": "web3illy/private-second-brain-skills",
+       "d": "Wisp 的私有第二大脑：8 个 Agent Skills 记住\"说过什么、决定了什么、承诺过什么\"，兼容 Claude Code 与 Codex。",
+       "url": "https://github.com/web3illy/private-second-brain-skills",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/web3illy/private-second-brain-skills"
+        }
+       ]
+      },
+      {
+       "t": "Rainling-LingYusi014/misaki-qq-agent",
+       "d": "QQ 工具型 Agent：100+ 工具（办公/生图/媒体合成/subagent 外包）+ 预算治理 + 风险告警 + 手机仪表盘，中文社区作品。",
+       "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/Rainling-LingYusi014/misaki-qq-agent"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "四、论文/技术速览",
+     "items": [
+      {
+       "t": "Apollo 首席经济学家：AI 对大多数公司\"零财务回报\"",
+       "d": "大规模企业调研结论：多数公司尚未从 AI 投入中获得可衡量财务回报，与资本市场狂热形成反差。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "五、产业与观点",
+     "items": [
+      {
+       "t": "OpenAI 与 Anthropic 大降价：LLM 价格最高砍 80%",
+       "d": "OpenAI 年内将 GPT-4 API 成本降约 60%，Anthropic 部分 Claude 档位降价达 80%——推理成本战全面开打。",
+       "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://emergent.sh/news/openai-anthropic-slash-llm-prices-up-80-2026"
+        }
+       ]
+      },
+      {
+       "t": "Anthropic S-1 披露：2026 上半年净亏 807 亿美元（本周背景，10-21 披露）",
+       "d": "IPO 招股书显示营收狂奔与巨额算力成本并存。",
+       "url": "https://www.wsj.com",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.wsj.com"
+        }
+       ]
+      },
+      {
+       "t": "Grok 发布 AI 生成电影《Odyssey》前 7 分钟",
+       "d": "xAI 用自家模型生成的长片片段首次亮相。",
+       "url": "https://techcrunch.com/feed/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/feed/"
+        }
+       ]
+      },
+      {
+       "t": "ChatGPT 在韩国逼近 Claude 市占",
+       "d": "GPT-6 Astra 发布后的区域市场变化。",
+       "url": "https://www.theinformation.com",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.theinformation.com"
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "projects": {
@@ -16680,10 +17290,10 @@
    "tagline": "Android 官方 Agent 技能仓库",
    "desc": "【补档说明】本档案由 2026-10 补档程序依据 Wayback Machine 快照自动生成，详细介绍从略。快照期仓库描述：无",
    "field": "",
-   "total": 8695,
+   "total": 9720,
    "first": "2026-10-17",
-   "last": "2026-10-19",
-   "count": 3,
+   "last": "2026-10-26",
+   "count": 4,
    "records": [
     {
      "date": "2026-10-17",
@@ -16714,6 +17324,16 @@
      "id": "daily:2026-10-19",
      "total": 8695,
      "today": 381
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 7,
+     "rank_label": "W#7",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 9720,
+     "today": 1070
     }
    ],
    "src": "archive"
@@ -20191,10 +20811,10 @@
    "tagline": "开源紫微斗数排盘引擎：「算法是公开的传统智慧，不应该被锁在围墙里」",
    "desc": "开源紫微斗数排盘引擎：基于倪海厦《天纪》体系，中英双语，官网 metisziwei.com。理念是「算法是公开的传统智慧，不应该被锁在围墙里」。2026-10-24 首次上榜。",
    "field": "",
-   "total": 6993,
+   "total": 7591,
    "first": "2026-10-24",
-   "last": "2026-10-24",
-   "count": 1,
+   "last": "2026-10-26",
+   "count": 2,
    "records": [
     {
      "date": "2026-10-24",
@@ -20205,6 +20825,16 @@
      "id": "daily:2026-10-24",
      "total": 6993,
      "today": 546
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 7,
+     "rank_label": "#7",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 7591,
+     "today": 199
     }
    ],
    "src": "archive"
@@ -20473,10 +21103,10 @@
    "tagline": "Cloudflare 出品的编程 Agent 安全审计技能：六阶段流水线 + 对抗式验证，把你的 Agent 变成安全审计员",
    "desc": "这是一个 coding-agent skill（npx skills add 一行装进 Claude Code 等编程 Agent），源自 Cloudflare 官方博客《Build your own vulnerability harness》中漏洞挖掘 harness 的单仓库起点。它编排多个隔离 Agent 走六阶段审计流水线：侦察（并行研究 Agent 映射架构、信任边界与输入面）→ 狩猎（多个通用 Agent 按攻击类并行进攻：注入/访问控制/业务逻辑/密码学/链式攻击，可再派子 Agent 深挖）→ 验证（专门的独立 Agent 反过来试图推翻每条发现，对抗式杀死误报）→ 报告（人类可读 REPORT.md）→ 结构化输出（符合 report-schema.json 的 findings.json，附带零依赖校验脚本）→ 独立复核（全新 Agent 逐条核对事实声明）。对同一仓库多次运行是叠加式的：会读取历史 findings.json 跳过已知问题、专攻未覆盖路径。核心区别于普通 AI 审计工具的地方：对抗验证 + 机器可读输出 + 独立复核三重把关。",
    "field": "",
-   "total": 45355,
+   "total": 46947,
    "first": "2026-09-18",
-   "last": "2026-10-25",
-   "count": 9,
+   "last": "2026-10-26",
+   "count": 11,
    "records": [
     {
      "date": "2026-09-18",
@@ -20567,6 +21197,26 @@
      "id": "daily:2026-10-25",
      "total": 45355,
      "today": 2264
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 10,
+     "rank_label": "#10",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 46947,
+     "today": 2878
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 1,
+     "total": 46947,
+     "today": 15072,
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "rank_label": "W#1"
     }
    ],
    "src": "archive"
@@ -21588,10 +22238,10 @@
    "tagline": "最强大、最模块化的扩散模型 GUI、API 和后端——节点/图形化界面",
    "desc": "ComfyUI 是 AI 图像/视频生成领域最知名的节点式工作流工具，提供了一个基于图形/节点的界面来设计和执行扩散模型管线。它将 Stable Diffusion、FLUX、视频生成等各类模型的加载器、采样器、控制网、LoRA 等组件抽象为可拖拽连接的节点，让用户像搭电路一样构建复杂的生成流程。核心优势在于极强的模块化和可扩展性——庞大的自定义节点生态（数万个社区节点）、完整的 API 和后端服务、支持本地和云端部署。12.5 万 stars 的体量使其成为 AIGC 创作工具的事实标准之一。",
    "field": "",
-   "total": 141549,
+   "total": 142945,
    "first": "2026-08-10",
-   "last": "2026-10-22",
-   "count": 4,
+   "last": "2026-10-26",
+   "count": 5,
    "records": [
     {
      "date": "2026-08-10",
@@ -21632,6 +22282,16 @@
      "id": "daily:2026-10-22",
      "total": 141549,
      "today": 939
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 10,
+     "rank_label": "W#10",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 142945,
+     "today": 4790
     }
    ],
    "src": "archive"
@@ -22172,10 +22832,10 @@
    "tagline": "Anthropic 官方维护的高质量 Claude Code 插件目录",
    "desc": "官方出品的插件精选仓库，收录经过 Anthropic 管理筛选的高质量 Claude Code 插件。找官方背书插件的第一站。",
    "field": "",
-   "total": 42708,
+   "total": 44567,
    "first": "2026-08-27",
-   "last": "2026-10-19",
-   "count": 9,
+   "last": "2026-10-26",
+   "count": 10,
    "records": [
     {
      "date": "2026-08-27",
@@ -22266,6 +22926,16 @@
      "id": "weekly:2026-W43",
      "total": 42708,
      "today": 4774
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 11,
+     "rank_label": "W#11",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 44567,
+     "today": 2245
     }
    ],
    "src": "archive"
@@ -22674,10 +23344,10 @@
    "tagline": "原创 agent 元 harness：多玩家 swarm、自适应记忆、自学习与 RAG 一体",
    "desc": "自称「元 harness」：部署多玩家智能集群、编排自主工作流、构建对话式 AI 系统，原生接入 Claude Code/Codex/Hermes 等一大串客户端。",
    "field": "",
-   "total": 77861,
+   "total": 79287,
    "first": "2026-09-06",
-   "last": "2026-10-21",
-   "count": 7,
+   "last": "2026-10-26",
+   "count": 8,
    "records": [
     {
      "date": "2026-09-06",
@@ -22748,6 +23418,16 @@
      "id": "daily:2026-10-21",
      "total": 77861,
      "today": 684
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 2,
+     "rank_label": "W#2",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 79287,
+     "today": 2987
     }
    ],
    "src": "archive"
@@ -24309,10 +24989,10 @@
    "tagline": "Anthropic 官方的 Claude 知识工作插件库：把 Claude 训成销售、法务、HR、产品等岗位专家",
    "desc": "Anthropic 面向 Claude Cowork（兼容 Claude Code）的官方插件市场仓库。每个插件按岗位职能打包四件套——技能、连接器、斜杠命令、子 Agent：销售（研究潜客、备战电话、写外联、做竞争战卡）、客服（分诊工单、起草回复、打包升级、沉淀知识库文章）、产品管理（写规格、排路线图、综合用户研究）、法务（合同审查、NDA 分诊、合规流程）、HR、数据分析（写 SQL、做仪表盘）等。所有组件都是纯文件（markdown + JSON），无代码、无基础设施、无构建步骤。设计定位是「可定制的起点」：改 .mcp.json 换成你自己的工具栈，往技能文件里塞公司术语、组织结构和流程，Claude 就成了懂你们公司的岗位专家。Claude Code 一条命令即可从该 marketplace 安装指定插件。",
    "field": "",
-   "total": 32322,
+   "total": 32988,
    "first": "2026-09-17",
-   "last": "2026-10-24",
-   "count": 6,
+   "last": "2026-10-26",
+   "count": 7,
    "records": [
     {
      "date": "2026-09-18",
@@ -24373,6 +25053,16 @@
      "id": "daily:2026-10-24",
      "total": 32322,
      "today": 635
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 3,
+     "rank_label": "W#3",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 32988,
+     "today": 2790
     }
    ],
    "src": "archive"
@@ -24585,10 +25275,10 @@
    "tagline": "给 AI 编程 Agent 装上长期记忆——Claude Code 干到一半换 Codex 接着干",
    "desc": "ai-memory 解决编程 Agent 的「失忆」问题：在 Claude Code 里干到一半的任务，切换到 OpenAI Codex 后不用重新解释架构、失败的尝试和待办问题，直接无缝接续。它通过 MCP 配置 + 生命周期钩子接入各家 Agent CLI，支持 Claude Code、Codex、Cursor、Gemini CLI、OpenCode、Devin CLI 等 10 余种工具，跨厂商共享项目记忆。核心机制是把项目历史整理为可检索的长期记忆（不断合并摘要），并以「workstream」形式支持跨工具会话延续（ai-memory run 命令可透明切换 Agent 而不丢上下文）。Rust 编写，提供 Docker 镜像、macOS ARM/x86 原生二进制、Windows 实验版和 systemd 单元等多种部署形态。与各家官方记忆方案的区别在于「厂商中立」——记忆不绑定任何一家 Agent。",
    "field": "",
-   "total": 11605,
+   "total": 13528,
    "first": "2026-08-18",
-   "last": "2026-10-20",
-   "count": 6,
+   "last": "2026-10-26",
+   "count": 7,
    "records": [
     {
      "date": "2026-08-18",
@@ -24649,6 +25339,16 @@
      "id": "daily:2026-10-20",
      "total": 11605,
      "today": 666
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 9,
+     "rank_label": "W#9",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 13528,
+     "today": 3254
     }
    ],
    "src": "archive"
@@ -25416,10 +26116,10 @@
    "tagline": "将任意代码/文档/图片/视频转化为可查询知识图谱的 AI 编程技能",
    "desc": "Graphify 是一个 AI 编程助手技能（Skill），支持 Claude Code、Codex、OpenCode、Cursor、Gemini CLI 等多种工具。它将任意文件夹中的代码、SQL Schema、R 脚本、Shell 脚本、文档、论文、图片或视频转化为可查询的知识图谱，将应用代码 + 数据库 Schema + 基础设施统一到一个图中。核心能力包括：自动代码解析与实体提取、社区检测算法、置信度评分、以及基于图结构的智能查询。项目还推出了商业产品 Penpax——一个始终在线的个人知识层，持续索引会议、浏览器历史、邮件和文件。支持 Docker MCP Toolkit + SQLite 集成。",
    "field": "",
-   "total": 132954,
+   "total": 135273,
    "first": "2026-07-14",
-   "last": "2026-10-23",
-   "count": 4,
+   "last": "2026-10-26",
+   "count": 5,
    "records": [
     {
      "date": "2026-07-14",
@@ -25460,6 +26160,16 @@
      "id": "daily:2026-10-23",
      "total": 132954,
      "today": 1408
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 8,
+     "rank_label": "W#8",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 135273,
+     "today": 6903
     }
    ],
    "src": "archive"
@@ -25544,10 +26254,10 @@
    "tagline": "反 AI 糙设计技能——让 Claude Code / Cursor / Codex 生成的 UI 不再有 AI 味",
    "desc": "Hallmark 由 Together AI 团队开发，是一个面向 AI 编程助手的设计技能（Design Skill）。它将反 AI-slop 的设计共识——排版、配色、布局、动效、微交互、结构多样性——编码为一套有主见的规则集。核心特色：22 种主题、4 种动词模式（构建/审计/重设计/学习）、21 种命名宏结构、65 道 slop-test 检测门、预发射自我批评、以及独有的 study 功能（从截图或 URL 提取设计 DNA）。项目记忆系统会记录每次运行的结构和主题，确保连续输出不重复。支持 Claude Code、Cursor、Codex 一键安装。",
    "field": "",
-   "total": 32582,
+   "total": 33824,
    "first": "2026-07-14",
-   "last": "2026-10-25",
-   "count": 4,
+   "last": "2026-10-26",
+   "count": 5,
    "records": [
     {
      "date": "2026-07-14",
@@ -25588,6 +26298,16 @@
      "id": "daily:2026-10-25",
      "total": 32582,
      "today": 455
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 2,
+     "rank_label": "#2",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 33824,
+     "today": 1317
     }
    ],
    "src": "archive"
@@ -25654,6 +26374,32 @@
    ],
    "src": "archive"
   },
+  "JetBrains/thinkrail": {
+   "repo": "JetBrains/thinkrail",
+   "url": "https://github.com/JetBrains/thinkrail",
+   "lang": "TypeScript",
+   "cat": "B-开发者工具 › AI编程工具 › Agentic IDE",
+   "tagline": "JetBrains 出品：越用越懂你项目的 agentic IDE",
+   "desc": "JetBrains 官方 agentic IDE（thinkrail.ai）：基于 pi coding agent 构建，隔离工作区 + 持久项目知识（living specs），定位\"今天学你的项目、明天自建能力\"。老牌 IDE 大厂正式下场 agent 化的标志性产品，2026-10-26 首次上榜。",
+   "field": "",
+   "total": 1767,
+   "first": "2026-10-26",
+   "last": "2026-10-26",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-26",
+     "rank": 8,
+     "rank_label": "#8",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 1767,
+     "today": 51
+    }
+   ],
+   "src": "archive"
+  },
   "stablyai/orca": {
    "repo": "stablyai/orca",
    "url": "https://github.com/stablyai/orca",
@@ -25662,10 +26408,10 @@
    "tagline": "并行 AI 编码 Agent 的编排平台——用一个界面同时管理你的整个 Agent 舰队",
    "desc": "Orca 是一个 ADE（Agent Development Environment），专为并行运行多个 AI 编码 Agent 而设计。它让你可以同时运行 Claude Code、Codex、OpenCode、Cursor 等任何 CLI 编码 Agent——每个 Agent 在独立的 git worktree 中工作，结果集中在一个界面中追踪和对比。核心功能包括：并行 worktree 编排（一个 prompt 分发给 5 个 Agent 各自跑，比较结果后合并赢家）、移动端伴侣 App（手机监控和操控 Agent）、Ghostty 级 WebGL 终端分屏、Design Mode（点击 Chromium 窗口中任意 UI 元素直接送入 Agent prompt）、GitHub 和 Linear 原生集成、SSH 远程 worktree、AI diff 标注。你用自己的订阅（Claude/Codex 等），无需额外 API 费用。MIT 开源，桌面版支持 macOS/Windows/Linux，有移动端 App 和 CLI。",
    "field": "",
-   "total": 101344,
+   "total": 105856,
    "first": "2026-08-12",
-   "last": "2026-10-22",
-   "count": 7,
+   "last": "2026-10-26",
+   "count": 8,
    "records": [
     {
      "date": "2026-08-12",
@@ -25736,6 +26482,16 @@
      "id": "daily:2026-10-22",
      "total": 101344,
      "today": 1541
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 5,
+     "rank_label": "W#5",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 105856,
+     "today": 9622
     }
    ],
    "src": "archive"
@@ -25856,10 +26612,10 @@
    "tagline": "AI 编码 Agent 的极简 Web GUI——为 Codex、Claude、Cursor、OpenCode 等提供统一界面",
    "desc": "T3 Code 是一个极简的 Web GUI，用于管理和驱动各类 AI 编码 Agent（目前支持 Codex、Claude、Cursor、OpenCode，更多即将支持）。由知名开发者/YouTuber Theo（t3dotgg）开发，是 T3 生态的一部分（与 create-t3-app、t3.chat 同系列）。核心理念是\"一个界面管理所有 AI 编码工具\"，让你不必在多个终端窗口和 Agent 之间切换。项目完全开源，基于 TypeScript 构建，专为喜欢在浏览器中操作 AI Agent 的开发者设计。与同类工具的区别在于其极简设计和对多种 Agent 的统一抽象。",
    "field": "",
-   "total": 25095,
+   "total": 30134,
    "first": "2026-07-26",
-   "last": "2026-10-05",
-   "count": 5,
+   "last": "2026-10-26",
+   "count": 6,
    "records": [
     {
      "date": "2026-07-26",
@@ -25910,6 +26666,16 @@
      "id": "daily:2026-10-05",
      "total": 25095,
      "today": 492
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 14,
+     "rank_label": "W#14",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 30134,
+     "today": 1770
     }
    ],
    "src": "archive"
@@ -26984,6 +27750,32 @@
    ],
    "src": "archive"
   },
+  "coollabsio/coolify": {
+   "repo": "coollabsio/coolify",
+   "url": "https://github.com/coollabsio/coolify",
+   "lang": "PHP",
+   "cat": "E-基础设施-DevOps › 自托管PaaS",
+   "tagline": "开源自托管部署平台：在你自己的服务器上部署应用/数据库/服务",
+   "desc": "开源自托管部署平台（coolify.io）：在你自己的服务器上部署应用、数据库与服务的开源 PaaS，对标 Vercel/Heroku 的自有服务器版，\"开源且永久免费\"，2021 年创建、6.4 万星老牌。2026-10-26 回流上榜（PHP 生态回暖）。",
+   "field": "",
+   "total": 64406,
+   "first": "2026-10-26",
+   "last": "2026-10-26",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-26",
+     "rank": 9,
+     "rank_label": "#9",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 64406,
+     "today": 152
+    }
+   ],
+   "src": "archive"
+  },
   "hashicorp/terraform": {
    "repo": "hashicorp/terraform",
    "url": "https://github.com/hashicorp/terraform",
@@ -27316,10 +28108,10 @@
    "tagline": "一份 CLAUDE.md：按 Karpathy 对 LLM 编码陷阱的观察改进 Claude Code 行为",
    "desc": "【补档说明】本档案由 2026-10 补档程序依据 Wayback Machine 快照自动生成，详细介绍从略。快照期仓库描述：A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
    "field": "",
-   "total": 211427,
+   "total": 223863,
    "first": "2026-08-25",
-   "last": "2026-09-09",
-   "count": 2,
+   "last": "2026-10-26",
+   "count": 3,
    "records": [
     {
      "date": "2026-08-25",
@@ -27340,6 +28132,16 @@
      "id": "daily:2026-09-09",
      "total": 211427,
      "today": 533
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 13,
+     "rank_label": "W#13",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 223863,
+     "today": 2937
     }
    ],
    "src": "archive"
@@ -28010,10 +28812,10 @@
    "tagline": "写 HTML，渲染成视频——HeyGen 出品，为 agent 而设计",
    "desc": "HeyGen 官方开源的视频渲染方案：用 HTML/CSS 描述画面即可渲染成片，天然适配 agent 生成。 declarative 视频生产的新范式。",
    "field": "",
-   "total": 66755,
+   "total": 72179,
    "first": "2026-09-08",
-   "last": "2026-10-19",
-   "count": 6,
+   "last": "2026-10-26",
+   "count": 7,
    "records": [
     {
      "date": "2026-09-08",
@@ -28074,6 +28876,16 @@
      "id": "weekly:2026-W43",
      "total": 66755,
      "today": 5883
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 6,
+     "rank_label": "W#6",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 72179,
+     "today": 5612
     }
    ],
    "src": "archive"
@@ -28716,10 +29528,10 @@
    "tagline": "开源编码 agent：The open source coding agent",
    "desc": "【补档说明】本档案由 2026-10 补档程序依据 Wayback Machine 快照自动生成，详细介绍从略。快照期仓库描述：The open source coding agent.",
    "field": "",
-   "total": 218948,
+   "total": 221533,
    "first": "2026-09-06",
-   "last": "2026-10-21",
-   "count": 5,
+   "last": "2026-10-26",
+   "count": 6,
    "records": [
     {
      "date": "2026-09-06",
@@ -28770,6 +29582,16 @@
      "id": "daily:2026-10-21",
      "total": 218948,
      "today": 1240
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 4,
+     "rank_label": "W#4",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 221533,
+     "today": 5921
     }
    ],
    "src": "archive"
@@ -28782,10 +29604,10 @@
    "tagline": "多 Agent LLM 金融交易框架：分析师/风控/交易员角色分工协作",
    "desc": "【补档说明】本档案由 2026-10 补档程序依据 Wayback Machine 快照自动生成，详细介绍从略。快照期仓库描述：TradingAgents: Multi-Agents LLM Financial Trading Framework",
    "field": "",
-   "total": 103881,
+   "total": 114637,
    "first": "2026-08-26",
-   "last": "2026-09-10",
-   "count": 2,
+   "last": "2026-10-26",
+   "count": 3,
    "records": [
     {
      "date": "2026-08-26",
@@ -28806,6 +29628,16 @@
      "id": "daily:2026-09-10",
      "total": 103881,
      "today": 367
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 6,
+     "rank_label": "#6",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 114637,
+     "today": 381
     }
    ],
    "src": "archive"
@@ -30337,10 +31169,10 @@
    "tagline": "黄仁勋带货 2 万台售罄的 Microduck：强化学习驱动的小型双足机器人开源本体",
    "desc": "Pollen Robotics 的迷你双足机器人：强化学习策略驱动行走，Rust 编写、完全开源，官网在售。2026-10-24 TechCrunch 报道 2 万台售罄、黄仁勋亲自带货，次日开源本体上榜——具身智能消费化标志事件。",
    "field": "",
-   "total": 11187,
+   "total": 11663,
    "first": "2026-10-25",
-   "last": "2026-10-25",
-   "count": 1,
+   "last": "2026-10-26",
+   "count": 2,
    "records": [
     {
      "date": "2026-10-25",
@@ -30351,6 +31183,16 @@
      "id": "daily:2026-10-25",
      "total": 11187,
      "today": 319
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 5,
+     "rank_label": "#5",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 11663,
+     "today": 647
     }
    ],
    "src": "archive"
@@ -30429,10 +31271,10 @@
    "tagline": "开源全本地 ElevenLabs 替代品：语音克隆、视频配音、听写转写、有声书制作，646 种语言一台电脑全搞定",
    "desc": "VoiceStudio（前身 OmniVoice-Studio）把商业语音平台的整套工作流搬到本地：语音克隆、声音设计、视频配音、听写、转写、长文有声书制作一应俱全，无需账号、API key、订阅或用量计费。技术底子是\"引擎聚合\"路线——内置 16 个 TTS 引擎和 11 个 ASR 引擎可在模型目录里随时切换，覆盖 646 种 TTS 语言，支持 CUDA、Apple Silicon MPS/MLX、ROCm 和纯 CPU，还能挂远程 worker 分摊算力。接口上有桌面应用、本地 REST/SSE/WebSocket API，以及 OpenAI 兼容接口，方便接进现有工作流。与单一引擎项目（如 Coqui、Piper）不同，它的价值在于把各家引擎统一到一个可切换的界面里并全部本地化，算是\"语音界的 Ollama\"。目前正处于 Electron 重写期（README 明确提示桌面端 issue 暂不受理），活跃 beta 阶段。",
    "field": "",
-   "total": 74816,
+   "total": 86868,
    "first": "2026-09-03",
-   "last": "2026-10-19",
-   "count": 13,
+   "last": "2026-10-26",
+   "count": 14,
    "records": [
     {
      "date": "2026-09-03",
@@ -30563,6 +31405,16 @@
      "id": "daily:2026-10-19",
      "total": 74816,
      "today": 2098
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 3,
+     "rank_label": "#3",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 86868,
+     "today": 1592
     }
    ],
    "src": "archive"
@@ -30953,10 +31805,10 @@
    "tagline": "LLM 高吞吐、内存高效的推理与服务引擎（行业标准之一）",
    "desc": "【补档】大模型推理服务的事实标准引擎之一：高吞吐 batching、显存管理优化，支持 AMD/Blackwell/CUDA 多硬件栈，9.5 万星。2026-10-22（补档）首次入榜。",
    "field": "",
-   "total": 94896,
+   "total": 95497,
    "first": "2026-10-22",
-   "last": "2026-10-22",
-   "count": 1,
+   "last": "2026-10-26",
+   "count": 2,
    "records": [
     {
      "date": "2026-10-22",
@@ -30967,6 +31819,16 @@
      "id": "daily:2026-10-22",
      "total": 94896,
      "today": 441
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 12,
+     "rank_label": "W#12",
+     "type": "weekly",
+     "period": "2026-W44",
+     "id": "weekly:2026-W44",
+     "total": 95497,
+     "today": 1445
     }
    ],
    "src": "archive"
@@ -31123,10 +31985,10 @@
    "tagline": "让 AI 编码 Agent 更擅长设计的技能框架——1 个技能、23 个命令、60 条确定性设计检测规则",
    "desc": "Impeccable 是一套面向 AI 编码 Agent 的设计指导框架，解决\"AI 生成的 UI 都长一样\"的问题——每个模型都在同样的 SaaS 模板上训练，不加引导就会产出千篇一律的设计（Inter 字体、紫蓝渐变、卡片嵌套、灰底彩字、圆角方块图标）。核心包含三部分：一套初始化流程（`/impeccable init` 生成 PRODUCT.md 和 DESIGN.md，记录品牌定位、配色、字体、组件）；23 个设计命令（polish/audit/critique/distill/animate/bolder/quieter 等，形成与 AI 共享的设计词汇）；60 条确定性检测规则（纯 CLI 运行，无需 LLM 或 API Key，检测 AI 生成前端的设计反模式）。支持 Claude Code、Cursor、Codex、Gemini CLI、GitHub Copilot、Grok Build 等 13+ 种工具。提供浏览器扩展实时迭代和设计 Hook（在编辑 UI 文件时自动运行检测）。",
    "field": "",
-   "total": 86720,
+   "total": 87725,
    "first": "2026-07-26",
-   "last": "2026-10-25",
-   "count": 9,
+   "last": "2026-10-26",
+   "count": 10,
    "records": [
     {
      "date": "2026-07-26",
@@ -31217,6 +32079,16 @@
      "id": "daily:2026-10-25",
      "total": 86720,
      "today": 619
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 4,
+     "rank_label": "#4",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 87725,
+     "today": 1092
     }
    ],
    "src": "archive"
@@ -31581,10 +32453,10 @@
    "tagline": "Cindy：开箱即用、在你自己电脑上真干活的开源 AI agent",
    "desc": "开源本地 AI agent 助手 Cindy（cindy.app，Apache-2.0）：主打\"Consider it done\"开箱即用、在用户自己电脑上完成真实任务，支持 Android，中英双语。与闭源常驻 agent（Claude Duet/Grok Bot）竞赛同期的开源答卷。2026-10-25 首次上榜。",
    "field": "",
-   "total": 4310,
+   "total": 4893,
    "first": "2026-10-25",
-   "last": "2026-10-25",
-   "count": 1,
+   "last": "2026-10-26",
+   "count": 2,
    "records": [
     {
      "date": "2026-10-25",
@@ -31595,6 +32467,16 @@
      "id": "daily:2026-10-25",
      "total": 4310,
      "today": 477
+    },
+    {
+     "date": "2026-10-26",
+     "rank": 1,
+     "rank_label": "#1",
+     "type": "daily",
+     "period": "2026-10-26",
+     "id": "daily:2026-10-26",
+     "total": 4893,
+     "today": 675
     }
    ],
    "src": "archive"
