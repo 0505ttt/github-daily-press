@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-26",
+ "generated_at": "2026-10-28",
  "meta": {
-  "count_days": 98,
-  "count_daily": 96,
+  "count_days": 100,
+  "count_daily": 98,
   "count_weekly": 2,
   "count_monthly": 0,
   "count_backfill": 50,
@@ -17,13 +17,13 @@
    "GitHub热点日报_2026-07-15.pdf",
    "GitHub热点日报_2026-07-16.pdf"
   ],
-  "count_projects": 971,
-  "count_repos": 346,
-  "count_archives": 378,
-  "count_ai_days": 7,
+  "count_projects": 991,
+  "count_repos": 350,
+  "count_archives": 382,
+  "count_ai_days": 9,
   "span": [
    "2026-07-10",
-   "2026-10-26"
+   "2026-10-28"
   ]
  },
  "issues": [
@@ -15484,6 +15484,438 @@
     "miss_total": 0,
     "miss_desc": 0
    }
+  },
+  {
+   "id": "daily:2026-10-27",
+   "period": "2026-10-27",
+   "file": "GitHub热点日报_2026-10-27.html",
+   "date": "2026-10-27",
+   "issue": 97,
+   "type": "daily",
+   "weekday": "星期二",
+   "week": "2026-W44",
+   "month": "2026-10",
+   "backfill": false,
+   "snapshot": "",
+   "snapshot_url": "",
+   "wind": "安全主题迎来\"官方终章\"： 英伟达 SkillSpector 空降上榜 ——它用数据给本周的 agent 安全热下了结论（26.1% 技能含漏洞），与 Cloudflare 审计技能、CEO\"天塌\"论构成完整叙事弧。设计三杰连续第三日霸屏（hallmark 登顶 +2,244、impeccable 连续）；**ECC 以 29 万星体量回流**（agent harness 优化元老）；JetBrains thinkrail 次日即放量（+1,173）；新面孔 openbot（本地 AI 队友工作台）与 SkillSpector 各占一席。金融（TradingAgents 连续两日）与具身智能（microduck）延续。",
+   "ai": [
+    {
+     "t": "Anthropic 正式提交 IPO 申请",
+     "d": "📜  ：估值传闻最高 2 万亿（或成史上最大），招股书披露巨额亏损",
+     "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "英伟达开源 SkillSpector",
+     "d": "🔍  ：31,132 个 agent 技能中 26.1% 含漏洞、5.2% 疑似恶意（今日榜单 #7）",
+     "url": "https://github.com/NVIDIA/SkillSpector",
+     "src": "GitHub"
+    },
+    {
+     "t": "Cohere 称阿里 Qwen 模型\"试图向北京发送文件\"",
+     "d": "🚨  ，模型数据边界争议爆发",
+     "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "SpaceX 锁定 400 亿美元 GPU 融资",
+     "d": "🚀  （与 Apollo），算力军备再加注",
+     "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "微软向约 6 万名员工提供买断离职",
+     "d": "👥",
+     "url": "https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "Kimi K3.1 Pro 权重倒计时",
+     "d": "⏳  ：官方承诺 11-4 前开放（还剩一周）",
+     "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+     "src": "Kimi 官方"
+    },
+    {
+     "t": "GLM-5.5 月底窗口进行中",
+     "d": "🧠  ：截至今日仍未官宣（网传 2.5-3.5 万亿参数）",
+     "url": "https://tech.ifeng.com/c/8xPRsqw746o",
+     "src": "凤凰"
+    },
+    {
+     "t": "Anthropic 公益结构提案",
+     "d": "🤝  （背景）：拟将 5% 股份转入公共利益基金",
+     "url": "https://smartasset.com/investing/anthropic-ipo",
+     "src": "SmartAsset"
+    },
+    {
+     "t": "自动驾驶挖掘机初创获 6 亿美元融资",
+     "d": "🚜  ，重工自动化提速",
+     "url": "https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "Instagram 推 90 分钟长视频对标 YouTube",
+     "d": "📺",
+     "url": "https://techcrunch.com/2026/10/26/watch-out-youtube-instagram-goes-from-short-form-to-90-minute-videos/",
+     "src": "TechCrunch"
+    }
+   ],
+   "projects": [
+    {
+     "rank": 1,
+     "repo": "Nutlope/hallmark",
+     "url": "https://github.com/Nutlope/hallmark",
+     "lang": "CSS",
+     "today": 2244,
+     "total": 36370,
+     "cat": "B-开发者工具 › 设计组件",
+     "tagline": "给 AI 生成 UI 加\"质感签名\"的设计组件库",
+     "desc": "让 AI 生成的界面摆脱模板脸的设计组件库，连续第三日在榜并首次登顶（+2,244 创个人纪录）。设计层技能从\"小众赛道\"变\"顶流刚需\"。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 2,
+     "repo": "TauricResearch/TradingAgents",
+     "url": "https://github.com/TauricResearch/TradingAgents",
+     "lang": "Python",
+     "today": 1395,
+     "total": 116116,
+     "cat": "A-AI机器学习 › 量化交易Agent",
+     "tagline": "多 Agent LLM 金融交易框架：分析师/风控/交易员角色分工协作",
+     "desc": "多 agent 金融交易框架连续第二日在榜且加速，总量破 11.6 万星。Kimi K3.1 Pro 主打金融研究、Anthropic 递表——模型与资本的金融周期共振。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 3,
+     "repo": "JetBrains/thinkrail",
+     "url": "https://github.com/JetBrains/thinkrail",
+     "lang": "TypeScript",
+     "today": 1173,
+     "total": 2923,
+     "cat": "B-开发者工具 › Agentic IDE",
+     "tagline": "JetBrains 出品：越用越懂你项目的 agentic IDE",
+     "desc": "JetBrains 官方 agentic IDE 昨日首上榜（+51），今日直接放量到 +1,173——大厂新品从曝光到爆发的典型曲线。基于 pi coding agent，隔离工作区 + 持久项目知识。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 4,
+     "repo": "makecindy/cindy",
+     "url": "https://github.com/makecindy/cindy",
+     "lang": "TypeScript",
+     "today": 1296,
+     "total": 6497,
+     "cat": "A-AI机器学习 › 本地助手",
+     "tagline": "Cindy：\"Consider it done\"——开箱即用、在你自己电脑上真干活的开源 AI agent",
+     "desc": "开源本地 agent 三日曲线：首上榜 → 登顶 → +1,296 稳居前四，总量破 6 千星。开源常驻 agent 赛道的开门红样本。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 5,
+     "repo": "affaan-m/ECC",
+     "url": "https://github.com/affaan-m/ECC",
+     "lang": "JavaScript",
+     "today": 896,
+     "total": 289860,
+     "cat": "B-开发者工具 › Agent优化框架",
+     "tagline": "Agent harness 性能优化系统：技能、本能、记忆、安全与研究优先开发",
+     "desc": "agent harness 优化元老（补档期间 13 次上榜）回流，近 29 万星体量。面向 Claude Code/Codex/Opencode/Cursor 的整套增强系统，与本周 harness 热潮同频。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 6,
+     "repo": "pbakaus/impeccable",
+     "url": "https://github.com/pbakaus/impeccable",
+     "lang": "Rust",
+     "today": 1506,
+     "total": 89230,
+     "cat": "B-开发者工具 › 设计技能",
+     "tagline": "让你的 AI harness 更懂设计的「设计语言」",
+     "desc": "设计语言技能连续第三日在榜（+1,506），与登顶的 hallmark 构成设计双引擎，逼近 9 万星。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 7,
+     "repo": "NVIDIA/SkillSpector",
+     "url": "https://github.com/NVIDIA/SkillSpector",
+     "lang": "Python",
+     "today": 214,
+     "total": 22210,
+     "cat": "G-安全 › Agent技能安全",
+     "tagline": "英伟达出品：AI agent 技能安全扫描器——\"这个技能能装吗？\"",
+     "desc": "在安装 agent 技能前检测漏洞、恶意模式与安全风险，兼容 Claude Code/Codex/Gemini CLI 等生态。其研究数据集触目惊心：31,132 个技能中 **26.1% 含漏洞、5.2% 疑似恶意**——技能生态爆发后的第一位官方守门人，为本周 agent 安全叙事画上句号。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 8,
+     "repo": "pollen-robotics/microduck",
+     "url": "https://github.com/pollen-robotics/microduck",
+     "lang": "Rust",
+     "today": 843,
+     "total": 12421,
+     "cat": "A-AI机器学习 › 具身智能",
+     "tagline": "黄仁勋带货 2 万台售罄的 Microduck：强化学习驱动的小型双足机器人开源本体",
+     "desc": "RL 双足机器人开源本体连续第三日在榜，带货热度转化为持续增长，1.2 万星。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 9,
+     "repo": "nightly-labs/openbot",
+     "url": "https://github.com/nightly-labs/openbot",
+     "lang": "TypeScript",
+     "today": 176,
+     "total": 1486,
+     "cat": "B-开发者工具 › 本地工作台",
+     "tagline": "本地优先桌面工作台：给每位\"持久 AI 队友\"独立工作区",
+     "desc": "本地优先的桌面 agent 工作台（openbot.run）：原生支持 Codex App Server 与 Claude Code，经 ACP 协议接入 Grok CLI/OpenCode/Gemini/Cursor CLI/Cline，每个 agent 独立工作区。与 cindy、orca 同场竞技的\"多 agent 工作台\"赛道又添一员。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 10,
+     "repo": "Panniantong/Agent-Reach",
+     "url": "https://github.com/Panniantong/Agent-Reach",
+     "lang": "Python",
+     "today": 746,
+     "total": 103620,
+     "cat": "A-AI机器学习 › 全网读取",
+     "tagline": "给 agent 装上读全互联网的眼睛：Twitter/Reddit/YouTube/GitHub/B站/小红书，零 API 费",
+     "desc": "全网读取 CLI 回流上榜并突破 10 万星——恰逢 Cohere 指控 Qwen\"外发文件\"的争议日，\"agent 该看什么、能发什么\"的边界讨论正热，这个只读工具的走红别有意味。",
+     "field": "",
+     "hot": false
+    }
+   ],
+   "meta": {
+    "quick_rows": 10,
+    "cards": 10,
+    "ai_items": 10,
+    "miss_total": 0,
+    "miss_desc": 0
+   }
+  },
+  {
+   "id": "daily:2026-10-28",
+   "period": "2026-10-28",
+   "file": "GitHub热点日报_2026-10-28.html",
+   "date": "2026-10-28",
+   "issue": 98,
+   "type": "daily",
+   "weekday": "星期三",
+   "week": "2026-W44",
+   "month": "2026-10",
+   "backfill": false,
+   "snapshot": "",
+   "snapshot_url": "",
+   "wind": "设计技能全面统治日 ：三杰同框霸占前五中三席—— ai-design-skills 空降榜首 （+1,395）、hallmark 稳居 #2（+2,830 全榜最热）、impeccable #5（+1,449）——\"让 agent 懂设计\"从一周前的萌芽赛道变成绝对主流。元老回归日：superpowers 以 30.6 万星 回流（补档期 13 次上榜的老朋友），教育 AI DeepTutor、开源社媒管理老牌 postiz（3.9 万星）双双回流。新面孔 2 个、熟脸 8 个，工具质量整体偏高。",
+   "ai": [
+    {
+     "t": "Anthropic IPO 定价阶段：目标 2 万亿估值",
+     "d": "📊  ，S-1 披露 900% 收入留存 + 上半年亏约 800 亿",
+     "url": "https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html",
+     "src": "CNBC"
+    },
+    {
+     "t": "家长起诉 OpenAI：GPT-4o 被指\"劝停女儿抗癫痫药\"",
+     "d": "⚖️",
+     "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "Kimi K3.1 Pro 权重提前放出",
+     "d": "🔓  ：下载涌入致限流，官方致歉补偿",
+     "url": "https://post.smzdm.com/p/axko8x9w",
+     "src": "什么值得买"
+    },
+    {
+     "t": "研究：OpenAI/Google 新模型可被轻易骗生成裸图",
+     "d": "🖼️",
+     "url": "https://aiedgeinsights.com/ai-news-today-5-major-ai-breakthroughs-to-know-in-october-2026",
+     "src": "AIEdge"
+    },
+    {
+     "t": "美国银行提醒：别把银行密码告诉 AI 助手",
+     "d": "🏦",
+     "url": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "GLM-5.5 月底最后窗口仍未官宣",
+     "d": "🧠  （网传 2.5-3.5 万亿参数）",
+     "url": "https://weibo.com/2/detail/5356548147646486?utm_source=digital",
+     "src": "微博"
+    },
+    {
+     "t": "Anthropic IPO 赢家：VC 赚数十亿，Amazon 赚更多",
+     "d": "💰",
+     "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
+     "src": "TechCrunch"
+    },
+    {
+     "t": "建筑业调查：84% 用 AI 仅 8% 见效",
+     "d": "🏗️",
+     "url": "https://www.bnnbloomberg.ca/video/shows/trading-day/2026/10/27/what-would-a-rate-hike-mean-for-the-loonie",
+     "src": "BNN"
+    },
+    {
+     "t": "美国运通裁员 5%",
+     "d": "💳  ，金融业 AI 效率化又一例",
+     "url": "https://aiedgeinsights.com/ai-news-today-5-major-ai-breakthroughs-to-know-in-october-2026",
+     "src": "AIEdge"
+    },
+    {
+     "t": "Discord 公开社区可搜索化引发隐私担忧",
+     "d": "🔍",
+     "url": "https://techcrunch.com/2026/10/27/discord-is-making-its-public-communities-more-searchable-and-people-have-concerns/",
+     "src": "TechCrunch"
+    }
+   ],
+   "projects": [
+    {
+     "rank": 1,
+     "repo": "elayadesign/ai-design-skills",
+     "url": "https://github.com/elayadesign/ai-design-skills",
+     "lang": "未标注",
+     "today": 1395,
+     "total": 9396,
+     "cat": "B-开发者工具 › 设计技能",
+     "tagline": "面向 AI 编码工具的设计技能合集：每个技能一个自包含文件夹，按需安装",
+     "desc": "为 Claude Code、Cursor、Codex、Windsurf 及\"任何能读 markdown 规则文件的工具\"准备的设计技能合集，模块化按需安装。空降榜首——设计技能赛道继 hallmark/impeccable 之后的第三极，也宣告该赛道正式\"人满为患\"（是好事）。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 2,
+     "repo": "Nutlope/hallmark",
+     "url": "https://github.com/Nutlope/hallmark",
+     "lang": "CSS",
+     "today": 2830,
+     "total": 39038,
+     "cat": "B-开发者工具 › 设计组件",
+     "tagline": "给 AI 生成 UI 加\"质感签名\"的设计组件库",
+     "desc": "设计组件库连续第四日在榜，+2,830 再创个人纪录，逼近 4 万星。设计赛道从本周一的第 4 名一路爬到统治地位，hallmark 是其中最稳的旗手。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 3,
+     "repo": "nightly-labs/openbot",
+     "url": "https://github.com/nightly-labs/openbot",
+     "lang": "TypeScript",
+     "today": 777,
+     "total": 2459,
+     "cat": "B-开发者工具 › 本地工作台",
+     "tagline": "本地优先桌面工作台：给每位\"持久 AI 队友\"独立工作区",
+     "desc": "本地 agent 工作台（openbot.run）连续第二日在榜：原生 Codex App Server/Claude Code，ACP 协议接入 Grok/OpenCode/Gemini/Cursor/Cline。\"多 agent 工作台\"赛道与 cindy、orca 三足鼎立。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 4,
+     "repo": "obra/superpowers",
+     "url": "https://github.com/obra/superpowers",
+     "lang": "Shell",
+     "today": 617,
+     "total": 306455,
+     "cat": "B-开发者工具 › Agent技能框架",
+     "tagline": "一套「真的能干活」的 agentic 技能框架与软件开发方法论",
+     "desc": "agent 技能框架元老回流：内置头脑风暴、TDD、系统化调试等流程化技能，被大量技能库引用为底座。本库补档期 13 次上榜，如今总量已达 30.6 万星——技能生态的\"基础设施\"级项目。",
+     "field": "",
+     "hot": false
+    },
+    {
+     "rank": 5,
+     "repo": "pbakaus/impeccable",
+     "url": "https://github.com/pbakaus/impeccable",
+     "lang": "Rust",
+     "today": 1449,
+     "total": 90564,
+     "cat": "B-开发者工具 › 设计技能",
+     "tagline": "让你的 AI harness 更懂设计的「设计语言」",
+     "desc": "设计语言技能连续第四日在榜，总量突破 9 万星。与榜首 ai-design-skills、hallmark 构成\"设计三杰\"，本周属于设计层技能的集体加冕。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 6,
+     "repo": "makecindy/cindy",
+     "url": "https://github.com/makecindy/cindy",
+     "lang": "TypeScript",
+     "today": 1465,
+     "total": 7486,
+     "cat": "A-AI机器学习 › 本地助手",
+     "tagline": "Cindy：\"Consider it done\"——开箱即用、在你自己电脑上真干活的开源 AI agent",
+     "desc": "开源本地 agent 四日曲线：首上榜→登顶→稳居前四→+1,465，总量 7.5 千星。开源常驻 agent 赛道的开门红已成定局。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 7,
+     "repo": "gitroomhq/postiz-app",
+     "url": "https://github.com/gitroomhq/postiz-app",
+     "lang": "TypeScript",
+     "today": 951,
+     "total": 39398,
+     "cat": "C-前端-Web › 社交媒体管理",
+     "tagline": "开源社交媒体管理平台：Buffer/Hootsuite 的自托管替代",
+     "desc": "Next.js 写的开源社媒管理/排程工具（postiz.com），3.9 万星老牌回流。社媒运营的\"数据主权\"选项——恰逢 Discord 可搜索化隐私争议与美国银行\"别给 AI 密码\"提醒，本周自托管与隐私主题在榜单内外同频。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 8,
+     "repo": "affaan-m/ECC",
+     "url": "https://github.com/affaan-m/ECC",
+     "lang": "JavaScript",
+     "today": 1165,
+     "total": 290906,
+     "cat": "B-开发者工具 › Agent优化框架",
+     "tagline": "Agent harness 性能优化系统：技能、本能、记忆、安全与研究优先开发",
+     "desc": "agent harness 优化元老连续第二日在榜，29 万星体量持续稳步增长，多平台 agent 增强系统的长青样本。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 9,
+     "repo": "HKUDS/DeepTutor",
+     "url": "https://github.com/HKUDS/DeepTutor",
+     "lang": "Python",
+     "today": 1598,
+     "total": 45938,
+     "cat": "A-AI机器学习 › 教育AI",
+     "tagline": "港大 HKUDS 出品：深度学习导师——文档/论文的深度问答与研究助手",
+     "desc": "教育 AI 老朋友回流（首上榜 2026-07-16），+1,598 放量、4.6 万星。恰逢 K3.1 Pro 主打\"金融研究\"、建筑业\"84% 用 8% 见效\"调查——\"深度研究/教育 AI 能否兑现价值\"正是本周的隐性主线。",
+     "field": "",
+     "hot": true
+    },
+    {
+     "rank": 10,
+     "repo": "JetBrains/thinkrail",
+     "url": "https://github.com/JetBrains/thinkrail",
+     "lang": "TypeScript",
+     "today": 1204,
+     "total": 4029,
+     "cat": "B-开发者工具 › Agentic IDE",
+     "tagline": "JetBrains 出品：越用越懂你项目的 agentic IDE",
+     "desc": "JetBrains 官方 agentic IDE 三日连续放量（+51 → +1,173 → +1,204），破 4 千星。大厂新品的稳定爬坡曲线，IDE agent 化竞赛持续升温。",
+     "field": "",
+     "hot": true
+    }
+   ],
+   "meta": {
+    "quick_rows": 10,
+    "cards": 10,
+    "ai_items": 10,
+    "miss_total": 0,
+    "miss_desc": 0
+   }
   }
  ],
  "ai_days": {
@@ -16999,6 +17431,394 @@
      ]
     }
    ]
+  },
+  "2026-10-27": {
+   "date": "2026-10-27",
+   "file": "2026-10-27-AI日报.md",
+   "sections": [
+    {
+     "title": "一、大模型动态",
+     "items": [
+      {
+       "t": "Anthropic 正式提交公开上市申请",
+       "d": "招股文件同时披露其\"让企业客户离不开\"的商业策略；估值传闻最高达 2 万亿美元（将超 SpaceX 成史上最大 IPO），也有约 9650 亿美元的保守口径——最终定价待定价区间公布。此前披露口径：去年亏损超 400 亿美元（Reuters 审阅招股书）、上半年净亏 807 亿美元（WSJ）。",
+       "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/"
+        },
+        {
+         "src": "估值分析",
+         "url": "https://fortune.com/2026/08/13/anthropic-ipo-2-trillion-october-largest-ever-spacex"
+        }
+       ]
+      },
+      {
+       "t": "Anthropic 公益结构提案（背景，10-18）",
+       "d": "上市前提议将 5% 股份转入新设公共利益基金，待股东批准。",
+       "url": "https://smartasset.com/investing/anthropic-ipo",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://smartasset.com/investing/anthropic-ipo"
+        }
+       ]
+      },
+      {
+       "t": "Kimi K3.1 Pro 权重倒计时",
+       "d": "官方承诺 11 月 4 日前开放完整权重（今天起一周内），Highspeed 版已可用；K3 系列此前已开源 MXFP4 权重与 MoonEP/FlashKDA/AgentEnv 基础设施。",
+       "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart"
+        }
+       ]
+      },
+      {
+       "t": "智谱 GLM-5.5 月底窗口进行中",
+       "d": "截至 10-27 上午仍未官宣，网传\"10 月底-11 月初、2.5-3.5 万亿参数\"口径不变。",
+       "url": "https://tech.ifeng.com/c/8xPRsqw746o",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://tech.ifeng.com/c/8xPRsqw746o"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "二、Agent 与工程实践",
+     "items": [
+      {
+       "t": "英伟达开源 SkillSpector：agent 技能安全扫描器",
+       "d": "研究数据集 31,132 个技能中 26.1% 含漏洞、5.2% 疑似恶意——在 Claude Code/Codex/Gemini CLI 等技能\"默认信任、缺乏审查\"的现状下，回答\"这个技能能装吗\"。技能生态爆发后安全守门人正式到位（今日 GitHub 榜 #7）。",
+       "url": "https://github.com/NVIDIA/SkillSpector",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://github.com/NVIDIA/SkillSpector"
+        }
+       ]
+      },
+      {
+       "t": "Cohere 称阿里巴巴 Qwen 模型\"试图向北京发送文件\"",
+       "d": "模型供应链数据外发争议引爆，开源模型的数据边界问题被推上台面。",
+       "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/"
+        }
+       ]
+      },
+      {
+       "t": "Anthropic 招股书披露企业客户留存策略",
+       "d": "IPO 文件罕见展示了其\"锁定企业客户\"的产品与合同设计。",
+       "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "五、产业与观点",
+     "items": [
+      {
+       "t": "SpaceX 锁定 400 亿美元 GPU 融资（与 Apollo）",
+       "d": "算力军备竞赛的又一笔史诗级融资。",
+       "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/"
+        }
+       ]
+      },
+      {
+       "t": "微软向约 6 万名员工提供买断离职",
+       "d": "AI 重构组织结构的最新大规模样本。",
+       "url": "https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/"
+        }
+       ]
+      },
+      {
+       "t": "自动驾驶挖掘机初创获 6 亿美元融资",
+       "d": "重工场景的自动化落地加速。",
+       "url": "https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/"
+        }
+       ]
+      },
+      {
+       "t": "Instagram 推 90 分钟长视频对标 YouTube",
+       "d": "短视频平台向算法推荐驱动的长内容全面进军。",
+       "url": "https://techcrunch.com/2026/10/26/watch-out-youtube-instagram-goes-from-short-form-to-90-minute-videos/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/26/watch-out-youtube-instagram-goes-from-short-form-to-90-minute-videos/"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "2026-10-28": {
+   "date": "2026-10-28",
+   "file": "2026-10-28-AI日报.md",
+   "sections": [
+    {
+     "title": "一、大模型动态",
+     "items": [
+      {
+       "t": "Anthropic IPO 进入定价阶段：目标估值 2 万亿美元，纳斯达克上市",
+       "d": "S-1 文件披露 900% 的收入留存率，同时上半年亏损约 800 亿美元——\"狂奔与失血并存\"的招股画像坐实；安全质疑伴随上市全程。",
+       "url": "https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html"
+        },
+        {
+         "src": "朝鲜日报英文版",
+         "url": "https://www.chosun.com/english/industry-en/2026/10/28/ZU6TYN6K7NCY3A2VN3CEL4A5BI"
+        }
+       ]
+      },
+      {
+       "t": "Kimi K3.1 Pro 权重已提前开放，下载涌入触发限流",
+       "d": "官方原定 11 月 4 日放权重，实际已放出；因用户涌入下载导致限流，官方致歉并补偿。开源闭源差距\"12 分缩至 3 分\"的说法伴随\"翻车与软文疑云\"争议同步发酵。",
+       "url": "https://post.smzdm.com/p/arzrmqwg",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://post.smzdm.com/p/arzrmqwg"
+        },
+        {
+         "src": "限流致歉",
+         "url": "https://post.smzdm.com/p/axko8x9w"
+        }
+       ]
+      },
+      {
+       "t": "智谱 GLM-5.5 月底最后窗口，仍未官宣",
+       "d": "网传参数 2.5~3.5 万亿（上一代四倍）、架构激进求推理提速降本、目标\"发布首日即可大规模服务\"；截至发稿官方无正式公告。",
+       "url": "https://weibo.com/2/detail/5356548147646486?utm_source=digital",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://weibo.com/2/detail/5356548147646486?utm_source=digital"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "二、Agent 与工程实践",
+     "items": [
+      {
+       "t": "家长起诉 OpenAI：称 GPT-4o\"指导女儿停用抗癫痫药\"",
+       "d": "AI 对话安全边界的标志性诉讼，医疗建议责任问题被推上法庭。",
+       "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/"
+        }
+       ]
+      },
+      {
+       "t": "研究：OpenAI 与 Google 新模型可被轻易诱导生成裸体图像",
+       "d": "主流模型安全护栏被绕过的最新实证，裸图生成防线再受质疑。",
+       "url": "https://aiedgeinsights.com/ai-news-today-5-major-ai-breakthroughs-to-know-in-october-2026",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://aiedgeinsights.com/ai-news-today-5-major-ai-breakthroughs-to-know-in-october-2026"
+        }
+       ]
+      },
+      {
+       "t": "美国银行\"善意提醒\"：别把银行密码告诉你的 AI 助手",
+       "d": "金融机构对 agent 代登录潮的正式表态（与 1Password for Agents 的\"无密码代登录\"路线形成对照）。",
+       "url": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/"
+        }
+       ]
+      },
+      {
+       "t": "自主编码 agent 安全新报告",
+       "d": "自动写代码的 agent 安全性再获独立审视。",
+       "url": "https://abc7news.com/post/anthropic-set-make-stock-market-debut-questions-swirl-safety-ai/19980936",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://abc7news.com/post/anthropic-set-make-stock-market-debut-questions-swirl-safety-ai/19980936"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "三、GitHub 热门 AI 项目（24-48h 新仓库）",
+     "items": [
+      {
+       "t": "vaishantsah/watson-AI-osint-all-in-one",
+       "d": "Windows 免费 OSINT 工具：按昵称/邮箱/电话/网站在 3,100+ 公开站点做人员搜索与数字足迹检查，无账号无追踪（使用请遵守当地法律与隐私边界）。",
+       "url": "https://github.com/vaishantsah/watson-AI-osint-all-in-one",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/vaishantsah/watson-AI-osint-all-in-one"
+        }
+       ]
+      },
+      {
+       "t": "X-lab2017/AIOS101",
+       "d": "AI 开源通识课，中文社区出品的入门课程仓库。",
+       "url": "https://github.com/X-lab2017/AIOS101",
+       "src": "链接",
+       "sources": [
+        {
+         "src": "链接",
+         "url": "https://github.com/X-lab2017/AIOS101"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "四、论文/技术速览",
+     "items": [
+      {
+       "t": "建筑业 AI 调查：84% 的公司拥抱 AI，仅 8% 报告可衡量价值",
+       "d": "与 Apollo 经济学家\"零财务回报\"论互相印证，落地鸿沟持续。",
+       "url": "https://www.bnnbloomberg.ca/video/shows/trading-day/2026/10/27/what-would-a-rate-hike-mean-for-the-loonie",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://www.bnnbloomberg.ca/video/shows/trading-day/2026/10/27/what-would-a-rate-hike-mean-for-the-loonie"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "五、产业与观点",
+     "items": [
+      {
+       "t": "Anthropic IPO 的赢家：VC 赚数十亿，Amazon 赚得更多",
+       "d": "早期股东与战略投资方的巨额账面回报分析。",
+       "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/"
+        }
+       ]
+      },
+      {
+       "t": "Anthropic 上市后谁说了算？",
+       "d": "治理结构（含公共利益基金提案）成为定价之外的最大悬念。",
+       "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/"
+        }
+       ]
+      },
+      {
+       "t": "Guidewire 以 17 亿美元现金收购 Hyperexponential",
+       "d": "保险定价引擎并入保险软件巨头。",
+       "url": "https://techcrunch.com/2026/10/27/guidewire-buys-hyperexponential-for-1-7b-in-cash/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/guidewire-buys-hyperexponential-for-1-7b-in-cash/"
+        }
+       ]
+      },
+      {
+       "t": "美国运通宣布裁员 5% 全球员工",
+       "d": "金融业 AI 效率化又一例。",
+       "url": "https://aiedgeinsights.com/ai-news-today-5-major-ai-breakthroughs-to-know-in-october-2026",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://aiedgeinsights.com/ai-news-today-5-major-ai-breakthroughs-to-know-in-october-2026"
+        }
+       ]
+      },
+      {
+       "t": "Discord 公开社区可搜索化引发隐私担忧",
+       "d": "公开≠可被检索，社区数据边界之争。",
+       "url": "https://techcrunch.com/2026/10/27/discord-is-making-its-public-communities-more-searchable-and-people-have-concerns/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/discord-is-making-its-public-communities-more-searchable-and-people-have-concerns/"
+        }
+       ]
+      },
+      {
+       "t": "Re:Build（Slate Auto 衍生公司）融资 21 亿美元",
+       "d": "。",
+       "url": "https://techcrunch.com/2026/10/27/rebuild-which-spun-out-slate-auto-raises-2-1b/",
+       "src": "来源",
+       "sources": [
+        {
+         "src": "来源",
+         "url": "https://techcrunch.com/2026/10/27/rebuild-which-spun-out-slate-auto-raises-2-1b/"
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
  },
  "projects": {
@@ -18322,6 +19142,32 @@
      "id": "daily:2026-08-11",
      "total": 65239,
      "today": 106
+    }
+   ],
+   "src": "archive"
+  },
+  "gitroomhq/postiz-app": {
+   "repo": "gitroomhq/postiz-app",
+   "url": "https://github.com/gitroomhq/postiz-app",
+   "lang": "TypeScript",
+   "cat": "C-前端-Web › 社交媒体管理工具",
+   "tagline": "开源社交媒体管理平台：Buffer/Hootsuite 的自托管替代",
+   "desc": "开源社交媒体管理/排程平台（postiz.com），Next.js 编写，Buffer/Hootsuite 的自托管替代，2023-07 创建、3.9 万星老牌。2026-10-28 回流上榜，恰逢本周自托管与隐私主题升温。",
+   "field": "",
+   "total": 39398,
+   "first": "2026-10-28",
+   "last": "2026-10-28",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-28",
+     "rank": 7,
+     "rank_label": "#7",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 39398,
+     "today": 951
     }
    ],
    "src": "archive"
@@ -21034,12 +21880,12 @@
     {
      "date": "2026-10-26",
      "rank": 1,
-     "total": 46947,
-     "today": 15072,
+     "rank_label": "W#1",
      "type": "weekly",
      "period": "2026-W44",
      "id": "weekly:2026-W44",
-     "rank_label": "W#1"
+     "total": 46947,
+     "today": 15072
     }
    ],
    "src": "archive"
@@ -21567,6 +22413,32 @@
    "last": "2026-09-16",
    "count": 1,
    "records": [],
+   "src": "archive"
+  },
+  "NVIDIA/SkillSpector": {
+   "repo": "NVIDIA/SkillSpector",
+   "url": "https://github.com/NVIDIA/SkillSpector",
+   "lang": "Python",
+   "cat": "G-安全 › Agent技能安全",
+   "tagline": "英伟达出品：AI agent 技能安全扫描器——「这个技能能装吗？」",
+   "desc": "英伟达出品的 AI agent 技能安全扫描器：在安装 agent 技能（Claude Code/Codex/Gemini CLI 等生态）前检测漏洞、恶意模式与安全风险。其研究数据集显示 31,132 个技能中 26.1% 含漏洞、5.2% 疑似恶意——技能生态爆发后的第一位大厂守门人。2026-10-27 首次上榜。",
+   "field": "",
+   "total": 22210,
+   "first": "2026-10-27",
+   "last": "2026-10-27",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-27",
+     "rank": 7,
+     "rank_label": "#7",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 22210,
+     "today": 214
+    }
+   ],
    "src": "archive"
   },
   "megadose/holehe": {
@@ -23583,6 +24455,42 @@
    ],
    "src": "archive"
   },
+  "nightly-labs/openbot": {
+   "repo": "nightly-labs/openbot",
+   "url": "https://github.com/nightly-labs/openbot",
+   "lang": "TypeScript",
+   "cat": "B-开发者工具 › Agent管理 › 本地工作台",
+   "tagline": "本地优先桌面工作台：给每位「持久 AI 队友」独立工作区",
+   "desc": "本地优先桌面 agent 工作台（openbot.run）：原生支持 Codex App Server 与 Claude Code，经 ACP 协议接入 Grok CLI/OpenCode/Gemini/Cursor CLI/Cline，给每位\"持久 AI 队友\"独立工作区。2026-08-12 创建，2026-10-27 首次上榜。",
+   "field": "",
+   "total": 2459,
+   "first": "2026-10-27",
+   "last": "2026-10-28",
+   "count": 2,
+   "records": [
+    {
+     "date": "2026-10-27",
+     "rank": 9,
+     "rank_label": "#9",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 1486,
+     "today": 176
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 3,
+     "rank_label": "#3",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 2459,
+     "today": 777
+    }
+   ],
+   "src": "archive"
+  },
   "agegr/pi-web": {
    "repo": "agegr/pi-web",
    "url": "https://github.com/agegr/pi-web",
@@ -23711,6 +24619,32 @@
      "id": "daily:2026-10-21",
      "total": 162371,
      "today": 562
+    }
+   ],
+   "src": "archive"
+  },
+  "elayadesign/ai-design-skills": {
+   "repo": "elayadesign/ai-design-skills",
+   "url": "https://github.com/elayadesign/ai-design-skills",
+   "lang": "未标注",
+   "cat": "B-开发者工具 › 设计技能 › 技能合集",
+   "tagline": "面向 AI 编码工具的设计技能合集：每个技能一个自包含文件夹，按需安装",
+   "desc": "面向 AI 编码工具（Claude Code/Cursor/Codex/Windsurf 及任何能读 markdown 规则文件的工具）的设计技能合集：每个技能自包含文件夹、按需安装。2026-07-29 创建，2026-10-28 新上榜即登顶（+1,395）——设计技能赛道继 hallmark/impeccable 之后的第三极。",
+   "field": "",
+   "total": 9396,
+   "first": "2026-10-28",
+   "last": "2026-10-28",
+   "count": 1,
+   "records": [
+    {
+     "date": "2026-10-28",
+     "rank": 1,
+     "rank_label": "#1",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 9396,
+     "today": 1395
     }
    ],
    "src": "archive"
@@ -23971,10 +24905,10 @@
    "tagline": "为编码 Agent 打造的完整软件开发方法论——可组合技能 + 自动化研发流程",
    "desc": "Superpowers 是一套完整的面向编码 Agent 的软件开发方法论，构建在一组可组合技能和初始指令之上，让 AI 编码助手自动遵循专业开发流程。核心流程：Agent 不会急于写代码，而是先与用户对齐需求，拆解出可消化的小块规格说明；设计确认后，自动生成一份清晰到「连初级工程师都能照做」的实现计划；用户说\"go\"后，启动子代理驱动开发（subagent-driven-development），让多个 Agent 分别处理各个工程任务并互相审查。强调真正的红/绿 TDD（测试先行）、YAGNI（不做不需要的功能）和 DRY 原则。Agent 可自主工作数小时而不偏离计划。支持 Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot CLI、Kimi Code、OpenCode 等 11+ 平台。与 ECC 等技能仓库相比，Superpowers 更侧重方法论和流程自动化，而非单纯技能堆砌。",
    "field": "",
-   "total": 300677,
+   "total": 306455,
    "first": "2026-07-30",
-   "last": "2026-10-17",
-   "count": 17,
+   "last": "2026-10-28",
+   "count": 18,
    "records": [
     {
      "date": "2026-07-30",
@@ -24145,6 +25079,16 @@
      "id": "daily:2026-10-17",
      "total": 300677,
      "today": 973
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 4,
+     "rank_label": "#4",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 306455,
+     "today": 617
     }
    ],
    "src": "archive"
@@ -26077,10 +27021,10 @@
    "tagline": "反 AI 糙设计技能——让 Claude Code / Cursor / Codex 生成的 UI 不再有 AI 味",
    "desc": "Hallmark 由 Together AI 团队开发，是一个面向 AI 编程助手的设计技能（Design Skill）。它将反 AI-slop 的设计共识——排版、配色、布局、动效、微交互、结构多样性——编码为一套有主见的规则集。核心特色：22 种主题、4 种动词模式（构建/审计/重设计/学习）、21 种命名宏结构、65 道 slop-test 检测门、预发射自我批评、以及独有的 study 功能（从截图或 URL 提取设计 DNA）。项目记忆系统会记录每次运行的结构和主题，确保连续输出不重复。支持 Claude Code、Cursor、Codex 一键安装。",
    "field": "",
-   "total": 33824,
+   "total": 39038,
    "first": "2026-07-14",
-   "last": "2026-10-26",
-   "count": 5,
+   "last": "2026-10-28",
+   "count": 7,
    "records": [
     {
      "date": "2026-07-14",
@@ -26131,6 +27075,26 @@
      "id": "daily:2026-10-26",
      "total": 33824,
      "today": 1317
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 1,
+     "rank_label": "#1",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 36370,
+     "today": 2244
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 2,
+     "rank_label": "#2",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 39038,
+     "today": 2830
     }
    ],
    "src": "archive"
@@ -26205,10 +27169,10 @@
    "tagline": "JetBrains 出品：越用越懂你项目的 agentic IDE",
    "desc": "JetBrains 官方 agentic IDE（thinkrail.ai）：基于 pi coding agent 构建，隔离工作区 + 持久项目知识（living specs），定位\"今天学你的项目、明天自建能力\"。老牌 IDE 大厂正式下场 agent 化的标志性产品，2026-10-26 首次上榜。",
    "field": "",
-   "total": 1767,
+   "total": 4029,
    "first": "2026-10-26",
-   "last": "2026-10-26",
-   "count": 1,
+   "last": "2026-10-28",
+   "count": 3,
    "records": [
     {
      "date": "2026-10-26",
@@ -26219,6 +27183,26 @@
      "id": "daily:2026-10-26",
      "total": 1767,
      "today": 51
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 3,
+     "rank_label": "#3",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 2923,
+     "today": 1173
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 10,
+     "rank_label": "#10",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 4029,
+     "today": 1204
     }
    ],
    "src": "archive"
@@ -27009,10 +27993,10 @@
    "tagline": "Agent Harness 性能优化系统——261 个工作流技能 + 64 个专用子代理",
    "desc": "ECC（Everything Claude Code）是一个开源的 Agent Harness 性能优化系统，为 Claude Code、Codex、Cursor、OpenCode、Gemini、Zed、GitHub Copilot、Antigravity 等 AI 编程工具提供统一的技能、记忆、安全和研发流程框架。包含 261 个工作流技能、64 个专用子代理、覆盖 12+ 语言生态系统，横跨编码、研究、安全、媒体等场景。2.0 版本定位为「跨 Harness 操作系统」，可在不同 AI 编程助手间共享配置。该项目是 GitHub 上星标最高的 Agent 工具仓库之一。",
    "field": "",
-   "total": 282546,
+   "total": 290906,
    "first": "2026-07-29",
-   "last": "2026-10-18",
-   "count": 17,
+   "last": "2026-10-28",
+   "count": 19,
    "records": [
     {
      "date": "2026-07-29",
@@ -27183,6 +28167,26 @@
      "id": "daily:2026-10-18",
      "total": 282546,
      "today": 1145
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 5,
+     "rank_label": "#5",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 289860,
+     "today": 896
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 8,
+     "rank_label": "#8",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 290906,
+     "today": 1165
     }
    ],
    "src": "archive"
@@ -29427,10 +30431,10 @@
    "tagline": "多 Agent LLM 金融交易框架：分析师/风控/交易员角色分工协作",
    "desc": "【补档说明】本档案由 2026-10 补档程序依据 Wayback Machine 快照自动生成，详细介绍从略。快照期仓库描述：TradingAgents: Multi-Agents LLM Financial Trading Framework",
    "field": "",
-   "total": 114637,
+   "total": 116116,
    "first": "2026-08-26",
-   "last": "2026-10-26",
-   "count": 3,
+   "last": "2026-10-27",
+   "count": 4,
    "records": [
     {
      "date": "2026-08-26",
@@ -29461,6 +30465,16 @@
      "id": "daily:2026-10-26",
      "total": 114637,
      "today": 381
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 2,
+     "rank_label": "#2",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 116116,
+     "today": 1395
     }
    ],
    "src": "archive"
@@ -30501,10 +31515,10 @@
    "tagline": "终身个性化辅导——Agent 原生的 AI 学习工作台",
    "desc": "DeepTutor 由香港大学数据科学实验室（HKUDS）开发，是一个 Agent 原生的个性化学习工作台，将辅导、解题、测验生成、研究、可视化和掌握练习整合到一个可扩展的系统中。核心亮点：一个 Agent 运行时驱动所有模式（Chat/Quiz/Research/Visualize/Solve/Mastery Path）；多引擎知识库（LlamaIndex、PageIndex、GraphRAG、LightRAG、Obsidian）；三层可检视记忆系统（L1 事件追踪 / L2 表面摘要 / L3 跨面综合）；可连接外部 Agent（Claude Code、Codex、自定义 Partner）作为子代理协作；配套 CLI 和 SDK 支持 Agent 驱动。项目有配套 arXiv 论文，迭代非常活跃（v1.0 至 v1.5 仅用了约 3 个月）。",
    "field": "",
-   "total": 34661,
+   "total": 45938,
    "first": "2026-07-16",
-   "last": "2026-08-12",
-   "count": 2,
+   "last": "2026-10-28",
+   "count": 3,
    "records": [
     {
      "date": "2026-07-16",
@@ -30525,6 +31539,16 @@
      "id": "daily:2026-08-12",
      "total": 34661,
      "today": 829
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 9,
+     "rank_label": "#9",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 45938,
+     "today": 1598
     }
    ],
    "src": "archive"
@@ -30992,10 +32016,10 @@
    "tagline": "黄仁勋带货 2 万台售罄的 Microduck：强化学习驱动的小型双足机器人开源本体",
    "desc": "Pollen Robotics 的迷你双足机器人：强化学习策略驱动行走，Rust 编写、完全开源，官网在售。2026-10-24 TechCrunch 报道 2 万台售罄、黄仁勋亲自带货，次日开源本体上榜——具身智能消费化标志事件。",
    "field": "",
-   "total": 11663,
+   "total": 12421,
    "first": "2026-10-25",
-   "last": "2026-10-26",
-   "count": 2,
+   "last": "2026-10-27",
+   "count": 3,
    "records": [
     {
      "date": "2026-10-25",
@@ -31016,6 +32040,16 @@
      "id": "daily:2026-10-26",
      "total": 11663,
      "today": 647
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 8,
+     "rank_label": "#8",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 12421,
+     "today": 843
     }
    ],
    "src": "archive"
@@ -31028,10 +32062,10 @@
    "tagline": "给 AI Agent 装上\"互联网之眼\"——一键解锁 Twitter/Reddit/YouTube/B站/小红书等全平台数据访问",
    "desc": "Agent Reach 解决了 AI Agent 的\"上网抓瞎\"问题——Agent 能写代码改文档，却读不了 YouTube 字幕、搜不了 Twitter、打不开小红书。这个项目把各平台的接入门槛（付费 API、IP 封锁、登录验证、数据清洗）全部封装好，用户只需对 Agent 说一句话即可自动安装。支持网页阅读、YouTube 字幕提取、RSS 订阅、Twitter/X 搜索与时间线、Reddit 搜索、B站视频详情、小红书内容、GitHub 仓库读取等。每个平台采用\"首选+备选\"多后端路由策略，某个接入方式失效会自动切换（如 B站 yt-dlp 被封后已无缝切换到 bili-cli）。兼容所有能跑命令行的 Agent（Claude Code、OpenClaw、Cursor、Windsurf），完全免费开源。",
    "field": "",
-   "total": 90739,
+   "total": 103620,
    "first": "2026-08-03",
-   "last": "2026-10-05",
-   "count": 5,
+   "last": "2026-10-27",
+   "count": 6,
    "records": [
     {
      "date": "2026-08-03",
@@ -31082,6 +32116,16 @@
      "id": "daily:2026-10-05",
      "total": 90739,
      "today": 979
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 10,
+     "rank_label": "#10",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 103620,
+     "today": 746
     }
    ],
    "src": "archive"
@@ -31808,10 +32852,10 @@
    "tagline": "让 AI 编码 Agent 更擅长设计的技能框架——1 个技能、23 个命令、60 条确定性设计检测规则",
    "desc": "Impeccable 是一套面向 AI 编码 Agent 的设计指导框架，解决\"AI 生成的 UI 都长一样\"的问题——每个模型都在同样的 SaaS 模板上训练，不加引导就会产出千篇一律的设计（Inter 字体、紫蓝渐变、卡片嵌套、灰底彩字、圆角方块图标）。核心包含三部分：一套初始化流程（`/impeccable init` 生成 PRODUCT.md 和 DESIGN.md，记录品牌定位、配色、字体、组件）；23 个设计命令（polish/audit/critique/distill/animate/bolder/quieter 等，形成与 AI 共享的设计词汇）；60 条确定性检测规则（纯 CLI 运行，无需 LLM 或 API Key，检测 AI 生成前端的设计反模式）。支持 Claude Code、Cursor、Codex、Gemini CLI、GitHub Copilot、Grok Build 等 13+ 种工具。提供浏览器扩展实时迭代和设计 Hook（在编辑 UI 文件时自动运行检测）。",
    "field": "",
-   "total": 87725,
+   "total": 90564,
    "first": "2026-07-26",
-   "last": "2026-10-26",
-   "count": 10,
+   "last": "2026-10-28",
+   "count": 12,
    "records": [
     {
      "date": "2026-07-26",
@@ -31912,6 +32956,26 @@
      "id": "daily:2026-10-26",
      "total": 87725,
      "today": 1092
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 6,
+     "rank_label": "#6",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 89230,
+     "today": 1506
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 5,
+     "rank_label": "#5",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 90564,
+     "today": 1449
     }
    ],
    "src": "archive"
@@ -32276,10 +33340,10 @@
    "tagline": "Cindy：开箱即用、在你自己电脑上真干活的开源 AI agent",
    "desc": "开源本地 AI agent 助手 Cindy（cindy.app，Apache-2.0）：主打\"Consider it done\"开箱即用、在用户自己电脑上完成真实任务，支持 Android，中英双语。与闭源常驻 agent（Claude Duet/Grok Bot）竞赛同期的开源答卷。2026-10-25 首次上榜。",
    "field": "",
-   "total": 4893,
+   "total": 7486,
    "first": "2026-10-25",
-   "last": "2026-10-26",
-   "count": 2,
+   "last": "2026-10-28",
+   "count": 4,
    "records": [
     {
      "date": "2026-10-25",
@@ -32300,6 +33364,26 @@
      "id": "daily:2026-10-26",
      "total": 4893,
      "today": 675
+    },
+    {
+     "date": "2026-10-27",
+     "rank": 4,
+     "rank_label": "#4",
+     "type": "daily",
+     "period": "2026-10-27",
+     "id": "daily:2026-10-27",
+     "total": 6497,
+     "today": 1296
+    },
+    {
+     "date": "2026-10-28",
+     "rank": 6,
+     "rank_label": "#6",
+     "type": "daily",
+     "period": "2026-10-28",
+     "id": "daily:2026-10-28",
+     "total": 7486,
+     "today": 1465
     }
    ],
    "src": "archive"

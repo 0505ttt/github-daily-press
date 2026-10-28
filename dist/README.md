@@ -1,5 +1,7 @@
 # GitHub 每日项目推送
 
+[English](README.en.md) | 中文
+
 ![GitHub 每日项目推送：把开源热点读成一本杂志](docs/images/项目封面.svg)
 
 **把 GitHub 热榜、AI 前沿资讯和项目档案，放进一本可以在线读、安装到桌面、离线翻阅的中文杂志。**

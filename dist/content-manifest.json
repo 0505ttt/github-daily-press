@@ -1,6 +1,6 @@
 {
-  "revision": "6cb114a822f2feea96af2592",
-  "generated_at": "2026-10-26",
+  "revision": "6cb671bb76c31f4c809e8ee6",
+  "generated_at": "2026-10-28",
   "files": [
     {
       "path": "AI前沿资讯/回溯特刊_近两月AI新项目榜_2026-08-19至10-19.md",
@@ -41,6 +41,16 @@
       "path": "AI前沿资讯/日报/2026-10-26-AI日报.md",
       "sha256": "3264621c390c4a18e6b8aaa5e1d7a93a5b41ecc3a4b60fab2dd4d2752eac45fe",
       "size": 6250
+    },
+    {
+      "path": "AI前沿资讯/日报/2026-10-27-AI日报.md",
+      "sha256": "cdcee5cdc2db649cadd6f6d3af68fb387bed4f145530d0b18dca0f7267cb5193",
+      "size": 4480
+    },
+    {
+      "path": "AI前沿资讯/日报/2026-10-28-AI日报.md",
+      "sha256": "f6905c7aa24c99ce5516ef82700045856cccc15632791c579736a9001317ce3a",
+      "size": 5287
     },
     {
       "path": "GitHub项目分析/GitHub热点周报_2026-W43.html",
@@ -569,13 +579,23 @@
     },
     {
       "path": "GitHub项目分析/GitHub热点日报_2026-10-26.html",
-      "sha256": "66a35479901b4f8a284b7e59f7ef44cb9818edd9040d4b4ab6ec31c2caa35679",
-      "size": 19868
+      "sha256": "ac708b99be86858be0106f367e6349283a735dfadd995444c457e73e24643d77",
+      "size": 19861
+    },
+    {
+      "path": "GitHub项目分析/GitHub热点日报_2026-10-27.html",
+      "sha256": "c7d6fc6b846752b45d310710a058b89e16496cb7ba25b945d2e95d468818b4d9",
+      "size": 19029
+    },
+    {
+      "path": "GitHub项目分析/GitHub热点日报_2026-10-28.html",
+      "sha256": "5c474203300668a575f49dcbb443f721af91719f3ab8113f8a495832c1869442",
+      "size": 19016
     },
     {
       "path": "GitHub项目分析/GitHub热点杂志.html",
-      "sha256": "71dd70379980abff48252d07c23f7e6e61995df1d95eee9399319e9609b4141d",
-      "size": 1309026
+      "sha256": "a3bf09a3aa54fae4868cf73c98649df6695eea7cf3285ad31024a7313f91a9d7",
+      "size": 1341906
     },
     {
       "path": "GitHub项目分析/历史前身_Markdown/2026-06-22-github-daily.md",
@@ -614,8 +634,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/AI编程设计/pbakaus-impeccable.md",
-      "sha256": "7a2982075ca4f2ca8af277229f1bbda3bb448ba5845c7f32f4eb18558281d344",
-      "size": 2410
+      "sha256": "fd58996acd0158e6ba5881342615eb66ee40c56922d94adf7856fd34c269d57a",
+      "size": 2487
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/AI聊天界面/danny-avila-LibreChat.md",
@@ -659,8 +679,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/Agent工具/Panniantong-Agent-Reach.md",
-      "sha256": "2d61bced1ccb8c4e1e91996147c30e9d3d6b9f84d7493aa7f45fae32148cf69f",
-      "size": 2300
+      "sha256": "2a273dd747820316eddc9b78346460c77112b0772450874d55d63e1d8d1e457e",
+      "size": 2339
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/Agent平台/Significant-Gravitas-AutoGPT.md",
@@ -719,8 +739,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/Agent框架/makecindy-cindy.md",
-      "sha256": "73658f7292ce3016ec183759d0f77578314085bf4bcb4e9bf84b8cd7bc58a404",
-      "size": 1079
+      "sha256": "c5f43f56deb1fc77ca84eabda409f4dfd01c71f9c8d0e8e0e181d273185acaa5",
+      "size": 1155
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/Agent框架/strands-agents-harness-sdk.md",
@@ -869,8 +889,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/TauricResearch-TradingAgents.md",
-      "sha256": "f4740ce4ecb081aeb86d0e7a247d1441775edcc79d2e0f98723080b3336b007c",
-      "size": 1009
+      "sha256": "2894a6ddebb3779d0ed0bad7bd33e142affa9f4e78ab0000277005090f63785b",
+      "size": 1050
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/Tencent-WeKnora.md",
@@ -1049,8 +1069,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/具身智能/pollen-robotics-microduck.md",
-      "sha256": "72c817cfbf9a95c50aedf8e2be85d30ef1e51c0481c884da6005c402599cab3c",
-      "size": 1087
+      "sha256": "1c93f53e8f9906fdecdc80fe8e803f55ad81fa6bd815b175d843641fcb6f29ed",
+      "size": 1123
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/情报聚合/koala73-worldmonitor.md",
@@ -1064,8 +1084,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/教育AI/HKUDS-DeepTutor.md",
-      "sha256": "de34e7e4ac522694dba3117aab2cd5d9398c483ed0d896522b2222cd8cb8302d",
-      "size": 2191
+      "sha256": "f35219658255207f8ec041b36b604c881efddd67be9f091c6de92ab366c9f8e5",
+      "size": 2231
     },
     {
       "path": "GitHub项目分析/项目分类库/AI机器学习/模型优化/NVIDIA-Model-Optimizer.md",
@@ -1204,8 +1224,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/_索引.md",
-      "sha256": "47658628606e9aeaa4b545d7b052b9185111cdd854aaaaae150719b7e84f72c0",
-      "size": 47816
+      "sha256": "22bfda11fe9ef3b73f7297dea4f1211c102d9be582ffc84dd4b2343b992bb567",
+      "size": 48331
     },
     {
       "path": "GitHub项目分析/项目分类库/_索引_2026-07-27.md",
@@ -1311,6 +1331,11 @@
       "path": "GitHub项目分析/项目分类库/前端-Web/浏览器引擎/LadybirdBrowser-ladybird.md",
       "sha256": "8c6a366eff7be91e8586e65e1528486d4ae635949c31ab0788b41c1033227ba1",
       "size": 2149
+    },
+    {
+      "path": "GitHub项目分析/项目分类库/前端-Web/社交媒体管理工具/gitroomhq-postiz-app.md",
+      "sha256": "c0e94b2cb7e3b221caa7f301facb18b4f97955bc66d8aa63688e5ebbe5b4ba95",
+      "size": 961
     },
     {
       "path": "GitHub项目分析/项目分类库/前端-Web/社交嵌入服务/FxEmbed-FxEmbed.md",
@@ -1719,8 +1744,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/AI安全技能库/cloudflare-security-audit-skill.md",
-      "sha256": "0f29bf231850653042049290b89fe3473bb276ebd353b2af97469c3c11903144",
-      "size": 2859
+      "sha256": "f2b8afc9ea8c0925e3993255269a467e1e98a4305a8f0979342e1d662df376cc",
+      "size": 2899
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/AI安全技能库/mukul975-Anthropic-Cybersecurity-Skills.md",
@@ -1741,6 +1766,11 @@
       "path": "GitHub项目分析/项目分类库/安全/Agent安全护栏/Dicklesworthstone-destructive_command_guard.md",
       "sha256": "44ae9ec0d857bdbe52820689466c139550525319d7f513f42e2da700d24738d2",
       "size": 1980
+    },
+    {
+      "path": "GitHub项目分析/项目分类库/安全/Agent技能安全/NVIDIA-SkillSpector.md",
+      "sha256": "6a8e624f470b22f75c46197e4b47a520ef379b41cbf8de8799a31f6df82688a9",
+      "size": 1127
     },
     {
       "path": "GitHub项目分析/项目分类库/安全/NVIDIA-OpenShell.md",
@@ -1859,8 +1889,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/JetBrains-thinkrail.md",
-      "sha256": "3c0e071d320150c2fa9f91b831af683214444e652153e79571db871658a88e6d",
-      "size": 1001
+      "sha256": "693010569c91d8f81462abf8795874af92dd22837b20f09cf255f5ac3678c054",
+      "size": 1079
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/MoonshotAI-kimi-cli.md",
@@ -1869,8 +1899,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/Nutlope-hallmark.md",
-      "sha256": "011edd8ee24cc59848ea2ee552e7d63229f8c67312c6c29b52cd1c8bb3a949ae",
-      "size": 1886
+      "sha256": "20ae73ac5f57507d5228a582fcf8874f6af2471316af9620e4d0f0ae01aaecea",
+      "size": 1962
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/AI编程工具/bradautomates-claude-video.md",
@@ -1979,8 +2009,8 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/Agent优化框架/affaan-m-ECC.md",
-      "sha256": "a472e6f5ece15d01c00b3251e6b6147b6d4b7ecbc2e3aaeb698ae978ed3cf6c6",
-      "size": 2428
+      "sha256": "3d40d06dbd02b19cd8737a77d30d4446c90d2dedbbb1bea6024321f1836926b4",
+      "size": 2504
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/Agent协作平台/chaitanyagiri-munder-difflin.md",
@@ -2034,13 +2064,18 @@
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/Agent技能框架/obra-superpowers.md",
-      "sha256": "4c4ca73dbcbbbeafa3669b7f6e6b79104a2b96c838e85bafe46dacd0e72efb04",
-      "size": 2959
+      "sha256": "6b60b4f0620e2534f9c126227f650913b033b6926420b70b534dd629cfe35440",
+      "size": 2996
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/Agent技能框架/rlaope-oh-my-hermes.md",
       "sha256": "deb41ec005f3b7333eb52bbbf804e79a0f12cb196bd12c69fe6049f6d90d5218",
       "size": 2356
+    },
+    {
+      "path": "GitHub项目分析/项目分类库/开发者工具/Agent管理/nightly-labs-openbot.md",
+      "sha256": "36a4329abd391123b09192dd172d46794cf62af81548e6b8db752a4d43e2b850",
+      "size": 1086
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/Agent记忆/akitaonrails-ai-memory.md",
@@ -2256,6 +2291,11 @@
       "path": "GitHub项目分析/项目分类库/开发者工具/终端工具/yorukot-superfile.md",
       "sha256": "890475dfdb2c93b047df11bf4e7e65c426c76ed00cfe19e19dc7c706cf8205fc",
       "size": 1717
+    },
+    {
+      "path": "GitHub项目分析/项目分类库/开发者工具/设计技能/elayadesign-ai-design-skills.md",
+      "sha256": "f80e2dcee9868793df8074ca1ada65b45b24bb6e6581ebb22710a1413244225b",
+      "size": 1099
     },
     {
       "path": "GitHub项目分析/项目分类库/开发者工具/调试工具/EpicGames-raddebugger.md",
@@ -2499,8 +2539,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "bb2b5c69f4bd2fec02771d11dd7c9685557c702670eba5ce27221bd0333e1a23",
-      "size": 13868
+      "sha256": "a82d0d78885d06ec9930fb850bcf1fe87444d810bd54ec94ae5de073cfbe9e4a",
+      "size": 13902
     },
     {
       "path": "app.css",
@@ -2624,7 +2664,7 @@
     },
     {
       "path": "content-version.json",
-      "sha256": "3ae6d685ffc4878acb120d58e967a8e94ea2f05dbefff207c3964b3eceebc0d9",
+      "sha256": "f41359149e94f36e595fb2af624afbadc449051afca3a044381a519af19fde15",
       "size": 70
     }
   ]
